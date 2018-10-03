@@ -1,0 +1,131 @@
+# Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: ShunNien's Blog
+subtitle: 不積跬步，無以致千里；不積小流，無以成江海。
+description: 個人學習上的筆記或記事
+author: ShunNien Yu
+language: 
+- zh-tw
+#- zh-CN
+#- en
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://shunnien.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :year-:month-:day-:title.md # File name of new posts
+default_layout: post
+titlecase: true # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Archives
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 2
+category: 2
+tag: 2
+
+# Server
+## Hexo uses Connect as a server
+## You can customize the logger format as defined in
+## http://www.senchalabs.org/connect/logger.html
+port: "4000"
+server_ip: "127.0.0.1"
+logger: false
+logger_format:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 6
+pagination_dir: page
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+Plugins:
+  - hexo-generator-feed
+  - hexo-generator-sitemap
+
+## Themes: http://hexo.io/themes/
+theme: NexT
+
+stylus:
+  compress: true
+
+# Disqus
+disqus_shortname: shunniengithubblog
+
+index_generator:
+  per_page: 6 ##首頁默認10篇文章標題 如果值爲0不分頁
+
+archive_generator:
+  per_page: 6 ##歸檔頁面默認10篇文章標題
+  yearly: true  ##生成年視圖
+  monthly: true ##生成月視圖# Archives
+
+tag_generator:
+  per_page: 6 ##標籤分類頁面默認10篇文章
+
+category_generator:
+   per_page: 6 ###分類頁面默認10篇文章
+
+feed:
+  type: atom ##feed類型 atom或者rss2
+  path: atom.xml ##feed路徑
+  limit: 20  ##feed文章最小數量
+
+tagFeed:
+  type: atom
+  path:
+    pre: tag
+    post: atom.xml
+  limit: 20
+  hub:
+
+# Deployment
+## Docs: http://hexo.io/docs/deployment.html
+deploy:
+  type: git ##部署類型 其他類型自行google之
+  repo: git@github.com:shunnien/shunnien.github.io.git ##git倉庫地址
+  branch: ##git 頁面分支
+  message: Site updated at {{ now("YYYY-MM-DD HH:mm:ss") }} ##git message建議默認字段update 可以自定義

@@ -1,0 +1,70 @@
+title: SSL For Free 申請步驟
+tags:
+  - notes
+toc: false
+date: 2017-08-04 16:11:46
+categories:
+description:
+---
+
+之前看 Will 保哥的線上直播【[申請 Let's Encrypt 免費 SSL 憑證一次就上手][1]】，最後也是使用 [SSL For Free][2] 作申請範例，以前申請這個得時候，不是使用保哥示範的驗證網域來做驗證，最近在測試一些系統的時候，申請使用網域驗證，在此做個紀錄。<!-- more -->
+
+要申請免費的 Domain Validated SSL (DV SSL)，先到 **[SSL For Free][2]** 首頁，填入欲申請的網域
+![SSL index page](https://lh3.googleusercontent.com/QCJiQ1bS5TNI0egY6Ods9b_9VA-Otrb6-ArG1rbkDyfQjADRoQ5LS-WaHBFNKmWea459l4qfKfQg0LijHbzXedeTQNQZBqgaxfY5ImU9U7Ti2WjiGWXjOYV7SlfS297phSWZVza7zoBWfqqz6VyxKULV5KZjXs2IC7Z-_SDrWJ5kx0tXYTDvFPzAy1j9fJfQbKWM-Rb7SYFvxZEGXKf9hc6xU6PQFuaWhsTQGKR0kHIE9pmzjyWQcA4r_LJthNb1z3u9wSchrADb8bzN6VjDNfP7WcrV_9qCzU-dZjJLyUPOEV0n0591xbHuASZUOcukJujU_oRcD2pV_izq_q1JVdEM5ebdNwnuCCo-MixopI7_LyK5d7Z5jh-RSZOkA5A1Nxz6ft73qzwIl_7bYAZb1WCzgE4aTjX60uu6vUdiXbRr3u99kPSLKO_CoDz8X7jc8VnDBLhzJaRLUfQ_0xMj13sMY2hcnbWhN8UdpG0UhyQXBas3zozysegEzhLLLZLm5f-5CCbvfnarDKuoMGCHLPqFDouveZ4nF5sX_-H2zZ42HpJi8lI_wMbJ-RhcLllkKu2hygNfA3BcoGJMCLZpipogVOtoWHj4xgomVU1miQxn1Cp0Ia7NkgN9moor_EPPePoyTfBpWTMyEl0bicbw6qE1W-eIviPAb-a_KfxW0RCK1g=w1288-h690-no)
+
+接著選取 **Manual Verification** 以使用上傳檔案驗證網域，畫面會出現步驟說明以及 **Manually Verify Domain** 按鈕
+![Manual Verification](https://lh3.googleusercontent.com/gTuhdfdYU2xQ-XKWY7ynf7iHSEKbK7CsXwfWcpG_F-FO1nOoUsEVZXsj1796bsmBINQ2NruKvlVoOQpzw3IsVlSHqHZh-UBv2x55BrfDIJF9yoUtBK22NP8nZniU9Bk2ceYIyXqwW3liv6jN77pF7q6bm1OswnNjNH4sPi71_3KiCLiRZARBgQZMXv6roF5S0kAsKWcp3SwvfocJ8Lwt59Wsyg5-mth6zVEYI4hOu2qKUbrNfYBrfVHQzWdKS0McvfkK0CIwR0tme-pO9ElpH6OgCA2TRBFQNU8tRGzyjtgIG6ccU2SLQykCXqKUB57oz9W_Qb0GA7ndkdjAXbI2ir0cvzY8pxIgJ09A_Tx8ndiIEGmg7fpzXPuxk70eIKLB4Rv-pP-pDYoIPHNuVclFIr_EArHKrQvNUgA7CEGdeEyXxrU3m7ZBSx4lxSOzRl5JxwhQ5_A7bOpPZ52QG5frqJ2NxwkOk9a3pBK0HMJymDnwvahctF1eTCYF3lyEgKRVtG60oR92mkNP_7eMjhF1vED7XbSSszQbES3w2rw3bSG9p5_CI18vhI9rjizX1CSPzi8li1hhNUctjy8oDY5p_wVXrZgx3WbXKcHUI3sqAmD5zRTYQwnlYYkHFHiE3302uxywRTcomMRV0miN8oecJPqmRR5htv7F5tUOjsPUTSV6tQ=w1223-h539-no)
+![Manually Verify Domain](https://lh3.googleusercontent.com/wpw6Qr2WHZ5ZpBNVTdq4aB-qhwjXI-KgTFuHPOY9jrX05d7Ew5z93MuI83vIS31lYitmFzp7ntc6NMAPzLtNnlX5N50QJqFx8t4dVqVpET9MzjNm_ImiwCjMahvaqY8l6AxiVlZFi8tINt66Z4_9xpN1LyKsW-6pE2zX1DkyD6bBJYzjXWDobGewU2lNlRryEiElJTt3VDRHY3W6Ek6YWshkz83-VZki_iblnBZOcZOiMCXyWzbuamRpwRe6SgI1ejKabhFObz-vH28ywjSbVMBqA1ArAy7izeg4Rmhde_lSlhPU8UG0j_oULAQfbC23giHH427mXlGTR_k5qRN8Td9_4v21VAGQCjVK9MCiGPdYWRThGKhyD1pJFLGezDP1jyVD5DYJqZ9YzE1ixHxQE1x6Yz5CgDX0s5TOdRYgPIiq0wAaqg2OpodFHtg9OfE3O6n6_Czs5gS4PQLgnVP4n6x52SXpo9cT_zw1W3kobq-KZPA4FoTGcG2OCET1LzAESiNPXy0EjyFw8DxWmcq1HVvKzJCzEMd_N6eVubBPzFzGtlvhxCo8Ss4bLv0DdnF7GXi1BPX1IwjG-23ZApiFDqgafi_yJtbVDpAi8ZZe1cJTQjlgC7MmI3KGOAx9dNhAh4UH601HMaQ4D2IBi60aAx0v-iAjHK-yRYcAR-xz_etQOw=w1257-h385-no)
+
+按下上述的 **Manually Verify Domain** 按鈕，會出現上傳驗證檔案的教學步驟，要注意在完成檔案上傳到網站後且確認連結正常，才可以下載憑證，不然連續失敗的話，會暫時停止申請資格。
+![Upload Verification Files](https://lh3.googleusercontent.com/dYWrZzVSZU2stlyXyQ7Gu_qHlKWFErLcstfWjmrkAXwXGDyyFUXHVMx2n7x28xSKHuW1BHn_MsvgtOYJg83lu9upZ1YV_irFEdPvRng32tKOlm4xl0kKfaOGfEP_LM6T7ZRaLQwCesmJmtTQ61cLcutfhqI11I-1mLxpGp_mPcHQTokP7ZWLIdiOa9L3xEHU3Ygth3-J8KHsUu7F6aH8LRiDqX8uok-g_ZhyQkFtdGpFc610uxw9yU76jd0-HmD4FqE0bb3vstDXXbe3b-sxhExw3uhLVR0hblAic56YPIqh-JvHlBaUVN4UB_-GEizwoadM-4HHzdWrXDRdUXg0EBF-DmpPVQIWHcGeayuRnwc1979PFBV-7498L_IiJhSlAepJjpBiqR6xARwSix78MjkWVS337rGc_Q3YaEm75ZUovy0-q9an_2nknElcN9mBhdf5b_qV7jwkB9fxPfSiMRqvo8col7A1P7eI18ypjeRMckqRkgwCiv33SoodjF2loyxerSZnCsHgNhzaVO45_Y1CqZ474FdtymXK0iKp0ashXOnp6l7Otov-JmsrK042cB7zrodw0C6ojcAEi9sq-ZPGYDFh7YgofRitAaOtTBGdf7QiL0NZffT4-drb8F4pKUwFQxQa7rPThpB2q-qHLI3Gg4-JS0vSJG9WpnX4T--1ow=w1247-h631-no)
+- 先下載驗證檔案
+- 建立資料夾，資料夾名稱叫做 **.well-know** ，這名稱使用滑鼠右鍵會無法建立，會出現下圖警示；
+![rename warning](https://lh3.googleusercontent.com/EZkWvWOMjBgyotsy1cgsT06vGeWrd-PiS_fLFyDH0kfSa2zJYmS-ENf5JI_8jRtUrLYaBBYaUCoBQqvn5gvbpIl8ZPm1b8QB0QvZ4UHoJW8G894qohVdlG4VWQ_N5FIuNXC-rthSaSb-uXxKi3C5KwstmxV6SxG9pHyMtJ7AnS1a_s0L87DYZ8HEhCExMivFFIcDtdzZXyz3I7bWa78BGe0UztN4Hsb-rBYfuFMNpxftrdfSv-YkLKJGL6trbW4dlV6J07FaQIREunNCjDyS352X2jRznQPtX1rrl-A0T9JelutjaS1aDW9nNA3dLDOGVKx3rWCB1jrVMHD_M-7QhFcJtUfFP7FNFcTcY9JogwzdciJya6G4T-tpRtZ-m-D5EVJYPi9nadHn-QWyXNU7unp__mbcY4s80phgRHXG7fAS6XYmX6Kum127LlottFMtt75iV5lCFY2nYKKDbA-q906ZhbYfEJ3jxpoeMU1vU3ZbInxDLlPYxjL8r38FoUasbpWxwxGG6-Ej9XNpwZBLYGYWt4cTBkUqCFXo7NKnDTYty8gGuGeed1VCAEso-dNG9zf9dTD_XeBeXQNvCtYlbOiPinmJfCNDIyJpI5gM0UcD8I84MlXNx_cSw9ASgYu2Z8TDp2TdgQCmflkUxEyJqpCt2pljrlzp7ysYMi_w21o2Dw=w442-h156-no)
+建立方式有兩個：
+ - 使用指令建立`mkdir .well-know`
+ - 滑鼠右鍵新增資料夾時，資料夾名稱命名的時候最後多加一個 **.** ，變成 **.well-know.** 這樣就可以建立了。
+- 在 **.well-know** 資料夾內再度建立資料夾，資料夾名稱叫做 **acme-challenge**
+- 將驗證檔案放到 **acme-challenge** 資料夾內
+
+接著將資料夾 **.well-know** 放到申請的網站上，這邊會碰到一個問題，那就是 IIS 無法存取**無附檔名**連結，解決方式是如下設定 web.config
+``` xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <validation validateIntegratedModeConfiguration="false" />
+        <staticContent>
+            <mimeMap fileExtension="." mimeType="text/json" />
+            <mimeMap fileExtension="*" mimeType="text/plain" />
+        </staticContent>
+    </system.webServer>
+    <system.web>
+        <authorization>
+            <allow users="*" /> </authorization>
+    </system.web>
+</configuration>
+```
+![verify set](https://lh3.googleusercontent.com/5RFCAg5eO2pLtW20V21BEuAcFRPQLzipUHy-XauVjAHx2IY_lQZQ_nS2COWcvK7yCgZHyC5NFKwl-BYn6HTxFfG8UVzO7CGaPS8-cDGxXeTR8CTZpsGHjsmtWWRUUmbytQwbRmiYtX0mDhoYnf6Kk9WFtjvaFTMe0sSabyLRKP1a-bzV0RrgVV2PtKeIPA_Wp71e9IAz7PagvCGMUgajmKBGP325hfZobNwNMURyUPQE1-ZgWWojKpXt2Xf4udj935s3Ky2GtLzMqbFvuImLp-JfPZJ-qe6_JaPh8q1MjbpFiQC6eizu1G_5nye7vsM_nIP-fAL6XQi5UJTGNrPTQ428uoqQVJLFWtzJE0FWB5nrIJ5BvZAyAReIXqg4ai-sjyILGEfgquxgqCsAnBNBpOepH0l8ynHjo68uDqAxtpUyBuHpVi9iE3eRlLpJey6m4off-XE-2w1D0HA9hGEA_UTTLW8FHGVs56UVx8jDoXZ6Yaf1jFH6N8TkndMGa-mFq02foIl8vXeM6qBS2g1jZFY2YOfKiGzf5_kq2gf53h1KPSiGkiIkLpEzYUJseypvG9AadrCgMzT1KETRz4N65cpH6dMw6jrU3fWDpf6cpkrY4GzW9qb6GRWU4h_2abGsLNSv58MjwPh8xhpL0tvTj6AgX385_6z3iYiNyi3z4MYFjg=w166-h75-no)
+
+這時候回到如下的網頁畫面，這時候可以點擊 **Download SSL Certificate**
+![Upload Verification Files](https://lh3.googleusercontent.com/dYWrZzVSZU2stlyXyQ7Gu_qHlKWFErLcstfWjmrkAXwXGDyyFUXHVMx2n7x28xSKHuW1BHn_MsvgtOYJg83lu9upZ1YV_irFEdPvRng32tKOlm4xl0kKfaOGfEP_LM6T7ZRaLQwCesmJmtTQ61cLcutfhqI11I-1mLxpGp_mPcHQTokP7ZWLIdiOa9L3xEHU3Ygth3-J8KHsUu7F6aH8LRiDqX8uok-g_ZhyQkFtdGpFc610uxw9yU76jd0-HmD4FqE0bb3vstDXXbe3b-sxhExw3uhLVR0hblAic56YPIqh-JvHlBaUVN4UB_-GEizwoadM-4HHzdWrXDRdUXg0EBF-DmpPVQIWHcGeayuRnwc1979PFBV-7498L_IiJhSlAepJjpBiqR6xARwSix78MjkWVS337rGc_Q3YaEm75ZUovy0-q9an_2nknElcN9mBhdf5b_qV7jwkB9fxPfSiMRqvo8col7A1P7eI18ypjeRMckqRkgwCiv33SoodjF2loyxerSZnCsHgNhzaVO45_Y1CqZ474FdtymXK0iKp0ashXOnp6l7Otov-JmsrK042cB7zrodw0C6ojcAEi9sq-ZPGYDFh7YgofRitAaOtTBGdf7QiL0NZffT4-drb8F4pKUwFQxQa7rPThpB2q-qHLI3Gg4-JS0vSJG9WpnX4T--1ow=w1247-h631-no)
+
+點下 **Download SSL Certificate** 後，網站開始產生憑證；之後說明此憑證只有 90 天的期限，時間到了之後可以重新申請；
+![Certificate Successfully](https://lh3.googleusercontent.com/yYf9eYlykyILy1V5K7NGuGWRhHFzNxjLLs02zsdDXeN0JA4ztOoQGDl1BFMCCnypOwwPjp_b_uwM4wngv8UC2jmQl24rDGgt4xPs-5pFaMlujkSBD-QbdVPVdnSnLC-kWeWcrJUhqZ4NlelG3tBr5Tlil_BnIcdXEF8yfIJ1NT2-U8bRs82HhYpdLYSOlSlmqGMnm3bIwYW3-tptA6i4jCAgVjs1s0m7x4eaVX2PzB7_ZQ5U84iDQJbR9L8JWQmioFzMhVZ4F_x6qn_txIUsfawHIKWry0i7hNHz0EKawfBcheEmxIK87bMLvQv_KTOGiyb9aTwrZMA4a0YK8-QxrMwS5vXf4d5wfd862HW5TF-nVUT-jjR5vuqKxNmd27uadfjh77Wcz8u9HkzJm0eO9DdpWKzkkPSdAI1aQ1FYtazlaBgGf69nbYr7PlZSrPNt3XKtHLkcg0A2iNPTtz693CGYGzWYxPd54lCYCjOJMqlG6YpgUPhnDG4W1trNJk2qdqZw9BZyDdcpwLoluGA_BxwlyeReadMUEWUH4rq-XNP0XkGyQAs7SVA9UmucPi2v62reJtCQKX-A168mhVcwoQo083xkBQhbmvbyHnwjyH4YpS0p8e-nGZ6KgKT6R3MbeCpYjyLEMENr3KcJPbyJoOpq04RwXoyRe2Q84h74-H4S8w=w1316-h257-no)
+
+另外會說明如何轉換憑證檔案格式，例如：IIS 需要 **pfx** 格式，可以透過 **openssl** 工具進行轉換(此工具 git 已經內建，請搜尋各自的 git 安裝路徑下`usr>bin`即可找到 **openssl** )，然後設定憑證密碼即可。
+``` bash
+openssl pkcs12 -export -out "certificate_combined.pfx" -inkey "private.key" -in "certificate.crt" -certfile ca_bundle.crt
+```
+![pfx trans](https://lh3.googleusercontent.com/kFK4mQIjDLPau7GnyHxj7D4Wzfe2iVr4kS6b2_3PpRMDlsPSBgnYOq47BOX7ylZEbkJImOsPex1V4Aq8Jhb4f3D24QU3qjdqbWsEGPHUghHNhnLKnKJs5NylgY0d85PajkUv2ki9n0jkpmlOdCujWMOYXxGX6BKeRqD58RYrQag_2LjGCMgua1ekv4R5v03C-PqTZuI6X6r25oq2M100OGRMwUYPBMRFp9jG2iMZGLeJ0XHQaHreXQgNeYUUsUjWFF0hw84GIiBbgmakFf-A71sZTMooFrJ6sFeX12POwh4RHBfdPM4ZDAJAzin7PI-b4KwndCADtWbr5cPkPTmyPM7iizVvXKyj55UPn2wdndE_zp9QaQgNbSQ8GQmR1fHvTrfpiLQe4Abs3gOjvqHePoeNB4XjWhR3zj19Jv0e6OO65RzlUAzGI54Z3DivDY10acE_JKMyczDMVLNNg8QPnMBeVBvv6zyiF7wuavC77L6g_Zg-Niui9FLr-DZbkmYjWgg86JEtinOAhJ-RoDj-xAYa1OSNLT_oPo57Fhe6gPimvf4SQS1xa1vkkmJwc4JrhbhO0539Z-c9ZvYgdEoAJHSIpLyJrs_p83YOErikbI6N1OcOO54qObKocx8tP4WAY6vOV_X0egy2dgPgYAl-BAHkXlXn6ta4nIQtAAqmr6gRwQ=w603-h207-no)
+
+轉換完之後，就可以安裝憑證了；憑證安裝教學在舊部落格寫過了，就不贅述了。
+![Installing your SSL Certificate](https://lh3.googleusercontent.com/lbCLwQ4qrFAq-815we3y_YU9ZGvI7rfZzKwntj9CpET1Ki4DSu5KuQbfL3w4fIhCpwGnsiIwK2QBn8ux-JPNptrSKN1U36yPYbjNT5YeMPbcr-Rqod2TVmQL0OfIwLY1OvQJCCZHgRYoGv-59p3K7L583FBqiHkVlq3O1JKvouoKGEttcnLVKZrkEoVdAPlhu6ixaTf_K-6NYdxPxxlRgMXHui2tLUcB57vCcnLAt9nhq7AcZE68P0Zgz4pmOyS9SctCrCYfgJuRskrpSV2P2BUm7mnAb_c9c1miSmGVhsDeBtWEECpW6_Mm0mMjsOhoanWLIvm-iNn3wP-1UE-aige8lLiGhpofYLmMB-4z8GzL_0tFmW8h8vdOoIBRSiRTjePrpbAtqz_LJ5dJVOVJRvP-FOBsOT4isa3Vcw7suQaWg5jTCHdr9_7bkb2wQf7fjlz4WO5s0gDnrpxiziCP_8R7nr-4Fn7yHD4P2wf7laAwoSPQn5mV5lJXquhzWwuJbd5hKC6JrbT8nw4d3gnYsJ2qfL4QB8ELhw-RBO7B-6Zy4PgAVmxlr5ntz5sSOovOAJRssrJmJ9NrkJYG1QPS1Fit8b37eegOpdYdE3NreNUmi22rYgIaB5JPKa2dTtOeiWPlfts2_J6dQldbCkD6oPY10gmw2oAqMG6ozwSvTIZr1g=w1248-h533-no)
+
+## 參考資料
+- [保哥 申請 Let's Encrypt 免費 SSL 憑證一次就上手][1]
+- [保哥 Let's Encrypt 簡報][3]
+
+[1]: https://www.facebook.com/will.fans/videos/1760703873958749/?fref=mentions
+[2]: https://www.sslforfree.com/
+[3]: https://www.slideshare.net/WillHuangTW/lets-encrypt-ssl-certificate-in-action

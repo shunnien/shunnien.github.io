@@ -1,0 +1,148 @@
+---
+layout: post
+title: 'Octopress 加上 Github Pages 移動部落格到 Github'
+date: 2015-11-05 03:12
+comments: true
+categories: [Blog]
+tags: [blog, github, Octopress]
+description: Octopress 加上 Github Pages 移動部落格到 Github
+---
+## 我的環境
+``` bash
+$ systeminfo | findstr /B /C:"作業系統名稱" /C:"作業系統版本" /c:"作業系統設定" /c:"作業系統組建類型" /c:"系統類型" /c:"處理器" /c:"BIOS" /c:"實體記憶體總計" /c:"虛擬記憶體"
+
+作業系統名稱:         Microsoft Windows 10 專業版
+作業系統版本:         10.0.10240 N/A 組建 10240
+作業系統設定:         獨立工作站
+作業系統組建類型:     Multiprocessor Free
+系統類型:             x64-based PC
+處理器:               已安裝 1 處理器。
+BIOS 版本:            American Megatrends Inc. 219, 2015/5/4
+實體記憶體總計:       16,264 MB
+虛擬記憶體: 大小上限: 18,696 MB
+虛擬記憶體: 可用:     10,390 MB
+虛擬記憶體: 使用中:   8,306 MB
+```
+
+## 安裝 [Octopress][]
+
+### 下載 [Octopress][1]
+請先到 [Github][1] 下載或是直接使用指令碼工具，透過指令進行，以下是使用 SSH
+``` bash
+git clone git@github.com:imathis/octopress.git
+```
+要是使用 HTTPS 可以採用以下指令
+``` bash
+git clone https://github.com/imathis/octopress.git
+```
+![git clone result](https://lh3.googleusercontent.com/tkTeuaoXTnUkQnFa4un3RB44ARshsLAd1zJL9M_McHNlN-wjW0RIaDxIzQZ1fIe8k0_0W3qGWcKGW13NiBRuCt8_uq4M3ipUK7U7KelgreWpF9e9KGa36Cfv5IstumS9datcSoR_9iaeIvqBCrtFskwlSYrUkcsilt5J9BLZ14BML4kkYsUi-ThDdT4HkNCbBWniHwtW3weo8JfA3o2pynLY-7PFat3F1PzweoFkHygqx-4kEbHvCZTmHPk1xxCwG9yjPNjktGbNO68iDQqQZGExtxBNw5WK48zlJyhwgY4EPEpKSFtHK-PyyDGqLByjy2CaY5_26ju-eUX6HDxw1XxAHEfIYpjCw9EG1FBThEyRASHLZderaQwwEYgYmaSDxBpTLAvtiuCPwqdPhXQ5FB0viLYKdXCnaPZ9GkeHSj4UaKXdOZfO2qPHb18IBPbe9t8fL2Qk155HL8pIpDGu-T3_2s9Az0O1qn7FmgJB15igk998v5PztjW5pV0Q9KCx7bcBrtlnou966UrL2yNgAEIDdTMirI2LuyBRRYmpeietJrzIHlF5glDCbRScbVy3KAiNxfxy3hayIF6Y6wuz2InjaLGUHviIWuaHD676YAlv2NxJNeNN4nhTkCdp_Q-srVgBqpcm9NwJJy2zSFFnkWtBst2DB4P6xOvsT5tUgQ=w641-h175-no)
+
+### 安裝 Octopress
+首先要安裝 [Octopress][] 要透過 ruby，所以請先安裝 ruby，之後透過指令碼工具進行，首先進入剛剛 clone 下來的資料夾位置
+``` bash
+cd octopress
+```
+接著透過 ruby 進行安裝
+``` bash
+rake install
+```
+![Octoprss install result](https://lh3.googleusercontent.com/RnPB2PtoJl4dByY4qUqDJncdybXxeJhlJnRZzE-40fO4im8_QHHOt4gaaPj6TdV85CeF_vNM0XQ0ByN3sKN4FSKzfBDofjSKAca4UYU3oV1i5CZJ80qiIQ1oM2Gs-u_3U8GckosXHq0pN3RlrynEEjaxeorWxruJcjOrnCHLNmhL4k7Bi4rs4AgvLpyfM5K4vzgXdhv97XQulVTDqmAdI-IjjJkKd_VP8axgui6XwjHIfjSvdkq6kgvXjvi8sQEAwa8vT5QsLF4i_25UyBzEc174gMsm54NbU11m9YzqBgtmfpXypWBh0oSLTEGyWM0zqR5k6y5mFZcdXns2DCLxCsKDzEjSziAhWk_9hoJKQP2D98Udzk9uWKq5KwOzGVZ5bvb7FWFW9XHnLQHwgVEIs7Wq6S_5CUKn65ZugZHXJkeBSGeVQlXZjZ2u2sVDo-Kp0rm_Dm_RI1EnhrQst6C3RzBPdhMPoBi7-om0eaf0P3vvsD2sJ0ldBBW9_xNBwtWt4DmUg1cjisuOQa6NXkAFnNcB9wXBXyJT_UXwXn0YYSYyQ9jgfmzXK-282kW--T6_WZPUtltnQrCT25i3XLA5keSg4LyvF2sMpMVgCxsxv7ajQDJmfeCem2cLmovSNQDO8j1grdmBhx7G5uwzm1qgRdHsragqv1-e0PCrRmOUCQ=w858-h239-no)
+這樣就安裝完成了，可以使用`rake preview`指令在瀏覽器內觀看，這些指令都是在命令提示字元內執行喔。
+![rake preview](https://lh3.googleusercontent.com/E1EP_O8WK0_JWu8H7vNttlFE8qTSKZjh-rSKulr2OHyKls6m2cj1mP35kVHy0zcY0JK4Ztgl-Gf1C165HicbQzXN5ZolHmoyQe4uwwaTn5zC93FwLvY5R_Ph9cEZV2rBzpWFmgzzSAOyBSK67DqT3nKk7R7TXKEO8m7xlQPNOv0BDvNQzdaTv5z7jzIwqdHc-HlyJ5Zbmj_HfvRj1Ct3kCs99akFDUN4WHQLB4MiciCSRAldBzsQ4rG8G4MhlJtAtEXLeHi3z41ttg8SCTGyUXK4nqOfSi2v3NpT-c2WClhu6u800rujNHS9dm-NCS53BVELHh-r0qw8u83z-KMv3VmWW_MRGJWE1xRbUPBRfIGDLYVCB6RVPE0LtHrKl1MPBDzMoj9FoVvnCg0Dd8zmup_7b3JqcezyUvRIHwhsGXHO6HzOm9V7dLUocYg5QJQwWII1vNqRdnPY63baN--dv5fvM5Gyzu-r9LZOSeghjG1DBpcL3r0PYJ97VAIPeAP9DdJXtuyqXrEtihjyz4WxLC0IzW068E6RRWoI8ZstfPudFUEgvX85Gg1fhrmMH4qqBO2Ddu1d2KMHKlKeSUVrb4b5k7tdY4cdgJLqMYR0fmj-e6kq8kpusZMNUBXA5R71vvprfvCTW7Cos38ggVpd8ek5YZtbGMwcUsVB48QsKg=w931-h528-no)
+![browser preview](https://lh3.googleusercontent.com/mw_k4i_PQasGUQZOfD2sQ9OdFA9MJkbSsCH5TUIz9GuljMwszQmwwFhKOzkwtuzPiZ04I3o6icoIlf-sY4tLDvRGip-_3IRq9pJCIMR2Npx26bnJm2AtBaIDb42dOUpxgQtUMFxF3HS8q1VmGQLp4dSnY6E1atvktwV7QMsEq9opk_P-GyfG34X9DueRMM-3s3sWE0W4YU0sexaomvcnrkRJfSCxv0SibfgAiLX0KQAPC2_cuYVrncn2ubIA00_HbovzV5CpMB9qRFfIriU8SCUhPFi6HGCiklEkDdbSU3lniIfwz5TxyvwNWBIKH6xHVyzjcypywXXBtod_ENoBvTwcD____JW7eAN-Zqm9t8pLNNad0b8qxPVlJ_gyJ-9qYkpReG2gCCvaH0OKl4Hw5Nps_WAa45TkUG-QWVcnfTtrVn_7dNgFOCtpvomFOT9N0SXZ6J35Teq4Mbo_-sygUcyt8OTDNoJWDgvrcA0c2SDo3mw2zwT3ofBWj014Jw1RidafUONjOO3TQ6dDXsyVESUf9bwnFOfjwolPxFP6Uwb_51jCDL6Ex2YkWwoBKNW0W81cglzps1rJYYoUBFz8ogf6MnbokT8g3mGb7XuFCOiZplJugIJPQ_vP_Zo8q-Yhtj3e2HC5BBAy6AUJ-dXNk0ioM39TxJYYGVvDMMCK4Q=w461-h496-no)
+按下`Ctrl + C`可以終止執行
+
+### 建立新的 Repository
+沒有 [Github] 帳號的請先註冊喔，這邊都是預設已經擁有 Github 帳號。
+首先，先建立一個新的 Repository
+![New Repository](https://lh3.googleusercontent.com/tRL6ghH0ns9uJhF7ncNGTofSSfI1ZvxtK4L8rlauzgRp_IJYU3ZUrKpCqXr1LNnlZHSgriZg3YfBk-woVYY3mg4cAjs9vaRDYgWD2cWdpMVAiYYQOxdxphNfASYYotF_A9SYkMKDkdx9mtGGXRserTljV0WM5Z4HSVpmomEJee1CCeBflGoh1NXBGPIh12FfqKf2AObzOBXB3kQXOyInLv0JnFHEVGogtCgxceE10ewTIzP_XjaZGGZnvnpOxkno9FBQ-oKX5OZWqeOQ7On8nywiib1nLqv4nWB_dNHlYiXLUsq0UWj7pYOxR-LOYXbtf1-utOtgyNzJ4gGi-8Fs7UONRNvXd7c8tGMLYYS69rhOhpHd1dIIEIjiAtrl0vKD6T5tUASVdIzo-0xXLR8uzhCYnAYa4oDJj0gwpIxK9A925qv0H0Y4TyAqrxhF9ohwgBEVPMi1huevkHksk7GDyJDHVWFHY_kL1VxBSX7oPH48546JV9tFW5gZhES_GpElCih8IDX5qWariyH53cF0dsgoLpKjR-1ubWa-5cwQNXfldAVLfeOp88Df5TAuDX5aYojcTQ9fwQHlhfe-XNk5s1ykcvzk4MTLfB1zC8TBQvIJ96rYd3qInN7Bnik_w4d03eAQS3iHxlJTBemVHfkHmJ8Y7_6Wgdc-_0lLxF-YGA=w301-h198-no)
+這個 Respository 的名稱必須是`yourGithubName.github.io`，yourGithubName 必須是您在 Github 上面的帳號名稱，然後建立此 Repository
+![Repository name setting](https://lh3.googleusercontent.com/Na3s66gol5E3OeqRa6kgp7nLTeCudK4SsRip6pOddbIweGkmZIPX_qg02hFzDai_5eXyJNNfMe_aNoJAVNDB2HFZjHskyzuHAhkpl6iL_Qz6emCHGUagVk2qB9cfvmBmkBMy2zdoy_4ZrMI2lBnDL5XV9PL1E7EmMM_BMM51_862rgMXGmlPWALpFV6oO-oKpAZ8R7uI6wcgS8lFugazDeoeV2Ns5ysPtk2ySxkPm3e3H26rYN6iI8T0TmdWfNT1yDhZD-9y5NHLe975ss-8NEVbCHllxpC19Pjwls9kOeQu47snuRgRDFbp6RjBDxSyVBNcYdZgtyHmXJJl24ywZZHpuZDdsnB1MC45MfvAgu1dY0x2dkyEbRNML8vKDh3iPzHClZToJH32sz0y0Yvn-2k5RWPxT0x9joyHPk4Gn18XZf0U0hF65Ka1Q_31KmTGmmxHbSEjjmw6D3O02rEYAJ9X8Xo9gCJBNPs9YL6jze7EVtIKbjpyqTSDj82VzMkOIAsHmz4B8vOeeFIxW_FqqhkpkkBrZzXb3VzvVYe7x_ynBPa_X3cHduzR0_CTh_eincqz5Ebi4PvSySNgLEVlF0EfkorzqfawyJ6Mzo4h_G-5laLUQB0ujCa-eMBwBABeg7rWBEvKcgWtanCfE7_n_tbU9m-LHhvKpKr75k5_Qw=w774-h706-no)
+然後請不要關閉完成頁面，等下會用到新建立的 Repository SSH 位址(使用 HTTPS 位址也可以)
+![Repository SSH](https://lh3.googleusercontent.com/bmufXRBy3abvcxn24maYjBi8sPUSeBLSxaE1UP0zPSFHNQ_LQDGvxQezrmdN7lULRwHP271zEFSok69BozYXXlfvooe0hTBk0gRHFYnLjEvF22dbjrvGdSmj0pFyoxm9xcqWJunFvIOWpD4Xt0JvwKMoPkN4EFBBWvIZ__04bTolAqDByxaD__yrs-1g-2Et8J8q5tS4gUticdr4XS0RKOBlrXhczmvmkHDw98FPzhf1-pQWrPDP_cAjl-UqhMdTuSU_tRcLyetRGT0MAnEuDZOz5IkoQJTcFioYGMFgGeHNrUD6dWhyTvTLZQ0wzwpjT-i6J9da5bsUQzFq8BMjEOwcGta_UFOx6caHAs3oFDxwDSw3ur8Gx_iv0QKndNQD2Qe8wHMawwLLWlckBr94IT5vjUju9Kc8Aqj1ugx59d3cWT-8PvhlafBsfKMIDkvjW5NpYfs2cMvQGOh5OkDt-Alijvgy1lKr8avY9lPheMm6DSusOJDypCLIEI1CDZS4y01RS6X0qDQn5aHxz_H_EP-90kodkcb6Fd-zlJaJdma9l32GI-uBKVWf7soLVgUSfzuxT5okvelmz85n2JCzgdYKILTccxn6PUvD8Nty0wtiU4lysW0BtDtdUQ3mSyBtCBYxdpfu0njlKi-FbSZ4oqFsiVF0uyVTAe69lfMx6g=w994-h181-no)
+
+### 自己電腦中的 Octopress 發佈(Deploy)到 [Github Pages]
+繼續使用命令提示字元，必須在 octopress 資料夾下(您所 clone 的 octopress 位置)，執行以下指令
+``` bash
+rake setup_github_pages
+```
+![setup_github_pages](https://lh3.googleusercontent.com/MYilouYOhoIIsy_NSdquzc6-wwOp4qKBbBlzXkBUE8hqjzx8kCIKNjM8Q2AZ6rFTC638qwdQ7ZbKxh3TfskE-sC1zpJwbE7si4vG7JoBjgbM-IktKU9W8KAvgrEorrd-XxKnoyWfmgSJQNmSaOe3CvwKYXtzHPbGWUO9bwtZa6D2BVNfHHt2Kma8hcx1EcTg5JoTNMdaCW4B3rcFGrcpcsFutwG4oVyxqmAq7PppdMmvS37OVM2b000xlTbDzG2X9kw-AOezv8fXcHb-0EciA0-248uE24udy-unIXquHILaDFcbyGCtWCvJmw2yp-J7rd1xUxEEr2UXDqzAM14TYP5qgNjwLceWnHQcRCzQcLt6EhmOBdF9jYyEoBHa1AD6eB-uq5BLxeY8jXKprak7Y5jKMUA_VpHe0RkZ2RyTNKf6cjecP2AkhdQb8BBBtuoo-8ZzkrDrgm6Rhe4uptWm7R5kfpjfHc1cA8Em4Y_kvM0jl1g-Uvidarnjw3k51Af8gKlwX-njRjxAop5Jxu-fRbLop8kMY0ES_lS1qL3OIFcZSWh7Pm2HJ0dH2U3D9d6saHTdRutzwo1fFhy0hpgT2DC_SpQW6QWHSfzokw5GYq8J46mE0bo-Wu8YVEUzKh4yoLJPoemszW7jN_QEkia_KoAfQVE72x0t2sOvHa5YUg=w860-h429-no)
+接著執行 
+``` bash
+rake generate
+```
+![rake generate](https://lh3.googleusercontent.com/fFA9cF192Uo9EHrcl-Q_IeHTtLWvfx1LjRHlDIEDYP5K6GU3NxRIRHY7bdhzQp0-ByxQOkrrD89rptgGyYAKSIwXq9WhdJ_4DerNLYywoBQljUJ2MVWkeaauRPZAf6Kt9XqOWmi8A9kujJBtpKWzLqmy_KWYEUq6j0WV-w3c2RbyCPw1cpYlZBHp-u6gAITWi75nSbnriHV03Qb6Yr0Fko03KfrHFGOrJKOQ8rz2mjwwmR9ZIP81ckTjEln6IABUylM7QtGzHeTdAL4JUSyma5azmY-rhqeI9QrctbimQlZw7VNkjU4Z7G6hJKfGlAg_PiUzcqmUHYQ2c5RGsVDvyLE3lJTxB88aL0851_OqpOO6lM4X8gJFg5DrECTgG27nmfCjhnEUh3tXyqHaXz0wwq7bO3Y-Tc1au9XQgyC-5TFSZDd6CmdWmGNX67V0AU7588HmxB7vmDzRIAd3O2m6V1t5zdFWm8wicj6jnKcS5YRvTquud94gBWE1DD01CMddawvmdzNLKiPQRjrQVhSLlZUmuLpBVEDWVzSzk9ETlCz6MmO-CmaTjl9MbqtnRXxWgz7iLlPJgDOhqcf-qIswq0AJ7KpJ1sVZmUSlkPLHVSHJDujXSWCx_708UNyK3iftvV3YWLhRaHCYiNok8ldlgu3orh4ptXMmdBNddU4pqQ=w486-h232-no)
+
+完成之後，就可以進行發佈的指令了
+``` bash
+rake deploy
+```
+![rake deploy](https://lh3.googleusercontent.com/RPuYT260iXWe3VTvtQtq2xbmXNqk11jd1wmEjzky0zTbmG6zQ2zCTU1SBOFGxS99aM6o-tpfc39eAjbpXTOJG-M4aY87PdqDlycPHaABcnSrYFHEunze4PInk1KqK7Rqwh_YnCAinFmhtH_cy_2frAaLvNs-nUKE1dOkeIQeaDheaIcLQ8sDT5z4mbMuCbfc4IhhQ64ubIqPw8awBzhhIFCa_arC69n0XXTlqUGdj-xt9UPzGKF9tXwiiqBtvu-jiBYBKR8biFLlG2Kjg0wOQxxESqRpQyjq1C2i_P1kTSi2xrkaiijzmTy0nX9gHrmKDAU1tZHevLA8VlMMDyPwJI4dgtQuqqEp4R3HXG8PJ8HmtuPSVPEaMfHpr7CXku4ikrzgXIi-B_Fxirll45EDOrsTDpc35LRE8BbRVsViFzUGI_PFr9KaSCKyWZPlP7AhoEIU5ygvRNJW2EHY_3xXrQzChGwsZbO-PaCOyrnUuubJew0e--LiRRBf01kf7yqydRNMbsp8fLJuXC_kOHUFzTXOK-7OUi6jore9fk1HEvAJwMi2qZMUxp0ySy-JzM45ltRhBcslSwHw7iFKONxw2AP4ufE-QwNIAT0Fc-IwngPdaYL8O4JJhxkbUTqDys7_N-4Z7NDL-tHZzT30dvJkkDhlmAiX67aTchM86QQf2g=w466-h272-no)
+
+簡單說明一下，這幾個指令，按照字面應該可以猜得出來，generate 就是產生頁面，deploy 則是發佈出去，setup_github_pages 裡面包含許多設定，有興趣的可以參考 [Octopress] 的說明。發佈完成後，檢查一下網址 `http:yourGithubName.github.io/`，yourGithubName 就是你建立 Repository name 
+![deploy browser preview](https://lh3.googleusercontent.com/Yd4nQCkIVUTIBqaNh34hwVLqknP4QRFyY_paB5Iv_fdM9Tc1Fy-YsQ9W2Qaiht2CjWRj3Z8-lvUzFdzWpxNt7pb5fewrvm7qRqdTOtKoLSmKeV5pzf8tUqgBDclC-TeT4V3MU8s_rARomvNAVF_WQioUy6pQvkE0KGUer8Ud9L2TpL_clyursB3vgYCcpGhqXK6trZ9fHKETiAAXy3E8mPmUPBKsOkpx5NAg3y6Hv4QqTeQzoW4JKVrgaZ7bKRGz_JEywtVjMLnj2scGwbrvHpAZ4ACSZc9ibeWqy6MnZxvw8AvAnLe9ggenZZd9n2ldueTRPLcC2aMvb1dNBH20L59kteRd64pARCPReC9WYZvbZtc2REnVm5DFfJ571K9K8HfqZxNKmVJBDXSp2iX1GmE6kDf7oh2h2OxXeXA9irIQXHhxTYgrbnip5xhzY7dfYKN25XDyiZgtYIO8F0QkxgSE-bcWDSNznIx8ic-8QKKcNaaM4bQ8qe0nlGotDex_jf55okMDwWr2Ot67BdCv0ZoqF_EauBSkVsL8QH9oUEVC9oSDLjXrawa9DtTDyyvw_mRvC4zgxDBVGzQVOPTLOYewSRzwLZxAR0nq3--V3lZ13lvewcL0S8IF3rgAj1ytQhs8OGnBQ-Kchj5X6oHKZQeCF7geZ4MOhk7eWm3EaQ=w439-h456-no)
+
+最後，記得把原始檔案進行版控，放到 source branch 吧。
+``` bash
+git add .
+git commit -m "您所要輸入的備註內容"
+git push origin source
+```
+![git to source](https://lh3.googleusercontent.com/y7fzCsqoxY8yB3e22Ner30wIPPR71dEbcr2X3HHJ20asGgTQXm5PN9aWbdnp4jGx1iVn7eoFhVydTBA_YNsqCtkcVSX-6F7eUXdpmZESfyR9PvITn7xRLz78YQcnKorqM77BbufNZGrAsxuL2bhFiNGN1I7A7Zs4NDHD1c5UkA2Z8-CFU2P0Lib3Oj5sNlfuWkIyPQ45-gqqsT8R78SfVDJ-w7Ml_5MY579Jiv_D904Hv3a1JEodwBnQGjkN-DecnGSA6zWMaXHMUyQTL57j0BhBDsTmLw5frLJWnn06qXOgH6OX3K3znI1IQy6TiqJtSI5aqFDFObJFhYDRFBhhxU7D2ejMMEfvVkeOumpHcSQSwtSlEa8BK5SWbnDYkKcUPQjBaG2YsgE7GqXzzWDx5AarqsJpnH_iYmFQdFQx0wiPoI5XJ4nvHmaJ6eZmVmXk6mn04NdmoJV8ku5fQVtfXzAtEGJbZrGoOkeeVIZ_A1NHS94QWJ6joNWJkEUG0ERdyh3BvJF4baf3tDmYzyYQTAxoQyXUCZHm3Fs1ir8xPj_mPxrrR7Vy-z--pmUHVXc2BXJUwDwrTPrzMoNJjjZWnn4P-0jWl2v4eSR72UT3PuMhVBSM44cKcjrujHQunrC9_v0YeB0FBq-4lFlJ7-dzp2JnUzWLhZIw3xvzj9LXWw=w630-h463-no)
+
+這樣就完成您的部落格了，接著就可以使用 markdown 語法撰寫您的文章。
+
+### 部落格設定
+有兩個方式，一個是下指令，一個是直接更改 _config.yml 這個檔案，想經由指令進行更動的話，可以參考一下 Octopress 上面的 [Configuring Octopress] 使用方式，以下說明在 octopress 資料夾下更改 _config.yml 檔案的的介紹(這樣更改感覺比較快速一點 XD)。
+首先先到您 clone octopress 路徑下，使用 sublimeText(或是notepad、記事本等其他文本編輯器都可以)開啟，然後直接修改，修改時，記得注意每一個冒號後都要空格，不然等下執行`rake generate`產生檔案時會發生錯誤，所以這點要注意。接著更動後記得存檔，並執行下列
+``` bash
+rake generate
+rake deploy
+```
+
+![edit _config.yml](https://lh3.googleusercontent.com/aJi7TFi3cfThGCGogRLUKchcCDH3bTIVUlr8M_cCju4r0Q98mbxcZ0UGGjQXI0nT0Z3KYwSAF_EBWdDMsxMyvwcqrGQq57wopH4GldwXyNvpQ7DHML1mSWCwGtuP5IF-wDPTH_5Fxv2L1w1ERR89cnc3VgoEyp9dJAo-srekxgmSjef2KTW5ogSQXUphYnVf9F54wIPIahThgUlnbl2dpK1w5tCYwlMVr6sbfoxET2nro5w_mfJHp0YNiuRmL5mPpvs1OEg38eXOKv92SO19Ng8vyetFuH2TjgAhPCNjWiB_xi3nIMg0u-988GzfTaBMOtViiSI2bqJyvA3xEkJto-0BVlNM8mZe6K2cMxeQKvMilo-2COLqsJULRE8cEnJTN7IBePi37ivXLj1uU-Ar4wT_2Rrem3r28GHdrYiMT7kH5PcZRGc1YmG5aRSDToyWpPSK-Gq0xpCpcWE1ti9RDo5k45AVMTccuWov7fUZY_4sAXNkmPFFvaFjNhi3ecyTWCfLTfXENpEGYWtfPNrJkSZfrKW3ITbF1YM0LzZLh2Fd7fRzmY-1sV6zKxZb2pY6ms_8AsdFLWeqcFdnY5j4cqbL4Rg01o1aciO_v8zMhxUmRdgSmmdiEpxf16D32ZAOXlmvQhT3e5u4oDbP_LLmJjngUKDO7auaHi1SmC-7QQ=w516-h608-no)
+
+在執行 `rake deploy`時，我發生了 *LF will be replaced by CRLF* 這些錯誤，這是因為在 Windows 中的換行符號為 `CRLF`，Git 會在你提交的時候自動將 `CRLF` 轉換成 `LF`，而在 `checkout` 時將 `LF` 轉換成 `CRLF`
+所以執行 `git add` 時偵測到了換行符號的不同，若是不希望在 `check out` 的時候不要轉換為 `CRLF`，可以試著執行以下指令，把 git 的 `aurtocrlf` 取消
+``` bash
+git config --global core.autocrlf false
+```
+
+### 發表文章
+此部分可以參考 [Blogging Basics][2]，語法相當簡易，一樣使用指令碼
+``` bash
+rake new_post["title"]
+```
+這時候 Octopress 會幫您產生文章檔案，此檔案會放到 `source/_posts/`這路徑底下，接著您可以使用習慣的文字編輯器，編輯這些文章，編輯結束想觀看文章在部落格上的呈現時，可以使用
+``` bash
+rake preview
+```
+上述有提到這個指令的功能，此功能就是模擬一個 web 服務，讓您可以在本機端使用瀏覽器觀看執行結果；有寫過 web 開發的應該不會陌生，這就是本機測試。
+確認完成編輯後，進行 generate 產生需要的設定與檔案，之後發佈
+``` bash
+rake generate
+rake deploy
+```
+這兩個語法可以合併使用以下指令，就是上述兩個指令的合併使用
+``` bash
+rake gen_deploy
+```
+
+差點忘了提醒，記得進行版控喔。
+
+
+#### 參考資料：
+- [國王的耳朵是驢耳朵:安裝octopress並佈署到github pages上面](http://wen00072-blog.logdown.com/posts/258497-octopress-installed-and-deployed-on-the-github-pages#oct-env "國王的耳朵是驢耳朵:安裝octopress並佈署到github pages上面")
+- [李嘉玲的技術筆記:Github Page + Octopress](http://zerodie.github.io/blog/2012/01/19/octopress-github-pages/ "李嘉玲的技術筆記:Github Page + Octopress")
+- [生命之氢:Octopress 搭建流程 – Github Pages](http://shengmingzhiqing.com/blog/setup-octopress-with-github-pages.html/ "生命之氢:Octopress 搭建流程 – Github Pages")
+- [Octopress]
+- [Github Pages]
+- [Blogging Basics][2]
+- [Configuring Octopress]
+
+[Configuring Octopress]: http://octopress.org/docs/configuring/
+[Github]: https://github.com/
+[1]: https://github.com/imathis/octopress "Octopress Github"
+[Octopress]: http://octopress.org/
+[GitHub Pages]: https://pages.github.com/
+[2]: http://octopress.org/docs/blogging/ "Blogging Basics"

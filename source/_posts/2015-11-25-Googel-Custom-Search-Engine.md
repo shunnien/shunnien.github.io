@@ -1,0 +1,25 @@
+title: Googel Custom Search Engine
+date: 2015-11-25 10:29:57
+categories: [程式技術筆記]
+tags: [Google]
+description: Google 提供的免費自訂搜尋引擎服務，此篇主要介紹控制介面的操作
+---
+## 緣起
+在調整部落格的搜尋功能，考慮自架服務、[微搜索][2]、[百度][3]與 Google，後來決定使用 Google；但是使用 Google 只要設定好參數，一樣可以進行站內搜尋呀，就像以下的方式，在 Google 搜尋框打下，或是使用進階搜尋就可以看到
+```
+sql site:shunnien.github.io
+```
+那為什麼要特地使用 CSE，簡單說就是偷懶而已。
+## [Google Custom Search Engine(cse)][1]
+首先想使用[cse][1]的話，需要一個[Google 帳號][5]，假如已經有帳號了，就照著以下步驟設定即可
+![Creat cse 新增搜尋引擎 step1](https://lh3.googleusercontent.com/z4Bi-pdr9Fle9iiLCyewJenH0jRnpcjGklNloDOYZ0Np17oMOfwnG3sOpsAtISg2gWq1Ti78EvEjpZGm88l3KXqQ12SCV292dlRSSRsQxV5kmOm0QKMCBwfQn7nz-XdVMu-h3nT5Qbv-rWmz9cxgsjhcrvim21_oee7AnB4SpvPj7uJBPeOjgVzo5O5jmJw6VmLzEsPKV6n05vyJKG67tB8thz2ezdsldBRPUOUQvfFYC2bjgVZg8YUR9ucwbylcJy4tXxI9XCKVRTxludk9g-DFxWzyjgq2X0Kfw4WUOBGBdTIcIt_OCQ0pdER6xZxxPdbk5utXPNH9b-ASjtmo8wFxFhTpNgdPq7vsDHMGeIRewFLPBvPQFbfBW2sFPfCWOgPXdBNzONocq1EqkKRKB3NZr6BvZp-Lo9km614GaGKuOdk48xY5x6EgZLJBPUyOgSoJYl16oh3HGqXbIvNzx-OirJ1eeFby7GRyPot1h5t9QBi67ebVEVrRCuYVSfv3_x71E2PVbL2A7sir9fZlBUdiRwK4vjFukPkTD4tEGccY7J9QqpLlUWup8_296Tecc_U3jQmU9EVv8bKo-B6fnViLLrjcEqBSFBV6OBXgypbTPnJOK9u_8d3enId-tJTsktVUfalBEHeaeEINaY9usUwP3yJzeKy188f_aGz6sw=w469-h280-no)
+![Creat cse 設定搜尋網站 step2](https://lh3.googleusercontent.com/TJ4_HGsjScyB_gF0HsgBUU3nJkJ--aqfQcumLELfv4LL0r7NpYNMPE_9dxYe6P5SFyUaaTWfki1v37qSkL4h15ufvzwgqtBBAdlXa8E9TX_ScVqLQ-2LCir8-Xhcw1iz6UF3lR9CsMq985WaxhA2tfq_ELn6QTqEUjUojQ04QsUWITldmqsIuyYa1ZXd5AS_KtYeki-gBE6NYbWTKkt-ZRa8__g8s6mwkHMufHyYK1-ZWyGd8NYB9a3krHRKIpas_exhTr7j2hiox3X7srjiYmJ0n-Roaz4GUp6d6st9qh8msL50FmxSC3N2dbQVjB0_z-srywZYhVxo6LuxnXSJbd27Tg18-1kCzfvhU-eTF1E-KLuepl8CsQMHOiXhWvE24FB8IbLjNqBIUeMj98F8GlpinpfTeurX2HIftwHNjb7sRelgF4MwEldUTNwcqMvgK2c5MSp_mRkR3T8kbk4lKoRdGSrGI_5pXN7zSULCkjH1rtdXX7aql45sgYVGH5328lY_PSG29keI2iYA_dVqIBFWzA1yHD-E-CEr4yayhuBqMOHn-MeNB1JhfXUKtUayDjaP0r8X0R81LhENhNWa6uU-8rBLwQt5UHG6QxWEzIaWNO7zT78KGKTYUyNokjmXLxw7YdHe5123FE_xDcdjUAeyXRaiQ2C8Yy39CJndog=w491-h580-no)
+建立很快速簡單，接著在畫面中選取**取得程式碼**，把這段程式碼嵌入部落格即可。
+![get code](https://lh3.googleusercontent.com/iTlp522DkVAy5kRlRcQzKfQWzMqNndaFuEpzIpJI8feuaHCxB8nQf0a1XKlVNOkEpq-XakYly6spQWgKMQdTTozNC1ScmKBzMdSXtMQJSvsjkU0Naes76qcsGob7oFCYu66EPwOGUOX-A2Jl8TQ5SkzCoFJovgYpd5Iyrn0p4QsiBRi2bCMMnNOW4rf8j3Ggx5j7hmtwjEtRW7udv8IdhI1fxVsJRduxLW-MQt_CHlAZLpUBd0unouECBJz35Q0gxG8DzTzjzxpU9GCNe_kmG7MPGAewBny2n6gXFPE6mwccp183AW7422pd4Gl2k92-DxQIpp7Ef1EaGRxfR6EVFSlxLvxt92eaH13VmWa3UzBGMuX9_K5xMatqx3vE3ECKdHX059I8G3YRzeJaiE7RGMCLuGAgQDheUS_E0ktoVt1R8FPNuj9HoYMRYYzrXxf0Ie2l0h4MXAQmfLfOY1jpdu1OxFKRarIxUPBvcW98yPuLpTLpTj65XtXePJvkC2s5lpem2OzTSivyygjKOnPjMLYPnxHLLTaxTrUAtRnMZ57g5vqUpP5BpJPVCrDtehnSUQlOrqwPwBVYhVR7oB017BKO8UxgQtvtWgTakqVEQQ_GbSGn7QRmujnU6FpeSO3qCq21C66mwjzyHc6GwPjIeh6buSWOyTYf66LxSWYoTA=w609-h509-no)
+## 參考資料
+- Google Develpers:[Creating a CSE][4]
+[1]: https://cse.google.com/cse/?hl=zh-TW "自訂搜尋引擎"
+[2]: http://tinysou.com/ "微搜索"
+[3]: http://zn.baidu.com "百度站內搜索"
+[4]: https://developers.google.com/custom-search/docs/tutorial/creatingcse "Google Developer:Creating a Custome Search Engine"
+[5]: https://accounts.google.com/SignUp "Google Account Apply"

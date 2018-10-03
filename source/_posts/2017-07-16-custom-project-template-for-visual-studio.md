@@ -1,0 +1,57 @@
+title: 自訂 VS 專案範本
+categories: 程式技術筆記
+tags:
+  - 'C#'
+  - Visual Studio
+  - Asp.Net MVC
+toc: false
+date: 2017-07-16 16:21:13
+description:
+---
+
+一般開發時，有時候會使用預設專案範本，或是空專案自行建立；但是在多人開發時，希望團隊有幾個通用的專案範本；這時候，如果使用的是 **[Visual Studio][7]**，可以建立自訂的 **[MSDN Visual Studio Templates][1]**。<!-- more -->
+
+想要建立專案範本，其實相當簡單；首先找一個想要建立範本的專案，接著在編輯列點選 **project** 再點選 **export template...**
+`
+project -> export template...
+`
+![example](https://lh3.googleusercontent.com/fTFEpNXp4TPzCowOe9A86LqrX4Bw374bz0XZaqJSaH3loiO3Of6m99FKzpAkSW6HbY7bd9hjr8OvZdVN8Ux1HRpTnGHY2oWlZBPoXMoxU0WyPNk2El3sruc7IyEVHotDwtoZF5blTXl-SesBPZ5HrcT7ytBwscQJi0bJV5AmDeqVQZlhB6RcBI5753h_oi5-xk9ZYe0WG-RGngZOg97g-JDolJgUZVyNdwZgfYGKSeUn8Ywh_QER2PV5owWBItTe2MzuE8m4QJsmJSX5gT_oTYPUPdOswrgs9qSm1UAQlP7X2lmJe7beEKmE1lAEMP49n4VB1D3JVQFmTiP0n9m-VJPA2cKrBvt3KAEz5RYXApRzKW4GGkrJLKCmqbypmyuj1HT9Q7Ryhwzc3LrtXIJhmSQ9YnoYwScGKbG-RmIw9bohFRGPLNF6YvHjEto-s7IcTcSzzVX2IcdpbvUs-lARBEtu_buToN6cHkFvtX0eAodD7rlAcdjV6OJ-qMCSJ40TDmP4eRuuEUQs1CxkD-4s37GEhbjjBa6YuEeJp9KB2XsR86wOPUjmKAHTZTTsomG6152-Hm2y4Tx6Uo8d5T-RqUPKDK5c0TSbRkyE3_8MWKeSlRRmi7hbP1c53BXoB450nBiQMiXMesaJFsJirh8cvE0hJ9YZA5RpnWPC1F3-wbSkJQ=w375-h855-no)
+![menu export](https://lh3.googleusercontent.com/8FXqEBRdWeEGjwPCh9Eadf-e0Il9R0GjCva2PdWs_H4YjFS_ycvtWwuUy_VoPVXqTk8ybJGgMDh1yG91TXR5jcSMuW1jBWonsqXLSd_ZF6vtFDKewMHnBOXb2RBDt2n3eMfRU5fDg7MPvAGlJKQo0mrT_bEoj1aRYzVEmimZISgLnMqyloywk0ZOi07Sfd5e07r7otkR4cdH65K-y3r2ASn5jtNcyO155BHYGMdbOI_mXDjNWIWWEzw-uMszzl52JuxEl12uaMQM5bjpgoMwjpGOpvuLFs7PDBwqiNtPUAybVwRaphYvUKgAJPyq_j-1xJNxGYQ-NaCDsD7hzH_aIwQeJdR0jEsKu3cXkaguj7RR_fPuJ-7Q684OK7345BRetieGlvXwcYUX3rJWpBbO3FYCPvb_Y0iK0bT1Aybw-6sggj6aPqar7rEDFHmFqRQtkcOLczroJiZVYmBlESRyoagrJhXerjUC_RnLWb_CQIugwlhtAGjGzBea06zEmPHCHLOs7Boe-RVJWcDTP7qgtPrWy3eFOTKOIOOT3AO-Ugq5NzP-ACJooWdq18qgmDc3SccCvguJlHLXkXVmX-vIOnOK4lDKNo-Wco6zFkZ2Z90YI5nR8eFyR3hx3Zsc7mTzfra7-eq8uUGVayc91TcxatbzGfrdGDjolz41yDN0hr2tKw=w562-h624-no)
+
+因為要製作的是 **[Project Template][5]**，所以選取 **[Project Template][5]**，接著就按照 **[Visual Studio][7]** 設定精靈給予的選項設定就好了。
+![template set](https://lh3.googleusercontent.com/eGl8Nbb5Eodz35c8lRORhflVL3IX7VQwKH6a4v_wf1W-nbXqpfMUirLxYu1xgPyunPiZgfBqSAJj4ebYY_LrzuFZyoT9Cjfv2YJXhky_7Duy19U7FvONXsM6hagHLSwWy9fS2w4qPwXREu1fxy0-t9uSaLao4VPlouzUmUeiomNA-UDUNIgFSDsYimMNoFuv3bp2fa3IptJ_6z4J9My8-su-04NhAtzelbkrn9SPucz22kM4fpCacBI4K4z4gFeD3AEqfwwuXQ-gW1derc85mg3G6HszIrb7asXDoMWHMfPR0fzuKuh0EOO-DasK0x3-dCMMH0xKtsu6-HrnycPf_jhJNWq_RQZFIRJjxv5qfmBTmPLTvOTNFutrjJ5XJgjQTsbuogzKQstLpyuuggDKXOUV8J-EdUpcJAnm-2I3YnbudnbjhUpQyUOrPT0HVC_FFtpEabHEcJAxlzA0eJs7rezWvcMw0dumWKBUbQy_sgxm2ZN8Agz8W_G2OPC3ZhV0UKqSzyKEvSwE09MdqCBoAGzUGa3jgxlsIv73th-4fBk5X1NvjlLUCcxlNuM8rWXb1fY7pLFRzkEeSEzcJmy_WBuXc7a9EZnZi1M2iG8jFh3_XJycP2Hm8cSuvVCiaPeNgwreVN20FBpmt7-yjzuJWR8H4TD7DqXtqahkjFb0AkMTBw=w787-h714-no)
+![template icon set](https://lh3.googleusercontent.com/3de95QE6hAM0IGMJrW1Ys0wPHI3J3xII4kQXA12Pv0aVIWqjOc0c6LTTBG5vSBEN5YpIhtH3LwgElYZ0XT_UgDwvvmMgv8EjeF39RS4B_pMxND7T66xlazcMA3UDl1T8nAS4EmN19_6RNv6OI-sp-fHUFzjFI7FpiYemCrivgrt73Yb6P2OwHOm8eoQ17r_Pb6l8NP89Bed18lEKnTnUDK_hLs6pjoomV5wgKux38NpJxNJtie_EicBBIUAfjyjgUc-5x0ASkHpxa4oOn-2PAXJDcm07LpCK4issEo3oWs77Qfk_6hB1eA00hmow5rX9DfGWA3t1u_2ZqJ0dWwEZrkjYrUjFW0qWxYiNDeWruyZfbbJ4wGM4dLI5vc809B59hzfUt48qKEbM-yoq7gGN97nhvU65TmwmpS40IOR4t9azGZuP-zsHI5p3z96lVSl3cS0ZLhUsdERwDtw79o18l8UxI5Rx2tt3Sd9UTk5FB8OhPy6PsucKckvRNl2F-ZsCVG7N6fKP5aQ06wvKwh9Ym2A-H09KDpsJHHx9InBd8b09JTOtpDrGA3lfCo_nBQ7FdqhTWeYS9_nEUofqkypF3mDH_HMyl_OL80q1TA6Tq-q0FpXK9PND6vXNYKqYX2STTMHl2SvyIbBWalzG65ZNVeaAfY_37-mGea5Z_kxoWTgg_w=w866-h621-no)
+
+當使用預設選項，建立好之後 **[Visual Studio][7]**  會自動將自訂的 Template 匯入，然後就可以在新增專案的地方看到自訂 template
+![new custom project](https://lh3.googleusercontent.com/UpNPu4_vNOM86ppNPnhMn-RNRK9w6oUM79d5V14DfpJgPzPa2Y0_0r5mguacVIUKibiqnglzTAwOugKYwtGKj8QWBgOwwmc6CUNd7la8nhFEDcybGqcipDRnvrPjJ5Ppvyg0HW10o152Z_wm29iu1fU5Ju-mvCZ_9O_g6wqJhpCuTNNmVnXYdbIQ83WYcl9N4fgQAPq7lQIBD_PNDJB8L-s8WizPzZgvjbQhRhcp1C7Rmepd_DxQaKXXBo1Va0KQ9e0DZEuK1FgKm4D7AC4NYlp8yQY-XFoMSZFuBn62faJCXfcQNXLnxJA9v8p1tosG_GpNrG5V5Cq_nu-iVUUZaEpL6SIU63lrJ6J5uU2gs_l1g_F24pMQt6BMCYLUUzSHAmj2a8pWNGBDvaw5WZnCnbGWNo0mwjuvr-EiYJxZ7iQR-aW-435Kf3XUkcxVcvnCIb5DFyFmx6stj0bs11VqNUk0RPZ3Rj8BnDEdflxeD3K_OxqRssQTDDsWg4QnRrm9zWofoiyKL90SDZOg-lNDp9-l_GmwbLhOTyVEFMZJ5v2Ax1tbFB-Idy3PQKFZKxwbvheHtwbJ68Wmm-EtR_K5yFc0blkV_QP2fZp8S5rR8Hs9hkwDEebPoul-PCMcKodrhESLR8AZPprqf14xPm3AxbSlqCoRm_z9tZSkDFsve6TJ6A=w870-h605-no)
+
+但是假如想要將自訂的 **Templates** 共享到團隊使用呢？首先要知道的是 **[Visual Studio][7]** 讀取 **[Project Template][5]** 的路徑，路徑可以在 [MSDN Locate and Organize Project and Item Templates][4] 上得知
+```
+\My Documents\Visual Studio <Version>\Templates\ProjectTemplates\<Language>\
+```
+因為要讓團隊使用，先確定有可以共用的空間，然後按照以下路徑變更 template 路徑
+`
+Tools -> Options -> Projects and Solutions -> User project templates locations:
+`
+![setting common template](https://lh3.googleusercontent.com/dqvDXtP80klwjPy3G8WvUJPdEoNQyhdYKN6st7keleOH7poC0_IQg4A_L1hXauQ5v1g8UXk47QW82GDwEcVim_6Amz2RABv6KalUVegIC0gSYCVYF_5UXUrF2Zyok3LspC41pCgeGeXwdB1N1n-HQtJ5cCACT-esSItEXxlMhdjZPTnR57hE1JdwkOrFOtfrd4fxH9np9-5nzPlYynQUvjgipAM3Kd5_VEaVf_SYO0zWh_d3bnCuxXy5LGB7-yX19xEgg7W8JMJWQl-O1F9sSORgaz8nhmagt7lM5XYn4epkiBL_CMKmE8ZSMaG4E5XqbRRofBk1oKiq0-VZOH4QmnTCJ6zgLeGY9NGfRNbBR6_k37iy0w1F_XGiTB16m5A-EOWz7KE3heEV794D_LExP0nV9NdNBuLhHREvhvC0VgUmThk9xiuuKOEtAaDesmpXyq7EG1IdaCxsbD9mbBbBjtMRFs7MgCcyoREFaKHq8Vyiu4MwMazpZLuFJHgCO_xH97TyzuAjTaJWlrWFwd00KWUel_mKiARsNEdqOJqHhK18i-vCRA-h44hB__oN_3otE4OVlerTYbOs4e_eq7ROkqjsyRfXVNkaW4_ZZT81kwq1P7C8OntHzRaHhG5brErVtE5WkTGvyJ2TxBCdOv5HBqaH2WFv58rWJRPEh5eijnptcw=w452-h500-no)
+![setting custome template path](https://lh3.googleusercontent.com/cHYA0Sn-vYGQDPzhkJTwdndhgnSFnG5ppio3wKCy08DK-yvVCzXmfgJAdwjdREi7NJ7Qk9ydRS7ci4k7aqt0M6c2Cx7QKHeaXuuLixpAsb9Swz0xLrf10-YHNXKL-_KrSqwCB8jyFB9P8K5UUElLLy7sFLdT8uM7RUuLKHZzUYyJ3UN1MEeW660S1aNrb337sw3ukKkLLdDVhoqJeZRowHVmiqpeQOXeLMVr4rWGugAJCi702wlZYri1oEtMon-kHpds3O65f2FX9wDmZ33XA8x2c1vh1PKrNLlL61s42fFG6SE1iDjCKg9tOBxKAmKaFJoML3qX4tVTeM0Z63Q36ofiqrbNot80TlnwjYkYoU8EhwtX3-w4yEFQBU3PNZkVE5oHQu8-g5Yq-n6Hpzox72TNbWCpdk2ahQB8XChrT4MUyll5PugrSigRZgTxtAoea5Xg7WS6mL7Jeyztgez05cKwqiHuGktjwwSrlMnVhHIsJruTwAiHErq7KmVVAmLG36A-vYkC1yCvk-jFUkQwAuQVW6zljhiScb9GAfsP1-OxlYG-BPIYNdVWE3TvGz_uPkIRAYjsqeuQM6Vc61oenj2IIQLD1nc-DYqhgYg-QRfNgW1UHKDp5mUJ7zOlGLTio_wRnvyYof1JkOkCfPCyJTUPAP7VFoXTOpnepgTIF-b2Bg=w874-h647-no)
+
+![create custom template](https://lh3.googleusercontent.com/RKhMbVIvECuug9d1LsTWM2hKE-4QIinZVecrlo4nzUbQOgfkCLMBsIXhvfHb3fXbGugMi5nRBkKMhMS8P0jOgLTVMYuSa5z_YdObqsyr_5vsu8GpCcIgPnBGK8G5L0QKjmth17L892cLr2YiLOpJY1D49FGEmhxyC9SfS8C3ROP1HN5jHZF7atSCpyVb3hv0c25xigSPWiJI4-CHDGxr7YFK3Ghxf5LmRaWRurFUbFeWdiS-5iwHfn93uqlh5Tu-6bqwO2wzM3lv_n0eNuY_zyRs5B66vDX46FnEsbv54khT4tguQ7jbc16Oz2-Ttwq7IzzOczmbrlI1nlMVEVjUy341_mjtGdZiHMZzZU2LZqSLl2WaVZjOHsuiIwufO1zmL7abI_MAyoFEob41Xc2Yooy51ywJzrwRLajnhO5y-fadhUHqPBhYhCuNOE4KnaTKEXDZVtHTcq-uQC0jvt-ap9utgEn9ccqjUoivbfO0wf92GiT3Wh8lBh1VN8Ktt8y_TSwDJ_SY34-p2yEg9YNO-5esM1-GF0ASLrv8T3fLh0XjM_vJWjKtH61gzpbyGJ2SzcfuOqdubAQLbsmDWzTVjcqf4F5YVNun8CZiYvnn2J0Ra1KDalZPl0BC-XjeQeknLuUx4do93Hi_v_W9OYremPBzEKe7jGmrZ9olBqxzGN4g5g=w1853-h919-no)
+
+補充一下，上述都沒提到 **Templates** 在 **[Visual Studio][7]** 中的檔案類型，當自訂 **Templates** 產生後，會有一個 **.zip** 壓縮檔案，整個壓縮檔案內容包含了所匯出的專案內容，這個壓縮檔案就是 **Templates** ，將此 **zip** 檔案放到上述的路徑下即可。
+
+## 參考資料
+- [MSDN Visual Studio Templates][1]
+- [MSDN Create Project Templates][5]
+- [MSDN Locate and Organize Project and Item Templates][4]
+- [MSDN Find and Install Templates Located Online][3]
+- [MSDN Share Templates Across a Development Team][2]
+- [stackoverflow install VS project template][6]
+
+[1]: https://msdn.microsoft.com/en-us/library/6db0hwky(v=vs.100).aspx
+[2]: https://msdn.microsoft.com/en-us/library/e1x5ayd4(v=vs.100).aspx
+[3]: https://msdn.microsoft.com/en-us/library/ms185306(v=vs.100).aspx
+[4]: https://msdn.microsoft.com/en-us/library/y3kkate1.aspx
+[5]: https://msdn.microsoft.com/en-us/library/xkh1wxd8.aspx
+[6]: https://stackoverflow.com/questions/18942794/how-to-install-a-visual-studio-project-template-in-a-non-user-specific-location
+[7]: https://www.visualstudio.com/zh-hant/vs/
