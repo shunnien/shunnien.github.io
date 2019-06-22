@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Windows,ruby on rails,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="在 Windows 10 安裝 Ruby on Rails">
+<meta name="keywords" content="Windows,ruby on rails">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Windows 安裝 Ruby on Rails">
+<meta property="og:url" content="https://shunnien.github.io/2015/11/05/in-windwos-install-ruby-on-rails/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="在 Windows 10 安裝 Ruby on Rails">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/P4URDa6_HJLDPC0ifoGdJg0HHmkIEkfkqBp6rkovUDuJcnAuvz2ey4Tj4qEICswxAHbcjwt-QtTzVIRTHdp51lXc2PTBbjemGqdKElENzrJadLVbhFPV-j-WHibVHt9TdGP3Uoif_7yclOit_2rciLCE6UNtiN5hX_kc4FKjEv9shV5ZsBi2rViqLGj0gFYLTwPcJCmOd50Z6CDJfrDHu04BMxd1_cjoZeRW3Nq784gVjNcZBtavBc5Utjn-JSQKUPlU8N3bgZa6AyLN3Fnwdu2Umq0Nz7Kz_8QFKMRUS-9KWDe-8QioPtTxbgAGG-jI3sn8eDn9nbf9wMJrBow4oNhFychQvZfY4tqqiqfWrM_y_7G3bns1_gyPN0sDp3mI8cauLqyJAG_eHQqZpekAZPjF_wmqAl2hT0UtYvYWt8FYgFN5eahyVbsIm2G_RUP_YxvlRAkO0-8DUhiuPnoUIWx2fJl9ddeiVuI1Bx7GHszhe5gKmQZq80dCwbhIe8u7m_GoAl7CP7uWeKHniyYIyMDQx-yfqsHpby9IylbUxqsXELkJtxHaBOO6KuBwDaUR033PJTMmpRnqYb3Jo7gwHUBf27-PoU7yjmteJrZcpgHDWYhL=w946-h360-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/XEjz3pnpzM1WoIcqLzHuR_oF_2mnTaWHoWO1_kCBooC1rtJw7bLGv3AHnRz5k-Xe78Q6edNC2HM3SBz74WmMHvhMvu2Zc-Crev22WC_aHhOKZW-ml4Aako9ONYE3oCK9_ZTqJW8DA5mw4_uagEmC2BzZJnWEZwh4ovLbUqGufWatViLyeYkNCtUyfGK-ibjLarX977Rjri0x5Iiah9scjGh_B2shPvZCuCb7XosJ3uUiZCOnRo7KHqtMgknpJWOfyx-UoHB2vr6gZXe1nm23krPs73_kSidDz6j_1JqteRuOMBiSrmP547ZXXOzUXIGRWC4DQWlXHt0rCsrvvi4vXs2gvLOG-seGEB1_gXNlHUAkqvVsIRsepee0_2mEClJ5-1WBUZ606uFnZv-koMAHC4bJ8cgOkCUygsTxhREE08IUPeD7vUqHwg1hn16f45HmsfZYMri_PcoPHV0jbZUZDWvGHpK29WAop0_s0ysx9C67y6yq9Mis5dxiMwdVmsjnBSEsOSMlXqAgvaB9IEMJIL-ol6PMh-VCLc1r2D7YNohDJ_V_VinjSxBX0CvGC1G4rza4cn9K7ORUMHEZIDIgZhOPhh521qkV93-EGYGZh9dcIM5dtAhUSJcJLQ9Nayh093drVfolbARF8P5btpwycF4V_2sjMlQa9rPrFTIWkw=w434-h301-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/T8KOyZkZm01c7A7Q9xJutVZo3HCj1Qx2FO5-fZrREyOnb84prEv5otuyibZU5LgstnDIIDvaF02m-jkxaOGy5nnAdWZIQGvfQxDi5VMh7ozvnsXU4JJbqLa6joTVhOFfO-rIZESkJS2H1K4jIvySm0YlGNmEClnbexrPFuWFI63aYlrroLeGD3zAkl5wlv7G-YIF-HnMBfAJXqG96tmWBw0L72-M46kUVuwsvnXF6rFBexOtFZ1eIJy7gyt8ZxtOdsnXoxxncLqhA0E2QlNR8BI9gmGQ2rN_8qAMvmmD2qWEk5l30PkpGjrto2pXCdm2OL_LODuLBLJ-msdnZtZNj1iBOZVMzWVdXNlDcgKK5CvFy8oWo3JJ2hvgWc-Jaf53cq5iApPO9zc5_i_vzUfyDe70SFV3zepOKt3-dMosf4vxFbmuK7pAXnS7nWiYRdCbwrQ0WkRvRweg5sXkti9dsDLanqsN5WjOP3r7qYL5Yd9soZQdQkJqNf4bnTgauDZXGjGd0gD4CxQgXSvgBEBGyrpY8BMK0sTVYH2-UYe7gVYMi3JW-Q3pHutJs2RK9wUSmWUo1IeL4zpOjO5fjWuFwE3EaeraaHODyupEJj2G4yeefyh_hRfJct8PRuqzMwZq3IBmvyhkuz1rS-IiEze4sle1M-vI_MzoHk_Ln8d5MQ=w392-h277-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/0S-ZhQ-fH4S2aa7vYEYNori5v5WG_nthnSKXsEzFIXPN6RBOhcewnLmlPD2HohAcj9W4HUWxnCK2cDzjeNO74CwLr29hQV--gZRTNkb4sXuCmo1wTRaNZSahkZLdKDaeIfkrV6YX7IfAPncyrQJVnsiv6r1y0x2tMsrHUgnye5sA9i0mbeYWYMSJ74dVpPefrCBXV7p1OjrgLF-BdAA7B-9jcDPMBfIGvEi3KxjDsdsI3irfTUqtAUkzU9Q3uGN2Glrl_zahE64ZSnTnz57R_kgCcfBSF8-a8jgWWSpTeZvKLBUOTABAINJ6QtUzZgdYUCUu03LZp1ZcBH4eQgHcmPE_7u2RgjtShaIF2nruQLRDd_RsBVX6Gj2RAhkCysrFPGPXW95HDbtWGz-A9V9oET0koQYDWAwYFxVBi-U85yLiHFrzHGdJOr8Z_5ZxFkbWZMj2IuLYJNYa2C9Jj_FWoQTiLxmAkE1gGIZvNS2wtEk356Z8MhOSj4XI0SHlVWpQsKRamsGYjOubcJxfb4CgRhbql1YHoGhFyn_VAfzFBgEOLZcndeDQ1oL_wTeoBmM0betVvWx2_ea7rzLXeNs3Q0djK4GR5IEl7wAgNbbnu2gx3vHXMAdzE4ykP2Uvklu01Ro2iUKqgcXCNGBFH60IlJ9l7TWJSkq0OgWth2N18g=w480-h208-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/kl5V_UsdcBDShPDFS2RyyUoeOtpqnRJm-AeDPVOhvmazOmYqLIAKkGUOZDkvZEOA2ztpV4GdgZXey6-TCLcP8LiOUyMEoAlqOrip4fN7zhS1ossep0R_287T504oe6TUrpFJwx5TnThPbQktReooijSgNXT4V4I9t1wktEM8F0a_tiYyI09yAcY2Sk9PskgjDCLqPHp4SR0rN3fj41S0jeT-Udxdg6i4I0eQa1xzryBq_46aQSnSilPesdCw4vSfKeMntOpPrpUwHvP8S7QRdQ8nO3B52x8tHnqsO_RlaqHpXRg9adM5auE5mSnREq-02u3IM4S9wzQL3MjaGQ1wgsgAJz1jhS9rRs2Y_YtSvtWw9jDtxq7Lo3WtHnccHNlsFgzeWVg3VJGPqQvACoYRAlAvYgTsRHBuL72mqYKUpltD81ExLvFraGhXa1fnHbJ3q7GqtAU9v966KCdTBbxpjW1S8ghxz7KroW21AaZwhB50bvRV-gDOAqhgI8quSk0BYAd_9mz82MrRkii13581to5u3AFgP5NaAmt_He5QM3siE9Lndspn10WkdQlNH8Ud4N7DdLPA7HETb4j6qMZBlM2VX3SYbtE1NhyI40u343z9qy9lT9YsJpM7LFJH4LDlDbhMTs670aFMW-alk7eoDSOnJUExjoF9mMz8IaJD3w=w499-h387-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/Kn37dYUKVzn5DEb_dldQaYZ977gxeAdLGd2gfM5xmo9--8oFbhiHQRh8d1p9t-zcGN-uVbyqPG8Ko2UZ7SO0PnZ9--IDzc0b7bIhGSdyhN-zz96dNr-JFe4gI9Govdha6uwPFnzRCKX_1m72p-uYrVyTyf1AYmdv7qnhPICf1i-TJPtlZdbFto-HoWgvg-0KQVo9i9fEAgtzjH40sfxF0k63NMOyiPfH5lOnCdWSntgfUOhgT9J0lcNX3q9jwjX-5LbF5biRz7IRYcfXRepDYc94td0T3Mn2KwEgteVdfMS6DHvYfTr6d7SL9fNT0O4dh0qAoyLZFd8fz1ypvf6PR6NdtH8-G6qJZ4MD5hS9CliC7HgOsdbnJ0-R0gHeFZIbopO5FW0PJdrNxiIt3rN9WEKKT46MrojkOs3dhI8harPeMQCZ36_WLmpuizmrDSnwIAcnWEQQ-XnJJcAyGDRsshIYrHZ8_jxEh9DeO4JEX6PwoWsXud3VBaRRlgtKw99pHuBKxkNW_H0Fe-v9RAu-68Es4OLCisPvx7HfmMFJtCp6Uw-te-VUtvNY7oUIwtbPT-siKBt4k0VI3xvkjBBt8_JvK0BWgWHEEV00GwQEgkvZf51t270W90wGy4lcDkS_ETulN2m2ZtCCAIqb1Uj2IgozMQTpawPgupkP1div6Q=w499-h387-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/fLRCeRkcCzPD407BTI79H2eTWhWbsnI2VRkpJuNG7tvVS7uEyk3rxsla3c-9XdMYNsYfwTMeHCGbo_9ARfZ4W6m6uK5itjSN52ECL3QrIoTQKzp0ylgtIyrTpDZrTvNr1XGJjlEfUo_s0Op-wzpMZLxppG3iNtzSA4awztUhmOYJBtJV3gkMwJfxlYxvZsLVbLG1gG-jKcUcLWMYM6ldYv4KxM5E7zOxOGS9m1uSYM9VUIF4Y1JIcW-tV6Z_Omx88Q2m1QumKmIX32oGjBBspgBw46FkKHkoTNQux7cdZqDxg51rtBDU8WB4PQikJbS-9hLINJmpY7t2jGpzjXoTkIwJwC19RQ0FoPE_w_3bQ-ocZnETM9MnJ1p9yAF1hG9REC74QIB1gORRYyeWu-06SkhG7WLKfn7Ynk0W2QLhh_TKJG99vS-9mu6z38O9S_kmtNnGQufEfHNsNCmNiezu6KvdNyH0Hpdu51mOUOp8N56uJ9B8bY_mN7Oe5xEawzkoy0dYCfGySZtU5aROVKar1KvAkRCHb1bhi2_xqh0ZIJfopc5bWAv7Xu5WSUlerM-Ec0MlyZbPMWXNDv04jTS_Ws0439vNutPKO0L46QrgNTAtek9imNMXukwnOHIguhcwOElCsBBVL-PWoG_gswa4Vc9SVMuohOOVqT2k8WBBoA=w499-h387-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/0aF0CzAB8C9tVUA5xblqYdpd4DKIsp5fSGH_oqJ0Nez_nA2Py-bjdfyyLvUWfFXbEv_JK9EZnr4GIydLTZXIHLtO-ehokl5Ub97mIj9jojZWHUJZKjoIleBiXK24P5T82xSN5rs3dCEYKWuE7M5Q60psTwnEKSYUsEqkRP0n1sQYWRMG9ciHO5FjQUKkae6-zisvOzGxN5xrppqDjhrlSxsS12QcBTULpiCoJQqXoIWOuf7X99LpH-AaH0jfHvEpXRkp1jVFSnIKYcUPp8VhoNW_BxbLwuOrhi71bu30BYp03SFUsygzxdcqeTunS6etpPXzt7zw5ZZVQgmvnWILh5Q-a43K0AFfCtIVO5yIDfnbnMChP6fVu6AnEinpY3MTgkPs3dBxgoaZAjRr1UGTcT0zVpxxVRtXOLjfLfpw0yXQsLyMVtnfISpAV2n_wPDc1lt8kIApDMEBgcD3NyUwGJRiodLJFjsew8sm9lYH2zZuoNxOSjzdvMuN9c0u1H-t8ut8Jgz2mM7R7hB2OdsLnd1vgrYwwk5BFGE3e9tC3IBg_QIAYHUXlnmDddTN-yLuai3dyaDN_3uDwgKx-X7h5gyp6UmGqedl0ER2gjO4aCZmGQ_zg5ztBn7_n69L664xrciZOKK2VZ6l0EDPbGPQf9aImfdpQhECDJqODJGaSw=w499-h387-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/euDUAHeFTp7iMYQdaX_F59AEp9xikpkjepPst6M-cquaySRB7NBzRZwvJtI6fB8bmA6FpGQHgQIvBrknSdOBWv348-8idTdFYrbOqJYp58n_iC2nnEJtYAYpH2p2KcI0QZbWtPA4FDzfGYF9qQnRHtihhRmdk9crxKYezv3eywSvrzh0FY8hOoLkmHZAtxzglSrZVVewnrxvXm8iiiJN9TR7XHuxbDbxJ82rV2RZzd-zQr4GtvmweiSLePjb_lMC55rujI_NMTooZbni7DVgPIakGk-O5CnF8RYye2mHqLC9PwpC66qj_ewtABiwe0hgka8PfWu7ggC6XwxVndwKtCxsfmkmu5gnMkjOLl12sKixcjzZJAGGsHmV7OXGharBXy3qC25aE4ig9hGqdn2gi_Sq1bPMDTlDiWj6wDOF6RjiNdj55xCuB_0H1qcTkNrA7_Y6HHQwgdoaeJe2xSC6fp0gTD7FnKyLN6aMmJ55iM2a3XNynAyBht38TJtckpCj9m76E6gWUqOSo52n2IYrjCAdNMpQjOHVHxRminKj8wEGwxM1yKWaQ7ewcuH5f5I8Kn8A4o5geioR1CXlroTxCLTNR46dGSR33_RitbinHQD19F_WoLGYFEr_pUzmeUo34PT132xcYhKVIG-_bAUjrH8LswWMdi93b34pEJPSvw=w518-h126-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/5Y9lOFcj8iLaUt0mckz84fMgNQxmeh17oWal9YFN9AqVsTTy4fdQZFtpPztUe9H6rxyIx6GGiYTsRd4iWcHbcLTDKau5S-HpsEiMp3r-W_90C704C6SxD245UMcljk_pW83PAd7BgEzb8ai3tULKKzrFVVD6oXFBdjlZdh3siwKj8A38SBNvEWfvpxEiHNJ0o79g6-9sNuhdxp0wDT66ILb4ZGrQmxH6uDVqTNKLTuYeTtd5P-jIaxi_ivIFgEGGhJTUYjVESEdRtkoQ7apTKeE5S7xRNhN9MMoGw6tr4qNFDL3cIe5YXoIcmWnqzubMvm2w3lcRYvpfrtgf3S--AzqsFnQVgB0aloc29uxBNPrIFEWfT1qoAp59eqAwVJm9n7oU33jma6bNXcb1zIWJ2zDFZAQI2K0fEv0U8sWkSALVx50__6vgI6ZeoSjewI4FwsA8M6TTslI6VvYyXIV6u2i7YtIonmbvDKzPlI2BJjYiOg52SH4Ea4PqCTvvTD_VdxoQgoRWNCyW9nSbKIGUzUcWvqf2jitogRmuEDX3R_tMghScctRoZU3LmjS4W-fl1_DnlYPNed0ESjgaHmMqkwt2Px1IbOwcev7avbU_3Jm_M4RKw3zWbzT6gy6X-GwoI4ApxMqgwgj1R5Opasi6cEQek6u8MqlRplaRzqxkoA=w455-h125-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/o3M-L2Kp5xFReTU9BtSEwWELEYIbdpWe8RMDUywFFtLBYm4niFBEixWpK8V9U8zj3sumY8shcYOKJ1QMkioraCEC4L8sUvh7u1u2W1K8ur6gYEJ46LJqQQeRjAdeCSvHOjyLdMELfB2IaqN_TJkAhNfE2GWyCxwZxhxwVHx0-cIxHSQPFfJ9MZmDk6DUWFpjW9BlAhFdNg1pPP-wpR6fVDHr1MVI2xOZEK2eOCoHlV19zqRfEv7C84Nzx_06I3zjT0Ch6wJnQmxsuEL9Oez-Ps7XsjHCEk-tGAj1tGKslW5QX8SPOM_BlMY2Qvc0ay3-jPTmF9zYtoiM1x9wU9PzDH8hLkHQQn1zmvFTUrAcNeEU4CxtH9YSYFu1IDouy4lT1ImvrxaU6ctTYeXU-7pW8q2BaUpLzFbnEZ_uD74ctTIFZYKjwn2VqB2PjCGYfbDmnuFcw0_xLJLzVQ5cQifLkKNy0_owvPxkwWyJvf_fjQb1rUN5BCOMGYVQHZyWMniYT2VKaHa26KLRcNnC7Y9U-tO7JW3uP7JWXVIFauoxd24ZG8eMgse8ZZlZ8pJHN5u9jv7jA30IAeme6v8qMr8nen8-hIkoR93QSE5n70-qcbXtyd-8TdpLlGjKO3y_RfmQ8-6WNl-VEEv7Ti0dASMQD4XJfX3z8ZaeVWVReE1_vA=w561-h509-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/2FZfFTfhDRs-wt6OjjfocYWhnvJAhpI8qbM0iczSKOrb-sFM2HONSKGwhkRJUqCSTkfJJql1G8S30IKqhLV1Wd--xK-Zextvd9F1zrp4xF7ciCp84ctGDGkOza0CM6oTYpjlSA1eO0Cd5NdXN5UQZKBFaCOxTz5-d2dfy-nMS6dd4DoCllxuEuHQnbova7lkp_Tq0qaLbmBKFZWHrJ8IttjtLY7yluS8hKqOP58NOVPlxBjf9H2nx9gQR5At4ZPEBkMmlVF5vHTjFWJsRuJqJ_giIDo_B2uv_nuK7JC3b8GSs5cuejNHYvgqUkWEDWg4JyWLhpHLE6wVJ159kGd6w6JFAKEt-oCP9HYugEActi34VOx6vAVHEJsOW6BEEVsznSPa5otIDIBnszaSO6XYiH4Wg0T7b8W-okIbdYyxzJjbrw9bL-R98h24u1rdvhbW0scK6cKfWajAIRC_aKSSgD3cQVv5yZTiTQufIeB5imfEwEP3yq-pN54XXo1XDvzDbso3k2R6AkgAjpvztw_9f-9ap1HsqlCNEUbkuKF1Djl5qRVm2VRERgnJnc81AhkxtzVgFGyx3QdI6h-jBT-tjDPgsm4XZFdJXaLCeqcgBbJO7PjY9LkxRVOJgl0NYfTPDvPstD-2G2Fj4U9S92jMJiHxGT1r3qu0orCgg-DLnA=w344-h154-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/PFZSW_TDlBlO4LeDCisGqCiI45kFLLD1-CKzRNX2-4yBgQyP5u8kK8T8jMDhw-gPy0atKGxM4YL7mMxD-FhfWywI9vJUlGoLNDWNSzI5bfy3iR-kuGkBUgbtg_vOGbkFZdcM48sQvVKqAZrcHcFXpOeEGoBmp9RD8iUiwgBLGX1zQCTEEHbJkRzMv3Dl6ujUgph1ODV6bX7KBtWl-qunJbswVeOuOVRsokcYzFxLD181CVVsNnwFhwK-OrlIgGEXz-vAhxgAs7QZSWwgpTrCG4gb6q1gi7SfSVr-ohWUspWL4C0vWLQwGMNWxNTsNp9_9flXJb6wvLJReZOzIUPTy9Lcj983Rbj7hNGdZccH9ApPqvIr_AIpynE_FtSmrrHf2Ri1MzRrRoiGd9zdAGSGGplokmsRDCQoGUT6SicmnpJZvdXVtAMOlb0XoMLaDcqQDkf6b32UErSRfOKvyFvHV5L6SpPya0sgaN__EZCzYwe5P3bYLND-uMTebKYQpyQ3RRDkoIsPYGN_wXLr6wCok4unkdI_iytdn9nvsZOIQ0uVf5BwhBnpZpiuyAI7LXL_ejWuH0VDtlluNmVfivBEX_AOQV8Vgy3U5ymDXv9l9cb79mz17kEyXnRPKUDElz5tMGGzIrh5nz2LSKXyFfo8JCbkhXmnP2mWI79EckMTFg=w349-h463-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/yffFDFN18tXVCSXaxe6Nzx8KYgUAuINaxC37Su3qt84mLROy8OkavkYFuZCIB4mXBh-EIF7sbL6oiNu9lzy_xQha-AKQvwBeti3OJUUlyLZKVKUpMY2aZ1uXRF1tmlopUD10UoEHvSUTaDz3ybwG8pigOufJEunpPB-DFszMdWJMwFIG7_a_wIA_YXnHFPF97t0B_t9AuKiQoV8IAT1tfodk9RrogwIIDXtSDmIr-06piEPxxgD1vyzSjZx-BHeyrdH6lmVMkbaMJNJ7OhTIqen2-m5prH5f9BXcCzIkf4uHZfyWr2Y5u4LGT2HkpbzZBslrxhwLFUtzwylxvwwpetlrY1gHy2zhfCni1rih-r9u8GIFx8IP-yDz9MF9xzooJXpXhnRDDamVjlWard770qSNZAFjKPiuGLpXSZrfLIizqdXKFLayDVrU4-a11VomfmcrbYb4lOqJznsPF0FurWkaq1eyzquyLguoXKNmJkD1XPJaSD7_7r-JoSGpsg1f9_peC6k3pXX91rEHPIjClVUzybxLmLdM0AVc7w0cw3A1tnd7KX9VbwavlwZD1RejOkZdRx9sGbNvOf0rUkeffdZ-bPNUkFKYXr9RkvbPBA0wy76qhqpKiqAws5G1-17bMqvVWSfy0XQFqgrb4d3kNds9ED7xWD5oPoREDSJXuw=w623-h236-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/Nw8bPnlKBTeMcPiqBMmvkbkMd3_Szp5EI58eN85mNUzO-DnhPmnzRcYT4fjayFMDeHbp7InzwbAP8Eiik0iyAVNkXnKMYEWPMfLc32RMU9llZUVKYkEyQ8pVls4HKGVBzHuuSsUPV-ZB5W4k43T39u57fRpSB9tyvVqu0SOHSl_EYZJ8zDSS8MERHC1FhncBJOlDDYu24ZDIgReGZdC1SSSjty6Mt5hWMEV93-We-bPd41kTim7eYR1aNHJIj8pk9Qa02etXvGXB7V9epxLWY7OMoHejbVE7ElUJbV5f94iibfD8Z3fimdstHKu_5ACsXon6PqGWG4Ra88EAgAdAxC6v5vD1f2d6NDhNgZK_JZQno9oRsJNIniXNnXZ91V9rrLih_qh2Pt7G2EgGwadybsVn3SI3_1m36PAmSnegiFNCxLu2sx9ylpC3YlHeVDTJrxmN9S9DqWYlZHlBTW3rfsWU4TS9JkcEXr1IaUD5p29zH_-n-sCKvnvYDEEX9RGZpS_akzDByZT5czfXBHLNtF50sFM8iGB-e0lsgiQcvBqxm4hPNsH2a0AtR6oMBvJ7MOciyX37v7DnLUvZqssdJVSaK4A96BvYp-CzZE7RHibOCytPdBlZAwEMyrMtkLr1GtOP6onW4tOCPEXHI0lkdMiAOBDAhCDofRoBush4Xw=w245-h337-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/j2ivn6Yddyvky3UXZl1JhEP_jYekRjDdjESJKmJvj9LMM7McjryeBx8z_zPPr8Ttt2rdLyPvetdvFVLv1AWILoqKFOaarTfEUqHOxb_XaCpsC16zonq1fj6oghM-foa1BRbgiYMbPSZDhyEkCVP-PfKPmjAzCveXb-iW7BEWLP3k7gG1ML3tdThIvog5P0ZZisWUkmQghKrkhV41-2ChQ4CkQqqob_0cyeHH7F0RuAwYYtiXy92wWgd-i3f-6X-3QafMJQJNqsEaZyuUd6GB6Nys-aQgbkWAThPiKtDgFxXIDieiLX-dv2cF__DFYz0Ej1ivZEeCTaWyCv4LCVP3E0oLO4EI0DolwN9Se1emmvNaUWl31rOGjmd1Q_lkIzOr2CI7gTkyioELKksj7rX7QE69ze-9wogrAaknkhkaHQDIhMYBf6vQq8CGtrVrFSZ3k36Vbxdlu0NsiquxeNF10OFNqMLIP_D4I9tPaszO2MXJ5SLrekC4fj8kwBIW8EeFYvN9T17q1y06mtecyoxYDabbtBG-lC56ahlqGjKmDwtf9WIaA5fUx4zPWXYxgzlVXW_pTxFJjGjj8mrfUNP3nJdo8pqutbbBV7D8vqIX2_61vXnp61XkKZAnjDJFMgpkHa7YzkKgBAONJjcNio5RYb9XZ2i_oMEuumNfO8Xnow=w628-h155-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.602Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Windows 安裝 Ruby on Rails">
+<meta name="twitter:description" content="在 Windows 10 安裝 Ruby on Rails">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/P4URDa6_HJLDPC0ifoGdJg0HHmkIEkfkqBp6rkovUDuJcnAuvz2ey4Tj4qEICswxAHbcjwt-QtTzVIRTHdp51lXc2PTBbjemGqdKElENzrJadLVbhFPV-j-WHibVHt9TdGP3Uoif_7yclOit_2rciLCE6UNtiN5hX_kc4FKjEv9shV5ZsBi2rViqLGj0gFYLTwPcJCmOd50Z6CDJfrDHu04BMxd1_cjoZeRW3Nq784gVjNcZBtavBc5Utjn-JSQKUPlU8N3bgZa6AyLN3Fnwdu2Umq0Nz7Kz_8QFKMRUS-9KWDe-8QioPtTxbgAGG-jI3sn8eDn9nbf9wMJrBow4oNhFychQvZfY4tqqiqfWrM_y_7G3bns1_gyPN0sDp3mI8cauLqyJAG_eHQqZpekAZPjF_wmqAl2hT0UtYvYWt8FYgFN5eahyVbsIm2G_RUP_YxvlRAkO0-8DUhiuPnoUIWx2fJl9ddeiVuI1Bx7GHszhe5gKmQZq80dCwbhIe8u7m_GoAl7CP7uWeKHniyYIyMDQx-yfqsHpby9IylbUxqsXELkJtxHaBOO6KuBwDaUR033PJTMmpRnqYb3Jo7gwHUBf27-PoU7yjmteJrZcpgHDWYhL=w946-h360-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2015/11/05/in-windwos-install-ruby-on-rails/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>在 Windows 安裝 Ruby on Rails | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2015/11/05/in-windwos-install-ruby-on-rails/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在 Windows 安裝 Ruby on Rails</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2015-11-05T03:10:00+08:00">
+                2015-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/11/05/in-windwos-install-ruby-on-rails/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/11/05/in-windwos-install-ruby-on-rails/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  在 Windows 10 安裝 Ruby on Rails
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="緣起"><a href="#緣起" class="headerlink" title="緣起"></a>緣起</h2><p>在 Windows 平台上很久了，今年初為了裝一些套件，就安裝了 Ruby，結果今年都快過完了都沒去玩過，只是為了那些套件安裝順利就裝了 ruby，感覺很浪費呀，所以再裝 Rails 進來玩玩，順手記錄一下安裝的過程，為了記錄，我又重新安裝一次 ruby XD。</p>
+<h2 id="下載安裝檔案-Ruby"><a href="#下載安裝檔案-Ruby" class="headerlink" title="下載安裝檔案 Ruby"></a>下載安裝檔案 <a href="https://www.ruby-lang.org/zh_tw/" title="Ruby Programming Language" target="_blank" rel="noopener">Ruby</a></h2><p>首先到<a href="http://rubyinstaller.org/downloads/" target="_blank" rel="noopener">RubyInstaller</a>下載安裝檔案，請依照下圖指示進行。<br><img src="https://lh3.googleusercontent.com/P4URDa6_HJLDPC0ifoGdJg0HHmkIEkfkqBp6rkovUDuJcnAuvz2ey4Tj4qEICswxAHbcjwt-QtTzVIRTHdp51lXc2PTBbjemGqdKElENzrJadLVbhFPV-j-WHibVHt9TdGP3Uoif_7yclOit_2rciLCE6UNtiN5hX_kc4FKjEv9shV5ZsBi2rViqLGj0gFYLTwPcJCmOd50Z6CDJfrDHu04BMxd1_cjoZeRW3Nq784gVjNcZBtavBc5Utjn-JSQKUPlU8N3bgZa6AyLN3Fnwdu2Umq0Nz7Kz_8QFKMRUS-9KWDe-8QioPtTxbgAGG-jI3sn8eDn9nbf9wMJrBow4oNhFychQvZfY4tqqiqfWrM_y_7G3bns1_gyPN0sDp3mI8cauLqyJAG_eHQqZpekAZPjF_wmqAl2hT0UtYvYWt8FYgFN5eahyVbsIm2G_RUP_YxvlRAkO0-8DUhiuPnoUIWx2fJl9ddeiVuI1Bx7GHszhe5gKmQZq80dCwbhIe8u7m_GoAl7CP7uWeKHniyYIyMDQx-yfqsHpby9IylbUxqsXELkJtxHaBOO6KuBwDaUR033PJTMmpRnqYb3Jo7gwHUBf27-PoU7yjmteJrZcpgHDWYhL=w946-h360-no" alt="RubyInstaller Index"><br>到這頁面選擇符合您自己系統的版本，以下是我的安裝版本<br><img src="https://lh3.googleusercontent.com/XEjz3pnpzM1WoIcqLzHuR_oF_2mnTaWHoWO1_kCBooC1rtJw7bLGv3AHnRz5k-Xe78Q6edNC2HM3SBz74WmMHvhMvu2Zc-Crev22WC_aHhOKZW-ml4Aako9ONYE3oCK9_ZTqJW8DA5mw4_uagEmC2BzZJnWEZwh4ovLbUqGufWatViLyeYkNCtUyfGK-ibjLarX977Rjri0x5Iiah9scjGh_B2shPvZCuCb7XosJ3uUiZCOnRo7KHqtMgknpJWOfyx-UoHB2vr6gZXe1nm23krPs73_kSidDz6j_1JqteRuOMBiSrmP547ZXXOzUXIGRWC4DQWlXHt0rCsrvvi4vXs2gvLOG-seGEB1_gXNlHUAkqvVsIRsepee0_2mEClJ5-1WBUZ606uFnZv-koMAHC4bJ8cgOkCUygsTxhREE08IUPeD7vUqHwg1hn16f45HmsfZYMri_PcoPHV0jbZUZDWvGHpK29WAop0_s0ysx9C67y6yq9Mis5dxiMwdVmsjnBSEsOSMlXqAgvaB9IEMJIL-ol6PMh-VCLc1r2D7YNohDJ_V_VinjSxBX0CvGC1G4rza4cn9K7ORUMHEZIDIgZhOPhh521qkV93-EGYGZh9dcIM5dtAhUSJcJLQ9Nayh093drVfolbARF8P5btpwycF4V_2sjMlQa9rPrFTIWkw=w434-h301-no" alt="RubyInstaller Select Version"><br>然後順便下載 DevKit，一樣選擇適合自己的版本，我是選擇 <strong>For use with Ruby 2.0 and above (x64 - 64bits only)</strong>這版本<br><img src="https://lh3.googleusercontent.com/T8KOyZkZm01c7A7Q9xJutVZo3HCj1Qx2FO5-fZrREyOnb84prEv5otuyibZU5LgstnDIIDvaF02m-jkxaOGy5nnAdWZIQGvfQxDi5VMh7ozvnsXU4JJbqLa6joTVhOFfO-rIZESkJS2H1K4jIvySm0YlGNmEClnbexrPFuWFI63aYlrroLeGD3zAkl5wlv7G-YIF-HnMBfAJXqG96tmWBw0L72-M46kUVuwsvnXF6rFBexOtFZ1eIJy7gyt8ZxtOdsnXoxxncLqhA0E2QlNR8BI9gmGQ2rN_8qAMvmmD2qWEk5l30PkpGjrto2pXCdm2OL_LODuLBLJ-msdnZtZNj1iBOZVMzWVdXNlDcgKK5CvFy8oWo3JJ2hvgWc-Jaf53cq5iApPO9zc5_i_vzUfyDe70SFV3zepOKt3-dMosf4vxFbmuK7pAXnS7nWiYRdCbwrQ0WkRvRweg5sXkti9dsDLanqsN5WjOP3r7qYL5Yd9soZQdQkJqNf4bnTgauDZXGjGd0gD4CxQgXSvgBEBGyrpY8BMK0sTVYH2-UYe7gVYMi3JW-Q3pHutJs2RK9wUSmWUo1IeL4zpOjO5fjWuFwE3EaeraaHODyupEJj2G4yeefyh_hRfJct8PRuqzMwZq3IBmvyhkuz1rS-IiEze4sle1M-vI_MzoHk_Ln8d5MQ=w392-h277-no" alt="Ruby DevKit"></p>
+<h2 id="安裝-RubyInstaller"><a href="#安裝-RubyInstaller" class="headerlink" title="安裝 RubyInstaller"></a>安裝 RubyInstaller</h2><p>執行剛剛下載的 <strong>RubyInstaller</strong><br><img src="https://lh3.googleusercontent.com/0S-ZhQ-fH4S2aa7vYEYNori5v5WG_nthnSKXsEzFIXPN6RBOhcewnLmlPD2HohAcj9W4HUWxnCK2cDzjeNO74CwLr29hQV--gZRTNkb4sXuCmo1wTRaNZSahkZLdKDaeIfkrV6YX7IfAPncyrQJVnsiv6r1y0x2tMsrHUgnye5sA9i0mbeYWYMSJ74dVpPefrCBXV7p1OjrgLF-BdAA7B-9jcDPMBfIGvEi3KxjDsdsI3irfTUqtAUkzU9Q3uGN2Glrl_zahE64ZSnTnz57R_kgCcfBSF8-a8jgWWSpTeZvKLBUOTABAINJ6QtUzZgdYUCUu03LZp1ZcBH4eQgHcmPE_7u2RgjtShaIF2nruQLRDd_RsBVX6Gj2RAhkCysrFPGPXW95HDbtWGz-A9V9oET0koQYDWAwYFxVBi-U85yLiHFrzHGdJOr8Z_5ZxFkbWZMj2IuLYJNYa2C9Jj_FWoQTiLxmAkE1gGIZvNS2wtEk356Z8MhOSj4XI0SHlVWpQsKRamsGYjOubcJxfb4CgRhbql1YHoGhFyn_VAfzFBgEOLZcndeDQ1oL_wTeoBmM0betVvWx2_ea7rzLXeNs3Q0djK4GR5IEl7wAgNbbnu2gx3vHXMAdzE4ykP2Uvklu01Ro2iUKqgcXCNGBFH60IlJ9l7TWJSkq0OgWth2N18g=w480-h208-no" alt="RubyInstaller Install"><br>勾選接受這<strong> License</strong><br><img src="https://lh3.googleusercontent.com/kl5V_UsdcBDShPDFS2RyyUoeOtpqnRJm-AeDPVOhvmazOmYqLIAKkGUOZDkvZEOA2ztpV4GdgZXey6-TCLcP8LiOUyMEoAlqOrip4fN7zhS1ossep0R_287T504oe6TUrpFJwx5TnThPbQktReooijSgNXT4V4I9t1wktEM8F0a_tiYyI09yAcY2Sk9PskgjDCLqPHp4SR0rN3fj41S0jeT-Udxdg6i4I0eQa1xzryBq_46aQSnSilPesdCw4vSfKeMntOpPrpUwHvP8S7QRdQ8nO3B52x8tHnqsO_RlaqHpXRg9adM5auE5mSnREq-02u3IM4S9wzQL3MjaGQ1wgsgAJz1jhS9rRs2Y_YtSvtWw9jDtxq7Lo3WtHnccHNlsFgzeWVg3VJGPqQvACoYRAlAvYgTsRHBuL72mqYKUpltD81ExLvFraGhXa1fnHbJ3q7GqtAU9v966KCdTBbxpjW1S8ghxz7KroW21AaZwhB50bvRV-gDOAqhgI8quSk0BYAd_9mz82MrRkii13581to5u3AFgP5NaAmt_He5QM3siE9Lndspn10WkdQlNH8Ud4N7DdLPA7HETb4j6qMZBlM2VX3SYbtE1NhyI40u343z9qy9lT9YsJpM7LFJH4LDlDbhMTs670aFMW-alk7eoDSOnJUExjoF9mMz8IaJD3w=w499-h387-no" alt="License"><br>選擇您想要安裝的路徑並勾選 <strong>Add Ruby executables to your PATH</strong> 這個選項，這樣安裝程式會自動設定環境變數，等下就可以直接在指令列上執行。<br><img src="https://lh3.googleusercontent.com/Kn37dYUKVzn5DEb_dldQaYZ977gxeAdLGd2gfM5xmo9--8oFbhiHQRh8d1p9t-zcGN-uVbyqPG8Ko2UZ7SO0PnZ9--IDzc0b7bIhGSdyhN-zz96dNr-JFe4gI9Govdha6uwPFnzRCKX_1m72p-uYrVyTyf1AYmdv7qnhPICf1i-TJPtlZdbFto-HoWgvg-0KQVo9i9fEAgtzjH40sfxF0k63NMOyiPfH5lOnCdWSntgfUOhgT9J0lcNX3q9jwjX-5LbF5biRz7IRYcfXRepDYc94td0T3Mn2KwEgteVdfMS6DHvYfTr6d7SL9fNT0O4dh0qAoyLZFd8fz1ypvf6PR6NdtH8-G6qJZ4MD5hS9CliC7HgOsdbnJ0-R0gHeFZIbopO5FW0PJdrNxiIt3rN9WEKKT46MrojkOs3dhI8harPeMQCZ36_WLmpuizmrDSnwIAcnWEQQ-XnJJcAyGDRsshIYrHZ8_jxEh9DeO4JEX6PwoWsXud3VBaRRlgtKw99pHuBKxkNW_H0Fe-v9RAu-68Es4OLCisPvx7HfmMFJtCp6Uw-te-VUtvNY7oUIwtbPT-siKBt4k0VI3xvkjBBt8_JvK0BWgWHEEV00GwQEgkvZf51t270W90wGy4lcDkS_ETulN2m2ZtCCAIqb1Uj2IgozMQTpawPgupkP1div6Q=w499-h387-no" alt="Destination"><br>然後稍微等個幾秒<br><img src="https://lh3.googleusercontent.com/fLRCeRkcCzPD407BTI79H2eTWhWbsnI2VRkpJuNG7tvVS7uEyk3rxsla3c-9XdMYNsYfwTMeHCGbo_9ARfZ4W6m6uK5itjSN52ECL3QrIoTQKzp0ylgtIyrTpDZrTvNr1XGJjlEfUo_s0Op-wzpMZLxppG3iNtzSA4awztUhmOYJBtJV3gkMwJfxlYxvZsLVbLG1gG-jKcUcLWMYM6ldYv4KxM5E7zOxOGS9m1uSYM9VUIF4Y1JIcW-tV6Z_Omx88Q2m1QumKmIX32oGjBBspgBw46FkKHkoTNQux7cdZqDxg51rtBDU8WB4PQikJbS-9hLINJmpY7t2jGpzjXoTkIwJwC19RQ0FoPE_w_3bQ-ocZnETM9MnJ1p9yAF1hG9REC74QIB1gORRYyeWu-06SkhG7WLKfn7Ynk0W2QLhh_TKJG99vS-9mu6z38O9S_kmtNnGQufEfHNsNCmNiezu6KvdNyH0Hpdu51mOUOp8N56uJ9B8bY_mN7Oe5xEawzkoy0dYCfGySZtU5aROVKar1KvAkRCHb1bhi2_xqh0ZIJfopc5bWAv7Xu5WSUlerM-Ec0MlyZbPMWXNDv04jTS_Ws0439vNutPKO0L46QrgNTAtek9imNMXukwnOHIguhcwOElCsBBVL-PWoG_gswa4Vc9SVMuohOOVqT2k8WBBoA=w499-h387-no" alt="Installing"><br>就可以看到安裝完成畫面<br><img src="https://lh3.googleusercontent.com/0aF0CzAB8C9tVUA5xblqYdpd4DKIsp5fSGH_oqJ0Nez_nA2Py-bjdfyyLvUWfFXbEv_JK9EZnr4GIydLTZXIHLtO-ehokl5Ub97mIj9jojZWHUJZKjoIleBiXK24P5T82xSN5rs3dCEYKWuE7M5Q60psTwnEKSYUsEqkRP0n1sQYWRMG9ciHO5FjQUKkae6-zisvOzGxN5xrppqDjhrlSxsS12QcBTULpiCoJQqXoIWOuf7X99LpH-AaH0jfHvEpXRkp1jVFSnIKYcUPp8VhoNW_BxbLwuOrhi71bu30BYp03SFUsygzxdcqeTunS6etpPXzt7zw5ZZVQgmvnWILh5Q-a43K0AFfCtIVO5yIDfnbnMChP6fVu6AnEinpY3MTgkPs3dBxgoaZAjRr1UGTcT0zVpxxVRtXOLjfLfpw0yXQsLyMVtnfISpAV2n_wPDc1lt8kIApDMEBgcD3NyUwGJRiodLJFjsew8sm9lYH2zZuoNxOSjzdvMuN9c0u1H-t8ut8Jgz2mM7R7hB2OdsLnd1vgrYwwk5BFGE3e9tC3IBg_QIAYHUXlnmDddTN-yLuai3dyaDN_3uDwgKx-X7h5gyp6UmGqedl0ER2gjO4aCZmGQ_zg5ztBn7_n69L664xrciZOKK2VZ6l0EDPbGPQf9aImfdpQhECDJqODJGaSw=w499-h387-no" alt="Completing"><br>接著我們開啟命令提示字元，或是<code>Win + R</code>輸入<code>cmd</code>，我以下畫面是使用 <a href="http://blog.miniasp.com/post/2015/09/28/Useful-tool-Cmder.aspx" target="_blank" rel="noopener">cmder</a>，畫面看起來不太一樣，但是功能是相同的；命令提示字元開啟後，鍵入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -v</span><br></pre></td></tr></table></figure></p>
+<p>查看一下 ruby 安裝的版本，應該會是如下圖顯示。<br><img src="https://lh3.googleusercontent.com/euDUAHeFTp7iMYQdaX_F59AEp9xikpkjepPst6M-cquaySRB7NBzRZwvJtI6fB8bmA6FpGQHgQIvBrknSdOBWv348-8idTdFYrbOqJYp58n_iC2nnEJtYAYpH2p2KcI0QZbWtPA4FDzfGYF9qQnRHtihhRmdk9crxKYezv3eywSvrzh0FY8hOoLkmHZAtxzglSrZVVewnrxvXm8iiiJN9TR7XHuxbDbxJ82rV2RZzd-zQr4GtvmweiSLePjb_lMC55rujI_NMTooZbni7DVgPIakGk-O5CnF8RYye2mHqLC9PwpC66qj_ewtABiwe0hgka8PfWu7ggC6XwxVndwKtCxsfmkmu5gnMkjOLl12sKixcjzZJAGGsHmV7OXGharBXy3qC25aE4ig9hGqdn2gi_Sq1bPMDTlDiWj6wDOF6RjiNdj55xCuB_0H1qcTkNrA7_Y6HHQwgdoaeJe2xSC6fp0gTD7FnKyLN6aMmJ55iM2a3XNynAyBht38TJtckpCj9m76E6gWUqOSo52n2IYrjCAdNMpQjOHVHxRminKj8wEGwxM1yKWaQ7ewcuH5f5I8Kn8A4o5geioR1CXlroTxCLTNR46dGSR33_RitbinHQD19F_WoLGYFEr_pUzmeUo34PT132xcYhKVIG-_bAUjrH8LswWMdi93b34pEJPSvw=w518-h126-no" alt="Version Check Success"><br>如果出現<strong>不是內部或外部命令、可執行的程式或批次檔。</strong>這訊息，如下圖所示。<br><img src="https://lh3.googleusercontent.com/5Y9lOFcj8iLaUt0mckz84fMgNQxmeh17oWal9YFN9AqVsTTy4fdQZFtpPztUe9H6rxyIx6GGiYTsRd4iWcHbcLTDKau5S-HpsEiMp3r-W_90C704C6SxD245UMcljk_pW83PAd7BgEzb8ai3tULKKzrFVVD6oXFBdjlZdh3siwKj8A38SBNvEWfvpxEiHNJ0o79g6-9sNuhdxp0wDT66ILb4ZGrQmxH6uDVqTNKLTuYeTtd5P-jIaxi_ivIFgEGGhJTUYjVESEdRtkoQ7apTKeE5S7xRNhN9MMoGw6tr4qNFDL3cIe5YXoIcmWnqzubMvm2w3lcRYvpfrtgf3S--AzqsFnQVgB0aloc29uxBNPrIFEWfT1qoAp59eqAwVJm9n7oU33jma6bNXcb1zIWJ2zDFZAQI2K0fEv0U8sWkSALVx50__6vgI6ZeoSjewI4FwsA8M6TTslI6VvYyXIV6u2i7YtIonmbvDKzPlI2BJjYiOg52SH4Ea4PqCTvvTD_VdxoQgoRWNCyW9nSbKIGUzUcWvqf2jitogRmuEDX3R_tMghScctRoZU3LmjS4W-fl1_DnlYPNed0ESjgaHmMqkwt2Px1IbOwcev7avbU_3Jm_M4RKw3zWbzT6gy6X-GwoI4ApxMqgwgj1R5Opasi6cEQek6u8MqlRplaRzqxkoA=w455-h125-no" alt="Version Check Failure"><br>可能是剛剛沒有勾選 <strong>Add Ruby executables to your PATH</strong>造成，您可能必須手動設定環境變數，需要進入控制台-&gt;系統-&gt;進階系統設定-&gt;進階-&gt;環境變數-&gt;系統變數-&gt;找尋 <strong>Path</strong> 路徑-&gt;編輯，把您的 ruby 安裝路徑增加進去<br><img src="https://lh3.googleusercontent.com/o3M-L2Kp5xFReTU9BtSEwWELEYIbdpWe8RMDUywFFtLBYm4niFBEixWpK8V9U8zj3sumY8shcYOKJ1QMkioraCEC4L8sUvh7u1u2W1K8ur6gYEJ46LJqQQeRjAdeCSvHOjyLdMELfB2IaqN_TJkAhNfE2GWyCxwZxhxwVHx0-cIxHSQPFfJ9MZmDk6DUWFpjW9BlAhFdNg1pPP-wpR6fVDHr1MVI2xOZEK2eOCoHlV19zqRfEv7C84Nzx_06I3zjT0Ch6wJnQmxsuEL9Oez-Ps7XsjHCEk-tGAj1tGKslW5QX8SPOM_BlMY2Qvc0ay3-jPTmF9zYtoiM1x9wU9PzDH8hLkHQQn1zmvFTUrAcNeEU4CxtH9YSYFu1IDouy4lT1ImvrxaU6ctTYeXU-7pW8q2BaUpLzFbnEZ_uD74ctTIFZYKjwn2VqB2PjCGYfbDmnuFcw0_xLJLzVQ5cQifLkKNy0_owvPxkwWyJvf_fjQb1rUN5BCOMGYVQHZyWMniYT2VKaHa26KLRcNnC7Y9U-tO7JW3uP7JWXVIFauoxd24ZG8eMgse8ZZlZ8pJHN5u9jv7jA30IAeme6v8qMr8nen8-hIkoR93QSE5n70-qcbXtyd-8TdpLlGjKO3y_RfmQ8-6WNl-VEEv7Ti0dASMQD4XJfX3z8ZaeVWVReE1_vA=w561-h509-no" alt="Set Path"></p>
+<h2 id="安裝-DevKit"><a href="#安裝-DevKit" class="headerlink" title="安裝 DevKit"></a>安裝 DevKit</h2><p>執行 DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe，這檔名超長，選擇您想放置的位置，建議放到<code>C:\RubyDevKit</code><br><img src="https://lh3.googleusercontent.com/2FZfFTfhDRs-wt6OjjfocYWhnvJAhpI8qbM0iczSKOrb-sFM2HONSKGwhkRJUqCSTkfJJql1G8S30IKqhLV1Wd--xK-Zextvd9F1zrp4xF7ciCp84ctGDGkOza0CM6oTYpjlSA1eO0Cd5NdXN5UQZKBFaCOxTz5-d2dfy-nMS6dd4DoCllxuEuHQnbova7lkp_Tq0qaLbmBKFZWHrJ8IttjtLY7yluS8hKqOP58NOVPlxBjf9H2nx9gQR5At4ZPEBkMmlVF5vHTjFWJsRuJqJ_giIDo_B2uv_nuK7JC3b8GSs5cuejNHYvgqUkWEDWg4JyWLhpHLE6wVJ159kGd6w6JFAKEt-oCP9HYugEActi34VOx6vAVHEJsOW6BEEVsznSPa5otIDIBnszaSO6XYiH4Wg0T7b8W-okIbdYyxzJjbrw9bL-R98h24u1rdvhbW0scK6cKfWajAIRC_aKSSgD3cQVv5yZTiTQufIeB5imfEwEP3yq-pN54XXo1XDvzDbso3k2R6AkgAjpvztw_9f-9ap1HsqlCNEUbkuKF1Djl5qRVm2VRERgnJnc81AhkxtzVgFGyx3QdI6h-jBT-tjDPgsm4XZFdJXaLCeqcgBbJO7PjY9LkxRVOJgl0NYfTPDvPstD-2G2Fj4U9S92jMJiHxGT1r3qu0orCgg-DLnA=w344-h154-no" alt="Set DevKit Path"></p>
+<p>如果都是按照上述建議的話，到<code>C:\RubyDevKit</code>資料夾下(您所解壓縮的位置下)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + shift + mouse right click</span><br></pre></td></tr></table></figure></p>
+<p>選擇開啟命令視窗</p>
+<p><img src="https://lh3.googleusercontent.com/PFZSW_TDlBlO4LeDCisGqCiI45kFLLD1-CKzRNX2-4yBgQyP5u8kK8T8jMDhw-gPy0atKGxM4YL7mMxD-FhfWywI9vJUlGoLNDWNSzI5bfy3iR-kuGkBUgbtg_vOGbkFZdcM48sQvVKqAZrcHcFXpOeEGoBmp9RD8iUiwgBLGX1zQCTEEHbJkRzMv3Dl6ujUgph1ODV6bX7KBtWl-qunJbswVeOuOVRsokcYzFxLD181CVVsNnwFhwK-OrlIgGEXz-vAhxgAs7QZSWwgpTrCG4gb6q1gi7SfSVr-ohWUspWL4C0vWLQwGMNWxNTsNp9_9flXJb6wvLJReZOzIUPTy9Lcj983Rbj7hNGdZccH9ApPqvIr_AIpynE_FtSmrrHf2Ri1MzRrRoiGd9zdAGSGGplokmsRDCQoGUT6SicmnpJZvdXVtAMOlb0XoMLaDcqQDkf6b32UErSRfOKvyFvHV5L6SpPya0sgaN__EZCzYwe5P3bYLND-uMTebKYQpyQ3RRDkoIsPYGN_wXLr6wCok4unkdI_iytdn9nvsZOIQ0uVf5BwhBnpZpiuyAI7LXL_ejWuH0VDtlluNmVfivBEX_AOQV8Vgy3U5ymDXv9l9cb79mz17kEyXnRPKUDElz5tMGGzIrh5nz2LSKXyFfo8JCbkhXmnP2mWI79EckMTFg=w349-h463-no" alt="手動設定"></p>
+<p>執行<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dk.rb init</span><br></pre></td></tr></table></figure></p>
+<p>這指令會產生<strong>config.yml</strong>這檔案，並且會偵測您 ruby 安裝的路徑，直接寫入到<code>config.yml</code>檔案中<br><img src="https://lh3.googleusercontent.com/yffFDFN18tXVCSXaxe6Nzx8KYgUAuINaxC37Su3qt84mLROy8OkavkYFuZCIB4mXBh-EIF7sbL6oiNu9lzy_xQha-AKQvwBeti3OJUUlyLZKVKUpMY2aZ1uXRF1tmlopUD10UoEHvSUTaDz3ybwG8pigOufJEunpPB-DFszMdWJMwFIG7_a_wIA_YXnHFPF97t0B_t9AuKiQoV8IAT1tfodk9RrogwIIDXtSDmIr-06piEPxxgD1vyzSjZx-BHeyrdH6lmVMkbaMJNJ7OhTIqen2-m5prH5f9BXcCzIkf4uHZfyWr2Y5u4LGT2HkpbzZBslrxhwLFUtzwylxvwwpetlrY1gHy2zhfCni1rih-r9u8GIFx8IP-yDz9MF9xzooJXpXhnRDDamVjlWard770qSNZAFjKPiuGLpXSZrfLIizqdXKFLayDVrU4-a11VomfmcrbYb4lOqJznsPF0FurWkaq1eyzquyLguoXKNmJkD1XPJaSD7_7r-JoSGpsg1f9_peC6k3pXX91rEHPIjClVUzybxLmLdM0AVc7w0cw3A1tnd7KX9VbwavlwZD1RejOkZdRx9sGbNvOf0rUkeffdZ-bPNUkFKYXr9RkvbPBA0wy76qhqpKiqAws5G1-17bMqvVWSfy0XQFqgrb4d3kNds9ED7xWD5oPoREDSJXuw=w623-h236-no" alt="執行 ruby dk.rb init"></p>
+<p>假如沒有偵測到您的安裝路徑，請手動更改<code>config.yml</code>這檔案，用記事本就可以開啟這檔案，按照下圖修改，請修改為您所安裝的路徑，注意路徑語法是<code>- C:/yourRubyPath</code>前面有個小破折號<br><img src="https://lh3.googleusercontent.com/Nw8bPnlKBTeMcPiqBMmvkbkMd3_Szp5EI58eN85mNUzO-DnhPmnzRcYT4fjayFMDeHbp7InzwbAP8Eiik0iyAVNkXnKMYEWPMfLc32RMU9llZUVKYkEyQ8pVls4HKGVBzHuuSsUPV-ZB5W4k43T39u57fRpSB9tyvVqu0SOHSl_EYZJ8zDSS8MERHC1FhncBJOlDDYu24ZDIgReGZdC1SSSjty6Mt5hWMEV93-We-bPd41kTim7eYR1aNHJIj8pk9Qa02etXvGXB7V9epxLWY7OMoHejbVE7ElUJbV5f94iibfD8Z3fimdstHKu_5ACsXon6PqGWG4Ra88EAgAdAxC6v5vD1f2d6NDhNgZK_JZQno9oRsJNIniXNnXZ91V9rrLih_qh2Pt7G2EgGwadybsVn3SI3_1m36PAmSnegiFNCxLu2sx9ylpC3YlHeVDTJrxmN9S9DqWYlZHlBTW3rfsWU4TS9JkcEXr1IaUD5p29zH_-n-sCKvnvYDEEX9RGZpS_akzDByZT5czfXBHLNtF50sFM8iGB-e0lsgiQcvBqxm4hPNsH2a0AtR6oMBvJ7MOciyX37v7DnLUvZqssdJVSaK4A96BvYp-CzZE7RHibOCytPdBlZAwEMyrMtkLr1GtOP6onW4tOCPEXHI0lkdMiAOBDAhCDofRoBush4Xw=w245-h337-no" alt="設定 Ruby路徑"></p>
+<p>然後執行以下命令，它會更動您 ruby 安裝路徑下的檔案或產生檔案<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby dk.rb install</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://lh3.googleusercontent.com/j2ivn6Yddyvky3UXZl1JhEP_jYekRjDdjESJKmJvj9LMM7McjryeBx8z_zPPr8Ttt2rdLyPvetdvFVLv1AWILoqKFOaarTfEUqHOxb_XaCpsC16zonq1fj6oghM-foa1BRbgiYMbPSZDhyEkCVP-PfKPmjAzCveXb-iW7BEWLP3k7gG1ML3tdThIvog5P0ZZisWUkmQghKrkhV41-2ChQ4CkQqqob_0cyeHH7F0RuAwYYtiXy92wWgd-i3f-6X-3QafMJQJNqsEaZyuUd6GB6Nys-aQgbkWAThPiKtDgFxXIDieiLX-dv2cF__DFYz0Ej1ivZEeCTaWyCv4LCVP3E0oLO4EI0DolwN9Se1emmvNaUWl31rOGjmd1Q_lkIzOr2CI7gTkyioELKksj7rX7QE69ze-9wogrAaknkhkaHQDIhMYBf6vQq8CGtrVrFSZ3k36Vbxdlu0NsiquxeNF10OFNqMLIP_D4I9tPaszO2MXJ5SLrekC4fj8kwBIW8EeFYvN9T17q1y06mtecyoxYDabbtBG-lC56ahlqGjKmDwtf9WIaA5fUx4zPWXYxgzlVXW_pTxFJjGjj8mrfUNP3nJdo8pqutbbBV7D8vqIX2_61vXnp61XkKZAnjDJFMgpkHa7YzkKgBAONJjcNio5RYb9XZ2i_oMEuumNfO8Xnow=w628-h155-no" alt="DevKit Install"></p>
+<h2 id="安裝-Rails"><a href="#安裝-Rails" class="headerlink" title="安裝 Rails"></a>安裝 Rails</h2><p>接下來使用<code>gem</code>來安裝，所以下指令就可以安裝完成了，直接下指令安裝 rails<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install rails --no-ri --no-rdoc</span><br></pre></td></tr></table></figure></p>
+<p>安裝完成後，測試一下，看一下 rails 版本編號<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rails -v</span><br></pre></td></tr></table></figure></p>
+<p>出現表示安裝完成了。終於弄完這篇文章了，明明裝的時候很快，弄成文章花了不少時間。</p>
+<h2 id="My-Environment"><a href="#My-Environment" class="headerlink" title="My Environment"></a>My Environment</h2><ul>
+<li>OS:Win 10</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://rubyinstaller.org/downloads/" target="_blank" rel="noopener">RubyInstaller</a></li>
+<li><a href="https://www.ruby-lang.org/zh_tw/" title="Ruby Programming Language" target="_blank" rel="noopener">Ruby Programming Language</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"># Windows</a>
+          
+            <a href="/tags/ruby-on-rails/" rel="tag"># ruby on rails</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/04/first-with-the-firstordefault/" rel="next" title="First() 跟 FirstOrDefault()">
+                <i class="fa fa-chevron-left"></i> First() 跟 FirstOrDefault()
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/05/octopress-and-github-pages-move-blog-to-github/" rel="prev" title="Octopress 加上 Github Pages 移動部落格到 Github">
+                Octopress 加上 Github Pages 移動部落格到 Github <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#緣起"><span class="nav-number">1.</span> <span class="nav-text">緣起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下載安裝檔案-Ruby"><span class="nav-number">2.</span> <span class="nav-text">下載安裝檔案 Ruby</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-RubyInstaller"><span class="nav-number">3.</span> <span class="nav-text">安裝 RubyInstaller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-DevKit"><span class="nav-number">4.</span> <span class="nav-text">安裝 DevKit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-Rails"><span class="nav-number">5.</span> <span class="nav-text">安裝 Rails</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#My-Environment"><span class="nav-number">6.</span> <span class="nav-text">My Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2015/11/05/in-windwos-install-ruby-on-rails/';
+          this.page.identifier = '2015/11/05/in-windwos-install-ruby-on-rails/';
+          this.page.title = '在 Windows 安裝 Ruby on Rails';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

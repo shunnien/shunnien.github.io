@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS,CSSGrid25,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="結合前幾篇，使用 js 與 css 完成表格布置的排版，應用巢狀表格 完成圖片隨機大小的表格呈現">
+<meta name="keywords" content="CSS,CSSGrid25">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Grid 筆記 20-CSS Grid Image Gallery">
+<meta property="og:url" content="https://shunnien.github.io/2018/04/16/css-grid-20/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="結合前幾篇，使用 js 與 css 完成表格布置的排版，應用巢狀表格 完成圖片隨機大小的表格呈現">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/nDUGJuOAEtemIRCSvqx50SEAQvK2majSGigMiUSUJtt22z6leQFDzORIuTT69QdOGKQ2gQ8Ce05y0Pl83x__nJJc4WldSa-KIPrdlt9WaWY8JHNppEb5DrMQnGbKtJpWhbQ3al2bfDnHQSVIYOv3iaR6qeAH-H43vEGOfJMAgeMAFas1jVWXIzRSUggi-dztCiGID1vVnQo0dtwJWX8UztnMubhTN0f-A16ar49OVy2ZZO-5xepZF14eav3HvQp3Nf2EQyByzRWh23_HBM1zc4u7TrloUu25WuWWAmVT7shm2sCVgEHqWar4334GXmpkq3MjKqraggyjyqQW36US7WEFEqf-tsoEiiLd6Fa1OrdIckVN5mh1YJmSzVmaSk1QHVXn9b0_87hFb8Q2KzqiPBD-WA9GOe5D_t8NSKe69Srh3Ycddb4S-7cXiUUu3TmnoyGbvM8zEF8EKkXh79YdlI9QRfwIRzuVPMrfwhzjm-APTnIJFHlZM-mTToi2wJXNMi1ahrrp_WlJ6DC3x0oC0lDftBcmyftSZvNPfwdU5w9rAUfzFVdRhLZETTmHGMEdQJL_c3ClV2O-6-XWwl2A_ijDXPRklu9YDaSyaGN2NHOQsmhoC5yzPs2a7gGf1SKBOj-dJV0RESqZ_y9YcB4QbyxPm33gZBxq=w534-h387-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.685Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS Grid 筆記 20-CSS Grid Image Gallery">
+<meta name="twitter:description" content="結合前幾篇，使用 js 與 css 完成表格布置的排版，應用巢狀表格 完成圖片隨機大小的表格呈現">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/nDUGJuOAEtemIRCSvqx50SEAQvK2majSGigMiUSUJtt22z6leQFDzORIuTT69QdOGKQ2gQ8Ce05y0Pl83x__nJJc4WldSa-KIPrdlt9WaWY8JHNppEb5DrMQnGbKtJpWhbQ3al2bfDnHQSVIYOv3iaR6qeAH-H43vEGOfJMAgeMAFas1jVWXIzRSUggi-dztCiGID1vVnQo0dtwJWX8UztnMubhTN0f-A16ar49OVy2ZZO-5xepZF14eav3HvQp3Nf2EQyByzRWh23_HBM1zc4u7TrloUu25WuWWAmVT7shm2sCVgEHqWar4334GXmpkq3MjKqraggyjyqQW36US7WEFEqf-tsoEiiLd6Fa1OrdIckVN5mh1YJmSzVmaSk1QHVXn9b0_87hFb8Q2KzqiPBD-WA9GOe5D_t8NSKe69Srh3Ycddb4S-7cXiUUu3TmnoyGbvM8zEF8EKkXh79YdlI9QRfwIRzuVPMrfwhzjm-APTnIJFHlZM-mTToi2wJXNMi1ahrrp_WlJ6DC3x0oC0lDftBcmyftSZvNPfwdU5w9rAUfzFVdRhLZETTmHGMEdQJL_c3ClV2O-6-XWwl2A_ijDXPRklu9YDaSyaGN2NHOQsmhoC5yzPs2a7gGf1SKBOj-dJV0RESqZ_y9YcB4QbyxPm33gZBxq=w534-h387-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2018/04/16/css-grid-20/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>CSS Grid 筆記 20-CSS Grid Image Gallery | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/04/16/css-grid-20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS Grid 筆記 20-CSS Grid Image Gallery</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-16T10:21:40+08:00">
+                2018-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/16/css-grid-20/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/16/css-grid-20/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://lh3.googleusercontent.com/nDUGJuOAEtemIRCSvqx50SEAQvK2majSGigMiUSUJtt22z6leQFDzORIuTT69QdOGKQ2gQ8Ce05y0Pl83x__nJJc4WldSa-KIPrdlt9WaWY8JHNppEb5DrMQnGbKtJpWhbQ3al2bfDnHQSVIYOv3iaR6qeAH-H43vEGOfJMAgeMAFas1jVWXIzRSUggi-dztCiGID1vVnQo0dtwJWX8UztnMubhTN0f-A16ar49OVy2ZZO-5xepZF14eav3HvQp3Nf2EQyByzRWh23_HBM1zc4u7TrloUu25WuWWAmVT7shm2sCVgEHqWar4334GXmpkq3MjKqraggyjyqQW36US7WEFEqf-tsoEiiLd6Fa1OrdIckVN5mh1YJmSzVmaSk1QHVXn9b0_87hFb8Q2KzqiPBD-WA9GOe5D_t8NSKe69Srh3Ycddb4S-7cXiUUu3TmnoyGbvM8zEF8EKkXh79YdlI9QRfwIRzuVPMrfwhzjm-APTnIJFHlZM-mTToi2wJXNMi1ahrrp_WlJ6DC3x0oC0lDftBcmyftSZvNPfwdU5w9rAUfzFVdRhLZETTmHGMEdQJL_c3ClV2O-6-XWwl2A_ijDXPRklu9YDaSyaGN2NHOQsmhoC5yzPs2a7gGf1SKBOj-dJV0RESqZ_y9YcB4QbyxPm33gZBxq=w534-h387-no" alt="demo"></p>
+<p>結合前幾篇，使用 <strong>js</strong> 與 <strong>css</strong> 完成表格布置的排版，應用<strong>巢狀表格</strong> 完成圖片隨機大小的表格呈現<a id="more"></a></p>
+<blockquote>
+<p><a href="https://shunnien.github.io/css-grid25day/day_20/index.html">Demo</a> | <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<h1 id="CSS-Grid-Image-Gallery"><a href="#CSS-Grid-Image-Gallery" class="headerlink" title="CSS Grid Image Gallery"></a>CSS Grid Image Gallery</h1><p>此練習初始 html 如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"overlay"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"overlay-inner"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"close"</span>&gt;</span>× Close<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"gallery"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>接著撰寫 <strong>javascript</strong> ，以下 <strong>js</strong> 連帶說明一起附上</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 宣告 gallery 取得 .gallery element</span></span><br><span class="line"><span class="keyword">const</span> gallery = <span class="built_in">document</span>.querySelector(<span class="string">'.gallery'</span>);</span><br><span class="line"><span class="comment">// 宣告 overlay 取得 .overlay element</span></span><br><span class="line"><span class="keyword">const</span> overlay = <span class="built_in">document</span>.querySelector(<span class="string">'.overlay'</span>);</span><br><span class="line"><span class="comment">// 宣告 overlayImage 取得 img element</span></span><br><span class="line"><span class="keyword">const</span> overlayImage = overlay.querySelector(<span class="string">'img'</span>);</span><br><span class="line"><span class="comment">// 宣告 overlayClose 取得 .close element</span></span><br><span class="line"><span class="keyword">const</span> overlayClose = overlay.querySelector(<span class="string">'.close'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 產生圖片畫廊的 html</span></span><br><span class="line"><span class="comment"> * h 是 grid-column 跨越 column 數量</span></span><br><span class="line"><span class="comment"> * v 是 grid-row 跨越 row 數量</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; [h, v] [grid-column grid-row]</span></span><br><span class="line"><span class="comment"> * @returns html 字串</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateHTML</span>(<span class="params">[h, v]</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 圖片採用隨機選擇 images/$&#123;randomNumber(12)&#125;.jpg</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div class="item h<span class="subst">$&#123;h&#125;</span> v<span class="subst">$&#123;v&#125;</span>"&gt;</span></span><br><span class="line"><span class="string">        &lt;img src="images/<span class="subst">$&#123;randomNumber(<span class="number">12</span>)&#125;</span>.jpg"&gt;</span></span><br><span class="line"><span class="string">        &lt;div class="item__overlay"&gt;</span></span><br><span class="line"><span class="string">            &lt;button&gt;View →&lt;/button&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">    `</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 隨機數字</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; limit 範圍大小</span></span><br><span class="line"><span class="comment"> * @returns 隨機數字</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomNumber</span>(<span class="params">limit</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * limit) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 按下 VIEW-&gt; 觸發事件</span></span><br><span class="line"><span class="comment"> * 開啟原始圖片大小的畫面</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; e </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 取得點選 grid 圖片的路徑</span></span><br><span class="line">    <span class="keyword">const</span> src = e.currentTarget.querySelector(<span class="string">'img'</span>).src;</span><br><span class="line">    <span class="comment">// 設定呈現原始圖片大小的 html tag 路徑</span></span><br><span class="line">    overlayImage.src = src;</span><br><span class="line">    <span class="comment">// 設定 css 顯示</span></span><br><span class="line">    overlay.classList.add(<span class="string">'open'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 關閉原始圖片大小的畫面</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">close</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    overlay.classList.remove(<span class="string">'open'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 產生一組長度 50 的巢狀 array</span></span><br><span class="line"><span class="comment">// 每一元素都是 array [隨機數字, 隨機數字]</span></span><br><span class="line"><span class="comment">// 隨機數字最大值為 4 ，最小值為 1</span></span><br><span class="line"><span class="comment">// 另外合併幾組 array [1,1]</span></span><br><span class="line"><span class="keyword">const</span> digits = <span class="built_in">Array</span>.from(&#123;<span class="attr">length</span>: <span class="number">50</span>&#125;, () =&gt; [randomNumber(<span class="number">4</span>), randomNumber(<span class="number">4</span>)]).concat([</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 利用 digits 的陣列，產生圖片 html </span></span><br><span class="line"><span class="keyword">const</span> html = digits.map(generateHTML).join(<span class="string">''</span>);</span><br><span class="line"><span class="comment">// 將產生的 html 寫入到畫面</span></span><br><span class="line">gallery.innerHTML = html;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取得所有 .item 的元素</span></span><br><span class="line"><span class="keyword">const</span> items = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.item'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 進行觸發事件的綁定</span></span><br><span class="line">items.forEach(<span class="function"><span class="params">item</span> =&gt;</span> item.addEventListener(<span class="string">'click'</span>, handleClick));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 關閉畫面的事件綁定</span></span><br><span class="line">overlayClose.addEventListener(<span class="string">'click'</span>, close);</span><br></pre></td></tr></table></figure>
+<p>設定完成 <strong>javascript</strong> ，就可以來處理 <strong>css</strong> 了，針對 <strong>.gallery</strong> 讓圖片畫面集中，所以使用 <strong>grid-auto-flow</strong> </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: sans-serif;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, #F93D66, #6D47D9);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span>,</span><br><span class="line"><span class="selector-tag">h2</span>,</span><br><span class="line"><span class="selector-tag">h3</span>,</span><br><span class="line"><span class="selector-tag">h4</span>,</span><br><span class="line"><span class="selector-tag">h5</span>,</span><br><span class="line"><span class="selector-tag">h6</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 關閉按鈕樣式 */</span></span><br><span class="line"><span class="selector-class">.close</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.gallery</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(auto-fill, 100px);</span><br><span class="line">    <span class="attribute">grid-auto-rows</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="comment">/* 讓 grid 集中 */</span></span><br><span class="line">    <span class="attribute">grid-auto-flow</span>: dense;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span>/-<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span>/-<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="comment">/* 圖片填滿畫面 */</span></span><br><span class="line">    <span class="attribute">object-fit</span>: cover;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item__overlay</span> &#123;</span><br><span class="line">    <span class="comment">/* 背景顏色除了顏色加上透明度 rrggbbaa */</span></span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ffc60032</span>;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">1</span>/ -<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span>/-<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* 排版置中 */</span></span><br><span class="line">    <span class="attribute">justify-items</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">transition</span>: <span class="number">0.2s</span>;</span><br><span class="line">    <span class="comment">/* 將按鈕先隱藏 */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(100%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item__overlay</span> <span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: none;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid white;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-transform</span>: uppercase;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.7);</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.item__overlay</span> &#123;</span><br><span class="line">    <span class="comment">/* 讓隱藏按鈕出現 */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateY</span>(0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-class">.v2</span> &#123;</span><br><span class="line">    <span class="attribute">grid-row</span>: span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-class">.v3</span> &#123;</span><br><span class="line">    <span class="attribute">grid-row</span>: span <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-class">.v4</span> &#123;</span><br><span class="line">    <span class="attribute">grid-row</span>: span <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-class">.h2</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column</span>: span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-class">.h3</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column</span>: span <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-class">.h4</span> &#123;</span><br><span class="line">    <span class="attribute">grid-column</span>: span <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.overlay</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.7);</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.overlay</span><span class="selector-class">.open</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">justify-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.overlay-inner</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">700px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.overlay</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="線上展示"><a href="#線上展示" class="headerlink" title="線上展示"></a>線上展示</h2><iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/zpck0nLu/embedded/result,css,js,html/dark" frameborder="0" allowfullscreen></iframe>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="object-fit"><a href="#object-fit" class="headerlink" title="object-fit"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit" target="_blank" rel="noopener">object-fit</a></h2><p>首先來看一下 <strong>MDN</strong> 上的定義</p>
+<div class="note info"><p>The object-fit CSS property specifies how the contents of a replaced element should be fitted to the box established by its used height and width.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<p>此段說明了 <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit" target="_blank" rel="noopener"><strong>object-fit</strong></a> 主要是設定 <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/Replaced_element" target="_blank" rel="noopener"><strong>replaced element</strong> (置換元素)</a>，置換元素的定義，請參考以下</p>
+<div class="note info"><p>CSS 中所謂的「置換元素 (Replaced element)」，即是該元素所呈現的內容不在 CSS 的控制範圍之內。這類外部物件所呈現的內容均獨立於 CSS 之外。常見的置換元素包含 &lt;img&gt;、&lt;object&gt;、&lt;video&gt;，或如 &lt;textarea&gt; 與 &lt;input&gt; 的表單元素。某些元素 (像是 &lt;audio&gt; 或 &lt;canvas&gt;) 只有在特殊情況下才是置替換元素。若是透過 CSS content 屬性所插入的物件，則稱為「不具名置換元素 (Anonymous replaced elements)」。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/Replaced_element" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit" target="_blank" rel="noopener"><strong>object-fit</strong></a> 的設定屬性有以下，其定義說明如下：</p>
+<ul>
+<li><strong>fill</strong>：預設值，會填滿設定的容器大小，不管原檔比例</li>
+<li><strong>contain</strong>：保持原檔比例，並縮放至可以放進容器的大小。所以，容器內可能會有空白的地方</li>
+<li><strong>cover</strong>：保持原檔比例，替換內容大於容器尺寸。因此，部分內容可能會被遮蔽</li>
+<li><strong>none</strong>：保持原檔大小，不做任何調整</li>
+<li><strong>scale-down</strong>：會選擇 <strong>none</strong> 或 <strong>contain</strong> 兩者間呈現較小尺寸的那個設定</li>
+</ul>
+<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/mou6chvj/embedded/result,html,css/dark" frameborder="0" allowfullscreen></iframe>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
+<li>作者 <a href="https://github.com/wesbos/css-grid" target="_blank" rel="noopener"><strong>Wes Bos</strong> CSS-Grid Github</a></li>
+<li>我的 CSS-Grid <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">練習Github</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/CSSGrid25/" rel="tag"># CSSGrid25</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/11/css-grid-19/" rel="next" title="CSS Grid 筆記 19-Nesting Grid With Album Layouts">
+                <i class="fa fa-chevron-left"></i> CSS Grid 筆記 19-Nesting Grid With Album Layouts
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/17/error-CS1010-CS1056-in-VS2017/" rel="prev" title="專案發生 Error CS1010,CS1056 錯誤">
+                專案發生 Error CS1010,CS1056 錯誤 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-Grid-Image-Gallery"><span class="nav-number">1.</span> <span class="nav-text">CSS Grid Image Gallery</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#線上展示"><span class="nav-number">1.1.</span> <span class="nav-text">線上展示</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記與備註事項"><span class="nav-number">2.</span> <span class="nav-text">筆記與備註事項</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#object-fit"><span class="nav-number">2.1.</span> <span class="nav-text">object-fit</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#參考資料"><span class="nav-number">3.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2018/04/16/css-grid-20/';
+          this.page.identifier = '2018/04/16/css-grid-20/';
+          this.page.title = 'CSS Grid 筆記 20-CSS Grid Image Gallery';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

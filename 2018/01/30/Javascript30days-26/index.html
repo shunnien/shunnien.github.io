@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,JavaScript30,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="目標類似 day22 Follow Along Link Highlighter 的概念，製作一個跟隨移動的強調下拉選單。">
+<meta name="keywords" content="JavaScript,JavaScript30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS30紀錄 26-Stripe Follow Along Nav">
+<meta property="og:url" content="https://shunnien.github.io/2018/01/30/Javascript30days-26/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="目標類似 day22 Follow Along Link Highlighter 的概念，製作一個跟隨移動的強調下拉選單。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/10ExDAZQzARkXXs-TIOCu5WYdBOmGSZoqGnITTxcswxyOvnnti3Hy0h-dPAMulHoKLWLI_PbbrrF_7l8tDoVRFK0iyojJjEpTnCEZNc3XJkM0CutfFHx1qsGNDklQl9cQTbTj_fiQE7AKV63HBSr2-LbdRlyMpghguFsUPxJL9tftq7HZ16FZzJAVXzCq3IJ87KEY0G5Eak9MxDkVPP5oI9q95LUCu8gQlPdMFEMem-HX-_en5m8pPa0_LrbZz-1oMW4MK48Bj50UlePwzGmRbedUvE6nwh_JfxDfG2k51TD-CIIzFLFC1TKJphHwDlD7SOG9MtAerfBDo_273Ml8jq6nTbFC4e_ghtKS5XyksN30a5J-5DX3Zmu68x5cXIXyxopug2wo03J5ZeGSSEMgQ9G9dxTvUH4jH3zBxcKhrnbE5MSwl7Ol5bOV9_FPCGt8SJFzHV-_EAbRMsjJSbA8NA8GcIx77gKAOv0e-qnq4OOCvKqtJT8nSxnGAT6w_qwsJPyG8ibwWXgmbNgzWm13Gylks2LuJFyy0cYRowqZpQWYpf8UiQvNJJPF0SJHJJ5L8M_juMUtBMMI4-eBLvDV3-PCAX4AKn3IJqUUcijLofL3J3XkAuhWWssRPM-D3R4aidKtxPUqdYywr_-uypp1J2P6u7dH52r=w794-h435-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.671Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS30紀錄 26-Stripe Follow Along Nav">
+<meta name="twitter:description" content="目標類似 day22 Follow Along Link Highlighter 的概念，製作一個跟隨移動的強調下拉選單。">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/10ExDAZQzARkXXs-TIOCu5WYdBOmGSZoqGnITTxcswxyOvnnti3Hy0h-dPAMulHoKLWLI_PbbrrF_7l8tDoVRFK0iyojJjEpTnCEZNc3XJkM0CutfFHx1qsGNDklQl9cQTbTj_fiQE7AKV63HBSr2-LbdRlyMpghguFsUPxJL9tftq7HZ16FZzJAVXzCq3IJ87KEY0G5Eak9MxDkVPP5oI9q95LUCu8gQlPdMFEMem-HX-_en5m8pPa0_LrbZz-1oMW4MK48Bj50UlePwzGmRbedUvE6nwh_JfxDfG2k51TD-CIIzFLFC1TKJphHwDlD7SOG9MtAerfBDo_273Ml8jq6nTbFC4e_ghtKS5XyksN30a5J-5DX3Zmu68x5cXIXyxopug2wo03J5ZeGSSEMgQ9G9dxTvUH4jH3zBxcKhrnbE5MSwl7Ol5bOV9_FPCGt8SJFzHV-_EAbRMsjJSbA8NA8GcIx77gKAOv0e-qnq4OOCvKqtJT8nSxnGAT6w_qwsJPyG8ibwWXgmbNgzWm13Gylks2LuJFyy0cYRowqZpQWYpf8UiQvNJJPF0SJHJJ5L8M_juMUtBMMI4-eBLvDV3-PCAX4AKn3IJqUUcijLofL3J3XkAuhWWssRPM-D3R4aidKtxPUqdYywr_-uypp1J2P6u7dH52r=w794-h435-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2018/01/30/Javascript30days-26/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>JS30紀錄 26-Stripe Follow Along Nav | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/01/30/Javascript30days-26/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS30紀錄 26-Stripe Follow Along Nav</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-30T13:50:58+08:00">
+                2018-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/30/Javascript30days-26/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/30/Javascript30days-26/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>類似 <a href="https://shunnien.github.io/2018/01/17/Javascript30days-22/">day22 Follow Along Link Highlighter</a> 的概念，製作一個跟隨移動的強調下拉選單。<br><img src="https://lh3.googleusercontent.com/10ExDAZQzARkXXs-TIOCu5WYdBOmGSZoqGnITTxcswxyOvnnti3Hy0h-dPAMulHoKLWLI_PbbrrF_7l8tDoVRFK0iyojJjEpTnCEZNc3XJkM0CutfFHx1qsGNDklQl9cQTbTj_fiQE7AKV63HBSr2-LbdRlyMpghguFsUPxJL9tftq7HZ16FZzJAVXzCq3IJ87KEY0G5Eak9MxDkVPP5oI9q95LUCu8gQlPdMFEMem-HX-_en5m8pPa0_LrbZz-1oMW4MK48Bj50UlePwzGmRbedUvE6nwh_JfxDfG2k51TD-CIIzFLFC1TKJphHwDlD7SOG9MtAerfBDo_273Ml8jq6nTbFC4e_ghtKS5XyksN30a5J-5DX3Zmu68x5cXIXyxopug2wo03J5ZeGSSEMgQ9G9dxTvUH4jH3zBxcKhrnbE5MSwl7Ol5bOV9_FPCGt8SJFzHV-_EAbRMsjJSbA8NA8GcIx77gKAOv0e-qnq4OOCvKqtJT8nSxnGAT6w_qwsJPyG8ibwWXgmbNgzWm13Gylks2LuJFyy0cYRowqZpQWYpf8UiQvNJJPF0SJHJJ5L8M_juMUtBMMI4-eBLvDV3-PCAX4AKn3IJqUUcijLofL3J3XkAuhWWssRPM-D3R4aidKtxPUqdYywr_-uypp1J2P6u7dH52r=w794-h435-no" alt="target"></p>
+<a id="more"></a>
+<blockquote>
+<p><a href="https://shunnien.github.io/JavaScript30day/day_26/">Demo</a> | <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<h1 id="處理步驟"><a href="#處理步驟" class="headerlink" title="處理步驟"></a>處理步驟</h1><p>先製作強調的外框 <strong>DOM</strong> 與下拉選單的內容，利用 <strong>CSS</strong> 中的 <strong>opacity</strong> 與 <strong>display</strong> 來隱藏，之後透過 <strong>JS</strong> 在移動至選單標題時，進行外框大小的變化與 <strong>CSS</strong> 的顯示</p>
+<h2 id="步驟-1"><a href="#步驟-1" class="headerlink" title="步驟 1."></a>步驟 1.</h2><p>取的所有標題元素，並建立移動到元素上與離開的觸發事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> triggers = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.cool &gt; li'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 移動到元素上的觸發事件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleEnter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 離開元素的觸發事件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleLeave</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移動到元素上的觸發事件</span></span><br><span class="line">triggers.forEach(<span class="function"><span class="params">trigger</span> =&gt;</span> trigger.addEventListener(<span class="string">'mouseenter'</span>,handleEnter));</span><br><span class="line"><span class="comment">// 離開元素的觸發事件</span></span><br><span class="line">triggers.forEach(<span class="function"><span class="params">trigger</span> =&gt;</span> trigger.addEventListener(<span class="string">'mouseleave'</span>,handleLeave));</span><br></pre></td></tr></table></figure>
+<h2 id="步驟-2"><a href="#步驟-2" class="headerlink" title="步驟 2."></a>步驟 2.</h2><p>透過 CSS 操作顯示與隱藏</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 移動到元素上的觸發事件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleEnter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter'</span>);</span><br><span class="line">    background.classList.add(<span class="string">'open'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 內容最後顯示</span></span><br><span class="line">    <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 離開元素的觸發事件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleLeave</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.classList.remove(<span class="string">'trigger-enter'</span>,<span class="string">'trigger-enter-active'</span>);</span><br><span class="line">    background.classList.remove(<span class="string">'open'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="步驟-3"><a href="#步驟-3" class="headerlink" title="步驟 3."></a>步驟 3.</h2><p>調整箭頭指向框位置與大小，使其符合下拉選單的內容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 指向框元素</span></span><br><span class="line"><span class="keyword">const</span> background = <span class="built_in">document</span>.querySelector(<span class="string">'.dropdownBackground'</span>);</span><br><span class="line"><span class="comment">// 取得指向框的位置</span></span><br><span class="line"><span class="keyword">const</span> backgroundCoords = background.getBoundingClientRect();</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 移動到元素上的觸發事件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleEnter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter'</span>);</span><br><span class="line">    background.classList.add(<span class="string">'open'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 取得下拉選單內容 DOM</span></span><br><span class="line">    <span class="keyword">const</span> dropdown = <span class="keyword">this</span>.querySelector(<span class="string">'.dropdown'</span>);</span><br><span class="line">    <span class="comment">// 取得位置資料</span></span><br><span class="line">    <span class="keyword">const</span> dropCoords = dropdown.getBoundingClientRect();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 設定指向框大小為下拉選單大小</span></span><br><span class="line">    background.style.width = <span class="string">`<span class="subst">$&#123;dropCoords.width&#125;</span>px`</span>;</span><br><span class="line">    background.style.height = <span class="string">`<span class="subst">$&#123;dropCoords.height&#125;</span>px`</span>;</span><br><span class="line">    <span class="comment">// 使用 setProperty</span></span><br><span class="line">    <span class="comment">// background.style.setProperty('width', `$&#123;dropCoords.width&#125;px`);</span></span><br><span class="line">    <span class="comment">// background.style.setProperty('height', `$&#123;dropCoords.height&#125;px`);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 移動指向框</span></span><br><span class="line">    background.style.transform = <span class="string">`translate(<span class="subst">$&#123;dropCoords.left - backgroundCoords.left&#125;</span>px,<span class="subst">$&#123;dropCoords.top - backgroundCoords.top&#125;</span>px)`</span>;</span><br><span class="line">    <span class="comment">// 使用 setProperty</span></span><br><span class="line">    <span class="comment">// background.style.setProperty('transform', `translate($&#123;dropCoords.left - backgroundCoords.left&#125;px,$&#123;dropCoords.top - backgroundCoords.top&#125;px)`);</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 調整內容最後顯示</span></span><br><span class="line">    <span class="keyword">this</span>.classList.add(<span class="string">'trigger-enter-active'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="mouseenter"><a href="#mouseenter" class="headerlink" title="mouseenter"></a><a href="https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter" target="_blank" rel="noopener">mouseenter</a></h3><p>當滑鼠移動到元素上的時候觸發；類似 <strong>mouseover</strong> ，其差異點在於 <strong>mouseenter</strong> 不會冒泡。</p>
+<h3 id="mouseleave"><a href="#mouseleave" class="headerlink" title="mouseleave"></a><a href="https://developer.mozilla.org/en-US/docs/Web/Events/mouseleave" target="_blank" rel="noopener">mouseleave</a></h3><p>當滑鼠離開元素的時候觸發；類似 <strong>mouseout</strong> ，其差異點在於 <strong>mouseleave</strong> 不會冒泡。</p>
+<h3 id="getBoundingClientRect"><a href="#getBoundingClientRect" class="headerlink" title="getBoundingClientRect"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect" target="_blank" rel="noopener">getBoundingClientRect</a></h3><p>取得元素的位置各項資料</p>
+<h3 id="setProperty"><a href="#setProperty" class="headerlink" title="setProperty"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty" target="_blank" rel="noopener">setProperty</a></h3><p>設定 <strong>CSS</strong> 樣式</p>
+<h2 id="CSS-部分"><a href="#CSS-部分" class="headerlink" title="CSS 部分"></a>CSS 部分</h2><h3 id="will-change"><a href="#will-change" class="headerlink" title="will-change"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/will-change" target="_blank" rel="noopener">will-change</a></h3><p>為<strong>實驗性功能</strong>，簡單說就是當某個 css 需要</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
+<li>作者 Github <a href="https://github.com/wesbos" target="_blank" rel="noopener">Wes Bos</a></li>
+<li><a href="https://github.com/soyaine/JavaScript30" target="_blank" rel="noopener">Js 30 day 中文指南</a></li>
+<li><a href="https://github.com/guahsu/JavaScript30" target="_blank" rel="noopener">瓜瓜的 JS 30</a></li>
+<li>我的 JS 30 <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">練習Github</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/JavaScript30/" rel="tag"># JavaScript30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/27/Javascript30days-25/" rel="next" title="JS30紀錄 25-Event Capture, Propagation, Bubbling and Once">
+                <i class="fa fa-chevron-left"></i> JS30紀錄 25-Event Capture, Propagation, Bubbling and Once
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/31/Javascript30days-27/" rel="prev" title="JS30紀錄 27-Click and Drag">
+                JS30紀錄 27-Click and Drag <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目標"><span class="nav-number">1.</span> <span class="nav-text">目標</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#處理步驟"><span class="nav-number">2.</span> <span class="nav-text">處理步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-1"><span class="nav-number">2.1.</span> <span class="nav-text">步驟 1.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-2"><span class="nav-number">2.2.</span> <span class="nav-text">步驟 2.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-3"><span class="nav-number">2.3.</span> <span class="nav-text">步驟 3.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記與備註事項"><span class="nav-number">3.</span> <span class="nav-text">筆記與備註事項</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-部分"><span class="nav-number">3.1.</span> <span class="nav-text">JavaScript 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mouseenter"><span class="nav-number">3.1.1.</span> <span class="nav-text">mouseenter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mouseleave"><span class="nav-number">3.1.2.</span> <span class="nav-text">mouseleave</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getBoundingClientRect"><span class="nav-number">3.1.3.</span> <span class="nav-text">getBoundingClientRect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setProperty"><span class="nav-number">3.1.4.</span> <span class="nav-text">setProperty</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-部分"><span class="nav-number">3.2.</span> <span class="nav-text">CSS 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#will-change"><span class="nav-number">3.2.1.</span> <span class="nav-text">will-change</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2018/01/30/Javascript30days-26/';
+          this.page.identifier = '2018/01/30/Javascript30days-26/';
+          this.page.title = 'JS30紀錄 26-Stripe Follow Along Nav';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

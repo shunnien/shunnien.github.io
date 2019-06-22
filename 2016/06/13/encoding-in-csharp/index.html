@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C#,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="紀錄字碼頁編號與編碼的值">
+<meta name="keywords" content="C#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Encoding 字碼頁編號">
+<meta property="og:url" content="https://shunnien.github.io/2016/06/13/encoding-in-csharp/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="紀錄字碼頁編號與編碼的值">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.617Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Encoding 字碼頁編號">
+<meta name="twitter:description" content="紀錄字碼頁編號與編碼的值">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2016/06/13/encoding-in-csharp/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>Encoding 字碼頁編號 | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2016/06/13/encoding-in-csharp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Encoding 字碼頁編號</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-06-13T21:13:50+08:00">
+                2016-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/06/13/encoding-in-csharp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/13/encoding-in-csharp/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  紀錄字碼頁編號與編碼的值
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><p>筆記一下字碼頁編號，這樣查詢比較方便</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">字碼頁</th>
+<th style="text-align:center">名稱</th>
+<th style="text-align:left">顯示名稱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">37</td>
+<td style="text-align:center">IBM037</td>
+<td style="text-align:left">IBM EBCDIC (美國和加拿大)</td>
+</tr>
+<tr>
+<td style="text-align:right">437</td>
+<td style="text-align:center">IBM437</td>
+<td style="text-align:left">OEM 美國</td>
+</tr>
+<tr>
+<td style="text-align:right">500</td>
+<td style="text-align:center">IBM500</td>
+<td style="text-align:left">IBM EBCDIC (國際)</td>
+</tr>
+<tr>
+<td style="text-align:right">708</td>
+<td style="text-align:center">ASMO 708</td>
+<td style="text-align:left">阿拉伯文 (ASMO 708)</td>
+</tr>
+<tr>
+<td style="text-align:right">720</td>
+<td style="text-align:center">DOS 720</td>
+<td style="text-align:left">阿拉伯文 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">737</td>
+<td style="text-align:center">ibm737</td>
+<td style="text-align:left">希臘文 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">775</td>
+<td style="text-align:center">ibm775</td>
+<td style="text-align:left">波羅的海文 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">850</td>
+<td style="text-align:center">ibm850</td>
+<td style="text-align:left">西歐語系 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">852</td>
+<td style="text-align:center">ibm852</td>
+<td style="text-align:left">中歐語系 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">855</td>
+<td style="text-align:center">IBM855</td>
+<td style="text-align:left">OEM 斯拉夫文</td>
+</tr>
+<tr>
+<td style="text-align:right">857</td>
+<td style="text-align:center">ibm857</td>
+<td style="text-align:left">土耳其文 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">858</td>
+<td style="text-align:center">IBM00858</td>
+<td style="text-align:left">OEM 多語系拉丁我</td>
+</tr>
+<tr>
+<td style="text-align:right">860</td>
+<td style="text-align:center">IBM860</td>
+<td style="text-align:left">葡萄牙文 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">861</td>
+<td style="text-align:center">ibm861</td>
+<td style="text-align:left">冰島文 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">862</td>
+<td style="text-align:center">DOS-862</td>
+<td style="text-align:left">希伯來文 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">863</td>
+<td style="text-align:center">IBM863</td>
+<td style="text-align:left">加拿大法文 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">864</td>
+<td style="text-align:center">IBM864</td>
+<td style="text-align:left">阿拉伯文 (864)</td>
+</tr>
+<tr>
+<td style="text-align:right">865</td>
+<td style="text-align:center">IBM865</td>
+<td style="text-align:left">北歐 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">866</td>
+<td style="text-align:center">cp866</td>
+<td style="text-align:left">斯拉夫文 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">869</td>
+<td style="text-align:center">ibm869</td>
+<td style="text-align:left">希臘文，現代化 (DOS)</td>
+</tr>
+<tr>
+<td style="text-align:right">870</td>
+<td style="text-align:center">IBM870</td>
+<td style="text-align:left">IBM EBCDIC (多國語言拉丁文 2)</td>
+</tr>
+<tr>
+<td style="text-align:right">874</td>
+<td style="text-align:center">windows-874</td>
+<td style="text-align:left">泰文 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">875</td>
+<td style="text-align:center">cp875</td>
+<td style="text-align:left">IBM EBCDIC (現代希臘文)</td>
+</tr>
+<tr>
+<td style="text-align:right">932</td>
+<td style="text-align:center">shift_jis</td>
+<td style="text-align:left">日文 (SHIFT-JIS)</td>
+</tr>
+<tr>
+<td style="text-align:right">936</td>
+<td style="text-align:center">gb2312</td>
+<td style="text-align:left">簡體中文 (GB2312)</td>
+</tr>
+<tr>
+<td style="text-align:right">949</td>
+<td style="text-align:center">ks_c_5601-1987</td>
+<td style="text-align:left">韓文</td>
+</tr>
+<tr>
+<td style="text-align:right">950</td>
+<td style="text-align:center">big5</td>
+<td style="text-align:left">繁體中文 (Big5)</td>
+</tr>
+<tr>
+<td style="text-align:right">1026</td>
+<td style="text-align:center">IBM1026</td>
+<td style="text-align:left">IBM EBCDIC (土耳其文拉丁文 5)</td>
+</tr>
+<tr>
+<td style="text-align:right">1047</td>
+<td style="text-align:center">IBM01047</td>
+<td style="text-align:left">IBM 拉丁文 1</td>
+</tr>
+<tr>
+<td style="text-align:right">1140</td>
+<td style="text-align:center">IBM01140</td>
+<td style="text-align:left">IBM EBCDIC (美國-加拿大-歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1141</td>
+<td style="text-align:center">IBM01141</td>
+<td style="text-align:left">IBM EBCDIC (德國歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1142</td>
+<td style="text-align:center">IBM01142</td>
+<td style="text-align:left">IBM EBCDIC (丹麥-挪威-歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1143</td>
+<td style="text-align:center">IBM01143</td>
+<td style="text-align:left">IBM EBCDIC (芬蘭-瑞典-歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1144</td>
+<td style="text-align:center">IBM01144</td>
+<td style="text-align:left">IBM EBCDIC (義大利歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1145</td>
+<td style="text-align:center">IBM01145</td>
+<td style="text-align:left">IBM EBCDIC (西班牙歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1146</td>
+<td style="text-align:center">IBM01146</td>
+<td style="text-align:left">IBM EBCDIC (英國歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1147</td>
+<td style="text-align:center">IBM01147</td>
+<td style="text-align:left">IBM EBCDIC (法國歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1148</td>
+<td style="text-align:center">IBM01148</td>
+<td style="text-align:left">IBM EBCDIC (國際歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1149</td>
+<td style="text-align:center">IBM01149</td>
+<td style="text-align:left">IBM EBCDIC (冰島文歐洲)</td>
+</tr>
+<tr>
+<td style="text-align:right">1200</td>
+<td style="text-align:center">utf-16</td>
+<td style="text-align:left">Unicode</td>
+</tr>
+<tr>
+<td style="text-align:right">1201</td>
+<td style="text-align:center">unicodeFFFE</td>
+<td style="text-align:left">Unicode (Big endian)</td>
+</tr>
+<tr>
+<td style="text-align:right">1250</td>
+<td style="text-align:center">windows-1250</td>
+<td style="text-align:left">中歐語系 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">1251</td>
+<td style="text-align:center">windows-1251</td>
+<td style="text-align:left">斯拉夫文 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">1252</td>
+<td style="text-align:center">Windows -1252</td>
+<td style="text-align:left">西歐語系 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">1253</td>
+<td style="text-align:center">windows-1253</td>
+<td style="text-align:left">希臘文 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">1254</td>
+<td style="text-align:center">windows-1254</td>
+<td style="text-align:left">土耳其文 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">1255</td>
+<td style="text-align:center">windows-1255</td>
+<td style="text-align:left">希伯來文 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">1256</td>
+<td style="text-align:center">windows-1256</td>
+<td style="text-align:left">阿拉伯文 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">1257</td>
+<td style="text-align:center">windows-1257</td>
+<td style="text-align:left">波羅的海文 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">1258</td>
+<td style="text-align:center">windows-1258</td>
+<td style="text-align:left">越南文 (Windows)</td>
+</tr>
+<tr>
+<td style="text-align:right">1361</td>
+<td style="text-align:center">裘哈</td>
+<td style="text-align:left">韓文 (裘哈)</td>
+</tr>
+<tr>
+<td style="text-align:right">10000</td>
+<td style="text-align:center">macintosh</td>
+<td style="text-align:left">西歐語系 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10001</td>
+<td style="text-align:center">x mac 日文</td>
+<td style="text-align:left">日文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10002</td>
+<td style="text-align:center">x-mac-chinesetrad</td>
+<td style="text-align:left">繁體中文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10003</td>
+<td style="text-align:center">x-mac-韓文</td>
+<td style="text-align:left">韓文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10004</td>
+<td style="text-align:center">x-mac-阿拉伯文</td>
+<td style="text-align:left">阿拉伯文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10005</td>
+<td style="text-align:center">x-mac-希伯來文</td>
+<td style="text-align:left">希伯來文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10006</td>
+<td style="text-align:center">x mac 希臘文</td>
+<td style="text-align:left">希臘文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10007</td>
+<td style="text-align:center">x mac 斯拉夫文</td>
+<td style="text-align:left">斯拉夫文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10008</td>
+<td style="text-align:center">x-mac-chinesesimp</td>
+<td style="text-align:left">簡體中文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10010</td>
+<td style="text-align:center">x mac 羅馬尼亞文</td>
+<td style="text-align:left">羅馬尼亞文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10017</td>
+<td style="text-align:center">x-mac-烏克蘭文</td>
+<td style="text-align:left">烏克蘭文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10021</td>
+<td style="text-align:center">x-mac-泰文</td>
+<td style="text-align:left">泰文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10029</td>
+<td style="text-align:center">x-mac-ce</td>
+<td style="text-align:left">中歐語系 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10079</td>
+<td style="text-align:center">x mac 冰島文</td>
+<td style="text-align:left">冰島文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10081</td>
+<td style="text-align:center">x mac 土耳其文</td>
+<td style="text-align:left">土耳其文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">10082</td>
+<td style="text-align:center">x mac 克羅埃西亞文</td>
+<td style="text-align:left">克羅埃西亞文 (Mac)</td>
+</tr>
+<tr>
+<td style="text-align:right">12000</td>
+<td style="text-align:center">utf-32</td>
+<td style="text-align:left">Unicode (UTF-32)</td>
+</tr>
+<tr>
+<td style="text-align:right">12001</td>
+<td style="text-align:center">utf-32be</td>
+<td style="text-align:left">Unicode (utf-32 Big endian)</td>
+</tr>
+<tr>
+<td style="text-align:right">20000</td>
+<td style="text-align:center">x-中文-CN</td>
+<td style="text-align:left">繁體中文 (CN)</td>
+</tr>
+<tr>
+<td style="text-align:right">20001</td>
+<td style="text-align:center">x cp20001</td>
+<td style="text-align:left">TCA 台灣</td>
+</tr>
+<tr>
+<td style="text-align:right">20002</td>
+<td style="text-align:center">–倚天 x 中文</td>
+<td style="text-align:left">繁體中文 (倚天)</td>
+</tr>
+<tr>
+<td style="text-align:right">20003</td>
+<td style="text-align:center">x cp20003</td>
+<td style="text-align:left">IBM5550 台灣</td>
+</tr>
+<tr>
+<td style="text-align:right">20004</td>
+<td style="text-align:center">x cp20004</td>
+<td style="text-align:left">TeleText 台灣</td>
+</tr>
+<tr>
+<td style="text-align:right">20005</td>
+<td style="text-align:center">x cp20005</td>
+<td style="text-align:left">Wang 台灣</td>
+</tr>
+<tr>
+<td style="text-align:right">20105</td>
+<td style="text-align:center">x IA5</td>
+<td style="text-align:left">西歐語系 (IA5)</td>
+</tr>
+<tr>
+<td style="text-align:right">20106</td>
+<td style="text-align:center">x IA5 德文</td>
+<td style="text-align:left">德文 (IA5)</td>
+</tr>
+<tr>
+<td style="text-align:right">20107</td>
+<td style="text-align:center">x IA5 瑞典文</td>
+<td style="text-align:left">瑞典文 (IA5)</td>
+</tr>
+<tr>
+<td style="text-align:right">20108</td>
+<td style="text-align:center">x IA5 挪威文</td>
+<td style="text-align:left">挪威文 (IA5)</td>
+</tr>
+<tr>
+<td style="text-align:right">20127</td>
+<td style="text-align:center">我們 ascii</td>
+<td style="text-align:left">US-ASCII</td>
+</tr>
+<tr>
+<td style="text-align:right">20261</td>
+<td style="text-align:center">x cp20261</td>
+<td style="text-align:left">T.61</td>
+</tr>
+<tr>
+<td style="text-align:right">20269</td>
+<td style="text-align:center">x cp20269</td>
+<td style="text-align:left">ISO -6937</td>
+</tr>
+<tr>
+<td style="text-align:right">20273</td>
+<td style="text-align:center">IBM273</td>
+<td style="text-align:left">IBM EBCDIC (德國)</td>
+</tr>
+<tr>
+<td style="text-align:right">20277</td>
+<td style="text-align:center">IBM277</td>
+<td style="text-align:left">IBM EBCDIC (丹麥挪威)</td>
+</tr>
+<tr>
+<td style="text-align:right">20278</td>
+<td style="text-align:center">IBM278</td>
+<td style="text-align:left">IBM EBCDIC (芬蘭瑞典)</td>
+</tr>
+<tr>
+<td style="text-align:right">20280</td>
+<td style="text-align:center">IBM280</td>
+<td style="text-align:left">IBM EBCDIC (義大利)</td>
+</tr>
+<tr>
+<td style="text-align:right">20284</td>
+<td style="text-align:center">IBM284</td>
+<td style="text-align:left">IBM EBCDIC (西班牙)</td>
+</tr>
+<tr>
+<td style="text-align:right">20285</td>
+<td style="text-align:center">IBM285</td>
+<td style="text-align:left">IBM EBCDIC (英國)</td>
+</tr>
+<tr>
+<td style="text-align:right">20290</td>
+<td style="text-align:center">IBM290</td>
+<td style="text-align:left">IBM EBCDIC (日文片假名)</td>
+</tr>
+<tr>
+<td style="text-align:right">20297</td>
+<td style="text-align:center">IBM297</td>
+<td style="text-align:left">IBM EBCDIC (法國)</td>
+</tr>
+<tr>
+<td style="text-align:right">20420</td>
+<td style="text-align:center">IBM420</td>
+<td style="text-align:left">IBM EBCDIC (阿拉伯文)</td>
+</tr>
+<tr>
+<td style="text-align:right">20423</td>
+<td style="text-align:center">IBM423</td>
+<td style="text-align:left">IBM EBCDIC (希臘文)</td>
+</tr>
+<tr>
+<td style="text-align:right">20424</td>
+<td style="text-align:center">IBM424</td>
+<td style="text-align:left">IBM EBCDIC (希伯來文)</td>
+</tr>
+<tr>
+<td style="text-align:right">20833</td>
+<td style="text-align:center">x-EBCDIC-KoreanExtended</td>
+<td style="text-align:left">IBM EBCDIC (擴充韓文)</td>
+</tr>
+<tr>
+<td style="text-align:right">20838</td>
+<td style="text-align:center">IBM 泰文</td>
+<td style="text-align:left">IBM EBCDIC (泰文)</td>
+</tr>
+<tr>
+<td style="text-align:right">20866</td>
+<td style="text-align:center">koi8 r</td>
+<td style="text-align:left">斯拉夫文 (KOI8 R)</td>
+</tr>
+<tr>
+<td style="text-align:right">20871</td>
+<td style="text-align:center">IBM871</td>
+<td style="text-align:left">IBM EBCDIC (冰島文)</td>
+</tr>
+<tr>
+<td style="text-align:right">20880</td>
+<td style="text-align:center">IBM880</td>
+<td style="text-align:left">IBM EBCDIC (斯拉夫文俄文)</td>
+</tr>
+<tr>
+<td style="text-align:right">20905</td>
+<td style="text-align:center">IBM905</td>
+<td style="text-align:left">IBM EBCDIC (土耳其文)</td>
+</tr>
+<tr>
+<td style="text-align:right">20924</td>
+<td style="text-align:center">IBM00924</td>
+<td style="text-align:left">IBM 拉丁文 1</td>
+</tr>
+<tr>
+<td style="text-align:right">20932</td>
+<td style="text-align:center">EUC-JP</td>
+<td style="text-align:left">日文 (JIS 0208-1990年和 0212年 1990年)</td>
+</tr>
+<tr>
+<td style="text-align:right">20936</td>
+<td style="text-align:center">x cp20936</td>
+<td style="text-align:left">中文 (簡體) (GB2312-80)</td>
+</tr>
+<tr>
+<td style="text-align:right">20949</td>
+<td style="text-align:center">x cp20949</td>
+<td style="text-align:left">韓文 Wansung</td>
+</tr>
+<tr>
+<td style="text-align:right">21025</td>
+<td style="text-align:center">cp1025</td>
+<td style="text-align:left">IBM EBCDIC (斯拉夫文塞爾維亞文保加利亞文)</td>
+</tr>
+<tr>
+<td style="text-align:right">21866</td>
+<td style="text-align:center">koi8 u</td>
+<td style="text-align:left">斯拉夫文 (KOI8 U)</td>
+</tr>
+<tr>
+<td style="text-align:right">28591</td>
+<td style="text-align:center">iso-8859-1</td>
+<td style="text-align:left">西歐語系 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28592</td>
+<td style="text-align:center">iso-8859-2</td>
+<td style="text-align:left">中歐語系 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28593</td>
+<td style="text-align:center">iso-8859-3</td>
+<td style="text-align:left">拉丁文 3 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28594</td>
+<td style="text-align:center">iso-8859-4</td>
+<td style="text-align:left">波羅的海文 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28595</td>
+<td style="text-align:center">iso-8859-5</td>
+<td style="text-align:left">斯拉夫文 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28596</td>
+<td style="text-align:center">iso-8859-6</td>
+<td style="text-align:left">阿拉伯文 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28597</td>
+<td style="text-align:center">iso-8859-7</td>
+<td style="text-align:left">希臘文 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28598</td>
+<td style="text-align:center">iso-8859-8</td>
+<td style="text-align:left">希伯來文 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28599</td>
+<td style="text-align:center">iso-8859-9</td>
+<td style="text-align:left">土耳其文 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28603</td>
+<td style="text-align:center">iso-8859-13</td>
+<td style="text-align:left">愛沙尼亞文 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">28605</td>
+<td style="text-align:center">iso-8859-15</td>
+<td style="text-align:left">拉丁文 9 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">29001</td>
+<td style="text-align:center">x 木衛二</td>
+<td style="text-align:left">木衛二</td>
+</tr>
+<tr>
+<td style="text-align:right">38598</td>
+<td style="text-align:center">iso 8859-8 i</td>
+<td style="text-align:left">希伯來文 (ISO-邏輯)</td>
+</tr>
+<tr>
+<td style="text-align:right">50220</td>
+<td style="text-align:center">iso-2022年-jp</td>
+<td style="text-align:left">日文 (JIS)</td>
+</tr>
+<tr>
+<td style="text-align:right">50221</td>
+<td style="text-align:center">csISO2022JP</td>
+<td style="text-align:left">日文 (JIS 允許 1 位元組假名)</td>
+</tr>
+<tr>
+<td style="text-align:right">50222</td>
+<td style="text-align:center">iso-2022年-jp</td>
+<td style="text-align:left">日文 (JIS 允許 1 個位元組片假名-因此 / SI)</td>
+</tr>
+<tr>
+<td style="text-align:right">50225</td>
+<td style="text-align:center">iso-2022年-kr</td>
+<td style="text-align:left">韓文 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:right">50227</td>
+<td style="text-align:center">x cp50227</td>
+<td style="text-align:left">中文 (簡體) (ISO 2022)</td>
+</tr>
+<tr>
+<td style="text-align:right">51932</td>
+<td style="text-align:center">euc jp</td>
+<td style="text-align:left">日文 (EUC)</td>
+</tr>
+<tr>
+<td style="text-align:right">51936</td>
+<td style="text-align:center">EUC CN</td>
+<td style="text-align:left">簡體中文 (EUC)</td>
+</tr>
+<tr>
+<td style="text-align:right">51949</td>
+<td style="text-align:center">euc kr</td>
+<td style="text-align:left">韓文 (EUC)</td>
+</tr>
+<tr>
+<td style="text-align:right">52936</td>
+<td style="text-align:center">hz-gb-2312</td>
+<td style="text-align:left">簡體中文 (HZ)</td>
+</tr>
+<tr>
+<td style="text-align:right">54936</td>
+<td style="text-align:center">GB18030</td>
+<td style="text-align:left">簡體中文 (GB18030)</td>
+</tr>
+<tr>
+<td style="text-align:right">57002</td>
+<td style="text-align:center">x-iscii-de</td>
+<td style="text-align:left">ISCII 梵文字母</td>
+</tr>
+<tr>
+<td style="text-align:right">57003</td>
+<td style="text-align:center">x iscii 是</td>
+<td style="text-align:left">ISCII 孟加拉文</td>
+</tr>
+<tr>
+<td style="text-align:right">57004</td>
+<td style="text-align:center">x-iscii-東西</td>
+<td style="text-align:left">ISCII 坦米爾文</td>
+</tr>
+<tr>
+<td style="text-align:right">57005</td>
+<td style="text-align:center">x-iscii-te</td>
+<td style="text-align:left">ISCII 特拉古文</td>
+</tr>
+<tr>
+<td style="text-align:right">57006</td>
+<td style="text-align:center">x iscii 身分</td>
+<td style="text-align:left">ISCII 阿薩姆文</td>
+</tr>
+<tr>
+<td style="text-align:right">57007</td>
+<td style="text-align:center">或 x iscii</td>
+<td style="text-align:left">ISCII 歐利亞文</td>
+</tr>
+<tr>
+<td style="text-align:right">57008</td>
+<td style="text-align:center">巴 iscii x 卡</td>
+<td style="text-align:left">ISCII 坎那達文</td>
+</tr>
+<tr>
+<td style="text-align:right">57009</td>
+<td style="text-align:center">x-iscii-ma</td>
+<td style="text-align:left">ISCII 馬來亞拉姆文</td>
+</tr>
+<tr>
+<td style="text-align:right">57010</td>
+<td style="text-align:center">x-iscii-gu</td>
+<td style="text-align:left">ISCII 古吉拉特文</td>
+</tr>
+<tr>
+<td style="text-align:right">57011</td>
+<td style="text-align:center">x-iscii-pa</td>
+<td style="text-align:left">ISCII 旁遮普語</td>
+</tr>
+<tr>
+<td style="text-align:right">65000</td>
+<td style="text-align:center">utf-7</td>
+<td style="text-align:left">Unicode (UTF-7)</td>
+</tr>
+<tr>
+<td style="text-align:right">65001</td>
+<td style="text-align:center">utf-8</td>
+<td style="text-align:left">Unicode (UTF-8)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.text.encoding(v=vs.110).aspx" target="_blank" rel="noopener">Encoding 類別</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C#</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/11/json-note/" rel="next" title="JSON精要筆記">
+                <i class="fa fa-chevron-left"></i> JSON精要筆記
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/15/ContextMenuChange/" rel="prev" title="Win10 右鍵選單調整">
+                Win10 右鍵選單調整 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Content"><span class="nav-number">1.</span> <span class="nav-text">Content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">2.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2016/06/13/encoding-in-csharp/';
+          this.page.identifier = '2016/06/13/encoding-in-csharp/';
+          this.page.title = 'Encoding 字碼頁編號';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

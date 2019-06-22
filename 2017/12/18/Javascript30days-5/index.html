@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,JavaScript30,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="目標運用 flex 製作一個動畫展開圖片的效果">
+<meta name="keywords" content="JavaScript,JavaScript30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS30紀錄 05-Flex Panel Gallery">
+<meta property="og:url" content="https://shunnien.github.io/2017/12/18/Javascript30days-5/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="目標運用 flex 製作一個動畫展開圖片的效果">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/nlk-ImLuqBvRteoXnA5bRG2S05FxMaBCZraEcbygVpU1ClP7nj4LCUNcBlxRFMjCPvlEO2cbsWUtK2KMHZOK8Q5yFgHWrDSsxOAdgTe4HM5rhKMnjvFnuxF3PBCUFqVdCn_EKpMyvL5jbzd6ITMJUmDlMQ1OWOXmAL6evlhF1luDL6bsa4SP24dOrOqE6KgVtUZvXb3Nzw4s8_Evp_gYe-PVm7uvSYlog9H64Nuhjq7VrKfw4dMYXSJwQN8OhHIQZwo-6r1tR63VMHgKpvfDCtMei1QXGdZ0s2ld79_p7bmwHJGAU9rd_zZjajbgJnRK22RxOIh1YvJdxIh4EReUy1Wsfatd1xGDAQNaPgaM5GPD8NzDSLX9IohbmZNJjanovdAKsnoCG0oLVMIYGnT2yTHMuD96LDt9XGL6WNeHx9axbsGWlG_52BCAg24noUo9QHIi89HpcktIns5T8tr72sycooH2iDXyCNzBtIjaXsnkhGBD9BNg5RTTkGIqkM1-G5LwydtCDgHksSrEaDINPgZRpz1PQ-_Ekwv7dbmOsVRTAFA3r_tLpnrmGST3bSoKzfdwOwaLuzMM7OUun_A9EWwGpoULCDQx2qd8GuPRVrvJkAyOJBXxfkYXmqNUUoFriP7SMqTP_SJIrrQhcXbf-GP3yJgkAT6MBLc=w600-h438-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/kVlLSngaKKRXzyo8v6wQRGZAxOIaQjEZsvFQs5ncNIGKP1AloyJuZT_gMlOSijKFcozXJnYfgalB_Po2kUqcZTjHwDaqdC3wAOO2yBchzqp5SXh4ADE7EC5AAkolhe--kPU8OX1xPrnTugJ903FpzDphJfAKMDAyc8co8JUmmTpbLVKJ_crJ5yG95r0t27TpWkivsAbbY1nZFXR8F-t0TmdND3LZJKrFyt8vr6IOrQ33k0t3wmQMVWnfN9HRaCUUZ4v7dzLE6T3Pk3gSxCVx9ySCLvB_cQr5WgaxsIrafYfkNkrW6WgutH6lr1ZMjENwQcEFfhcGcPn9AfDLw0dz3LjO-CdP7IYFdvZk8i4JEB0DdVAfXy8lC5-mijIH48CxkTnvamHzZmxw1OvKssCr7ZdMgldCVD0tNGnuzP52xwWgaanR_AWgRJyKdfLNWXbJoyxwFt8yH6zKff2F0Mgkr14gsndpWOoropT_uqwaVSJL_TvgxjtRtJ3KSfsMeEZhGCM8GkQHrGm96T7DdTyVCdvvSVyLnu3kjl4GgA4cr5BOKejvbYffk1c-RzdLPx60Sf_NCx3pMNHVCx94tPTuSBeCOioLPfjWLCoritsSIiB6gEmWUfUkXovlRAlBjVc4Uz2HcBBYHDY4MiPFSozpOO_M6bX0ibvbzJw=w362-h262-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/V7JEldG8Y073ew21EBHiFRH5qWjC65a_S3i6vp934BO-pJkjs5mPUfbeGSfS_ETjI81T2aGUpClJybUrwglqgw_mgqh6vB106LO8GtQC_F-M9QohY30lDkZLL9kvz780kc-7RHhEkM_MCjDdnNzo2Y1dVHMmP31__wOixLGc2PphDYW93UQbjSA46thErZ9EBolc9Hlx0edi0gziigELc2p6R8dxiBVaCif2i1u7s9WDBRxw-Ig1NtqpwWYgKx7vQKjSoRXb9TU_2uzk1dnfWrOiquaJM74vCsI4jyagudeeWvjj3nVVKMVB4T8TjeM_APDBC2ESn8QX-begfHc8jY3x_1jGsBAMDnJVQ9PdsQtMYxsE_E5jAaV8u_1DOr72Yi2cuNhUDwOe02yF28YU5_WdlS2ZQm3EpMang3iJlfHaXWFZS0LU3Emmv3-W9nNSK51_j_jXkuLg8l-scE-HicjYviFaufkqMI6QzEvaO1Hq7sRKS5OVWj1CMN88NsHV_LLa5cGPWuQDpkrzp0-bBDm-mpZVkN9MlDQY2ZnOSVKwGdvRZgW3MGPcUNBEL_xM7Zak4G8YZfswB_S6ohPpMRpE2SCIiJIcagA3pvy-X1qnPJqCqpSK5GvrXxCWuTh49wQZ8g6ajWSYyS9p26vW0iYAObFUWpqUmrw=w751-h556-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/AgYSxeo3OXKyxRmFAcAQ95GZ1xah98s-CGkmXUAnbIUnv8CaJxgeo4K_kwe7VznQt_iTXIbMskPazz-9USZTko1kvGAlOGR7-kAjQKFyVZTDv4WQbstR5pA7-59lwwPHGDXI6FLcOnS1B4ifFsiwqmgGfWzoB_T_4EOVC6AxtKg5RDIvuaQhhzDpLb7ebO-7-y6oH9BMKIzB0yQ3OCY7nplKPfVEaOKGLiT2EUVgFidKdKjUlosiEPHsNHYa95D3Cq7Ox9hDWOHDUurSRJ2br2nDrdWPTEpwFdSzKx9t5ykuAyV0kwEphXfi7xKyUSOeXRb4aoD9ntbLVH2WBghdNGK8_B-3uW1V60cH2wSAz41P0dGoMNLZ8EXJe0V2ron0E9VimFgpyfIfYdQYlykB5xovhr2Vz_d6rrFbS2Qkw9ff7jm_JJZ4ZU6AkhlnasiGLCB-HRMaA9oxUKkUymcbG25EsxnAGrUYK1dYatWtaiaQHM3RYM8toDroWP1ijp-NKXsN0WYxRSQvtjWwZpUJ_ln-7-v3sVUrZSgXtXJuHSddFTbwCfVkrzIIz_MePRMDBKOIOz7xQsP3CMszXIWYfqSEX1zruTwp1K4rtfmPfscRZhg3HRDXfGExe02ns3lLNijOS8Bk8dTWwsJCyvkhx1BZ_yp0F2ua378=w751-h556-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/TblusiXmo_VL-QQyMh28K1InLFysNbspeej7fo-bHpFkN8N6OjiBdo8yzjamRuzpNnaahIX7t5yQQMzFFeZnfw4ba6DLIELi8X8akJroPZGkiosSAO_0ap-HcmQ9xJPTw3zockqAV4B-_35DBcZKWNt0-DY8FSPM7BmZ-tsYF-7u5ZyV1jj-3hZ3atsRWQvruI6PDnbEYrqPOgRGS8eM3gcv-gbZFDO22c2XPW-zeR8V3w4QpjpRquMSm5rxj52Lg1qx8FNJ5VHgwLcQRuMAlsdrIcgXbRW5Kn99Wm9FMZQjLRn2ZMd00KGfuRgl1xDv62eKly6Sm6X43ZJMye8fHzQqCjQmIjl8yHKrTi6kHM7EGG60t1A62mVH_AD6TAGNsJmyPHd3FUvJ55_ZjK_bCUMSQRFMPPFYaoi1z4PG0bc-U88_db99t8MWDFY7zZuiWjOkgTi0YEgvBgcoSpjWNaEp2lxpuQ3RkazGxhvQQwwR9-rje1ngdZAPPFSjyioL7AVQVQnhdWMnVYlsSNB3eUzdaDet77zlTfbvFULGNR_SyoB7GvAMKvYC4KOehmAyBBwizxfSRZKa0UiaKFziANE3gdT8p22RldAz3aa1KqMQZC8FlVkHrQJoqLdoW18K84HGtMWXrB4DfT41CkUuyaJBGcQ42FFM8Z0=w751-h568-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/GlteKiAaSaOAxfz9ycfmWgsb9ilTPbGIwL2wRZR_Az5yROR5pOvwZdttPa5203xuo_wgaP1egXY774RcKAuk8bm-SADiIi3ovUcguNTrEnl-TolzIfU3YBxcuxzF0EYdgmMArTcDe_9byinEF0RGqYjLYH3q0G_6UJU8s-_9jsLKPMKufVxhwaxiXRaE9AfNRK46AnsI5s-JMPqvyHAbPryjA8riMpj2v8olcFJHh_wKcADY-vypYERLvCVN50Xz3Cl75n5G7ZzrynshLP-GFg1dKRLVhRclZrFZ9_oYp490905h3t4TF9dWH9k1eSC6f9r4gfntvFmhSxjTm3v4qegzc4sgC-cHFzPUdVRWvk18VqbkTth3NHTzGHo2d_g_zH9trvHxqDaU28P4naOEwF4Ku6qj8MF3PqFTpJTJxcH7l98o5-_MUc7Z5INosLceohgusdow7WmuJ4laEWTajype-cQzGuhFSVzlc7mI4_w33ns3nzmal8NVhtIbyXWl04tVDcU9RJDWTPuH8jvBvWSzR6UWpA3vfrMmaiJYDqezAUixHgCr_sgCKdeiyKFOmw-VxLCmBWlqwCPiKq1eovlGlVswpoY8dEBEERsamAncfJK_nJRxBfty66iUP28mGMrK5VKl31t7w-o5Moc5mOcuTxyni7IAljY=w751-h568-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/UEE_kFtH_N4G7_OGmxHOeqiYs83EsbtdBZK5tlbaKeWhYbMmrgXe4aWkTNQDm8AzMiuSmCg_Qhu1Hy6o56HletG9nxBbqgISa4g-jOdd9bBWhWLJzGYUUqnCCFjm9d42uxqddqfd9DRa_eJQo4n2fkd2RTI2_XMs7zBMw6F_GMhJrO8qO2auYuMyhshhKYbFrgtqTpg-UKogiJ0YDL0jvRqLg1fbntFvPLoZEvDE6RRj5CqJt6YpbsifQQQzex-acR-SIF9NazOjvd9-IZusvUdFfPljq4B4JYbrd30OCfTJxGGxDUFL2RHhenOm2sLjQG9XBuQSM8Ta7BNOAc0fMA-So3DX3ep4ZvaWgcsOF1etDglGva1bjkQTHZRpAUPed-gt_wO3BHJaCOBJjzOM09Kl7aF1VU-F2BYFWU-bSbswLJJCHLAtgUbp5ScGR9cVRta9IaZofGLiUKq2zTmhK179ZPjMkmS8tRVoTEgJnYq_VhFfHANGKPoc6uANvDtAwse_j-cb63EO_k9j6LhD8_nMje2YZmGRPKWAKwoGvkIM0I3HU1T1N7B5Vf0XyXzIaq92XhPGMhNU3ma5Yi7w_d8muENER8g8M-biD6MtCm5nFYjHfFGDDtFntDgRC9yVU1hkQiCWJkxRCVxuPW_h3mrdEU7D1L2ONQ0=w751-h568-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/OajHzNLeN5FQnY1o6t9CGhzUOZyiEIqPMNYCxgzsX71gmF1K-fzEq7dGioqnTpwO_NnA6Fq4tFZLQW9ajA-eOJ-e-M8mqTRQ6IJWwArwdmZUl1F8vRk9HoOzSqEulqR1nbciXcr42yyCVJbkIJuQfRu8yqYgoCkshf-dFBni2-nFlKvp69J_9fX0KY_MVdeT8iIN3A-aZqEkhz-fHFl9jL8XLX6TnwlRsrRPMTv1wXRCliIwjUBOToRy-z2a6VDkF-LVeEzDfufKs0T3vS57wUnJnqqX_Ez8uF-ieXRQbpbVU59J9hHUzfMsXU-CfUIlnTd4wsxsafqVhvy5AS4pe7ultVD0aY0YsQECaXFcqa0akGNJZ5z5JI9YCpTPsEhJC-RDvr77_ClmPmVLKyPEN-8zoRnGNGuA3McVgav_OAAmNng4a0KjlQ3fSs6BVz_nu0FluxDEpxfMiPf8GftJihcIUt-2NNkbUvT_3Ykh4pAqnlBvpCtSHlphg-CUwCh5bA0WSxGCh89NAZ6EAbzUB6xNsfsK2Yhrx7Ike4t79xiX6W61DYJYV7OgYtjalz0JkwaE9oxoyy5HYcUEfLyRqV191PUNvXVGQNh3r1qPFaCwfU0g7DmxIwbUMPX8kHMkoBXZ2rkAB7vH6_oatmriiRPdaTl6-PpJHg0=w751-h568-no">
+<meta property="og:image" content="https://developer.mozilla.org/files/3739/flex_terms.png">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.660Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS30紀錄 05-Flex Panel Gallery">
+<meta name="twitter:description" content="目標運用 flex 製作一個動畫展開圖片的效果">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/nlk-ImLuqBvRteoXnA5bRG2S05FxMaBCZraEcbygVpU1ClP7nj4LCUNcBlxRFMjCPvlEO2cbsWUtK2KMHZOK8Q5yFgHWrDSsxOAdgTe4HM5rhKMnjvFnuxF3PBCUFqVdCn_EKpMyvL5jbzd6ITMJUmDlMQ1OWOXmAL6evlhF1luDL6bsa4SP24dOrOqE6KgVtUZvXb3Nzw4s8_Evp_gYe-PVm7uvSYlog9H64Nuhjq7VrKfw4dMYXSJwQN8OhHIQZwo-6r1tR63VMHgKpvfDCtMei1QXGdZ0s2ld79_p7bmwHJGAU9rd_zZjajbgJnRK22RxOIh1YvJdxIh4EReUy1Wsfatd1xGDAQNaPgaM5GPD8NzDSLX9IohbmZNJjanovdAKsnoCG0oLVMIYGnT2yTHMuD96LDt9XGL6WNeHx9axbsGWlG_52BCAg24noUo9QHIi89HpcktIns5T8tr72sycooH2iDXyCNzBtIjaXsnkhGBD9BNg5RTTkGIqkM1-G5LwydtCDgHksSrEaDINPgZRpz1PQ-_Ekwv7dbmOsVRTAFA3r_tLpnrmGST3bSoKzfdwOwaLuzMM7OUun_A9EWwGpoULCDQx2qd8GuPRVrvJkAyOJBXxfkYXmqNUUoFriP7SMqTP_SJIrrQhcXbf-GP3yJgkAT6MBLc=w600-h438-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2017/12/18/Javascript30days-5/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>JS30紀錄 05-Flex Panel Gallery | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2017/12/18/Javascript30days-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS30紀錄 05-Flex Panel Gallery</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-12-18T11:07:35+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/18/Javascript30days-5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/18/Javascript30days-5/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>運用 flex 製作一個動畫展開圖片的效果</p>
+<p><img src="https://lh3.googleusercontent.com/nlk-ImLuqBvRteoXnA5bRG2S05FxMaBCZraEcbygVpU1ClP7nj4LCUNcBlxRFMjCPvlEO2cbsWUtK2KMHZOK8Q5yFgHWrDSsxOAdgTe4HM5rhKMnjvFnuxF3PBCUFqVdCn_EKpMyvL5jbzd6ITMJUmDlMQ1OWOXmAL6evlhF1luDL6bsa4SP24dOrOqE6KgVtUZvXb3Nzw4s8_Evp_gYe-PVm7uvSYlog9H64Nuhjq7VrKfw4dMYXSJwQN8OhHIQZwo-6r1tR63VMHgKpvfDCtMei1QXGdZ0s2ld79_p7bmwHJGAU9rd_zZjajbgJnRK22RxOIh1YvJdxIh4EReUy1Wsfatd1xGDAQNaPgaM5GPD8NzDSLX9IohbmZNJjanovdAKsnoCG0oLVMIYGnT2yTHMuD96LDt9XGL6WNeHx9axbsGWlG_52BCAg24noUo9QHIi89HpcktIns5T8tr72sycooH2iDXyCNzBtIjaXsnkhGBD9BNg5RTTkGIqkM1-G5LwydtCDgHksSrEaDINPgZRpz1PQ-_Ekwv7dbmOsVRTAFA3r_tLpnrmGST3bSoKzfdwOwaLuzMM7OUun_A9EWwGpoULCDQx2qd8GuPRVrvJkAyOJBXxfkYXmqNUUoFriP7SMqTP_SJIrrQhcXbf-GP3yJgkAT6MBLc=w600-h438-no" alt="flex panel gallery"><br><a id="more"></a></p>
+<blockquote>
+<p><a href="https://shunnien.github.io/JavaScript30day/day_05/">Demo</a> | <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<h1 id="處理步驟"><a href="#處理步驟" class="headerlink" title="處理步驟"></a>處理步驟</h1><p>一開始的範本頁面如下<br><img src="https://lh3.googleusercontent.com/kVlLSngaKKRXzyo8v6wQRGZAxOIaQjEZsvFQs5ncNIGKP1AloyJuZT_gMlOSijKFcozXJnYfgalB_Po2kUqcZTjHwDaqdC3wAOO2yBchzqp5SXh4ADE7EC5AAkolhe--kPU8OX1xPrnTugJ903FpzDphJfAKMDAyc8co8JUmmTpbLVKJ_crJ5yG95r0t27TpWkivsAbbY1nZFXR8F-t0TmdND3LZJKrFyt8vr6IOrQ33k0t3wmQMVWnfN9HRaCUUZ4v7dzLE6T3Pk3gSxCVx9ySCLvB_cQr5WgaxsIrafYfkNkrW6WgutH6lr1ZMjENwQcEFfhcGcPn9AfDLw0dz3LjO-CdP7IYFdvZk8i4JEB0DdVAfXy8lC5-mijIH48CxkTnvamHzZmxw1OvKssCr7ZdMgldCVD0tNGnuzP52xwWgaanR_AWgRJyKdfLNWXbJoyxwFt8yH6zKff2F0Mgkr14gsndpWOoropT_uqwaVSJL_TvgxjtRtJ3KSfsMeEZhGCM8GkQHrGm96T7DdTyVCdvvSVyLnu3kjl4GgA4cr5BOKejvbYffk1c-RzdLPx60Sf_NCx3pMNHVCx94tPTuSBeCOioLPfjWLCoritsSIiB6gEmWUfUkXovlRAlBjVc4Uz2HcBBYHDY4MiPFSozpOO_M6bX0ibvbzJw=w362-h262-no" alt="origin page"></p>
+<h2 id="步驟-1"><a href="#步驟-1" class="headerlink" title="步驟 1"></a>步驟 1</h2><ul>
+<li>先調整 <code>panels</code> 的 css ，將 display 設定為 flex 配置，此 <code>panels</code> 即為 <strong>Flex container</strong><br><img src="https://lh3.googleusercontent.com/V7JEldG8Y073ew21EBHiFRH5qWjC65a_S3i6vp934BO-pJkjs5mPUfbeGSfS_ETjI81T2aGUpClJybUrwglqgw_mgqh6vB106LO8GtQC_F-M9QohY30lDkZLL9kvz780kc-7RHhEkM_MCjDdnNzo2Y1dVHMmP31__wOixLGc2PphDYW93UQbjSA46thErZ9EBolc9Hlx0edi0gziigELc2p6R8dxiBVaCif2i1u7s9WDBRxw-Ig1NtqpwWYgKx7vQKjSoRXb9TU_2uzk1dnfWrOiquaJM74vCsI4jyagudeeWvjj3nVVKMVB4T8TjeM_APDBC2ESn8QX-begfHc8jY3x_1jGsBAMDnJVQ9PdsQtMYxsE_E5jAaV8u_1DOr72Yi2cuNhUDwOe02yF28YU5_WdlS2ZQm3EpMang3iJlfHaXWFZS0LU3Emmv3-W9nNSK51_j_jXkuLg8l-scE-HicjYviFaufkqMI6QzEvaO1Hq7sRKS5OVWj1CMN88NsHV_LLa5cGPWuQDpkrzp0-bBDm-mpZVkN9MlDQY2ZnOSVKwGdvRZgW3MGPcUNBEL_xM7Zak4G8YZfswB_S6ohPpMRpE2SCIiJIcagA3pvy-X1qnPJqCqpSK5GvrXxCWuTh49wQZ8g6ajWSYyS9p26vW0iYAObFUWpqUmrw=w751-h556-no" alt="panels Flex container"></li>
+<li>設定 <code>panel</code> 的 <strong>flex</strong> ，將 <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/flex" target="_blank" rel="noopener">flex</a> 設定為 1 ，設定一個數字為 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-grow" target="_blank" rel="noopener">flex-grow</a> ，此為容器中空間的指定占比<br><img src="https://lh3.googleusercontent.com/AgYSxeo3OXKyxRmFAcAQ95GZ1xah98s-CGkmXUAnbIUnv8CaJxgeo4K_kwe7VznQt_iTXIbMskPazz-9USZTko1kvGAlOGR7-kAjQKFyVZTDv4WQbstR5pA7-59lwwPHGDXI6FLcOnS1B4ifFsiwqmgGfWzoB_T_4EOVC6AxtKg5RDIvuaQhhzDpLb7ebO-7-y6oH9BMKIzB0yQ3OCY7nplKPfVEaOKGLiT2EUVgFidKdKjUlosiEPHsNHYa95D3Cq7Ox9hDWOHDUurSRJ2br2nDrdWPTEpwFdSzKx9t5ykuAyV0kwEphXfi7xKyUSOeXRb4aoD9ntbLVH2WBghdNGK8_B-3uW1V60cH2wSAz41P0dGoMNLZ8EXJe0V2ron0E9VimFgpyfIfYdQYlykB5xovhr2Vz_d6rrFbS2Qkw9ff7jm_JJZ4ZU6AkhlnasiGLCB-HRMaA9oxUKkUymcbG25EsxnAGrUYK1dYatWtaiaQHM3RYM8toDroWP1ijp-NKXsN0WYxRSQvtjWwZpUJ_ln-7-v3sVUrZSgXtXJuHSddFTbwCfVkrzIIz_MePRMDBKOIOz7xQsP3CMszXIWYfqSEX1zruTwp1K4rtfmPfscRZhg3HRDXfGExe02ns3lLNijOS8Bk8dTWwsJCyvkhx1BZ_yp0F2ua378=w751-h556-no" alt="panel flex"></li>
+</ul>
+<h2 id="步驟-2"><a href="#步驟-2" class="headerlink" title="步驟 2"></a>步驟 2</h2><p>上一步驟將各個 <code>panel</code> 當作 <strong>Flex item</strong> ，這一步驟中，將設定巢狀 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank" rel="noopener">Flexible box</a> ，並讓元素顯示置中</p>
+<ul>
+<li>將 <code>panel</code> 的 display 設定 flex ，讓 <code>panel</code> 當作新的 <strong>Flex container</strong> ，將 <code>panel</code> 裡面的文字項目元素變成新的 <strong>Flex item</strong></li>
+<li>設定 <code>.panel &gt; *</code> 此 <strong>Flex item</strong> 的 flex 為 <code>flex: 1 0 auto;</code><br><img src="https://lh3.googleusercontent.com/TblusiXmo_VL-QQyMh28K1InLFysNbspeej7fo-bHpFkN8N6OjiBdo8yzjamRuzpNnaahIX7t5yQQMzFFeZnfw4ba6DLIELi8X8akJroPZGkiosSAO_0ap-HcmQ9xJPTw3zockqAV4B-_35DBcZKWNt0-DY8FSPM7BmZ-tsYF-7u5ZyV1jj-3hZ3atsRWQvruI6PDnbEYrqPOgRGS8eM3gcv-gbZFDO22c2XPW-zeR8V3w4QpjpRquMSm5rxj52Lg1qx8FNJ5VHgwLcQRuMAlsdrIcgXbRW5Kn99Wm9FMZQjLRn2ZMd00KGfuRgl1xDv62eKly6Sm6X43ZJMye8fHzQqCjQmIjl8yHKrTi6kHM7EGG60t1A62mVH_AD6TAGNsJmyPHd3FUvJ55_ZjK_bCUMSQRFMPPFYaoi1z4PG0bc-U88_db99t8MWDFY7zZuiWjOkgTi0YEgvBgcoSpjWNaEp2lxpuQ3RkazGxhvQQwwR9-rje1ngdZAPPFSjyioL7AVQVQnhdWMnVYlsSNB3eUzdaDet77zlTfbvFULGNR_SyoB7GvAMKvYC4KOehmAyBBwizxfSRZKa0UiaKFziANE3gdT8p22RldAz3aa1KqMQZC8FlVkHrQJoqLdoW18K84HGtMWXrB4DfT41CkUuyaJBGcQ42FFM8Z0=w751-h568-no" alt="chil flex container"></li>
+<li>設定 <code>justify-content: center;</code> 將文字重新置中<br><img src="https://lh3.googleusercontent.com/GlteKiAaSaOAxfz9ycfmWgsb9ilTPbGIwL2wRZR_Az5yROR5pOvwZdttPa5203xuo_wgaP1egXY774RcKAuk8bm-SADiIi3ovUcguNTrEnl-TolzIfU3YBxcuxzF0EYdgmMArTcDe_9byinEF0RGqYjLYH3q0G_6UJU8s-_9jsLKPMKufVxhwaxiXRaE9AfNRK46AnsI5s-JMPqvyHAbPryjA8riMpj2v8olcFJHh_wKcADY-vypYERLvCVN50Xz3Cl75n5G7ZzrynshLP-GFg1dKRLVhRclZrFZ9_oYp490905h3t4TF9dWH9k1eSC6f9r4gfntvFmhSxjTm3v4qegzc4sgC-cHFzPUdVRWvk18VqbkTth3NHTzGHo2d_g_zH9trvHxqDaU28P4naOEwF4Ku6qj8MF3PqFTpJTJxcH7l98o5-_MUc7Z5INosLceohgusdow7WmuJ4laEWTajype-cQzGuhFSVzlc7mI4_w33ns3nzmal8NVhtIbyXWl04tVDcU9RJDWTPuH8jvBvWSzR6UWpA3vfrMmaiJYDqezAUixHgCr_sgCKdeiyKFOmw-VxLCmBWlqwCPiKq1eovlGlVswpoY8dEBEERsamAncfJK_nJRxBfty66iUP28mGMrK5VKl31t7w-o5Moc5mOcuTxyni7IAljY=w751-h568-no" alt="justify-content"></li>
+<li>設定 <code>flex-direction: column;</code> 讓文字排列按照 column 調整<br><img src="https://lh3.googleusercontent.com/UEE_kFtH_N4G7_OGmxHOeqiYs83EsbtdBZK5tlbaKeWhYbMmrgXe4aWkTNQDm8AzMiuSmCg_Qhu1Hy6o56HletG9nxBbqgISa4g-jOdd9bBWhWLJzGYUUqnCCFjm9d42uxqddqfd9DRa_eJQo4n2fkd2RTI2_XMs7zBMw6F_GMhJrO8qO2auYuMyhshhKYbFrgtqTpg-UKogiJ0YDL0jvRqLg1fbntFvPLoZEvDE6RRj5CqJt6YpbsifQQQzex-acR-SIF9NazOjvd9-IZusvUdFfPljq4B4JYbrd30OCfTJxGGxDUFL2RHhenOm2sLjQG9XBuQSM8Ta7BNOAc0fMA-So3DX3ep4ZvaWgcsOF1etDglGva1bjkQTHZRpAUPed-gt_wO3BHJaCOBJjzOM09Kl7aF1VU-F2BYFWU-bSbswLJJCHLAtgUbp5ScGR9cVRta9IaZofGLiUKq2zTmhK179ZPjMkmS8tRVoTEgJnYq_VhFfHANGKPoc6uANvDtAwse_j-cb63EO_k9j6LhD8_nMje2YZmGRPKWAKwoGvkIM0I3HU1T1N7B5Vf0XyXzIaq92XhPGMhNU3ma5Yi7w_d8muENER8g8M-biD6MtCm5nFYjHfFGDDtFntDgRC9yVU1hkQiCWJkxRCVxuPW_h3mrdEU7D1L2ONQ0=w751-h568-no" alt="flex-direction"></li>
+<li>在 <code>.panel &gt; *</code> 設定 display 為 flex ，並加上 <code>justify-content: center;</code> 與 <code>flex-direction: column;</code> ，此設定是為了文字調整置中<br><img src="https://lh3.googleusercontent.com/OajHzNLeN5FQnY1o6t9CGhzUOZyiEIqPMNYCxgzsX71gmF1K-fzEq7dGioqnTpwO_NnA6Fq4tFZLQW9ajA-eOJ-e-M8mqTRQ6IJWwArwdmZUl1F8vRk9HoOzSqEulqR1nbciXcr42yyCVJbkIJuQfRu8yqYgoCkshf-dFBni2-nFlKvp69J_9fX0KY_MVdeT8iIN3A-aZqEkhz-fHFl9jL8XLX6TnwlRsrRPMTv1wXRCliIwjUBOToRy-z2a6VDkF-LVeEzDfufKs0T3vS57wUnJnqqX_Ez8uF-ieXRQbpbVU59J9hHUzfMsXU-CfUIlnTd4wsxsafqVhvy5AS4pe7ultVD0aY0YsQECaXFcqa0akGNJZ5z5JI9YCpTPsEhJC-RDvr77_ClmPmVLKyPEN-8zoRnGNGuA3McVgav_OAAmNng4a0KjlQ3fSs6BVz_nu0FluxDEpxfMiPf8GftJihcIUt-2NNkbUvT_3Ykh4pAqnlBvpCtSHlphg-CUwCh5bA0WSxGCh89NAZ6EAbzUB6xNsfsK2Yhrx7Ike4t79xiX6W61DYJYV7OgYtjalz0JkwaE9oxoyy5HYcUEfLyRqV191PUNvXVGQNh3r1qPFaCwfU0g7DmxIwbUMPX8kHMkoBXZ2rkAB7vH6_oatmriiRPdaTl6-PpJHg0=w751-h568-no" alt="text align"></li>
+</ul>
+<h2 id="步驟-3"><a href="#步驟-3" class="headerlink" title="步驟 3"></a>步驟 3</h2><ul>
+<li>先調整 <code>.panel.open</code> 的樣式，添加 flex 的占比調整</li>
+<li>針對文字 tag 的部分，設定 <code>:first-child</code> 與 <code>:last-child</code> 的樣式特效隱藏</li>
+<li>加入選取特效 css <code>.panel.open-active</code></li>
+</ul>
+<h2 id="步驟-4"><a href="#步驟-4" class="headerlink" title="步驟 4"></a>步驟 4</h2><p>此部分開始 JS 撰寫</p>
+<ul>
+<li>取得所有 <code>.panel</code> DOM</li>
+<li>建立 <strong>toggleOpen</strong> function ，並將上述的 DOM 綁定 click 事件</li>
+<li>建立 <strong>toggleActive</strong> function ，並將上述的 DOM 綁定 transitionend 事件</li>
+</ul>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="DOMTokenList"><a href="#DOMTokenList" class="headerlink" title="DOMTokenList"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/DOMTokenList" target="_blank" rel="noopener">DOMTokenList</a></h3><blockquote><p><code>DOMTokenList</code> 介面表示了一個以空格作為分隔的內容集，通常來自 <code>Element.classList</code>、<code>HTMLLinkElement.relList</code>、<code>HTMLAnchorElement.relList</code> 或 <code>HTMLAreaElement.relList</code> 等屬性。本介面與 <code>Array</code> 同樣是由 0 開始索引，且 <code>DOMTokenList</code> 是區分大小寫的。</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/DOMTokenList" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+<h3 id="DOMTokenList-toggle"><a href="#DOMTokenList-toggle" class="headerlink" title="DOMTokenList.toggle()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle" target="_blank" rel="noopener">DOMTokenList.toggle()</a></h3><blockquote><p>The toggle() method of the DOMTokenList interface removes a given token from the list and returns false. If token doesn’t exist it’s added and the function returns true.</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/toggle" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+<h2 id="CSS-部分"><a href="#CSS-部分" class="headerlink" title="CSS 部分"></a>CSS 部分</h2><h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/flex" target="_blank" rel="noopener">flex</a></h3><blockquote><p>CSS 屬性 <code>flex</code> 規定了彈性元素如何伸長或縮短以適應 flex 容器中的可用空間。這是一個簡寫屬性，可以同時設置 <code>flex-grow</code> , <code>flex-shrink</code> 與 <code>flex-basis</code></p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/flex" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Basic values */</span></span><br><span class="line"><span class="selector-tag">flex</span>: <span class="selector-tag">auto</span>;</span><br><span class="line"><span class="selector-tag">flex</span>: <span class="selector-tag">initial</span>;</span><br><span class="line"><span class="selector-tag">flex</span>: <span class="selector-tag">none</span>;</span><br><span class="line"><span class="selector-tag">flex</span>: 2;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* One value, unitless number: flex-grow */</span></span><br><span class="line"><span class="selector-tag">flex</span>: 2;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* One value, width/height: flex-basis */</span></span><br><span class="line"><span class="selector-tag">flex</span>: 10<span class="selector-tag">em</span>;</span><br><span class="line"><span class="selector-tag">flex</span>: 30<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Two values: flex-grow | flex-basis */</span></span><br><span class="line"><span class="selector-tag">flex</span>: 1 30<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Two values: flex-grow | flex-shrink */</span></span><br><span class="line"><span class="selector-tag">flex</span>: 2 2;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Three values: flex-grow | flex-shrink | flex-basis */</span></span><br><span class="line"><span class="selector-tag">flex</span>: 2 2 10%;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Global values */</span></span><br><span class="line"><span class="selector-tag">flex</span>: <span class="selector-tag">inherit</span>;</span><br><span class="line"><span class="selector-tag">flex</span>: <span class="selector-tag">initial</span>;</span><br><span class="line"><span class="selector-tag">flex</span>: <span class="selector-tag">unset</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="Using-CSS-Flexible-Boxes"><a href="#Using-CSS-Flexible-Boxes" class="headerlink" title="Using CSS Flexible Boxes"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank" rel="noopener">Using CSS Flexible Boxes</a></h3><blockquote><p>CSS3 彈性盒子，又稱 <strong>flexbox</strong> ，是為了適應不同螢幕尺寸和顯示設備而生的佈局模式。針對許多應用而言，不用 floats 的彈性盒子模型會比塊狀模型（block model）易用，彈性容器的邊緣也不會與內容的邊緣重疊。</p>
+<p>多數設計師會發現 flexbox 用起來比 box 簡單得多。像是不多注意 <code>div</code> 的話，它就會經常違反設計師意願地，跑到頁頂去──令 footer 附著在頁底，也因此變得很棘手。flexbox 的寬高能改變以適應顯示空間，將較低的元件固定住。Flexbox 邏輯也能讓你確實令 <code>div</code> 壓在頁面的右方或底部。Flexbox 元素的顯示順序，與原始碼的顯示順序相互獨立。</p>
+<p>一些時髦的佈局，也能因而透過更簡潔的程式碼完成。這種有意的獨立性只影響視覺渲染，基於 HTML 原始碼的語意順序及瀏覽不會受到影響。</p>
+<hr>
+<h1 id="彈性盒子的概念Edit"><a href="#彈性盒子的概念Edit" class="headerlink" title="彈性盒子的概念Edit"></a>彈性盒子的概念Edit</h1><p>Flex 排版的大致定義，是能更改該項目的長與（或）高，以便貼合任何顯示設備的空間。Flex container 能針對該元件擴張以便填補可用的空間、或收縮以便阻止空間溢出。</p>
+<p>塊狀佈局（Block layout）以垂直方向為準、行內佈局（Inline layout）以水平方向為準、而彈性佈局（Flexbox layout）則同時允許這兩種。塊狀佈局雖適於頁面顯示，但在程式元件（application component）需要在用戶代理（user agent）變更、手機從垂直方向翻轉到水平方向……等變更定位、大小、拉伸、收縮的情形下，這種佈局就很難用了。彈性盒子佈局長於小規模佈局、而剛剛流行的格線佈局（Grid layout）則長於大規模佈局。二者皆為 CSS 工作小組為在不同用戶代理、書寫模式、和其他要求下的 Web 應用程式，提供良好互通性的一部分。</p>
+<hr>
+<h1 id="彈性盒子的字彙"><a href="#彈性盒子的字彙" class="headerlink" title="彈性盒子的字彙"></a>彈性盒子的字彙</h1><p>在彈性盒子的世界，我們不會稱水平（inline）或垂直（block），而是主軸（main axis）與切軸（cross axis）。如果 flex-direction 是 column，主軸就會充當垂直、而切軸則充當水平。請參考下面的圖，它展示了一個彈性容器，裡面的 row 有 flex-direction，意味著該彈性項目會基於主軸，作水平排列。<br><img src="https://developer.mozilla.org/files/3739/flex_terms.png" alt="flexible_box"></p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+<h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction" target="_blank" rel="noopener">flex-direction</a></h3><blockquote><p>CSS <code>flex-direction</code> 屬性指定了內部元素是如何在flex容器中佈局的，定義了主軸的方向(正方向或反方向)。</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* The direction text is laid out in a line */</span></span><br><span class="line"><span class="selector-tag">flex-direction</span>: <span class="selector-tag">row</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Like &lt;row&gt;, but reversed */</span></span><br><span class="line"><span class="selector-tag">flex-direction</span>: <span class="selector-tag">row-reverse</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* The direction in which lines of text are stacked */</span></span><br><span class="line"><span class="selector-tag">flex-direction</span>: <span class="selector-tag">column</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Like &lt;column&gt;, but reversed */</span></span><br><span class="line"><span class="selector-tag">flex-direction</span>: <span class="selector-tag">column-reverse</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Global values */</span></span><br><span class="line"><span class="selector-tag">flex-direction</span>: <span class="selector-tag">inherit</span>;</span><br><span class="line"><span class="selector-tag">flex-direction</span>: <span class="selector-tag">initial</span>;</span><br><span class="line"><span class="selector-tag">flex-direction</span>: <span class="selector-tag">unset</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="before-before"><a href="#before-before" class="headerlink" title="::before (:before)"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before" target="_blank" rel="noopener">::before (:before)</a></h3><blockquote><p><code>::before</code> 會為當前元素創建一個子元素作為偽元素。常通過 content 屬性來為一個元素添加修飾性的內容。此元素默認為行內元素。</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* CSS3語法*/</span></span><br><span class="line">element::before &#123; 樣式 &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* （單冒號）CSS2過時語法(僅用來支持IE8) */</span></span><br><span class="line">element:before &#123; 樣式 &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*在每一個p元素前插入內容*/</span></span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-pseudo">::before</span> &#123; <span class="attribute">content</span>: <span class="string">"Hello world!"</span>; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="after-after"><a href="#after-after" class="headerlink" title="::after (:after)"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after" target="_blank" rel="noopener">::after (:after)</a></h3><blockquote><p>CSS 偽元素 <code>::after</code> 用來創建一個偽元素，做為已選中元素的最後一個子元素。通常會配合 content 屬性來為該元素添加裝飾內容。這個虛擬元素默認是行內元素。</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element:after  &#123; style properties &#125;  /* CSS2 syntax */</span><br><span class="line"></span><br><span class="line">element::after &#123; style properties &#125;  /* CSS3 syntax */</span><br></pre></td></tr></table></figure>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content" target="_blank" rel="noopener">justify-content</a></h3><blockquote><p>CSS <code>justify-content</code> 屬性定義了瀏覽器如何分配順著父容器主軸的彈性元素之間及其周圍的空間</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Positional alignment */</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;     <span class="comment">/*居中排列*/</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">start</span>;      <span class="comment">/* Pack items from the start */</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">end</span>;        <span class="comment">/* Pack items from the end */</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">flex-start</span>; <span class="comment">/*從行首起始位置開始排列*/</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">flex-end</span>;   <span class="comment">/*從行尾位置開始排列*/</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">left</span>;       <span class="comment">/* Pack items from the left */</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">right</span>;      <span class="comment">/* Pack items from the right */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Baseline alignment */</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">baseline</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">first</span> <span class="selector-tag">baseline</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span> : <span class="selector-tag">last</span> <span class="selector-tag">baseline</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Distributed alignment */</span></span><br><span class="line"><span class="comment">/*均勻排列每個元素首個元素放置於起點，末尾元素放置於終點*/</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">space-between</span>;</span><br><span class="line"><span class="comment">/*均勻排列每個元素每個元素周圍分配相同的空間*/</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">space-around</span>;</span><br><span class="line"><span class="comment">/*均勻排列每個元素每個元素之間的間隔相等*/</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">space-evenly</span>;</span><br><span class="line"><span class="comment">/* Distribute items evenly Stretch 'auto'-sized items to fit容器 */</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">stretch</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Overflow alignment */</span></span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">safe</span> <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">unsafe</span> <span class="selector-tag">center</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Global values */</span></span><br><span class="line"><span class="selector-tag">justify-content</span>：<span class="selector-tag">inherit</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>：<span class="selector-tag">initial</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>：<span class="selector-tag">unset</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="translateY"><a href="#translateY" class="headerlink" title="translateY()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY" target="_blank" rel="noopener">translateY()</a></h3><blockquote><p><code>translateY()</code> 函數表示在頁面垂直移動元素.這個 transformation 具有特徵的就是通過 <code>&lt;length&gt;</code> 定義了元素垂直移動了多少<br>translateY(ty) 是 translate(0, ty) 的一種簡寫方式</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateY" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.transformed</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(10px);</span><br><span class="line">  <span class="attribute">background-color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
+<li>作者 Github <a href="https://github.com/wesbos" target="_blank" rel="noopener">Wes Bos</a></li>
+<li><a href="https://github.com/soyaine/JavaScript30" target="_blank" rel="noopener">Js 30 day 中文指南</a></li>
+<li><a href="https://github.com/guahsu/JavaScript30" target="_blank" rel="noopener">瓜瓜的 JS 30</a></li>
+<li>我的 JS 30 <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">練習Github</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/JavaScript30/" rel="tag"># JavaScript30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/15/Javascript30days-4/" rel="next" title="JS30紀錄 04-Array Cardio">
+                <i class="fa fa-chevron-left"></i> JS30紀錄 04-Array Cardio
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/19/Javascript30days-6/" rel="prev" title="JS30紀錄 06-Type Ahead">
+                JS30紀錄 06-Type Ahead <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目標"><span class="nav-number">1.</span> <span class="nav-text">目標</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#處理步驟"><span class="nav-number">2.</span> <span class="nav-text">處理步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-1"><span class="nav-number">2.1.</span> <span class="nav-text">步驟 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-2"><span class="nav-number">2.2.</span> <span class="nav-text">步驟 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-3"><span class="nav-number">2.3.</span> <span class="nav-text">步驟 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-4"><span class="nav-number">2.4.</span> <span class="nav-text">步驟 4</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記與備註事項"><span class="nav-number">3.</span> <span class="nav-text">筆記與備註事項</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-部分"><span class="nav-number">3.1.</span> <span class="nav-text">JavaScript 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOMTokenList"><span class="nav-number">3.1.1.</span> <span class="nav-text">DOMTokenList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOMTokenList-toggle"><span class="nav-number">3.1.2.</span> <span class="nav-text">DOMTokenList.toggle()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-部分"><span class="nav-number">3.2.</span> <span class="nav-text">CSS 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex"><span class="nav-number">3.2.1.</span> <span class="nav-text">flex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-CSS-Flexible-Boxes"><span class="nav-number">3.2.2.</span> <span class="nav-text">Using CSS Flexible Boxes</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#彈性盒子的概念Edit"><span class="nav-number">4.</span> <span class="nav-text">彈性盒子的概念Edit</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#彈性盒子的字彙"><span class="nav-number">5.</span> <span class="nav-text">彈性盒子的字彙</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-direction"><span class="nav-number">5.0.1.</span> <span class="nav-text">flex-direction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#before-before"><span class="nav-number">5.0.2.</span> <span class="nav-text">::before (:before)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#after-after"><span class="nav-number">5.0.3.</span> <span class="nav-text">::after (:after)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#justify-content"><span class="nav-number">5.0.4.</span> <span class="nav-text">justify-content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#translateY"><span class="nav-number">5.0.5.</span> <span class="nav-text">translateY()</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#參考資料"><span class="nav-number">6.</span> <span class="nav-text">參考資料</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2017/12/18/Javascript30days-5/';
+          this.page.identifier = '2017/12/18/Javascript30days-5/';
+          this.page.title = 'JS30紀錄 05-Flex Panel Gallery';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

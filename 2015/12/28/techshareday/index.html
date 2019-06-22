@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="other,notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="現代化網站技術分享日的筆記">
+<meta name="keywords" content="other,notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="現代化網站技術分享日筆記心得">
+<meta property="og:url" content="https://shunnien.github.io/2015/12/28/techshareday/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="現代化網站技術分享日的筆記">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/opm0HwtQ_CHdY-gaDZwS_DpZZ2xGMZjUXdrUU9TF7eijzueCsPA09g0LvtnNAq5rNN1Pdy_1w9wd7wjbpYYuOto7RzKCtBZu-myJ-5bALbIP1xT_SZATDk7JHghO979LxpnQsOwEXrphf9WVXdROZA22gTRHMdxRRmgF4DCwkS3W105Fkc4M2g2Ns7aTyHyMV7vSgOZfSlyClvOsLqDPX0f07yoqvAME9F2TRsQi_1ASkk5jZ3G2nOf6r5oFzh4imeJ1GiHy_7MlOtIEA4foKVIsIDpfWEanI8JEhxY3q2MTpuoOxx-2m5sK1tbqh24S4CE-ebgo82i9UnsuLlk31rBAIdXNe4ZFXK8Fe4UxSDM-OHhzBniZMxlje03rvOP2Nhxn5vPmJLL_7PARs8Xuo6ns8fq05bvdyNObArV8IZ02cDZPqjxAGnYE9FBBtAUlXauRNGafVGEw0Wv2CdgmQKUoBemzTFCBiKIY3UVvbW69DqqIC0bKaHfL64FrMO6bIlp96mO72O0xg9aWindH5V8UwKoNccJA1y2S6HRntAyGDqnYrBzQZ_w2ALaueDgmNiA1s33M5WcDCPXsaim7klmsTWbEiq89ruLIqfxUNd1DMLoFqG4p2QZnXd_nRDzl0Wj25SCpI6mBDV-ThQDaKiwPYzmwtesDyXREFOWU7w=w429-h343-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.610Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="現代化網站技術分享日筆記心得">
+<meta name="twitter:description" content="現代化網站技術分享日的筆記">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/opm0HwtQ_CHdY-gaDZwS_DpZZ2xGMZjUXdrUU9TF7eijzueCsPA09g0LvtnNAq5rNN1Pdy_1w9wd7wjbpYYuOto7RzKCtBZu-myJ-5bALbIP1xT_SZATDk7JHghO979LxpnQsOwEXrphf9WVXdROZA22gTRHMdxRRmgF4DCwkS3W105Fkc4M2g2Ns7aTyHyMV7vSgOZfSlyClvOsLqDPX0f07yoqvAME9F2TRsQi_1ASkk5jZ3G2nOf6r5oFzh4imeJ1GiHy_7MlOtIEA4foKVIsIDpfWEanI8JEhxY3q2MTpuoOxx-2m5sK1tbqh24S4CE-ebgo82i9UnsuLlk31rBAIdXNe4ZFXK8Fe4UxSDM-OHhzBniZMxlje03rvOP2Nhxn5vPmJLL_7PARs8Xuo6ns8fq05bvdyNObArV8IZ02cDZPqjxAGnYE9FBBtAUlXauRNGafVGEw0Wv2CdgmQKUoBemzTFCBiKIY3UVvbW69DqqIC0bKaHfL64FrMO6bIlp96mO72O0xg9aWindH5V8UwKoNccJA1y2S6HRntAyGDqnYrBzQZ_w2ALaueDgmNiA1s33M5WcDCPXsaim7klmsTWbEiq89ruLIqfxUNd1DMLoFqG4p2QZnXd_nRDzl0Wj25SCpI6mBDV-ThQDaKiwPYzmwtesDyXREFOWU7w=w429-h343-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2015/12/28/techshareday/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>現代化網站技術分享日筆記心得 | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2015/12/28/techshareday/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">現代化網站技術分享日筆記心得</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2015-12-28T15:46:07+08:00">
+                2015-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心得筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">心得筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/12/28/techshareday/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/28/techshareday/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  現代化網站技術分享日的筆記
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="活動簡介"><a href="#活動簡介" class="headerlink" title="活動簡介"></a>活動簡介</h1><ul>
+<li>時間：12/22(二) </li>
+<li>地點：台北國際會議中心 201 會議室(台北市信義路五段 1 號)</li>
+<li>主辦單位：Microsoft  iThome</li>
+</ul>
+<h1 id="活動議程"><a href="#活動議程" class="headerlink" title="活動議程"></a>活動議程</h1><table>
+<thead>
+<tr>
+<th>時間</th>
+<th style="text-align:left">議程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09:30-10:20</td>
+<td style="text-align:left">現代化網頁開發技術三要素</td>
+</tr>
+<tr>
+<td>10:40-11:20</td>
+<td style="text-align:left">SASS &amp; RWD 前端版型架構規劃</td>
+</tr>
+<tr>
+<td>11:40-12:20</td>
+<td style="text-align:left">104 兒童美術館 (cicisasa.com) 自動部署上線技術分享</td>
+</tr>
+<tr>
+<td>13:30-14:10</td>
+<td style="text-align:left">前端網頁資料視覺化設計</td>
+</tr>
+<tr>
+<td>14:30-15:10</td>
+<td style="text-align:left">解密網頁設計效能優化</td>
+</tr>
+<tr>
+<td>15:30-16:10</td>
+<td style="text-align:left">現代網頁設計趨勢觀察</td>
+</tr>
+</tbody>
+</table>
+<h2 id="現代化網頁開發技術三要素"><a href="#現代化網頁開發技術三要素" class="headerlink" title="現代化網頁開發技術三要素"></a>現代化網頁開發技術三要素</h2><p>上官林傑 / 台灣微軟 應用開發技術經理</p>
+<h3 id="演講內容"><a href="#演講內容" class="headerlink" title="演講內容"></a>演講內容</h3><blockquote>
+<h3 id="現在網頁開發應該注意的事項"><a href="#現在網頁開發應該注意的事項" class="headerlink" title="現在網頁開發應該注意的事項"></a>現在網頁開發應該注意的事項</h3><ul>
+<li><p>標準文件模式<br>使用<code>&lt;!DOCTYPE html&gt;</code>作為開頭<br>避免使用<code>X-UA-Compatible</code>標頭，限制瀏覽器的能力</p>
+</li>
+<li><p>減少依賴外掛程式<br>安裝外掛程式會讓使用者不想停留在該網頁上<br>一定要用外掛程式嗎？找出當初使用此外掛程式的原因，逐漸走向沒有外掛程式的網頁應用。<br>此處的外掛是指例如：ActiveX、flash</p>
+</li>
+<li><p>避免判斷瀏覽器版本<br>瀏覽器版本不再是重要的指標，因為現在瀏覽器更新頻率很高，你很難記住哪些瀏覽器支援哪些功能，應該檢查此 function &gt; &gt; 存在，而不是根據瀏覽器版本做判斷。</p>
+</li>
+<li><p>使用新版的 JavaScript 函式庫<br>修正舊版本的錯誤，提升效能，如果你還在使用舊版本，等於在折磨你的 user<br>換不掉的原因可能是用了太多 plugin，存在著技術債<br>使用更有效率、瀏覽器原生的 HTML5/ECMAScript 2015 APIs<br>大幅導入 HTML5 特性的 jQuery 1.6 都是已經四年前的事了…<br>以 jQuery 為例，假如你在用 1.8.0 那你盡量用 1.8.3，找最穩定的版本，但是不要用latest.js XD</p>
+</li>
+<li><p>減少在 CSS 中使用 vendor-prefix<br><code>-webkit-*</code> 反而成為這個年代的 IE6，減少使用<code>vendor-prefix</code>，新增更多相容性<br>建議查看 <a href="http://caniuse.com" target="_blank" rel="noopener">http://caniuse.com</a> 或 升級最新版本的 CSS Framework</p>
+</li>
+<li><p><a href="https://dev.windows.com/zh-tw/microsoft-edge/tools/staticscan/" target="_blank" rel="noopener">Site Scan</a><br><a href="https://github.com/MicrosoftEdge/static-code-scan" target="_blank" rel="noopener">Github</a> 上有開放原始碼，可單機進行</p>
+</li>
+</ul>
+<h3 id="RWD-Responsive-Web-Design"><a href="#RWD-Responsive-Web-Design" class="headerlink" title="RWD, Responsive Web Design"></a>RWD, Responsive Web Design</h3><p>以前螢幕解析度還有特定解析度，但現在已經無法預測世界會有多少解析度了…<br>要採用手機用戶思考使用情境，更容易進行設計 ( 例如 table 桌機和手機設計大不同 ）<br>比較快速的方法：套用 RWD framework<br>設計是一回事，那怎麼做測試？</p>
+<ul>
+<li>手動調整瀏覽器寬度<br><a href="https://www.browserstack.com/" target="_blank" rel="noopener">BrowserStack</a><br><a href="https://dev.windows.com/en-us/microsoft-edge/tools/screenshots/" target="_blank" rel="noopener">Browser screenshots</a></li>
+</ul>
+<h3 id="支援高解析度螢幕"><a href="#支援高解析度螢幕" class="headerlink" title="支援高解析度螢幕"></a>支援高解析度螢幕</h3><p>新的裝置幾乎都是高解析度螢幕</p>
+<ul>
+<li><a href="http://webdesign.tutsplus.com/tutorials/quick-tip-how-to-use-html5-picture-for-responsive-images--&gt; &gt; s-21015" target="_blank" rel="noopener">HTML5 picture</a></li>
+<li><a href="https://github.com/scottjehl/picturefill" target="_blank" rel="noopener">picturefill</a></li>
+<li>向量圖形，向量字型</li>
+</ul>
+<h3 id="Touch-Friendly"><a href="#Touch-Friendly" class="headerlink" title="Touch Friendly"></a>Touch Friendly</h3><p>減少只有滑鼠可以操作的行為<br>針對特殊的輸入格式，提供不同的鍵盤按鈕 例如<br><code>&lt;input type=&quot;email&quot;&gt;</code></p>
+<h3 id="自動化工具"><a href="#自動化工具" class="headerlink" title="自動化工具"></a>自動化工具</h3><p>挑一個熟悉，生態系還活著的來用</p>
+<ul>
+<li>grunt</li>
+<li>gulp </li>
+<li>broccoli</li>
+</ul>
+<h3 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a><a href="http://typescriptlang.org" target="_blank" rel="noopener">TypeScript</a></h3><p>編譯成 JavaScript<br>JavaScript 本身沒有 Type<br>TypeScript 可以加上 Type 可以檢查呼叫的 Type ， 確認資料型態是否正確</p>
+<h3 id="BabelJS"><a href="#BabelJS" class="headerlink" title="BabelJS"></a>BabelJS</h3><p>將 ES6 的語法翻譯成 ES5</p>
+<h3 id="VorlonJs"><a href="#VorlonJs" class="headerlink" title="VorlonJs"></a><a href="http://vorlonjs.com/" target="_blank" rel="noopener">VorlonJs</a></h3><p>大大部落格有介紹使用 <a href="http://blogs.msdn.com/b/ericsk/archive/2015/11/06/ing-&gt; &gt; vorlonjs-to-debug-your-web-app.aspx" target="_blank" rel="noopener">Vorlon.js: 同時測試多瀏覽器網頁呈現的好工具</a><br>同時偵錯多個瀏覽器的呈現效果的工具，使用 nodejs 開發<br>如果在本機跑的話，會在本機產生一個 web 應用程式<br>網站裡只要加上一行：<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://localhost:1337/vorlon.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>感想：<br>大大說明了開發現代化網頁的注意事項，以及設計的重點。</p>
+<h2 id="SASS-amp-RWD-前端版型架構規劃"><a href="#SASS-amp-RWD-前端版型架構規劃" class="headerlink" title="SASS &amp; RWD 前端版型架構規劃"></a>SASS &amp; RWD 前端版型架構規劃</h2><p>廖洧杰/高雄前端社群發起人</p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/3avhl84oYNyNnd" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+<p><strong><a href="www.slideshare.net/sfismy/sassamprwd">Sass &amp; rwd前端版型架構規劃</a></strong> from <strong><a href="www.slideshare.net/sfismy">洧杰 廖</a></strong></p>
+<p>感想：<br>命名與架構規劃的結合，讓你維護更加便利。</p>
+<p>補充：<br><a href="https://github.com/airbnb/css" target="_blank" rel="noopener">Airbnb CSS / Sass Styleguide</a><br>bootstrap 4 用 sass<br>bootstrap 5 用 postcss</p>
+<h2 id="Modem-FrontEndDevops-104-兒童美術館-cicisasa-com-自動部署上線技術分享"><a href="#Modem-FrontEndDevops-104-兒童美術館-cicisasa-com-自動部署上線技術分享" class="headerlink" title="Modem FrontEndDevops - 104 兒童美術館 (cicisasa.com) 自動部署上線技術分享"></a>Modem FrontEndDevops - 104 兒童美術館 (cicisasa.com) 自動部署上線技術分享</h2><p>李坤承 / 104 Devops 專案經理</p>
+<h3 id="演講內容-1"><a href="#演講內容-1" class="headerlink" title="演講內容"></a>演講內容</h3><blockquote>
+<p><a href="http://www.cicisasa.com/" target="_blank" rel="noopener">兒童美術館</a>這個網站，導入很多新技術</p>
+<p>why FrontEnd Devops？<br>Devops 其實不太會分前端後端<br>但是許多 Ops 偏向後端技術，他們不懂 為何前端如何複雜？</p>
+<p>我們需要好的架構，做上線的規劃<br>我們需要瞭解一些後端技術<br>Plan &amp; Goal 計畫網站要如何部署</p>
+<ol>
+<li>自動化！！！<br>不自動化的話，會非常的辛苦，為了降低人工的成本，自動化的範圍：QA TESTing</li>
+<li>需要有好的 JS/CSS 框架，如果沒有的話，會非常難處理</li>
+</ol>
+<p>利用 HotDeploy 實現 Zero Downtime<br>特性是，上線的話，網站不需要封站<br>如何網站不要封，在部署的時候，那些使用者還繼續在使用你的網站<br>要去實現 Zero Downtime，要做的難度非常高，台灣的網站目前要做到，是完全不可能的，但我們把這個當作目標來看。<br>如果做自動化的話，要 CI/CD 實現隨時都可以上線</p>
+<p>500 error 需要被 handle<br>server handlserver error handleing!!!</p>
+<p>cicisasa 是如何做到如何自動部署？</p>
+<p>cicisasa 做的事情是 免費儲存小孩圖畫的網路空間，保存孩子的童年回憶及創意<br>這個需求很簡單，把圖片上傳，讓大家留言和分享<br>那這麼簡單，就拿來玩吧，當作技術的實驗場</p>
+<p>考慮要用什麼 Code language？<br>例如 PHP nodejs 等<br>最後決定是 nodejs<br>因為是輕量，語法很簡單，前後端語言可以相容，可以一致，<br>有相當豐富的 Ecosystem</p>
+<p>Ecosystem 使用的技術</p>
+<ul>
+<li>Database redis</li>
+<li>FrontEnd Framework  JS Framework Backbone.js</li>
+<li>Grunt</li>
+<li>browserify Bower</li>
+<li>Continuous integration </li>
+<li>Travis CI</li>
+<li>Template Engine JADE</li>
+<li>mocha PhantomJS</li>
+<li>socket.io</li>
+<li>HotDeploy naught</li>
+</ul>
+</blockquote>
+<p>感想：<br>這個實作範例的目標是 Zero Downtime，但是大大特地繞了一下，想要當作技術實驗場</p>
+<p>補充: <a href="https://github.com/KennyTw/ITHomeFEDevops?files=1" target="_blank" rel="noopener">Kenny大大的gitHub 有分享日的資料</a></p>
+<h2 id="前端網頁資料視覺化設計"><a href="#前端網頁資料視覺化設計" class="headerlink" title="前端網頁資料視覺化設計"></a>前端網頁資料視覺化設計</h2><p>吳泰輝/infographics.tw 創辦人</p>
+<h3 id="演講內容-2"><a href="#演講內容-2" class="headerlink" title="演講內容"></a>演講內容</h3><blockquote>
+<h3 id="資料和前端怎麼結合在一起"><a href="#資料和前端怎麼結合在一起" class="headerlink" title="資料和前端怎麼結合在一起"></a>資料和前端怎麼結合在一起</h3><p><a href="http://www.nytimes.com/interactive/2015/3/19/&gt; &gt; upshot/3d-yield-curve-economic-growth.html" target="_blank" rel="noopener">A 3-D View of a Chart That Predicts The Economic Future: The Yield Curve</a><br><a href="http://d3js.org/" target="_blank" rel="noopener">Data-Driven Documents( D3.js)</a><br>d3.js 不只可以畫 svg 也可以做數值運算 還可以畫 3d 的圖<br>例如：</p>
+<ul>
+<li><a href="http://zbryikt.github.io/visualize/banana/" target="_blank" rel="noopener">Banana in X3D</a></li>
+<li><a href="http://bl.ocks.org/" target="_blank" rel="noopener">bl.ocks.org</a></li>
+</ul>
+<p><a href="http://processingjs.org/" target="_blank" rel="noopener">Processing</a><br><a href="http://p5js.org/" target="_blank" rel="noopener">p5.js</a><br><a href="http://www.pixijs.com/" target="_blank" rel="noopener">pixijs</a><br>PathGL<br>PathGL D3,meet webGL<br><img src="https://lh3.googleusercontent.com/opm0HwtQ_CHdY-gaDZwS_DpZZ2xGMZjUXdrUU9TF7eijzueCsPA09g0LvtnNAq5rNN1Pdy_1w9wd7wjbpYYuOto7RzKCtBZu-myJ-5bALbIP1xT_SZATDk7JHghO979LxpnQsOwEXrphf9WVXdROZA22gTRHMdxRRmgF4DCwkS3W105Fkc4M2g2Ns7aTyHyMV7vSgOZfSlyClvOsLqDPX0f07yoqvAME9F2TRsQi_1ASkk5jZ3G2nOf6r5oFzh4imeJ1GiHy_7MlOtIEA4foKVIsIDpfWEanI8JEhxY3q2MTpuoOxx-2m5sK1tbqh24S4CE-ebgo82i9UnsuLlk31rBAIdXNe4ZFXK8Fe4UxSDM-OHhzBniZMxlje03rvOP2Nhxn5vPmJLL_7PARs8Xuo6ns8fq05bvdyNObArV8IZ02cDZPqjxAGnYE9FBBtAUlXauRNGafVGEw0Wv2CdgmQKUoBemzTFCBiKIY3UVvbW69DqqIC0bKaHfL64FrMO6bIlp96mO72O0xg9aWindH5V8UwKoNccJA1y2S6HRntAyGDqnYrBzQZ_w2ALaueDgmNiA1s33M5WcDCPXsaim7klmsTWbEiq89ruLIqfxUNd1DMLoFqG4p2QZnXd_nRDzl0Wj25SCpI6mBDV-ThQDaKiwPYzmwtesDyXREFOWU7w=w429-h343-no" alt="Rasterize D3.js"></p>
+<h3 id="RWD"><a href="#RWD" class="headerlink" title="RWD"></a>RWD</h3><p><a href="http://www.nytimes.com/interactive/2015/06/17/world/middleeast/map-isis-attacks-around-the-orld.&gt; &gt; html" target="_blank" rel="noopener">new york time example</a><br><a href="http://guns.periscopic.com/" target="_blank" rel="noopener">U.S. GUN DEATHS</a><br>我們在做視覺化的時候，如果遇到螢幕比較小，可以把相關的文字資訊移出來<br>圖表文字的大小要注意<br>長條圖的長寬是可以調整的，自己去做 scale<br>如果遇到螢幕比較小，手指比較大，我們可以利用切割區域的方式增加感應的區塊<br>當你資料真的很多，但又想要全部顯示出來的話，可以透過 change<br><a href="http://www.foundi.info/lab/badneighbor/" target="_blank" rel="noopener">房地資訊實驗室</a> 嫌惡設施報你知 灰色是墓碑，紅色是電塔</p>
+<h3 id="Visualization-without-Web"><a href="#Visualization-without-Web" class="headerlink" title="Visualization without Web"></a>Visualization without Web</h3><p>當我們在考慮視覺化的時候，我們可以用什麼方式讓人們重新去做思考<br>U.S. 視覺化搭配情緒影響力，我們可以發現更多不一樣的東西<br><a href="http://0media.tw/" target="_blank" rel="noopener">報導者，零傳媒</a><br>不只是視覺，還包括聽覺等等來敘事<br>新聞上面要怎麼使用這些新技術<br>新知和案例</p>
+</blockquote>
+<p>感想：<br>視覺化設計的工具不少，效能與表現效果的取捨得看內容決定，所欲表達的內容，利用視覺化呈現達到加倍的效果是視覺化的目的。</p>
+<h2 id="解密網頁設計效能優化-The-Secrets-of-Web-Design-Performance"><a href="#解密網頁設計效能優化-The-Secrets-of-Web-Design-Performance" class="headerlink" title="解密網頁設計效能優化 (The Secrets of Web Design Performance)"></a>解密網頁設計效能優化 (The Secrets of Web Design Performance)</h2><p>Paul Li / Yahoo Front End Engineer</p>
+<iframe src="http://mei.homin.com.tw/Keynote_the_secrets_of_web_design_performance.html" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+<h3 id="演講內容-3"><a href="#演講內容-3" class="headerlink" title="演講內容"></a>演講內容</h3><blockquote>
+<h4 id="WebPageTest-yslow"><a href="#WebPageTest-yslow" class="headerlink" title="WebPageTest yslow"></a>WebPageTest yslow</h4><p>Chrome devTool 快速瞭解網站缺點和優點，進一步去改善<br>點到 Network 會看到網站發出哪些 Request 以及 藍色的線和綠色的線<br>藍色的線越短越好，藍色越短，使用者可以越快看到我們的內容<br>第一個原則是： 有效的減少 request 因為是我們網站等待時間成本最高的部分<br>點選 Timeline 可以看到 request detail<br>今天的任務就是有效的減少 request<br>如果你不在乎 user 的感受，那麼使用者就用訂單來修理你<br>Avoid 404 response<br>我們要盡量避免這種事情發生，千萬不要忘記這個小圖示(Favicon)的置入<br>可能我們的頁面會有不同的 module<br>checkout flow - cart<br>Yahoo是BY PageFlow來載入CSS，只MERGE相關的CSS，不會載入不必要的CSS<br>用inline可以減少Request，但就無法得到Cache的好處。<br>the Ultimate solution</p>
+<h4 id="Css-Sprites"><a href="#Css-Sprites" class="headerlink" title="Css Sprites"></a>Css Sprites</h4><p>把所有的 icon 都 merge 成一張，透過 css 做動態定位的效果<br>原本有 50張圖片的 request，拼成一張 只需要一個 request<br>or svg sprite?</p>
+<h4 id="Icon-font"><a href="#Icon-font" class="headerlink" title="Icon font"></a>Icon font</h4><p>把圖形放到字型裡面，透過 Icon font，顯示向量圖檔，不會有失真的問題出現<br>例如： IcoMoon</p>
+<h4 id="imageLazyLoad"><a href="#imageLazyLoad" class="headerlink" title="imageLazyLoad"></a>imageLazyLoad</h4><h4 id="Minimize-cookie"><a href="#Minimize-cookie" class="headerlink" title="Minimize cookie"></a>Minimize cookie</h4><h4 id="Extend-Max-parallel-HTTP-request"><a href="#Extend-Max-parallel-HTTP-request" class="headerlink" title="Extend Max parallel HTTP request"></a>Extend Max parallel HTTP request</h4><p>如果我們可以拓展連線數的話，可以拆開不同的 domain，就可以加速同時連線的速度<br>這邊應該是 hostname 吧？<br>Frontend就是要幫DOM做有效的瘦身</p>
+<h4 id="Remove-useless-DOM"><a href="#Remove-useless-DOM" class="headerlink" title="Remove useless DOM"></a>Remove useless DOM</h4><p>例如：css的<br><code>before</code><br><code>after</code><br>(使用css的before和after，就可以消除多餘的div，也減少DOM）<br>Generate DOM when need<br>Store DOM in somewhere</p>
+<h4 id="SEO-Structure-data"><a href="#SEO-Structure-data" class="headerlink" title="SEO Structure data"></a>SEO Structure data</h4><p>Schema.org<br>使用 Microdata 會增加不少的節點，建議不要再用了！<br>我們可以使用最新最潮的 <strong>JSON-LD</strong><br><a href="https://developers.google.com/structured-data/testing-tool/" target="_blank" rel="noopener">Structured Data Testing Tool</a></p>
+<h4 id="即早輸出CSS"><a href="#即早輸出CSS" class="headerlink" title="即早輸出CSS"></a>即早輸出CSS</h4><p>CSS SELECTOR 做優化（browser是右邊往左邊讀)<br>盡量用classname做快速選取<br>Screen Render flow<br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">CSS</span> <span class="selector-tag">attribute</span>: <span class="selector-tag">will-change</span></span><br><span class="line"><span class="selector-class">.moving-element</span> &#123;</span><br><span class="line"><span class="attribute">will-change</span>: transform;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.moving-element</span> &#123;</span><br><span class="line"><span class="attribute">will-change</span>: transform, opacity;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>只要是CSS可以做到的，就不會用JS去代工<br>JS是一個一個下載後再解析，等所有JS載入完成，會很久</p>
+<h4 id="timeline"><a href="#timeline" class="headerlink" title="timeline"></a>timeline</h4><p>動態的運行 script</p>
+<h4 id="pageRender"><a href="#pageRender" class="headerlink" title="pageRender"></a>pageRender</h4><p>some javascript tips<br>真正需要用到才去 init<br>不要把太多的事件加在同一個 element ，會造成效能上的損耗<br>不要在同一個時間做太多DOM的操作</p>
+<h4 id="Remove-Flash"><a href="#Remove-Flash" class="headerlink" title="Remove Flash"></a>Remove Flash</h4><p>早期 multi-upload video 等，現在 html5 都可以幫我們執行<br>Navigation Timing API</p>
+<h4 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h4><p>我們可以透過 client side 來幫我們儲存資料<br>有效減少 request，幫我們把資料 cache 起來<br>可以用在例如搜尋 ( relative dropdown list ) 或autocomplete</p>
+<h4 id="instant-page"><a href="#instant-page" class="headerlink" title="instant page"></a>instant page</h4></blockquote>
+<p>感想：<br>Paul 大大的調校面面觀，很有收穫呀。</p>
+<h2 id="現代網頁設計趨勢觀察"><a href="#現代網頁設計趨勢觀察" class="headerlink" title="現代網頁設計趨勢觀察"></a>現代網頁設計趨勢觀察</h2><p>李建杭(Amos) / 熱血的前端開發者＆講師</p>
+<blockquote>
+<p>那道閃光真的離開我們了！！！ flash！！<br>最友善的瀏覽器被宣告了死刑<br>Javascript 突然稱霸了網路世界<br>視覺＋互動<br>扁平化設計當道<br>網頁總要放漢堡<br>操作流程改善<br>網頁互動改善<br>動畫設計組件化<br>參考網站</p>
+<ul>
+<li>Smashing</li>
+<li>awwwards</li>
+<li>UXPin</li>
+</ul>
+</blockquote>
+<p>補充一下最後Amos大demo的sublime text 外掛 (<a href="https://packagecontrol.io/packages/iconfont%20snippets" target="_blank" rel="noopener">iconfont snippets</a>)：</p>
+<hr>
+<p>詳細來源可以參考<a href="https://hackpad.com/ZWVGk6BFDfn" target="_blank" rel="noopener">共筆資料</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/other/" rel="tag"># other</a>
+          
+            <a href="/tags/notes/" rel="tag"># notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/25/DataGridView-in-winform-5/" rel="next" title="DataGridView 在 Winform 的簡單操作(5)">
+                <i class="fa fa-chevron-left"></i> DataGridView 在 Winform 的簡單操作(5)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/11/webhacking/" rel="prev" title="Web駭客攻擊手法及防護實戰 Day 1">
+                Web駭客攻擊手法及防護實戰 Day 1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#活動簡介"><span class="nav-number">1.</span> <span class="nav-text">活動簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#活動議程"><span class="nav-number">2.</span> <span class="nav-text">活動議程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#現代化網頁開發技術三要素"><span class="nav-number">2.1.</span> <span class="nav-text">現代化網頁開發技術三要素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#演講內容"><span class="nav-number">2.1.1.</span> <span class="nav-text">演講內容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#現在網頁開發應該注意的事項"><span class="nav-number">2.1.2.</span> <span class="nav-text">現在網頁開發應該注意的事項</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RWD-Responsive-Web-Design"><span class="nav-number">2.1.3.</span> <span class="nav-text">RWD, Responsive Web Design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支援高解析度螢幕"><span class="nav-number">2.1.4.</span> <span class="nav-text">支援高解析度螢幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Touch-Friendly"><span class="nav-number">2.1.5.</span> <span class="nav-text">Touch Friendly</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自動化工具"><span class="nav-number">2.1.6.</span> <span class="nav-text">自動化工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeScript"><span class="nav-number">2.1.7.</span> <span class="nav-text">TypeScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BabelJS"><span class="nav-number">2.1.8.</span> <span class="nav-text">BabelJS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VorlonJs"><span class="nav-number">2.1.9.</span> <span class="nav-text">VorlonJs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SASS-amp-RWD-前端版型架構規劃"><span class="nav-number">2.2.</span> <span class="nav-text">SASS &amp; RWD 前端版型架構規劃</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modem-FrontEndDevops-104-兒童美術館-cicisasa-com-自動部署上線技術分享"><span class="nav-number">2.3.</span> <span class="nav-text">Modem FrontEndDevops - 104 兒童美術館 (cicisasa.com) 自動部署上線技術分享</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#演講內容-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">演講內容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端網頁資料視覺化設計"><span class="nav-number">2.4.</span> <span class="nav-text">前端網頁資料視覺化設計</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#演講內容-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">演講內容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#資料和前端怎麼結合在一起"><span class="nav-number">2.4.2.</span> <span class="nav-text">資料和前端怎麼結合在一起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RWD"><span class="nav-number">2.4.3.</span> <span class="nav-text">RWD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Visualization-without-Web"><span class="nav-number">2.4.4.</span> <span class="nav-text">Visualization without Web</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解密網頁設計效能優化-The-Secrets-of-Web-Design-Performance"><span class="nav-number">2.5.</span> <span class="nav-text">解密網頁設計效能優化 (The Secrets of Web Design Performance)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#演講內容-3"><span class="nav-number">2.5.1.</span> <span class="nav-text">演講內容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#WebPageTest-yslow"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">WebPageTest yslow</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Css-Sprites"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">Css Sprites</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Icon-font"><span class="nav-number">2.5.1.3.</span> <span class="nav-text">Icon font</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#imageLazyLoad"><span class="nav-number">2.5.1.4.</span> <span class="nav-text">imageLazyLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Minimize-cookie"><span class="nav-number">2.5.1.5.</span> <span class="nav-text">Minimize cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Extend-Max-parallel-HTTP-request"><span class="nav-number">2.5.1.6.</span> <span class="nav-text">Extend Max parallel HTTP request</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remove-useless-DOM"><span class="nav-number">2.5.1.7.</span> <span class="nav-text">Remove useless DOM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SEO-Structure-data"><span class="nav-number">2.5.1.8.</span> <span class="nav-text">SEO Structure data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#即早輸出CSS"><span class="nav-number">2.5.1.9.</span> <span class="nav-text">即早輸出CSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#timeline"><span class="nav-number">2.5.1.10.</span> <span class="nav-text">timeline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pageRender"><span class="nav-number">2.5.1.11.</span> <span class="nav-text">pageRender</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Remove-Flash"><span class="nav-number">2.5.1.12.</span> <span class="nav-text">Remove Flash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Web-Storage"><span class="nav-number">2.5.1.13.</span> <span class="nav-text">Web Storage</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instant-page"><span class="nav-number">2.5.1.14.</span> <span class="nav-text">instant page</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#現代網頁設計趨勢觀察"><span class="nav-number">2.6.</span> <span class="nav-text">現代網頁設計趨勢觀察</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2015/12/28/techshareday/';
+          this.page.identifier = '2015/12/28/techshareday/';
+          this.page.title = '現代化網站技術分享日筆記心得';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

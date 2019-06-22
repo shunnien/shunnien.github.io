@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="IIS,ArcGIS Js API,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="ArcGIS JavaScript API 安裝在 IISArcGIS JavaScript API 提供的是類似 CDN 的服務，但是假如客戶是內部系統並不對外的時候，就無法使用了，由於該 API 包含許多功能模組，官方提供了此說明步驟來設定">
+<meta name="keywords" content="IIS,ArcGIS Js API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArcGIS JavaScript API 安裝在 IIS">
+<meta property="og:url" content="https://shunnien.github.io/2018/09/06/ArcGIS-js-API-isolated-install/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="ArcGIS JavaScript API 安裝在 IISArcGIS JavaScript API 提供的是類似 CDN 的服務，但是假如客戶是內部系統並不對外的時候，就無法使用了，由於該 API 包含許多功能模組，官方提供了此說明步驟來設定">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/4S8RWiivvmDb8SNBERU2818cxEXydYXvbBb3PkQF_1IpEH-MGGew-d3grCfNdgGYjPeEhywia_J8BKmKFaeUWKlR1jpn5qPZfFkJKX5tdwjMDkOiU7YzV6SGINPGB-joSXpc_Ahs9WLetuluBHH4ZAujeXF3FqJzfJAUx7Cf1YAhbwNtjxgoCcLaqOm4pnZbpAX8ulGQjyDT1wqSk9DmLWXjgTVVPsRBD29ph4OJ1IvW1Sz4zA18TBdoOobzNQA54njKy5tGniySDhZrolp0ZJpP9M1r_We6gt4f_9PYbMt21SSlwSQPRKu5su5_vSQKPSqW6GDJeAXPiB5loXxgs_eh8dktdhwDAehp4yMvW3h9vqFXXoov_4mge6hZojbXl1C2mxI2Gw06sfMWnXmwdfkLI11qYMgDSreSjYydcnFD0HqH0Pzh3q0wIcuC3uhRlNva561fbmtyJSUMqpcxwUk8sAUOJUlKZD919gP1Eac-VlwVk9jXrpJgo7rrc4fle5kUP-aYQ35BDMWo0opkCVl5cl4uZGWAzK0vPrAJCOYxpxnkCKgTaZolX3v2KHiALZi9rd0NLhfrxWXvRsByX-fYLP0nbb5OXqA43Cmw_P4ocPmY31oZzMlTb4bv9MCPI-VEPacNT2MaOeLYRBB0U6uwRKO5GUv76o6QWmtojTzFFbdThPs5UVKt=w1451-h476-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/jWHbm5wPINIVGPsI550NtGhlxdX_PszPfGbSIF5C2iwOonFkB2OVeag414Gi1XNA9TtHHPxsWEMVXPZV-gaTfGtskmXq6T9qjzpvJY_zSuoZmdSAgvKEkeYYbaYE5Bjz52wsqHcM034LW0icLdamhfOCUPHt07SouUp_kdR51WGou1UJrBb3oJyYzWZuOqI2EKzC53yfVDm9lP2StpFrlG9OQ-U1_cdDA5NrvpTXakEPZhmnzw97Gvq0UDjfk2l0YaK4kyd4GCVj8z3069C_yqTQNocbbRrTlqaOxJHWN6NsQNdjeecxlH_sGthy1pkxzmUGW9WQvzsXYKEB7-XuRWSxb9xHGTPpStJuqkMFWI0Vazc-xJv-Oj9z7SWpr6zrTVunoGdIVt6lnE-K9Q1qS4w3ZNrqULyYEwFSESjlhQbMVsH312l6DHVs8VlsF_JnCouIO2998zcY4IpGWsUvHOhrtlwaIb8slnbC2CgiD-0f_4S9LNfEu0qLbEP-ph-1tduY2fKZTxHObtCVjVoSAeWbzx6gkqVzyPQQG_f2KiCwwOTuDPgSpo1uAGxHk1MSOlz_B0Psd1pX0CAdRpG41gKA6pI2EN8XOo0um_Wp_MwLo9QyHxpWsV3dMG_d4KPBNiMl_iYOMAXo3hO66wCPB_2YLCeMbBSTrGa98w5ToT9Gyo1Jv7b4fLx6=w245-h132-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/tdxDWQhkuDaNxE1XKgWVE8LMQXXAhoBrv7vrsMX-GyQ6Sj974Wi42m_EawS3zrUCESUZsVdK_soMetIB7YsQqCPfYCJOLq7CTVA2nOdiLG5vVBmqFKiQVJ_CV5US0ITYUWSWscGz7FNdQqBlzHK7MpW20-NArXT0_Zlilj3DMCbQrEnaZ-qWcOhPkATIAl2oRPxQoGY6_5sOR2KeNcUp2FeLhE8-20V_gJnm4s0yno6zQ3864Ro_VIJdtzgaiOBzx2JoiJS-SdXK6cViLeXQyQZzfXnQSkU2I-gDNlZEKu8BN0MgpAUZOVaeoHfR6CieZLNjjwE_tcSk9K-fcWdjX4N3hbg4RF7Qjs1ZGmnjacmmvPXxuLFH--95foKE9htowAt6iCjHNrrEbdBbcb17wV3sy46oVPAUeToVBNzYOuOa0cer39txeC7LSH9GKQNM5_FezE3jycUCpfehBwv9kZZFJPdPksUnCd3HR6UmrS4bsBW-cKAzhOEjBp-7eZ5shhJRv4rL9xQ_wvQlXPBUKxMHZhadcwMecpR3cCByaQ54pro8vMjcYRQHglvQmZUnTp6n-_kRX5UbpTpVGd886gVgOKYyUob0Y7AqTJ2CWFl9DlnwlKjQYFxJJxgNf7qUqPz1s3duhiIuIZTOQn9lKTb_wsUlvWB_yGVJ6jCGddky_xEo-Mkgqdl2=w550-h452-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/Nz3_35XAOtCE8e1bl0myQlD-2OUh9eOsE-Ocfw4u5QUJ1uwzYlqd48NqUThhsFA8HsquXF9FiZBHL6tpWlUo6bj74VxCFJEsGXtIZ2fHv4ouDaFUVfvc8WH8p5OfrpqIre0sAc8-ueyN2h_IX3UrdKvObP_qj_tR55FNmeJLZBP7z5WoHFlwzyXZaNv5mSiEiB0poHIjiUOTI-Tiry0Ol2N3feMu9s_2Bx0OGqh3C5Sckn3ouTlnZGV4oESwDWAvaJqk982eTl7LSXCYxO75WBrLU1aRTMWtXt0rqzmeBsI1LpXdaQyOjym98UgrnrCrDgzAX3uY6XE365w2xwhXYO5q986mlM40H3Xxl4LqSGZexcfSVN9KgMEvALfZljJvyPiIqQyrMsYWc-cjfGTBgD5ZccKR5XBurx0M40XWzaBDOD1rg6XWi8m1uL0jB6mAz2yzC20MnZhD0i0-pbySJ2PBefmPfzvqSTt4XcQPQyks0Szj0P7osXhlFbift8c1i0v0z388y24zqAZhfwarrIa_jvrRF9ENQya9rNLLGZME3o6U4bIA1sutMEeet1PGiz1BorDSWy_qSbZj1yF_bErcxMpNzkqsHclfNjbfmfoGftZZxk1lZbGpryMTAa4ZeyJ0ZKz9pgJGXcMWHZALCpFmfA3L2KoW8t-8L_7iA_iurhmaV-unk7yP=w825-h191-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/eFKzlgFrbIH2PBqM2Pnw_ZzOZ3Vp4xFGSdaHSNnx9CS6G0EzWpaE4vABJJuopKzUccml39BfXLTIeic0Pim_8IrdlWU6FfEFJFzRmXE7wRmqm451nNk0-obHUCGNN9GqDE11RTuPXOddxZScb2aq1boXXndeo6dWA-ydbeLC8NJodxECP1F4ofkzNRvcirdZ5nKftV62rtQ8AGauIzYV0Q2fiu7UGIs7kVdrpGE0oO1gRLXeHv4vKTBmMzlZBmkYvfKNA1NUQ_M9I2kVsJrh6wJPVGRqH_NblJ3IdFqN74qx1Hy_11wV-WKqOWHglQ0R8vqQ76gyXT1BqLR7VhkSvefS2Ry0UhHyrF_eVDTNKLO-uya7u0wKECi4pswdb84LvoL2q4h_oCq7Lk21P90NN6MG04HST6Le_rp9_q9f-tvpDMeXE0lW2K5_CmDHWi_nhJkrhjYG5QTWYp2pHSkAJ5PEMFP4LBiKGyznXTEqv0mNPezc0tPT9FufKCS00tjTm_X7NOJ6L3r1tTTq0kn98ql1iRXwoGFzYMQSW6GoFPuy3BZXNzASs96XbbLZlmS9QbKaLguBrQBp5CGsYUF2yB_OjC-UDxB3Nq1Hmc42swXYE270__Hf7GWu54kmJJeGD9rJYOpPlmzGH4y-daM_6B8V9cfOf265yw_jk39v5GJpG_Zxe1WLFPBK=w797-h833-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/k3uwByjDg8x1ZhuJTv_XjLOkJPcRy88x-bPJWu3812Yb64DfG53ccTDajHfWTMmgoLVeO-xTDPCsJWgPlolE_pD18SGws95vg0W4wu7FJlYD3XwdeYmoaAVnjjkqh-VN0D4UjYQyg-fbkvTakUMid-mL0DpFDItKGcnfjszwqJ2YuxVtAyKXctXXwobfyHJ84U9lxN5LohrCFMngmyufn7yoKNXHn9yyy7w5TTwE-xGb2yFKGNYzQM0b7Bv08o1Tzk5P2O6XyMzSgk4nA5N9KSVY3wr0kDpgWhH4F_EM9OHk1_V_yFDfjLJyRSGkRenUsMQFkyBSdUMAWQ9jM4ZguKrbjNxazl7DdhZYhYuQOShPmixMPRixaCiZ5-GEa2hgFp_DMgby0-ZAFSNSzbES95tf-JXA4LXRZf2HhaBpDRC7fmvpV4QFYeAK2m0KUevdzgovDJd7q1QWuSV_cKzcP8IFFWwafTQBf5HszNZidqb5s4MVf_eigQC61y5JKpSkxzxeAVHgYqKZ7vEY-MoAKnPj2x6JeMEtvll32V2frEnK4_GF6vihTWoNtBmqCtrzW0Uj6W7A_DjI5C4bZ61orh-WsLrxeKtPylzT2jXPfSZo5i2JmPJCl1UzOqT4B9mp9lCCyJNEcWYjNEFE2VpUpiGy3ecGmQdmcE9IozXod1GuRt3AMz4p0pha=w872-h543-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.695Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ArcGIS JavaScript API 安裝在 IIS">
+<meta name="twitter:description" content="ArcGIS JavaScript API 安裝在 IISArcGIS JavaScript API 提供的是類似 CDN 的服務，但是假如客戶是內部系統並不對外的時候，就無法使用了，由於該 API 包含許多功能模組，官方提供了此說明步驟來設定">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/4S8RWiivvmDb8SNBERU2818cxEXydYXvbBb3PkQF_1IpEH-MGGew-d3grCfNdgGYjPeEhywia_J8BKmKFaeUWKlR1jpn5qPZfFkJKX5tdwjMDkOiU7YzV6SGINPGB-joSXpc_Ahs9WLetuluBHH4ZAujeXF3FqJzfJAUx7Cf1YAhbwNtjxgoCcLaqOm4pnZbpAX8ulGQjyDT1wqSk9DmLWXjgTVVPsRBD29ph4OJ1IvW1Sz4zA18TBdoOobzNQA54njKy5tGniySDhZrolp0ZJpP9M1r_We6gt4f_9PYbMt21SSlwSQPRKu5su5_vSQKPSqW6GDJeAXPiB5loXxgs_eh8dktdhwDAehp4yMvW3h9vqFXXoov_4mge6hZojbXl1C2mxI2Gw06sfMWnXmwdfkLI11qYMgDSreSjYydcnFD0HqH0Pzh3q0wIcuC3uhRlNva561fbmtyJSUMqpcxwUk8sAUOJUlKZD919gP1Eac-VlwVk9jXrpJgo7rrc4fle5kUP-aYQ35BDMWo0opkCVl5cl4uZGWAzK0vPrAJCOYxpxnkCKgTaZolX3v2KHiALZi9rd0NLhfrxWXvRsByX-fYLP0nbb5OXqA43Cmw_P4ocPmY31oZzMlTb4bv9MCPI-VEPacNT2MaOeLYRBB0U6uwRKO5GUv76o6QWmtojTzFFbdThPs5UVKt=w1451-h476-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2018/09/06/ArcGIS-js-API-isolated-install/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>ArcGIS JavaScript API 安裝在 IIS | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/09/06/ArcGIS-js-API-isolated-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ArcGIS JavaScript API 安裝在 IIS</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-09-06T17:06:02+08:00">
+                2018-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/06/ArcGIS-js-API-isolated-install/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/06/ArcGIS-js-API-isolated-install/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ArcGIS-JavaScript-API-安裝在-IIS"><a href="#ArcGIS-JavaScript-API-安裝在-IIS" class="headerlink" title="ArcGIS JavaScript API 安裝在 IIS"></a>ArcGIS JavaScript API 安裝在 IIS</h1><p><strong>ArcGIS JavaScript API</strong> 提供的是類似 <strong>CDN</strong> 的服務，但是假如客戶是內部系統並不對外的時候，就無法使用了，由於該 API 包含許多功能模組，官方提供了此<a href="https://support.esri.com/en/technical-article/000011974" target="_blank" rel="noopener">說明</a>步驟來設定<a id="more"></a>，不只 js api ， SDK 也是類似的設定。</p>
+<h2 id="安裝設定"><a href="#安裝設定" class="headerlink" title="安裝設定"></a>安裝設定</h2><h3 id="步驟-1"><a href="#步驟-1" class="headerlink" title="步驟 1"></a>步驟 1</h3><p><a href="https://developers.arcgis.com/downloads/" target="_blank" rel="noopener">下載安裝程式</a>， ESRI 的下載頁面僅提供會員使用，所以先註冊或是使用 google 帳號快速註冊(免費)，登入後在<a href="https://developers.arcgis.com/downloads/" target="_blank" rel="noopener">此連結</a>即可下載。<br>此次安裝使用 3.25 版本，<strong>API</strong> 會下載 <strong>arcgis_js_v325_api.zip</strong> ， <strong>Documentation</strong> 則是 <strong>arcgis_js_v325_sdk.zip</strong> ，假如只使用 JS 部分，可以只安裝 <strong>API</strong> 就好</p>
+<p><img src="https://lh3.googleusercontent.com/4S8RWiivvmDb8SNBERU2818cxEXydYXvbBb3PkQF_1IpEH-MGGew-d3grCfNdgGYjPeEhywia_J8BKmKFaeUWKlR1jpn5qPZfFkJKX5tdwjMDkOiU7YzV6SGINPGB-joSXpc_Ahs9WLetuluBHH4ZAujeXF3FqJzfJAUx7Cf1YAhbwNtjxgoCcLaqOm4pnZbpAX8ulGQjyDT1wqSk9DmLWXjgTVVPsRBD29ph4OJ1IvW1Sz4zA18TBdoOobzNQA54njKy5tGniySDhZrolp0ZJpP9M1r_We6gt4f_9PYbMt21SSlwSQPRKu5su5_vSQKPSqW6GDJeAXPiB5loXxgs_eh8dktdhwDAehp4yMvW3h9vqFXXoov_4mge6hZojbXl1C2mxI2Gw06sfMWnXmwdfkLI11qYMgDSreSjYydcnFD0HqH0Pzh3q0wIcuC3uhRlNva561fbmtyJSUMqpcxwUk8sAUOJUlKZD919gP1Eac-VlwVk9jXrpJgo7rrc4fle5kUP-aYQ35BDMWo0opkCVl5cl4uZGWAzK0vPrAJCOYxpxnkCKgTaZolX3v2KHiALZi9rd0NLhfrxWXvRsByX-fYLP0nbb5OXqA43Cmw_P4ocPmY31oZzMlTb4bv9MCPI-VEPacNT2MaOeLYRBB0U6uwRKO5GUv76o6QWmtojTzFFbdThPs5UVKt=w1451-h476-no" alt="download page"></p>
+<h3 id="步驟-2"><a href="#步驟-2" class="headerlink" title="步驟 2"></a>步驟 2</h3><p>將下載檔案解壓縮<br><img src="https://lh3.googleusercontent.com/jWHbm5wPINIVGPsI550NtGhlxdX_PszPfGbSIF5C2iwOonFkB2OVeag414Gi1XNA9TtHHPxsWEMVXPZV-gaTfGtskmXq6T9qjzpvJY_zSuoZmdSAgvKEkeYYbaYE5Bjz52wsqHcM034LW0icLdamhfOCUPHt07SouUp_kdR51WGou1UJrBb3oJyYzWZuOqI2EKzC53yfVDm9lP2StpFrlG9OQ-U1_cdDA5NrvpTXakEPZhmnzw97Gvq0UDjfk2l0YaK4kyd4GCVj8z3069C_yqTQNocbbRrTlqaOxJHWN6NsQNdjeecxlH_sGthy1pkxzmUGW9WQvzsXYKEB7-XuRWSxb9xHGTPpStJuqkMFWI0Vazc-xJv-Oj9z7SWpr6zrTVunoGdIVt6lnE-K9Q1qS4w3ZNrqULyYEwFSESjlhQbMVsH312l6DHVs8VlsF_JnCouIO2998zcY4IpGWsUvHOhrtlwaIb8slnbC2CgiD-0f_4S9LNfEu0qLbEP-ph-1tduY2fKZTxHObtCVjVoSAeWbzx6gkqVzyPQQG_f2KiCwwOTuDPgSpo1uAGxHk1MSOlz_B0Psd1pX0CAdRpG41gKA6pI2EN8XOo0um_Wp_MwLo9QyHxpWsV3dMG_d4KPBNiMl_iYOMAXo3hO66wCPB_2YLCeMbBSTrGa98w5ToT9Gyo1Jv7b4fLx6=w245-h132-no" alt="unzip file"></p>
+<h3 id="步驟-3"><a href="#步驟-3" class="headerlink" title="步驟 3"></a>步驟 3</h3><p>在 IIS 根目錄中建立一個虛擬目錄 <strong>arcgis_js_api</strong> ，選擇剛剛解壓縮後的檔案路徑，注意是要選擇 <strong>rcgis_js_v325_api\arcgis_js_api</strong> 這個資料夾</p>
+<p><img src="https://lh3.googleusercontent.com/tdxDWQhkuDaNxE1XKgWVE8LMQXXAhoBrv7vrsMX-GyQ6Sj974Wi42m_EawS3zrUCESUZsVdK_soMetIB7YsQqCPfYCJOLq7CTVA2nOdiLG5vVBmqFKiQVJ_CV5US0ITYUWSWscGz7FNdQqBlzHK7MpW20-NArXT0_Zlilj3DMCbQrEnaZ-qWcOhPkATIAl2oRPxQoGY6_5sOR2KeNcUp2FeLhE8-20V_gJnm4s0yno6zQ3864Ro_VIJdtzgaiOBzx2JoiJS-SdXK6cViLeXQyQZzfXnQSkU2I-gDNlZEKu8BN0MgpAUZOVaeoHfR6CieZLNjjwE_tcSk9K-fcWdjX4N3hbg4RF7Qjs1ZGmnjacmmvPXxuLFH--95foKE9htowAt6iCjHNrrEbdBbcb17wV3sy46oVPAUeToVBNzYOuOa0cer39txeC7LSH9GKQNM5_FezE3jycUCpfehBwv9kZZFJPdPksUnCd3HR6UmrS4bsBW-cKAzhOEjBp-7eZ5shhJRv4rL9xQ_wvQlXPBUKxMHZhadcwMecpR3cCByaQ54pro8vMjcYRQHglvQmZUnTp6n-_kRX5UbpTpVGd886gVgOKYyUob0Y7AqTJ2CWFl9DlnwlKjQYFxJJxgNf7qUqPz1s3duhiIuIZTOQn9lKTb_wsUlvWB_yGVJ6jCGddky_xEo-Mkgqdl2=w550-h452-no" alt="virtual directory arcgis_js_api"></p>
+<h3 id="步驟-4"><a href="#步驟-4" class="headerlink" title="步驟 4"></a>步驟 4</h3><p>上述都是 IIS 部分的設定，接下來則是修改 javascript 內容；按照以下路徑(前一步驟設定的實體路徑)開啟 <strong>init.js</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arcgis_js_api\library\3.25\3.25\init.js</span><br></pre></td></tr></table></figure>
+<p>找尋 <strong>[HOSTNAME_AND_PATH_TO_JSAPI]</strong> 此關鍵字，替換成各自設定的網域與資料夾路徑，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;myhost.example.com&gt;/arcgis_js_api/library/&lt;myVersion&gt;/&lt;myVersion&gt;/</span><br></pre></td></tr></table></figure>
+<p>以我此次 3.25 的設定則是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/arcgis_js_api/library/3.25/3.25/</span><br></pre></td></tr></table></figure>
+<p><img src="https://lh3.googleusercontent.com/Nz3_35XAOtCE8e1bl0myQlD-2OUh9eOsE-Ocfw4u5QUJ1uwzYlqd48NqUThhsFA8HsquXF9FiZBHL6tpWlUo6bj74VxCFJEsGXtIZ2fHv4ouDaFUVfvc8WH8p5OfrpqIre0sAc8-ueyN2h_IX3UrdKvObP_qj_tR55FNmeJLZBP7z5WoHFlwzyXZaNv5mSiEiB0poHIjiUOTI-Tiry0Ol2N3feMu9s_2Bx0OGqh3C5Sckn3ouTlnZGV4oESwDWAvaJqk982eTl7LSXCYxO75WBrLU1aRTMWtXt0rqzmeBsI1LpXdaQyOjym98UgrnrCrDgzAX3uY6XE365w2xwhXYO5q986mlM40H3Xxl4LqSGZexcfSVN9KgMEvALfZljJvyPiIqQyrMsYWc-cjfGTBgD5ZccKR5XBurx0M40XWzaBDOD1rg6XWi8m1uL0jB6mAz2yzC20MnZhD0i0-pbySJ2PBefmPfzvqSTt4XcQPQyks0Szj0P7osXhlFbift8c1i0v0z388y24zqAZhfwarrIa_jvrRF9ENQya9rNLLGZME3o6U4bIA1sutMEeet1PGiz1BorDSWy_qSbZj1yF_bErcxMpNzkqsHclfNjbfmfoGftZZxk1lZbGpryMTAa4ZeyJ0ZKz9pgJGXcMWHZALCpFmfA3L2KoW8t-8L_7iA_iurhmaV-unk7yP=w825-h191-no" alt="init.js setting"></p>
+<h3 id="步驟-5"><a href="#步驟-5" class="headerlink" title="步驟 5"></a>步驟 5</h3><p>開啟 IIS 路徑下的 <strong>dojo.js</strong> ，就是設定的實體路徑</p>
+<p><img src="https://lh3.googleusercontent.com/eFKzlgFrbIH2PBqM2Pnw_ZzOZ3Vp4xFGSdaHSNnx9CS6G0EzWpaE4vABJJuopKzUccml39BfXLTIeic0Pim_8IrdlWU6FfEFJFzRmXE7wRmqm451nNk0-obHUCGNN9GqDE11RTuPXOddxZScb2aq1boXXndeo6dWA-ydbeLC8NJodxECP1F4ofkzNRvcirdZ5nKftV62rtQ8AGauIzYV0Q2fiu7UGIs7kVdrpGE0oO1gRLXeHv4vKTBmMzlZBmkYvfKNA1NUQ_M9I2kVsJrh6wJPVGRqH_NblJ3IdFqN74qx1Hy_11wV-WKqOWHglQ0R8vqQ76gyXT1BqLR7VhkSvefS2Ry0UhHyrF_eVDTNKLO-uya7u0wKECi4pswdb84LvoL2q4h_oCq7Lk21P90NN6MG04HST6Le_rp9_q9f-tvpDMeXE0lW2K5_CmDHWi_nhJkrhjYG5QTWYp2pHSkAJ5PEMFP4LBiKGyznXTEqv0mNPezc0tPT9FufKCS00tjTm_X7NOJ6L3r1tTTq0kn98ql1iRXwoGFzYMQSW6GoFPuy3BZXNzASs96XbbLZlmS9QbKaLguBrQBp5CGsYUF2yB_OjC-UDxB3Nq1Hmc42swXYE270__Hf7GWu54kmJJeGD9rJYOpPlmzGH4y-daM_6B8V9cfOf265yw_jk39v5GJpG_Zxe1WLFPBK=w797-h833-no" alt="dojo file"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Default Web Site\arcgis_js_api\library\3.25\3.25\dojo\dojo.js</span><br></pre></td></tr></table></figure>
+<p>一樣找尋 <strong>[HOSTNAME_AND_PATH_TO_JSAPI]</strong> 關鍵字，用以下規則替換，同樣注意一下 <strong>protocol</strong> (http 與 https) 的差異</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;myhost.example.com&gt;/arcgis_js_api/library/&lt;myVersion&gt;/&lt;myVersion&gt;/</span><br></pre></td></tr></table></figure>
+<h3 id="測試"><a href="#測試" class="headerlink" title="測試"></a>測試</h3><p>其實安裝檔案裏面都有說明教學檔案，裡面也有附上此測試頁面，將 <strong>link</strong> 與 <strong>script</strong> 替換成設定的路徑即可</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Test Map<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://127.0.0.1/arcgis_js_api/library/3.25/3.25/esri/css/esri.css"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://127.0.0.1/arcgis_js_api/library/3.25/3.25/init.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">      html,</span><br><span class="line">      body,</span><br><span class="line"><span class="css">      <span class="selector-id">#map</span> &#123;</span></span><br><span class="line">        height: 100%;</span><br><span class="line">        width: 100%;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">require</span>([</span></span><br><span class="line"><span class="javascript">          <span class="string">"esri/map"</span>,</span></span><br><span class="line"><span class="javascript">          <span class="string">"esri/layers/ArcGISTiledMapServiceLayer"</span>,</span></span><br><span class="line"><span class="javascript">          <span class="string">"dojo/domReady!"</span></span></span><br><span class="line"><span class="javascript">      ],<span class="function"><span class="keyword">function</span>(<span class="params">Map, ArcGISTiledMapServiceLayer</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>(<span class="string">"map"</span>);</span></span><br><span class="line"><span class="javascript">          <span class="comment">//If you do not have Internet access then you will need to point this url to your own locally accessible tiled service.</span></span></span><br><span class="line"><span class="javascript">          <span class="keyword">var</span> tiled = <span class="keyword">new</span> ArcGISTiledMapServiceLayer(<span class="string">"https://services.arcgisonline.com/arcgis/rest/services/Ocean/World_Ocean_Base/MapServer"</span>);</span></span><br><span class="line">          map.addLayer(tiled);</span><br><span class="line">      &#125;);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"map"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://lh3.googleusercontent.com/k3uwByjDg8x1ZhuJTv_XjLOkJPcRy88x-bPJWu3812Yb64DfG53ccTDajHfWTMmgoLVeO-xTDPCsJWgPlolE_pD18SGws95vg0W4wu7FJlYD3XwdeYmoaAVnjjkqh-VN0D4UjYQyg-fbkvTakUMid-mL0DpFDItKGcnfjszwqJ2YuxVtAyKXctXXwobfyHJ84U9lxN5LohrCFMngmyufn7yoKNXHn9yyy7w5TTwE-xGb2yFKGNYzQM0b7Bv08o1Tzk5P2O6XyMzSgk4nA5N9KSVY3wr0kDpgWhH4F_EM9OHk1_V_yFDfjLJyRSGkRenUsMQFkyBSdUMAWQ9jM4ZguKrbjNxazl7DdhZYhYuQOShPmixMPRixaCiZ5-GEa2hgFp_DMgby0-ZAFSNSzbES95tf-JXA4LXRZf2HhaBpDRC7fmvpV4QFYeAK2m0KUevdzgovDJd7q1QWuSV_cKzcP8IFFWwafTQBf5HszNZidqb5s4MVf_eigQC61y5JKpSkxzxeAVHgYqKZ7vEY-MoAKnPj2x6JeMEtvll32V2frEnK4_GF6vihTWoNtBmqCtrzW0Uj6W7A_DjI5C4bZ61orh-WsLrxeKtPylzT2jXPfSZo5i2JmPJCl1UzOqT4B9mp9lCCyJNEcWYjNEFE2VpUpiGy3ecGmQdmcE9IozXod1GuRt3AMz4p0pha=w872-h543-no" alt="test page"></p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://support.esri.com/en/technical-article/000011974" target="_blank" rel="noopener">esri 設定步驟</a></li>
+<li><a href="https://developers.arcgis.com/downloads/" target="_blank" rel="noopener">esri 安裝程式下載</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IIS/" rel="tag"># IIS</a>
+          
+            <a href="/tags/ArcGIS-Js-API/" rel="tag"># ArcGIS Js API</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/10/php-install-sqlsrv-dll-on-windows/" rel="next" title="PHP 安裝 MSSQL Driver">
+                <i class="fa fa-chevron-left"></i> PHP 安裝 MSSQL Driver
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/06/google-map-api-custom-basemap/" rel="prev" title="Google Map Api 使用自訂底圖">
+                Google Map Api 使用自訂底圖 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArcGIS-JavaScript-API-安裝在-IIS"><span class="nav-number">1.</span> <span class="nav-text">ArcGIS JavaScript API 安裝在 IIS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝設定"><span class="nav-number">1.1.</span> <span class="nav-text">安裝設定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">步驟 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟-2"><span class="nav-number">1.1.2.</span> <span class="nav-text">步驟 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟-3"><span class="nav-number">1.1.3.</span> <span class="nav-text">步驟 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟-4"><span class="nav-number">1.1.4.</span> <span class="nav-text">步驟 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步驟-5"><span class="nav-number">1.1.5.</span> <span class="nav-text">步驟 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#測試"><span class="nav-number">1.1.6.</span> <span class="nav-text">測試</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">1.2.</span> <span class="nav-text">參考資料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2018/09/06/ArcGIS-js-API-isolated-install/';
+          this.page.identifier = '2018/09/06/ArcGIS-js-API-isolated-install/';
+          this.page.title = 'ArcGIS JavaScript API 安裝在 IIS';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

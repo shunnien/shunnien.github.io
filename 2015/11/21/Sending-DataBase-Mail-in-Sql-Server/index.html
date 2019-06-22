@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SQLServer,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="使用 Sql Server 的 Database Mail 來發送郵件">
+<meta name="keywords" content="SQLServer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sending DataBase Mail in Sql Server">
+<meta property="og:url" content="https://shunnien.github.io/2015/11/21/Sending-DataBase-Mail-in-Sql-Server/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="使用 Sql Server 的 Database Mail 來發送郵件">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/hTRuihFjxtjWU0BBL3FvwWtyv2vIJ-GDeYSIgABlVeOVweBMUslz5KeHnwNUnAnQlWjj3SKcvu7j5xgGdoBlEqkSPzXIFSLv_oGh8nS20Bq1d_tgLLZvD7lEQSv8L-g2gy3zsPWj6-enDr3BLZko2Jdb09vl9UI_hnpdRPoZ-lM7_PUKjR328VC8wpqW4E0AjikNyiQGnZVqblDyErHJEwTjO5uBbtS0Cu8lKNZDyt5eZP377th3RvaVE1AiFTeHu47ArYC_plzDmhbqnGxxgWrZMw5zwztNlaWDjFAEST0NQRKqlDXGNRWtIoPZJKimwTqhkzM_BNlPrTKGEZ7lRKQk_Hpf6vugX1Z0ZAiFlzhVujZPpbOza_XZny3o5B_IDZLAvx8_8KjfDPEPn_ntuRT3-vEBA2ZLlbk0Rg0ndtZ6umiMALMxzg2Y-b5g5qc7Cfse3xa81gFaUAEkjwo-lr9DQGHnG4MyBpjugZzV4TgKlCS7rOWZ9pUndtVLY7-tU06Po2gsMHSSBq-QCcjM68BWd1T_zMf19p09eZ8K7fAMo8SV2SCx-lMXJg57LpOx5-XmLi6_PkbQdUN7-OKALVhbO9uZkADNS67fmbcmW9xB5awgswNNzOiV32DleQPsThvA1PkC9mKccB_pKh0_MiUzR1KZesnBuGY2Kulp4Q=w640-h278-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/vbC2dM4iDUm9VhmUoZPGBwXdo0YAA4kJkhPhw0o326Av7FQIaUGicSfl1AQ_WNqjC9-kvwJRt5DEWLGslaH-Ubbts3a-Pi76idbLW_qiZtw8n33mOp3azrHgIz7lOZWG7JlAMIIQUWL23LVG4zH_gWh2eG5xdjCZ9Xc1NoymBbweeYLZcdymRF_is-qa0mNxtZvunWynvI32agJdWtMIm5VQbAal9Ojzydtjmiy9BbSYjHNDn5VDWHpUIGGPZGIBkPThqHp5SawMMKKC8T0EgoOhHiSmqd6WVPdsFtShIoJuySzGT7dW1R3FNysDn68rHAQXU3ob13Nu2WlIcLONa54I-uYtL9CnT294WFO9Jz7yNU9108D3QmDy8ICEeHXmD9RB23ZTANUxHg5aM3lgPvgGgzcz_j6An4VPL1i7z7UxegiVnTTswkZZQGt9WFA7OWuRZVVpSKxWZkgbnNAGWlGGm81ZhuORUWvLyWGQZu9lxYwgOQQxxmtIDBXoaItuBoskcuQkZlzeJkud4RMSDChE5mLagte3o773Q9DvBzGBthxP1Eqi0N45GjhSsWKTaA03_kqrHijKmJV8nZ2pxOIP7hX2smdAWz_FsiesJMBsT5UVpra-KrUPdq1ohTN077lXPdPQCo74aa01AdptSIrLJajHfdOFlNNSFSlC9A=w222-h237-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/VDYwT7kT45aY89H5H2jfgE1-vX9Sc0aEaNzHOAeSMEkBdkH4duWkZxRO2m9_Kj3Td9-olDx42PisB4gc0-NTu6-6lo0XTRLm0538_NZIeElVQ20vy48cLTvhq2_OI95gvkheSGciJaRG2i-E3SbyLyJqsyeUQAKY5Z2gM9fJ-aDptgPwczuSBb7eKky3X88beVKKhykIauOCUEL-Mz8K2WTwgW4Az5_yDb9bJLfjbFf7jK4BaOdfKr0CAA4DdsYxovQRWF8dO-9vKbHA8xelNspWW7LHJoIAjpwhn1cUjgMy9h9lcsHpmIQzyihC8ZE3SnRYsi3C4we0rMenZnrRmiFbirPsKpkxjyHN1Txo8QXza5nNm1y4iCy5wogT-3m0E7ebQkhUQNa2ITv6CZ_uWonq6GZ9cTJd8Vq1aBasxVcQrEHKYcqHw_RK4T2z-r18gRfkRxyS21USpLlr3lN6la-9w4zmjvW3i18p77IZmZvXNSM8zE819y5ldfOxsPek8gF9WL1EzdzSdGwx02c9zDv5yguiFoqhF8wIop1gpZCEsUT8yrjQ34ijT_Traux5hC7NrV8rLeqc6Z2XEEyR5noect1Nw9WU_09envAyeZ_KR5HPP_ST3m3qmyKud4LjForYw_5zeXzdyP3knkoUmFHbHTs7FnRQuA5CpSf_5A=w347-h211-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/q_7n6hXi58asqHSlfjDh2RGf2qXXic3rd-brWJV517AZ3jN3im9OgtqD5LoitgUAshooVjQQPk_Eg6mawaMQhfMnTfN3ByI_uwNzrl2Lr3jCjrKQyfV6d_YvXmnBGISh4nPzTaqkbOkzKLidaRtQwS5RqZV6E1MZzLHiq-Mtmu20cTYdDc01lkE9uhHz6Ft1_yI2rmET-naCpPL6ZMwaGAmyIymu3IIcEY3utdCWnXlpL1OKNfXqfviIZNdDLUjNxDLL4lv740c0NcRadhF0Zb_jhbb7vee7kszF1aJ_9CaoPBCOhZOLlua7vWcxCU0cRdvZzr44QxnITtCNPqYm-e_NopsLtc81NmnFhBf34UwC91-uMCT22L6tgeQRRy2zWis_RAop3_KGh8NKRR0eE2c2PdlD_HP8mAy4xE9kRt-IQBJN1m-7Q2xn6YUt-9YCMWD3UYn7zxNpCrb1RaSDfBhJPGgq5dDEV2865AJ34XXvAXI_Ms2dVKSH81VINfDPnipnC6LeW05qdm546SrXOUiVkmihQ4h9mWQdefibqkJihIOa2bHKdt_rvoWUlunk-g9AvXq5L8NG2k7x-Uv1xWfQjQjttUKEwYLSBbM4ruErkJweqZ_HO20h5P7VmrmBgYCL80g9jdIWkzQDDRjA_3Dz3mt6nk9Z3kOC14hsOw=w382-h312-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/6iAZzbs3NeID5jr6tuOVMheo1h2k05Sufv1xIENvqmc3Np7A_-K0GlA6hwdHPGXAP8GQfoxLfu8H2NBRzl8t0DzzWrW3V04KpQLU6FqjA1BdJR97OiaZGgwc2QuhbpzY9h4x4XmowELbuXe1IRDwN1TjIjnri51jE6AybtrCp5vX6CrqPpvQRbJY3C-ISZae1Ou3CbpS0RpNW9V0X4wOJqsGAdawwYh84_jpERIqUIWIRie6v79hDhwxDug5rv5qqEwydJECOF6D5pkvVxX-3vk6s-YvGnEe5PQtM7nu9PZYaITlqk7RD-l6peH72ZqQbhUADF7x4X4mZr3LfG-fiE2YPTDnUvUp1h4RqzCiW7DD8w_BjRe4bq6T5pGqT8tvynoHdV_2g9aOBtXYSP_aqPrb6ISG53SRlOUiTW7upVZUUsBpdTkuNGt6PUVsm1ldMjMO4QAp7PjYwv3peCqWT5nlZ-j55H9wRWzA6UIiMWALcWlNtYM979J0Xqi5ARZmSgNNIbUugv1ksxk50mZ6KkeHxk7nU9IIVIYPTg4-vPlflGrm9QTajHg7Tc9kZZdUb0AtZ82Zo7ZfVrZw2y9v-YcTUWVLTz-uCjpf0hh-aqaolvfFM1GaKyyGiSFwrtlr3JfP_sGqnLSxgjiRU2buiHrxFmvWQCgmsa5aYZNvtg=w656-h573-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/PybqHjvEdAiAv6e5gGS9SAmnuQwKIAQP3954lBJeme1Feq2lppNIaHuMd_woeWUqbizcUCqWwlIMG2YMkCMnFS16ChWDLRg3wgVWjfN3gCtq3Qo9YoT2OSSYwLeP-3ahaEeaAyD8SkAhFh4KU80fSlGxaHNOpbRZBFUisoBCJsWupbsBsxQ4jAzkzYZcIPgEkl6JWvdl_Vnh8WKVz0KCITyXfeiUM0H8orVApBWyRIaCseeXUDUlv2g0t7mZUcH7vJogZO9oBBX1P2iWeDm_4qAE4yvEg4kP_vSI-iTR6hJZY3250LP8KJnlNbQnkZ-NXGiliaJEhVJ-p-H4PPgVnWJLo8X-TteMM2Tk85KmZLAoJ_lRL5oYA3t8tu7zXjW6koa66LeuIkRob8k8ce4nuoRska2JsF-5yO3VzHdGJLvTdgyB3yvP5OYeX1P91QNcvVyLj1WRh58Xuz8Ak3Mz0jIq6G243h52Kts5w0O2Mkk--8r5ZCCWYZm3B7zSDHZ2BjRpwsYBd6OfQilUkskb5iK5J8QNuSgJDw-knS7rFU314nqfJ2WQnJvCHFOgWITi49LIEQ5KSnsnMzbZRYUI-e-aDiCTI7qWPXAjj6m8n9pA3gv1HOcJVmsI3zPpfUmooDdCASVespI3eBSrA4VAAFsmm73MluDvrQYYHMjJ-Q=w652-h709-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/gsH3IFxqXZJRfPvZcZn5v06PLiYS2tO3TqUeBw26pWBHKnY8IyZXoBrlAjZuSn8kZ7wgNW1hMMBXtDriurMjf427ZW7pNRZlMzfqYtApXDPn2_m37Bi3G4UtP7QAPj388_QzeOz_G8tBSEQXSXT9bOt_yoOHrTjnRke5bWXzSnzCSfRcTyrIeAf2rsO3-BZBLo7FO8AQzZE5mXLi-S2PqPGyx2z4G-XZ_8sCrs8NnJrBvTI2dLoaUSi1wydTqzvidPYMNz4VMNnqIp5JcBDZqaDyWEBidwRFoK5fAt0eGZ0MhbYGRuLol2AbCQCts8WSGT3mw1XaSSRabO6TPJj5cXDjKaYoJgr_4z04LtSk3faOV55bQgDR-8NSDr0k3OJokk5q3D5eEMOXWgmFhyvcMYNt_GphDCnA00VkG4MLRDMio94tJm4cgVUjaI_j4NRfNi85fZK57urxWumXpa2LXxxVn4J8py5w6AfleqVqQTOHdrjKzBKoYmLeWumED4HslktAFiRUACk0oemp_C-X-5T37-Ezrxi06nrPEcG_coXAdBr4xcdMKm_1zzJWIkt2QJf-28P-1J1tLFgGBavGtGqKgyB7urrMZp3j40tQYeyUYxJmIp-e1AZOqjgp_B001eP4Qct_UuhuOkZhNdnrBidRPoGBzwcZhN1vnBHV5w=w383-h115-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/huxWDb4oAh9oMyIpX1d_M7FMmv3qR0A2yQUJ3GHZNp7MTJDryHNzCq6YMgnbIzQzlThW9dNyLCkT85B2KzgwmGNpBXSceRDnCA9nINVm1o8gE4PCGOQVLDGH9McJ8Q7OSddFqZAzzBCOVbfvxAO3KnD_mQaDdCLJQwPwFiPq3Tr5oxpauY3DVvKMPAq3EMoFtG3H2ZvnXly1GvDZ_KhX6qHIfsfjh0F7uHKWKRkLITqsqL4vwW0YgGzR57C8HG8hA4ayLXxCZhyvIIqzBg6RQXjYQB5GFFJWTuzn2U_Hnr1VD6J75_9IWGYBDQCFDTtgbfko-p_vNfHqk5QgtiO7GnddOQ6AxHJjMb3CrvDiCiklQUQq_2bpwQRC-_JdGvynHrsm_oswbqn4k-QI2J7KS4IZeXAzYcheePqeoUVNaNJWRZJGYgcf7nTS5VTfl8OXTDFY9CMVuYOtAwmyRQT02G2i8SG7X5uRgPL0ZIs1VU64R4jLd0L3I8hriwRQd2Aq9R296FFeJ_KJViWaw_oosAD9talOKVC96seTWjC63mcpbre0d5CaaRrjxmvQgirR9GO1Ku0i99GlRMseA42Cqz4rgquNjX-3Y5TU5GgKqX0mXeB-LrTJiScjBIyYYevbq8hYlBHDQKvdOIp3759QL1fgtN7XRITqpPUz1b5mgw=w583-h625-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/PYj-yG8t7jnKtOsSrs6RBMi7qDnCtGpPfogsOIx6zPD2WVh9GckNEUAfT1MiDTMFoWZCJ8Kn3XtMLb1gVZWCcowp4OVznlfCJjTkW45fXyHvGtNMy7bYfMZvvGvAdY6zcpBfiKyalhPp_R2Gl9BxzRWzftqAdqrzh1pVo0dnl_37nYG4yvNCFOUKOP8sM6pdim1Ggt273NiqOjSUlrMIgAnmicaGR52EzldqS0kTUc83GrXCLqJ7iBvN7gZm06gaCodw5OEt_xgccjWqEh1pD7VgyZeqOO3UqhRvg55MIqXAnQ2_WfMNty_TpuxDBB6On_eOdHxDXqrrhdtcKCDuS5olNPXEZhscv-XjUAubzAiJBDvHlVRl4p0IGIryjj8Gy9yRdZooeklK3m_fmvpUe8VksKz6kbfDkoWclqRIa-7YKho548xYVRoHUUArjBEWeEbJTI0l1VVuJmAyPjFkavdOgVkLH0p1asgACkuf30HOEB4AS1IaGjTsiK89dlXYQj-cmFtJU-ul3NRUdDl1b_VfFRAgujnHl3VJUy4UnGCgpblWci_iYkS_IbZkaRcWG74D16irNL1YX19cLShSiyrU3tNfXT9yradLJtn9NcbklpkrrxEiTG1s8nm8SvcgN7sVakBfkN2ficK3ohZZdwdAwQe97zUixNL8RMEdIQ=w594-h273-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/nhzcPn0T75wCa669x4tnXZ1-vUSwfmwEDGRGrDI69fDwvqqhupiqBmdM879_GtdY5kW23pnzkmKGzfBJEoyl2da2u8txji2uwBDlSneQuzE3gnSWsvJWrv47f3F3tDrEgNOU0GrCMmUDKPwYm9gtQMSz3ICHzNp3RU89RZcbqhIiPrbDpWKOFOco6VNzNZYW-CWMYikT32ZNyv4YIu_3IU_yjH1TFSHBb8TWfGLGZjx-H4PAqsT0p6drS6xJmooqrTauEJ4zhvYNMN3A__ET_2Dmbrtj4X4oGjGJWF2432XzarviNn4WG8nEXjiUwLtVGpYe1EwaE_w2gV5YVrsYFZWBK9ixpqEoJljXjQJ0yFDMHAMm7ImN9sQcatrHU5wZKoLf2NNhPc5v6U8gUuPNMM09IyMCyGj2gyj0Egc5fjB1BFnDhZD8tgDVsB-bZykAKdCl10bSffO_FWrmyL8wmDUemF5MYTgLWzaFX2ETtMy2aVuIU21hc4LX_N-GUrWI3mGR5IQpsA5hm5GWIj0l6qdbt5OYxz19COGgAQIJRI_PiefNO-GfNjVQqBMMl4FAYRb4GgTj2bjwvlBhBYKwpYrfD-xadZ-BdqEEBkikTPJamiKECi1ssw-BnLI-c7gNmI6HF7FsNEkaCgMSnNGBBPMmUsdANPxv6pFk8LXk5Q=w652-h709-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/4tyt_bufmq-4RhRiyzgkM5yvgWk3OBXKw9mtn0HV5ITtN9wKAcDQFi2BtJ8YpfkHZWkYWULkzz2eNrgbUUUO2UgHXCX_qWePDx5IwaFnyj7vpSjZZywIcgez3irrx2MhYcnpa6TU3xAt6fr3X6lSkO3qHcwpFfYNP8RMCJUfXDBG75pKdRahTWNUgUeAfv8gUdqz8yoWakUY-iPmIePdZB_KWFcqQmKSlUczmbcDqpeQDJaI-N8kK4fPHLMhN1jsHUhbK90tn07ASPfzkXwgiyYOqkun6R_c6LS5BmnsFTdZfr8lWOmzFAdmdmkTfNOoIISuZ6yBRltwdXGmR_8bOffB0GTcNuBHWEKXXMeElp8FnGWa0m82G5UjqHv1VeTItVbufdS5syUjWfpNWU57JSkXJhEH0xNA-Lb9mvvf8mdzFx-pOyRYTD1lWOC8hsuqiWUuiIgv5RyAstfP7q9hSplBMMIy3lwWiiO_Jg9mcX17D3SaJhycRvAr_LQqpjgr11iuhr9DveWFaSqP_hpJXac4U9KT0oTksSBxit-0XgRhv3xlofMtrvJ4f8Fx_9mjYqzvchIWVnW0Hey_8McaEwLlal6CRu6lgImgP1LUgSo1YMTl3EWLWNhJGcN0g0RXTcC6LegcCnTZOe6nsgeLKJYYMcjiKFJqSaKea265Jg=w652-h709-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/eW7ShL9LZlZBxO56TDJWS5c_mjGs2QvqqzKsSsfBDEuBMw6OtZhCyRiihHPeMF2V90-UicXVxevQoTLv0v1JThu3FUiqvDOCHqirOfdYrPiK2noD0g1nsG8QPmImBnwga5FrvpdyoohCs1laKqzuf6vYP6AKQiSP_L91tEeHocjglg631yQ5h9D8XRSIj5xv8F0xeY9aMDzTyY25cLexFb57Yvwx2xythg1f_xho_JLa8ztBktR8hWyrlSoDqsy6IrmW5xqTayOxUDngKJWbUpDBkcRYLdmr7795dOa9sRde_MvpAU7oe4aPVCMbucr5mork6xpL8OtAU82qNB5UcAq1dozMFbMJUWvdY2d9JRNBEGvHQJ2H8ikyLJ7O2zTi0VAxDhyx_fgxnBoCHIppyE40MSmliCOXWl0zWpS9JloqB7BgsHsNaEebaDj4jvg3HiuxGgCCLnlyv9PHEkbBljqKo3q4mCCeA8B-YpoDmGClge9BEvDq03cigfJDwPODMyWKiOyn9BZQrQ08gwhjqevBc0bBkRpZn13MAYiYL8auk0sgSkyaC4GkwtB9DAq9zLYOB09mlIqobptLFwSQdO4kL1Ig5L2RtvamH2mj-xGeDkhyvncU4kiNEhVYdhddHoNcUg9wpobyLPEvzvMEF1mVRd14oHNZONDPTY6nJg=w652-h709-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/GsvjjP48GmQAbA_Gtd12O3fp2U4GhxJpzEd6wsEBWHEOH6aU4JQMwTXzyk-_rqJ4-x4Be90wLMIAs80povOjpBp94odztcuRkvcxhwJPARW5J9M_k-SKQBftMFGOXbxGi2xceoxbdxc-VfJGKkKttRVEyPGAo9kL5UXU2pBxLoKpuzPPlp7WqJjYhm4atb2jBou0f6MRzMZQkqP5hjQzRwthWdqvZsXUzunNs7QQW-F1CR5N5ph5-RAwSrvPTKWeY-UxK_3RKK3PMSA3s7zwBbhRC0ySlTmjSWemBeqlVyPMGmygqly7SDn5_Jof73_GHBJBzpPtcXamee7mqV1ETqB4MvIoVmUoA1k17WT5Y9Inqf82Y-s7O-a9UOMBCvpEk4T8_F8KPl7DXRtAs1PLdAnnk8QVvJawdq085bIpr5NZ5hVL7v2DJcntnS8HaRVOefwF7U-zzQHcbNlT7ghxbcqTaAH6DsUAPda6VAdcVctf73ujV-DY7vmH9ptBfEo0Se7pK4UOataOPPLcDOuyNu3M9Ln4rqvfxfpkuaOtkFitXJuyIaotc9jlT58QCNmtQTCV6R5sKfkoJkyN5iKEt_8apvHP9mVKvw_WLjXCc0mmmT7W0R2yGg4Tz5vDUxnbuYKNZbv3dJAgj3T5jl1mMCBr0CtHQlGfvXwhVWVkEA=w346-h444-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/SKr_4s4cePLMtU1xkQPRjaEZzI7_6ZLRcgIm_5QLp6Ovp49AodV8FXvL0cbKqf3RHiWiuf9I_rXdaFIy_t2yfpflyBurigNWtFTMVjM5kat4_YrmuaoHnpNmJ9Q4RL3LKPHynKVdntiwXpoWZDpHGtN6omN6ckZ3_ObPk48IRQgvVI073D9hHyA9RQ6VDtnHwX-N2_DZ-RAiK0asXZA24XtTLN0tyXCLwT1fGo7510WXXYWOnOo1_3TiE7-k99KEbU4p0oFUSEFPkENQ4N_3jIsNW8XPL4NWHpV-YGJLsMAZSa-vvpxbMH64koWDJr3fOldfCX7Lnrs-LIoxwZ49XcIV1mm_H6VURB7SEm7VUetA5r44w1byFVAZDtI8J28z35tLYSo5Lau2VL9PsJaDcwJ-rB8H2CfKZEGYKU4jX_Cm-fgOqGb1Hkyzq0rQjSsTOEGGhBxXMIjYBUBTBEiGLXYdiTNAChCT5zmkLPhSwa6WTYovnJoKsXwCLMe3stnU4MpLfUHfOioVhbpDioRrCYyhDF3xcor8Yg4OMSBLnBDKbiU5UsYnDIvKzogVbkJTcdI47-Ftz3b-8jV1qxibFVD23hhRSQINmpGG8S2wIqNJMCf-MGJDZyIPRVM6TDRhksVYqM4p5L1b0XlM7SQXplrljSMIzcQBQzXiZ46kGw=w763-h661-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.605Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sending DataBase Mail in Sql Server">
+<meta name="twitter:description" content="使用 Sql Server 的 Database Mail 來發送郵件">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/hTRuihFjxtjWU0BBL3FvwWtyv2vIJ-GDeYSIgABlVeOVweBMUslz5KeHnwNUnAnQlWjj3SKcvu7j5xgGdoBlEqkSPzXIFSLv_oGh8nS20Bq1d_tgLLZvD7lEQSv8L-g2gy3zsPWj6-enDr3BLZko2Jdb09vl9UI_hnpdRPoZ-lM7_PUKjR328VC8wpqW4E0AjikNyiQGnZVqblDyErHJEwTjO5uBbtS0Cu8lKNZDyt5eZP377th3RvaVE1AiFTeHu47ArYC_plzDmhbqnGxxgWrZMw5zwztNlaWDjFAEST0NQRKqlDXGNRWtIoPZJKimwTqhkzM_BNlPrTKGEZ7lRKQk_Hpf6vugX1Z0ZAiFlzhVujZPpbOza_XZny3o5B_IDZLAvx8_8KjfDPEPn_ntuRT3-vEBA2ZLlbk0Rg0ndtZ6umiMALMxzg2Y-b5g5qc7Cfse3xa81gFaUAEkjwo-lr9DQGHnG4MyBpjugZzV4TgKlCS7rOWZ9pUndtVLY7-tU06Po2gsMHSSBq-QCcjM68BWd1T_zMf19p09eZ8K7fAMo8SV2SCx-lMXJg57LpOx5-XmLi6_PkbQdUN7-OKALVhbO9uZkADNS67fmbcmW9xB5awgswNNzOiV32DleQPsThvA1PkC9mKccB_pKh0_MiUzR1KZesnBuGY2Kulp4Q=w640-h278-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2015/11/21/Sending-DataBase-Mail-in-Sql-Server/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>Sending DataBase Mail in Sql Server | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2015/11/21/Sending-DataBase-Mail-in-Sql-Server/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Sending DataBase Mail in Sql Server</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2015-11-21T15:20:20+08:00">
+                2015-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/11/21/Sending-DataBase-Mail-in-Sql-Server/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/11/21/Sending-DataBase-Mail-in-Sql-Server/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  使用 Sql Server 的 Database Mail 來發送郵件
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="緣起"><a href="#緣起" class="headerlink" title="緣起"></a>緣起</h2><p>剛好有個需要發送郵件的需求，而且不是對外服務的需求，就拿資料庫來發送了。</p>
+<h2 id="我的環境"><a href="#我的環境" class="headerlink" title="我的環境"></a>我的環境</h2><h3 id="中文版"><a href="#中文版" class="headerlink" title="中文版"></a>中文版</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">$ systeminfo | findstr /B /C:<span class="string">"作業系統名稱"</span> /C:<span class="string">"作業系統版本"</span> /c:<span class="string">"作業系統設定"</span> /c:<span class="string">"作業系統組建類型"</span> /c:<span class="string">"系統類型"</span> /c:<span class="string">"處理器"</span> /c:<span class="string">"BIOS"</span> /c:<span class="string">"實體記憶體總計"</span> /c:<span class="string">"虛擬記憶體"</span></span><br><span class="line">作業系統名稱:         Microsoft Windows 10 專業版</span><br><span class="line">作業系統版本:         10.0.10240 N/A 組建 10240</span><br><span class="line">作業系統設定:         獨立工作站</span><br><span class="line">作業系統組建類型:     Multiprocessor Free</span><br><span class="line">系統類型:             x64-based PC</span><br><span class="line">處理器:               已安裝 1 處理器。</span><br><span class="line">BIOS 版本:            American Megatrends Inc. 219, 2015/5/4</span><br><span class="line">實體記憶體總計:       16,264 MB</span><br><span class="line">虛擬記憶體: 大小上限: 18,696 MB</span><br><span class="line">虛擬記憶體: 可用:     8,883 MB</span><br><span class="line">虛擬記憶體: 使用中:   9,813 MB</span><br><span class="line"></span><br><span class="line">$ sqlcmd -Q <span class="string">"SELECT @@VERSION"</span></span><br><span class="line"></span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">Microsoft SQL Server 2012 - 11.0.5343.0 (X64)</span><br><span class="line">        May  4 2015 19:11:32</span><br><span class="line">        Copyright (c) Microsoft Corporation</span><br><span class="line">        Enterprise Edition (64-bit) on Windows NT 6.3 &lt;X64&gt; (Build 10240: ) (Hypervisor)</span><br><span class="line"></span><br><span class="line">c:\Windows\Microsoft.NET\Framework\v4.0.30319</span><br><span class="line">$ csc</span><br><span class="line">Microsoft (R) Visual C<span class="comment"># Compiler version 4.6.0079.0</span></span><br><span class="line"><span class="keyword">for</span> C<span class="comment"># 5</span></span><br><span class="line">Copyright (C) Microsoft Corporation. All rights reserved.</span><br><span class="line"></span><br><span class="line">This compiler is provided as part of the Microsoft (R) .NET Framework, but only supports language versions up to C<span class="comment"># 5, which is no longer the latest version. For compilers that support newer versions of the C# programming language, see http://go.microsoft.com/fwlink/?LinkID=533240</span></span><br></pre></td></tr></table></figure>
+<h3 id="英文版"><a href="#英文版" class="headerlink" title="英文版"></a>英文版</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">systeminfo | findstr /b /c:<span class="string">"OS Name"</span> /c:<span class="string">"OS Version"</span> /c:<span class="string">"OS Manufacturer"</span> /c:<span class="string">"OS Configuration"</span> /c:<span class="string">"OS Build Type"</span> /c:<span class="string">"System Model"</span> /c:<span class="string">"System Type"</span> /c:<span class="string">"Processor"</span> /c:<span class="string">"BIOS"</span> /c:<span class="string">"Total Physical Memory"</span> /c:<span class="string">"Virtual Memory"</span></span><br><span class="line"></span><br><span class="line">OS Name:                   Microsoft Windows Server 2012 R2 Standard</span><br><span class="line">OS Version:                6.3.9600 N/A Build 9600</span><br><span class="line">OS Manufacturer:           Microsoft Corporation</span><br><span class="line">OS Configuration:          Member Server</span><br><span class="line">OS Build Type:             Multiprocessor Free</span><br><span class="line">System Model:              VMware Virtual Platform</span><br><span class="line">System Type:               x64-based PC</span><br><span class="line">Processor(s):              2 Processor(s) Installed.</span><br><span class="line">BIOS Version:              Phoenix Technologies LTD 6.00, 4/14/2014</span><br><span class="line">Total Physical Memory:     4,096 MB</span><br><span class="line">Virtual Memory: Max Size:  4,800 MB</span><br><span class="line">Virtual Memory: Available: 2,497 MB</span><br><span class="line">Virtual Memory: In Use:    2,303 MB</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">C:\&gt;sqlcmd -Q <span class="string">"SELECT @@VERSION"</span></span><br><span class="line"></span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">--------------------------------------------------------------------------------</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">Microsoft SQL Server 2012 - 11.0.5058.0 (X64)</span><br><span class="line">        May 14 2014 18:34:29</span><br><span class="line">        Copyright (c) Microsoft Corporation</span><br><span class="line">        Enterprise Edition (64-bit) on Windows NT 6.3 &lt;X64&gt; (Build 9600: ) (Hype</span><br><span class="line">rvisor)</span><br><span class="line"></span><br><span class="line">(1 rows affected)</span><br></pre></td></tr></table></figure>
+<h2 id="Sql-Server-Database-Mail"><a href="#Sql-Server-Database-Mail" class="headerlink" title="Sql Server Database Mail"></a>Sql Server Database Mail</h2><p>設定方式有兩種，一種是透過 T-SQL，另一種是透過 GUI 介面設定(只需要滑鼠操作就可以完成)</p>
+<ul>
+<li>Transact-SQL</li>
+<li>Database Mail 組態精靈</li>
+</ul>
+<h3 id="Transact-SQL"><a href="#Transact-SQL" class="headerlink" title="Transact-SQL"></a>Transact-SQL</h3><h4 id="啟用-Database-Mail"><a href="#啟用-Database-Mail" class="headerlink" title="- 啟用 Database Mail"></a>- 啟用 Database Mail</h4><p>首先檢查是否已經啟用 Database Mail，沒有啟用的話，啟用它。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 啟用 Database Mail 必須在 master 系統資料庫下</span></span><br><span class="line"><span class="keyword">Use</span> <span class="keyword">master</span></span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line">sp_CONFIGURE <span class="string">'show advanced'</span>, <span class="number">1</span></span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line">RECONFIGURE</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line">sp_CONFIGURE <span class="string">'Database Mail XPs'</span>, <span class="number">1</span></span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line">RECONFIGURE</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 檢查是否啟用成功</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	<span class="keyword">value</span>,</span><br><span class="line">	description</span><br><span class="line"><span class="keyword">FROM</span> sys.configurations</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">name</span> = <span class="string">'Database Mail XPs'</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="建立-Database-Mail-帳戶"><a href="#建立-Database-Mail-帳戶" class="headerlink" title="- 建立 Database Mail 帳戶"></a>- 建立 Database Mail 帳戶</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 檢查是否有 Demo 這個帳戶，有的話就刪除 </span></span><br><span class="line">IF  EXISTS (<span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> msdb.dbo.sysmail_account <span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">'Demo'</span>)</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"> EXEC msdb.dbo.sysmail_delete_account_sp @account_name = <span class="string">'Demo'</span> ;</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">EXECUTE</span> msdb.dbo.sysmail_add_account_sp</span><br><span class="line">@account_name = <span class="string">'Demo'</span>,  <span class="comment">-- Database Mail 帳戶名稱</span></span><br><span class="line">@email_address = <span class="string">'wiamyu@gmail.com'</span>,  <span class="comment">-- 電子郵件位址(寄件者Email)</span></span><br><span class="line">@display_name = <span class="string">'ShunNien'</span>,  <span class="comment">-- 顯示的名稱</span></span><br><span class="line">@replyto_address = <span class="literal">Null</span>,  <span class="comment">-- 回應的傳送地址</span></span><br><span class="line">@description = <span class="string">'Database Mail Account'</span>,  <span class="comment">-- 帳戶的描述</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- SMTP 郵件伺服器的名稱或 IP 位址</span></span><br><span class="line"><span class="comment">-- 127.0.0.1 是本機端位址，配合 smtp4dev</span></span><br><span class="line">@mailserver_name = <span class="string">'127.0.0.1'</span> ,</span><br><span class="line">@mailserver_type =  <span class="string">'SMTP'</span> ,  <span class="comment">-- 郵件伺服器的類型</span></span><br><span class="line">@port =  <span class="number">25</span> ,  <span class="comment">-- 郵件伺服器的通訊埠編號。預設值是 25</span></span><br><span class="line">@username =  <span class="literal">Null</span>,  <span class="comment">-- 登入電子郵件伺服器的使用者名稱</span></span><br><span class="line">@<span class="keyword">password</span> =  <span class="literal">Null</span>,  <span class="comment">-- 登入電子郵件伺服器的密碼</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 參數 0 會使用 @username、@password 這兩個參數</span></span><br><span class="line"><span class="comment">-- 參數 1 會使用 資料庫的驗證，預設是參數 0</span></span><br><span class="line">@use_default_credentials=<span class="number">0</span>,</span><br><span class="line">@enable_ssl=<span class="number">0</span>  <span class="comment">-- 是否使用SSL(安全通訊端層加密通訊)。預設值是 0 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 列出 Database Mail 帳戶資訊(密碼不會顯示)</span></span><br><span class="line">EXEC msdb.dbo.sysmail_help_account_sp</span><br><span class="line"><span class="keyword">GO</span></span><br></pre></td></tr></table></figure>
+<h4 id="建立-Database-Mail-Profile"><a href="#建立-Database-Mail-Profile" class="headerlink" title="- 建立 Database Mail Profile"></a>- 建立 Database Mail Profile</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 檢查是否存在 SendMail 這名稱的設定檔，有的話則刪除</span></span><br><span class="line">IF  EXISTS (<span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> msdb.dbo.sysmail_profile <span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">'SendMail'</span>)</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"> EXEC msdb.dbo.sysmail_delete_profile_sp @profile_name = N<span class="string">'SendMail'</span>;</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"><span class="comment">-- 建立新的 Database Mail 設定檔</span></span><br><span class="line">EXEC msdb.dbo.sysmail_add_profile_sp</span><br><span class="line">  @profile_name = <span class="string">'SendMail'</span>, <span class="comment">-- 新設定檔的名稱</span></span><br><span class="line">  @description = <span class="string">''</span> ; <span class="comment">-- 新設定檔的性描述</span></span><br><span class="line">GO</span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 列出郵件設定檔的資訊。</span></span><br><span class="line">EXEC msdb.dbo.sysmail_help_profile_sp;</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+<h4 id="把帳戶加入到設定檔"><a href="#把帳戶加入到設定檔" class="headerlink" title="- 把帳戶加入到設定檔"></a>- 把帳戶加入到設定檔</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">EXEC msdb.dbo.sysmail_add_profileaccount_sp</span><br><span class="line"> @profile_name = N'SendMail',  <span class="comment">-- 設定檔名稱</span></span><br><span class="line"> @account_name = N'Demo',  <span class="comment">-- 帳戶名稱</span></span><br><span class="line"> <span class="comment">-- 帳戶在設定檔內的序號。沒有預設值。序號決定了帳戶在設定檔中的使用順序。</span></span><br><span class="line"> @sequence_number =1 ;</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 列出 Database Mail 設定檔相關聯的帳戶</span></span><br><span class="line">EXEC msdb.dbo.sysmail_help_profileaccount_sp</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 補充資料 </span></span><br><span class="line"><span class="comment">-- 若是要從 Database Mail 設定檔中移除帳戶。</span></span><br><span class="line">EXEC msdb.dbo.sysmail_delete_profileaccount_sp</span><br><span class="line"> @profile_name = N'SendMail',</span><br><span class="line"> @account_name = N'Demo';</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+<h4 id="設定使用-Database-Mail-設定檔的權限"><a href="#設定使用-Database-Mail-設定檔的權限" class="headerlink" title="- 設定使用 Database Mail 設定檔的權限"></a>- 設定使用 Database Mail 設定檔的權限</h4><p>此篇在德瑞克大大的<a href="http://sharedderrick.blogspot.tw/2012/05/database-mailtransact-sql.html" title="德瑞克:建立與組態 Database Mail，使用Transact-SQL為例" target="_blank" rel="noopener">文章</a>說明得很詳細<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">主要參數說明： </span></span><br><span class="line"><span class="comment">(1) @principal_name：</span></span><br><span class="line"><span class="comment">這是關聯的 msdb 資料庫中，資料庫使用者或角色的名稱。 </span></span><br><span class="line"><span class="comment">principal_name 是 sysname，預設值是 NULL。</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">您必須指定 principal_id 或 principal_name 其中之一。 </span></span><br><span class="line"><span class="comment">如果 principal_name 是 'public'，這個設定檔會成為公用設定檔，會將存取權授與資料庫中的所有主體。</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">(2) @is_default</span></span><br><span class="line"><span class="comment">指定這個設定檔是否為主體的預設設定檔。 主體只能有一個預設設定檔。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">EXEC msdb.dbo.sysmail_add_principalprofile_sp</span><br><span class="line">    @profile_name = N'SendMail',</span><br><span class="line">    @principal_name = 'public',     <span class="comment">-- 設定為：公用設定檔</span></span><br><span class="line">    @is_default = 1 ;</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 列出 Database Mail 設定檔和資料庫主體間之關聯的相關資訊。</span></span><br><span class="line">EXEC msdb.dbo.sysmail_help_principalprofile_sp ;</span><br><span class="line">GO</span><br></pre></td></tr></table></figure></p>
+<h4 id="測試發送"><a href="#測試發送" class="headerlink" title="- 測試發送"></a>- 測試發送</h4><p>到這邊設定就完成了，可以檢查一下設定檔<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查看 Database Mail 帳戶</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> msdb.dbo.sysmail_account</span><br><span class="line"><span class="comment">-- 查看設定檔</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> msdb.dbo.sysmail_profile</span><br></pre></td></tr></table></figure></p>
+<p>接著進行發送 mail 測試，配合<a href="https://smtp4dev.codeplex.com/" title="CodePlex:smtp4dev" target="_blank" rel="noopener">smtp4dev</a>，就可以在本機端接收 mail 了，設定可以參考 demo 大的<a href="http://demo.tc/post/793" title="demoshop:如何在本機測試寄送郵件程式是否撰寫正確" target="_blank" rel="noopener">這篇</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">EXEC msdb.dbo.sp_send_dbmail   </span><br><span class="line">@profile_name='SendMail',  </span><br><span class="line">@recipients='test@gmail.com',  </span><br><span class="line">@subject= N'這是郵件主旨',  </span><br><span class="line">@body=N'這是郵件內容'</span><br></pre></td></tr></table></figure>
+<p><img src="https://lh3.googleusercontent.com/hTRuihFjxtjWU0BBL3FvwWtyv2vIJ-GDeYSIgABlVeOVweBMUslz5KeHnwNUnAnQlWjj3SKcvu7j5xgGdoBlEqkSPzXIFSLv_oGh8nS20Bq1d_tgLLZvD7lEQSv8L-g2gy3zsPWj6-enDr3BLZko2Jdb09vl9UI_hnpdRPoZ-lM7_PUKjR328VC8wpqW4E0AjikNyiQGnZVqblDyErHJEwTjO5uBbtS0Cu8lKNZDyt5eZP377th3RvaVE1AiFTeHu47ArYC_plzDmhbqnGxxgWrZMw5zwztNlaWDjFAEST0NQRKqlDXGNRWtIoPZJKimwTqhkzM_BNlPrTKGEZ7lRKQk_Hpf6vugX1Z0ZAiFlzhVujZPpbOza_XZny3o5B_IDZLAvx8_8KjfDPEPn_ntuRT3-vEBA2ZLlbk0Rg0ndtZ6umiMALMxzg2Y-b5g5qc7Cfse3xa81gFaUAEkjwo-lr9DQGHnG4MyBpjugZzV4TgKlCS7rOWZ9pUndtVLY7-tU06Po2gsMHSSBq-QCcjM68BWd1T_zMf19p09eZ8K7fAMo8SV2SCx-lMXJg57LpOx5-XmLi6_PkbQdUN7-OKALVhbO9uZkADNS67fmbcmW9xB5awgswNNzOiV32DleQPsThvA1PkC9mKccB_pKh0_MiUzR1KZesnBuGY2Kulp4Q=w640-h278-no" alt="Send Mail Test"></p>
+<h4 id="測試發送-1"><a href="#測試發送-1" class="headerlink" title="- 測試發送"></a>- 測試發送</h4><p>查看發送的狀況<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查看：Database Mail 處理的所有訊息</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> msdb.dbo.sysmail_allitems</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 查看：傳送成功的訊息時</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> msdb.dbo.sysmail_sentitems</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 查看：哪些訊息未成功傳送</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> msdb.dbo.sysmail_faileditems</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 查看：未傳送或正在重試狀態的 Database Mail 訊息</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> msdb.dbo.sysmail_faileditems</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 查看：Database Mail 系統傳回的錯誤訊息之類</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> msdb.dbo.sysmail_event_log</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">-- 查看：Database Mail 附加檔案的相關資訊</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> msdb.dbo.sysmail_mailattachments</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 發送郵件的狀態</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	last_mod_date,</span><br><span class="line">	<span class="keyword">CASE</span> sent_status</span><br><span class="line">		<span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span> <span class="string">'Sent Successfully'</span></span><br><span class="line">		<span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span> <span class="string">'Failed'</span></span><br><span class="line">		<span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span> <span class="string">'Unsent'</span></span><br><span class="line">	<span class="keyword">END</span> sent_status,</span><br><span class="line">	[subject],</span><br><span class="line">	recipients</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	msdb.dbo.sysmail_mailitems</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> last_mod_date <span class="keyword">DESC</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 發送失敗的郵件與錯誤訊息</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	profile_id,</span><br><span class="line">	items.last_mod_date,</span><br><span class="line">	items.[subject],</span><br><span class="line">	l.[description] ErrorMessage,</span><br><span class="line">	items.sent_status,</span><br><span class="line">	recipients</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	msdb.dbo.sysmail_faileditems <span class="keyword">AS</span> items</span><br><span class="line">	<span class="keyword">INNER</span> <span class="keyword">JOIN</span> msdb.dbo.sysmail_event_log <span class="keyword">AS</span> l</span><br><span class="line">		<span class="keyword">ON</span> items.mailitem_id = l.mailitem_id</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> last_mod_date <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Database-Mail-組態精靈"><a href="#Database-Mail-組態精靈" class="headerlink" title="Database Mail 組態精靈"></a>Database Mail 組態精靈</h3><p>首先開啟<a href="https://msdn.microsoft.com/zh-tw/library/ms174173%28v=sql.120%29.aspx?f=255&amp;MSPPError=-2147217396" title="MSDN:SSMS" target="_blank" rel="noopener">SSMS</a>，接著選擇<em>管理</em>，然後選擇<em>Database Mail</em>，在選項上按下滑鼠右鍵<br><img src="https://lh3.googleusercontent.com/vbC2dM4iDUm9VhmUoZPGBwXdo0YAA4kJkhPhw0o326Av7FQIaUGicSfl1AQ_WNqjC9-kvwJRt5DEWLGslaH-Ubbts3a-Pi76idbLW_qiZtw8n33mOp3azrHgIz7lOZWG7JlAMIIQUWL23LVG4zH_gWh2eG5xdjCZ9Xc1NoymBbweeYLZcdymRF_is-qa0mNxtZvunWynvI32agJdWtMIm5VQbAal9Ojzydtjmiy9BbSYjHNDn5VDWHpUIGGPZGIBkPThqHp5SawMMKKC8T0EgoOhHiSmqd6WVPdsFtShIoJuySzGT7dW1R3FNysDn68rHAQXU3ob13Nu2WlIcLONa54I-uYtL9CnT294WFO9Jz7yNU9108D3QmDy8ICEeHXmD9RB23ZTANUxHg5aM3lgPvgGgzcz_j6An4VPL1i7z7UxegiVnTTswkZZQGt9WFA7OWuRZVVpSKxWZkgbnNAGWlGGm81ZhuORUWvLyWGQZu9lxYwgOQQxxmtIDBXoaItuBoskcuQkZlzeJkud4RMSDChE5mLagte3o773Q9DvBzGBthxP1Eqi0N45GjhSsWKTaA03_kqrHijKmJV8nZ2pxOIP7hX2smdAWz_FsiesJMBsT5UVpra-KrUPdq1ohTN077lXPdPQCo74aa01AdptSIrLJajHfdOFlNNSFSlC9A=w222-h237-no" alt="SSMS Step1-1 En"><br><img src="https://lh3.googleusercontent.com/VDYwT7kT45aY89H5H2jfgE1-vX9Sc0aEaNzHOAeSMEkBdkH4duWkZxRO2m9_Kj3Td9-olDx42PisB4gc0-NTu6-6lo0XTRLm0538_NZIeElVQ20vy48cLTvhq2_OI95gvkheSGciJaRG2i-E3SbyLyJqsyeUQAKY5Z2gM9fJ-aDptgPwczuSBb7eKky3X88beVKKhykIauOCUEL-Mz8K2WTwgW4Az5_yDb9bJLfjbFf7jK4BaOdfKr0CAA4DdsYxovQRWF8dO-9vKbHA8xelNspWW7LHJoIAjpwhn1cUjgMy9h9lcsHpmIQzyihC8ZE3SnRYsi3C4we0rMenZnrRmiFbirPsKpkxjyHN1Txo8QXza5nNm1y4iCy5wogT-3m0E7ebQkhUQNa2ITv6CZ_uWonq6GZ9cTJd8Vq1aBasxVcQrEHKYcqHw_RK4T2z-r18gRfkRxyS21USpLlr3lN6la-9w4zmjvW3i18p77IZmZvXNSM8zE819y5ldfOxsPek8gF9WL1EzdzSdGwx02c9zDv5yguiFoqhF8wIop1gpZCEsUT8yrjQ34ijT_Traux5hC7NrV8rLeqc6Z2XEEyR5noect1Nw9WU_09envAyeZ_KR5HPP_ST3m3qmyKud4LjForYw_5zeXzdyP3knkoUmFHbHTs7FnRQuA5CpSf_5A=w347-h211-no" alt="SSMS Step1-2 En"><br><img src="https://lh3.googleusercontent.com/q_7n6hXi58asqHSlfjDh2RGf2qXXic3rd-brWJV517AZ3jN3im9OgtqD5LoitgUAshooVjQQPk_Eg6mawaMQhfMnTfN3ByI_uwNzrl2Lr3jCjrKQyfV6d_YvXmnBGISh4nPzTaqkbOkzKLidaRtQwS5RqZV6E1MZzLHiq-Mtmu20cTYdDc01lkE9uhHz6Ft1_yI2rmET-naCpPL6ZMwaGAmyIymu3IIcEY3utdCWnXlpL1OKNfXqfviIZNdDLUjNxDLL4lv740c0NcRadhF0Zb_jhbb7vee7kszF1aJ_9CaoPBCOhZOLlua7vWcxCU0cRdvZzr44QxnITtCNPqYm-e_NopsLtc81NmnFhBf34UwC91-uMCT22L6tgeQRRy2zWis_RAop3_KGh8NKRR0eE2c2PdlD_HP8mAy4xE9kRt-IQBJN1m-7Q2xn6YUt-9YCMWD3UYn7zxNpCrb1RaSDfBhJPGgq5dDEV2865AJ34XXvAXI_Ms2dVKSH81VINfDPnipnC6LeW05qdm546SrXOUiVkmihQ4h9mWQdefibqkJihIOa2bHKdt_rvoWUlunk-g9AvXq5L8NG2k7x-Uv1xWfQjQjttUKEwYLSBbM4ruErkJweqZ_HO20h5P7VmrmBgYCL80g9jdIWkzQDDRjA_3Dz3mt6nk9Z3kOC14hsOw=w382-h312-no" alt="SSMS Step1 Cht"><br>啟動精靈後，直接下一步<br><img src="https://lh3.googleusercontent.com/6iAZzbs3NeID5jr6tuOVMheo1h2k05Sufv1xIENvqmc3Np7A_-K0GlA6hwdHPGXAP8GQfoxLfu8H2NBRzl8t0DzzWrW3V04KpQLU6FqjA1BdJR97OiaZGgwc2QuhbpzY9h4x4XmowELbuXe1IRDwN1TjIjnri51jE6AybtrCp5vX6CrqPpvQRbJY3C-ISZae1Ou3CbpS0RpNW9V0X4wOJqsGAdawwYh84_jpERIqUIWIRie6v79hDhwxDug5rv5qqEwydJECOF6D5pkvVxX-3vk6s-YvGnEe5PQtM7nu9PZYaITlqk7RD-l6peH72ZqQbhUADF7x4X4mZr3LfG-fiE2YPTDnUvUp1h4RqzCiW7DD8w_BjRe4bq6T5pGqT8tvynoHdV_2g9aOBtXYSP_aqPrb6ISG53SRlOUiTW7upVZUUsBpdTkuNGt6PUVsm1ldMjMO4QAp7PjYwv3peCqWT5nlZ-j55H9wRWzA6UIiMWALcWlNtYM979J0Xqi5ARZmSgNNIbUugv1ksxk50mZ6KkeHxk7nU9IIVIYPTg4-vPlflGrm9QTajHg7Tc9kZZdUb0AtZ82Zo7ZfVrZw2y9v-YcTUWVLTz-uCjpf0hh-aqaolvfFM1GaKyyGiSFwrtlr3JfP_sGqnLSxgjiRU2buiHrxFmvWQCgmsa5aYZNvtg=w656-h573-no" alt="SSMS Step2 Configuration Wizard En"><br><img src="https://lh3.googleusercontent.com/PybqHjvEdAiAv6e5gGS9SAmnuQwKIAQP3954lBJeme1Feq2lppNIaHuMd_woeWUqbizcUCqWwlIMG2YMkCMnFS16ChWDLRg3wgVWjfN3gCtq3Qo9YoT2OSSYwLeP-3ahaEeaAyD8SkAhFh4KU80fSlGxaHNOpbRZBFUisoBCJsWupbsBsxQ4jAzkzYZcIPgEkl6JWvdl_Vnh8WKVz0KCITyXfeiUM0H8orVApBWyRIaCseeXUDUlv2g0t7mZUcH7vJogZO9oBBX1P2iWeDm_4qAE4yvEg4kP_vSI-iTR6hJZY3250LP8KJnlNbQnkZ-NXGiliaJEhVJ-p-H4PPgVnWJLo8X-TteMM2Tk85KmZLAoJ_lRL5oYA3t8tu7zXjW6koa66LeuIkRob8k8ce4nuoRska2JsF-5yO3VzHdGJLvTdgyB3yvP5OYeX1P91QNcvVyLj1WRh58Xuz8Ak3Mz0jIq6G243h52Kts5w0O2Mkk--8r5ZCCWYZm3B7zSDHZ2BjRpwsYBd6OfQilUkskb5iK5J8QNuSgJDw-knS7rFU314nqfJ2WQnJvCHFOgWITi49LIEQ5KSnsnMzbZRYUI-e-aDiCTI7qWPXAjj6m8n9pA3gv1HOcJVmsI3zPpfUmooDdCASVespI3eBSrA4VAAFsmm73MluDvrQYYHMjJ-Q=w652-h709-no" alt="SSMS Step2 Cht"><br>接著輸入設定檔資訊<br><img src="https://lh3.googleusercontent.com/gsH3IFxqXZJRfPvZcZn5v06PLiYS2tO3TqUeBw26pWBHKnY8IyZXoBrlAjZuSn8kZ7wgNW1hMMBXtDriurMjf427ZW7pNRZlMzfqYtApXDPn2_m37Bi3G4UtP7QAPj388_QzeOz_G8tBSEQXSXT9bOt_yoOHrTjnRke5bWXzSnzCSfRcTyrIeAf2rsO3-BZBLo7FO8AQzZE5mXLi-S2PqPGyx2z4G-XZ_8sCrs8NnJrBvTI2dLoaUSi1wydTqzvidPYMNz4VMNnqIp5JcBDZqaDyWEBidwRFoK5fAt0eGZ0MhbYGRuLol2AbCQCts8WSGT3mw1XaSSRabO6TPJj5cXDjKaYoJgr_4z04LtSk3faOV55bQgDR-8NSDr0k3OJokk5q3D5eEMOXWgmFhyvcMYNt_GphDCnA00VkG4MLRDMio94tJm4cgVUjaI_j4NRfNi85fZK57urxWumXpa2LXxxVn4J8py5w6AfleqVqQTOHdrjKzBKoYmLeWumED4HslktAFiRUACk0oemp_C-X-5T37-Ezrxi06nrPEcG_coXAdBr4xcdMKm_1zzJWIkt2QJf-28P-1J1tLFgGBavGtGqKgyB7urrMZp3j40tQYeyUYxJmIp-e1AZOqjgp_B001eP4Qct_UuhuOkZhNdnrBidRPoGBzwcZhN1vnBHV5w=w383-h115-no" alt="SSMS Step3 設定檔資訊 Cht"><br>新增 Database Mail 帳戶資料<br><img src="https://lh3.googleusercontent.com/huxWDb4oAh9oMyIpX1d_M7FMmv3qR0A2yQUJ3GHZNp7MTJDryHNzCq6YMgnbIzQzlThW9dNyLCkT85B2KzgwmGNpBXSceRDnCA9nINVm1o8gE4PCGOQVLDGH9McJ8Q7OSddFqZAzzBCOVbfvxAO3KnD_mQaDdCLJQwPwFiPq3Tr5oxpauY3DVvKMPAq3EMoFtG3H2ZvnXly1GvDZ_KhX6qHIfsfjh0F7uHKWKRkLITqsqL4vwW0YgGzR57C8HG8hA4ayLXxCZhyvIIqzBg6RQXjYQB5GFFJWTuzn2U_Hnr1VD6J75_9IWGYBDQCFDTtgbfko-p_vNfHqk5QgtiO7GnddOQ6AxHJjMb3CrvDiCiklQUQq_2bpwQRC-_JdGvynHrsm_oswbqn4k-QI2J7KS4IZeXAzYcheePqeoUVNaNJWRZJGYgcf7nTS5VTfl8OXTDFY9CMVuYOtAwmyRQT02G2i8SG7X5uRgPL0ZIs1VU64R4jLd0L3I8hriwRQd2Aq9R296FFeJ_KJViWaw_oosAD9talOKVC96seTWjC63mcpbre0d5CaaRrjxmvQgirR9GO1Ku0i99GlRMseA42Cqz4rgquNjX-3Y5TU5GgKqX0mXeB-LrTJiScjBIyYYevbq8hYlBHDQKvdOIp3759QL1fgtN7XRITqpPUz1b5mgw=w583-h625-no" alt="SSMS Step4 新增 Database Mail 帳戶 Cht"><br>設定帳戶資訊，接著將帳戶加入到設定檔，並進行下一步<br><img src="https://lh3.googleusercontent.com/PYj-yG8t7jnKtOsSrs6RBMi7qDnCtGpPfogsOIx6zPD2WVh9GckNEUAfT1MiDTMFoWZCJ8Kn3XtMLb1gVZWCcowp4OVznlfCJjTkW45fXyHvGtNMy7bYfMZvvGvAdY6zcpBfiKyalhPp_R2Gl9BxzRWzftqAdqrzh1pVo0dnl_37nYG4yvNCFOUKOP8sM6pdim1Ggt273NiqOjSUlrMIgAnmicaGR52EzldqS0kTUc83GrXCLqJ7iBvN7gZm06gaCodw5OEt_xgccjWqEh1pD7VgyZeqOO3UqhRvg55MIqXAnQ2_WfMNty_TpuxDBB6On_eOdHxDXqrrhdtcKCDuS5olNPXEZhscv-XjUAubzAiJBDvHlVRl4p0IGIryjj8Gy9yRdZooeklK3m_fmvpUe8VksKz6kbfDkoWclqRIa-7YKho548xYVRoHUUArjBEWeEbJTI0l1VVuJmAyPjFkavdOgVkLH0p1asgACkuf30HOEB4AS1IaGjTsiK89dlXYQj-cmFtJU-ul3NRUdDl1b_VfFRAgujnHl3VJUy4UnGCgpblWci_iYkS_IbZkaRcWG74D16irNL1YX19cLShSiyrU3tNfXT9yradLJtn9NcbklpkrrxEiTG1s8nm8SvcgN7sVakBfkN2ficK3ohZZdwdAwQe97zUixNL8RMEdIQ=w594-h273-no" alt="SSMS Step5 將帳戶加入到設定檔 Cht"><br>勾選設定檔<br><img src="https://lh3.googleusercontent.com/nhzcPn0T75wCa669x4tnXZ1-vUSwfmwEDGRGrDI69fDwvqqhupiqBmdM879_GtdY5kW23pnzkmKGzfBJEoyl2da2u8txji2uwBDlSneQuzE3gnSWsvJWrv47f3F3tDrEgNOU0GrCMmUDKPwYm9gtQMSz3ICHzNp3RU89RZcbqhIiPrbDpWKOFOco6VNzNZYW-CWMYikT32ZNyv4YIu_3IU_yjH1TFSHBb8TWfGLGZjx-H4PAqsT0p6drS6xJmooqrTauEJ4zhvYNMN3A__ET_2Dmbrtj4X4oGjGJWF2432XzarviNn4WG8nEXjiUwLtVGpYe1EwaE_w2gV5YVrsYFZWBK9ixpqEoJljXjQJ0yFDMHAMm7ImN9sQcatrHU5wZKoLf2NNhPc5v6U8gUuPNMM09IyMCyGj2gyj0Egc5fjB1BFnDhZD8tgDVsB-bZykAKdCl10bSffO_FWrmyL8wmDUemF5MYTgLWzaFX2ETtMy2aVuIU21hc4LX_N-GUrWI3mGR5IQpsA5hm5GWIj0l6qdbt5OYxz19COGgAQIJRI_PiefNO-GfNjVQqBMMl4FAYRb4GgTj2bjwvlBhBYKwpYrfD-xadZ-BdqEEBkikTPJamiKECi1ssw-BnLI-c7gNmI6HF7FsNEkaCgMSnNGBBPMmUsdANPxv6pFk8LXk5Q=w652-h709-no" alt="SSMS Step6 管理設定檔安全性 Cht"><br>設定系統參數可以不用變動，直接點擊下一步直到完成<br><img src="https://lh3.googleusercontent.com/4tyt_bufmq-4RhRiyzgkM5yvgWk3OBXKw9mtn0HV5ITtN9wKAcDQFi2BtJ8YpfkHZWkYWULkzz2eNrgbUUUO2UgHXCX_qWePDx5IwaFnyj7vpSjZZywIcgez3irrx2MhYcnpa6TU3xAt6fr3X6lSkO3qHcwpFfYNP8RMCJUfXDBG75pKdRahTWNUgUeAfv8gUdqz8yoWakUY-iPmIePdZB_KWFcqQmKSlUczmbcDqpeQDJaI-N8kK4fPHLMhN1jsHUhbK90tn07ASPfzkXwgiyYOqkun6R_c6LS5BmnsFTdZfr8lWOmzFAdmdmkTfNOoIISuZ6yBRltwdXGmR_8bOffB0GTcNuBHWEKXXMeElp8FnGWa0m82G5UjqHv1VeTItVbufdS5syUjWfpNWU57JSkXJhEH0xNA-Lb9mvvf8mdzFx-pOyRYTD1lWOC8hsuqiWUuiIgv5RyAstfP7q9hSplBMMIy3lwWiiO_Jg9mcX17D3SaJhycRvAr_LQqpjgr11iuhr9DveWFaSqP_hpJXac4U9KT0oTksSBxit-0XgRhv3xlofMtrvJ4f8Fx_9mjYqzvchIWVnW0Hey_8McaEwLlal6CRu6lgImgP1LUgSo1YMTl3EWLWNhJGcN0g0RXTcC6LegcCnTZOe6nsgeLKJYYMcjiKFJqSaKea265Jg=w652-h709-no" alt="SSMS Step7 設定系統參數 Cht"><br>設定完成後，點擊關閉<br><img src="https://lh3.googleusercontent.com/eW7ShL9LZlZBxO56TDJWS5c_mjGs2QvqqzKsSsfBDEuBMw6OtZhCyRiihHPeMF2V90-UicXVxevQoTLv0v1JThu3FUiqvDOCHqirOfdYrPiK2noD0g1nsG8QPmImBnwga5FrvpdyoohCs1laKqzuf6vYP6AKQiSP_L91tEeHocjglg631yQ5h9D8XRSIj5xv8F0xeY9aMDzTyY25cLexFb57Yvwx2xythg1f_xho_JLa8ztBktR8hWyrlSoDqsy6IrmW5xqTayOxUDngKJWbUpDBkcRYLdmr7795dOa9sRde_MvpAU7oe4aPVCMbucr5mork6xpL8OtAU82qNB5UcAq1dozMFbMJUWvdY2d9JRNBEGvHQJ2H8ikyLJ7O2zTi0VAxDhyx_fgxnBoCHIppyE40MSmliCOXWl0zWpS9JloqB7BgsHsNaEebaDj4jvg3HiuxGgCCLnlyv9PHEkbBljqKo3q4mCCeA8B-YpoDmGClge9BEvDq03cigfJDwPODMyWKiOyn9BZQrQ08gwhjqevBc0bBkRpZn13MAYiYL8auk0sgSkyaC4GkwtB9DAq9zLYOB09mlIqobptLFwSQdO4kL1Ig5L2RtvamH2mj-xGeDkhyvncU4kiNEhVYdhddHoNcUg9wpobyLPEvzvMEF1mVRd14oHNZONDPTY6nJg=w652-h709-no" alt="SSMS Step8 組態精靈設定 Cht"><br>這樣就設定完成了，需要注意的是，登入的帳戶權限記得開啟系統資料庫<br><img src="https://lh3.googleusercontent.com/GsvjjP48GmQAbA_Gtd12O3fp2U4GhxJpzEd6wsEBWHEOH6aU4JQMwTXzyk-_rqJ4-x4Be90wLMIAs80povOjpBp94odztcuRkvcxhwJPARW5J9M_k-SKQBftMFGOXbxGi2xceoxbdxc-VfJGKkKttRVEyPGAo9kL5UXU2pBxLoKpuzPPlp7WqJjYhm4atb2jBou0f6MRzMZQkqP5hjQzRwthWdqvZsXUzunNs7QQW-F1CR5N5ph5-RAwSrvPTKWeY-UxK_3RKK3PMSA3s7zwBbhRC0ySlTmjSWemBeqlVyPMGmygqly7SDn5_Jof73_GHBJBzpPtcXamee7mqV1ETqB4MvIoVmUoA1k17WT5Y9Inqf82Y-s7O-a9UOMBCvpEk4T8_F8KPl7DXRtAs1PLdAnnk8QVvJawdq085bIpr5NZ5hVL7v2DJcntnS8HaRVOefwF7U-zzQHcbNlT7ghxbcqTaAH6DsUAPda6VAdcVctf73ujV-DY7vmH9ptBfEo0Se7pK4UOataOPPLcDOuyNu3M9Ln4rqvfxfpkuaOtkFitXJuyIaotc9jlT58QCNmtQTCV6R5sKfkoJkyN5iKEt_8apvHP9mVKvw_WLjXCc0mmmT7W0R2yGg4Tz5vDUxnbuYKNZbv3dJAgj3T5jl1mMCBr0CtHQlGfvXwhVWVkEA=w346-h444-no" alt="Security Set01 Security Properties En"><br><img src="https://lh3.googleusercontent.com/SKr_4s4cePLMtU1xkQPRjaEZzI7_6ZLRcgIm_5QLp6Ovp49AodV8FXvL0cbKqf3RHiWiuf9I_rXdaFIy_t2yfpflyBurigNWtFTMVjM5kat4_YrmuaoHnpNmJ9Q4RL3LKPHynKVdntiwXpoWZDpHGtN6omN6ckZ3_ObPk48IRQgvVI073D9hHyA9RQ6VDtnHwX-N2_DZ-RAiK0asXZA24XtTLN0tyXCLwT1fGo7510WXXYWOnOo1_3TiE7-k99KEbU4p0oFUSEFPkENQ4N_3jIsNW8XPL4NWHpV-YGJLsMAZSa-vvpxbMH64koWDJr3fOldfCX7Lnrs-LIoxwZ49XcIV1mm_H6VURB7SEm7VUetA5r44w1byFVAZDtI8J28z35tLYSo5Lau2VL9PsJaDcwJ-rB8H2CfKZEGYKU4jX_Cm-fgOqGb1Hkyzq0rQjSsTOEGGhBxXMIjYBUBTBEiGLXYdiTNAChCT5zmkLPhSwa6WTYovnJoKsXwCLMe3stnU4MpLfUHfOioVhbpDioRrCYyhDF3xcor8Yg4OMSBLnBDKbiU5UsYnDIvKzogVbkJTcdI47-Ftz3b-8jV1qxibFVD23hhRSQINmpGG8S2wIqNJMCf-MGJDZyIPRVM6TDRhksVYqM4p5L1b0XlM7SQXplrljSMIzcQBQzXiZ46kGw=w763-h661-no" alt="Security Set02 Login Properties En"></p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li>SQLCache:<a href="http://sqlcache.blogspot.tw/2014/11/sql-server-database-mail.html" title="SQLCache:SQL Server Database Mail" target="_blank" rel="noopener">SQL Server Database Mail</a></li>
+<li>CODE PROJECT:<a href="http://www.codeproject.com/Articles/1028172/Sending-Email-Using-Stored-Procedures-in-Sql-Serve" title="CODE PROJECT:Sending Email Using Stored Procedures in Sql Server" target="_blank" rel="noopener">Sending Email Using Stored Procedures in Sql Server</a></li>
+<li>StackExchange:<a href="http://dba.stackexchange.com/questions/83776/need-to-send-a-formatted-html-email-via-database-mail-in-sql-server-2008-r2" title="StackExchange:Need to Send a formatted HTML Email via Database Mail in Sql Server 2008 R2" target="_blank" rel="noopener">Need to Send a formatted HTML Email via Database Mail in Sql Server 2008 R2</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SQLServer/" rel="tag"># SQLServer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/19/Syntax-highlighting-in-markdown/" rel="next" title="Markdown 中支援高亮度顯示的程式語言">
+                <i class="fa fa-chevron-left"></i> Markdown 中支援高亮度顯示的程式語言
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/23/SQLParameter/" rel="prev" title="SQLParameter名稱為啥不會對應">
+                SQLParameter名稱為啥不會對應 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#緣起"><span class="nav-number">1.</span> <span class="nav-text">緣起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的環境"><span class="nav-number">2.</span> <span class="nav-text">我的環境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中文版"><span class="nav-number">2.1.</span> <span class="nav-text">中文版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#英文版"><span class="nav-number">2.2.</span> <span class="nav-text">英文版</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sql-Server-Database-Mail"><span class="nav-number">3.</span> <span class="nav-text">Sql Server Database Mail</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Transact-SQL"><span class="nav-number">3.1.</span> <span class="nav-text">Transact-SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#啟用-Database-Mail"><span class="nav-number">3.1.1.</span> <span class="nav-text">- 啟用 Database Mail</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-Database-Mail-帳戶"><span class="nav-number">3.1.2.</span> <span class="nav-text">- 建立 Database Mail 帳戶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立-Database-Mail-Profile"><span class="nav-number">3.1.3.</span> <span class="nav-text">- 建立 Database Mail Profile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把帳戶加入到設定檔"><span class="nav-number">3.1.4.</span> <span class="nav-text">- 把帳戶加入到設定檔</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#設定使用-Database-Mail-設定檔的權限"><span class="nav-number">3.1.5.</span> <span class="nav-text">- 設定使用 Database Mail 設定檔的權限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#測試發送"><span class="nav-number">3.1.6.</span> <span class="nav-text">- 測試發送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#測試發送-1"><span class="nav-number">3.1.7.</span> <span class="nav-text">- 測試發送</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Database-Mail-組態精靈"><span class="nav-number">3.2.</span> <span class="nav-text">Database Mail 組態精靈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2015/11/21/Sending-DataBase-Mail-in-Sql-Server/';
+          this.page.identifier = '2015/11/21/Sending-DataBase-Mail-in-Sql-Server/';
+          this.page.title = 'Sending DataBase Mail in Sql Server';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

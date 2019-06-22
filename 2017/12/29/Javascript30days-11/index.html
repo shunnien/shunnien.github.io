@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,JavaScript30,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="目標自製一個影片播放器可以操控播放速度與音量大小，並隨著 progress bar (進度條) 進行動態調整的播放器">
+<meta name="keywords" content="JavaScript,JavaScript30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS30紀錄 11-Custom Video Player">
+<meta property="og:url" content="https://shunnien.github.io/2017/12/29/Javascript30days-11/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="目標自製一個影片播放器可以操控播放速度與音量大小，並隨著 progress bar (進度條) 進行動態調整的播放器">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/tJ8Xf87th94-bjfJxyfQdwGRI7KQDwRyZfvHP1zrpREo1uUHhGzufnOiN7g0VI574AH6loz4BgiUs49AyULblBII4SlzazYucZL67Zbhv_xyirmLVZaJbFxjuI2dwToDyFodVv0bhpfRwSFRb-AuHqO_LMUljal9RJKswDyD8YU4DgrTZGirKCqsdLgL9sQmR__6QMceJPzhwBql1FCHwNNam9_5-xhrH4B-HE62d8xEva9QjowX_1EJxMO9nKyfJ0bGsz22dLd5FxB9w8e-GFWuld2u4eaueJ3oGLiNYthSknX-_XJh8KfDNNWOGWUdj_pL-3iYDzDckO0funGk_LYP6DTW3kX_1iBBl1cqVHxiYCOcmjSElM5kitOlPLQkOpZCnrDh6YhWjPm-IZt6iCiOdpjU7M0TAOJtdZlFM-QAF0cdBSPLhAqofre_p-yiJ-gWRD9BE_WS-7PmbJQnOv4rg3aVgJzpCgtEhdBc2k-QkKFopk66xI2xCQnUluWZ6TMEmHvkDX-JMs81k0XSxS9IXnV7y9mQS7M7dDi46UH52m_jzOnxOguPmCRk0mcBroK8S0T6JQmxoAnXk9m2SqNhrMWSp1PbrMVdB-lCWod-jYOaJO1y5EpFSdZLDxWi5DjtY87kTIfhKwv1Dvf8xh_0RKzKLjub=w812-h458-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.664Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS30紀錄 11-Custom Video Player">
+<meta name="twitter:description" content="目標自製一個影片播放器可以操控播放速度與音量大小，並隨著 progress bar (進度條) 進行動態調整的播放器">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/tJ8Xf87th94-bjfJxyfQdwGRI7KQDwRyZfvHP1zrpREo1uUHhGzufnOiN7g0VI574AH6loz4BgiUs49AyULblBII4SlzazYucZL67Zbhv_xyirmLVZaJbFxjuI2dwToDyFodVv0bhpfRwSFRb-AuHqO_LMUljal9RJKswDyD8YU4DgrTZGirKCqsdLgL9sQmR__6QMceJPzhwBql1FCHwNNam9_5-xhrH4B-HE62d8xEva9QjowX_1EJxMO9nKyfJ0bGsz22dLd5FxB9w8e-GFWuld2u4eaueJ3oGLiNYthSknX-_XJh8KfDNNWOGWUdj_pL-3iYDzDckO0funGk_LYP6DTW3kX_1iBBl1cqVHxiYCOcmjSElM5kitOlPLQkOpZCnrDh6YhWjPm-IZt6iCiOdpjU7M0TAOJtdZlFM-QAF0cdBSPLhAqofre_p-yiJ-gWRD9BE_WS-7PmbJQnOv4rg3aVgJzpCgtEhdBc2k-QkKFopk66xI2xCQnUluWZ6TMEmHvkDX-JMs81k0XSxS9IXnV7y9mQS7M7dDi46UH52m_jzOnxOguPmCRk0mcBroK8S0T6JQmxoAnXk9m2SqNhrMWSp1PbrMVdB-lCWod-jYOaJO1y5EpFSdZLDxWi5DjtY87kTIfhKwv1Dvf8xh_0RKzKLjub=w812-h458-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2017/12/29/Javascript30days-11/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>JS30紀錄 11-Custom Video Player | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2017/12/29/Javascript30days-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS30紀錄 11-Custom Video Player</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-12-29T18:23:46+08:00">
+                2017-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/29/Javascript30days-11/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/29/Javascript30days-11/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>自製一個影片播放器可以操控播放速度與音量大小，並隨著 <strong>progress bar</strong> (進度條) 進行動態調整的播放器<br><img src="https://lh3.googleusercontent.com/tJ8Xf87th94-bjfJxyfQdwGRI7KQDwRyZfvHP1zrpREo1uUHhGzufnOiN7g0VI574AH6loz4BgiUs49AyULblBII4SlzazYucZL67Zbhv_xyirmLVZaJbFxjuI2dwToDyFodVv0bhpfRwSFRb-AuHqO_LMUljal9RJKswDyD8YU4DgrTZGirKCqsdLgL9sQmR__6QMceJPzhwBql1FCHwNNam9_5-xhrH4B-HE62d8xEva9QjowX_1EJxMO9nKyfJ0bGsz22dLd5FxB9w8e-GFWuld2u4eaueJ3oGLiNYthSknX-_XJh8KfDNNWOGWUdj_pL-3iYDzDckO0funGk_LYP6DTW3kX_1iBBl1cqVHxiYCOcmjSElM5kitOlPLQkOpZCnrDh6YhWjPm-IZt6iCiOdpjU7M0TAOJtdZlFM-QAF0cdBSPLhAqofre_p-yiJ-gWRD9BE_WS-7PmbJQnOv4rg3aVgJzpCgtEhdBc2k-QkKFopk66xI2xCQnUluWZ6TMEmHvkDX-JMs81k0XSxS9IXnV7y9mQS7M7dDi46UH52m_jzOnxOguPmCRk0mcBroK8S0T6JQmxoAnXk9m2SqNhrMWSp1PbrMVdB-lCWod-jYOaJO1y5EpFSdZLDxWi5DjtY87kTIfhKwv1Dvf8xh_0RKzKLjub=w812-h458-no" alt="target"><br><a id="more"></a></p>
+<blockquote>
+<p><a href="https://shunnien.github.io/JavaScript30day/day_11/">Demo</a> | <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<h1 id="處理步驟"><a href="#處理步驟" class="headerlink" title="處理步驟"></a>處理步驟</h1><p>此次處理步驟沒有很複雜，簡單說就是將播放器的各項 DOM ，都建立監聽事件，好進行播放器的操作，唯一比較需要計算的部分，則是進度條 (progress bar) 的部分。要熟悉的是播放器的屬性與方法。</p>
+<h2 id="步驟-1-播放的呈現"><a href="#步驟-1-播放的呈現" class="headerlink" title="步驟 1. 播放的呈現"></a>步驟 1. 播放的呈現</h2><ul>
+<li>取得 HTML 上的各個元素</li>
+<li>綁定撥放功能</li>
+<li>增加變換播放按鈕圖案功能</li>
+<li>添加播放後，進度條的動態顯示</li>
+</ul>
+<h2 id="步驟-2-跳轉按鈕"><a href="#步驟-2-跳轉按鈕" class="headerlink" title="步驟 2. 跳轉按鈕"></a>步驟 2. 跳轉按鈕</h2><ul>
+<li>利用 html 上的 name 與值</li>
+<li>觸發狀態的綁定</li>
+</ul>
+<h2 id="步驟-3-進度條的動態切換"><a href="#步驟-3-進度條的動態切換" class="headerlink" title="步驟 3. 進度條的動態切換"></a>步驟 3. 進度條的動態切換</h2><ul>
+<li>建立播放進度條跳轉至指定時間 <strong>scrub</strong> function</li>
+<li>簡單的拉動綁定事件 <strong>click</strong> 與 <strong>mousemove</strong></li>
+<li>避免播放器的點擊功能互相影響，建立 mousedown 變數</li>
+<li>並在進度條上點擊時觸發</li>
+</ul>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="HTML-部分"><a href="#HTML-部分" class="headerlink" title="HTML 部分"></a>HTML 部分</h2><h3 id="video"><a href="#video" class="headerlink" title="video"></a><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank" rel="noopener">video</a></h3><div class="note info"><p>HTML <code>&lt;video&gt;</code> 元素用於在 HTML 或者 XHTML 文檔中嵌入視頻內容。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h3 id="Media-events"><a href="#Media-events" class="headerlink" title="Media events"></a><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events" target="_blank" rel="noopener">Media events</a></h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank" rel="noopener"><code>video</code></a> 或是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/audio" target="_blank" rel="noopener"><code>audio</code></a> 使用到的事件與方法</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Event name</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">abort</td>
+<td style="text-align:left">Sent when playback is aborted; for example, if the media is playing and is restarted from the beginning, this event is sent.</td>
+</tr>
+<tr>
+<td style="text-align:center">canplay</td>
+<td style="text-align:left">Sent when enough data is available that the media can be played, at least for a couple of frames.  This corresponds to the HAVE_ENOUGH_DATA readyState.</td>
+</tr>
+<tr>
+<td style="text-align:center">canplaythrough</td>
+<td style="text-align:left">Sent when the ready state changes to CAN_PLAY_THROUGH, indicating that the entire media can be played without interruption, assuming the download rate remains at least at the current level. It will also be fired when playback is toggled between paused and playing. Note: Manually setting the currentTime will eventually fire a canplaythrough event in firefox. Other browsers might not fire this event.</td>
+</tr>
+<tr>
+<td style="text-align:center">durationchange</td>
+<td style="text-align:left">The metadata has loaded or changed, indicating a change in duration of the media.  This is sent, for example, when the media has loaded enough that the duration is known.</td>
+</tr>
+<tr>
+<td style="text-align:center">emptied</td>
+<td style="text-align:left">The media has become empty; for example, this event is sent if the media has already been loaded (or partially loaded), and the load() method is called to reload it.</td>
+</tr>
+<tr>
+<td style="text-align:center">encrypted</td>
+<td style="text-align:left">The user agent has encountered initialization data in the media data.</td>
+</tr>
+<tr>
+<td style="text-align:center">ended</td>
+<td style="text-align:left">Sent when playback completes.</td>
+</tr>
+<tr>
+<td style="text-align:center">error</td>
+<td style="text-align:left">Sent when an error occurs.  The element’s error attribute contains more information. See HTMLMediaElement.error for details.</td>
+</tr>
+<tr>
+<td style="text-align:center">interruptbegin</td>
+<td style="text-align:left">Sent when audio playing on a Firefox OS device is interrupted, either because the app playing the audio is sent to the background, or audio in a higher priority audio channel begins to play. See Using the AudioChannels API for more details.</td>
+</tr>
+<tr>
+<td style="text-align:center">interruptend</td>
+<td style="text-align:left">Sent when previously interrupted audio on a Firefox OS device commences playing again — when the interruption ends. This is when the associated app comes back to the foreground, or when the higher priority audio finished playing. See Using the AudioChannels API for more details.</td>
+</tr>
+<tr>
+<td style="text-align:center">loadeddata</td>
+<td style="text-align:left">The first frame of the media has finished loading.</td>
+</tr>
+<tr>
+<td style="text-align:center">loadedmetadata</td>
+<td style="text-align:left">The media’s metadata has finished loading; all attributes now contain as much useful information as they’re going to.</td>
+</tr>
+<tr>
+<td style="text-align:center">loadstart</td>
+<td style="text-align:left">Sent when loading of the media begins.</td>
+</tr>
+<tr>
+<td style="text-align:center">mozaudioavailable</td>
+<td style="text-align:left">Sent when an audio buffer is provided to the audio layer for processing; the buffer contains raw audio samples that may or may not already have been played by the time you receive the event.</td>
+</tr>
+<tr>
+<td style="text-align:center">pause</td>
+<td style="text-align:left">Sent when playback is paused.</td>
+</tr>
+<tr>
+<td style="text-align:center">play</td>
+<td style="text-align:left">Sent when playback of the media starts after having been paused; that is, when playback is resumed after a prior pause event.</td>
+</tr>
+<tr>
+<td style="text-align:center">playing</td>
+<td style="text-align:left">Sent when the media begins to play (either for the first time, after having been paused, or after ending and then restarting).</td>
+</tr>
+<tr>
+<td style="text-align:center">progress</td>
+<td style="text-align:left">Sent periodically to inform interested parties of progress downloading the media. Information about the current amount of the media that has been downloaded is available in the media element’s buffered attribute.</td>
+</tr>
+<tr>
+<td style="text-align:center">ratechange</td>
+<td style="text-align:left">Sent when the playback speed changes.</td>
+</tr>
+<tr>
+<td style="text-align:center">seeked</td>
+<td style="text-align:left">Sent when a seek operation completes.</td>
+</tr>
+<tr>
+<td style="text-align:center">seeking</td>
+<td style="text-align:left">Sent when a seek operation begins.</td>
+</tr>
+<tr>
+<td style="text-align:center">stalled</td>
+<td style="text-align:left">Sent when the user agent is trying to fetch media data, but data is unexpectedly not forthcoming.</td>
+</tr>
+<tr>
+<td style="text-align:center">suspend</td>
+<td style="text-align:left">Sent when loading of the media is suspended; this may happen either because the download has completed or because it has been paused for any other reason.</td>
+</tr>
+<tr>
+<td style="text-align:center">timeupdate</td>
+<td style="text-align:left">The time indicated by the element’s currentTime attribute has changed.</td>
+</tr>
+<tr>
+<td style="text-align:center">volumechange</td>
+<td style="text-align:left">Sent when the audio volume changes (both when the volume is set and when the muted attribute is changed).</td>
+</tr>
+<tr>
+<td style="text-align:center">waiting</td>
+<td style="text-align:left">Sent when the requested operation (such as playback) is delayed pending the completion of another operation (such as a seek).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="CSS-部分"><a href="#CSS-部分" class="headerlink" title="CSS 部分"></a>CSS 部分</h2><h3 id="webkit-slider-runnable-track-與-moz-range-track"><a href="#webkit-slider-runnable-track-與-moz-range-track" class="headerlink" title="::-webkit-slider-runnable-track 與 ::-moz-range-track"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-slider-runnable-track" target="_blank" rel="noopener">::-webkit-slider-runnable-track</a> 與 <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/::-moz-range-track" target="_blank" rel="noopener">::-moz-range-track</a></h3><p>非標準的語法，依照 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-slider-runnable-track" target="_blank" rel="noopener">MDN</a> 上的說明，可能會變換，主要是針對 <code>&lt;input&gt;</code> 中 <code>type=&quot;range&quot;</code> 的類型設定進度調軌跡的背景與邊框樣式</p>
+<h3 id="webkit-slider-thumb-與-moz-range-thumb"><a href="#webkit-slider-thumb-與-moz-range-thumb" class="headerlink" title="::-webkit-slider-thumb 與 ::-moz-range-thumb"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/::-webkit-slider-thumb" target="_blank" rel="noopener">::-webkit-slider-thumb</a> 與 <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/::-moz-range-thumb" target="_blank" rel="noopener">::-moz-range-thumb</a></h3><div class="note info"><p>The <code>::-webkit-slider-thumb</code> CSS pseudo-element represents the “thumb” that the user can move within the “groove” of an <code>&lt;input&gt;</code> of <code>type=&quot;range&quot;</code> to alter its numerical value.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/::-webkit-slider-thumb" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<p>這兩個的功能相同，簡單說就是移動時候的顯示樣式，主要是在不同瀏覽器的支援。</p>
+<h3 id="moz-appearance-webkit-appearance-appearance"><a href="#moz-appearance-webkit-appearance-appearance" class="headerlink" title="-moz-appearance (-webkit-appearance, appearance)"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance" target="_blank" rel="noopener">-moz-appearance (-webkit-appearance, appearance)</a></h3><p>其實就是變更元素的外觀而已。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
+<li>作者 Github <a href="https://github.com/wesbos" target="_blank" rel="noopener">Wes Bos</a></li>
+<li><a href="https://github.com/soyaine/JavaScript30" target="_blank" rel="noopener">Js 30 day 中文指南</a></li>
+<li><a href="https://github.com/guahsu/JavaScript30" target="_blank" rel="noopener">瓜瓜的 JS 30</a></li>
+<li>我的 JS 30 <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">練習Github</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/JavaScript30/" rel="tag"># JavaScript30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/28/maxJsonLength/" rel="next" title="web.config 中的 maxJsonLength 設定">
+                <i class="fa fa-chevron-left"></i> web.config 中的 maxJsonLength 設定
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/30/Javascript30days-12/" rel="prev" title="JS30紀錄 12-Key Sequence Detection">
+                JS30紀錄 12-Key Sequence Detection <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目標"><span class="nav-number">1.</span> <span class="nav-text">目標</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#處理步驟"><span class="nav-number">2.</span> <span class="nav-text">處理步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-1-播放的呈現"><span class="nav-number">2.1.</span> <span class="nav-text">步驟 1. 播放的呈現</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-2-跳轉按鈕"><span class="nav-number">2.2.</span> <span class="nav-text">步驟 2. 跳轉按鈕</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-3-進度條的動態切換"><span class="nav-number">2.3.</span> <span class="nav-text">步驟 3. 進度條的動態切換</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記與備註事項"><span class="nav-number">3.</span> <span class="nav-text">筆記與備註事項</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-部分"><span class="nav-number">3.1.</span> <span class="nav-text">HTML 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#video"><span class="nav-number">3.1.1.</span> <span class="nav-text">video</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Media-events"><span class="nav-number">3.1.2.</span> <span class="nav-text">Media events</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-部分"><span class="nav-number">3.2.</span> <span class="nav-text">CSS 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#webkit-slider-runnable-track-與-moz-range-track"><span class="nav-number">3.2.1.</span> <span class="nav-text">::-webkit-slider-runnable-track 與 ::-moz-range-track</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webkit-slider-thumb-與-moz-range-thumb"><span class="nav-number">3.2.2.</span> <span class="nav-text">::-webkit-slider-thumb 與 ::-moz-range-thumb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#moz-appearance-webkit-appearance-appearance"><span class="nav-number">3.2.3.</span> <span class="nav-text">-moz-appearance (-webkit-appearance, appearance)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2017/12/29/Javascript30days-11/';
+          this.page.identifier = '2017/12/29/Javascript30days-11/';
+          this.page.title = 'JS30紀錄 11-Custom Video Player';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

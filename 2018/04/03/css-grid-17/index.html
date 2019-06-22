@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS,CSSGrid25,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="接著，此篇主要說明對齊的設定了，如何行的對齊？列的對齊？置中的設定等等…">
+<meta name="keywords" content="CSS,CSSGrid25">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Grid 筆記 17-CSS Grid Alignment + Centering">
+<meta property="og:url" content="https://shunnien.github.io/2018/04/03/css-grid-17/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="接著，此篇主要說明對齊的設定了，如何行的對齊？列的對齊？置中的設定等等…">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/OUGOy3N1mN7w4u7kGzC0FIDFZ6f1ZM0-nhJTHSmpebjopAbMQXjhlHoz5zEiRs7CcSXGqfq3BQFRGnskjYe8SNLIZ-dplcoquBWnxiizcYmmHlcXH2ZbNlPrGnPOelvwRH2pZKH1x38gfvKoKKPlXN8VXKRenjFB1N7zY48Q3c6FQY7Gl84PfEfryRoYZyY3kMtdituVSIFHOSDnj5OvIBISj0atSbYM3u44NW1bv8jj6WTiE3sCWpO1mxKSlwhPifOV4PJcbbqHnXBuLYHbpEg0q68ydecDbiCg0yBG8m7srl6XhWiIhT4FthDP2KAsHlRKp3ENcK6TsfSTujNvM2qBaY4f5dyx_-y-KIs6o3uOzvX5AaYwEqJ2hY2GnoIxZi12nDq3uiq7k0SDCubBWsX72osRAA-R10D52Ii2nUrQ51hacDK6kV7ntBxXh4K_JDKfkEZt3ZwojnUqXpKseYcs5hAbTDDr1Qb64TUbY-l08HxFZwoipqjYg7JMpGJTgILdmshkS3CR77dlT1zucftb1JJiOL1K3iNpS4a19il_Bmbe4CtR5GBdTHciTklACQH2Sudw2w9T1tBuK9xp2Xl8qLOWFLQH0Cc15ozDASFOk0klONxsn839nrgq9o20eHUeshW7jNzXxwbvWWxWw46hknIid4HO=w1210-h605-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/a1mOiIPWazE23FUQkEQkC3qz9ad0njlcGvHbYxKntdgSuEtY8BiroLIgAwSfySlwS4sQbOXuNI_pN41YWt3gYjzqlZeE2Xr6jcWEigFH8Hj6aoeNPHqey6YWXp5N7kntqSY4-ohB6QVoqFc3aHTU5GOfhSwOERnznSk-qAo2rXoaI_vgE8Iuliu863CPyWPTiem1l-4Ccpj_cqDhvVQJKpe0vpKDBu-8U6PLKDBLy3x3x9eyc-CIEasfmfeYYTZLFIVS0K52Aplf1kr0hre9ErV4j1yvfhiWMUFc0l6hkHtALeJpIiKlvoFuqVwTxZnBK-SOywDbqHKVcjP68DmzvWZVHzeYzJVVp_hKSNuzi4opZx0GvQEDwEPGq3HEdn7oxEiN7mMDEfkrFo4AZY4pC1UtomXnnQCeNircn6G6VPS4xg_rzxtAiYcmD54-vKmMuv60A_eP-r2SURVTr_7fsgxF6toe9BpBrLfzoor0wEJEOL2cAtZyC2YBUeRkL2datq85s-TJFiGdNe6I9jqbGDepsVS2Augm04dtg0P3-1gQ-U7RfIv6Su-bYjQwTnGqK87V2ER3xXP6hLktsXVnQd82ExAjfvVu22IFpJ62mhsONLA0LueqkV1xLjTJXtobLdh67sRWxCGSBMNgjMaM41LMzXRfMxZb=w362-h71-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/34dGkuEqiNdDIBzF5k43Vc_goMbaPH1EiLWZkIHoWdCtrzsychxecAaWfc36XDprEyYbsZtN7eMRuPVkyQjAEmQdc32cIfy63VQL0itoMgtnnTtrDi39LiINPFIFn3JCVpn2nrX9vIWteOQ2vfpgrN-BAMaeB0NRed-zgW3aR_tAwwKunicToKbeGIcCW20R7FOVO7oGXqMunT84oKQxJP2rObDmWD18V_0gp__-2nglPgmNQkYfqyQDL5zSmrwRX0x5LmMMJbUd2GHj-h5TcSAWJuaYWjNsFRpLvQkFbEi1IItkvw1f1txHU9HzjvrBN7HlLtDrnh6RslUxd6JiIbId5WF3aCELmuDqfqNS6_4OQRzCTWpiTY7byPUdZx1zpRuavrm2vUIoN9FdxkNRJ2JoYSfuGpKJw7qayKkdTcYNVnXxBlH5H_LQINQz6H-cIGLbWVEwfys6se-VfDiawAKdLC2iL43cgKfDhee4gdwosE98ALPWGIK2A-sRMA3kacMtXa5c5AK2kyD0C5MrgfcPN16DI_4IJ3fb3PL1s0WzxFOMP1pr_nb-6lFsSMDlynfv3bnLYxWmCcWs3fcS8Rp2p-1bYPHqgyeVEkQ9o9CkliVbqU2HNosYykeCSgENvS7heXnxod_lld_5w2Hdai32sa0XMgDN=w985-h607-no">
+<meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.683Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS Grid 筆記 17-CSS Grid Alignment + Centering">
+<meta name="twitter:description" content="接著，此篇主要說明對齊的設定了，如何行的對齊？列的對齊？置中的設定等等…">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/OUGOy3N1mN7w4u7kGzC0FIDFZ6f1ZM0-nhJTHSmpebjopAbMQXjhlHoz5zEiRs7CcSXGqfq3BQFRGnskjYe8SNLIZ-dplcoquBWnxiizcYmmHlcXH2ZbNlPrGnPOelvwRH2pZKH1x38gfvKoKKPlXN8VXKRenjFB1N7zY48Q3c6FQY7Gl84PfEfryRoYZyY3kMtdituVSIFHOSDnj5OvIBISj0atSbYM3u44NW1bv8jj6WTiE3sCWpO1mxKSlwhPifOV4PJcbbqHnXBuLYHbpEg0q68ydecDbiCg0yBG8m7srl6XhWiIhT4FthDP2KAsHlRKp3ENcK6TsfSTujNvM2qBaY4f5dyx_-y-KIs6o3uOzvX5AaYwEqJ2hY2GnoIxZi12nDq3uiq7k0SDCubBWsX72osRAA-R10D52Ii2nUrQ51hacDK6kV7ntBxXh4K_JDKfkEZt3ZwojnUqXpKseYcs5hAbTDDr1Qb64TUbY-l08HxFZwoipqjYg7JMpGJTgILdmshkS3CR77dlT1zucftb1JJiOL1K3iNpS4a19il_Bmbe4CtR5GBdTHciTklACQH2Sudw2w9T1tBuK9xp2Xl8qLOWFLQH0Cc15ozDASFOk0klONxsn839nrgq9o20eHUeshW7jNzXxwbvWWxWw46hknIid4HO=w1210-h605-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2018/04/03/css-grid-17/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>CSS Grid 筆記 17-CSS Grid Alignment + Centering | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/04/03/css-grid-17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS Grid 筆記 17-CSS Grid Alignment + Centering</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-03T11:02:49+08:00">
+                2018-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/03/css-grid-17/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/03/css-grid-17/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://lh3.googleusercontent.com/OUGOy3N1mN7w4u7kGzC0FIDFZ6f1ZM0-nhJTHSmpebjopAbMQXjhlHoz5zEiRs7CcSXGqfq3BQFRGnskjYe8SNLIZ-dplcoquBWnxiizcYmmHlcXH2ZbNlPrGnPOelvwRH2pZKH1x38gfvKoKKPlXN8VXKRenjFB1N7zY48Q3c6FQY7Gl84PfEfryRoYZyY3kMtdituVSIFHOSDnj5OvIBISj0atSbYM3u44NW1bv8jj6WTiE3sCWpO1mxKSlwhPifOV4PJcbbqHnXBuLYHbpEg0q68ydecDbiCg0yBG8m7srl6XhWiIhT4FthDP2KAsHlRKp3ENcK6TsfSTujNvM2qBaY4f5dyx_-y-KIs6o3uOzvX5AaYwEqJ2hY2GnoIxZi12nDq3uiq7k0SDCubBWsX72osRAA-R10D52Ii2nUrQ51hacDK6kV7ntBxXh4K_JDKfkEZt3ZwojnUqXpKseYcs5hAbTDDr1Qb64TUbY-l08HxFZwoipqjYg7JMpGJTgILdmshkS3CR77dlT1zucftb1JJiOL1K3iNpS4a19il_Bmbe4CtR5GBdTHciTklACQH2Sudw2w9T1tBuK9xp2Xl8qLOWFLQH0Cc15ozDASFOk0klONxsn839nrgq9o20eHUeshW7jNzXxwbvWWxWw46hknIid4HO=w1210-h605-no" alt="demo"><br>接著，此篇主要說明對齊的設定了，如何行的對齊？列的對齊？置中的設定等等…<a id="more"></a></p>
+<blockquote>
+<p><a href="https://shunnien.github.io/css-grid25day/day_17/index.html">Demo</a> | <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<h1 id="CSS-Grid-Alignment-Centering"><a href="#CSS-Grid-Alignment-Centering" class="headerlink" title="CSS Grid Alignment + Centering"></a>CSS Grid Alignment + Centering</h1><p>此篇會使用到 <strong>justify-*</strong> 與 <strong>align-*</strong> 的排列設定，* 號可能是 <strong>items</strong> 、 <strong>content</strong> 或 <strong>self</strong> ；</p>
+<ul>
+<li><strong>justify-*</strong> 為行的對齊設定（橫的那個）</li>
+<li><strong>align-*</strong> 為欄的對齊設定（直的那個）</li>
+</ul>
+<h2 id="items"><a href="#items" class="headerlink" title="items"></a><strong>items</strong></h2><p>設定容器內的元素對齊</p>
+<p><strong>place-items</strong> 可以用來取代 <strong>justify-tiems</strong> 與 <strong>align-items</strong> 的設定，可以將兩者的設定寫在一個</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">justify-items</span>: <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">align-items</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="https://lh3.googleusercontent.com/a1mOiIPWazE23FUQkEQkC3qz9ad0njlcGvHbYxKntdgSuEtY8BiroLIgAwSfySlwS4sQbOXuNI_pN41YWt3gYjzqlZeE2Xr6jcWEigFH8Hj6aoeNPHqey6YWXp5N7kntqSY4-ohB6QVoqFc3aHTU5GOfhSwOERnznSk-qAo2rXoaI_vgE8Iuliu863CPyWPTiem1l-4Ccpj_cqDhvVQJKpe0vpKDBu-8U6PLKDBLy3x3x9eyc-CIEasfmfeYYTZLFIVS0K52Aplf1kr0hre9ErV4j1yvfhiWMUFc0l6hkHtALeJpIiKlvoFuqVwTxZnBK-SOywDbqHKVcjP68DmzvWZVHzeYzJVVp_hKSNuzi4opZx0GvQEDwEPGq3HEdn7oxEiN7mMDEfkrFo4AZY4pC1UtomXnnQCeNircn6G6VPS4xg_rzxtAiYcmD54-vKmMuv60A_eP-r2SURVTr_7fsgxF6toe9BpBrLfzoor0wEJEOL2cAtZyC2YBUeRkL2datq85s-TJFiGdNe6I9jqbGDepsVS2Augm04dtg0P3-1gQ-U7RfIv6Su-bYjQwTnGqK87V2ER3xXP6hLktsXVnQd82ExAjfvVu22IFpJ62mhsONLA0LueqkV1xLjTJXtobLdh67sRWxCGSBMNgjMaM41LMzXRfMxZb=w362-h71-no" alt="place-items"></p>
+<h2 id="content"><a href="#content" class="headerlink" title="content"></a><strong>content</strong></h2><p>設定元素的內容對齊（文字之類）</p>
+<h2 id="self"><a href="#self" class="headerlink" title="self"></a><strong>self</strong></h2><p>設定元素與父元素之間的對齊（文字之類）</p>
+<h2 id="items-、-content-或-self"><a href="#items-、-content-或-self" class="headerlink" title="items 、 content 或 self"></a><strong>items</strong> 、 <strong>content</strong> 或 <strong>self</strong></h2><p>此三項的對比可以參照 <strong>W3C</strong></p>
+<div class="note primary"><p><img src="https://lh3.googleusercontent.com/34dGkuEqiNdDIBzF5k43Vc_goMbaPH1EiLWZkIHoWdCtrzsychxecAaWfc36XDprEyYbsZtN7eMRuPVkyQjAEmQdc32cIfy63VQL0itoMgtnnTtrDi39LiINPFIFn3JCVpn2nrX9vIWteOQ2vfpgrN-BAMaeB0NRed-zgW3aR_tAwwKunicToKbeGIcCW20R7FOVO7oGXqMunT84oKQxJP2rObDmWD18V_0gp__-2nglPgmNQkYfqyQDL5zSmrwRX0x5LmMMJbUd2GHj-h5TcSAWJuaYWjNsFRpLvQkFbEi1IItkvw1f1txHU9HzjvrBN7HlLtDrnh6RslUxd6JiIbId5WF3aCELmuDqfqNS6_4OQRzCTWpiTY7byPUdZx1zpRuavrm2vUIoN9FdxkNRJ2JoYSfuGpKJw7qayKkdTcYNVnXxBlH5H_LQINQz6H-cIGLbWVEwfys6se-VfDiawAKdLC2iL43cgKfDhee4gdwosE98ALPWGIK2A-sRMA3kacMtXa5c5AK2kyD0C5MrgfcPN16DI_4IJ3fb3PL1s0WzxFOMP1pr_nb-6lFsSMDlynfv3bnLYxWmCcWs3fcS8Rp2p-1bYPHqgyeVEkQ9o9CkliVbqU2HNosYykeCSgENvS7heXnxod_lld_5w2Hdai32sa0XMgDN=w985-h607-no" alt="compare"><br><strong>資料來源</strong> - <a href="https://www.w3.org/TR/css-align-3/#overview" target="_blank" rel="noopener"><em>W3C</em></a></p></div>
+<p>其排列的對齊軸心線，可以參照 <strong>W3C</strong></p>
+<div class="note primary"><p><img src="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg" alt="axic"><br><strong>資料來源</strong> - <a href="https://www.w3.org/TR/css-flexbox-1/#box-model" target="_blank" rel="noopener"><em>W3C</em></a></p></div>
+<p>最後此篇練習的 css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="built_in">var</span>(--yellow);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(5, 130px);</span><br><span class="line">    <span class="comment">/* justify-items: center;</span></span><br><span class="line"><span class="comment">    align-items: center; */</span></span><br><span class="line">    <span class="attribute">place-items</span>: stretch stretch;</span><br><span class="line">    <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">    <span class="attribute">align-content</span>: space-between;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.itm</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.itm5</span> &#123;</span><br><span class="line">    <span class="attribute">justify-self</span>: center;</span><br><span class="line">    <span class="attribute">align-self</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="線上展示"><a href="#線上展示" class="headerlink" title="線上展示"></a>線上展示</h1><iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/t4jn3c0r/embedded/result,html,css/dark" frameborder="0" allowfullscreen></iframe>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="justify-items"><a href="#justify-items" class="headerlink" title="justify-items"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items" target="_blank" rel="noopener">justify-items</a></h2><div class="note info"><p>The CSS justify-items property defines the default justify-self for all items of the box, giving them all a default way of justifying each box along the appropriate axis.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h2 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content" target="_blank" rel="noopener">justify-content</a></h2><div class="note info"><p>CSS justify-content 属性定义了浏览器如何分配顺着父容器主轴的弹性元素之间及其周围的空间。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<p>預設值是 <strong>start</strong> ，語法中可以輸入的設定有以下：</p>
+<ul>
+<li>start  從行首開始排列。每行第一個<strong>元素</strong>與行首對齊，同時所有後續的<strong>元素</strong>與前一個對齊</li>
+<li>flex-start  從行首起始位置開始排列。每行第一個<strong>彈性元素</strong>與行首對齊，同時所有後續的<strong>彈性元素</strong>與前一個對齊。</li>
+<li>flex-end  從行尾位置開始排列</li>
+<li>center</li>
+<li>left</li>
+<li>right</li>
+<li>baseline</li>
+<li>first baseline</li>
+<li>last baseline</li>
+<li>space-between  均勻排列每個元素，首個元素放置於起點，末尾元素放置於終點</li>
+<li>space-around  均勻排列每個元素，每個元素周圍分配相同的空間</li>
+<li>space-evenly  均勻排列每個元素，每個元素之間的間隔相等</li>
+<li>stretch</li>
+<li>safe</li>
+<li>unsafe</li>
+</ul>
+<h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content" target="_blank" rel="noopener">align-content</a></h2><div class="note info"><p>align-content 屬性定義了當作為一個彈性盒子容器的屬性時，瀏覽器如何在容器的側軸圍繞彈性盒子項目分配空間。該屬性對單行彈性盒子模型無效。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-content" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h2 id="justify-self"><a href="#justify-self" class="headerlink" title="justify-self"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self" target="_blank" rel="noopener">justify-self</a></h2><div class="note info"><p>The CSS justify-self property defines the way of justifying a box inside its container along the appropriate axis.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
+<li>作者 <a href="https://github.com/wesbos/css-grid" target="_blank" rel="noopener"><strong>Wes Bos</strong> CSS-Grid Github</a></li>
+<li>我的 CSS-Grid <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">練習Github</a></li>
+<li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank" rel="noopener">CSS Tricks</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/CSSGrid25/" rel="tag"># CSSGrid25</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/02/css-grid-16/" rel="next" title="CSS Grid 筆記 16-Grid-Auto-Flow Dense Block Fitting">
+                <i class="fa fa-chevron-left"></i> CSS Grid 筆記 16-Grid-Auto-Flow Dense Block Fitting
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/05/css-grid-18/" rel="prev" title="CSS Grid 筆記 18-Re-Ordering Grid Items">
+                CSS Grid 筆記 18-Re-Ordering Grid Items <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-Grid-Alignment-Centering"><span class="nav-number">1.</span> <span class="nav-text">CSS Grid Alignment + Centering</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#items"><span class="nav-number">1.1.</span> <span class="nav-text">items</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#content"><span class="nav-number">1.2.</span> <span class="nav-text">content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#self"><span class="nav-number">1.3.</span> <span class="nav-text">self</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#items-、-content-或-self"><span class="nav-number">1.4.</span> <span class="nav-text">items 、 content 或 self</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#線上展示"><span class="nav-number">2.</span> <span class="nav-text">線上展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記與備註事項"><span class="nav-number">3.</span> <span class="nav-text">筆記與備註事項</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#justify-items"><span class="nav-number">3.1.</span> <span class="nav-text">justify-items</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#justify-content"><span class="nav-number">3.2.</span> <span class="nav-text">justify-content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-content"><span class="nav-number">3.3.</span> <span class="nav-text">align-content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#justify-self"><span class="nav-number">3.4.</span> <span class="nav-text">justify-self</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2018/04/03/css-grid-17/';
+          this.page.identifier = '2018/04/03/css-grid-17/';
+          this.page.title = 'CSS Grid 筆記 17-CSS Grid Alignment + Centering';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

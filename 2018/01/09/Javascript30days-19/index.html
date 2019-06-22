@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,JavaScript30,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="目標練習操作 Webcam 攝像頭，將攝像頭影像投射到 Video 上，並利用 canvas 來擷取圖片，練習濾鏡的操作。">
+<meta name="keywords" content="JavaScript,JavaScript30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS30紀錄 19-Webcam Fun">
+<meta property="og:url" content="https://shunnien.github.io/2018/01/09/Javascript30days-19/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="目標練習操作 Webcam 攝像頭，將攝像頭影像投射到 Video 上，並利用 canvas 來擷取圖片，練習濾鏡的操作。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/Dn9HwhKBJ_YC5ANkWLNYdWaUWbP3-uWzLB3_K7sT44SimrflLUOmn4Trj6LwzNFExUuLW60-v_IwpoZcpj7BmL_QD7B2dJ22uOoZXWR2CqFNKPlxnAmUKchcEwpsyTfzNVX2_EgrSfAyo1IhEtX5Iyhzq7HtryAmFJ361DSb71xn7xf7GaIS70RmhykGa2IzLODyT3UdHcO3zKqTVMmrmzlRPOtv06H8SumgRiTrYybP-tOBSeD3zr0V9js1dTpuflgBIoWMRMLg-rrCKooWs4EMRud09k5hiAbd2HbCdeRo2Yjc_yEPKoRgZ5agYZWs9pWjOtbgjIzspTtZK26x7AUBbpHXRms4WP_pvcORdKuQols4Ri1thag26yWzdXlZ9KLtmYVRfmQENVODM2BJtKhUHiDclspLNjIp4tf_I7YtUr_Zq5JcGF2TfT3YMQOkeRheeKt0TPfSeiZoC39yWQ_eJcVDYS7J_lfM9Kh7L7WSoTi7j1Zp-ybouwykt_iZUBbYfFlv9IqPd6nGdqSe_AowuM0_WoP8GlnmIveJkeX4GT2oMx-AZGQtP6a-jZiff094P0fExstrPvNVdY4sB8AeoGgROpB25VqX-a3GbwEldENiyuNWLDoR0XR5IIPEYy0hKz9IVZXFjREEH1now2jolH9cRZOq=w764-h605-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/_XhwBxLYI-kjBx9-Uw8g-XXr7JRIYVkqzxUbVPWD-JeoNlxs38drNUo2eRfRL2KcOIKcYCAaLww68e-Au9o0ccgcxqRZ13LArSU7QClIdQf5VngqveaUa18Mg_nIWVUy6WVKOtnG0rzGqevZzkTx8DV5S8-T_8FhbDJXoZdhOlB0a2T0Ub4WyutQ4SU9wp81r2Afp8bM-V7sysqJhxzE8jDTJqwuI363zdMndYBrjwphQ8VT-C4kn7AO5QQKrTe3ga5-VPM1eYIVqDFUqVTWMTm2MzpG2_I3otOdt6YIJ-0Q0oeXHM1JFDZGKPrgPXrhG3Yi4GhHzOOQ_CmocB_uf1q1FiBvYeMztA38hQtFZ7H1Y_Ff88f9u_9EWvwhPh6JI3LjIvqj9h-HCcPXKb8V5HchooZicvlgy3J_7S2A7a-ejRkUdS9njXwrRzE-JN5H3-2nWff7IkOMSINADB1ED8yelLSkUYdYM-fQzJNGQLy3FI3HcGDyPfkUUGqiEt-18T70qkSvuLmF1UxE-lzn7NoVEu19nwCQJ7jhkZybdPjbQDPK-37Z8jI11_27Y5ZrWhczwoZ5Q6cMxK9aM3VfHWMQvl1ARk2nK3A7fNmbbQgPmeI2yFTyqjr6qywLKjobMsCRVLORn5yeSPSwYyHq9B5ddCgViywo=w872-h766-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.667Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS30紀錄 19-Webcam Fun">
+<meta name="twitter:description" content="目標練習操作 Webcam 攝像頭，將攝像頭影像投射到 Video 上，並利用 canvas 來擷取圖片，練習濾鏡的操作。">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/Dn9HwhKBJ_YC5ANkWLNYdWaUWbP3-uWzLB3_K7sT44SimrflLUOmn4Trj6LwzNFExUuLW60-v_IwpoZcpj7BmL_QD7B2dJ22uOoZXWR2CqFNKPlxnAmUKchcEwpsyTfzNVX2_EgrSfAyo1IhEtX5Iyhzq7HtryAmFJ361DSb71xn7xf7GaIS70RmhykGa2IzLODyT3UdHcO3zKqTVMmrmzlRPOtv06H8SumgRiTrYybP-tOBSeD3zr0V9js1dTpuflgBIoWMRMLg-rrCKooWs4EMRud09k5hiAbd2HbCdeRo2Yjc_yEPKoRgZ5agYZWs9pWjOtbgjIzspTtZK26x7AUBbpHXRms4WP_pvcORdKuQols4Ri1thag26yWzdXlZ9KLtmYVRfmQENVODM2BJtKhUHiDclspLNjIp4tf_I7YtUr_Zq5JcGF2TfT3YMQOkeRheeKt0TPfSeiZoC39yWQ_eJcVDYS7J_lfM9Kh7L7WSoTi7j1Zp-ybouwykt_iZUBbYfFlv9IqPd6nGdqSe_AowuM0_WoP8GlnmIveJkeX4GT2oMx-AZGQtP6a-jZiff094P0fExstrPvNVdY4sB8AeoGgROpB25VqX-a3GbwEldENiyuNWLDoR0XR5IIPEYy0hKz9IVZXFjREEH1now2jolH9cRZOq=w764-h605-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2018/01/09/Javascript30days-19/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>JS30紀錄 19-Webcam Fun | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/01/09/Javascript30days-19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS30紀錄 19-Webcam Fun</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-09T10:41:01+08:00">
+                2018-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/09/Javascript30days-19/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/09/Javascript30days-19/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>練習操作 Webcam 攝像頭，將攝像頭影像投射到 Video 上，並利用 canvas 來擷取圖片，練習濾鏡的操作。<br><img src="https://lh3.googleusercontent.com/Dn9HwhKBJ_YC5ANkWLNYdWaUWbP3-uWzLB3_K7sT44SimrflLUOmn4Trj6LwzNFExUuLW60-v_IwpoZcpj7BmL_QD7B2dJ22uOoZXWR2CqFNKPlxnAmUKchcEwpsyTfzNVX2_EgrSfAyo1IhEtX5Iyhzq7HtryAmFJ361DSb71xn7xf7GaIS70RmhykGa2IzLODyT3UdHcO3zKqTVMmrmzlRPOtv06H8SumgRiTrYybP-tOBSeD3zr0V9js1dTpuflgBIoWMRMLg-rrCKooWs4EMRud09k5hiAbd2HbCdeRo2Yjc_yEPKoRgZ5agYZWs9pWjOtbgjIzspTtZK26x7AUBbpHXRms4WP_pvcORdKuQols4Ri1thag26yWzdXlZ9KLtmYVRfmQENVODM2BJtKhUHiDclspLNjIp4tf_I7YtUr_Zq5JcGF2TfT3YMQOkeRheeKt0TPfSeiZoC39yWQ_eJcVDYS7J_lfM9Kh7L7WSoTi7j1Zp-ybouwykt_iZUBbYfFlv9IqPd6nGdqSe_AowuM0_WoP8GlnmIveJkeX4GT2oMx-AZGQtP6a-jZiff094P0fExstrPvNVdY4sB8AeoGgROpB25VqX-a3GbwEldENiyuNWLDoR0XR5IIPEYy0hKz9IVZXFjREEH1now2jolH9cRZOq=w764-h605-no" alt="target"><br><a id="more"></a></p>
+<blockquote>
+<p><a href="https://shunnien.github.io/JavaScript30day/day_19/">Demo</a> | <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<h1 id="處理步驟"><a href="#處理步驟" class="headerlink" title="處理步驟"></a>處理步驟</h1><h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>必須先安裝 <a href="https://nodejs.org/en/" target="_blank" rel="noopener"><strong>node.js</strong></a>，之後按照以下的設定，設定 <strong>package.json</strong><br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"gum"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"browser-sync start --server --files \"*.css, *.html, *.js\""</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span>,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"browser-sync"</span>: <span class="string">"^2.12.5"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>由於此篇主題需要伺服器模擬，所以使用了 <a href="https://www.browsersync.io/" target="_blank" rel="noopener">Browsersync</a> ，其啟動方式透過</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<p>或是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser-sync start --server --files <span class="string">"*.css, *.html, *.js"</span></span><br></pre></td></tr></table></figure>
+<h2 id="步驟-1"><a href="#步驟-1" class="headerlink" title="步驟 1."></a>步驟 1.</h2><p>啟動視訊裝置，並寫入 <strong>video tag</strong> 呈現出來</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> video = <span class="built_in">document</span>.querySelector(<span class="string">".player"</span>);</span><br><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.querySelector(<span class="string">".photo"</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 啟動 webcam</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getVideo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 取得user的視訊裝置</span></span><br><span class="line">  navigator.mediaDevices</span><br><span class="line">    .getUserMedia(&#123; <span class="attr">video</span>: <span class="literal">true</span>, <span class="attr">audio</span>: <span class="literal">false</span> &#125;)</span><br><span class="line">    <span class="comment">// 把回傳的 MediaStream 寫進 html 的 video tag 中並播放</span></span><br><span class="line">    .then(<span class="function"><span class="params">localMediaStream</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">//console.log(localMediaStream);</span></span><br><span class="line">      video.src = <span class="built_in">window</span>.URL.createObjectURL(localMediaStream);</span><br><span class="line">      video.play();</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.error(<span class="string">`OH NO!!!`</span>, err);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 將 webcam 拍攝影像繪製到 canvas 上</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">paintToCanvas</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> width = video.videoWidth;</span><br><span class="line">  <span class="keyword">const</span> height = video.videoHeight;</span><br><span class="line">  canvas.width = width;</span><br><span class="line">  canvas.height = height;</span><br><span class="line">  <span class="keyword">return</span> setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ctx.drawImage(video, <span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">  &#125;, <span class="number">16</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getVideo();</span><br><span class="line">video.addEventListener(<span class="string">"canplay"</span>, paintToCanvas);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>參考資料<br><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Navigator/mediaDevices" target="_blank" rel="noopener">Navigator.mediaDevices</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia" target="_blank" rel="noopener">MediaDevices.getUserMedia()</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL" target="_blank" rel="noopener">URL.createObjectURL()</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/Events/canplay" target="_blank" rel="noopener">canplay</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage" target="_blank" rel="noopener">CanvasRenderingContext2D.drawImage()</a></p>
+</blockquote>
+<h2 id="步驟-2"><a href="#步驟-2" class="headerlink" title="步驟 2."></a>步驟 2.</h2><p>拍照截圖按鍵觸發功能</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 攝像頭截圖</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">takePhoto</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// played the sound</span></span><br><span class="line">  snap.currentTime = <span class="number">0</span>;</span><br><span class="line">  snap.play();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// take the data out of the canvas</span></span><br><span class="line">  <span class="keyword">const</span> data = canvas.toDataURL(<span class="string">"image/jpeg"</span>);</span><br><span class="line">  <span class="keyword">const</span> link = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</span><br><span class="line">  <span class="comment">// 設置連結位置為轉圖檔後的base64位置</span></span><br><span class="line">  link.href = data;</span><br><span class="line">  <span class="comment">// 設置連結為下載並設定預設下載檔名</span></span><br><span class="line">  link.setAttribute(<span class="string">"download"</span>, <span class="string">"handsome"</span>);</span><br><span class="line">  link.innerHTML = <span class="string">`&lt;img src="<span class="subst">$&#123;data&#125;</span>" alt="Handsome Man" /&gt;`</span>;</span><br><span class="line">  <span class="comment">// strip.firsChild 永遠為 null 因為 strip 為 const 所以無法得到最新的資料</span></span><br><span class="line">  strip.insertBefore(link, <span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>參考資料<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore" target="_blank" rel="noopener">Node.insertBefore()</a></p>
+</blockquote>
+<h2 id="步驟-3"><a href="#步驟-3" class="headerlink" title="步驟 3."></a>步驟 3.</h2><p>添加畫面與色彩分離功能</p>
+<p><img src="https://lh3.googleusercontent.com/_XhwBxLYI-kjBx9-Uw8g-XXr7JRIYVkqzxUbVPWD-JeoNlxs38drNUo2eRfRL2KcOIKcYCAaLww68e-Au9o0ccgcxqRZ13LArSU7QClIdQf5VngqveaUa18Mg_nIWVUy6WVKOtnG0rzGqevZzkTx8DV5S8-T_8FhbDJXoZdhOlB0a2T0Ub4WyutQ4SU9wp81r2Afp8bM-V7sysqJhxzE8jDTJqwuI363zdMndYBrjwphQ8VT-C4kn7AO5QQKrTe3ga5-VPM1eYIVqDFUqVTWMTm2MzpG2_I3otOdt6YIJ-0Q0oeXHM1JFDZGKPrgPXrhG3Yi4GhHzOOQ_CmocB_uf1q1FiBvYeMztA38hQtFZ7H1Y_Ff88f9u_9EWvwhPh6JI3LjIvqj9h-HCcPXKb8V5HchooZicvlgy3J_7S2A7a-ejRkUdS9njXwrRzE-JN5H3-2nWff7IkOMSINADB1ED8yelLSkUYdYM-fQzJNGQLy3FI3HcGDyPfkUUGqiEt-18T70qkSvuLmF1UxE-lzn7NoVEu19nwCQJ7jhkZybdPjbQDPK-37Z8jI11_27Y5ZrWhczwoZ5Q6cMxK9aM3VfHWMQvl1ARk2nK3A7fNmbbQgPmeI2yFTyqjr6qywLKjobMsCRVLORn5yeSPSwYyHq9B5ddCgViywo=w872-h766-no" alt="split pixels"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 畫面色彩分割</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; pixels</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rgbSplit</span>(<span class="params">pixels</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; pixels.data.length; i += <span class="number">4</span>) &#123;</span><br><span class="line">    pixels.data[i - <span class="number">150</span>] = pixels.data[i + <span class="number">0</span>]; <span class="comment">// RED</span></span><br><span class="line">    pixels.data[i + <span class="number">500</span>] = pixels.data[i + <span class="number">1</span>]; <span class="comment">// GREEN</span></span><br><span class="line">    pixels.data[i - <span class="number">550</span>] = pixels.data[i + <span class="number">2</span>]; <span class="comment">// Blue</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pixels;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">paintToCanvas</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> width = video.videoWidth;</span><br><span class="line">  <span class="keyword">const</span> height = video.videoHeight;</span><br><span class="line">  canvas.width = width;</span><br><span class="line">  canvas.height = height;</span><br><span class="line">  <span class="keyword">return</span> setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ctx.drawImage(video, <span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// take the pixels out</span></span><br><span class="line">    <span class="keyword">let</span> pixels = ctx.getImageData(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">    <span class="comment">//console.log(pixels);</span></span><br><span class="line"></span><br><span class="line">    pixels = rgbSplit(pixels);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重置分割畫面</span></span><br><span class="line">    ctx.putImageData(pixels, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;, <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>參考資料<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData" target="_blank" rel="noopener">getImageData()</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData" target="_blank" rel="noopener">putImageData()</a></p>
+</blockquote>
+<h2 id="步驟-4"><a href="#步驟-4" class="headerlink" title="步驟 4."></a>步驟 4.</h2><p>添加紅色濾鏡功能</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 紅色濾鏡效果</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; pixels</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">redEffect</span>(<span class="params">pixels</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; pixels.data.length; i += <span class="number">4</span>) &#123;</span><br><span class="line">    pixels.data[i + <span class="number">0</span>] = pixels.data[i + <span class="number">0</span>] + <span class="number">200</span>; <span class="comment">// RED</span></span><br><span class="line">    pixels.data[i + <span class="number">1</span>] = pixels.data[i + <span class="number">1</span>] - <span class="number">50</span>; <span class="comment">// GREEN</span></span><br><span class="line">    pixels.data[i + <span class="number">2</span>] = pixels.data[i + <span class="number">2</span>] * <span class="number">0.5</span>; <span class="comment">// Blue</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pixels;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="步驟-5"><a href="#步驟-5" class="headerlink" title="步驟 5."></a>步驟 5.</h2><p>綠幕功能效果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greenScreen</span>(<span class="params">pixels</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> levels = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.querySelectorAll(<span class="string">".rgb input"</span>).forEach(<span class="function"><span class="params">input</span> =&gt;</span> &#123;</span><br><span class="line">    levels[input.name] = input.value;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; pixels.data.length; i = i + <span class="number">4</span>) &#123;</span><br><span class="line">    red = pixels.data[i + <span class="number">0</span>];</span><br><span class="line">    green = pixels.data[i + <span class="number">1</span>];</span><br><span class="line">    blue = pixels.data[i + <span class="number">2</span>];</span><br><span class="line">    alpha = pixels.data[i + <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (</span><br><span class="line">      red &gt;= levels.rmin &amp;&amp;</span><br><span class="line">      green &gt;= levels.gmin &amp;&amp;</span><br><span class="line">      blue &gt;= levels.bmin &amp;&amp;</span><br><span class="line">      red &lt;= levels.rmax &amp;&amp;</span><br><span class="line">      green &lt;= levels.gmax &amp;&amp;</span><br><span class="line">      blue &lt;= levels.bmax</span><br><span class="line">    ) &#123;</span><br><span class="line">      <span class="comment">// take it out!</span></span><br><span class="line">      pixels.data[i + <span class="number">3</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> pixels;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="HTML-部分"><a href="#HTML-部分" class="headerlink" title="HTML 部分"></a>HTML 部分</h2><h3 id="a-tag-attribute-download"><a href="#a-tag-attribute-download" class="headerlink" title="a tag attribute download"></a><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="noopener">a tag attribute download</a></h3><p>此屬性告知瀏覽器下載這個連結，假如屬性有設定資料，則為下載檔案的預設檔名。</p>
+<h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="Navigator-mediaDevices"><a href="#Navigator-mediaDevices" class="headerlink" title="Navigator.mediaDevices"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Navigator/mediaDevices" target="_blank" rel="noopener">Navigator.mediaDevices</a></h3><p>唯讀屬性，取得 MediaDevices 物件，連接視訊裝置，包含攝影鏡頭與麥克風。</p>
+<h3 id="MediaDevices-getUserMedia"><a href="#MediaDevices-getUserMedia" class="headerlink" title="MediaDevices.getUserMedia()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia" target="_blank" rel="noopener">MediaDevices.getUserMedia()</a></h3><div class="note info"><p>MediaDevices.getUserMedia()方法提示用户允许使用一个视频和/或一个音频输入设备，例如相机或屏幕共享和/或麦克风。如果用户给予许可，就返回一个Promise 对象，MediaStream对象作为此Promise对象的Resolved［成功］状态的回调函数参数，相应的，如果用户拒绝了许可，或者没有媒体可用的情况下，PermissionDeniedError 或者NotFoundError作为此Promise的Rejected［失败］状态的回调函数参数。注意，由于用户不会被要求必须作出允许或者拒绝的选择，所以返回的Promise对象可能既不会触发resolve 也不会触发 reject。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h3 id="URL-createObjectURL"><a href="#URL-createObjectURL" class="headerlink" title="URL.createObjectURL()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL" target="_blank" rel="noopener">URL.createObjectURL()</a></h3><div class="note info"><p>靜態方法 URL.createObjectURL() 用於建立一個帶有URL的 DOMString 以代表參數中所傳入的物件. 該URL的生命週期與創造它的window中的 document一致. 這個新的物件URL 代表了所指定的 File 物件 或是 Blob 物件.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/URL/createObjectURL" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h3 id="canplay"><a href="#canplay" class="headerlink" title="canplay"></a><a href="https://developer.mozilla.org/en-US/docs/Web/Events/canplay" target="_blank" rel="noopener">canplay</a></h3><p>播放媒體檔案時候觸發</p>
+<h3 id="CanvasRenderingContext2D-drawImage"><a href="#CanvasRenderingContext2D-drawImage" class="headerlink" title="CanvasRenderingContext2D.drawImage()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage" target="_blank" rel="noopener">CanvasRenderingContext2D.drawImage()</a></h3><p>Canvas 2D API 中的方法，在 Canvas 上繪製圖案</p>
+<h3 id="CanvasRenderingContext2D-getImageData"><a href="#CanvasRenderingContext2D-getImageData" class="headerlink" title="CanvasRenderingContext2D.getImageData()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData" target="_blank" rel="noopener">CanvasRenderingContext2D.getImageData()</a></h3><div class="note info"><p>返回一个ImageData对象，用来描述canvas区域隐含的像素数据，这个区域通过矩形表示，起始点为(sx, sy)、宽为sw、高为sh。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/getImageData" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h3 id="CanvasRenderingContext2D-putImageData"><a href="#CanvasRenderingContext2D-putImageData" class="headerlink" title="CanvasRenderingContext2D.putImageData()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData" target="_blank" rel="noopener">CanvasRenderingContext2D.putImageData()</a></h3><div class="note info"><p>CanvasRenderingContext2D.putImageData() 是 Canvas 2D API 将数据从已有的 ImageData 对象绘制到位图的方法。 如果提供了一个绘制过的矩形，则只绘制该矩形的像素。此方法不受画布转换矩阵的影响。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/putImageData" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h3 id="Node-insertBefore"><a href="#Node-insertBefore" class="headerlink" title="Node.insertBefore()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore" target="_blank" rel="noopener">Node.insertBefore()</a></h3><p>在目前元素 ( DOM ) 中的子節點中插入一個子元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Get a reference to the element in which we want to insert a new node</span></span><br><span class="line"><span class="keyword">var</span> parentElement = <span class="built_in">document</span>.getElementById(<span class="string">'parentElement'</span>);</span><br><span class="line"><span class="comment">// Get a reference to the first child</span></span><br><span class="line"><span class="keyword">var</span> theFirstChild = parentElement.firstChild;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create a new element</span></span><br><span class="line"><span class="keyword">var</span> newElement = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Insert the new element before the first child</span></span><br><span class="line">parentElement.insertBefore(newElement, theFirstChild);</span><br></pre></td></tr></table></figure>
+<h3 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval" target="_blank" rel="noopener">setInterval()</a></h3><p>需要每隔一段時間就重複執行的 <strong>function</strong> 就可以呼叫此方法。</p>
+<h3 id="globalAlpha"><a href="#globalAlpha" class="headerlink" title=".globalAlpha"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalAlpha" target="_blank" rel="noopener">.globalAlpha</a></h3><p>Canvas 2D API 設定透明度的屬性，設定區間在 <strong>0.0</strong> 和 <strong>1.0</strong> 之間。預設值為 <strong>1.0</strong></p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
+<li>作者 Github <a href="https://github.com/wesbos" target="_blank" rel="noopener">Wes Bos</a></li>
+<li><a href="https://github.com/soyaine/JavaScript30" target="_blank" rel="noopener">Js 30 day 中文指南</a></li>
+<li><a href="https://github.com/guahsu/JavaScript30" target="_blank" rel="noopener">瓜瓜的 JS 30</a></li>
+<li>我的 JS 30 <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">練習Github</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/JavaScript30/" rel="tag"># JavaScript30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/07/Javascript30days-18/" rel="next" title="JS30紀錄 18-Adding Up Times With Reduce">
+                <i class="fa fa-chevron-left"></i> JS30紀錄 18-Adding Up Times With Reduce
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/12/Javascript30days-20/" rel="prev" title="JS30紀錄 20-Speech Detection">
+                JS30紀錄 20-Speech Detection <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目標"><span class="nav-number">1.</span> <span class="nav-text">目標</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#處理步驟"><span class="nav-number">2.</span> <span class="nav-text">處理步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前置作業"><span class="nav-number">2.1.</span> <span class="nav-text">前置作業</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-1"><span class="nav-number">2.2.</span> <span class="nav-text">步驟 1.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-2"><span class="nav-number">2.3.</span> <span class="nav-text">步驟 2.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-3"><span class="nav-number">2.4.</span> <span class="nav-text">步驟 3.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-4"><span class="nav-number">2.5.</span> <span class="nav-text">步驟 4.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-5"><span class="nav-number">2.6.</span> <span class="nav-text">步驟 5.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#筆記與備註事項"><span class="nav-number">3.</span> <span class="nav-text">筆記與備註事項</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-部分"><span class="nav-number">3.1.</span> <span class="nav-text">HTML 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-tag-attribute-download"><span class="nav-number">3.1.1.</span> <span class="nav-text">a tag attribute download</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-部分"><span class="nav-number">3.2.</span> <span class="nav-text">JavaScript 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Navigator-mediaDevices"><span class="nav-number">3.2.1.</span> <span class="nav-text">Navigator.mediaDevices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MediaDevices-getUserMedia"><span class="nav-number">3.2.2.</span> <span class="nav-text">MediaDevices.getUserMedia()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-createObjectURL"><span class="nav-number">3.2.3.</span> <span class="nav-text">URL.createObjectURL()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#canplay"><span class="nav-number">3.2.4.</span> <span class="nav-text">canplay</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CanvasRenderingContext2D-drawImage"><span class="nav-number">3.2.5.</span> <span class="nav-text">CanvasRenderingContext2D.drawImage()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CanvasRenderingContext2D-getImageData"><span class="nav-number">3.2.6.</span> <span class="nav-text">CanvasRenderingContext2D.getImageData()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CanvasRenderingContext2D-putImageData"><span class="nav-number">3.2.7.</span> <span class="nav-text">CanvasRenderingContext2D.putImageData()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-insertBefore"><span class="nav-number">3.2.8.</span> <span class="nav-text">Node.insertBefore()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setInterval"><span class="nav-number">3.2.9.</span> <span class="nav-text">setInterval()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#globalAlpha"><span class="nav-number">3.2.10.</span> <span class="nav-text">.globalAlpha</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2018/01/09/Javascript30days-19/';
+          this.page.identifier = '2018/01/09/Javascript30days-19/';
+          this.page.title = 'JS30紀錄 19-Webcam Fun';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

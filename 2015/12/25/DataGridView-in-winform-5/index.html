@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C#,WinForm,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="WinForm 下的 DataGridView 操作(5)">
+<meta name="keywords" content="C#,WinForm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DataGridView 在 Winform 的簡單操作(5)">
+<meta property="og:url" content="https://shunnien.github.io/2015/12/25/DataGridView-in-winform-5/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="WinForm 下的 DataGridView 操作(5)">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/InkH_aviwtmndN2GgPf8kYW69_L-9XtcSeeWNYg7cKc0TFiqgH68Fn4GJZqFExNpyEXez4Inx7gvhcI4_qJCXhHgVYkfxg8Gi3wMUqTtYMqvS8EAEaObP4R5liQ3uBwrL389Ujr5fV75w7sERTkX0Nqk_Au8IA9J1FPcDObVIdWmTihskhSfO_isgNo_niMucCSy4QE5VBH3821wZM8yCWV0Zy4gtVSkaa2HVSAHRjjChVKAy_Xa_tvC0Gbbd4cuYMut6tQv8333ymjEhAuXcdngFRWYOuS4uc87i2SgujPiyTVbA-J2-T1N3ghFZdm6rRuohW3LkHfqy5Co5z2MF-N7YEzbxwuQ4drcgGKDezEgyna3ggPMiexkheefRQbXbuyxyXHX_4js2ZASEXIf1ymHtvVkIaHPrc1CKrHVhU86nFct-HjKE38xSI5HeMZr9YElco8wQ62M6UY88mGRBF560YJYFBgDEHWvvvmad1PvsIab9tZQB0yL3GjdUFijHmb7RkLtMZoKc1oMTFD2yG44qGwytlurbYAoYV9ap1jFl5L9y_wD_O_YAt7uR3yqW9u4K-P6sF4E39iMO9pQIqrfvytAjP2mG03k0f5KuLrgArOcRuJADj0NiVWDU-MsyBDzGwpa0VMWcHYY9mIbX3dKFxJQYH3J8euaXkOMVw=w710-h377-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/9U8xAcGlIRNx20djuwxbDZF_086qKrRTl4yfKjev15HKqjaENTOlHMHyn7iP8pYaJ_DrnuPd1ge_wmsiv1LsKTeaW9lIg0lgQv3enVJ4ma44kXY6tmDHUgY7u2Y3VdMNUIhqKTUtuav8A_QjfrpPSDX96C-67mzLMlcLnGJQC5zxKdHq1XUnfjkITTVIIWIoIR86_PjobfhV59gJX_o6w0XIKG2xANrD36UvTojQHUimiXrcfK1ZOWLxAldABiuM2ZnsLu9sq5ZWmhujWJfzt1t32prscdXBerPmcfIcCGSPYZQjUADlXy5n6RViWHBYHqgRYQXOk8RBB-uS2Wcg5tUfjPI1QJZ5T4YTtD0HT5cFh8YFGHgYM16C8OdRbbF1ZP__QE4B_hYUdNHdf_SK35wXaTxdxW3DcDbsTLL-WXoNbtH7Je5nqnOWNfzixJd__rCkeJhvoXeMkAO1PLUIT2i5-rIsKhpcS66dkMrrUsuXAoBUXJC1GzPZvr3dT22uDJwfJ3v7Au84MjlpNnBzcskeqx8N9xGIvu22veiGpKNv0QwUf1aKQoCmXmEfJH0jRwtPp5E1672wtl-AehBhWyHVm9vA6PstQU7GwurxskzbXjqKRwNWST9VLR_YoCOr15Q2bFSFzh5VhECVf3Ahda91Cvuw9z1ne9SeIsiScA=w694-h483-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.610Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DataGridView 在 Winform 的簡單操作(5)">
+<meta name="twitter:description" content="WinForm 下的 DataGridView 操作(5)">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/InkH_aviwtmndN2GgPf8kYW69_L-9XtcSeeWNYg7cKc0TFiqgH68Fn4GJZqFExNpyEXez4Inx7gvhcI4_qJCXhHgVYkfxg8Gi3wMUqTtYMqvS8EAEaObP4R5liQ3uBwrL389Ujr5fV75w7sERTkX0Nqk_Au8IA9J1FPcDObVIdWmTihskhSfO_isgNo_niMucCSy4QE5VBH3821wZM8yCWV0Zy4gtVSkaa2HVSAHRjjChVKAy_Xa_tvC0Gbbd4cuYMut6tQv8333ymjEhAuXcdngFRWYOuS4uc87i2SgujPiyTVbA-J2-T1N3ghFZdm6rRuohW3LkHfqy5Co5z2MF-N7YEzbxwuQ4drcgGKDezEgyna3ggPMiexkheefRQbXbuyxyXHX_4js2ZASEXIf1ymHtvVkIaHPrc1CKrHVhU86nFct-HjKE38xSI5HeMZr9YElco8wQ62M6UY88mGRBF560YJYFBgDEHWvvvmad1PvsIab9tZQB0yL3GjdUFijHmb7RkLtMZoKc1oMTFD2yG44qGwytlurbYAoYV9ap1jFl5L9y_wD_O_YAt7uR3yqW9u4K-P6sF4E39iMO9pQIqrfvytAjP2mG03k0f5KuLrgArOcRuJADj0NiVWDU-MsyBDzGwpa0VMWcHYY9mIbX3dKFxJQYH3J8euaXkOMVw=w710-h377-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2015/12/25/DataGridView-in-winform-5/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>DataGridView 在 Winform 的簡單操作(5) | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2015/12/25/DataGridView-in-winform-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DataGridView 在 Winform 的簡單操作(5)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2015-12-25T15:18:17+08:00">
+                2015-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/12/25/DataGridView-in-winform-5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/25/DataGridView-in-winform-5/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  WinForm 下的 DataGridView 操作(5)
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="http://shunnien.github.io/2015/12/21/DataGridView-in-winform-4/" title="DataGridView 在 Winform 的簡單操作(4)">前篇</a>文章主要是針對資料來源的綁定，學會了那些，那這篇就來個進階的連動</p>
+<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先在介面增加個 <strong>comboBox</strong> 並將 <strong>Name</strong> 命名為 <em>cbDes</em>，介面設計如下圖<br><img src="https://lh3.googleusercontent.com/InkH_aviwtmndN2GgPf8kYW69_L-9XtcSeeWNYg7cKc0TFiqgH68Fn4GJZqFExNpyEXez4Inx7gvhcI4_qJCXhHgVYkfxg8Gi3wMUqTtYMqvS8EAEaObP4R5liQ3uBwrL389Ujr5fV75w7sERTkX0Nqk_Au8IA9J1FPcDObVIdWmTihskhSfO_isgNo_niMucCSy4QE5VBH3821wZM8yCWV0Zy4gtVSkaa2HVSAHRjjChVKAy_Xa_tvC0Gbbd4cuYMut6tQv8333ymjEhAuXcdngFRWYOuS4uc87i2SgujPiyTVbA-J2-T1N3ghFZdm6rRuohW3LkHfqy5Co5z2MF-N7YEzbxwuQ4drcgGKDezEgyna3ggPMiexkheefRQbXbuyxyXHX_4js2ZASEXIf1ymHtvVkIaHPrc1CKrHVhU86nFct-HjKE38xSI5HeMZr9YElco8wQ62M6UY88mGRBF560YJYFBgDEHWvvvmad1PvsIab9tZQB0yL3GjdUFijHmb7RkLtMZoKc1oMTFD2yG44qGwytlurbYAoYV9ap1jFl5L9y_wD_O_YAt7uR3yqW9u4K-P6sF4E39iMO9pQIqrfvytAjP2mG03k0f5KuLrgArOcRuJADj0NiVWDU-MsyBDzGwpa0VMWcHYY9mIbX3dKFxJQYH3J8euaXkOMVw=w710-h377-no" alt="Design Pic"></p>
+<p>接著把上次 <strong>ComboData</strong> 類別變換一下格式，把 <strong>Value</strong> 變成 <strong>int</strong>，記得修正因為格變換的錯誤<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ComboData</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ComboData</span>(<span class="params"><span class="keyword">string</span> text, <span class="keyword">int</span> <span class="keyword">value</span></span>)</span> &#123;</span><br><span class="line">        Display = text;</span><br><span class="line">        Value = <span class="keyword">value</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Display &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> Value &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="連動-ComboBox"><a href="#連動-ComboBox" class="headerlink" title="連動 ComboBox"></a>連動 <strong>ComboBox</strong></h3><p>接著先來把剛剛新增的 <strong>comboBox</strong> 增加下拉選單的選項，並讓 <strong>Gender</strong> 的選單動態變更 <strong>Description</strong>。先建立一個不同選項的資料對應表<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cbDesBind</span>(<span class="params"><span class="keyword">dynamic</span> sender, <span class="keyword">string</span> selVal</span>)</span> &#123;</span><br><span class="line">    List&lt;ComboData&gt; listDes = <span class="keyword">new</span> List&lt;ComboData&gt;();</span><br><span class="line">    <span class="keyword">switch</span> (selVal.Trim()) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"Male"</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Handsome"</span>, <span class="number">1</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Nuttiness"</span>, <span class="number">2</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Polite"</span>, <span class="number">3</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Burly"</span>, <span class="number">4</span>));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"Female"</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Beautiful"</span>, <span class="number">1</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Sexy"</span>, <span class="number">2</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Cute"</span>, <span class="number">3</span>));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Handsome"</span>, <span class="number">1</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Nuttiness"</span>, <span class="number">2</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Polite"</span>, <span class="number">3</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Burly"</span>, <span class="number">4</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Beautiful"</span>, <span class="number">5</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Sexy"</span>, <span class="number">6</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Cute"</span>, <span class="number">7</span>));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    sender.DataSource = listDes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接著在頁面初始化的時候載入(…表示省略程式碼)<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    InitializeComponent();</span><br><span class="line">    ...</span><br><span class="line">    cbDes.DisplayMember = <span class="string">"Display"</span>;</span><br><span class="line">    cbDes.ValueMember = <span class="string">"Value"</span>;</span><br><span class="line">    cbDesBind(cbDes, <span class="string">"Male"</span>);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然後就是要讓選單連動了，在 <strong>Gender</strong> 的下拉選單觸發 <strong>SelectedIndexChanged</strong> 事件，然後呼叫剛剛的 <strong>cbDesBind</strong><br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cbGender_SelectedIndexChanged</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span> &#123;</span><br><span class="line">    cbDesBind(cbDes, (sender <span class="keyword">as</span> ComboBox).Text);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="連動-DataGridView-中的下拉選單"><a href="#連動-DataGridView-中的下拉選單" class="headerlink" title="連動 DataGridView 中的下拉選單"></a>連動 <strong>DataGridView</strong> 中的下拉選單</h3><p>先把預設的呈現資料增加 <strong>Description</strong> 這欄位的資料<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">private DataTable sampleData() &#123;</span><br><span class="line">    using (DataTable table = new DataTable()) &#123;</span><br><span class="line">        ...</span><br><span class="line">        table.Columns.Add(&quot;Des&quot;, typeof(int));</span><br><span class="line"></span><br><span class="line">        // Add rows.</span><br><span class="line">        table.Rows.Add(&quot;Allen&quot;, 1, 0, DateTime.Now, 1);</span><br><span class="line">        table.Rows.Add(&quot;Kevin&quot;, 1, 1, DateTime.Now, 2);</span><br><span class="line">        table.Rows.Add(&quot;Dean&quot;, 1, 0, DateTime.Today, 3);</span><br><span class="line">        table.Rows.Add(&quot;Jenny&quot;, 0, 1, DateTime.Today, 1);</span><br><span class="line">        return table;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private void gvInit() &#123;</span><br><span class="line">    ...</span><br><span class="line">    DataGridViewComboBoxColumn cb = new DataGridViewComboBoxColumn() &#123;</span><br><span class="line">        Name = &quot;gvDes&quot;,</span><br><span class="line">        DataPropertyName = &quot;Des&quot;,</span><br><span class="line">        HeaderText = &quot;Des&quot;,</span><br><span class="line">        DisplayMember = &quot;Display&quot;,</span><br><span class="line">        ValueMember = &quot;Value&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">    cbDesBind(cb, &quot;&quot;);</span><br><span class="line">    gvSample.Columns.Add(cb);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>這時候發現 <strong>DataGridView</strong> 的下拉選單會與新增功能的下拉選單連動，這是因為這兩個選單我偷懶使用相同資料來源，而 <strong>SelectedIndexChanged</strong> 會監看到同樣來源資料的變更，<br>所以這邊進行一下小調整，建一個新的資料來源<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">gvInit</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    gvGender.DataSource = cbData.Select(q=&gt; q).ToList();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接著來進行 <strong>DataGridView</strong> 中的欄位連動，首先針對 <strong>DataGridView</strong> 增加一個<code>EditingControlShowing</code>事件，這表示當此事件是發生於顯示編輯儲存格的控制項時<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">gvSample_EditingControlShowing</span>(<span class="params"><span class="keyword">object</span> sender, DataGridViewEditingControlShowingEventArgs e</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 判斷觸發事件的欄位是 Gender 才進行以下動作</span></span><br><span class="line">    <span class="keyword">if</span> (((DataGridView)sender).Columns[((DataGridView)sender).CurrentCell.ColumnIndex].Name == <span class="string">"gvGender"</span>) &#123;</span><br><span class="line">        ComboBox cb = e.Control <span class="keyword">as</span> ComboBox;</span><br><span class="line">        <span class="keyword">if</span> (cb != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 增加事件</span></span><br><span class="line">            cb.SelectionChangeCommitted += <span class="keyword">new</span> EventHandler(cb_SelectedIndexChanged);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cb_SelectedIndexChanged</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 取得現在欄位索引</span></span><br><span class="line">    <span class="keyword">int</span> columnIndex = gvSample.CurrentCell.ColumnIndex;</span><br><span class="line">    <span class="comment">// 將控制項轉給 ComboBox</span></span><br><span class="line">    ComboBox cbx = sender <span class="keyword">as</span> ComboBox;</span><br><span class="line">    <span class="comment">// 判斷現在選取的 Column 是 Gender</span></span><br><span class="line">    <span class="keyword">if</span> (gvSample.Columns[columnIndex].Name == <span class="string">"gvGender"</span>) &#123;</span><br><span class="line">        <span class="keyword">string</span> selTxt = cbx.Text,</span><br><span class="line">        selVal = cbx.SelectedValue.ToString();</span><br><span class="line">        <span class="comment">// 當選取項目值和顯示文字任一為空，就不進行動作</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">string</span>.IsNullOrEmpty(selTxt) || <span class="keyword">string</span>.IsNullOrEmpty(selVal)) <span class="keyword">return</span>;</span><br><span class="line">        <span class="comment">// 將此列資料的 Des Cell　取出</span></span><br><span class="line">        <span class="comment">// 其 DataType 為 DataGridViewCell </span></span><br><span class="line">        <span class="comment">// 將其強制轉換為 DataGridViewComboBoxCell</span></span><br><span class="line">        <span class="keyword">var</span> targetCbx = gvSample.CurrentRow.Cells[<span class="string">"gvDes"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">        <span class="comment">// 綁定資料</span></span><br><span class="line">        cbDesBind(targetCbx, selTxt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>別忘記把新增的功能增加項目<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    dr[<span class="string">"Des"</span>] = cbDes.SelectedValue;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>現在剩下當範例資料載入的時候沒有去將 <strong>DataGridViewComboBox</strong> 連動，要完成這功能，只要寫個迴圈去跑 <strong>DataGridView</strong> 每 <em>row</em> 的資料，然後變動更新就好。把以下程式碼放到<code>gvInit()</code>這方法的最後<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">gvInit</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">// DataGridViewComboBoxCell gvDes dynamic databinding</span></span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> dgvr <span class="keyword">in</span> gvSample.Rows) &#123;</span><br><span class="line">        <span class="keyword">var</span> targetCell = ((DataGridViewRow)dgvr).Cells[<span class="string">"gvDes"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">        <span class="keyword">var</span> genderCell = ((DataGridViewRow)dgvr).Cells[<span class="string">"gvGender"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">        <span class="keyword">if</span> (targetCell == <span class="literal">null</span>) <span class="keyword">continue</span>;</span><br><span class="line">        cbDesBind(targetCell, genderCell.FormattedValue.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>現在會發現，畫面好像還是沒有變化，這是因為呼叫<code>gvInit()</code>是在 <em>Form1</em> 初始化的時候，在 *<em>LifeCycle</em> 上，有順序上的問題，所以將<code>gvInit()</code>移動到<code>Form1_Load</code>事件<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span> &#123;</span><br><span class="line">    gvInit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>至於為什麼不移動到 <strong>DataBindingComplete</strong> 則可以參考這篇，主要是因為會多跑一次，所以才用這種架構。<br><figure class="highlight csharp"><figcaption><span>StackOverflow:Alternative to DataGridView DataBindingComplete Event</span><a href="http://stackoverflow.com/questions/24329964/alternative-to-datagridview-databindingcomplete-event" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Initialize_DataGridView</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Add dummy data to generate the columns</span></span><br><span class="line">    <span class="keyword">this</span>.dataGridView_Items.DataContext = <span class="keyword">new</span> Item[]&#123; <span class="keyword">new</span> Item &#123;Id = <span class="number">5</span>, Value = <span class="number">6</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Make your formatting</span></span><br><span class="line">    <span class="keyword">foreach</span> (DataGridViewRow row <span class="keyword">in</span> grdComponents.Rows)</span><br><span class="line">    &#123;</span><br><span class="line">        row.HeaderCell.Value = row.Cells[<span class="number">0</span>].Value.ToString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    grdComponents.Columns[<span class="number">0</span>].Visible = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Reset the dummy data</span></span><br><span class="line">    <span class="keyword">this</span>.dataGridView_Items.DataContext = <span class="literal">null</span>; <span class="comment">// Or new Item[]&#123;&#125;;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MyForm</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Initialize();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.Initialize_DataGridView();   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最後順便調整一下<strong>DataGridView</strong>編輯模式，不然每次都要在 <strong>DataGridView</strong> 點擊兩次才會出現下拉選單；只要在<code>gvInit()</code>中增加<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gvSample.EditMode = DataGridViewEditMode.EditOnEnter;</span><br></pre></td></tr></table></figure></p>
+<p>下拉選單的防呆設計，增加以下程式碼在<code>cbDesBind</code>方法內，放在設定 <em>DataSource</em> 之前就可以<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cbDesBind</span>(<span class="params"><span class="keyword">dynamic</span> sender, <span class="keyword">string</span> selVal</span>)</span> &#123;</span><br><span class="line">    List&lt;ComboData&gt; listDes = <span class="keyword">new</span> List&lt;ComboData&gt;();</span><br><span class="line">    <span class="keyword">switch</span> (selVal.Trim()) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"Male"</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Select..."</span>, <span class="number">0</span>));</span><br><span class="line">            ...</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"Female"</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Select..."</span>, <span class="number">0</span>));</span><br><span class="line">            ...</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Select..."</span>, <span class="number">0</span>));</span><br><span class="line">            ...</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sender.GetType().Name == <span class="string">"DataGridViewComboBoxCell"</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> cb = (DataGridViewComboBoxCell)sender;</span><br><span class="line">        <span class="keyword">if</span> (!listDes.Any(q =&gt; q.Value == (<span class="keyword">int</span>)cb.Value)) &#123;</span><br><span class="line">            cb.Value = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sender.DataSource = listDes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>差不多完成了，但是發現這樣連動綁定，在新增一筆資料，在 <strong>Des</strong> Column 會是預設的下拉選項；如下圖所示<br><img src="https://lh3.googleusercontent.com/9U8xAcGlIRNx20djuwxbDZF_086qKrRTl4yfKjev15HKqjaENTOlHMHyn7iP8pYaJ_DrnuPd1ge_wmsiv1LsKTeaW9lIg0lgQv3enVJ4ma44kXY6tmDHUgY7u2Y3VdMNUIhqKTUtuav8A_QjfrpPSDX96C-67mzLMlcLnGJQC5zxKdHq1XUnfjkITTVIIWIoIR86_PjobfhV59gJX_o6w0XIKG2xANrD36UvTojQHUimiXrcfK1ZOWLxAldABiuM2ZnsLu9sq5ZWmhujWJfzt1t32prscdXBerPmcfIcCGSPYZQjUADlXy5n6RViWHBYHqgRYQXOk8RBB-uS2Wcg5tUfjPI1QJZ5T4YTtD0HT5cFh8YFGHgYM16C8OdRbbF1ZP__QE4B_hYUdNHdf_SK35wXaTxdxW3DcDbsTLL-WXoNbtH7Je5nqnOWNfzixJd__rCkeJhvoXeMkAO1PLUIT2i5-rIsKhpcS66dkMrrUsuXAoBUXJC1GzPZvr3dT22uDJwfJ3v7Au84MjlpNnBzcskeqx8N9xGIvu22veiGpKNv0QwUf1aKQoCmXmEfJH0jRwtPp5E1672wtl-AehBhWyHVm9vA6PstQU7GwurxskzbXjqKRwNWST9VLR_YoCOr15Q2bFSFzh5VhECVf3Ahda91Cvuw9z1ne9SeIsiScA=w694-h483-no" alt="Error Sample"><br>好吧，看起來只能使用 <strong>DataBindingComplete</strong> 作法，把<code>gvInit()</code>放到<code>Form1()</code>初始化，把原本的綁定程式碼移動到 <strong>DataBindingComplete</strong> 事件<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">gvSample_DataBindingComplete</span>(<span class="params"><span class="keyword">object</span> sender, DataGridViewBindingCompleteEventArgs e</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// DataGridViewComboBoxCell gvDes dynamic databinding</span></span><br><span class="line">    <span class="keyword">var</span> dgv = sender <span class="keyword">as</span> DataGridView;</span><br><span class="line">    <span class="keyword">if</span> (dgv.Rows.Count &gt; <span class="number">0</span> &amp;&amp; dgv.Columns.Count &gt; <span class="number">5</span> ) &#123;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">var</span> dgvr <span class="keyword">in</span> dgv.Rows) &#123;</span><br><span class="line">            <span class="keyword">var</span> targetCell = ((DataGridViewRow)dgvr).Cells[<span class="string">"gvDes"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">            <span class="keyword">var</span> genderCell = ((DataGridViewRow)dgvr).Cells[<span class="string">"gvGender"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">            <span class="keyword">if</span> (targetCell == <span class="literal">null</span>) <span class="keyword">continue</span>;</span><br><span class="line">            cbDesBind(targetCell, genderCell.FormattedValue.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="畫面呈現"><a href="#畫面呈現" class="headerlink" title="畫面呈現"></a>畫面呈現</h3><p>這個系列就先到此結束，之後有其他想法再繼續延伸吧。<br><div class="video-container"><iframe src="//www.youtube.com/embed/ES_sgj5XlIA" frameborder="0" allowfullscreen></iframe></div></p>
+<h2 id="範例程式"><a href="#範例程式" class="headerlink" title="範例程式"></a>範例程式</h2><p><a href="https://github.com/shunnien/DataGridView-winform" title="Github:DataGridView-winform" target="_blank" rel="noopener">Github 上的 Sample Code</a></p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview.editingcontrolshowing(v=vs.100).aspx" title="MSDN:EditingControlShowing 事件" target="_blank" rel="noopener">EditingControlShowing</a></li>
+<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview_events(v=vs.110).aspx" title="MSDN:DataGridView 事件" target="_blank" rel="noopener">DataGridView 事件</a></li>
+<li>StackOverflow:<a href="http://stackoverflow.com/questions/24329964/alternative-to-datagridview-databindingcomplete-event" title="StackOverflow:DataBindingComplete Event" target="_blank" rel="noopener">DataBindingComplete Event</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C#</a>
+          
+            <a href="/tags/WinForm/" rel="tag"># WinForm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/21/DataGridView-in-winform-4/" rel="next" title="DataGridView 在 Winform 的簡單操作(4)">
+                <i class="fa fa-chevron-left"></i> DataGridView 在 Winform 的簡單操作(4)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/28/techshareday/" rel="prev" title="現代化網站技術分享日筆記心得">
+                現代化網站技術分享日筆記心得 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前置作業"><span class="nav-number">2.</span> <span class="nav-text">前置作業</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#連動-ComboBox"><span class="nav-number">2.1.</span> <span class="nav-text">連動 ComboBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#連動-DataGridView-中的下拉選單"><span class="nav-number">2.2.</span> <span class="nav-text">連動 DataGridView 中的下拉選單</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#畫面呈現"><span class="nav-number">2.3.</span> <span class="nav-text">畫面呈現</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#範例程式"><span class="nav-number">3.</span> <span class="nav-text">範例程式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2015/12/25/DataGridView-in-winform-5/';
+          this.page.identifier = '2015/12/25/DataGridView-in-winform-5/';
+          this.page.title = 'DataGridView 在 Winform 的簡單操作(5)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

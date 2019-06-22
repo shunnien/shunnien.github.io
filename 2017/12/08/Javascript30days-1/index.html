@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,JavaScript30,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="JavaScript 30 day 課程第一天，主要目的是按下按鍵時，發出聲音並進行該按鍵文字的特效；透過 Js 來綁定事件，熟練基本 JS 操作。">
+<meta name="keywords" content="JavaScript,JavaScript30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS30紀錄 01-JavaScript Drum Kit">
+<meta property="og:url" content="https://shunnien.github.io/2017/12/08/Javascript30days-1/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="JavaScript 30 day 課程第一天，主要目的是按下按鍵時，發出聲音並進行該按鍵文字的特效；透過 Js 來綁定事件，熟練基本 JS 操作。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/GJZCt6aTi-4RHLVjtM6dL0t9TjtavPQtQEdS3_MBecVDV_lMZEdSYXmVydgOWM8vepSJLLJm47Og3xKSM42chH6hMzEWKOhZdAvUW-fsJ2DLcRZh_Z_mN9apX7VNKhBdxy09krYwNVLk2oI9uCQdG_kdCHj7gCueqi9FQbBi-Vhu1pHCgcHWkpezAhQ_pMLxKTXIRNXP27FasXr1859LRMkXdNivUwgWvKFmwtKE6ExIgYnO8jo0MTd1sJQY1HtxV1kp2nhfiLufUA-GOd1X291Tg3CKqP2QppnuVP2AQnzrlmCiOBX1QtAUgytWMgFqg8QomU5th5qYZTVbfW65ZbibOuM1XXOvquQjaf2RaYVbFEfs9mWxuGIXBDYmYklFTDFBxUUxQR0fgZXx_GXTlGm1KUIe_ZjNYUwuqlOgp9hhJLObfeSbohvL7t3Z1GoIE6aEbSRpaqKFnZ5cp9uTE_5r3g_0HVy5gcJ5SoDqFrFacx9C8p6rl8Ohj5KFzQiPj2BTw7hTQ8p8qbucG18_UHmh7zeqrhnGbAcB_4qEelZSKpTYHWgiz6bewTgBjf4AY2NoDIL5c_UCQfwKa5R2UhB1sBIHsZqGfBWipTmCOuQIajUOSG5d3VOMVqS0HFe-4w_jYLZCVH9FxNEV5NHXqB0qjuABuaFhMoM=w832-h417-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/wgrbTz2rivsv8QuGsc8JgJKvU9z8EtSIrCvz0-NGiBuhEDC5Ar02OLoz6RdGPVZ1W9t6W1SpDsnxyzbrZSeU4Gy3FcdJK7ZNATYHhhstCGbD0pECAl5dxWdCev8trX-7ukQSXg5NQrQP4vDzN_u5-tgSOInmX3riG9ob3Tdl6JVJakBFB-yJvOBeX2vlywxw4vgNDJnyIZYkGnIIVTtXqpQTHH2itXkbmFzUVgU7SGrU7S1cUS7P25xsCQ5vH9X8orNBjKB3Jy-j10n20Ps_7-ZT49Nwjc-dTPjPIlcMOJyn9DbN2wyBshDuJdQOqtYvg-VSC1DVxqvPZWn4KHh4YwzCjnMMO1Gv2ERfTgNIQcvBYwtmV-ljE17lHFPC50CmpPnmBIzRHSpuhdYR7MatKVYva49Kt_HCE5ppdmtdMQohsdXOY8c8A21Q9hoKVkBWHkYNiL6qZbKEd6ejGh-JL-WdrAxtt0WMezwWS2CcVmO2px7Q1C0AYrJk3T4tu6P6jLzGpxbT1ZaG9L3jaKFeuPQxRWYteUxNTjZFCGEwlFjvYeYIzzJxanuER2CVPglhcX8OHA9SF1iG4XjB0LlagA5tqAL2kV1tuf4MAChdmN9RM64HJKSl7AIa25-ic9unxdd2l70jcZUO5XQBJXJi7mkVW1sfb0d734A=w918-h516-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS30紀錄 01-JavaScript Drum Kit">
+<meta name="twitter:description" content="JavaScript 30 day 課程第一天，主要目的是按下按鍵時，發出聲音並進行該按鍵文字的特效；透過 Js 來綁定事件，熟練基本 JS 操作。">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/GJZCt6aTi-4RHLVjtM6dL0t9TjtavPQtQEdS3_MBecVDV_lMZEdSYXmVydgOWM8vepSJLLJm47Og3xKSM42chH6hMzEWKOhZdAvUW-fsJ2DLcRZh_Z_mN9apX7VNKhBdxy09krYwNVLk2oI9uCQdG_kdCHj7gCueqi9FQbBi-Vhu1pHCgcHWkpezAhQ_pMLxKTXIRNXP27FasXr1859LRMkXdNivUwgWvKFmwtKE6ExIgYnO8jo0MTd1sJQY1HtxV1kp2nhfiLufUA-GOd1X291Tg3CKqP2QppnuVP2AQnzrlmCiOBX1QtAUgytWMgFqg8QomU5th5qYZTVbfW65ZbibOuM1XXOvquQjaf2RaYVbFEfs9mWxuGIXBDYmYklFTDFBxUUxQR0fgZXx_GXTlGm1KUIe_ZjNYUwuqlOgp9hhJLObfeSbohvL7t3Z1GoIE6aEbSRpaqKFnZ5cp9uTE_5r3g_0HVy5gcJ5SoDqFrFacx9C8p6rl8Ohj5KFzQiPj2BTw7hTQ8p8qbucG18_UHmh7zeqrhnGbAcB_4qEelZSKpTYHWgiz6bewTgBjf4AY2NoDIL5c_UCQfwKa5R2UhB1sBIHsZqGfBWipTmCOuQIajUOSG5d3VOMVqS0HFe-4w_jYLZCVH9FxNEV5NHXqB0qjuABuaFhMoM=w832-h417-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2017/12/08/Javascript30days-1/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>JS30紀錄 01-JavaScript Drum Kit | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2017/12/08/Javascript30days-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS30紀錄 01-JavaScript Drum Kit</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-12-08T15:49:18+08:00">
+                2017-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/08/Javascript30days-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/08/Javascript30days-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://lh3.googleusercontent.com/GJZCt6aTi-4RHLVjtM6dL0t9TjtavPQtQEdS3_MBecVDV_lMZEdSYXmVydgOWM8vepSJLLJm47Og3xKSM42chH6hMzEWKOhZdAvUW-fsJ2DLcRZh_Z_mN9apX7VNKhBdxy09krYwNVLk2oI9uCQdG_kdCHj7gCueqi9FQbBi-Vhu1pHCgcHWkpezAhQ_pMLxKTXIRNXP27FasXr1859LRMkXdNivUwgWvKFmwtKE6ExIgYnO8jo0MTd1sJQY1HtxV1kp2nhfiLufUA-GOd1X291Tg3CKqP2QppnuVP2AQnzrlmCiOBX1QtAUgytWMgFqg8QomU5th5qYZTVbfW65ZbibOuM1XXOvquQjaf2RaYVbFEfs9mWxuGIXBDYmYklFTDFBxUUxQR0fgZXx_GXTlGm1KUIe_ZjNYUwuqlOgp9hhJLObfeSbohvL7t3Z1GoIE6aEbSRpaqKFnZ5cp9uTE_5r3g_0HVy5gcJ5SoDqFrFacx9C8p6rl8Ohj5KFzQiPj2BTw7hTQ8p8qbucG18_UHmh7zeqrhnGbAcB_4qEelZSKpTYHWgiz6bewTgBjf4AY2NoDIL5c_UCQfwKa5R2UhB1sBIHsZqGfBWipTmCOuQIajUOSG5d3VOMVqS0HFe-4w_jYLZCVH9FxNEV5NHXqB0qjuABuaFhMoM=w832-h417-no" alt="target gif"><br><a href="https://developer.mozilla.org/zh-TW/docs/Web/Events/transitionend" target="_blank" rel="noopener">JavaScript 30 day</a> 課程第一天，主要目的是按下按鍵時，發出聲音並進行該按鍵文字的特效；透過 Js 來綁定事件，熟練基本 JS 操作。<a id="more"></a></p>
+<blockquote>
+<p><a href="https://shunnien.github.io/JavaScript30day/day_01/">Demo</a> | <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<h1 id="處理步驟"><a href="#處理步驟" class="headerlink" title="處理步驟"></a>處理步驟</h1><h2 id="步驟-1-認識-playing-CSS-Class"><a href="#步驟-1-認識-playing-CSS-Class" class="headerlink" title="步驟 1. 認識 .playing CSS Class"></a>步驟 1. 認識 .playing CSS Class</h2><ul>
+<li>使用 <strong>transform</strong> 進行縮放</li>
+</ul>
+<h2 id="步驟-2-認識-keycode-還有-HTML-架構"><a href="#步驟-2-認識-keycode-還有-HTML-架構" class="headerlink" title="步驟 2. 認識 keycode 還有 HTML 架構"></a>步驟 2. 認識 keycode 還有 HTML 架構</h2><ul>
+<li>聲音檔案 <strong>audio</strong> 與 按鍵文字 div 使用 <strong>data-key</strong> 對應</li>
+<li>參考 <a href="http://keycode.info/" target="_blank" rel="noopener">key code</a></li>
+</ul>
+<h2 id="步驟-3-建立-keydown-listener"><a href="#步驟-3-建立-keydown-listener" class="headerlink" title="步驟 3. 建立 keydown listener"></a>步驟 3. 建立 keydown listener</h2><ul>
+<li>建立整份網頁文件檔案的鍵盤監聽事件</li>
+</ul>
+<h2 id="步驟-4-建立-function-playSound"><a href="#步驟-4-建立-function-playSound" class="headerlink" title="步驟 4. 建立 function playSound"></a>步驟 4. 建立 function playSound</h2><ul>
+<li>取得目前觸發的按鍵 keyCode</li>
+<li>取得該 keyCode 對應的文字 div DOM</li>
+<li>取得該 keyCode 對應的聲音 audio DOM</li>
+<li>當按鍵連續按下時，使聲音檔案重新播放 <code>audio.currentTime = 0</code></li>
+<li>播放聲音 <code>audio.play()</code></li>
+<li>加入 keyCode 對應的文字 div DOM 強調樣式 <strong>playing</strong></li>
+</ul>
+<h2 id="步驟-5-建立-transitionend-listener"><a href="#步驟-5-建立-transitionend-listener" class="headerlink" title="步驟 5. 建立 transitionend listener"></a>步驟 5. 建立 transitionend listener</h2><ul>
+<li>keyCode 文字 div DOM 綁定 <a href="https://developer.mozilla.org/zh-TW/docs/Web/Events/transitionend" target="_blank" rel="noopener">transitionend</a></li>
+</ul>
+<h2 id="步驟-6-建立-function-removeTransition"><a href="#步驟-6-建立-function-removeTransition" class="headerlink" title="步驟 6. 建立 function removeTransition"></a>步驟 6. 建立 function removeTransition</h2><ul>
+<li><p>利用 <a href="https://developer.mozilla.org/zh-TW/docs/Web/Events/transitionend" target="_blank" rel="noopener">transitionend</a> 進行樣式凸顯後移除</p>
+</li>
+<li><p>在觸發事件內的執行順序</p>
+</li>
+</ul>
+<p>值得一提的是， <strong>border-color</strong> 會變成四個方向的顏色來設定，可以在 <strong>removeTransition</strong> function 中添加 log 來查看執行順序與觸發次數。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTransition</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.propertyName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>當按下觸發按鍵後， <strong>removeTransition</strong> 的 log 記錄訊息與觸發順序如下流程所示。</p>
+<div class="mermaid">
+  graph TD
+A(transform)-->B(border-right-color)
+B-->C(border-bottom-color)
+C-->D(border-top-color)
+D-->E(border-left-color)
+E-->F(box-shadow)
+F-->A1(transform)
+A1-->B1(border-right-color
+B1-->C1(border-bottom-color)
+C1-->D1(border-top-color)
+D1-->E1(border-left-color)
+E1-->F1(box-shadow)
+</div>
+
+<p>另外值得一提的是， css 中的樣式順序變動，對於觸發順序毫無影響，也就是說就算把 <strong>playing</strong> 的 css 變動成如下的順序，觸發順序還是 <strong>transform</strong> 先開始。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.playing</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span> <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.1);</span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#ffc600</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="學習事項"><a href="#學習事項" class="headerlink" title="學習事項"></a>學習事項</h1><p>將比較不熟練，或是較少使用的事項重複記錄一次。</p>
+<h2 id="HTML-部分"><a href="#HTML-部分" class="headerlink" title="HTML 部分"></a>HTML 部分</h2><h3 id="HTML-audio-tag"><a href="#HTML-audio-tag" class="headerlink" title="HTML audio tag"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/audio" target="_blank" rel="noopener">HTML audio tag</a></h3><p>操作音效檔案的 HTML tag，此處透過 js 操作播放與設定音效檔案重頭播放，可以參考 <a href="https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext" target="_blank" rel="noopener">MDN</a> 的 <strong>currentTime</strong></p>
+<h3 id="HTML-kbd-tag"><a href="#HTML-kbd-tag" class="headerlink" title="HTML kbd tag"></a><a href="https://www.w3schools.com/tags/tag_kbd.asp" target="_blank" rel="noopener">HTML kbd tag</a></h3><p>就是輸入按鍵的顯示文字，詳細說明可以觀看以下的說明。</p>
+<blockquote><h1 id="Definition-and-Usage"><a href="#Definition-and-Usage" class="headerlink" title="Definition and Usage"></a>Definition and Usage</h1><p>The <kbd> tag is a phrase tag. It defines keyboard input.<br>Tip: This tag is not deprecated, but it is possible to achieve richer effect with CSS.</kbd></p>
+<footer><strong>資料來源</strong><cite><a href="https://www.w3schools.com/tags/tag_kbd.asp" target="_blank" rel="noopener">www.w3schools.com/tags/tag_kbd.asp</a></cite></footer></blockquote>
+<h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><p>JS 部分列出一些比較便利的東西來說明。</p>
+<h3 id="querySelector"><a href="#querySelector" class="headerlink" title="querySelector"></a><a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelector" target="_blank" rel="noopener">querySelector</a></h3><p>這就是 JS 提供的 Selector 選擇器，有用過 JQuery 的就會感覺很熟悉，跟以下的 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/querySelectorAll" target="_blank" rel="noopener">querySelectorAll</a> 不太相同的地方是， <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelector" target="_blank" rel="noopener">querySelector</a> 有找尋到結果的時候，會回傳一個 DOM object 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.querySelector(<span class="string">".myclass"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="querySelectorAll"><a href="#querySelectorAll" class="headerlink" title="querySelectorAll"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/querySelectorAll" target="_blank" rel="noopener">querySelectorAll</a></h3><p>Selector 選擇器的變形，搜尋結果會是<strong>類陣列(array-like)</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> matches = <span class="built_in">document</span>.querySelectorAll(<span class="string">"div.note, div.alert"</span>);</span><br></pre></td></tr></table></figure>
+<p>需要注意的，是 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/querySelectorAll" target="_blank" rel="noopener">querySelectorAll</a> 得到的結果並<strong>不是</strong> <strong>Array</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> matches = <span class="built_in">document</span>.querySelectorAll(<span class="string">"div"</span>);</span><br><span class="line"><span class="built_in">Array</span>.isArray(matches);</span><br><span class="line"><span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="classList"><a href="#classList" class="headerlink" title="classList"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Element/classList" target="_blank" rel="noopener">classList</a></h3><blockquote><p>Element.classList 唯讀屬性代表了該元素所擁有之類別屬性（Class Attribute）的即時更新集－DOMTokenList。</p>
+<p>使用 classList 屬性是取得元素 Class 的一種便利方式，也可以透過 element.className 來得到以空格分隔之 Class 清單字串。</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Element/classList" target="_blank" rel="noopener">developer.mozilla.org/zh-TW/docs/Web/API/Element/classList</a></cite></footer></blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// div is an object reference to a &lt;div&gt; element with class="foo bar"</span></span><br><span class="line">div.classList.remove(<span class="string">"foo"</span>);</span><br><span class="line">div.classList.add(<span class="string">"anotherclass"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if visible is set remove it, otherwise add it</span></span><br><span class="line">div.classList.toggle(<span class="string">"visible"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//  add/remove visible, depending on test conditional, i less than 10</span></span><br><span class="line">div.classList.toggle(<span class="string">"visible"</span>, i &lt; <span class="number">10</span> );</span><br><span class="line"></span><br><span class="line">alert(div.classList.contains(<span class="string">"foo"</span>));</span><br><span class="line"></span><br><span class="line">div.classList.add(<span class="string">"foo"</span>,<span class="string">"bar"</span>); <span class="comment">//add multiple classes</span></span><br></pre></td></tr></table></figure>
+<h3 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">addEventListener</a></h3><blockquote><p>EventTarget.addEventListener() 方法能將指定的事件監聽器註冊到 EventTarget 實作物件上。EventTarget 可能是 Document 中的 Element 物件、Document 物件本身、Window 物件，或是其它支援事件的物件（如：XMLHttpRequest）。</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">developer.mozilla.org/zh-TW/docs/Web/API/EventTarget/addEventListener</a></cite></footer></blockquote>
+<h3 id="transitionend"><a href="#transitionend" class="headerlink" title="transitionend"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/Events/transitionend" target="_blank" rel="noopener">transitionend</a></h3><p>為 DOM <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions" target="_blank" rel="noopener">CSS transitions</a> 變換完成後觸發，另外還有 <a href="https://developer.mozilla.org/en-US/docs/Web/Events/transitionstart" target="_blank" rel="noopener">transitionstart</a> 、 <a href="https://developer.mozilla.org/en-US/docs/Web/Events/transitioncancel" target="_blank" rel="noopener">transitioncancel</a></p>
+<h3 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="noopener">Array.from</a></h3><blockquote><p>Array.from() 會從類陣列(array-like)或是可迭代的物件建立一個新的陣列實例。</p>
+<footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="noopener">developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/from</a></cite></footer></blockquote>
+<p>在教學的完成範例中，使用了 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="noopener">Array.from</a> 來轉換 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/querySelectorAll" target="_blank" rel="noopener">querySelectorAll</a> 的結果，在此範例中，沒有使用此轉換也不影響； 所以才使用 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="noopener">Array.from</a> 來轉換</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bar = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line"><span class="built_in">Array</span>.from(bar);</span><br><span class="line"><span class="comment">// ["a", "b", "c"]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.from(<span class="string">'foo'</span>);</span><br><span class="line"><span class="comment">// ["f", "o", "o"]</span></span><br></pre></td></tr></table></figure>
+<h2 id="CSS-部分"><a href="#CSS-部分" class="headerlink" title="CSS 部分"></a>CSS 部分</h2><p>介紹 CSS3 的新單位 <strong>vh</strong> 、 <strong>vw</strong> ，其<a href="https://www.w3schools.com/cssref/css_units.asp" target="_blank" rel="noopener">瀏覽器的支援程度</a>可以參考</p>
+<h3 id="vh"><a href="#vh" class="headerlink" title="vh"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/length" target="_blank" rel="noopener">vh</a></h3><p>代表的是 <strong>view height</strong> ，也就是螢幕可視範圍高度的百分比</p>
+<h3 id="vw"><a href="#vw" class="headerlink" title="vw"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/length" target="_blank" rel="noopener">vw</a></h3><p>表示的是 <strong>view width</strong> ，也就是螢幕可是範圍寬度的百分比。</p>
+<h1 id="延伸部分"><a href="#延伸部分" class="headerlink" title="延伸部分"></a>延伸部分</h1><p>按著按鈕不放，有時候 <strong>Class</strong> 樣式沒被移除。<br><img src="https://lh3.googleusercontent.com/wgrbTz2rivsv8QuGsc8JgJKvU9z8EtSIrCvz0-NGiBuhEDC5Ar02OLoz6RdGPVZ1W9t6W1SpDsnxyzbrZSeU4Gy3FcdJK7ZNATYHhhstCGbD0pECAl5dxWdCev8trX-7ukQSXg5NQrQP4vDzN_u5-tgSOInmX3riG9ob3Tdl6JVJakBFB-yJvOBeX2vlywxw4vgNDJnyIZYkGnIIVTtXqpQTHH2itXkbmFzUVgU7SGrU7S1cUS7P25xsCQ5vH9X8orNBjKB3Jy-j10n20Ps_7-ZT49Nwjc-dTPjPIlcMOJyn9DbN2wyBshDuJdQOqtYvg-VSC1DVxqvPZWn4KHh4YwzCjnMMO1Gv2ERfTgNIQcvBYwtmV-ljE17lHFPC50CmpPnmBIzRHSpuhdYR7MatKVYva49Kt_HCE5ppdmtdMQohsdXOY8c8A21Q9hoKVkBWHkYNiL6qZbKEd6ejGh-JL-WdrAxtt0WMezwWS2CcVmO2px7Q1C0AYrJk3T4tu6P6jLzGpxbT1ZaG9L3jaKFeuPQxRWYteUxNTjZFCGEwlFjvYeYIzzJxanuER2CVPglhcX8OHA9SF1iG4XjB0LlagA5tqAL2kV1tuf4MAChdmN9RM64HJKSl7AIa25-ic9unxdd2l70jcZUO5XQBJXJi7mkVW1sfb0d734A=w918-h516-no" alt="sampel gif picture"></p>
+<p>幾個解決方式，我決定使用 <strong>keyup</strong> 事件進行移除，不使用 <a href="https://developer.mozilla.org/zh-TW/docs/Web/Events/transitionend" target="_blank" rel="noopener">transitionend</a> 改使用在 <strong>keyup</strong> 觸發 <strong>removeClass</strong> function</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeClass</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">`.key[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</span><br><span class="line">  key.classList.remove(<span class="string">"playing"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"keyup"</span>, removeClass);</span><br></pre></td></tr></table></figure>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
+<li>作者 Github <a href="https://github.com/wesbos" target="_blank" rel="noopener">Wes Bos</a></li>
+<li><a href="https://github.com/soyaine/JavaScript30" target="_blank" rel="noopener">Js 30 day 中文指南</a></li>
+<li><a href="https://github.com/guahsu/JavaScript30" target="_blank" rel="noopener">瓜瓜的 JS 30</a></li>
+<li>我的 JS 30 <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">練習Github</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/JavaScript30/" rel="tag"># JavaScript30</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/04/EF-Dapper-composite-keys-set/" rel="next" title="Entity Framework 與 Dapper Contrib 複合鍵的設定">
+                <i class="fa fa-chevron-left"></i> Entity Framework 與 Dapper Contrib 複合鍵的設定
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/09/Javascript30days-2/" rel="prev" title="JS30紀錄 02-JS + CSS Clock">
+                JS30紀錄 02-JS + CSS Clock <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#處理步驟"><span class="nav-number">1.</span> <span class="nav-text">處理步驟</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-1-認識-playing-CSS-Class"><span class="nav-number">1.1.</span> <span class="nav-text">步驟 1. 認識 .playing CSS Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-2-認識-keycode-還有-HTML-架構"><span class="nav-number">1.2.</span> <span class="nav-text">步驟 2. 認識 keycode 還有 HTML 架構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-3-建立-keydown-listener"><span class="nav-number">1.3.</span> <span class="nav-text">步驟 3. 建立 keydown listener</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-4-建立-function-playSound"><span class="nav-number">1.4.</span> <span class="nav-text">步驟 4. 建立 function playSound</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-5-建立-transitionend-listener"><span class="nav-number">1.5.</span> <span class="nav-text">步驟 5. 建立 transitionend listener</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟-6-建立-function-removeTransition"><span class="nav-number">1.6.</span> <span class="nav-text">步驟 6. 建立 function removeTransition</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#學習事項"><span class="nav-number">2.</span> <span class="nav-text">學習事項</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-部分"><span class="nav-number">2.1.</span> <span class="nav-text">HTML 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-audio-tag"><span class="nav-number">2.1.1.</span> <span class="nav-text">HTML audio tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-kbd-tag"><span class="nav-number">2.1.2.</span> <span class="nav-text">HTML kbd tag</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Definition-and-Usage"><span class="nav-number">3.</span> <span class="nav-text">Definition and Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-部分"><span class="nav-number">3.1.</span> <span class="nav-text">JavaScript 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#querySelector"><span class="nav-number">3.1.1.</span> <span class="nav-text">querySelector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#querySelectorAll"><span class="nav-number">3.1.2.</span> <span class="nav-text">querySelectorAll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#classList"><span class="nav-number">3.1.3.</span> <span class="nav-text">classList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#addEventListener"><span class="nav-number">3.1.4.</span> <span class="nav-text">addEventListener</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transitionend"><span class="nav-number">3.1.5.</span> <span class="nav-text">transitionend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-from"><span class="nav-number">3.1.6.</span> <span class="nav-text">Array.from</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-部分"><span class="nav-number">3.2.</span> <span class="nav-text">CSS 部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vh"><span class="nav-number">3.2.1.</span> <span class="nav-text">vh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vw"><span class="nav-number">3.2.2.</span> <span class="nav-text">vw</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#延伸部分"><span class="nav-number">4.</span> <span class="nav-text">延伸部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#參考資料"><span class="nav-number">5.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2017/12/08/Javascript30days-1/';
+          this.page.identifier = '2017/12/08/Javascript30days-1/';
+          this.page.title = 'JS30紀錄 01-JavaScript Drum Kit';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

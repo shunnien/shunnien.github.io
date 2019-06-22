@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="IIS,security,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="因為 3DES 加密沒有關閉，導致了這個問題，以下是檢測報告的資料。 Insecure Transport: Weak SSL Cipher ( 11285 )SummaryWebInspect has detected support for weak TLS/SSL ciphers on server https://xxx.xxx.xx:443/ . The Transport Layer">
+<meta name="keywords" content="IIS,security">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IIS 關閉不安全的 SSL 加密方式(Cipher)">
+<meta property="og:url" content="https://shunnien.github.io/2018/05/09/SSL-Cipher/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="因為 3DES 加密沒有關閉，導致了這個問題，以下是檢測報告的資料。 Insecure Transport: Weak SSL Cipher ( 11285 )SummaryWebInspect has detected support for weak TLS/SSL ciphers on server https://xxx.xxx.xx:443/ . The Transport Layer">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/z81u7yY49rCGbPihu5HeulCM270W6Kk2J7rRvRhhXSgptbiIWGSnmJQ18nA7g-cSwfqWrFpd_Uhu0QA60Dforbr_2EVtMTgTp7FqDLeKMP5zW5uWT4LnlH42XK7pEi47BRXSneIUxMFiZ6XsGS11vtog0qb2JfMITFH-h-f32fFnsFiZ0IMZxb9IfmPcgAqQAMEP5WKdDKmB0vBQq6JbhVEWW2YI2EHUQgbCmt2g4nmfPDYzAJLe5zhivhqXOA2YNufHko0S1s4NKcnXyVf9hSq1nwCQJFbuQvUeevQ63i-V5iJ-9AqHkdIMECwwEcX74fYHfKtYWmLey9QOie1de_h5yE5ZaUVOhcVCqOPXQXy5B7PnMSdGqnMixY3U2-mTr5-wlECD4pQLz7nCpqJH6duzMkSgvWbw08v4OOETPVwqHI1GVdb1F_Yla8vrAYSY-9Q142LWpBRv-t4MBRSBaPAZnxGI656Hmxe811LYb2AfQBXN1It6ZOujoL0XjzX4M6N4dPHgLrB1s6wZS0xL3DUNFxm0BQ4GkT1Wj2b5089p-JTfSBUbtz6pI31ZuG4rz60De-B1XYsW6h3VCGPeObA5z6IJ0POC7A4yPafitnu5ivfBmN5-SvrG92GzF_9Y_pkrW2dIVnJdN-lfL8r0326m5wNhadHy=w627-h644-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/yUrE_6a-1WS-gRCT7lhISB94SIZf5zJuiB23Gtpgz9loiS-Iczsmpdi3PIEU9CcKrBb1LUWi1-RqgJaa_gRe35kk__s18R3pHRxjstwSONKkh9H71HenONOjrzde9WETDBqm9kqogpLdNMBCDPhaTB_kt1w2gXJXiFoS1Y6riMIF4nvno61-j6UBUqBroY-uc4xYvElS0Dg_2_KprH-9SMhSdLGwCSX-1GQ2Mg1kQ9oHkfLTJELcL0Wvj4g8WwxRBK1kcwafaOSuNT53gXnkcTV6k53I6RHqamcuQGtyd2sY67GWkcDoTlurKR0fV1exgisWUOBer8OaVsvaPKXnDhjCGi9VYoGZm1oiHO-2amf8dQzPRelSMdYC0QjNyY21OdcLZZHmfkDB98Mb_vbMf0av5osPjdt0nmWCKwS6rggH8v-gEV3VoGzP_WiuGnECcvgqz-sOjoNIqZRGedM9lTAEzg9uPN57_OhhgmQ0y3QCW_zNoe3fWLl1l7kZN89ocfrttTMniHi3erYm9S3-0idaO_cIQ_Fg7ghBNL5athBdYFuV1pjP8TJYjL4SfaUAW-HSidnKPKUDEI9IVYpEm40LLGVbHy6lWtayPvlndlrg5rV5BeHefcSmynuMyRFcL4nScSYd8CMwxYqLzdnwFTSLriXMD8Lp=w1027-h360-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/J4CXsVxCcPMS_pjz5vWq6ENcAw9d_gnNcAFMaWbY5EMR2hAOxmpEkqmAuYVaCidccVhIf4-fONC69Et9XGZRk8qXmRdJX1rHzwY3c-LngA92IWhpt5hWzMr7auII7vzeCJGZg1hR6T4bFdCiBSpCvYRVZ2KNwrCMaDrrjj7qEjIhLVsR2tY6f8Kn3PqoHjtC587rTWGRY3g1jNcAPLHAkh6ew6w1RPrJ60ulyoypMflaFiipZcSxG_TD5wC1iRcXoM0finaj8KyqXrqP7WCdDtLUS98zQEJBHXDrI_wpnUeNFeoJ0XK028__nBzDHICs9YpA2B43yCjQgxUK1K6R-n6So8nazKebaJbyYWkUoqxzKDB0OuK8gu42Hbt56MBEq9eoUJiM7qgZRDlDb-xccR8zAOrm8D0-1yDRvzjgLtGc2F8vgBMS2CxUJt7PxNE6ciqaFmOl4bxiOc_XkXfz9-LFBX0SqJuJhoT1dLh_jkKT78gjQLjE01m81ewilrb8XawgapdKIn2kT-Xa722WUvQvm_P7-B61_6tt4A1FcLGJbzmO7cuysDQLT2-O33Q2NJkGNFC9oIGgbZ0FSNnW2GfI1bXLoYZ9AvyKN8b29KXTSGqrqiOnMeAoMqeL1nQc4jer7e6eGDkmu8qLOJ_r8OU9l3Z1vH37=w1298-h619-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/shdVxRfRG5BnOmLxoH-aD7jwnpvST7WrezZmoLc7t--wiHpWGH4RqGjiVwlo3p8UuEnV7kE9hkfBmkOlYMZIN9gKp3WPFcperTjZR9M47KU1JzmKXVDgwdfgAQvDeQ9k8p8uMb3vAkQa-PbHbC_DGnnnLy_GDpedZ9tgaL5BN2SI8FKxR7Cj7vm9biK8XImWYRW0fB-og575O7WXxTP-9JobibeA9XGvmkVuYX6uvD4GkjjTEcKrJSmOt22eha8yWwix0SmiDiyJy1UUBH-W87kYgX8Sn5QFsTQ-d_tXq7n2KkBOyWyp3xNsJFWVnV1FHft9Wt4BLUW6UmL3oVvswuCv7DF_8wD6FBhpKmHlF_HoSXQCyt9yepFzdOW6VYH9iCMgMMHPSJezRqYBArjRmpo6VBhPK0A5_m8bzQKrqPsxqc2mU_JVlkwFT88HPUEZeITwwzaRVNbBuDJcnAWOOsgnkEznEfpbiSNN1LZDMxedMNySB4iy-4kL_ADLGUEiEqI2iCiahQspph3smCZ0_zjB9NJuIQMtmw8OgxPWeQoDumU5-Y4VOELQH9k_rJ6NCdOqvZz7CaNpXLA1RWg0NdfU_YxM5NcfXlO8hxG1loD1UUBKcqhTQMyIkFjF1xamRGFjPsjsDGwjcJz5wvLOD2jLiJxMhSC7=w1107-h866-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.690Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IIS 關閉不安全的 SSL 加密方式(Cipher)">
+<meta name="twitter:description" content="因為 3DES 加密沒有關閉，導致了這個問題，以下是檢測報告的資料。 Insecure Transport: Weak SSL Cipher ( 11285 )SummaryWebInspect has detected support for weak TLS/SSL ciphers on server https://xxx.xxx.xx:443/ . The Transport Layer">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/z81u7yY49rCGbPihu5HeulCM270W6Kk2J7rRvRhhXSgptbiIWGSnmJQ18nA7g-cSwfqWrFpd_Uhu0QA60Dforbr_2EVtMTgTp7FqDLeKMP5zW5uWT4LnlH42XK7pEi47BRXSneIUxMFiZ6XsGS11vtog0qb2JfMITFH-h-f32fFnsFiZ0IMZxb9IfmPcgAqQAMEP5WKdDKmB0vBQq6JbhVEWW2YI2EHUQgbCmt2g4nmfPDYzAJLe5zhivhqXOA2YNufHko0S1s4NKcnXyVf9hSq1nwCQJFbuQvUeevQ63i-V5iJ-9AqHkdIMECwwEcX74fYHfKtYWmLey9QOie1de_h5yE5ZaUVOhcVCqOPXQXy5B7PnMSdGqnMixY3U2-mTr5-wlECD4pQLz7nCpqJH6duzMkSgvWbw08v4OOETPVwqHI1GVdb1F_Yla8vrAYSY-9Q142LWpBRv-t4MBRSBaPAZnxGI656Hmxe811LYb2AfQBXN1It6ZOujoL0XjzX4M6N4dPHgLrB1s6wZS0xL3DUNFxm0BQ4GkT1Wj2b5089p-JTfSBUbtz6pI31ZuG4rz60De-B1XYsW6h3VCGPeObA5z6IJ0POC7A4yPafitnu5ivfBmN5-SvrG92GzF_9Y_pkrW2dIVnJdN-lfL8r0326m5wNhadHy=w627-h644-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2018/05/09/SSL-Cipher/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>IIS 關閉不安全的 SSL 加密方式(Cipher) | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/05/09/SSL-Cipher/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">IIS 關閉不安全的 SSL 加密方式(Cipher)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-05-09T11:00:32+08:00">
+                2018-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/09/SSL-Cipher/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/09/SSL-Cipher/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://lh3.googleusercontent.com/z81u7yY49rCGbPihu5HeulCM270W6Kk2J7rRvRhhXSgptbiIWGSnmJQ18nA7g-cSwfqWrFpd_Uhu0QA60Dforbr_2EVtMTgTp7FqDLeKMP5zW5uWT4LnlH42XK7pEi47BRXSneIUxMFiZ6XsGS11vtog0qb2JfMITFH-h-f32fFnsFiZ0IMZxb9IfmPcgAqQAMEP5WKdDKmB0vBQq6JbhVEWW2YI2EHUQgbCmt2g4nmfPDYzAJLe5zhivhqXOA2YNufHko0S1s4NKcnXyVf9hSq1nwCQJFbuQvUeevQ63i-V5iJ-9AqHkdIMECwwEcX74fYHfKtYWmLey9QOie1de_h5yE5ZaUVOhcVCqOPXQXy5B7PnMSdGqnMixY3U2-mTr5-wlECD4pQLz7nCpqJH6duzMkSgvWbw08v4OOETPVwqHI1GVdb1F_Yla8vrAYSY-9Q142LWpBRv-t4MBRSBaPAZnxGI656Hmxe811LYb2AfQBXN1It6ZOujoL0XjzX4M6N4dPHgLrB1s6wZS0xL3DUNFxm0BQ4GkT1Wj2b5089p-JTfSBUbtz6pI31ZuG4rz60De-B1XYsW6h3VCGPeObA5z6IJ0POC7A4yPafitnu5ivfBmN5-SvrG92GzF_9Y_pkrW2dIVnJdN-lfL8r0326m5wNhadHy=w627-h644-no" alt="error point"></p>
+<p>因為 <strong>3DES</strong> 加密沒有關閉，導致了這個問題，以下是檢測報告的資料。</p>
+<div class="note danger"><h1 id="Insecure-Transport-Weak-SSL-Cipher-11285"><a href="#Insecure-Transport-Weak-SSL-Cipher-11285" class="headerlink" title="Insecure Transport: Weak SSL Cipher ( 11285 )"></a>Insecure Transport: Weak SSL Cipher ( 11285 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>WebInspect has detected support for weak TLS/SSL ciphers on server <code>https://xxx.xxx.xx:443/</code> .</p>
+<p>The Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols provide a mechanism to help protect authenticity, confidentiality and integrity of the data transmitted between a client and web server. The strength of this protection mechanism is determined by the authentication, encryption and hashing algorithms, collectively known as a cipher suite, chosen for the transmission of sensitive information over the TLS/SSL channel. Most Web servers support a range of such cipher suites of varying strengths. Using a weak cipher or an encryption key of insufficient length, for example, could allow an attacker to defeat the protection mechanism and steal or modify sensitive information.</p>
+<p>If misconfigured, a web server could be manipulated into choosing weak cipher suites. Recommendations include updating the web server configuration to always choose the strongest ciphers for encryption.</p></div><a id="more"></a>
+<h1 id="檢查工具"><a href="#檢查工具" class="headerlink" title="檢查工具"></a>檢查工具</h1><p>想要檢查 <strong>Cipher</strong> 的工具很多，也有許多線上網站提供線上檢測，以下列出幾種工具:</p>
+<h2 id="線上網站"><a href="#線上網站" class="headerlink" title="線上網站"></a>線上網站</h2><p>Qualys Labs 的 <a href="https://www.ssllabs.com/" target="_blank" rel="noopener">免費檢測工具</a>，選擇 <strong>Test your server</strong> ，然後輸入網域名稱，以下使用 google 當作範例</p>
+<ul>
+<li>輸入網域名稱</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/yUrE_6a-1WS-gRCT7lhISB94SIZf5zJuiB23Gtpgz9loiS-Iczsmpdi3PIEU9CcKrBb1LUWi1-RqgJaa_gRe35kk__s18R3pHRxjstwSONKkh9H71HenONOjrzde9WETDBqm9kqogpLdNMBCDPhaTB_kt1w2gXJXiFoS1Y6riMIF4nvno61-j6UBUqBroY-uc4xYvElS0Dg_2_KprH-9SMhSdLGwCSX-1GQ2Mg1kQ9oHkfLTJELcL0Wvj4g8WwxRBK1kcwafaOSuNT53gXnkcTV6k53I6RHqamcuQGtyd2sY67GWkcDoTlurKR0fV1exgisWUOBer8OaVsvaPKXnDhjCGi9VYoGZm1oiHO-2amf8dQzPRelSMdYC0QjNyY21OdcLZZHmfkDB98Mb_vbMf0av5osPjdt0nmWCKwS6rggH8v-gEV3VoGzP_WiuGnECcvgqz-sOjoNIqZRGedM9lTAEzg9uPN57_OhhgmQ0y3QCW_zNoe3fWLl1l7kZN89ocfrttTMniHi3erYm9S3-0idaO_cIQ_Fg7ghBNL5athBdYFuV1pjP8TJYjL4SfaUAW-HSidnKPKUDEI9IVYpEm40LLGVbHy6lWtayPvlndlrg5rV5BeHefcSmynuMyRFcL4nScSYd8CMwxYqLzdnwFTSLriXMD8Lp=w1027-h360-no" alt="input hostname"></p>
+<ul>
+<li>檢測結果</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/J4CXsVxCcPMS_pjz5vWq6ENcAw9d_gnNcAFMaWbY5EMR2hAOxmpEkqmAuYVaCidccVhIf4-fONC69Et9XGZRk8qXmRdJX1rHzwY3c-LngA92IWhpt5hWzMr7auII7vzeCJGZg1hR6T4bFdCiBSpCvYRVZ2KNwrCMaDrrjj7qEjIhLVsR2tY6f8Kn3PqoHjtC587rTWGRY3g1jNcAPLHAkh6ew6w1RPrJ60ulyoypMflaFiipZcSxG_TD5wC1iRcXoM0finaj8KyqXrqP7WCdDtLUS98zQEJBHXDrI_wpnUeNFeoJ0XK028__nBzDHICs9YpA2B43yCjQgxUK1K6R-n6So8nazKebaJbyYWkUoqxzKDB0OuK8gu42Hbt56MBEq9eoUJiM7qgZRDlDb-xccR8zAOrm8D0-1yDRvzjgLtGc2F8vgBMS2CxUJt7PxNE6ciqaFmOl4bxiOc_XkXfz9-LFBX0SqJuJhoT1dLh_jkKT78gjQLjE01m81ewilrb8XawgapdKIn2kT-Xa722WUvQvm_P7-B61_6tt4A1FcLGJbzmO7cuysDQLT2-O33Q2NJkGNFC9oIGgbZ0FSNnW2GfI1bXLoYZ9AvyKN8b29KXTSGqrqiOnMeAoMqeL1nQc4jer7e6eGDkmu8qLOJ_r8OU9l3Z1vH37=w1298-h619-no" alt="Qualys ssl report"></p>
+<h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a><a href="https://nmap.org/" target="_blank" rel="noopener">Nmap</a></h2><p><a href="https://nmap.org/" target="_blank" rel="noopener">Nmap</a> 是個指令列檢測工具，在 windows 上的安裝方式也挺容易的，檢查憑證與弱加密方式的測試指令如下：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap --script ssl-cert,ssl-enum-ciphers -p <span class="number">443</span>,<span class="number">465</span>,<span class="number">993</span>,<span class="number">995</span> www.google.com</span><br></pre></td></tr></table></figure>
+<p>OWASP 的<a href="https://www.owasp.org/index.php/Testing_for_Weak_SSL/TLS_Ciphers,_Insufficient_Transport_Layer_Protection_(OTG-CRYPST-001)" target="_blank" rel="noopener">Testing for Weak SSL/TLS Ciphers</a>介紹了更多種檢測方式</p>
+<h2 id="IIS-Crypto"><a href="#IIS-Crypto" class="headerlink" title="IIS Crypto"></a><a href="https://www.nartac.com/Products/IISCrypto" target="_blank" rel="noopener">IIS Crypto</a></h2><p>此章針對 <strong>IIS</strong> ，而 <strong>IIS</strong> 要調整加密方式，有些需要調整 <strong>Registry 登錄檔</strong>，所以 <a href="https://www.nartac.com/Products/IISCrypto" target="_blank" rel="noopener"><strong>IIS Crypto</strong></a> 此工具不僅可以查看，還可以快速調整，是相當便利的工具</p>
+<p><img src="https://lh3.googleusercontent.com/shdVxRfRG5BnOmLxoH-aD7jwnpvST7WrezZmoLc7t--wiHpWGH4RqGjiVwlo3p8UuEnV7kE9hkfBmkOlYMZIN9gKp3WPFcperTjZR9M47KU1JzmKXVDgwdfgAQvDeQ9k8p8uMb3vAkQa-PbHbC_DGnnnLy_GDpedZ9tgaL5BN2SI8FKxR7Cj7vm9biK8XImWYRW0fB-og575O7WXxTP-9JobibeA9XGvmkVuYX6uvD4GkjjTEcKrJSmOt22eha8yWwix0SmiDiyJy1UUBH-W87kYgX8Sn5QFsTQ-d_tXq7n2KkBOyWyp3xNsJFWVnV1FHft9Wt4BLUW6UmL3oVvswuCv7DF_8wD6FBhpKmHlF_HoSXQCyt9yepFzdOW6VYH9iCMgMMHPSJezRqYBArjRmpo6VBhPK0A5_m8bzQKrqPsxqc2mU_JVlkwFT88HPUEZeITwwzaRVNbBuDJcnAWOOsgnkEznEfpbiSNN1LZDMxedMNySB4iy-4kL_ADLGUEiEqI2iCiahQspph3smCZ0_zjB9NJuIQMtmw8OgxPWeQoDumU5-Y4VOELQH9k_rJ6NCdOqvZz7CaNpXLA1RWg0NdfU_YxM5NcfXlO8hxG1loD1UUBKcqhTQMyIkFjF1xamRGFjPsjsDGwjcJz5wvLOD2jLiJxMhSC7=w1107-h866-no" alt="apply"></p>
+<p>注意修改後，需要重新開機，不然調整的設定不會立即啟用。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://en.wikipedia.org/wiki/Cipher_suite" target="_blank" rel="noopener">Wiki Cipher suite</a></li>
+<li><a href="http://blog.darkthread.net/post-2015-04-23-sha1-ssl-on-chrome.aspx" target="_blank" rel="noopener">darkthread HTTPS網站被Chrome打臉？</a></li>
+<li><a href="https://www.owasp.org/index.php/Testing_for_Weak_SSL/TLS_Ciphers,_Insufficient_Transport_Layer_Protection_(OTG-CRYPST-001)" target="_blank" rel="noopener">OWASP Testing for Weak SSL/TLS Ciphers</a></li>
+<li><a href="https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet" target="_blank" rel="noopener">OWASP Transport Layer Protection Cheat Sheet</a></li>
+<li>浮雲雅築<a href="http://shaurong.blogspot.tw/2017/07/https-ssl-cipher_22.html" target="_blank" rel="noopener">瀏覽器預設 HTTPS SSL Cipher 加密優先順序</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/IIS/" rel="tag"># IIS</a>
+          
+            <a href="/tags/security/" rel="tag"># security</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/08/Hidden-Segments/" rel="next" title="透過 IIS 來設定 Hidden Segments">
+                <i class="fa fa-chevron-left"></i> 透過 IIS 來設定 Hidden Segments
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/10/add-ga-by-iis-rewrite/" rel="prev" title="利用 URL Rewrite 加入 Tracking Code">
+                利用 URL Rewrite 加入 Tracking Code <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Insecure-Transport-Weak-SSL-Cipher-11285"><span class="nav-number">1.</span> <span class="nav-text">Insecure Transport: Weak SSL Cipher ( 11285 )</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">1.1.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#檢查工具"><span class="nav-number">2.</span> <span class="nav-text">檢查工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#線上網站"><span class="nav-number">2.1.</span> <span class="nav-text">線上網站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nmap"><span class="nav-number">2.2.</span> <span class="nav-text">Nmap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IIS-Crypto"><span class="nav-number">2.3.</span> <span class="nav-text">IIS Crypto</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">2.4.</span> <span class="nav-text">參考資料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2018/05/09/SSL-Cipher/';
+          this.page.identifier = '2018/05/09/SSL-Cipher/';
+          this.page.title = 'IIS 關閉不安全的 SSL 加密方式(Cipher)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

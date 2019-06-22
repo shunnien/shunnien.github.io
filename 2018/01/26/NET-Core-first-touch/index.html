@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="紀錄 Will 保哥 的給 C# 開發人員的第一堂 .NET Core 入門的內容筆記，內容介紹詳細，從 .NET 介紹開始說明，">
+<meta name="keywords" content="notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET Core 入門筆記">
+<meta property="og:url" content="https://shunnien.github.io/2018/01/26/NET-Core-first-touch/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="紀錄 Will 保哥 的給 C# 開發人員的第一堂 .NET Core 入門的內容筆記，內容介紹詳細，從 .NET 介紹開始說明，">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/3sFEa1vENTjm-7ElfomC92IUG6h2mMGR86tsiONMIATM90GN2DuiP4qYdbyJ7B-7m4jGk0eTHme_t2zfY4snZrBF0QJnvdSqVyzeb_x_vcez03zUN8-FTrYXbdmXR_sB3qtqqHMzwfJAzcM0wUuv2B3XprnxuGmSFRukk3E2Uh1XyfjBXK0YPGo9TI6dP0udSGlIBqWecj3pnDUPUStrQPXMMQa91N-IE6WPFkxP908hy7tw4uJrsgoBz9Bw4e7YQ1ADaSehXyORCqJSiVlOaV8M4YUaEUazsUtlXZUFBAYJfi_ZDPLtaoorLgWRa_cDic1T8iwckK__gJjrZbq6rf_jUx8JaunTO36dNoN5EmpO1HYb-Uf1_OqOyP4pzydZRkHCpYVo_ILMBpVwVHIzJEZuRXmcmKoVKkS8JuU3aewRGHkxDNkabDKb528cBXqo3Vfy_HsF-vbTuiEYxvc_AvCgTUga_iTVr84UHHJXt0ELGeF6m1a27Z9-v5Rg6Yp55R7SztZMqdEDhoQSP4vzXDfMW3TivkM2UYjNq-BEC7lHsyDqVkgyfNF56vW2uH45FaJcXN2xGMmNUClGLvqZhf2iW_-XK9QuLBo5JBRb13sDJwaMau0XvYo1FsXR3p5BHEALkGQJvq4W83nbduRDnlSPbcO_NE6v=w893-h605-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/1bfuhvDXrQX85bRB3z08ohsys60axwEL8sgWUL1UK-rodAqWy8A5IQltDIPxi_lX1JyRB0cDigR7ChZK08tweQDgEl6hHXWvsrYZ-Jm4KOwRVITWYWJvOSEGgG_pxiqmpAT5wb5Mliqrw4YkrN07NHJKkTbFR6oHHNbCk078J4fsvIcheSpjeDZj01709zkhSSl0ndQSqAItOLfioDhzKzG554hPNVJgX-axOa66i52IDif8xpxk7GcfGW4PuwC0cfzkA6GZYYUDRd2lFmhd3J2zlm6zArDjlgzYfc9Kw-Q_I-7ZmVJJploxp_vgPQx-Hgm32fwbmAuG-N5px52bOh7amLI6Wn3-W_9NcDcr7jvuH1k4e2puQ-Gg1w2tAw8Tg-MAyNmTx9hTQ0h5Nde9cffyd84az66dm-7zt1bL4VDXGSVr2Z10EXTTrRYzCTuX2uk5__zCdrSR181b53WJDEMmFzrIUl-viU6sHEUjzucLd9udZmuLY2_qbAOkXhYEFY4eqW5jy1aNRYwSt61zKPamM9c6KQtj-InWd_k1eVf41k5e_8KxcLbLizW_iL7Fh3U-14S86iSfbMk-TvZlzl5-uvuWNvTZaLSPiEXkntdEJ4RO-DyCM3ofEp3VSN2tu4cyDD-VfUxsZPJ_T4d_L_X_62YNnkgX=w874-h647-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/YEW20ENrvzuh6s4MhoqDTmERjOJchacSY5fkasMGROt2IeZ19heVPEBlp7b6vuLOcxoWFtY9cSHKEBloIATU1OgWBbP2AcUZ5XIZTxT-IEtEbdvyfLYaMs7a66AZIhbmEKllr1XC-QTj4l6ScDWbIhwZQ_q8tfHTkexu1FvLtDvyOBulpo6d0U3rs1m0dnnanP7zD4JvMtTO0WcE2dIttjir4FDs1kkEo9dNRYILdEO-3CR8mnc1zFkIPAxxciIayR07iFa0jlQrez8w2F0hKDxhiR1LQj9VcDQK226X5m7-m20JUgHmD_SYnONERvXpsEy9vSwm8Je6LWxXU04A__w_C4VYD9FPbAYoN2C75OID_bKpVguAIw5mPsyQcTn4Zpf1-Kvc2mwN2UXXMyjELjmil9AoR3c-uAWXZrfMLmf9fXRn-nTj1wH5Qx9xjO1BpC9SJsRU-IiUYb19WcrOncbKtJPdK-s5U1KZLvsXkNCG6gq2SZwC9NXijoJp4zhCGcJDQfrM3xV8J8Flp9nKFOhO3iPXNg_w-IsuSJ3iMVqbCXTPsR_zv2J_Vvj4BSbbCQjGP_5W7PbdKj4ryDj8sPnRciynj1W763YvWrybjN3prevDLUo_yJRgE6-N26pxdaEu_QSXVLA8bsn1qsaZ4p6A_2cgTgHC=w466-h307-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/g3kvMjRbRSdw0gpjBsHch63uNbiSqDUiEDlHYasA4caycYtSXijWblYSWje9HEgRNemS7bG1Js-FH98H2WCOuq6KZ0E6rql8toHuNKoSm6RLWNQIpi1XG4lmbr75Y5Bi76BCHDrSLE-K-iek66V4dl2VqCC7ldASmJvpEstvpIwzIQMa1xf1tbZagsVB1526sdnXndEwvky1DDYeO23dRO_w7s1HcaxGa6sHNZ-170uqWk_48lPxLor2ti0HSk7bdpi9vI2V1yRkazT-VLQ5CLNyEEkjURP0h9N8D66SdDbTfyAPm8kVeGevByOGgxYhopOD6ihe20YkEwZ2-wBfCxczUOoeJQunXiW3Mf9tA2SPrgCcS-hz6OrfOdTct5MmR4KbFGRY6IjtS6KYRqEKeSDqilMo0aHzMkcdHiCmdqe16Zrn4pS3A20IfYZXFNwwnP4BwuUFHCR5c5ukNZ5nTdwmh7RfRgscJOMEMyh6cpRx1XdGTwVE7ax-ZyVgOJzHaWdGNkGL0Bw-piizRayv5NIsqZ9STplgr0BchZpE104J-fAyZh5PNBEOG_9EMbmVsIv8DDLemvv4Yj7Or2MSyfB5VLyMdGPZVHsIDRrEaUsOADDf2xrDgzTE2cuq6F-AG6SXamR9v_Tn-hL-jaX5II-DGPHf9LP-=w767-h605-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.670Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".NET Core 入門筆記">
+<meta name="twitter:description" content="紀錄 Will 保哥 的給 C# 開發人員的第一堂 .NET Core 入門的內容筆記，內容介紹詳細，從 .NET 介紹開始說明，">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/3sFEa1vENTjm-7ElfomC92IUG6h2mMGR86tsiONMIATM90GN2DuiP4qYdbyJ7B-7m4jGk0eTHme_t2zfY4snZrBF0QJnvdSqVyzeb_x_vcez03zUN8-FTrYXbdmXR_sB3qtqqHMzwfJAzcM0wUuv2B3XprnxuGmSFRukk3E2Uh1XyfjBXK0YPGo9TI6dP0udSGlIBqWecj3pnDUPUStrQPXMMQa91N-IE6WPFkxP908hy7tw4uJrsgoBz9Bw4e7YQ1ADaSehXyORCqJSiVlOaV8M4YUaEUazsUtlXZUFBAYJfi_ZDPLtaoorLgWRa_cDic1T8iwckK__gJjrZbq6rf_jUx8JaunTO36dNoN5EmpO1HYb-Uf1_OqOyP4pzydZRkHCpYVo_ILMBpVwVHIzJEZuRXmcmKoVKkS8JuU3aewRGHkxDNkabDKb528cBXqo3Vfy_HsF-vbTuiEYxvc_AvCgTUga_iTVr84UHHJXt0ELGeF6m1a27Z9-v5Rg6Yp55R7SztZMqdEDhoQSP4vzXDfMW3TivkM2UYjNq-BEC7lHsyDqVkgyfNF56vW2uH45FaJcXN2xGMmNUClGLvqZhf2iW_-XK9QuLBo5JBRb13sDJwaMau0XvYo1FsXR3p5BHEALkGQJvq4W83nbduRDnlSPbcO_NE6v=w893-h605-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2018/01/26/NET-Core-first-touch/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>.NET Core 入門筆記 | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/01/26/NET-Core-first-touch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">.NET Core 入門筆記</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-01-26T11:16:45+08:00">
+                2018-01-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/26/NET-Core-first-touch/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/26/NET-Core-first-touch/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>紀錄 <strong>Will 保哥</strong> 的<a href="https://www.udemy.com/netcore2/learn/v4/overview" target="_blank" rel="noopener"><strong>給 C# 開發人員的第一堂 .NET Core 入門</strong></a>的內容筆記，內容介紹詳細，從 .NET 介紹開始說明，<br><a id="more"></a></p>
+<h2 id="NET-Framework-框架"><a href="#NET-Framework-框架" class="headerlink" title=".NET Framework 框架"></a>.NET Framework 框架</h2><div class="note info"><p>.NET Framework 大約在西元 2002 年推出 .NET 1.0 版，是一套由微軟主導的軟體開發平台，幫助開發人員可以更快的開發出各式各樣的應用程式，並且確保應用程式可以不受作業系統、CPU 架構等平台限制，在任意環境都可以正確執行。</p>
+<p>微軟與其合作夥伴，共同訂製了 <strong>Common Language Infrastructure (CLI) 共通語言基礎架構</strong>，這是一份開放式的技術規範，讓所有符合 CLI 規範的應用程式，都能夠正常的運作在不同的電腦系統之中，而不用重新撰寫或編譯應用程式。</p></div>
+<h2 id="NET-可攜式類別庫-PCL"><a href="#NET-可攜式類別庫-PCL" class="headerlink" title=".NET 可攜式類別庫 (PCL)"></a>.NET 可攜式類別庫 (PCL)</h2><p>我們通常會將常用或是習慣使用的功能撰寫為 <strong>Class Library</strong> (類別庫)，使其產生組件 (Assembly) ，以利重複使用；但由於 <strong>.NET Framework</strong> 支援的平台時做太多，例如： .NET Framework  、.NET Core 、Mono 、Windows Phone …，所以才出現 <strong>PCL</strong> ，不過現在除非還有需要使用 <strong>Windows Phone</strong> 與 <strong>Silverlight</strong> 這兩個平台，不然 PCL 已經不需要使用了，直接使用 <strong>.NET Standard</strong></p>
+<h2 id="NET-Core-2-0"><a href="#NET-Core-2-0" class="headerlink" title=".NET Core 2.0"></a>.NET Core 2.0</h2><p><strong>.NET Core</strong> 就是微軟最新強調跨平台的的實作(雖然以前也推了一些，但是都不是真正跨平台)</p>
+<div class="note info"><p>.NET Core 的組成包括</p>
+<ul>
+<li><p>一個 <strong>.NET</strong> 執行階段 (<strong>Runtime</strong>)<br>提供型別系統、組件載入、記憶體回收機制、原生 Interop 及其他基本服務。</p>
+</li>
+<li><p>一組 Framework 函式庫 (<strong>Framework Libraries</strong>)<br>提供基礎資料型別 (primitive data types) 與一些好用的應用程式類別與工具類別。</p>
+</li>
+<li><p>一組 <strong>SDK</strong> 工具組及語言編譯器<br>提供軟體開發過程所需的基礎工具，此工具組可以透過 .NET Core SDK 取得。</p>
+</li>
+<li><p>一個 <strong>dotnet</strong> 主程式 ( <strong>app host</strong> )<br>它主要用來啟動與執行 .NET Core 應用程式 ( 例如你可以用 <strong>dotnet ConsoleApp1.dll</strong> 命令來啟動 .NET Core 應用程式 )，過程中它會自動選取正確的 Runtime，並將 Runtime 裝載到記憶體內，提供 DLL 組件的載入原則，然後啟動應用程式執行。</p>
+</li>
+</ul>
+<p><strong>.NET Core 並不是一套全新的框架，它是一份 .NET Framework 的跨平台實作。</strong></p></div>
+<h2 id="NET-Standard-標準類別庫"><a href="#NET-Standard-標準類別庫" class="headerlink" title=".NET Standard 標準類別庫"></a>.NET Standard 標準類別庫</h2><p><strong>.NET Standard 標準類別庫</strong> (簡稱 .NET Standard)，說穿了就是一種類別庫的類型；其實就是希望支援所有 .NET 平台能擁有一致的 BCL 基礎類別庫</p>
+<div class="note info"><ul>
+<li>.NET Standard 版本越新，代表你可以使用的 API 就越多</li>
+<li>.NET Standard 版本越舊，代表你可以支援的平台就越多 ( 相對的可使用的 API 就會減少 )</li>
+</ul>
+<p>下表列出所有 .NET Standard 版本和支援的平台：<br><img src="https://lh3.googleusercontent.com/3sFEa1vENTjm-7ElfomC92IUG6h2mMGR86tsiONMIATM90GN2DuiP4qYdbyJ7B-7m4jGk0eTHme_t2zfY4snZrBF0QJnvdSqVyzeb_x_vcez03zUN8-FTrYXbdmXR_sB3qtqqHMzwfJAzcM0wUuv2B3XprnxuGmSFRukk3E2Uh1XyfjBXK0YPGo9TI6dP0udSGlIBqWecj3pnDUPUStrQPXMMQa91N-IE6WPFkxP908hy7tw4uJrsgoBz9Bw4e7YQ1ADaSehXyORCqJSiVlOaV8M4YUaEUazsUtlXZUFBAYJfi_ZDPLtaoorLgWRa_cDic1T8iwckK__gJjrZbq6rf_jUx8JaunTO36dNoN5EmpO1HYb-Uf1_OqOyP4pzydZRkHCpYVo_ILMBpVwVHIzJEZuRXmcmKoVKkS8JuU3aewRGHkxDNkabDKb528cBXqo3Vfy_HsF-vbTuiEYxvc_AvCgTUga_iTVr84UHHJXt0ELGeF6m1a27Z9-v5Rg6Yp55R7SztZMqdEDhoQSP4vzXDfMW3TivkM2UYjNq-BEC7lHsyDqVkgyfNF56vW2uH45FaJcXN2xGMmNUClGLvqZhf2iW_-XK9QuLBo5JBRb13sDJwaMau0XvYo1FsXR3p5BHEALkGQJvq4W83nbduRDnlSPbcO_NE6v=w893-h605-no" alt=".net standart version list"></p></div>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="NET-Portability-Analyzer"><a href="#NET-Portability-Analyzer" class="headerlink" title=".NET Portability Analyzer"></a><a href="https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer" target="_blank" rel="noopener">.NET Portability Analyzer</a></h3><p>Visual Studio 2017 的擴充套件，檢查目前專案是否適合轉換為 .NET Core ，就是檢查是否有使用到不支援的 API<br><img src="https://lh3.googleusercontent.com/1bfuhvDXrQX85bRB3z08ohsys60axwEL8sgWUL1UK-rodAqWy8A5IQltDIPxi_lX1JyRB0cDigR7ChZK08tweQDgEl6hHXWvsrYZ-Jm4KOwRVITWYWJvOSEGgG_pxiqmpAT5wb5Mliqrw4YkrN07NHJKkTbFR6oHHNbCk078J4fsvIcheSpjeDZj01709zkhSSl0ndQSqAItOLfioDhzKzG554hPNVJgX-axOa66i52IDif8xpxk7GcfGW4PuwC0cfzkA6GZYYUDRd2lFmhd3J2zlm6zArDjlgzYfc9Kw-Q_I-7ZmVJJploxp_vgPQx-Hgm32fwbmAuG-N5px52bOh7amLI6Wn3-W_9NcDcr7jvuH1k4e2puQ-Gg1w2tAw8Tg-MAyNmTx9hTQ0h5Nde9cffyd84az66dm-7zt1bL4VDXGSVr2Z10EXTTrRYzCTuX2uk5__zCdrSR181b53WJDEMmFzrIUl-viU6sHEUjzucLd9udZmuLY2_qbAOkXhYEFY4eqW5jy1aNRYwSt61zKPamM9c6KQtj-InWd_k1eVf41k5e_8KxcLbLizW_iL7Fh3U-14S86iSfbMk-TvZlzl5-uvuWNvTZaLSPiEXkntdEJ4RO-DyCM3ofEp3VSN2tu4cyDD-VfUxsZPJ_T4d_L_X_62YNnkgX=w874-h647-no" alt="setting"></p>
+<p>使用方式相當簡單，只要在 <strong>solution explore</strong> 中，選取要比較的專案，再使用滑鼠右鍵呼叫選單，選取 <strong>Analyzer Project Portability</strong><br><img src="https://lh3.googleusercontent.com/YEW20ENrvzuh6s4MhoqDTmERjOJchacSY5fkasMGROt2IeZ19heVPEBlp7b6vuLOcxoWFtY9cSHKEBloIATU1OgWBbP2AcUZ5XIZTxT-IEtEbdvyfLYaMs7a66AZIhbmEKllr1XC-QTj4l6ScDWbIhwZQ_q8tfHTkexu1FvLtDvyOBulpo6d0U3rs1m0dnnanP7zD4JvMtTO0WcE2dIttjir4FDs1kkEo9dNRYILdEO-3CR8mnc1zFkIPAxxciIayR07iFa0jlQrez8w2F0hKDxhiR1LQj9VcDQK226X5m7-m20JUgHmD_SYnONERvXpsEy9vSwm8Je6LWxXU04A__w_C4VYD9FPbAYoN2C75OID_bKpVguAIw5mPsyQcTn4Zpf1-Kvc2mwN2UXXMyjELjmil9AoR3c-uAWXZrfMLmf9fXRn-nTj1wH5Qx9xjO1BpC9SJsRU-IiUYb19WcrOncbKtJPdK-s5U1KZLvsXkNCG6gq2SZwC9NXijoJp4zhCGcJDQfrM3xV8J8Flp9nKFOhO3iPXNg_w-IsuSJ3iMVqbCXTPsR_zv2J_Vvj4BSbbCQjGP_5W7PbdKj4ryDj8sPnRciynj1W763YvWrybjN3prevDLUo_yJRgE6-N26pxdaEu_QSXVLA8bsn1qsaZ4p6A_2cgTgHC=w466-h307-no" alt="Analyzer Project Portability"></p>
+<h3 id="NuGetPackageExplorer"><a href="#NuGetPackageExplorer" class="headerlink" title="NuGetPackageExplorer"></a><a href="https://github.com/NuGetPackageExplorer/NuGetPackageExplorer" target="_blank" rel="noopener">NuGetPackageExplorer</a></h3><p>安裝方式可以透過 <strong>Microsoft Store</strong> 直接快速安裝；此工具可以分析 Nuget 上的套件相容性，可以清楚得知，此套件是不是可以運用在 .NET Core 上。</p>
+<p><img src="https://lh3.googleusercontent.com/g3kvMjRbRSdw0gpjBsHch63uNbiSqDUiEDlHYasA4caycYtSXijWblYSWje9HEgRNemS7bG1Js-FH98H2WCOuq6KZ0E6rql8toHuNKoSm6RLWNQIpi1XG4lmbr75Y5Bi76BCHDrSLE-K-iek66V4dl2VqCC7ldASmJvpEstvpIwzIQMa1xf1tbZagsVB1526sdnXndEwvky1DDYeO23dRO_w7s1HcaxGa6sHNZ-170uqWk_48lPxLor2ti0HSk7bdpi9vI2V1yRkazT-VLQ5CLNyEEkjURP0h9N8D66SdDbTfyAPm8kVeGevByOGgxYhopOD6ihe20YkEwZ2-wBfCxczUOoeJQunXiW3Mf9tA2SPrgCcS-hz6OrfOdTct5MmR4KbFGRY6IjtS6KYRqEKeSDqilMo0aHzMkcdHiCmdqe16Zrn4pS3A20IfYZXFNwwnP4BwuUFHCR5c5ukNZ5nTdwmh7RfRgscJOMEMyh6cpRx1XdGTwVE7ax-ZyVgOJzHaWdGNkGL0Bw-piizRayv5NIsqZ9STplgr0BchZpE104J-fAyZh5PNBEOG_9EMbmVsIv8DDLemvv4Yj7Or2MSyfB5VLyMdGPZVHsIDRrEaUsOADDf2xrDgzTE2cuq6F-AG6SXamR9v_Tn-hL-jaX5II-DGPHf9LP-=w767-h605-no" alt="Store Install"></p>
+<h2 id="相關連結"><a href="#相關連結" class="headerlink" title="相關連結"></a>相關連結</h2><ul>
+<li><a href="https://docs.microsoft.com/zh-tw/dotnet/standard/managed-code" target="_blank" rel="noopener">Managed 程式碼</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/dotnet/standard/clr" target="_blank" rel="noopener">Common Language Runtime</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/dotnet/standard/language-independence" target="_blank" rel="noopener">語言獨立性以及與語言無關的元件</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/dotnet/standard/framework-libraries" target="_blank" rel="noopener">Framework 程式庫</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/standard/cross-platform/" target="_blank" rel="noopener">Developing for Multiple Platforms with the .NET Framework</a></li>
+<li><a href="https://blogs.msdn.microsoft.com/dotnet/2013/10/14/portable-class-library-pcl-now-available-on-all-platforms/" target="_blank" rel="noopener">Portable Class Library (PCL) now available on all platforms</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/dotnet/core/" target="_blank" rel="noopener">.NET Core 指南</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/dotnet/core/get-started" target="_blank" rel="noopener">.NET Core 使用者入門</a></li>
+<li><a href="https://github.com/dotnet/core/blob/master/roadmap.md" target="_blank" rel="noopener">.NET Core Roadmap</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/dotnet/standard/net-standard" target="_blank" rel="noopener">.NET Standard</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks" target="_blank" rel="noopener">Target frameworks</a></li>
+<li><a href="https://www.microsoft.com/net/download/windows" target="_blank" rel="noopener">.NET Core SDK Downloads</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/dotnet/api/" target="_blank" rel="noopener">.NET API 瀏覽器</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer" target="_blank" rel="noopener">.NET Portability Analyzer ( VS2017 擴充套件 )</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/dotnet/standard/portability-analyzer" target="_blank" rel="noopener">.NET Portability Analyzer-.NET | Microsoft Docs</a></li>
+<li><a href="https://github.com/NuGetPackageExplorer/NuGetPackageExplorer" target="_blank" rel="noopener">NuGetPackageExplorer | Github</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/notes/" rel="tag"># notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/25/Javascript30days-24/" rel="next" title="JS30紀錄 24-Sticky Nav">
+                <i class="fa fa-chevron-left"></i> JS30紀錄 24-Sticky Nav
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/27/Javascript30days-25/" rel="prev" title="JS30紀錄 25-Event Capture, Propagation, Bubbling and Once">
+                JS30紀錄 25-Event Capture, Propagation, Bubbling and Once <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NET-Framework-框架"><span class="nav-number">1.</span> <span class="nav-text">.NET Framework 框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NET-可攜式類別庫-PCL"><span class="nav-number">2.</span> <span class="nav-text">.NET 可攜式類別庫 (PCL)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NET-Core-2-0"><span class="nav-number">3.</span> <span class="nav-text">.NET Core 2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NET-Standard-標準類別庫"><span class="nav-number">4.</span> <span class="nav-text">.NET Standard 標準類別庫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">5.</span> <span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NET-Portability-Analyzer"><span class="nav-number">5.1.</span> <span class="nav-text">.NET Portability Analyzer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NuGetPackageExplorer"><span class="nav-number">5.2.</span> <span class="nav-text">NuGetPackageExplorer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相關連結"><span class="nav-number">6.</span> <span class="nav-text">相關連結</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2018/01/26/NET-Core-first-touch/';
+          this.page.identifier = '2018/01/26/NET-Core-first-touch/';
+          this.page.title = '.NET Core 入門筆記';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="other,notes,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Web駭客攻擊手法及防護實戰 Day 2 筆記">
+<meta name="keywords" content="other,notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web駭客攻擊手法及防護實戰 Day 2">
+<meta property="og:url" content="https://shunnien.github.io/2016/01/27/webhacking2/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="Web駭客攻擊手法及防護實戰 Day 2 筆記">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/Y78HAIdZGWT9kCokFc0PUBPaUmcRLIr1mJYOXwmpTAP0WhlhH5NV4rfwV-0TZzbrSJ0iATvBH0nIh0ZUanNe_zmxLtidv4CmEEZVvArDI8NYxdEDWKDta93m3vSvHQaLAJ9Ov8ebEetRBF_3saQtvitOFrIdKGBP3l6HlwfBf6ZjTacV5t22eTGpmBwqX56PTiQEAz5NCqtl2GFjUiHayOmhwZX6S8evbp6kU8rqHipiVh_3bSPdxLM7s4xGimTM6BTwg95-4h6kp1xL01-i_MoupXZRrdYq9RA_I5t_hlhx0itG34PMS7wNci6ojxpQjV92XdvQ6YCN-uSK4bbNL4BjE5ZbjAO3Ht7Fv6rSqEoxepplUZ_wHc8aAXchzp_q0slSxJti4ghHw7nIR0wtzSHGVN8HNbulwqsXyavsIftWrGiffmSJ1dXu3u1I0YiEWeXZUSXlHaA_lR3cjW23Ns4HuFp6sAyCqHu0-3V5T1i2nhKQJvihFR9EbtHsB2ghq-wPUksXUEizTFJ11q86W4ZI1SO2eqIkWeLAkFVfZwWOxOBKHx_6UkwqQEqx9ZAAsqdec72ksytk9skAr46CIWlNEPOt_BCA6HzJuQLCUljNUhhY4rCh-ZUkVBUlsqNtG6xSqzId1fTCUx13LBeDKqGanyqAiLN6H-7tiMfyZQ=w547-h391-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.611Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web駭客攻擊手法及防護實戰 Day 2">
+<meta name="twitter:description" content="Web駭客攻擊手法及防護實戰 Day 2 筆記">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/Y78HAIdZGWT9kCokFc0PUBPaUmcRLIr1mJYOXwmpTAP0WhlhH5NV4rfwV-0TZzbrSJ0iATvBH0nIh0ZUanNe_zmxLtidv4CmEEZVvArDI8NYxdEDWKDta93m3vSvHQaLAJ9Ov8ebEetRBF_3saQtvitOFrIdKGBP3l6HlwfBf6ZjTacV5t22eTGpmBwqX56PTiQEAz5NCqtl2GFjUiHayOmhwZX6S8evbp6kU8rqHipiVh_3bSPdxLM7s4xGimTM6BTwg95-4h6kp1xL01-i_MoupXZRrdYq9RA_I5t_hlhx0itG34PMS7wNci6ojxpQjV92XdvQ6YCN-uSK4bbNL4BjE5ZbjAO3Ht7Fv6rSqEoxepplUZ_wHc8aAXchzp_q0slSxJti4ghHw7nIR0wtzSHGVN8HNbulwqsXyavsIftWrGiffmSJ1dXu3u1I0YiEWeXZUSXlHaA_lR3cjW23Ns4HuFp6sAyCqHu0-3V5T1i2nhKQJvihFR9EbtHsB2ghq-wPUksXUEizTFJ11q86W4ZI1SO2eqIkWeLAkFVfZwWOxOBKHx_6UkwqQEqx9ZAAsqdec72ksytk9skAr46CIWlNEPOt_BCA6HzJuQLCUljNUhhY4rCh-ZUkVBUlsqNtG6xSqzId1fTCUx13LBeDKqGanyqAiLN6H-7tiMfyZQ=w547-h391-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2016/01/27/webhacking2/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>Web駭客攻擊手法及防護實戰 Day 2 | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2016/01/27/webhacking2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web駭客攻擊手法及防護實戰 Day 2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2016-01-27T18:56:23+08:00">
+                2016-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心得筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">心得筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/01/27/webhacking2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/27/webhacking2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  Web駭客攻擊手法及防護實戰 Day 2 筆記
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="本日議程"><a href="#本日議程" class="headerlink" title="本日議程"></a>本日議程</h2><ul>
+<li>資料端安全</li>
+<li>資料庫安全設置</li>
+<li>連線與限制</li>
+<li>權限管制與建議作法</li>
+</ul>
+<h2 id="資料安全"><a href="#資料安全" class="headerlink" title="資料安全"></a>資料安全</h2><p>所有的資安事件都不是單一的錯誤，都是一連串的錯誤引起。</p>
+<h3 id="SQL-Injection"><a href="#SQL-Injection" class="headerlink" title="SQL Injection"></a>SQL Injection</h3><blockquote>
+<p>鄉野傳說<br> 傳說…某冷色調店面討論區，有一位神人說.. SQL Injection 根本沒什麼!!<br> 只要把 xp_cmdshell 刪除就好<br>SQL Injection 只有 xp_cmdshell 有威脅?!<br>只要以 SQL Parameter 即可!<br>如果把 customErrors mode=”Off” 你就倒大霉了</p>
+</blockquote>
+<p>註：<strong>xp_cmdshell</strong> 利用 sql server 去呼叫可執行程式，關掉之後，一堆處理都會掛點，而且 sql server 只會回答<strong>權限不足</strong><br>註：SQL Injection 做好，可以減少很多 XSS 錯誤</p>
+<h3 id="XP-cmdshell-20-BCP"><a href="#XP-cmdshell-20-BCP" class="headerlink" title="XP_cmdshell %20 BCP"></a>XP_cmdshell %20 BCP</h3><ul>
+<li>BCP命令<br>SQL Server提供的一個快捷的資料導入匯出工具。使用它不需要啟動任何圖形管理工具就能以高效的方式導入匯出資料。當然，它也可以通過xp_cmdshell在SQL語句中執行，通過這種方式可以將其放到用戶端程式中（如delphi、c#等）運行，這也是使用戶端程式具有資料導入匯出功能的方法之一。</li>
+<li>xp_cmdshell<br>以作業系統命令列解譯器的方式執行給定的命令字串，並以文本行方式返回任何輸出。授予非管理使用者執行 xp_cmdshell 的許可權。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> NOCOUNT <span class="keyword">ON</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="comment">#a (name varchar(128), id int identity)</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="comment">#a</span></span><br><span class="line">(</span><br><span class="line">	<span class="keyword">name</span></span><br><span class="line">)</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		<span class="keyword">name</span></span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		sysobjects</span><br><span class="line">	<span class="keyword">WHERE</span> xtype = <span class="string">'U'</span></span><br><span class="line"><span class="keyword">declare</span> @<span class="keyword">id</span> <span class="built_in">int</span>, @cmd <span class="built_in">varchar</span>(<span class="number">2000</span>)</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	@<span class="keyword">id</span> = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> @<span class="keyword">id</span> &lt; (</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		<span class="keyword">MAX</span>(<span class="keyword">id</span>)</span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		<span class="comment">#a</span></span><br><span class="line">) <span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	@<span class="keyword">id</span> = <span class="keyword">MIN</span>(<span class="keyword">id</span>)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	<span class="comment">#a</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">id</span> &gt; @<span class="keyword">id</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	@cmd = <span class="string">'bcp '</span> + DB_NAME() + <span class="string">'..'</span> + <span class="keyword">name</span> + <span class="string">' out</span></span><br><span class="line"><span class="string">"c:\temp\' + name + '</span>.txt<span class="string">" -c -T'</span></span><br><span class="line"><span class="string">FROM</span></span><br><span class="line"><span class="string">	#a</span></span><br><span class="line"><span class="string">WHERE id = @id</span></span><br><span class="line"><span class="string">EXEC master..xp_cmdshell @cmd</span></span><br><span class="line"><span class="string">SELECT</span></span><br><span class="line"><span class="string">	@cmd</span></span><br><span class="line"><span class="string">END</span></span><br></pre></td></tr></table></figure>
+<p>這兩者混合使用，會達到非常嚴重的後果，所以伺服器角色權限設定非常重要。</p>
+<h3 id="Blind-SQL-Injection"><a href="#Blind-SQL-Injection" class="headerlink" title="Blind SQL Injection:"></a>Blind SQL Injection:</h3><p>仰賴<strong>錯誤訊息</strong>來建構出攻擊的語法；例如:註冊日期的年份，輸入負值，看有沒有過濾</p>
+<p>註：Oracle 的最大數值位數是零下 32 位<br>註：PHP 5.2 和 5.3 版在 32bits 的 PHP 有浮點數 Bug，這個數字丟下去 <strong>2.2250738585072011e-308</strong>，會直接運算過載(沒有容錯處理)</p>
+<h3 id="自動化工具"><a href="#自動化工具" class="headerlink" title="自動化工具"></a>自動化工具</h3><ul>
+<li>Havij:網路上流傳的一部分有毒，請不要亂下載 XD</li>
+<li><a href="http://w3af.org/" title="W3AF" target="_blank" rel="noopener">W3AF</a>:可測試 SQL Injection + XSS</li>
+<li><a href="http://sqlmap.org/" title="SQLMap" target="_blank" rel="noopener">SQLMap</a>:有同學整理相關<a href="http://www.legendsec.org/1111.html" title="SQLMap 指令集" target="_blank" rel="noopener">指令集</a>，或是 Facebook 搜尋 <strong>資訊安全+網路管理=資管?</strong> 加入該<a href="https://www.facebook.com/groups/hacker.tw/" title="資訊安全社群" target="_blank" rel="noopener">社群</a></li>
+<li><a href="http://sqlninja.sourceforge.net/" title="SQL Ninja" target="_blank" rel="noopener">SQL Ninja</a></li>
+</ul>
+<h3 id="Hex-to-ASCII"><a href="#Hex-to-ASCII" class="headerlink" title="Hex to ASCII"></a>Hex to ASCII</h3><p>將上述的範例或是一些簡易的 SQL Injection 透過 <strong><a href="http://www.dolcevie.com/js/converter.html" title="Hex To ASCII Converter" target="_blank" rel="noopener">Hex Convert</a></strong> 工具，如果轉換出來覺得沒有排版可以使用<a href="http://www.dpriver.com/pp/sqlformat.htm" title="Instant SQL Formatter" target="_blank" rel="noopener">這個線上工具</a>來格式化。</p>
+<h2 id="資料庫安全設置"><a href="#資料庫安全設置" class="headerlink" title="資料庫安全設置"></a>資料庫安全設置</h2><p>電腦發展到今年已經 52 年了，帳號密碼是最根本的驗證方法。而帳號與密碼對比而言，猜帳號比猜密碼還難，因為密碼還有限制，所以還比較好猜中；</p>
+<h3 id="3A架構"><a href="#3A架構" class="headerlink" title="3A架構"></a>3A架構</h3><ul>
+<li>Identification(識別)<br>輸入能被識別的資訊(如帳號、ID)</li>
+<li>Authentication(驗證)<br>輸入的資訊是否正確，辨認使用者(可以是人員或程式)的身份</li>
+<li>Authorization(授權)<br>依照權限給予相對的權利，主要精神在於根據安全政策給予使用者所能擁有的權限</li>
+<li>Accountability(審計)<br>供稽核使用，包括量測(measuring)、監控(monitoring)、報告(reporting)各種資源使用量及事件紀錄（log）；主要精神在於收集必要的使用者與系統之間互動的資料，最完備的作法就是「凡走過必留下痕跡」，鉅細靡遺地記錄所有的互動。</li>
+</ul>
+<p>所以 <strong>Identification(識別)</strong>應該是先確認帳號，確認這帳號存在，再行驗證密碼，如果不驗證帳號的話，就等於直接進入電腦了。例如：遠端登入桌面，你只要帳號對就等於進入對方電腦了。</p>
+<p>註：sql server 提供的 AES 的預設加密是只有 128 位元，不過不幸的是已經被破了(附上<a href="http://valerieaurora.org/hash.html" title="Lifetimes of cryptographic hash functions" target="_blank" rel="noopener">雜湊函式生命週期表</a>)</p>
+<blockquote>
+<p>IT冷知識：Microsoft AD 的驗證系統是 <strong>Kerberos</strong>(地獄三頭犬的名字)</p>
+</blockquote>
+<h3 id="MS-SQL"><a href="#MS-SQL" class="headerlink" title="MS SQL"></a>MS SQL</h3><p>資料庫的連線是基於RBAC(Role-base Access control;角色基礎存取控制)，<strong>MS SQL</strong> 是 <strong>RBAC</strong></p>
+<ul>
+<li>Sysadmin &amp; Public 外部連結帳戶是<ul>
+<li><strong>MSSQLServer</strong></li>
+<li>SQLServerMSSQLUser$Computer$MSSQLSERVER</li>
+</ul>
+</li>
+</ul>
+<p>sql server 檢查順序是這樣 MSSQLServer =&gt; Authenticated Users =&gt; Users =&gt; Everyone 最後發現都不行的時候，sql server 通知 OS 他需要一個寫入的權限，OS 會開啟一個臨時的 Authenticated Users<br>版本愈新，控制措施愈好!</p>
+<p>當你開了 Everyone 就包含了Everyone&lt;=Users &lt;= Authenticated Users&lt;=MSSQLServer</p>
+<p>有些人的資料庫會有本機執行時候很快，但是架到 Server 上發現，每秒鐘幾百 MB 的寫入率(單機)變成 27 MB 的寫入率(因為 sql server RBAC 會檢驗各個身分去看能不能寫入)，就是這個原因。</p>
+<h3 id="伺服器角色"><a href="#伺服器角色" class="headerlink" title="伺服器角色"></a><a href="https://msdn.microsoft.com/zh-tw/library/ms188659(v=sql.120).aspx" title="伺服器層級角色" target="_blank" rel="noopener">伺服器角色</a></h3><blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">角色</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">sysadmin</td>
+<td style="text-align:left">系統管理員 (sysadmin) 固定伺服器角⾊的成員可以在伺服器中執行所有活動。</td>
+</tr>
+<tr>
+<td style="text-align:left">serveradmin</td>
+<td style="text-align:left">伺服器管理員 (serveradmin) 固定伺服器角⾊的成員可以變更整個伺服器的組態選項及關閉伺服器。</td>
+</tr>
+<tr>
+<td style="text-align:left">securityadmin</td>
+<td style="text-align:left">安全性管理員 (securityadmin) 固定伺服器角⾊的成員可以管理登入及其屬性。他們可以 GRANT、DENY 及 REVOKE伺服器層級權限。如果他們擁有資料庫的存取權，也可以GRANT、DENY 和 REVOKE 資料庫層級權限。此外，他們可以重設 SQL Server 登入的密碼。</td>
+</tr>
+<tr>
+<td style="text-align:left">processadmin</td>
+<td style="text-align:left">處理序管理員 (processadmin) 固定伺服器角色的成員可以結束在 SQL Server 執行個體中執行的處理序。</td>
+</tr>
+<tr>
+<td style="text-align:left">setupadmin</td>
+<td style="text-align:left">setupadmin 固定伺服器角色的成員可以使用 Transact-SQL 陳述式加入和移除連結伺服器 (使用 Management Studio 時需具備 sysadmin 成員資格)。</td>
+</tr>
+<tr>
+<td style="text-align:left">bulkadmin</td>
+<td style="text-align:left">大量管理員 (bulkadmin) 固定伺服器角色的成員可以執行 BULK INSERT 陳述式。</td>
+</tr>
+<tr>
+<td style="text-align:left">diskadmin</td>
+<td style="text-align:left">磁碟管理員 (diskadmin) 固定伺服器角色是用來管理磁碟檔案。</td>
+</tr>
+<tr>
+<td style="text-align:left">dbcreator</td>
+<td style="text-align:left">資料庫建立者 (dbcreator) 固定伺服器角色的成員可以建立、改變、卸除及還原任何資料庫。</td>
+</tr>
+<tr>
+<td style="text-align:left">public</td>
+<td style="text-align:left">每一個 SQL Server 登入都屬於 public 伺服器角色。當伺服器主體未被授與或拒絕安全物件的特定權限時，該使用者會繼承授與該物件之 public 的權限。只有當您想要將任何物件提供給所有使用者使用時，才指派該物件的 public 權限。您無法變更 public 的成員資格。</td>
+</tr>
+</tbody>
+</table>
+<p>資料參考：<a href="https://msdn.microsoft.com/zh-tw/library/ms188659(v=sql.120).aspx" title="伺服器層級角色" target="_blank" rel="noopener">MSDN</a></p>
+</blockquote>
+<ul>
+<li>Securityadmin 權限幾乎等同 Sysadmin，但是兩者指令牴觸的時候，以 Sysadmin 為主</li>
+<li>Setupadmin 權限等同 ServerAdmin</li>
+</ul>
+<h2 id="連線與限制"><a href="#連線與限制" class="headerlink" title="連線與限制"></a>連線與限制</h2><h3 id="資料庫權限影響"><a href="#資料庫權限影響" class="headerlink" title="資料庫權限影響"></a>資料庫權限影響</h3><ul>
+<li>網路<ul>
+<li>防火牆</li>
+<li>協定</li>
+</ul>
+</li>
+<li>作業系統<ul>
+<li>權限設定<br><strong>明確許可</strong>與<strong>明確拒絕</strong>非常重要，只要你設定為明確拒絕寫入的權限，那就幾乎不可能有 <strong>SQL Injection</strong>；但是這些安全性架構對於欄位新增的設定很麻煩，但是銀行、航空公司都是這樣的設定，安全性比較安全，所以像航空公司行李的托運條碼從 13 碼擴增就花了 13 年，才把全球的資料庫更新統一。</li>
+<li>應用程式安全<br><strong>共用資料夾的代理身份</strong>、<strong>服務啟動帳號權限設置</strong>或<strong>指定特定帳號及權限設置</strong>，例如：IUser是否有寫入權，ASPNET是否應明確拒約特定目錄寫入權</li>
+</ul>
+</li>
+<li>資料庫<ul>
+<li>身分角色</li>
+<li>資料庫權限<br>資料庫出包影響最大，依次遞減為作業系統、網路兩層，所以網路層安全性出問題，不會往後放大影響。</li>
+</ul>
+</li>
+</ul>
+<h3 id="網路"><a href="#網路" class="headerlink" title="網路"></a>網路</h3><ul>
+<li>防火牆</li>
+<li>協定</li>
+</ul>
+<p>IPv4 不能驗證來源，IPv6 可以獲取哪台電腦的 Mac Address</p>
+<p>RBAC 的精神，伺服器角色與登入其電腦身分的權限，sql server 是以其登入其電腦身分權限為主；也就是說，就算你的 sql server 登入角色權限是最大的，但是想要將 table 資料擷取建立到新建資料夾等等，是要判斷你登入該電腦身分的權限，是否擁有建立的權限。</p>
+<p>Sysadmin 與 Securityadmin 是在系統帳戶權限下；剩下的角色都是在資料庫權限下。</p>
+<h2 id="權限管制與建議作法"><a href="#權限管制與建議作法" class="headerlink" title="權限管制與建議作法"></a>權限管制與建議作法</h2><p>Robocopy 指令</p>
+<p>關掉防火牆特定的 profile<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall <span class="built_in">set</span> /?</span><br></pre></td></tr></table></figure></p>
+<p>MSDN 提供 DirectAccess</p>
+<p>防火牆規則設定上，MS 資料庫的 1433 port 除了這個 port 之外，sql server 還可以分離，data 走 1433，指令跑 1434<br><img src="https://lh3.googleusercontent.com/Y78HAIdZGWT9kCokFc0PUBPaUmcRLIr1mJYOXwmpTAP0WhlhH5NV4rfwV-0TZzbrSJ0iATvBH0nIh0ZUanNe_zmxLtidv4CmEEZVvArDI8NYxdEDWKDta93m3vSvHQaLAJ9Ov8ebEetRBF_3saQtvitOFrIdKGBP3l6HlwfBf6ZjTacV5t22eTGpmBwqX56PTiQEAz5NCqtl2GFjUiHayOmhwZX6S8evbp6kU8rqHipiVh_3bSPdxLM7s4xGimTM6BTwg95-4h6kp1xL01-i_MoupXZRrdYq9RA_I5t_hlhx0itG34PMS7wNci6ojxpQjV92XdvQ6YCN-uSK4bbNL4BjE5ZbjAO3Ht7Fv6rSqEoxepplUZ_wHc8aAXchzp_q0slSxJti4ghHw7nIR0wtzSHGVN8HNbulwqsXyavsIftWrGiffmSJ1dXu3u1I0YiEWeXZUSXlHaA_lR3cjW23Ns4HuFp6sAyCqHu0-3V5T1i2nhKQJvihFR9EbtHsB2ghq-wPUksXUEizTFJ11q86W4ZI1SO2eqIkWeLAkFVfZwWOxOBKHx_6UkwqQEqx9ZAAsqdec72ksytk9skAr46CIWlNEPOt_BCA6HzJuQLCUljNUhhY4rCh-ZUkVBUlsqNtG6xSqzId1fTCUx13LBeDKqGanyqAiLN6H-7tiMfyZQ=w547-h391-no" alt="example"></p>
+<p>μ δ 這些符號送到 SQL 裡面，SQL 無法解析會導致電腦自動重啟</p>
+<p>windows server 2012 原生就可以跑 php</p>
+<p>php reference 多加一個單引號，可以把使用的方法列出；如果是 asp.net 會直接把 web.config 裡面的連線字串取出</p>
+<p>SQL Injection 會讓被入侵的電腦，裡面新增的檔案(大量)建立日期都是一樣；</p>
+<p>注意是否被 dll Injection</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://msdn.microsoft.com/zh-tw/library/ms162802(v=sql.120).aspx" title="bcp 公用程式" target="_blank" rel="noopener">bcp 公用程式</a></li>
+<li><a href="http://www.dolcevie.com/js/converter.html" title="Hex To ASCII Converter" target="_blank" rel="noopener">Hex To ASCII Converter</a></li>
+<li><a href="http://www.dpriver.com/pp/sqlformat.htm" title="Instant SQL Formatter" target="_blank" rel="noopener">SQL Formatter</a></li>
+<li><a href="http://sqlmap.org/" title="SQLMap" target="_blank" rel="noopener">SQLMap</a></li>
+<li><a href="http://www.legendsec.org/1111.html" title="SQLMap 指令集" target="_blank" rel="noopener">SQLMap 指令集</a></li>
+<li><a href="http://www.qxorm.com/qxorm_en/home.html" title="QxOrm" target="_blank" rel="noopener">QxOrm</a></li>
+<li><a href="https://www.youtube.com/watch?v=ZyjvDiOI3uw" title="QxOrm安裝教學" target="_blank" rel="noopener">QxOrm安裝教學</a></li>
+<li><a href="http://w3af.org/" title="W3AF" target="_blank" rel="noopener">W3AF</a></li>
+<li><a href="https://sourceforge.net/projects/w3af/" title="W3AF windows download" target="_blank" rel="noopener">W3AF windows download</a></li>
+<li><a href="http://sqlninja.sourceforge.net/" title="SQL Ninja" target="_blank" rel="noopener">SQL Ninja</a></li>
+<li><a href="http://www.w3schools.com/tags/ref_urlencode.asp" title="HTML URL Encoding Reference" target="_blank" rel="noopener">HTML URL Encoding Reference</a></li>
+<li>MSDN:<a href="https://technet.microsoft.com/zh-tw/library/hh831416.aspx" title="MSDN:遠端存取 (DirectAccess、路由和遠端存取) 概觀" target="_blank" rel="noopener">DirectAccess</a></li>
+<li>hacking 統計數據<a href="http://www.zone-h.org/" title="zone-h" target="_blank" rel="noopener">zone-h</a></li>
+<li><a href="https://www.maxmind.com/en/geoip-demo" title="test IP address." target="_blank" rel="noopener">Test IP Address</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/other/" rel="tag"># other</a>
+          
+            <a href="/tags/notes/" rel="tag"># notes</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/11/webhacking/" rel="next" title="Web駭客攻擊手法及防護實戰 Day 1">
+                <i class="fa fa-chevron-left"></i> Web駭客攻擊手法及防護實戰 Day 1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/28/disqusApply/" rel="prev" title="Disqus 申請與設定">
+                Disqus 申請與設定 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本日議程"><span class="nav-number">1.</span> <span class="nav-text">本日議程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#資料安全"><span class="nav-number">2.</span> <span class="nav-text">資料安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-Injection"><span class="nav-number">2.1.</span> <span class="nav-text">SQL Injection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XP-cmdshell-20-BCP"><span class="nav-number">2.2.</span> <span class="nav-text">XP_cmdshell %20 BCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Blind-SQL-Injection"><span class="nav-number">2.3.</span> <span class="nav-text">Blind SQL Injection:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自動化工具"><span class="nav-number">2.4.</span> <span class="nav-text">自動化工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hex-to-ASCII"><span class="nav-number">2.5.</span> <span class="nav-text">Hex to ASCII</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#資料庫安全設置"><span class="nav-number">3.</span> <span class="nav-text">資料庫安全設置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3A架構"><span class="nav-number">3.1.</span> <span class="nav-text">3A架構</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MS-SQL"><span class="nav-number">3.2.</span> <span class="nav-text">MS SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伺服器角色"><span class="nav-number">3.3.</span> <span class="nav-text">伺服器角色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#連線與限制"><span class="nav-number">4.</span> <span class="nav-text">連線與限制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#資料庫權限影響"><span class="nav-number">4.1.</span> <span class="nav-text">資料庫權限影響</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#網路"><span class="nav-number">4.2.</span> <span class="nav-text">網路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#權限管制與建議作法"><span class="nav-number">5.</span> <span class="nav-text">權限管制與建議作法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">6.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2016/01/27/webhacking2/';
+          this.page.identifier = '2016/01/27/webhacking2/';
+          this.page.title = 'Web駭客攻擊手法及防護實戰 Day 2';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

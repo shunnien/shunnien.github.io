@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SQLServer,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="資料層應用程式 (Data-tier Applications)幾日前公司 MIS 維運 Server ，一些伺服器暫時關閉，所以測試資料庫也停了；幸好有針對資料結構進行版控，只好利用 docker 直接來建立資料庫，但是有些關聯資料表的建立，由於相依另外的資料表，變成建立順序需要調整；後來測試資料庫維運完成之後，才想到這些資料結構的建立可以利用 DAC 來建立。">
+<meta name="keywords" content="SQLServer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Sqlserver Data-Tier Applications 來進行備份">
+<meta property="og:url" content="https://shunnien.github.io/2018/07/21/sqlserver-Data-tier-Applications/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="資料層應用程式 (Data-tier Applications)幾日前公司 MIS 維運 Server ，一些伺服器暫時關閉，所以測試資料庫也停了；幸好有針對資料結構進行版控，只好利用 docker 直接來建立資料庫，但是有些關聯資料表的建立，由於相依另外的資料表，變成建立順序需要調整；後來測試資料庫維運完成之後，才想到這些資料結構的建立可以利用 DAC 來建立。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/hnffKad8XYVtjt9pGbnxY7X72u8MTGbLcH8Ki-W8din6aoAX3iY6lKDgVO2NYZMQOgiEL9WRKAOFXQ0hnq-2ImH1SmnXKtTH2jci9bUdEJSAtti-q2jURGbvMhWzb_e76PASher1xlg4XLsGos4t7wBLgxHZfKJN4i3NGSZVDUj7I-xiZLuqQFvFxs4v6jhzSpSxlzT2RqKCWFzH_1kpj2Hr5gcEcQPnTY-xS-09fg9UcjBjzNn_oPyFuItDCpn_rszq3Vx9YQrqoXkPkckLB8FEDY3kztj_xUZGKpljOUkLU5Eenrmibq0dRjxTkZfl8atOEL-SlPoy6FvWh1H-976Kr6SvLBcNuvBMeRlDIXeoJeb9zJby1TiQN-EOjMC7mLSmUEbySOPVILRedfQt4qSDx6GDSt0igIS3evvNES-jxCCSKocMgUo5q8wPLhFwJ6oOcRf2CnMIY-AK5Gmt00NcLxFXBUscUDekKRbEo0NKjTxXwfVo5b4RYB5ZE7esr8jidPMbOPFPHXoS5MVWDZOuKWel-en5DA07ktWHgD8aJChskWMQ9_CcBvV8caZ4iixXp41tCptjIsAQQ5BTurikY4n0fzK0rY1m70p5mLB2iKQ6DndkpaN6xEzz-igzvxdc9htmHjircQr8FzxXvP9iVCfrs0xU=w834-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/RD8sMRssfFgr8zw_-u9pYG1jMr9Jd09O8iBatm7taLZal9--pZodHwhBwaLeg4D5rV6qzD-1kvc3LKoDXTVUDp4tlZgNO2fKTvHU01_4OcFpf9RlQaRNvyn9otr8rJTVkyDDgHqYS0_KWtE4WNO8sndED_pHFqXd5DQgiarUGwWSGxUJKKANL6s-YlxeVsv6r90TcnubxcLT7OFq0fKaLqKSY9ZmUm7jdLG6SI3-Aro0LZ-on06vJttrDVfOjLYOk74F6NkfTGmC_g-X8kiokEjfCooQc9Nq8aUH0FvNEBtubY-c98xRorovQdPT-BmgxhznQMjgQgFuowosYkkU4nmlKdZM0_POEWnJCE5o25gUtHmHND9CgpUL5MxSZ-XPFxUST20oI91CHFK6fRPch2_HZW3UctOsIdCgw5CylK6_t6pUfmzO_CFVNWVOVlxWWtBRGD_cvgXvnionVoWIfWHTpI65gSHjk_ZT3v33ubqSfuOd2Hv-QR8QkgZ8Z5izigX6nOPAzIltcoFdPGc3b-HNi6sk-vP5zvgkq2_bL4YIOucO4t7oeqp-8YApgi5xFSWuPxtWWDr6UAI097dVMu0Jp0_zSoY8BWBZWruxvFSHhjgMRq5aUBiQpRaR1rAxDLAXYUx49pQn2l2OOToxtBc1OhHsdXMH=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/VD2rJmNjGrW4Ok4Kb6cElMB5bZ8vKrG-uOStV_PIFhKTZyD4jzt0owZFepDDF_9IWFXDknDNhU-u_g19xw4YGf3bs9D14TNiwbu3CyplJL3zB1xygrG3MxDS8h2PiEz_34d7eNSPgipS-ZrX4P5pV-dn6lvSax0yG9IXREyVzq4ovNkKigixW4S9YtQKEW43HpuJkFhuvCRsgPkiP2ajAQhoHMuHKrYd-ZpzpFdF9D8Ed1Hi6p7EOqFrRKXxB4BOQ02lXKdJaDaOWEK-JGu8LROH0QHnNKrNNww5MuEJ4JoK336KnLXvbfmuyr1Mo-h4hxY3Uno--Qg2wDWnxDC5SPSf4QiaHndW2AMralSAdegQ4NLgwaKXw2V3XhdasqeWd1TpdhK3XEGSsqWUdv-hoNXPdSdU8hIbE32-7SRWJapvxvEPLF7L6jJMdcXWNM-0TfI4GLdrzkgCr1hcnQArvU1BCPDvZXXWb-FWqzgpvJvdOoxZcAwXruK8w9Ilg3GfYCJlwiqzg-GByX3PR0sY77BMNmpDz8gGnqLzxaqiPl4Q0FkMMZV_FFgf31GHpxzXwS1kADL8Qbp7VKCHslwgE-qni784k0IJ_Wc3kimsMnxgRl_EVHOT8hEQ8rF03-7lj_i9orh1h1PoAj5_cp0RMOBSnXU2IsIC=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/vuFWuhsG8iVPLs4krBCJoIWaolFOq3TgGhgbGgzT53WpmkttGTZjH4W7hOwKrfAaCwjcqkCwZMrHjce4dS5en_EHcSwtt_57-VirvDC13q6koTbC4g9i9VmwswvH8PPSBdt0UOHfqEQID4g5dc9dcVn4Vfzbt0mcGZUCod_svs5BjGhwtpQ49fhz3oI7DybKcno4YSIyDlteOORSisid9Rrctbq9rqxe4f-epZJavWyk7wFfTb6V7uiW7jKTHg41PnXpy8LXdRDS7_jmDUiLX2H0iK7XGHhjgR3sLogETAe0OZD3VtRdoERVRFsrs9J7omtutGQ3U8ejgeupIrkxf0RRsic41tWRtVlb8hSAkPCYhcdyciUMjuLpajNv1j8gj1vk6FQGyoGaGFVUWnr9vAY-fYd1cDv_kqkn8Asz1oP4Yu-uPEAqDaplafG8RF4_dIpyiJfuoxdmK9XSUl_AZ2_h8zIga4aXGkIYOfaT6JFh8aOhl1xjN3F19OggxWm_SIMmx6uqb9YyyKTAPxRnzoUK0iLSv6Dp0xKuKOJ_Q7xFxmV45wnmFZuxd54XiIief_t6Us951xLpzVRU_BhyPfHnHi60jVv9Vz4MnX6PKkyItePDSOMk7QnDH0mAAuv8TGYieq9YUwjTzGmUTr14-KE_E1VXO91r=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/Kw_T4BI6eQZNa6ugqcq1tS5YHPFwNhwEZY6CZPd4A9riznUvgCKhRVL8RVBWW9HM7jcFVIJ52EreDvx7BzBxwTUeHmeA8Fy86diS25KQMFBB1BCRF-qR4tTRGrpmU6xtH4Q0v_NschZHrJnpbsIIvw6hOEqHk1m0NzMhawLoyynTJ4C7UIbAejxbZ0EysYPufQER8XKp9kSBKUAPi4ciDQePBn4AjjEGR-w7zTujuvwzlmSUgHQiZxD6RazMgxi-jf5COMQZml97C84knTTubL8Xg0b41dRkH0eHGB6y_VukDnwncAZLkYjP0trptsehdEaE3zTG99Kl8WjjV8g82VTk9HOro_rPaoCysZlOgjvTumiJcjF6pmjBtg21GW8M1iHfVg0CM618hPsaCGiL4JlbJ2b66cdC3rBbbRHuRSAUafXblsRYFCFqhiugDNsWAiukMxEeP_O1-308GSzq-seLmjhkaJ9WtQSGlw1SCJ8ORRyglpQhFE04LjU0_Te7_UNrh6pb1ie8Vp6LAYCiFSZpyEplqpb-I-GoTXESEp-4ZITILMI1E_pvEoqf3NsAXinuENI0CrHK9Z0393ht57l-WaDXldZ6-pvyvSGr9pVduxTiTMAoo_YcKmGG7CZX74iAaxfuYqWvsFyEnOaLNM_-n6Jkp5dl=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/_MkkMU6WuiIJmAELMF0aQgsNxitUj9OaTWrva716ivXig1tge48KVYmqyQ833j5824qnh3ZN-NQ8YPHybIXjDFRemqc2GpuJrEFdGi1aMvAMv7DTtJWt_i0NKepueXAjA8aT6caDCIHKNeKRnWzEUWmobU6bGZ8zbPE3gXkBhnkW16hLOUS3Jn_4SBGzNkUed8gLEBlg5AVOB1RYFNOQI6HPsQ0K0gO7qabVlDjoROt8MTWYwZP86SIjffQbr0jp9SkpXFi5wP_VPqjbrfc9Klp_L-rU6p0zkkmKgYlwoBTRYcaBTgMSYLVv12aFklQ_5n56QBS9bN3DJcKn2rEk36R2rGCWW1I4JqTYmVqKIBgu97ZMWlegIMhxRllQM7D4rRmlXgnOoO_upDJhawtjD_io3k3FBJJBavWXT3FV5smrardlZoUAAVt_mgtsQJ9LQPqvIKSpJrmwqU406NtZHyz39OGqQ4naPiHSIsj0QBVyb625qi7fVP7fy2C9IizZhHQrTGf3RwCH6M0fqv5tnNrDX2gGos-Eiyl92J16BF_2sDx4iYxM_7j5VY1aDbB7pPoxHimt96tAs9JqjBvGkbWBTOMhcqF91gR4gaiE9TT6xNqDIQCGSRCLYTZd6V2mSfrolpHq6WDXqtOWHwVmR9O51OKu47bh=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/F0rL9wocjnhqf8i4yBhdlCjpJdZ9CqOvI6dVodf4AzUhpZ38mDoDyasMtiZ-nNcadB8l5z9PH6rhb8-Jwxq3ZOVhbs_AwUgSY21it6ry_voVAYiCc5eb4PDQ6pIJvtaNUbf97x3ADEc6vgvmURU0AsttL1oeDrbaybZfGZwDkm0ZrRJkN7cW4EMKPI6shyEXD-3M30WxhkNkqscQwCkIO5XVgWUh6P2Kyu8iqNon0WG01cP4ob3PJ4Jdo_5aK1LeQ81hRKWsv4gXjnc1fZBS2Et-LJ7I6_oL6iyoYqev2FDgzWGzWPtOEEkr3UDTjA-2DMhvrFG0HzOXaQ1z9mOG6x3Ephqa3-mLL8q0sX-2oG9dKkrPJJlqogef9nDHm3Yf9jUyw859KzzFHGd4GzcVxhbhV6up2BeGiavuSHoU6YllHH-eajgGfbLC_vP6StZGwMKlK7xpqEEbs8D-BB43ToKb6PJTmI0GbDYtssJwUz9mgws2LbIEcZWeL4aSEWBhiKK3wpYE-CPByKUww1Ubsh7oDmD8pWb_5Fu55827u00Uj06ypglWQh0q0rVfngxXf7QeS1Y26z3H_rB1kYvjnHFF47dpjx0JvP3jnljsphAFJZD7khVBW06i7fvcOkM2ten9F9vRWFoy9YXJLHVTrfZkxgq0Z1u-=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/KehEgN3eVF0Fc7ly9yyyTZ22XAfX2IiP409DFd4Hzz76HhX9b13CLyto8H3BYkmlNjf9UL6FkUtlpEMQGfulW7LAnl0Fr0GbVMP_75T-K9q9dxoPRUEJRziRX0aPio2NdxLUP5kaXOOJYCvEfMSv0eG0EoTDwJl9EMmMMN54_nJbdxwUO6xlDg2CN4pnnJv3IbY3vL6hTpWa2B29HhwgY11Jnd5XsFmMsCGCQAhir6uJzRvZ7z_7aIDMi9ZSkCKk0rN3C7SivMmH1NTWfTCfGI1lvEk7qgYl24JLkEQID3jSr0_0NmOkWr_QFcFSkg-OozfryukhW1WIkf_jsQhL7h6BRju8YBs6u_Mgq1ztbmUDGLgoYZJ6-iAWcwaG17K9B1aSxzyZBln-1Qqexi_hnOTNJJPCQwVIOgLxAcTjLSHDrj4kNIDc9O5lv22qC-XzKxmZ6kZRnsUm0X0obLZLkf4a5Gj61M6EEN2k1sVm0O-GcPrhqbuxx7T42HttwLix_Q38I-otwzYL2ug3ceLAArNCQI4ldRRRLveryTj8-XnpoV_8RxpL9ZkkgzpsXX9DbuXVimQVlvBOiTe23m6b3rbFhkSdOtEr212g4ljeTffm-qxeo0QoJVsHJvfUHf5ONFnM00TGtFD_YPIl9mjJU_uxd75qegbi=w442-h399-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/yVZJxQMsLkIf60mo_CYirOuVN29FoBQcuBvYsZf0Bguft35qT4VTdAVGdY4eZ0stloNcrrXmNBpyTUCTP7HjKjxPMr2nv8Nr5z2LclwzholLmCE_bCphapXUGmJlsC2gPTMQN7MSZ-k6mwKs32cKrj8TcSyocO1PNU6BceATrmU5E9RZH3XsHmFT9jURWakfEZeVdHkljZnRwrwVwNwKRsd936kR1I0v5B6uyY4sLsaPwF3e_uivyx6Pgg1MOkttRtv01W37auw-SaYfIz9TY7wFsYsnKs9roA1FG9kEXhIsjprJDYa7c84jEng91gRlpFbp5qJBJDiU0B0xoQY5varxLljhC224EkyA71y62k58RHHgemgiEsWkGDCheZj0DeNmRKzSXt3kXCGPwRc7ur-IH7k__hVmtGRVRlSu7XiyElI7VZjd6IWYRq8DAlgqdN3jrlT76J2wTjuf08f1twJ7ysFQczG2q-97wBSeCWOa3T3uuYYGZx3ds-8bqp1kwmIhO1TjitxjalQA4QHlIG411bBOL_FXx4ebG-c6-BW-u2GkC-FyS2PrcKW5wwgmGIgx3rsz-woKYgRF4oyUWktvHxtYevOfpHgZUT1a7SU090F581VDzS2pqGB5pmEpcbMo9N24tuCHrUIYelNVWwQXZKYosRqe=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/lj6HdQr8cdIa4hsfiaLosL8MYLRrHsRUV7OB93zGJazMF3ye4mHSzlWL8GDqhk8Ev1XbO17i6GdtPrEXZN6ATJBgPxpzvUi7tLP-ocI1Ig7jZgqbwZ5-h680lP7p4qNudwVPGtx4NwEQ_h9aHG6TeyEEl4Qku-oAJFZdwd9umwenVnPeDxcLmyjmvyNhXcjdzirOxCdzo4xrN650dFnZ-uD9qApjzR_02MlS_NSYqbVuj-lT9W8nnL_x4ZkI1d1BVajBBQNYBe5h-zO3oY1OPOXPS2GHUb-XFc7pWv0xRdnLfPTe5yVavtPxrOPhdrPvijZqBVOVgYkq7l3_t4j-Jk0IQNcJ1oOkpt3m2Xa1ViM06c4EOi9mGqgP8BMbtxRMf_SGsWaQoMhpJZK-CjBv6P4vZd2BcepWO2nNkscUN9J2J_Myo5pRyZKu52WMq3bm1PQCxYCUzaKKNoKprlIEd_nvdw4ngeRRM-ftDlv9rno2S_JSw_H2S_X2hEG_Pc_rkEgw44LOSmnESQgWCBQ8O8ytYlcwfOBI7NWENFjbzDajSA71zCzu6KXu95vDsiz8swlo14KftqM6afIonS15mjw5HwdlhaojJb_RFITdUnZovVChPQwqiisr537qrbLkfMSvpy91PaAp4r6Y8Ra32Ti6XxSDTu7L=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/3n1aHUsGEaxCNXCch4tG61Jf-icLIbgq4zjHOOBsJztTKCNHRt3TSl2Fq43EPEbUDyPUIvht2mkEi9OmSO3ebrr8Es7Jh_UMOUqatc2iR1eCVlRhQzHNcYRAb4tOuHBuwpm6I1T9JfhqYGeihBokuFMHtPjBWSR0PfoIRINFjxG-VlsEDWw-XIUF_5_Vd-zxJFZdkEpUl_iDhFhkgStNiFl7FX1qtmY0vPzIy9Skf7i6FTHO42MSWm1VMcX2371YxjnnyW2xYbNK_1OxChdp8Nrpy3qvvMJ2nGPPbdipiAE6pWXmuSRUSi1i6Geak_KBskek6FrzaozI6WifDyBo3nLZk32aP6mbEbVgUiiGsyy9goSpXVzGlPC5zZlZVxDbXnqPb8bOeJOKMct6VXXeLcyd8lhmqQxrYRTMKagzKVmqeyUeJs0je6mQ2XzNtyGSmMAvNQL6IMSQ0qhXBivF0esq4YyGz5LIuyPETnveyhM7TODBZ2LE5Jg0fzRp0fkoxW-KnK_MgLIGPjXfEq5dWXSD52NQ9ekI0iqloAoRPK9KV5tB7TnZCgy-g3AQ1skupLDyhVpvnaLt7tPyVb_cOm4HP9ouJ9AxesrOA6706BHFQfWDtyOb74opKBgeZz4CjwKiBXEVkpjaWORs-EjTr3pW5mgar5mn=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/fQuyW8-2ZcbSq_nx04BQzPFyQjqU2YNAkYw5fGyDizQtGvyvqACvG3_TR3OrJvmba3PTGn11ELpEdC7H8u_ekmNQ9nC9DXmWpjKxQ3ppaO3CePovSCDUUgK3-oc5VkI8zJSJVb2t3i8K-Z79dcVYvXyL8Rc8sJQlaErLfNsvAeqWwWy2qDKlXQ_G5pzW4xYeo2j1r4vqcZ_BBJY6hrb64d5-ttxO4TsUq0jz3Fl-B-yfhoUXLnYhoQuMIyMT4IJ17ADiVekUcD5h8s48_m2G_aKBXKOPcY5NNUbmovidON-wvFNS92Y78YdBpF5Mv4xGirhZNxQBRa75E6WZ6xjOUUpI_StEb1bTu5u5x3DMG7A8L6TIzfY4mGD1246pT74LWgmQR4mTXlUtpnvJVsSAsfztXPZ3isTjSn9B5J4l1GwDAIOM1kEBzVz0PYCbivZLImhIAMgJI4Wv87YWhXnlsr3_KuFel4PMYrTEyPqdKP639FYMg5aUHawxU1_iHghBd3MANmiQ1PJ2B4zQgfOjrYOYFkqpyZf4_t3H0xszzb1uC45UsHbPpgbXRc9CgenAh_MUYQeoaWuAMJe3V6j85DvtHVBAnoL0SYVVvnaNU-YuDmbF5xTjMRg3-V8YKr5YAZZY4EeXrxysHngU7ImB6uEuLbzdNwYH=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/nev9zcExZUboy3JSohWqdykli9SdHFYJhxUSEregMU5QYLTdu2ZLxupxfTufWKL3Wt91cT_XpawsPJBSmRNeylkISz6QJ18Yiksm-L5gL8WEn4s8ki9e0Oa1I2tqCcxs2Vj4eFUQz7zIQH82lsP3bCMtsSfx5Ho6f3DelEc5pjxL0hkXFByRz3M-qahWUjIhQyq91xyS8rXrdVe1pTBFcDUMgsqRw4f71Cl7kcE1LFkq8HfbYLX9nHHSvos7_Ta6izAAfAbz2_JfeWqy-qqCgokgcG4-I04LEXDjkcC3B34EP_J0_-DWJFLJT4SNOFtn7CTvgkjWPqea1kioQGZuJpcvmh9YIe_rGJT2gJcYPx7etnzWgB6nelJgIDhuSDtiNDRY0WsaLbYyxXbSo8TUgfBzwtnRN4Hymd7G0WT9b2KtGHDlQ3Oe8MHPVK4BiS3540LndnU2wx_905Y7ERnRQFVm2-NDIEyrCdzYI9jYKTXvrtooXk08TLEux9r0-Ef5tegiK9JSzv47JK5QnYjcEzWV6CifL5mL7APHVBIrNT04XocNOz_hDnmn8wYOgvjSiWvGTAPQ5Oq_XVRVd1ySOoyw_rqJxubnuiK_GBt_zDzJ1LRHbi2O9Sc9J6qbHyhfK4UiR4oyTcRAAvz7Y3uRfq-HflPXz0fu=w1007-h915-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/O4eQ4B7FPwJKjhRe5dIb2Y3J1dV1JYccDS25k6LLX2DSgRJOSAygRkGaT6w-NXsJnqHwX6OHw-iPUzviZuzYgQO-TiXUYTuEJim8n-RsVLTE_mQKHm1yaQ-62DG4mWPgbCJloGPgc7wWcdt7y8dU-A5stKylmzuH-TZ-ILTr7OfXr02ve5maXE8dfrZzuj5cuigm0NKZwxNT1rgbSo7wuENtE-o1nMYH33EBbOxz4X8N2LPoVrMzZv6bkC3ujo564qsP-8Qdj5Du9WJC1E4xKQby-HbMHqhkucnOCHInYIvx0oFCLY68SdZbujV9z_xnQJtrGKvbDlPdGtT7JIctqqBQZ3gGPdUOGZbKylnPrtgdfAE351rt3rr8NDdL5MUkvzZ6KsQvqlJ5cxj6FGagN2zvw-x3jAl_gFvkJZocp1NHsYnG5L7jtsEmRpm-kKDhsDk0lWsIZpaFmvOqLokh6grFF8_V1oOBqkdB85zBzH78IfM99VmNHeXjJIMxeIL3Jp9S2jAqzpyxK1aUjCOacjrgGLjvx2ReKmuouHtnW8T761X9rtKPQDRD2ObGMrp_9fOZPhIk7Gx3-LyGEc_B8iLiC8DUeKp0P8xzPBjSSY7_DtsUUCgq2UdiWyuwQKm5T8R-Pz9vtmI7Yd_-r9cNYDegN02E_Ayv=w1007-h915-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 Sqlserver Data-Tier Applications 來進行備份">
+<meta name="twitter:description" content="資料層應用程式 (Data-tier Applications)幾日前公司 MIS 維運 Server ，一些伺服器暫時關閉，所以測試資料庫也停了；幸好有針對資料結構進行版控，只好利用 docker 直接來建立資料庫，但是有些關聯資料表的建立，由於相依另外的資料表，變成建立順序需要調整；後來測試資料庫維運完成之後，才想到這些資料結構的建立可以利用 DAC 來建立。">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/hnffKad8XYVtjt9pGbnxY7X72u8MTGbLcH8Ki-W8din6aoAX3iY6lKDgVO2NYZMQOgiEL9WRKAOFXQ0hnq-2ImH1SmnXKtTH2jci9bUdEJSAtti-q2jURGbvMhWzb_e76PASher1xlg4XLsGos4t7wBLgxHZfKJN4i3NGSZVDUj7I-xiZLuqQFvFxs4v6jhzSpSxlzT2RqKCWFzH_1kpj2Hr5gcEcQPnTY-xS-09fg9UcjBjzNn_oPyFuItDCpn_rszq3Vx9YQrqoXkPkckLB8FEDY3kztj_xUZGKpljOUkLU5Eenrmibq0dRjxTkZfl8atOEL-SlPoy6FvWh1H-976Kr6SvLBcNuvBMeRlDIXeoJeb9zJby1TiQN-EOjMC7mLSmUEbySOPVILRedfQt4qSDx6GDSt0igIS3evvNES-jxCCSKocMgUo5q8wPLhFwJ6oOcRf2CnMIY-AK5Gmt00NcLxFXBUscUDekKRbEo0NKjTxXwfVo5b4RYB5ZE7esr8jidPMbOPFPHXoS5MVWDZOuKWel-en5DA07ktWHgD8aJChskWMQ9_CcBvV8caZ4iixXp41tCptjIsAQQ5BTurikY4n0fzK0rY1m70p5mLB2iKQ6DndkpaN6xEzz-igzvxdc9htmHjircQr8FzxXvP9iVCfrs0xU=w834-h915-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2018/07/21/sqlserver-Data-tier-Applications/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>使用 Sqlserver Data-Tier Applications 來進行備份 | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/07/21/sqlserver-Data-tier-Applications/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用 Sqlserver Data-Tier Applications 來進行備份</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-07-21T14:10:48+08:00">
+                2018-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/21/sqlserver-Data-tier-Applications/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/21/sqlserver-Data-tier-Applications/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="資料層應用程式-Data-tier-Applications"><a href="#資料層應用程式-Data-tier-Applications" class="headerlink" title="資料層應用程式 (Data-tier Applications)"></a><a href="https://docs.microsoft.com/en-us/sql/relational-databases/data-tier-applications/data-tier-applications?view=sql-server-2017" target="_blank" rel="noopener">資料層應用程式 (<strong>D</strong>ata-tier <strong>A</strong>pplications)</a></h1><p>幾日前公司 MIS 維運 Server ，一些伺服器暫時關閉，所以測試資料庫也停了；幸好有針對資料結構進行版控，只好利用 <strong>docker</strong> 直接來建立資料庫，但是有些關聯資料表的建立，由於相依另外的資料表，變成建立順序需要調整；後來測試資料庫維運完成之後，才想到這些資料結構的建立可以利用 <a href="https://docs.microsoft.com/en-us/sql/relational-databases/data-tier-applications/data-tier-applications?view=sql-server-2017" target="_blank" rel="noopener"><strong>DAC</strong></a> 來建立。<a id="more"></a></p>
+<h2 id="DAC-定義"><a href="#DAC-定義" class="headerlink" title="DAC 定義"></a><a href="https://docs.microsoft.com/en-us/sql/relational-databases/data-tier-applications/data-tier-applications?view=sql-server-2017" target="_blank" rel="noopener">DAC</a> 定義</h2><p><a href="https://docs.microsoft.com/en-us/sql/relational-databases/data-tier-applications/data-tier-applications?view=sql-server-2017" target="_blank" rel="noopener">資料層應用程式 (<strong>D</strong>ata-tier <strong>A</strong>ppli<strong>c</strong>ations)</a> 包含完整的資料庫物件，例如：</p>
+<ul>
+<li>table</li>
+<li>view</li>
+<li>store procedure</li>
+</ul>
+<p>依照這些物件定義來進行資料庫的布署，其封裝檔案可以分為兩種格式：</p>
+<ul>
+<li><p><strong>.dacpac</strong></p>
+<ul>
+<li>僅資料庫結構描述</li>
+<li><strong>用來佈署、升級資料庫 Schema 與版本</strong></li>
+</ul>
+</li>
+<li><p><strong>.bacpac</strong></p>
+<ul>
+<li>資料庫結構描述加上資料 (檔案會較大)</li>
+<li><strong>用來備份、還原，不能用來升級資料庫(內容包含資料庫中的資料)</strong></li>
+</ul>
+</li>
+</ul>
+<p>其實這些產生出的檔案就是一個壓縮檔，加上 <strong>.zip</strong> 副檔名，可以看出裡面有許多 <strong>XML</strong> 檔案，這些檔案來描述資料結構</p>
+<h2 id="BACPAC-操作"><a href="#BACPAC-操作" class="headerlink" title="BACPAC 操作"></a>BACPAC 操作</h2><p>以下附上環境資訊</p>
+<ul>
+<li>測試使用資料庫採用 northwind 北風資料庫</li>
+<li>sql server 2017 採用 docker <a href="https://hub.docker.com/r/microsoft/mssql-server-linux/" target="_blank" rel="noopener">microsoft/mssql-server-linux</a> 的 <strong>SQL Express edition</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ systeminfo | findstr /B /C:<span class="string">"OS Name"</span> /C:<span class="string">"OS Version"</span></span><br><span class="line">OS Name:                   Microsoft Windows 10 專業版</span><br><span class="line">OS Version:                10.0.17134 N/A Build 17134</span><br></pre></td></tr></table></figure>
+<h3 id="匯出步驟"><a href="#匯出步驟" class="headerlink" title="匯出步驟"></a>匯出步驟</h3><p>匯出資料庫 DAC ，將資料庫 Schema 與資料封裝</p>
+<ul>
+<li>目標資料庫右鍵 –&gt; Tasks –&gt; Export Data-tier Application…</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/hnffKad8XYVtjt9pGbnxY7X72u8MTGbLcH8Ki-W8din6aoAX3iY6lKDgVO2NYZMQOgiEL9WRKAOFXQ0hnq-2ImH1SmnXKtTH2jci9bUdEJSAtti-q2jURGbvMhWzb_e76PASher1xlg4XLsGos4t7wBLgxHZfKJN4i3NGSZVDUj7I-xiZLuqQFvFxs4v6jhzSpSxlzT2RqKCWFzH_1kpj2Hr5gcEcQPnTY-xS-09fg9UcjBjzNn_oPyFuItDCpn_rszq3Vx9YQrqoXkPkckLB8FEDY3kztj_xUZGKpljOUkLU5Eenrmibq0dRjxTkZfl8atOEL-SlPoy6FvWh1H-976Kr6SvLBcNuvBMeRlDIXeoJeb9zJby1TiQN-EOjMC7mLSmUEbySOPVILRedfQt4qSDx6GDSt0igIS3evvNES-jxCCSKocMgUo5q8wPLhFwJ6oOcRf2CnMIY-AK5Gmt00NcLxFXBUscUDekKRbEo0NKjTxXwfVo5b4RYB5ZE7esr8jidPMbOPFPHXoS5MVWDZOuKWel-en5DA07ktWHgD8aJChskWMQ9_CcBvV8caZ4iixXp41tCptjIsAQQ5BTurikY4n0fzK0rY1m70p5mLB2iKQ6DndkpaN6xEzz-igzvxdc9htmHjircQr8FzxXvP9iVCfrs0xU=w834-h915-no" alt="Export Data-tier Application"></p>
+<ul>
+<li>簡單的說明介紹</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/RD8sMRssfFgr8zw_-u9pYG1jMr9Jd09O8iBatm7taLZal9--pZodHwhBwaLeg4D5rV6qzD-1kvc3LKoDXTVUDp4tlZgNO2fKTvHU01_4OcFpf9RlQaRNvyn9otr8rJTVkyDDgHqYS0_KWtE4WNO8sndED_pHFqXd5DQgiarUGwWSGxUJKKANL6s-YlxeVsv6r90TcnubxcLT7OFq0fKaLqKSY9ZmUm7jdLG6SI3-Aro0LZ-on06vJttrDVfOjLYOk74F6NkfTGmC_g-X8kiokEjfCooQc9Nq8aUH0FvNEBtubY-c98xRorovQdPT-BmgxhznQMjgQgFuowosYkkU4nmlKdZM0_POEWnJCE5o25gUtHmHND9CgpUL5MxSZ-XPFxUST20oI91CHFK6fRPch2_HZW3UctOsIdCgw5CylK6_t6pUfmzO_CFVNWVOVlxWWtBRGD_cvgXvnionVoWIfWHTpI65gSHjk_ZT3v33ubqSfuOd2Hv-QR8QkgZ8Z5izigX6nOPAzIltcoFdPGc3b-HNi6sk-vP5zvgkq2_bL4YIOucO4t7oeqp-8YApgi5xFSWuPxtWWDr6UAI097dVMu0Jp0_zSoY8BWBZWruxvFSHhjgMRq5aUBiQpRaR1rAxDLAXYUx49pQn2l2OOToxtBc1OhHsdXMH=w1007-h915-no" alt="Export Introduction"></p>
+<ul>
+<li>匯出設定</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/VD2rJmNjGrW4Ok4Kb6cElMB5bZ8vKrG-uOStV_PIFhKTZyD4jzt0owZFepDDF_9IWFXDknDNhU-u_g19xw4YGf3bs9D14TNiwbu3CyplJL3zB1xygrG3MxDS8h2PiEz_34d7eNSPgipS-ZrX4P5pV-dn6lvSax0yG9IXREyVzq4ovNkKigixW4S9YtQKEW43HpuJkFhuvCRsgPkiP2ajAQhoHMuHKrYd-ZpzpFdF9D8Ed1Hi6p7EOqFrRKXxB4BOQ02lXKdJaDaOWEK-JGu8LROH0QHnNKrNNww5MuEJ4JoK336KnLXvbfmuyr1Mo-h4hxY3Uno--Qg2wDWnxDC5SPSf4QiaHndW2AMralSAdegQ4NLgwaKXw2V3XhdasqeWd1TpdhK3XEGSsqWUdv-hoNXPdSdU8hIbE32-7SRWJapvxvEPLF7L6jJMdcXWNM-0TfI4GLdrzkgCr1hcnQArvU1BCPDvZXXWb-FWqzgpvJvdOoxZcAwXruK8w9Ilg3GfYCJlwiqzg-GByX3PR0sY77BMNmpDz8gGnqLzxaqiPl4Q0FkMMZV_FFgf31GHpxzXwS1kADL8Qbp7VKCHslwgE-qni784k0IJ_Wc3kimsMnxgRl_EVHOT8hEQ8rF03-7lj_i9orh1h1PoAj5_cp0RMOBSnXU2IsIC=w1007-h915-no" alt="Export Settings"></p>
+<ul>
+<li>進階設定，指定匯出項目等</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/vuFWuhsG8iVPLs4krBCJoIWaolFOq3TgGhgbGgzT53WpmkttGTZjH4W7hOwKrfAaCwjcqkCwZMrHjce4dS5en_EHcSwtt_57-VirvDC13q6koTbC4g9i9VmwswvH8PPSBdt0UOHfqEQID4g5dc9dcVn4Vfzbt0mcGZUCod_svs5BjGhwtpQ49fhz3oI7DybKcno4YSIyDlteOORSisid9Rrctbq9rqxe4f-epZJavWyk7wFfTb6V7uiW7jKTHg41PnXpy8LXdRDS7_jmDUiLX2H0iK7XGHhjgR3sLogETAe0OZD3VtRdoERVRFsrs9J7omtutGQ3U8ejgeupIrkxf0RRsic41tWRtVlb8hSAkPCYhcdyciUMjuLpajNv1j8gj1vk6FQGyoGaGFVUWnr9vAY-fYd1cDv_kqkn8Asz1oP4Yu-uPEAqDaplafG8RF4_dIpyiJfuoxdmK9XSUl_AZ2_h8zIga4aXGkIYOfaT6JFh8aOhl1xjN3F19OggxWm_SIMmx6uqb9YyyKTAPxRnzoUK0iLSv6Dp0xKuKOJ_Q7xFxmV45wnmFZuxd54XiIief_t6Us951xLpzVRU_BhyPfHnHi60jVv9Vz4MnX6PKkyItePDSOMk7QnDH0mAAuv8TGYieq9YUwjTzGmUTr14-KE_E1VXO91r=w1007-h915-no" alt="Export Advanced"></p>
+<ul>
+<li>設定總結</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/Kw_T4BI6eQZNa6ugqcq1tS5YHPFwNhwEZY6CZPd4A9riznUvgCKhRVL8RVBWW9HM7jcFVIJ52EreDvx7BzBxwTUeHmeA8Fy86diS25KQMFBB1BCRF-qR4tTRGrpmU6xtH4Q0v_NschZHrJnpbsIIvw6hOEqHk1m0NzMhawLoyynTJ4C7UIbAejxbZ0EysYPufQER8XKp9kSBKUAPi4ciDQePBn4AjjEGR-w7zTujuvwzlmSUgHQiZxD6RazMgxi-jf5COMQZml97C84knTTubL8Xg0b41dRkH0eHGB6y_VukDnwncAZLkYjP0trptsehdEaE3zTG99Kl8WjjV8g82VTk9HOro_rPaoCysZlOgjvTumiJcjF6pmjBtg21GW8M1iHfVg0CM618hPsaCGiL4JlbJ2b66cdC3rBbbRHuRSAUafXblsRYFCFqhiugDNsWAiukMxEeP_O1-308GSzq-seLmjhkaJ9WtQSGlw1SCJ8ORRyglpQhFE04LjU0_Te7_UNrh6pb1ie8Vp6LAYCiFSZpyEplqpb-I-GoTXESEp-4ZITILMI1E_pvEoqf3NsAXinuENI0CrHK9Z0393ht57l-WaDXldZ6-pvyvSGr9pVduxTiTMAoo_YcKmGG7CZX74iAaxfuYqWvsFyEnOaLNM_-n6Jkp5dl=w1007-h915-no" alt="Export Summary"></p>
+<ul>
+<li>匯出結果</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/_MkkMU6WuiIJmAELMF0aQgsNxitUj9OaTWrva716ivXig1tge48KVYmqyQ833j5824qnh3ZN-NQ8YPHybIXjDFRemqc2GpuJrEFdGi1aMvAMv7DTtJWt_i0NKepueXAjA8aT6caDCIHKNeKRnWzEUWmobU6bGZ8zbPE3gXkBhnkW16hLOUS3Jn_4SBGzNkUed8gLEBlg5AVOB1RYFNOQI6HPsQ0K0gO7qabVlDjoROt8MTWYwZP86SIjffQbr0jp9SkpXFi5wP_VPqjbrfc9Klp_L-rU6p0zkkmKgYlwoBTRYcaBTgMSYLVv12aFklQ_5n56QBS9bN3DJcKn2rEk36R2rGCWW1I4JqTYmVqKIBgu97ZMWlegIMhxRllQM7D4rRmlXgnOoO_upDJhawtjD_io3k3FBJJBavWXT3FV5smrardlZoUAAVt_mgtsQJ9LQPqvIKSpJrmwqU406NtZHyz39OGqQ4naPiHSIsj0QBVyb625qi7fVP7fy2C9IizZhHQrTGf3RwCH6M0fqv5tnNrDX2gGos-Eiyl92J16BF_2sDx4iYxM_7j5VY1aDbB7pPoxHimt96tAs9JqjBvGkbWBTOMhcqF91gR4gaiE9TT6xNqDIQCGSRCLYTZd6V2mSfrolpHq6WDXqtOWHwVmR9O51OKu47bh=w1007-h915-no" alt="Export Results1"><br><img src="https://lh3.googleusercontent.com/F0rL9wocjnhqf8i4yBhdlCjpJdZ9CqOvI6dVodf4AzUhpZ38mDoDyasMtiZ-nNcadB8l5z9PH6rhb8-Jwxq3ZOVhbs_AwUgSY21it6ry_voVAYiCc5eb4PDQ6pIJvtaNUbf97x3ADEc6vgvmURU0AsttL1oeDrbaybZfGZwDkm0ZrRJkN7cW4EMKPI6shyEXD-3M30WxhkNkqscQwCkIO5XVgWUh6P2Kyu8iqNon0WG01cP4ob3PJ4Jdo_5aK1LeQ81hRKWsv4gXjnc1fZBS2Et-LJ7I6_oL6iyoYqev2FDgzWGzWPtOEEkr3UDTjA-2DMhvrFG0HzOXaQ1z9mOG6x3Ephqa3-mLL8q0sX-2oG9dKkrPJJlqogef9nDHm3Yf9jUyw859KzzFHGd4GzcVxhbhV6up2BeGiavuSHoU6YllHH-eajgGfbLC_vP6StZGwMKlK7xpqEEbs8D-BB43ToKb6PJTmI0GbDYtssJwUz9mgws2LbIEcZWeL4aSEWBhiKK3wpYE-CPByKUww1Ubsh7oDmD8pWb_5Fu55827u00Uj06ypglWQh0q0rVfngxXf7QeS1Y26z3H_rB1kYvjnHFF47dpjx0JvP3jnljsphAFJZD7khVBW06i7fvcOkM2ten9F9vRWFoy9YXJLHVTrfZkxgq0Z1u-=w1007-h915-no" alt="Export Results2"></p>
+<h3 id="匯入步驟"><a href="#匯入步驟" class="headerlink" title="匯入步驟"></a>匯入步驟</h3><p>使用 BACPAC 進行資料與結構匯入</p>
+<ul>
+<li>Databases 資料夾右鍵 –&gt; Import Data-tier Application…</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/KehEgN3eVF0Fc7ly9yyyTZ22XAfX2IiP409DFd4Hzz76HhX9b13CLyto8H3BYkmlNjf9UL6FkUtlpEMQGfulW7LAnl0Fr0GbVMP_75T-K9q9dxoPRUEJRziRX0aPio2NdxLUP5kaXOOJYCvEfMSv0eG0EoTDwJl9EMmMMN54_nJbdxwUO6xlDg2CN4pnnJv3IbY3vL6hTpWa2B29HhwgY11Jnd5XsFmMsCGCQAhir6uJzRvZ7z_7aIDMi9ZSkCKk0rN3C7SivMmH1NTWfTCfGI1lvEk7qgYl24JLkEQID3jSr0_0NmOkWr_QFcFSkg-OozfryukhW1WIkf_jsQhL7h6BRju8YBs6u_Mgq1ztbmUDGLgoYZJ6-iAWcwaG17K9B1aSxzyZBln-1Qqexi_hnOTNJJPCQwVIOgLxAcTjLSHDrj4kNIDc9O5lv22qC-XzKxmZ6kZRnsUm0X0obLZLkf4a5Gj61M6EEN2k1sVm0O-GcPrhqbuxx7T42HttwLix_Q38I-otwzYL2ug3ceLAArNCQI4ldRRRLveryTj8-XnpoV_8RxpL9ZkkgzpsXX9DbuXVimQVlvBOiTe23m6b3rbFhkSdOtEr212g4ljeTffm-qxeo0QoJVsHJvfUHf5ONFnM00TGtFD_YPIl9mjJU_uxd75qegbi=w442-h399-no" alt="Import Data-tier Application"></p>
+<ul>
+<li>匯入介紹</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/yVZJxQMsLkIf60mo_CYirOuVN29FoBQcuBvYsZf0Bguft35qT4VTdAVGdY4eZ0stloNcrrXmNBpyTUCTP7HjKjxPMr2nv8Nr5z2LclwzholLmCE_bCphapXUGmJlsC2gPTMQN7MSZ-k6mwKs32cKrj8TcSyocO1PNU6BceATrmU5E9RZH3XsHmFT9jURWakfEZeVdHkljZnRwrwVwNwKRsd936kR1I0v5B6uyY4sLsaPwF3e_uivyx6Pgg1MOkttRtv01W37auw-SaYfIz9TY7wFsYsnKs9roA1FG9kEXhIsjprJDYa7c84jEng91gRlpFbp5qJBJDiU0B0xoQY5varxLljhC224EkyA71y62k58RHHgemgiEsWkGDCheZj0DeNmRKzSXt3kXCGPwRc7ur-IH7k__hVmtGRVRlSu7XiyElI7VZjd6IWYRq8DAlgqdN3jrlT76J2wTjuf08f1twJ7ysFQczG2q-97wBSeCWOa3T3uuYYGZx3ds-8bqp1kwmIhO1TjitxjalQA4QHlIG411bBOL_FXx4ebG-c6-BW-u2GkC-FyS2PrcKW5wwgmGIgx3rsz-woKYgRF4oyUWktvHxtYevOfpHgZUT1a7SU090F581VDzS2pqGB5pmEpcbMo9N24tuCHrUIYelNVWwQXZKYosRqe=w1007-h915-no" alt="Import Introduction"></p>
+<ul>
+<li>匯入設定，選擇 bacpac 檔案位置</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/lj6HdQr8cdIa4hsfiaLosL8MYLRrHsRUV7OB93zGJazMF3ye4mHSzlWL8GDqhk8Ev1XbO17i6GdtPrEXZN6ATJBgPxpzvUi7tLP-ocI1Ig7jZgqbwZ5-h680lP7p4qNudwVPGtx4NwEQ_h9aHG6TeyEEl4Qku-oAJFZdwd9umwenVnPeDxcLmyjmvyNhXcjdzirOxCdzo4xrN650dFnZ-uD9qApjzR_02MlS_NSYqbVuj-lT9W8nnL_x4ZkI1d1BVajBBQNYBe5h-zO3oY1OPOXPS2GHUb-XFc7pWv0xRdnLfPTe5yVavtPxrOPhdrPvijZqBVOVgYkq7l3_t4j-Jk0IQNcJ1oOkpt3m2Xa1ViM06c4EOi9mGqgP8BMbtxRMf_SGsWaQoMhpJZK-CjBv6P4vZd2BcepWO2nNkscUN9J2J_Myo5pRyZKu52WMq3bm1PQCxYCUzaKKNoKprlIEd_nvdw4ngeRRM-ftDlv9rno2S_JSw_H2S_X2hEG_Pc_rkEgw44LOSmnESQgWCBQ8O8ytYlcwfOBI7NWENFjbzDajSA71zCzu6KXu95vDsiz8swlo14KftqM6afIonS15mjw5HwdlhaojJb_RFITdUnZovVChPQwqiisr537qrbLkfMSvpy91PaAp4r6Y8Ra32Ti6XxSDTu7L=w1007-h915-no" alt="Import Settings"></p>
+<ul>
+<li>資料庫設定，設定資料庫名稱與檔案存放路徑等</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/3n1aHUsGEaxCNXCch4tG61Jf-icLIbgq4zjHOOBsJztTKCNHRt3TSl2Fq43EPEbUDyPUIvht2mkEi9OmSO3ebrr8Es7Jh_UMOUqatc2iR1eCVlRhQzHNcYRAb4tOuHBuwpm6I1T9JfhqYGeihBokuFMHtPjBWSR0PfoIRINFjxG-VlsEDWw-XIUF_5_Vd-zxJFZdkEpUl_iDhFhkgStNiFl7FX1qtmY0vPzIy9Skf7i6FTHO42MSWm1VMcX2371YxjnnyW2xYbNK_1OxChdp8Nrpy3qvvMJ2nGPPbdipiAE6pWXmuSRUSi1i6Geak_KBskek6FrzaozI6WifDyBo3nLZk32aP6mbEbVgUiiGsyy9goSpXVzGlPC5zZlZVxDbXnqPb8bOeJOKMct6VXXeLcyd8lhmqQxrYRTMKagzKVmqeyUeJs0je6mQ2XzNtyGSmMAvNQL6IMSQ0qhXBivF0esq4YyGz5LIuyPETnveyhM7TODBZ2LE5Jg0fzRp0fkoxW-KnK_MgLIGPjXfEq5dWXSD52NQ9ekI0iqloAoRPK9KV5tB7TnZCgy-g3AQ1skupLDyhVpvnaLt7tPyVb_cOm4HP9ouJ9AxesrOA6706BHFQfWDtyOb74opKBgeZz4CjwKiBXEVkpjaWORs-EjTr3pW5mgar5mn=w1007-h915-no" alt="Import Database Settings"></p>
+<ul>
+<li>設定項目總結</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/fQuyW8-2ZcbSq_nx04BQzPFyQjqU2YNAkYw5fGyDizQtGvyvqACvG3_TR3OrJvmba3PTGn11ELpEdC7H8u_ekmNQ9nC9DXmWpjKxQ3ppaO3CePovSCDUUgK3-oc5VkI8zJSJVb2t3i8K-Z79dcVYvXyL8Rc8sJQlaErLfNsvAeqWwWy2qDKlXQ_G5pzW4xYeo2j1r4vqcZ_BBJY6hrb64d5-ttxO4TsUq0jz3Fl-B-yfhoUXLnYhoQuMIyMT4IJ17ADiVekUcD5h8s48_m2G_aKBXKOPcY5NNUbmovidON-wvFNS92Y78YdBpF5Mv4xGirhZNxQBRa75E6WZ6xjOUUpI_StEb1bTu5u5x3DMG7A8L6TIzfY4mGD1246pT74LWgmQR4mTXlUtpnvJVsSAsfztXPZ3isTjSn9B5J4l1GwDAIOM1kEBzVz0PYCbivZLImhIAMgJI4Wv87YWhXnlsr3_KuFel4PMYrTEyPqdKP639FYMg5aUHawxU1_iHghBd3MANmiQ1PJ2B4zQgfOjrYOYFkqpyZf4_t3H0xszzb1uC45UsHbPpgbXRc9CgenAh_MUYQeoaWuAMJe3V6j85DvtHVBAnoL0SYVVvnaNU-YuDmbF5xTjMRg3-V8YKr5YAZZY4EeXrxysHngU7ImB6uEuLbzdNwYH=w1007-h915-no" alt="Import Summary"></p>
+<ul>
+<li>匯入結果</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/nev9zcExZUboy3JSohWqdykli9SdHFYJhxUSEregMU5QYLTdu2ZLxupxfTufWKL3Wt91cT_XpawsPJBSmRNeylkISz6QJ18Yiksm-L5gL8WEn4s8ki9e0Oa1I2tqCcxs2Vj4eFUQz7zIQH82lsP3bCMtsSfx5Ho6f3DelEc5pjxL0hkXFByRz3M-qahWUjIhQyq91xyS8rXrdVe1pTBFcDUMgsqRw4f71Cl7kcE1LFkq8HfbYLX9nHHSvos7_Ta6izAAfAbz2_JfeWqy-qqCgokgcG4-I04LEXDjkcC3B34EP_J0_-DWJFLJT4SNOFtn7CTvgkjWPqea1kioQGZuJpcvmh9YIe_rGJT2gJcYPx7etnzWgB6nelJgIDhuSDtiNDRY0WsaLbYyxXbSo8TUgfBzwtnRN4Hymd7G0WT9b2KtGHDlQ3Oe8MHPVK4BiS3540LndnU2wx_905Y7ERnRQFVm2-NDIEyrCdzYI9jYKTXvrtooXk08TLEux9r0-Ef5tegiK9JSzv47JK5QnYjcEzWV6CifL5mL7APHVBIrNT04XocNOz_hDnmn8wYOgvjSiWvGTAPQ5Oq_XVRVd1ySOoyw_rqJxubnuiK_GBt_zDzJ1LRHbi2O9Sc9J6qbHyhfK4UiR4oyTcRAAvz7Y3uRfq-HflPXz0fu=w1007-h915-no" alt="Import results1"><br><img src="https://lh3.googleusercontent.com/O4eQ4B7FPwJKjhRe5dIb2Y3J1dV1JYccDS25k6LLX2DSgRJOSAygRkGaT6w-NXsJnqHwX6OHw-iPUzviZuzYgQO-TiXUYTuEJim8n-RsVLTE_mQKHm1yaQ-62DG4mWPgbCJloGPgc7wWcdt7y8dU-A5stKylmzuH-TZ-ILTr7OfXr02ve5maXE8dfrZzuj5cuigm0NKZwxNT1rgbSo7wuENtE-o1nMYH33EBbOxz4X8N2LPoVrMzZv6bkC3ujo564qsP-8Qdj5Du9WJC1E4xKQby-HbMHqhkucnOCHInYIvx0oFCLY68SdZbujV9z_xnQJtrGKvbDlPdGtT7JIctqqBQZ3gGPdUOGZbKylnPrtgdfAE351rt3rr8NDdL5MUkvzZ6KsQvqlJ5cxj6FGagN2zvw-x3jAl_gFvkJZocp1NHsYnG5L7jtsEmRpm-kKDhsDk0lWsIZpaFmvOqLokh6grFF8_V1oOBqkdB85zBzH78IfM99VmNHeXjJIMxeIL3Jp9S2jAqzpyxK1aUjCOacjrgGLjvx2ReKmuouHtnW8T761X9rtKPQDRD2ObGMrp_9fOZPhIk7Gx3-LyGEc_B8iLiC8DUeKp0P8xzPBjSSY7_DtsUUCgq2UdiWyuwQKm5T8R-Pz9vtmI7Yd_-r9cNYDegN02E_Ayv=w1007-h915-no" alt="Import Results2"></p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://docs.microsoft.com/en-us/sql/relational-databases/data-tier-applications/data-tier-applications?view=sql-server-2017" target="_blank" rel="noopener">DAC</a></li>
+<li><a href="https://channel9.msdn.com/Series/SQL-PASS-TAIWAN/SQL-Server-realase-management" target="_blank" rel="noopener">channel9 保哥 SQL Server 資料庫版本控管影片</a>]</li>
+<li><a href="https://blog.yowko.com/2017/04/sql-server-dac.html" target="_blank" rel="noopener">Yowko’s Notes 各操作的 step by step 操作</a></li>
+<li><a href="https://www.red-gate.com/simple-talk/sql/database-administration/automated-script-generation-with-powershell-and-smo/" target="_blank" rel="noopener">Powershell SMO 匯出資料結構</a></li>
+<li><a href="https://www.slideshare.net/WillHuangTW/sql-server-49883851" target="_blank" rel="noopener">保哥 SQL Server 資料庫版本控管簡報</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SQLServer/" rel="tag"># SQLServer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/06/json-net-deserialize-object/" rel="next" title="Json.net 的自訂 Serialize 與 Deserialize">
+                <i class="fa fa-chevron-left"></i> Json.net 的自訂 Serialize 與 Deserialize
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/04/powershell-generate-database-schema-script/" rel="prev" title="使用 PowerShell 來產生 Database Schema Script">
+                使用 PowerShell 來產生 Database Schema Script <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#資料層應用程式-Data-tier-Applications"><span class="nav-number">1.</span> <span class="nav-text">資料層應用程式 (Data-tier Applications)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DAC-定義"><span class="nav-number">1.1.</span> <span class="nav-text">DAC 定義</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BACPAC-操作"><span class="nav-number">1.2.</span> <span class="nav-text">BACPAC 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匯出步驟"><span class="nav-number">1.2.1.</span> <span class="nav-text">匯出步驟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匯入步驟"><span class="nav-number">1.2.2.</span> <span class="nav-text">匯入步驟</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">1.3.</span> <span class="nav-text">參考資料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2018/07/21/sqlserver-Data-tier-Applications/';
+          this.page.identifier = '2018/07/21/sqlserver-Data-tier-Applications/';
+          this.page.title = '使用 Sqlserver Data-Tier Applications 來進行備份';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

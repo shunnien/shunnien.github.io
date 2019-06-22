@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS,CSSGrid25,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="CSS Grid Implicit vs Explicit Tracks此篇介紹 Implicit Tracks (隱式邊線) 與 Explicit Tracks (顯式邊線)的差異點">
+<meta name="keywords" content="CSS,CSSGrid25">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS Grid 筆記 05-CSS Grid Implicit vs Explicit Tracks">
+<meta property="og:url" content="https://shunnien.github.io/2018/03/18/css-grid-05/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="CSS Grid Implicit vs Explicit Tracks此篇介紹 Implicit Tracks (隱式邊線) 與 Explicit Tracks (顯式邊線)的差異點">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/be5UoDrkwPpc3CnRgGS0jgU-bdmjk2zhHm8STB51rF-9Kcp0OLtGnAOXRQdf05It5IIdZTq-OaabxF-nQMZt831XQG-4ozlgQ5jbqBGFr9AFITSPw152Ya_F4L6cH1JNlTqhqL8B-xPzhxpjta9cc3FlCCp6rBt85RnRjAvJ_yUVKfIn4Jt266YF4QsN8a0Nr0rPqs-aC7qQpkPqY_UgdOg82JLU8WyB1XyByXxDZ4mS3kbuvg3pItkwURWFfNWbSUCu0nIYpuC7jvdqYHZ9SRw6uOosRdyp6UhpPPQwn4mR3MbunLXiQA6cxZzu4Chmquw8IB9MzuH4jsUhxNy_EOK6xYlYReLA__F2FkBKAoFnYsAGIzjn69rVRU5Dwy0U1nRBrjCJgxQTGA7RoEaOszbvmHffYk-USZGqMdVaGjKQyvA39hrr6zS-LtoHaICR8IrePFzqUbePDOD9AmbV6VQys9-6WehoAPLtUUVjYQb1JpI4fqpcuVOoD9iQYV0YPahtJRC2C1HhiyL-MttQrCQ2hGKMbrIhxsxevbFm7qLoSBRa1XB7zBK8_HwCaAm4x6fgd1NCIbYz-bMTENBUI5Cns948uD4TQ3ksZi2qYQP4zCxOsRQwruHBVGao79626-CWhTIGPdrohCQpu7JXbdjPY-RFryC1=w347-h777-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/fQnASL6mdp_rRJ8rsMOLHy0ddw4n-yCQh8UoJkk0-zYr8Y-QiqLF57ilN2MjSJz2C__wibGA16c5zKhmGXfLe-Ennoo2rSWWpHco5EK0rLy9Xmlob4HTYY-NC-mwCaI6r9jVD52cNfGqxG9Kh21vnUvPj9SwQmvbWQUILv62uLmxPhZaD6Mb6G-AIg--iDCQfVBQX-02OV1_wgIVu-hAB7Vpi2-kEqzIQcnsgrKnzvGWVnWNDuJ3OvYKl021W-Cznhkc_0E9GtL_G6uXuiVRB-_xrlPvuv0nX4zBnLrVvoUX3YfyaJ3MjNX6syID8v0nT0pIk9Y4yNBiIeRddz7UELF4bOGGFv1yr4sa7rpjladLkr11XeeOnitaUNOokcgF37bSzoBK72YxkSw5BcfHgZzn4vxbEHIquCFFXW3DwHj3eSfsdqjTz8wrv92kIxU3mB45aBc6cZIlJR7ytn32Efg4iwNNTBtt2GMFXkydm3JhS8jg4vd32byTHb5PHoxlhat2JNX7qmyhiSjKfqdwGMu-RPnEiEMGgwHtKCZWn9qMBMaxqZwr3NMITvWoEM892M_nkkA4HoIZUqay__aCRlscPQ4Y3Ve9tb-2PH-h5u8cIjRl7ENMhcL0_QQ4q8FvmZjZ-gPGG8hsSvzOHa03aqvlz2fFaErV=w406-h652-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/UtqNyiSCK5imHvs1WAA0r3mq_dPr1r93zidr6D8JG9do-Gc2HNe6ALIatzPfYoDx7IWm2yCeoN1bi-MLesf-YIIV2kHgTvfS_1ok4o4QYqarlNiR2k_cEIMXAApuuJvivxzmob-1h0xOrCbwBJwCs7wDStRe5h7KUFMJLAOnnPRXczaxY0PxwEgWSL6g82TRQzrpUs3n_WwSRAU25sa6GyFqmFxCE3addUnZOoXSG5BykTA092e6J9YYIrifM1Wj64EvYND1A5dZA1gO6aGPh6IcJ_ET5IU5WueAcbDZeGMyv21mNPwHaS063dlUpSzx7eLtCH-Ipm43QxrLo-tMcWmZJWsDkPRzVt48i1R0RGJcJlyL8dl_NpdwDlKz8fe5VKh0P9HYFxbB5hH1HQ584tyLOqDtzY2g2N2qMy-YGrq9Ktu4QNJV9np3cxX_IEep7NzGHCUv2taQZXLsJQ7R08AYS2CtNUaoJ7e8sHp_5Uc4ZaLXzuZG8ecaFdusS3ZpkH84Y0t_MDS40jDsTsYgPewzyeEdqAHBYNMb5zIZ1jckANDBAYnMBFOAuzrQxqP8uo2cnxD6pvtylfHhrHfVUcq8O8g044h9ZqM-1B3k6PYchOdaElztb_RyQiQl1v0G62KaKLjhGCqIs-ydmngW5vP37jyGxwUd=w240-h595-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/AieLtG_A9vDEjtgAsjjtowaeo3OcvFJ7x2QbxJ3qQM-Rbnw-zG4cdxZ1-EdtYFNBFMRtirgUa7vHkM9hRCr0RaLhnxv-1IiHBA2s59YEXsFdJoCEZ6FaqXcSEmKxzvO70qgvE9h7GfyopU5nmw7bBI8RcTvYn47EdC-wnJZgIZAe3NRPOyidT1VdMft2inCK6fSDs2lOoZuTMJx9dA70pHfxClQlMmIFluLdMbEaw_QCuI3Lddqwc_BxwhRrPyJOkgRe73lwWElVd-8j4UO6y-1Clq6ZEF4kQvSSFvkY4QSoEyEZO8wV2nByPUARBL7Otp5I92DK_2wD77iITh-7FYL-Hvxq-GcrydzqdtsmguQrUlEm44xECbGK4GOBpixgnb0x1hS3ytWba0IqxlRsBItj1yxxsI4p-2_OmyVZxpAlavXRqGU5wafX1GM8CIRze_OqPlm2mDQrOeC-mvFAlPdHereU1PD0FinJFsmaU-NQsF_VB2rWOQQL9LIVbXynEplYElifX2dbMj-bCEN-bcFgWfEVCv8txvmRhK3wUY4D0Mc99BIBdI8y_IF-2kEo8V5BLZK2cWzCV93ZUoQQEx8z0JEFNK-hs8ZVxBaKkxW8QwClQluyN5EaVqRs6tbqKL8WgL5TxTHy_pt5bBYtfYST11erUGmR=w344-h645-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/FE59JurQlEY4AEhxAJA0tLSZ-ia3CKV0HbEJ8VlpJZbrGa92BEH9e--gJhlPPndc-l0CqpXj7-6_VqRWqrFHq5rCMT5jWsCMG10aB_XF-A4AysMyTGaU8bvEiP9KNJhhQ_JsZhXtJsjopGGauFfH-p9JGk1dlBT1D9HNwunAt3YTpCwneIzmoMTvC_wWfZ9YsoI-focz-A7dTMIi2fp6W___9_131FMAR6J62Hl4WCJwQZnmnKvQfPrECm-_WJhlF9qJU4nxvTBZVr6TqNYBQVjMQeWtIFOYdTohd6JZDHtX3Rovjy033W-RRD6woWqeIxmoPRq3jh38dSu7eygRR8QLORSAmO9KDsEgjHTULo0ei75b-GlD44wczGhh6GUcNQZYfoXp1MyLhh8ZMDodeX77t1aWr-O6d-ukg0ImsPJ__lzPcGpjY4Bat45tbu19urWWX078_UOSFUixQ-mltiW-qT2XqL2JLs7jSCRIwKDB1LOVf6iQJmyXo1iprs5T4uxRs4UVUG-iaD75aB05XJiu53mP4SHjsDh0twkaMDjeMdCbOga1FZ9YlWjA4R-gbHNLjsSEIG7jYam0kAhvZjwHQsXBu1FgNa22J2wtUKhicfOVWbd-S7hfB7YDXKHU4Xzcij55bT-Yu4n73AhSaHwKIW4uGsBc=w469-h731-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS Grid 筆記 05-CSS Grid Implicit vs Explicit Tracks">
+<meta name="twitter:description" content="CSS Grid Implicit vs Explicit Tracks此篇介紹 Implicit Tracks (隱式邊線) 與 Explicit Tracks (顯式邊線)的差異點">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/be5UoDrkwPpc3CnRgGS0jgU-bdmjk2zhHm8STB51rF-9Kcp0OLtGnAOXRQdf05It5IIdZTq-OaabxF-nQMZt831XQG-4ozlgQ5jbqBGFr9AFITSPw152Ya_F4L6cH1JNlTqhqL8B-xPzhxpjta9cc3FlCCp6rBt85RnRjAvJ_yUVKfIn4Jt266YF4QsN8a0Nr0rPqs-aC7qQpkPqY_UgdOg82JLU8WyB1XyByXxDZ4mS3kbuvg3pItkwURWFfNWbSUCu0nIYpuC7jvdqYHZ9SRw6uOosRdyp6UhpPPQwn4mR3MbunLXiQA6cxZzu4Chmquw8IB9MzuH4jsUhxNy_EOK6xYlYReLA__F2FkBKAoFnYsAGIzjn69rVRU5Dwy0U1nRBrjCJgxQTGA7RoEaOszbvmHffYk-USZGqMdVaGjKQyvA39hrr6zS-LtoHaICR8IrePFzqUbePDOD9AmbV6VQys9-6WehoAPLtUUVjYQb1JpI4fqpcuVOoD9iQYV0YPahtJRC2C1HhiyL-MttQrCQ2hGKMbrIhxsxevbFm7qLoSBRa1XB7zBK8_HwCaAm4x6fgd1NCIbYz-bMTENBUI5Cns948uD4TQ3ksZi2qYQP4zCxOsRQwruHBVGao79626-CWhTIGPdrohCQpu7JXbdjPY-RFryC1=w347-h777-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2018/03/18/css-grid-05/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>CSS Grid 筆記 05-CSS Grid Implicit vs Explicit Tracks | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/03/18/css-grid-05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS Grid 筆記 05-CSS Grid Implicit vs Explicit Tracks</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-03-18T14:44:05+08:00">
+                2018-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/18/css-grid-05/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/18/css-grid-05/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="CSS-Grid-Implicit-vs-Explicit-Tracks"><a href="#CSS-Grid-Implicit-vs-Explicit-Tracks" class="headerlink" title="CSS Grid Implicit vs Explicit Tracks"></a>CSS Grid Implicit vs Explicit Tracks</h1><p>此篇介紹 <strong>Implicit Tracks</strong> (隱式邊線) 與 <strong>Explicit Tracks</strong> (顯式邊線)的差異點<br><a id="more"></a></p>
+<blockquote>
+<p><a href="https://shunnien.github.io/css-grid25day/day_05/index.html">Demo</a> | <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">Github</a></p>
+</blockquote>
+<p>主要著重在 <code>grid-template-columns</code> 與 <code>grid-template-rows</code> 兩個 <strong>template</strong> 的設定對應 <code>grid-auto-rows</code> 與 <code>grid-auto-columns</code> ，以下說明這幾個項目的邊界範圍</p>
+<h2 id="grid-template-columns"><a href="#grid-template-columns" class="headerlink" title="grid-template-columns"></a><code>grid-template-columns</code></h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">      <span class="attribute">display</span>: grid;</span><br><span class="line">      <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">      <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">400px</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>這是設定直列的寬度，設定幾個數字表示設定幾列，例如上述的設定只有 <code>200px 400px</code> ，所以第一列是 <strong>200px</strong> 第二列式 <strong>400px</strong> ，其邊界範圍如下圖，左右的黑色實線表示 <strong>Explicit Tracks</strong> (顯式邊線)，而虛線表示 <strong>Implicit Tracks</strong> (隱式邊線)</p>
+<p><img src="https://lh3.googleusercontent.com/be5UoDrkwPpc3CnRgGS0jgU-bdmjk2zhHm8STB51rF-9Kcp0OLtGnAOXRQdf05It5IIdZTq-OaabxF-nQMZt831XQG-4ozlgQ5jbqBGFr9AFITSPw152Ya_F4L6cH1JNlTqhqL8B-xPzhxpjta9cc3FlCCp6rBt85RnRjAvJ_yUVKfIn4Jt266YF4QsN8a0Nr0rPqs-aC7qQpkPqY_UgdOg82JLU8WyB1XyByXxDZ4mS3kbuvg3pItkwURWFfNWbSUCu0nIYpuC7jvdqYHZ9SRw6uOosRdyp6UhpPPQwn4mR3MbunLXiQA6cxZzu4Chmquw8IB9MzuH4jsUhxNy_EOK6xYlYReLA__F2FkBKAoFnYsAGIzjn69rVRU5Dwy0U1nRBrjCJgxQTGA7RoEaOszbvmHffYk-USZGqMdVaGjKQyvA39hrr6zS-LtoHaICR8IrePFzqUbePDOD9AmbV6VQys9-6WehoAPLtUUVjYQb1JpI4fqpcuVOoD9iQYV0YPahtJRC2C1HhiyL-MttQrCQ2hGKMbrIhxsxevbFm7qLoSBRa1XB7zBK8_HwCaAm4x6fgd1NCIbYz-bMTENBUI5Cns948uD4TQ3ksZi2qYQP4zCxOsRQwruHBVGao79626-CWhTIGPdrohCQpu7JXbdjPY-RFryC1=w347-h777-no" alt="explicit start"></p>
+<p><img src="https://lh3.googleusercontent.com/fQnASL6mdp_rRJ8rsMOLHy0ddw4n-yCQh8UoJkk0-zYr8Y-QiqLF57ilN2MjSJz2C__wibGA16c5zKhmGXfLe-Ennoo2rSWWpHco5EK0rLy9Xmlob4HTYY-NC-mwCaI6r9jVD52cNfGqxG9Kh21vnUvPj9SwQmvbWQUILv62uLmxPhZaD6Mb6G-AIg--iDCQfVBQX-02OV1_wgIVu-hAB7Vpi2-kEqzIQcnsgrKnzvGWVnWNDuJ3OvYKl021W-Cznhkc_0E9GtL_G6uXuiVRB-_xrlPvuv0nX4zBnLrVvoUX3YfyaJ3MjNX6syID8v0nT0pIk9Y4yNBiIeRddz7UELF4bOGGFv1yr4sa7rpjladLkr11XeeOnitaUNOokcgF37bSzoBK72YxkSw5BcfHgZzn4vxbEHIquCFFXW3DwHj3eSfsdqjTz8wrv92kIxU3mB45aBc6cZIlJR7ytn32Efg4iwNNTBtt2GMFXkydm3JhS8jg4vd32byTHb5PHoxlhat2JNX7qmyhiSjKfqdwGMu-RPnEiEMGgwHtKCZWn9qMBMaxqZwr3NMITvWoEM892M_nkkA4HoIZUqay__aCRlscPQ4Y3Ve9tb-2PH-h5u8cIjRl7ENMhcL0_QQ4q8FvmZjZ-gPGG8hsSvzOHa03aqvlz2fFaErV=w406-h652-no" alt="explicit end"></p>
+<p><img src="https://lh3.googleusercontent.com/UtqNyiSCK5imHvs1WAA0r3mq_dPr1r93zidr6D8JG9do-Gc2HNe6ALIatzPfYoDx7IWm2yCeoN1bi-MLesf-YIIV2kHgTvfS_1ok4o4QYqarlNiR2k_cEIMXAApuuJvivxzmob-1h0xOrCbwBJwCs7wDStRe5h7KUFMJLAOnnPRXczaxY0PxwEgWSL6g82TRQzrpUs3n_WwSRAU25sa6GyFqmFxCE3addUnZOoXSG5BykTA092e6J9YYIrifM1Wj64EvYND1A5dZA1gO6aGPh6IcJ_ET5IU5WueAcbDZeGMyv21mNPwHaS063dlUpSzx7eLtCH-Ipm43QxrLo-tMcWmZJWsDkPRzVt48i1R0RGJcJlyL8dl_NpdwDlKz8fe5VKh0P9HYFxbB5hH1HQ584tyLOqDtzY2g2N2qMy-YGrq9Ktu4QNJV9np3cxX_IEep7NzGHCUv2taQZXLsJQ7R08AYS2CtNUaoJ7e8sHp_5Uc4ZaLXzuZG8ecaFdusS3ZpkH84Y0t_MDS40jDsTsYgPewzyeEdqAHBYNMb5zIZ1jckANDBAYnMBFOAuzrQxqP8uo2cnxD6pvtylfHhrHfVUcq8O8g044h9ZqM-1B3k6PYchOdaElztb_RyQiQl1v0G62KaKLjhGCqIs-ydmngW5vP37jyGxwUd=w240-h595-no" alt="Implicit line"></p>
+<h2 id="grid-template-rows"><a href="#grid-template-rows" class="headerlink" title="grid-template-rows"></a><code>grid-template-rows</code></h2><p>與 <code>grid-template-columns</code> 類似，但是其設定為橫向的行，設定幾個數字表示設定幾行，上下的黑色實線為其設定範圍，超出的部分則為虛線顯示。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://lh3.googleusercontent.com/AieLtG_A9vDEjtgAsjjtowaeo3OcvFJ7x2QbxJ3qQM-Rbnw-zG4cdxZ1-EdtYFNBFMRtirgUa7vHkM9hRCr0RaLhnxv-1IiHBA2s59YEXsFdJoCEZ6FaqXcSEmKxzvO70qgvE9h7GfyopU5nmw7bBI8RcTvYn47EdC-wnJZgIZAe3NRPOyidT1VdMft2inCK6fSDs2lOoZuTMJx9dA70pHfxClQlMmIFluLdMbEaw_QCuI3Lddqwc_BxwhRrPyJOkgRe73lwWElVd-8j4UO6y-1Clq6ZEF4kQvSSFvkY4QSoEyEZO8wV2nByPUARBL7Otp5I92DK_2wD77iITh-7FYL-Hvxq-GcrydzqdtsmguQrUlEm44xECbGK4GOBpixgnb0x1hS3ytWba0IqxlRsBItj1yxxsI4p-2_OmyVZxpAlavXRqGU5wafX1GM8CIRze_OqPlm2mDQrOeC-mvFAlPdHereU1PD0FinJFsmaU-NQsF_VB2rWOQQL9LIVbXynEplYElifX2dbMj-bCEN-bcFgWfEVCv8txvmRhK3wUY4D0Mc99BIBdI8y_IF-2kEo8V5BLZK2cWzCV93ZUoQQEx8z0JEFNK-hs8ZVxBaKkxW8QwClQluyN5EaVqRs6tbqKL8WgL5TxTHy_pt5bBYtfYST11erUGmR=w344-h645-no" alt="grid-template-columns explicit"></p>
+<h2 id="grid-auto-rows-與-grid-auto-columns"><a href="#grid-auto-rows-與-grid-auto-columns" class="headerlink" title="grid-auto-rows 與 grid-auto-columns"></a><code>grid-auto-rows</code> 與 <code>grid-auto-columns</code></h2><p>這兩個 CSS 屬性則是剛剛上述提到的 <strong>template</strong> 設定範圍外，就是虛線顯示的部分，其表格的寬高設定</p>
+<ul>
+<li><code>grid-auto-rows</code> 表示超出設定範圍的行的高度</li>
+<li><code>grid-auto-columns</code> 表示超出設定範圍的列的寬度</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">100px</span> <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">grid-auto-rows</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">grid-auto-columns</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://lh3.googleusercontent.com/FE59JurQlEY4AEhxAJA0tLSZ-ia3CKV0HbEJ8VlpJZbrGa92BEH9e--gJhlPPndc-l0CqpXj7-6_VqRWqrFHq5rCMT5jWsCMG10aB_XF-A4AysMyTGaU8bvEiP9KNJhhQ_JsZhXtJsjopGGauFfH-p9JGk1dlBT1D9HNwunAt3YTpCwneIzmoMTvC_wWfZ9YsoI-focz-A7dTMIi2fp6W___9_131FMAR6J62Hl4WCJwQZnmnKvQfPrECm-_WJhlF9qJU4nxvTBZVr6TqNYBQVjMQeWtIFOYdTohd6JZDHtX3Rovjy033W-RRD6woWqeIxmoPRq3jh38dSu7eygRR8QLORSAmO9KDsEgjHTULo0ei75b-GlD44wczGhh6GUcNQZYfoXp1MyLhh8ZMDodeX77t1aWr-O6d-ukg0ImsPJ__lzPcGpjY4Bat45tbu19urWWX078_UOSFUixQ-mltiW-qT2XqL2JLs7jSCRIwKDB1LOVf6iQJmyXo1iprs5T4uxRs4UVUG-iaD75aB05XJiu53mP4SHjsDh0twkaMDjeMdCbOga1FZ9YlWjA4R-gbHNLjsSEIG7jYam0kAhvZjwHQsXBu1FgNa22J2wtUKhicfOVWbd-S7hfB7YDXKHU4Xzcij55bT-Yu4n73AhSaHwKIW4uGsBc=w469-h731-no" alt="grid-auto-rows"></p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
+<li>作者 <a href="https://github.com/wesbos/css-grid" target="_blank" rel="noopener"><strong>Wes Bos</strong> CSS-Grid Github</a></li>
+<li>我的 CSS-Grid <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">練習Github</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/CSSGrid25/" rel="tag"># CSSGrid25</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/28/css-grid-04/" rel="next" title="CSS Grid 筆記 04-CSS Grid Dev Tools">
+                <i class="fa fa-chevron-left"></i> CSS Grid 筆記 04-CSS Grid Dev Tools
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/18/css-grid-06/" rel="prev" title="CSS Grid 筆記 06-CSS Grid-Auto-Flow Explained">
+                CSS Grid 筆記 06-CSS Grid-Auto-Flow Explained <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-Grid-Implicit-vs-Explicit-Tracks"><span class="nav-number">1.</span> <span class="nav-text">CSS Grid Implicit vs Explicit Tracks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-template-columns"><span class="nav-number">1.1.</span> <span class="nav-text">grid-template-columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-template-rows"><span class="nav-number">1.2.</span> <span class="nav-text">grid-template-rows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grid-auto-rows-與-grid-auto-columns"><span class="nav-number">1.3.</span> <span class="nav-text">grid-auto-rows 與 grid-auto-columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">1.4.</span> <span class="nav-text">參考資料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2018/03/18/css-grid-05/';
+          this.page.identifier = '2018/03/18/css-grid-05/';
+          this.page.title = 'CSS Grid 筆記 05-CSS Grid Implicit vs Explicit Tracks';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>

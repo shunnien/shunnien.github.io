@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Asp.Net MVC,C#,Visual Studio,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一般開發時，有時候會使用預設專案範本，或是空專案自行建立；但是在多人開發時，希望團隊有幾個通用的專案範本；這時候，如果使用的是 Visual Studio，可以建立自訂的 MSDN Visual Studio Templates。">
+<meta name="keywords" content="Asp.Net MVC,C#,Visual Studio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自訂 vs 專案範本">
+<meta property="og:url" content="https://shunnien.github.io/2017/07/16/custom-project-template-for-visual-studio/index.html">
+<meta property="og:site_name" content="ShunNien&#39;s Blog">
+<meta property="og:description" content="一般開發時，有時候會使用預設專案範本，或是空專案自行建立；但是在多人開發時，希望團隊有幾個通用的專案範本；這時候，如果使用的是 Visual Studio，可以建立自訂的 MSDN Visual Studio Templates。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://lh3.googleusercontent.com/fTFEpNXp4TPzCowOe9A86LqrX4Bw374bz0XZaqJSaH3loiO3Of6m99FKzpAkSW6HbY7bd9hjr8OvZdVN8Ux1HRpTnGHY2oWlZBPoXMoxU0WyPNk2El3sruc7IyEVHotDwtoZF5blTXl-SesBPZ5HrcT7ytBwscQJi0bJV5AmDeqVQZlhB6RcBI5753h_oi5-xk9ZYe0WG-RGngZOg97g-JDolJgUZVyNdwZgfYGKSeUn8Ywh_QER2PV5owWBItTe2MzuE8m4QJsmJSX5gT_oTYPUPdOswrgs9qSm1UAQlP7X2lmJe7beEKmE1lAEMP49n4VB1D3JVQFmTiP0n9m-VJPA2cKrBvt3KAEz5RYXApRzKW4GGkrJLKCmqbypmyuj1HT9Q7Ryhwzc3LrtXIJhmSQ9YnoYwScGKbG-RmIw9bohFRGPLNF6YvHjEto-s7IcTcSzzVX2IcdpbvUs-lARBEtu_buToN6cHkFvtX0eAodD7rlAcdjV6OJ-qMCSJ40TDmP4eRuuEUQs1CxkD-4s37GEhbjjBa6YuEeJp9KB2XsR86wOPUjmKAHTZTTsomG6152-Hm2y4Tx6Uo8d5T-RqUPKDK5c0TSbRkyE3_8MWKeSlRRmi7hbP1c53BXoB450nBiQMiXMesaJFsJirh8cvE0hJ9YZA5RpnWPC1F3-wbSkJQ=w375-h855-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/8FXqEBRdWeEGjwPCh9Eadf-e0Il9R0GjCva2PdWs_H4YjFS_ycvtWwuUy_VoPVXqTk8ybJGgMDh1yG91TXR5jcSMuW1jBWonsqXLSd_ZF6vtFDKewMHnBOXb2RBDt2n3eMfRU5fDg7MPvAGlJKQo0mrT_bEoj1aRYzVEmimZISgLnMqyloywk0ZOi07Sfd5e07r7otkR4cdH65K-y3r2ASn5jtNcyO155BHYGMdbOI_mXDjNWIWWEzw-uMszzl52JuxEl12uaMQM5bjpgoMwjpGOpvuLFs7PDBwqiNtPUAybVwRaphYvUKgAJPyq_j-1xJNxGYQ-NaCDsD7hzH_aIwQeJdR0jEsKu3cXkaguj7RR_fPuJ-7Q684OK7345BRetieGlvXwcYUX3rJWpBbO3FYCPvb_Y0iK0bT1Aybw-6sggj6aPqar7rEDFHmFqRQtkcOLczroJiZVYmBlESRyoagrJhXerjUC_RnLWb_CQIugwlhtAGjGzBea06zEmPHCHLOs7Boe-RVJWcDTP7qgtPrWy3eFOTKOIOOT3AO-Ugq5NzP-ACJooWdq18qgmDc3SccCvguJlHLXkXVmX-vIOnOK4lDKNo-Wco6zFkZ2Z90YI5nR8eFyR3hx3Zsc7mTzfra7-eq8uUGVayc91TcxatbzGfrdGDjolz41yDN0hr2tKw=w562-h624-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/eGl8Nbb5Eodz35c8lRORhflVL3IX7VQwKH6a4v_wf1W-nbXqpfMUirLxYu1xgPyunPiZgfBqSAJj4ebYY_LrzuFZyoT9Cjfv2YJXhky_7Duy19U7FvONXsM6hagHLSwWy9fS2w4qPwXREu1fxy0-t9uSaLao4VPlouzUmUeiomNA-UDUNIgFSDsYimMNoFuv3bp2fa3IptJ_6z4J9My8-su-04NhAtzelbkrn9SPucz22kM4fpCacBI4K4z4gFeD3AEqfwwuXQ-gW1derc85mg3G6HszIrb7asXDoMWHMfPR0fzuKuh0EOO-DasK0x3-dCMMH0xKtsu6-HrnycPf_jhJNWq_RQZFIRJjxv5qfmBTmPLTvOTNFutrjJ5XJgjQTsbuogzKQstLpyuuggDKXOUV8J-EdUpcJAnm-2I3YnbudnbjhUpQyUOrPT0HVC_FFtpEabHEcJAxlzA0eJs7rezWvcMw0dumWKBUbQy_sgxm2ZN8Agz8W_G2OPC3ZhV0UKqSzyKEvSwE09MdqCBoAGzUGa3jgxlsIv73th-4fBk5X1NvjlLUCcxlNuM8rWXb1fY7pLFRzkEeSEzcJmy_WBuXc7a9EZnZi1M2iG8jFh3_XJycP2Hm8cSuvVCiaPeNgwreVN20FBpmt7-yjzuJWR8H4TD7DqXtqahkjFb0AkMTBw=w787-h714-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/3de95QE6hAM0IGMJrW1Ys0wPHI3J3xII4kQXA12Pv0aVIWqjOc0c6LTTBG5vSBEN5YpIhtH3LwgElYZ0XT_UgDwvvmMgv8EjeF39RS4B_pMxND7T66xlazcMA3UDl1T8nAS4EmN19_6RNv6OI-sp-fHUFzjFI7FpiYemCrivgrt73Yb6P2OwHOm8eoQ17r_Pb6l8NP89Bed18lEKnTnUDK_hLs6pjoomV5wgKux38NpJxNJtie_EicBBIUAfjyjgUc-5x0ASkHpxa4oOn-2PAXJDcm07LpCK4issEo3oWs77Qfk_6hB1eA00hmow5rX9DfGWA3t1u_2ZqJ0dWwEZrkjYrUjFW0qWxYiNDeWruyZfbbJ4wGM4dLI5vc809B59hzfUt48qKEbM-yoq7gGN97nhvU65TmwmpS40IOR4t9azGZuP-zsHI5p3z96lVSl3cS0ZLhUsdERwDtw79o18l8UxI5Rx2tt3Sd9UTk5FB8OhPy6PsucKckvRNl2F-ZsCVG7N6fKP5aQ06wvKwh9Ym2A-H09KDpsJHHx9InBd8b09JTOtpDrGA3lfCo_nBQ7FdqhTWeYS9_nEUofqkypF3mDH_HMyl_OL80q1TA6Tq-q0FpXK9PND6vXNYKqYX2STTMHl2SvyIbBWalzG65ZNVeaAfY_37-mGea5Z_kxoWTgg_w=w866-h621-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/UpNPu4_vNOM86ppNPnhMn-RNRK9w6oUM79d5V14DfpJgPzPa2Y0_0r5mguacVIUKibiqnglzTAwOugKYwtGKj8QWBgOwwmc6CUNd7la8nhFEDcybGqcipDRnvrPjJ5Ppvyg0HW10o152Z_wm29iu1fU5Ju-mvCZ_9O_g6wqJhpCuTNNmVnXYdbIQ83WYcl9N4fgQAPq7lQIBD_PNDJB8L-s8WizPzZgvjbQhRhcp1C7Rmepd_DxQaKXXBo1Va0KQ9e0DZEuK1FgKm4D7AC4NYlp8yQY-XFoMSZFuBn62faJCXfcQNXLnxJA9v8p1tosG_GpNrG5V5Cq_nu-iVUUZaEpL6SIU63lrJ6J5uU2gs_l1g_F24pMQt6BMCYLUUzSHAmj2a8pWNGBDvaw5WZnCnbGWNo0mwjuvr-EiYJxZ7iQR-aW-435Kf3XUkcxVcvnCIb5DFyFmx6stj0bs11VqNUk0RPZ3Rj8BnDEdflxeD3K_OxqRssQTDDsWg4QnRrm9zWofoiyKL90SDZOg-lNDp9-l_GmwbLhOTyVEFMZJ5v2Ax1tbFB-Idy3PQKFZKxwbvheHtwbJ68Wmm-EtR_K5yFc0blkV_QP2fZp8S5rR8Hs9hkwDEebPoul-PCMcKodrhESLR8AZPprqf14xPm3AxbSlqCoRm_z9tZSkDFsve6TJ6A=w870-h605-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/dqvDXtP80klwjPy3G8WvUJPdEoNQyhdYKN6st7keleOH7poC0_IQg4A_L1hXauQ5v1g8UXk47QW82GDwEcVim_6Amz2RABv6KalUVegIC0gSYCVYF_5UXUrF2Zyok3LspC41pCgeGeXwdB1N1n-HQtJ5cCACT-esSItEXxlMhdjZPTnR57hE1JdwkOrFOtfrd4fxH9np9-5nzPlYynQUvjgipAM3Kd5_VEaVf_SYO0zWh_d3bnCuxXy5LGB7-yX19xEgg7W8JMJWQl-O1F9sSORgaz8nhmagt7lM5XYn4epkiBL_CMKmE8ZSMaG4E5XqbRRofBk1oKiq0-VZOH4QmnTCJ6zgLeGY9NGfRNbBR6_k37iy0w1F_XGiTB16m5A-EOWz7KE3heEV794D_LExP0nV9NdNBuLhHREvhvC0VgUmThk9xiuuKOEtAaDesmpXyq7EG1IdaCxsbD9mbBbBjtMRFs7MgCcyoREFaKHq8Vyiu4MwMazpZLuFJHgCO_xH97TyzuAjTaJWlrWFwd00KWUel_mKiARsNEdqOJqHhK18i-vCRA-h44hB__oN_3otE4OVlerTYbOs4e_eq7ROkqjsyRfXVNkaW4_ZZT81kwq1P7C8OntHzRaHhG5brErVtE5WkTGvyJ2TxBCdOv5HBqaH2WFv58rWJRPEh5eijnptcw=w452-h500-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/cHYA0Sn-vYGQDPzhkJTwdndhgnSFnG5ppio3wKCy08DK-yvVCzXmfgJAdwjdREi7NJ7Qk9ydRS7ci4k7aqt0M6c2Cx7QKHeaXuuLixpAsb9Swz0xLrf10-YHNXKL-_KrSqwCB8jyFB9P8K5UUElLLy7sFLdT8uM7RUuLKHZzUYyJ3UN1MEeW660S1aNrb337sw3ukKkLLdDVhoqJeZRowHVmiqpeQOXeLMVr4rWGugAJCi702wlZYri1oEtMon-kHpds3O65f2FX9wDmZ33XA8x2c1vh1PKrNLlL61s42fFG6SE1iDjCKg9tOBxKAmKaFJoML3qX4tVTeM0Z63Q36ofiqrbNot80TlnwjYkYoU8EhwtX3-w4yEFQBU3PNZkVE5oHQu8-g5Yq-n6Hpzox72TNbWCpdk2ahQB8XChrT4MUyll5PugrSigRZgTxtAoea5Xg7WS6mL7Jeyztgez05cKwqiHuGktjwwSrlMnVhHIsJruTwAiHErq7KmVVAmLG36A-vYkC1yCvk-jFUkQwAuQVW6zljhiScb9GAfsP1-OxlYG-BPIYNdVWE3TvGz_uPkIRAYjsqeuQM6Vc61oenj2IIQLD1nc-DYqhgYg-QRfNgW1UHKDp5mUJ7zOlGLTio_wRnvyYof1JkOkCfPCyJTUPAP7VFoXTOpnepgTIF-b2Bg=w874-h647-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/RKhMbVIvECuug9d1LsTWM2hKE-4QIinZVecrlo4nzUbQOgfkCLMBsIXhvfHb3fXbGugMi5nRBkKMhMS8P0jOgLTVMYuSa5z_YdObqsyr_5vsu8GpCcIgPnBGK8G5L0QKjmth17L892cLr2YiLOpJY1D49FGEmhxyC9SfS8C3ROP1HN5jHZF7atSCpyVb3hv0c25xigSPWiJI4-CHDGxr7YFK3Ghxf5LmRaWRurFUbFeWdiS-5iwHfn93uqlh5Tu-6bqwO2wzM3lv_n0eNuY_zyRs5B66vDX46FnEsbv54khT4tguQ7jbc16Oz2-Ttwq7IzzOczmbrlI1nlMVEVjUy341_mjtGdZiHMZzZU2LZqSLl2WaVZjOHsuiIwufO1zmL7abI_MAyoFEob41Xc2Yooy51ywJzrwRLajnhO5y-fadhUHqPBhYhCuNOE4KnaTKEXDZVtHTcq-uQC0jvt-ap9utgEn9ccqjUoivbfO0wf92GiT3Wh8lBh1VN8Ktt8y_TSwDJ_SY34-p2yEg9YNO-5esM1-GF0ASLrv8T3fLh0XjM_vJWjKtH61gzpbyGJ2SzcfuOqdubAQLbsmDWzTVjcqf4F5YVNun8CZiYvnn2J0Ra1KDalZPl0BC-XjeQeknLuUx4do93Hi_v_W9OYremPBzEKe7jGmrZ9olBqxzGN4g5g=w1853-h919-no">
+<meta property="og:updated_time" content="2019-06-14T05:58:19.646Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自訂 vs 專案範本">
+<meta name="twitter:description" content="一般開發時，有時候會使用預設專案範本，或是空專案自行建立；但是在多人開發時，希望團隊有幾個通用的專案範本；這時候，如果使用的是 Visual Studio，可以建立自訂的 MSDN Visual Studio Templates。">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/fTFEpNXp4TPzCowOe9A86LqrX4Bw374bz0XZaqJSaH3loiO3Of6m99FKzpAkSW6HbY7bd9hjr8OvZdVN8Ux1HRpTnGHY2oWlZBPoXMoxU0WyPNk2El3sruc7IyEVHotDwtoZF5blTXl-SesBPZ5HrcT7ytBwscQJi0bJV5AmDeqVQZlhB6RcBI5753h_oi5-xk9ZYe0WG-RGngZOg97g-JDolJgUZVyNdwZgfYGKSeUn8Ywh_QER2PV5owWBItTe2MzuE8m4QJsmJSX5gT_oTYPUPdOswrgs9qSm1UAQlP7X2lmJe7beEKmE1lAEMP49n4VB1D3JVQFmTiP0n9m-VJPA2cKrBvt3KAEz5RYXApRzKW4GGkrJLKCmqbypmyuj1HT9Q7Ryhwzc3LrtXIJhmSQ9YnoYwScGKbG-RmIw9bohFRGPLNF6YvHjEto-s7IcTcSzzVX2IcdpbvUs-lARBEtu_buToN6cHkFvtX0eAodD7rlAcdjV6OJ-qMCSJ40TDmP4eRuuEUQs1CxkD-4s37GEhbjjBa6YuEeJp9KB2XsR86wOPUjmKAHTZTTsomG6152-Hm2y4Tx6Uo8d5T-RqUPKDK5c0TSbRkyE3_8MWKeSlRRmi7hbP1c53BXoB450nBiQMiXMesaJFsJirh8cvE0hJ9YZA5RpnWPC1F3-wbSkJQ=w375-h855-no">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shunnien.github.io/2017/07/16/custom-project-template-for-visual-studio/">
+
+
+
+<link href="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.css" rel="stylesheet">
+
+
+  <title>自訂 vs 專案範本 | ShunNien's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '[object Object]', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShunNien's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不積跬步，無以致千里；不積小流，無以成江海。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2017/07/16/custom-project-template-for-visual-studio/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">自訂 vs 專案範本</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-07-16T16:21:13+08:00">
+                2017-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/16/custom-project-template-for-visual-studio/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/16/custom-project-template-for-visual-studio/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一般開發時，有時候會使用預設專案範本，或是空專案自行建立；但是在多人開發時，希望團隊有幾個通用的專案範本；這時候，如果使用的是 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong>，可以建立自訂的 <strong><a href="https://msdn.microsoft.com/en-us/library/6db0hwky(v=vs.100).aspx" target="_blank" rel="noopener">MSDN Visual Studio Templates</a></strong>。<a id="more"></a></p>
+<p>想要建立專案範本，其實相當簡單；首先找一個想要建立範本的專案，接著在編輯列點選 <strong>project</strong> 再點選 <strong>export template…</strong><br><code>project -&gt; export template...</code><br><img src="https://lh3.googleusercontent.com/fTFEpNXp4TPzCowOe9A86LqrX4Bw374bz0XZaqJSaH3loiO3Of6m99FKzpAkSW6HbY7bd9hjr8OvZdVN8Ux1HRpTnGHY2oWlZBPoXMoxU0WyPNk2El3sruc7IyEVHotDwtoZF5blTXl-SesBPZ5HrcT7ytBwscQJi0bJV5AmDeqVQZlhB6RcBI5753h_oi5-xk9ZYe0WG-RGngZOg97g-JDolJgUZVyNdwZgfYGKSeUn8Ywh_QER2PV5owWBItTe2MzuE8m4QJsmJSX5gT_oTYPUPdOswrgs9qSm1UAQlP7X2lmJe7beEKmE1lAEMP49n4VB1D3JVQFmTiP0n9m-VJPA2cKrBvt3KAEz5RYXApRzKW4GGkrJLKCmqbypmyuj1HT9Q7Ryhwzc3LrtXIJhmSQ9YnoYwScGKbG-RmIw9bohFRGPLNF6YvHjEto-s7IcTcSzzVX2IcdpbvUs-lARBEtu_buToN6cHkFvtX0eAodD7rlAcdjV6OJ-qMCSJ40TDmP4eRuuEUQs1CxkD-4s37GEhbjjBa6YuEeJp9KB2XsR86wOPUjmKAHTZTTsomG6152-Hm2y4Tx6Uo8d5T-RqUPKDK5c0TSbRkyE3_8MWKeSlRRmi7hbP1c53BXoB450nBiQMiXMesaJFsJirh8cvE0hJ9YZA5RpnWPC1F3-wbSkJQ=w375-h855-no" alt="example"><br><img src="https://lh3.googleusercontent.com/8FXqEBRdWeEGjwPCh9Eadf-e0Il9R0GjCva2PdWs_H4YjFS_ycvtWwuUy_VoPVXqTk8ybJGgMDh1yG91TXR5jcSMuW1jBWonsqXLSd_ZF6vtFDKewMHnBOXb2RBDt2n3eMfRU5fDg7MPvAGlJKQo0mrT_bEoj1aRYzVEmimZISgLnMqyloywk0ZOi07Sfd5e07r7otkR4cdH65K-y3r2ASn5jtNcyO155BHYGMdbOI_mXDjNWIWWEzw-uMszzl52JuxEl12uaMQM5bjpgoMwjpGOpvuLFs7PDBwqiNtPUAybVwRaphYvUKgAJPyq_j-1xJNxGYQ-NaCDsD7hzH_aIwQeJdR0jEsKu3cXkaguj7RR_fPuJ-7Q684OK7345BRetieGlvXwcYUX3rJWpBbO3FYCPvb_Y0iK0bT1Aybw-6sggj6aPqar7rEDFHmFqRQtkcOLczroJiZVYmBlESRyoagrJhXerjUC_RnLWb_CQIugwlhtAGjGzBea06zEmPHCHLOs7Boe-RVJWcDTP7qgtPrWy3eFOTKOIOOT3AO-Ugq5NzP-ACJooWdq18qgmDc3SccCvguJlHLXkXVmX-vIOnOK4lDKNo-Wco6zFkZ2Z90YI5nR8eFyR3hx3Zsc7mTzfra7-eq8uUGVayc91TcxatbzGfrdGDjolz41yDN0hr2tKw=w562-h624-no" alt="menu export"></p>
+<p>因為要製作的是 <strong><a href="https://msdn.microsoft.com/en-us/library/xkh1wxd8.aspx" target="_blank" rel="noopener">Project Template</a></strong>，所以選取 <strong><a href="https://msdn.microsoft.com/en-us/library/xkh1wxd8.aspx" target="_blank" rel="noopener">Project Template</a></strong>，接著就按照 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong> 設定精靈給予的選項設定就好了。<br><img src="https://lh3.googleusercontent.com/eGl8Nbb5Eodz35c8lRORhflVL3IX7VQwKH6a4v_wf1W-nbXqpfMUirLxYu1xgPyunPiZgfBqSAJj4ebYY_LrzuFZyoT9Cjfv2YJXhky_7Duy19U7FvONXsM6hagHLSwWy9fS2w4qPwXREu1fxy0-t9uSaLao4VPlouzUmUeiomNA-UDUNIgFSDsYimMNoFuv3bp2fa3IptJ_6z4J9My8-su-04NhAtzelbkrn9SPucz22kM4fpCacBI4K4z4gFeD3AEqfwwuXQ-gW1derc85mg3G6HszIrb7asXDoMWHMfPR0fzuKuh0EOO-DasK0x3-dCMMH0xKtsu6-HrnycPf_jhJNWq_RQZFIRJjxv5qfmBTmPLTvOTNFutrjJ5XJgjQTsbuogzKQstLpyuuggDKXOUV8J-EdUpcJAnm-2I3YnbudnbjhUpQyUOrPT0HVC_FFtpEabHEcJAxlzA0eJs7rezWvcMw0dumWKBUbQy_sgxm2ZN8Agz8W_G2OPC3ZhV0UKqSzyKEvSwE09MdqCBoAGzUGa3jgxlsIv73th-4fBk5X1NvjlLUCcxlNuM8rWXb1fY7pLFRzkEeSEzcJmy_WBuXc7a9EZnZi1M2iG8jFh3_XJycP2Hm8cSuvVCiaPeNgwreVN20FBpmt7-yjzuJWR8H4TD7DqXtqahkjFb0AkMTBw=w787-h714-no" alt="template set"><br><img src="https://lh3.googleusercontent.com/3de95QE6hAM0IGMJrW1Ys0wPHI3J3xII4kQXA12Pv0aVIWqjOc0c6LTTBG5vSBEN5YpIhtH3LwgElYZ0XT_UgDwvvmMgv8EjeF39RS4B_pMxND7T66xlazcMA3UDl1T8nAS4EmN19_6RNv6OI-sp-fHUFzjFI7FpiYemCrivgrt73Yb6P2OwHOm8eoQ17r_Pb6l8NP89Bed18lEKnTnUDK_hLs6pjoomV5wgKux38NpJxNJtie_EicBBIUAfjyjgUc-5x0ASkHpxa4oOn-2PAXJDcm07LpCK4issEo3oWs77Qfk_6hB1eA00hmow5rX9DfGWA3t1u_2ZqJ0dWwEZrkjYrUjFW0qWxYiNDeWruyZfbbJ4wGM4dLI5vc809B59hzfUt48qKEbM-yoq7gGN97nhvU65TmwmpS40IOR4t9azGZuP-zsHI5p3z96lVSl3cS0ZLhUsdERwDtw79o18l8UxI5Rx2tt3Sd9UTk5FB8OhPy6PsucKckvRNl2F-ZsCVG7N6fKP5aQ06wvKwh9Ym2A-H09KDpsJHHx9InBd8b09JTOtpDrGA3lfCo_nBQ7FdqhTWeYS9_nEUofqkypF3mDH_HMyl_OL80q1TA6Tq-q0FpXK9PND6vXNYKqYX2STTMHl2SvyIbBWalzG65ZNVeaAfY_37-mGea5Z_kxoWTgg_w=w866-h621-no" alt="template icon set"></p>
+<p>當使用預設選項，建立好之後 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong>  會自動將自訂的 Template 匯入，然後就可以在新增專案的地方看到自訂 template<br><img src="https://lh3.googleusercontent.com/UpNPu4_vNOM86ppNPnhMn-RNRK9w6oUM79d5V14DfpJgPzPa2Y0_0r5mguacVIUKibiqnglzTAwOugKYwtGKj8QWBgOwwmc6CUNd7la8nhFEDcybGqcipDRnvrPjJ5Ppvyg0HW10o152Z_wm29iu1fU5Ju-mvCZ_9O_g6wqJhpCuTNNmVnXYdbIQ83WYcl9N4fgQAPq7lQIBD_PNDJB8L-s8WizPzZgvjbQhRhcp1C7Rmepd_DxQaKXXBo1Va0KQ9e0DZEuK1FgKm4D7AC4NYlp8yQY-XFoMSZFuBn62faJCXfcQNXLnxJA9v8p1tosG_GpNrG5V5Cq_nu-iVUUZaEpL6SIU63lrJ6J5uU2gs_l1g_F24pMQt6BMCYLUUzSHAmj2a8pWNGBDvaw5WZnCnbGWNo0mwjuvr-EiYJxZ7iQR-aW-435Kf3XUkcxVcvnCIb5DFyFmx6stj0bs11VqNUk0RPZ3Rj8BnDEdflxeD3K_OxqRssQTDDsWg4QnRrm9zWofoiyKL90SDZOg-lNDp9-l_GmwbLhOTyVEFMZJ5v2Ax1tbFB-Idy3PQKFZKxwbvheHtwbJ68Wmm-EtR_K5yFc0blkV_QP2fZp8S5rR8Hs9hkwDEebPoul-PCMcKodrhESLR8AZPprqf14xPm3AxbSlqCoRm_z9tZSkDFsve6TJ6A=w870-h605-no" alt="new custom project"></p>
+<p>但是假如想要將自訂的 <strong>Templates</strong> 共享到團隊使用呢？首先要知道的是 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong> 讀取 <strong><a href="https://msdn.microsoft.com/en-us/library/xkh1wxd8.aspx" target="_blank" rel="noopener">Project Template</a></strong> 的路徑，路徑可以在 <a href="https://msdn.microsoft.com/en-us/library/y3kkate1.aspx" target="_blank" rel="noopener">MSDN Locate and Organize Project and Item Templates</a> 上得知<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\My Documents\Visual Studio &lt;Version&gt;\Templates\ProjectTemplates\&lt;Language&gt;\</span><br></pre></td></tr></table></figure></p>
+<p>因為要讓團隊使用，先確定有可以共用的空間，然後按照以下路徑變更 template 路徑<br><code>Tools -&gt; Options -&gt; Projects and Solutions -&gt; User project templates locations:</code><br><img src="https://lh3.googleusercontent.com/dqvDXtP80klwjPy3G8WvUJPdEoNQyhdYKN6st7keleOH7poC0_IQg4A_L1hXauQ5v1g8UXk47QW82GDwEcVim_6Amz2RABv6KalUVegIC0gSYCVYF_5UXUrF2Zyok3LspC41pCgeGeXwdB1N1n-HQtJ5cCACT-esSItEXxlMhdjZPTnR57hE1JdwkOrFOtfrd4fxH9np9-5nzPlYynQUvjgipAM3Kd5_VEaVf_SYO0zWh_d3bnCuxXy5LGB7-yX19xEgg7W8JMJWQl-O1F9sSORgaz8nhmagt7lM5XYn4epkiBL_CMKmE8ZSMaG4E5XqbRRofBk1oKiq0-VZOH4QmnTCJ6zgLeGY9NGfRNbBR6_k37iy0w1F_XGiTB16m5A-EOWz7KE3heEV794D_LExP0nV9NdNBuLhHREvhvC0VgUmThk9xiuuKOEtAaDesmpXyq7EG1IdaCxsbD9mbBbBjtMRFs7MgCcyoREFaKHq8Vyiu4MwMazpZLuFJHgCO_xH97TyzuAjTaJWlrWFwd00KWUel_mKiARsNEdqOJqHhK18i-vCRA-h44hB__oN_3otE4OVlerTYbOs4e_eq7ROkqjsyRfXVNkaW4_ZZT81kwq1P7C8OntHzRaHhG5brErVtE5WkTGvyJ2TxBCdOv5HBqaH2WFv58rWJRPEh5eijnptcw=w452-h500-no" alt="setting common template"><br><img src="https://lh3.googleusercontent.com/cHYA0Sn-vYGQDPzhkJTwdndhgnSFnG5ppio3wKCy08DK-yvVCzXmfgJAdwjdREi7NJ7Qk9ydRS7ci4k7aqt0M6c2Cx7QKHeaXuuLixpAsb9Swz0xLrf10-YHNXKL-_KrSqwCB8jyFB9P8K5UUElLLy7sFLdT8uM7RUuLKHZzUYyJ3UN1MEeW660S1aNrb337sw3ukKkLLdDVhoqJeZRowHVmiqpeQOXeLMVr4rWGugAJCi702wlZYri1oEtMon-kHpds3O65f2FX9wDmZ33XA8x2c1vh1PKrNLlL61s42fFG6SE1iDjCKg9tOBxKAmKaFJoML3qX4tVTeM0Z63Q36ofiqrbNot80TlnwjYkYoU8EhwtX3-w4yEFQBU3PNZkVE5oHQu8-g5Yq-n6Hpzox72TNbWCpdk2ahQB8XChrT4MUyll5PugrSigRZgTxtAoea5Xg7WS6mL7Jeyztgez05cKwqiHuGktjwwSrlMnVhHIsJruTwAiHErq7KmVVAmLG36A-vYkC1yCvk-jFUkQwAuQVW6zljhiScb9GAfsP1-OxlYG-BPIYNdVWE3TvGz_uPkIRAYjsqeuQM6Vc61oenj2IIQLD1nc-DYqhgYg-QRfNgW1UHKDp5mUJ7zOlGLTio_wRnvyYof1JkOkCfPCyJTUPAP7VFoXTOpnepgTIF-b2Bg=w874-h647-no" alt="setting custome template path"></p>
+<p><img src="https://lh3.googleusercontent.com/RKhMbVIvECuug9d1LsTWM2hKE-4QIinZVecrlo4nzUbQOgfkCLMBsIXhvfHb3fXbGugMi5nRBkKMhMS8P0jOgLTVMYuSa5z_YdObqsyr_5vsu8GpCcIgPnBGK8G5L0QKjmth17L892cLr2YiLOpJY1D49FGEmhxyC9SfS8C3ROP1HN5jHZF7atSCpyVb3hv0c25xigSPWiJI4-CHDGxr7YFK3Ghxf5LmRaWRurFUbFeWdiS-5iwHfn93uqlh5Tu-6bqwO2wzM3lv_n0eNuY_zyRs5B66vDX46FnEsbv54khT4tguQ7jbc16Oz2-Ttwq7IzzOczmbrlI1nlMVEVjUy341_mjtGdZiHMZzZU2LZqSLl2WaVZjOHsuiIwufO1zmL7abI_MAyoFEob41Xc2Yooy51ywJzrwRLajnhO5y-fadhUHqPBhYhCuNOE4KnaTKEXDZVtHTcq-uQC0jvt-ap9utgEn9ccqjUoivbfO0wf92GiT3Wh8lBh1VN8Ktt8y_TSwDJ_SY34-p2yEg9YNO-5esM1-GF0ASLrv8T3fLh0XjM_vJWjKtH61gzpbyGJ2SzcfuOqdubAQLbsmDWzTVjcqf4F5YVNun8CZiYvnn2J0Ra1KDalZPl0BC-XjeQeknLuUx4do93Hi_v_W9OYremPBzEKe7jGmrZ9olBqxzGN4g5g=w1853-h919-no" alt="create custom template"></p>
+<p>補充一下，上述都沒提到 <strong>Templates</strong> 在 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong> 中的檔案類型，當自訂 <strong>Templates</strong> 產生後，會有一個 <strong>.zip</strong> 壓縮檔案，整個壓縮檔案內容包含了所匯出的專案內容，這個壓縮檔案就是 <strong>Templates</strong> ，將此 <strong>zip</strong> 檔案放到上述的路徑下即可。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://msdn.microsoft.com/en-us/library/6db0hwky(v=vs.100).aspx" target="_blank" rel="noopener">MSDN Visual Studio Templates</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/xkh1wxd8.aspx" target="_blank" rel="noopener">MSDN Create Project Templates</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/y3kkate1.aspx" target="_blank" rel="noopener">MSDN Locate and Organize Project and Item Templates</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/ms185306(v=vs.100).aspx" target="_blank" rel="noopener">MSDN Find and Install Templates Located Online</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/e1x5ayd4(v=vs.100).aspx" target="_blank" rel="noopener">MSDN Share Templates Across a Development Team</a></li>
+<li><a href="https://stackoverflow.com/questions/18942794/how-to-install-a-visual-studio-project-template-in-a-non-user-specific-location" target="_blank" rel="noopener">stackoverflow install VS project template</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Asp-Net-MVC/" rel="tag"># Asp.Net MVC</a>
+          
+            <a href="/tags/C/" rel="tag"># C#</a>
+          
+            <a href="/tags/Visual-Studio/" rel="tag"># Visual Studio</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/14/github-sync-fork-repository/" rel="next" title="Github 上 Fork Repository 其來源 Repository 的紀錄同步更新">
+                <i class="fa fa-chevron-left"></i> Github 上 Fork Repository 其來源 Repository 的紀錄同步更新
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/19/docker-for-windows-access-denied-in-windows-10/" rel="prev" title="Windows 10 中 Docker Access Denied">
+                Windows 10 中 Docker Access Denied <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+            
+              <p class="site-author-name" itemprop="name">ShunNien Yu</p>
+              <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/shunnien" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wiamyu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/nien.yu.1" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                好站推薦
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://guahsu.io/" title="Gua's Note" target="_blank">Gua's Note</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvc.tw/" title="twMVC" target="_blank">twMVC</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.darkthread.net/" title="黑暗執行緒" target="_blank">黑暗執行緒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.miniasp.com/" title="The Will Will Web" target="_blank">The Will Will Web</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.huanlintalk.com/" title="Huan-Lin 學習筆記" target="_blank">Huan-Lin 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kevintsengtw.blogspot.tw/" title="mrkt 的程式學習筆記" target="_blank">mrkt 的程式學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/billchung/" title=".Net 海角點部落" target="_blank">.Net 海角點部落</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/hatelove" title="In 91" target="_blank">In 91</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/regionbbs/" title="小朱® 的技術隨手寫" target="_blank">小朱® 的技術隨手寫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sharedderrick.blogspot.tw/" title="德瑞克：SQL Server 學習筆記" target="_blank">德瑞克：SQL Server 學習筆記</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.jason.party/" title="Jason Puzzle 中勝拼圖" target="_blank">Jason Puzzle 中勝拼圖</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.kkbruce.net/" title="KingKong Bruce記事" target="_blank">KingKong Bruce記事</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/code6421" title="黃忠成-風雪之閣" target="_blank">黃忠成-風雪之閣</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dotblogs.com.tw/yc421206/" title="余小章 @ 大內殿堂" target="_blank">余小章 @ 大內殿堂</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hanselman.com/" title="SCOTT HANSELMAN" target="_blank">SCOTT HANSELMAN</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">1.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ShunNien Yu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站訪客數</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站總瀏覽量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://shunniengithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://shunnien.github.io/2017/07/16/custom-project-template-for-visual-studio/';
+          this.page.identifier = '2017/07/16/custom-project-template-for-visual-studio/';
+          this.page.title = '自訂 vs 專案範本';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://shunniengithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+
+</body>
+</html>
