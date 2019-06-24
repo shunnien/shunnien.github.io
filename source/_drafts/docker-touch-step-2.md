@@ -1,15 +1,15 @@
 ---
-title: docker touch step 2
+title: Docker 配合開發應用設定
 categories: 程式技術筆記
-tags: []
+tags: [Docker]
 toc: false
 ---
-# 前言
+## 前言
 
 ## 內文
 
 ## 參考資料
 
-- [Ref1][1]
+- [微服務開發基礎：打造容器化 .NET 應用程式][1]
 
-[1]: https://shunnien.github.io
+[1]: https://www.udemy.com/dotnet-docker/?couponCode=TW.NET
