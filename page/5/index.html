@@ -309,6 +309,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/05/09/SSL-Cipher/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ShunNien Yu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShunNien's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/09/SSL-Cipher/" itemprop="url">IIS 關閉不安全的 SSL 加密方式(Cipher)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-05-09T11:00:32+08:00">
+                2018-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                    <span itemprop="name">程式技術筆記</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/09/SSL-Cipher/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/09/SSL-Cipher/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://lh3.googleusercontent.com/z81u7yY49rCGbPihu5HeulCM270W6Kk2J7rRvRhhXSgptbiIWGSnmJQ18nA7g-cSwfqWrFpd_Uhu0QA60Dforbr_2EVtMTgTp7FqDLeKMP5zW5uWT4LnlH42XK7pEi47BRXSneIUxMFiZ6XsGS11vtog0qb2JfMITFH-h-f32fFnsFiZ0IMZxb9IfmPcgAqQAMEP5WKdDKmB0vBQq6JbhVEWW2YI2EHUQgbCmt2g4nmfPDYzAJLe5zhivhqXOA2YNufHko0S1s4NKcnXyVf9hSq1nwCQJFbuQvUeevQ63i-V5iJ-9AqHkdIMECwwEcX74fYHfKtYWmLey9QOie1de_h5yE5ZaUVOhcVCqOPXQXy5B7PnMSdGqnMixY3U2-mTr5-wlECD4pQLz7nCpqJH6duzMkSgvWbw08v4OOETPVwqHI1GVdb1F_Yla8vrAYSY-9Q142LWpBRv-t4MBRSBaPAZnxGI656Hmxe811LYb2AfQBXN1It6ZOujoL0XjzX4M6N4dPHgLrB1s6wZS0xL3DUNFxm0BQ4GkT1Wj2b5089p-JTfSBUbtz6pI31ZuG4rz60De-B1XYsW6h3VCGPeObA5z6IJ0POC7A4yPafitnu5ivfBmN5-SvrG92GzF_9Y_pkrW2dIVnJdN-lfL8r0326m5wNhadHy=w627-h644-no" alt="error point"></p>
+<p>因為 <strong>3DES</strong> 加密沒有關閉，導致了這個問題，以下是檢測報告的資料。</p>
+<div class="note danger"><h1 id="Insecure-Transport-Weak-SSL-Cipher-11285"><a href="#Insecure-Transport-Weak-SSL-Cipher-11285" class="headerlink" title="Insecure Transport: Weak SSL Cipher ( 11285 )"></a>Insecure Transport: Weak SSL Cipher ( 11285 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>WebInspect has detected support for weak TLS/SSL ciphers on server <code>https://xxx.xxx.xx:443/</code> .</p>
+<p>The Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols provide a mechanism to help protect authenticity, confidentiality and integrity of the data transmitted between a client and web server. The strength of this protection mechanism is determined by the authentication, encryption and hashing algorithms, collectively known as a cipher suite, chosen for the transmission of sensitive information over the TLS/SSL channel. Most Web servers support a range of such cipher suites of varying strengths. Using a weak cipher or an encryption key of insufficient length, for example, could allow an attacker to defeat the protection mechanism and steal or modify sensitive information.</p>
+<p>If misconfigured, a web server could be manipulated into choosing weak cipher suites. Recommendations include updating the web server configuration to always choose the strongest ciphers for encryption.</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/09/SSL-Cipher/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/05/08/Hidden-Segments/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1091,162 +1251,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2018/04/21/git-case-001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShunNien's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/21/git-case-001/" itemprop="url">Git 案例演練-完成的功能暫時不釋出</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-04-21T21:42:30+08:00">
-                2018-04-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
-                    <span itemprop="name">程式技術筆記</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/21/git-case-001/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/21/git-case-001/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>git 的分支操作非常便利，有些人知道便利性，但是在實務上有些不太清楚如何操作，其遇到的情形如下:<br>開發者單獨一人，所以僅使用 master 分支，添加的功能完成後，客戶說此功能暫時不釋出，另外進行其他功能開發
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/21/git-case-001/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1299,7 +1303,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">225</span>
+                  <span class="site-state-item-count">226</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -1321,7 +1325,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

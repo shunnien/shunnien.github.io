@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[解決 Microsoft.SqlServer.Types 參考使用的問題]]></title>
+    <url>%2F2019%2F06%2F24%2FMicrosoft-SqlServer-Types-assembly%2F</url>
+    <content type="text"><![CDATA[解決 Microsoft.SqlServer.Types 參考使用的問題透過 Entity Framework 使用 SQL Server 的空間資料 (DbGeography) 相當便利，但是需要 Microsoft.SqlServer.Types 參考，而有時參考後又出現問題。 Exception 訊息： System.InvalidOperationException HResult=0x80131509 Message=Spatial types and functions are not available for this provider because the &gt; assembly ‘Microsoft.SqlServer.Types’ version 10 or higher could not be found. Source=EntityFramework.SqlServer Microsoft.SqlServer.Types 安裝透過 Nuget 安裝 Microsoft.SqlServer.Types 套件，可以透過介面安裝或是透過指令安裝，安裝指令如下： 1Install-Package Microsoft.SqlServer.Types 安裝好之後，請仔細閱讀 readme.htm ，其中說明如何將套件註冊進程式中 ASP.NET Web Sites在 Web Form 中，開啟 Default.aspx.cs 12345678910111213public partial class _Default : System.Web.UI.Page&#123; static bool _isSqlTypesLoaded = false; public _Default() &#123; if (!_isSqlTypesLoaded) &#123; SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~")); _isSqlTypesLoaded = true; &#125; &#125;&#125; ASP.NET Web Applications開啟 Global.asax.cs 添加以下程式碼： 1SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~/bin")); Desktop Applications在執行空間操作前執行以下程式碼： 1SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory); 解決引用錯誤就如同此文一開始所提到的 exception，按照Microsoft.SqlServer.Types套件的說明註冊引用，有時還是會出現問題，可能是 Entity Framework 版本因素或是伺服器沒有對應版本的Microsoft.SqlServer.Types或是沒有註冊引用到；stack overflow 此篇的討論方法可以解決我此次遇到的問題 方法一 添加參照 1SqlProviderServices.SqlServerTypesAssemblyName = Assembly.GetAssembly(typeof(Microsoft.SqlServer.Types.SqlGeography)).FullName; 方法二 直接在 config 檔案中進行參照，需要注意版本號 123456&lt;assemblyBinding&gt; &lt;dependentAssembly&gt; &lt;assemblyIdentity name="Microsoft.SqlServer.Types" publicKeyToken="89845dcd8080cc91" culture="neutral" /&gt; &lt;bindingRedirect oldVersion="10.0.0.0-11.0.0.0" newVersion="14.0.0.0" /&gt; &lt;/dependentAssembly&gt; &lt;/assemblyBinding&gt; 取得 PublicKeyToken[Microsoft.SqlServer.Types] 的 DLL 的路徑，可以從以下路徑查找 1C:\Windows\assembly\GAC_MSIL\Microsoft.SqlServer.Types 根據以上的 DLL 取得 PublicKeyToken 的方式，可以透過 powershell 1([system.reflection.assembly]::loadfile("c:\MyDLL.dll")).FullName 參考資料 stack overflow how use Microsoft.SqlServer.Types in WCF Service Application Github EntityFramework6 issue #244 Mismatch using Microsoft.SqlServer.Types solving spatial types and functions are not available with entity framework find publickeytoken Microsoft.SqlServer.Types 找不到正確版本問題]]></content>
+      <categories>
+        <category>程式技術筆記</category>
+      </categories>
+      <tags>
+        <tag>Asp.Net MVC</tag>
+        <tag>Troubleshooting</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Sqlserver 停用與啟用條件約束]]></title>
     <url>%2F2019%2F02%2F26%2Fsqlserver-diable-constraint%2F</url>
     <content type="text"><![CDATA[sqlserver 停用與啟用條件約束紀錄停用與啟用條件約束的 sql ，還有檢查目前資料表條件約束的語法 語法全部條件約束停用 123-- 全部條件約束停用EXEC sp_MSforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT ALL"GO 刪除全部資料表資料 123-- 刪除全部資料表資料EXEC sp_MSForEachTable "DELETE FROM ?"GO 全部資料表增值索引重設 123-- 全部資料表增值索引重設EXEC sp_MSforeachtable "DBCC CHECKIDENT('?', RESEED, 0)"Go 全部條件約束啟用 123-- 全部條件約束啟用EXEC sp_MSforeachtable "ALTER TABLE ? WITH NOCHECK CHECK CONSTRAINT ALL"GO 檢查目前資料表條件約束狀態的語法 1234567891011121314151617181920212223SELECT f.NAME N'物件名稱', is_disabled N'已停用(1)', is_not_trusted N'不檢查現有資料(1)', s.NAME N'結構描述', o.NAME N'外部索引資料表', sc.NAME N'結構描述', r.NAME N'主索引資料表', delete_referential_action_desc N'在進行刪除時，宣告的參考動作之描述', update_referential_action_desc N'在進行更新時，宣告的參考動作之描述', f.type_desc N'物件描述'FROM sys.foreign_keys f INNER JOIN sys.objects o ON f.parent_object_id = o.object_id INNER JOIN sys.schemas s ON o.schema_id = s.schema_id INNER JOIN sys.objects r ON f.referenced_object_id = r.object_id INNER JOIN sys.schemas sc ON r.schema_id = sc.schema_idORDER BY o.NAMEGO 參考資料 德瑞克：SQL Server 學習筆記 microsoft docs]]></content>
@@ -378,8 +390,8 @@
         <category>程式技術筆記</category>
       </categories>
       <tags>
-        <tag>Visual Studio</tag>
         <tag>Troubleshooting</tag>
+        <tag>Visual Studio</tag>
       </tags>
   </entry>
   <entry>
@@ -508,8 +520,8 @@
         <category>程式技術筆記</category>
       </categories>
       <tags>
-        <tag>Visual Studio</tag>
         <tag>Troubleshooting</tag>
+        <tag>Visual Studio</tag>
       </tags>
   </entry>
   <entry>
@@ -939,8 +951,8 @@
         <category>程式技術筆記</category>
       </categories>
       <tags>
-        <tag>IIS</tag>
         <tag>Troubleshooting</tag>
+        <tag>IIS</tag>
       </tags>
   </entry>
   <entry>
@@ -2364,8 +2376,8 @@
         <category>程式技術筆記</category>
       </categories>
       <tags>
-        <tag>Troubleshooting</tag>
         <tag>Eclipse</tag>
+        <tag>Troubleshooting</tag>
       </tags>
   </entry>
   <entry>
