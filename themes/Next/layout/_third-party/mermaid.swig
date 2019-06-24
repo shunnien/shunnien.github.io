@@ -1,1 +1,1 @@
-<script src="https://cdn.bootcss.com/mermaid/7.0.0/mermaid.min.js"></script>
+<script type="text/javascript" src="{{ url_for(theme.vendors._internal) + '/mermaid/mermaid.7.0.0.min.js?v=7.0.0' }}"></script>
