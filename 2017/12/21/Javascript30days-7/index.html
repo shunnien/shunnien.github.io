@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -413,7 +413,9 @@
       
 
       
-        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>練習陣列操作，主要熟練 some、 every、 find、 findIndex、 slice 這幾個陣列操作語法，需要直接搭配 console 來觀看。<br><a id="more"></a></p>
+        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>練習陣列操作，主要熟練 some、 every、 find、 findIndex、 slice 這幾個陣列操作語法，需要直接搭配 console 來觀看。</p>
+<a id="more"></a>
+
 <blockquote>
 <p><a href="https://shunnien.github.io/JavaScript30day/day_07/">Demo</a> | <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">Github</a></p>
 </blockquote>
@@ -427,11 +429,13 @@
 </ul>
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="Array-prototype-some"><a href="#Array-prototype-some" class="headerlink" title="Array.prototype.some()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank" rel="noopener">Array.prototype.some()</a></h3><blockquote><p>The <code>some()</code> method tests whether at least one element in the array passes the test implemented by the provided function.</p>
 <footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/some" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+
 <ul>
 <li>用來判斷是否有元素符合所設定的條件</li>
 <li>只會回傳 <code>true</code> 或 <code>false</code></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(<span class="function"><span class="params">x</span> =&gt;</span> x &gt; <span class="number">10</span>);  <span class="comment">// false</span></span><br><span class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(<span class="function"><span class="params">x</span> =&gt;</span> x &gt; <span class="number">10</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="Array-prototype-every"><a href="#Array-prototype-every" class="headerlink" title="Array.prototype.every()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank" rel="noopener">Array.prototype.every()</a></h3><blockquote>
 <p><code>every()</code> 方法會使用傳入的回呼函示來測試所有在陣列中的元素<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/every" target="_blank" rel="noopener"><em>MDN</em></a></p>
 </blockquote>
@@ -440,16 +444,20 @@
 <li>全部符合條件回傳 <code>true</code> ，只要有一元素不符合就回傳 <code>false</code> </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].every(<span class="function"><span class="params">x</span> =&gt;</span> x &gt;= <span class="number">10</span>); <span class="comment">// false</span></span><br><span class="line">[<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].every(<span class="function"><span class="params">x</span> =&gt;</span> x &gt;= <span class="number">10</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="Array-prototype-find"><a href="#Array-prototype-find" class="headerlink" title="Array.prototype.find()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="noopener">Array.prototype.find()</a></h3><blockquote><p><code>find()</code> 方法，如果一個在陣列中的元素滿足提供的測試函數，則返回一個在陣列中的值。否則回傳 <strong>undefined</strong></p>
 <footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+
 <h3 id="Array-prototype-findIndex"><a href="#Array-prototype-findIndex" class="headerlink" title="Array.prototype.findIndex()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank" rel="noopener">Array.prototype.findIndex()</a></h3><blockquote><p><code>findIndex()</code> 方法將依據提供的測試函式，尋找陣列中符合的元素，並返回其 <strong>index</strong> （鍵值）。如果沒有符合的對象，將返回 -1 。</p>
 <footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+
 <h3 id="Array-prototype-slice"><a href="#Array-prototype-slice" class="headerlink" title="Array.prototype.slice()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">Array.prototype.slice()</a></h3><blockquote><p>The <code>slice()</code> method returns a shallow copy of a portion of an array into a new array object selected from <code>begin</code> to <code>end</code> (<code>end</code> not included). The original array will not be modified.</p>
 <h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><blockquote>
 <p>arr.slice([begin[, end]])</p>
 </blockquote>
 undefined
 <footer><strong>資料來源</strong><cite><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener">MDN</a></cite></footer></blockquote>
+
 <ul>
 <li>取得陣列中指定區段的元素，將回傳新的陣列</li>
 <li>語法中 begin 與 end 參數表示陣列元素的索引，都是從 0 開始</li>

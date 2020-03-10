@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -418,56 +418,58 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">OrderID</th>
-<th style="text-align:center">ProductID</th>
-<th style="text-align:center">UnitPrice</th>
-<th style="text-align:center">Quantity</th>
-<th style="text-align:center">Discount</th>
+<th align="center">OrderID</th>
+<th align="center">ProductID</th>
+<th align="center">UnitPrice</th>
+<th align="center">Quantity</th>
+<th align="center">Discount</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">10248</td>
-<td style="text-align:center">11</td>
-<td style="text-align:center">14</td>
-<td style="text-align:center">12</td>
-<td style="text-align:center">0</td>
+<tbody><tr>
+<td align="center">10248</td>
+<td align="center">11</td>
+<td align="center">14</td>
+<td align="center">12</td>
+<td align="center">0</td>
 </tr>
 <tr>
-<td style="text-align:center">10248</td>
-<td style="text-align:center">42</td>
-<td style="text-align:center">9.8</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">0</td>
+<td align="center">10248</td>
+<td align="center">42</td>
+<td align="center">9.8</td>
+<td align="center">10</td>
+<td align="center">0</td>
 </tr>
 <tr>
-<td style="text-align:center">10248</td>
-<td style="text-align:center">72</td>
-<td style="text-align:center">34.8</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">0</td>
+<td align="center">10248</td>
+<td align="center">72</td>
+<td align="center">34.8</td>
+<td align="center">5</td>
+<td align="center">0</td>
 </tr>
-</tbody>
-</table>
-<p>想要把同個 OrderID 資料的 ProductID 和 UnitPrice 合併在一起顯示的時候，使用 for xml path<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="string">','</span> + <span class="keyword">CAST</span>(ProductID <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>) + <span class="string">'--'</span> + <span class="keyword">CAST</span>([Quantity] <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>)</span><br><span class="line"><span class="keyword">FROM</span> OrderDetails</span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">XML</span> <span class="keyword">PATH</span> (<span class="string">''</span>)</span><br></pre></td></tr></table></figure></p>
+</tbody></table>
+<p>想要把同個 OrderID 資料的 ProductID 和 UnitPrice 合併在一起顯示的時候，使用 for xml path</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="string">','</span> + <span class="keyword">CAST</span>(ProductID <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>) + <span class="string">'--'</span> + <span class="keyword">CAST</span>([Quantity] <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>)</span><br><span class="line"><span class="keyword">FROM</span> OrderDetails</span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">XML</span> <span class="keyword">PATH</span> (<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
+
 <p>其<a href="http://sqlfiddle.com/#!6/bc7ef/4" target="_blank" rel="noopener">呈現結果</a>如下<br><code>,11--12,42--10,72--5</code></p>
-<p>這個組合出來的字串，最前面會多出一個 <strong>comma</strong>(逗號，)，所以將多餘的分隔符號用 <a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/stuff-transact-sql" target="_blank" rel="noopener"><strong>stuff</strong></a> 移除，其語法如下，或是觀看<a href="http://sqlfiddle.com/#!6/bc7ef/6" target="_blank" rel="noopener">線上範例</a><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> [OrderID], <span class="keyword">stuff</span>(mergingOd.pu,<span class="number">1</span>,<span class="number">1</span>,<span class="string">''</span>) combineStr</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">select</span>  [OrderID],</span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">               <span class="string">','</span> +<span class="keyword">cast</span>(ProductID <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>) + <span class="string">'--'</span> + <span class="keyword">Cast</span>([UnitPrice] <span class="keyword">AS</span> <span class="built_in">VARCHAR</span> )</span><br><span class="line">          <span class="keyword">FROM</span> OrderDetails</span><br><span class="line">          <span class="keyword">WHERE</span> [OrderID]=od2.[OrderID]</span><br><span class="line">          <span class="keyword">for</span> <span class="keyword">xml</span> <span class="keyword">path</span>(<span class="string">''</span>)</span><br><span class="line">    )  pu</span><br><span class="line">    <span class="keyword">from</span> OrderDetails  od2</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span> [OrderID]</span><br><span class="line">) <span class="keyword">as</span> mergingOd</span><br></pre></td></tr></table></figure></p>
+<p>這個組合出來的字串，最前面會多出一個 <strong>comma</strong>(逗號，)，所以將多餘的分隔符號用 <a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/stuff-transact-sql" target="_blank" rel="noopener"><strong>stuff</strong></a> 移除，其語法如下，或是觀看<a href="http://sqlfiddle.com/#!6/bc7ef/6" target="_blank" rel="noopener">線上範例</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> [OrderID], <span class="keyword">stuff</span>(mergingOd.pu,<span class="number">1</span>,<span class="number">1</span>,<span class="string">''</span>) combineStr</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">select</span>  [OrderID],</span><br><span class="line">    (</span><br><span class="line">        <span class="keyword">SELECT</span></span><br><span class="line">               <span class="string">','</span> +<span class="keyword">cast</span>(ProductID <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>) + <span class="string">'--'</span> + <span class="keyword">Cast</span>([UnitPrice] <span class="keyword">AS</span> <span class="built_in">VARCHAR</span> )</span><br><span class="line">          <span class="keyword">FROM</span> OrderDetails</span><br><span class="line">          <span class="keyword">WHERE</span> [OrderID]=od2.[OrderID]</span><br><span class="line">          <span class="keyword">for</span> <span class="keyword">xml</span> <span class="keyword">path</span>(<span class="string">''</span>)</span><br><span class="line">    )  pu</span><br><span class="line">    <span class="keyword">from</span> OrderDetails  od2</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span> [OrderID]</span><br><span class="line">) <span class="keyword">as</span> mergingOd</span><br></pre></td></tr></table></figure>
+
 <p>資料呈現</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">OrderID</th>
-<th style="text-align:center">combineStr</th>
+<th align="center">OrderID</th>
+<th align="center">combineStr</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">10248</td>
-<td style="text-align:center">11–14.00,42–9.80,72–34.80</td>
+<tbody><tr>
+<td align="center">10248</td>
+<td align="center">11–14.00,42–9.80,72–34.80</td>
 </tr>
-</tbody>
-</table>
-<p>如果不轉換字串，直接使用 For XML Path 的話，那就會轉換成 XML，而 XML 的節點名稱是可以改變的<br><a href="http://sqlfiddle.com/#!6/bc7ef/8" target="_blank" rel="noopener">線上範例</a><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ELECT</span><br><span class="line">    CAST(ProductID AS VARCHAR)</span><br><span class="line">FROM OrderDetails</span><br><span class="line">FOR XML PATH ('pid')</span><br></pre></td></tr></table></figure></p>
+</tbody></table>
+<p>如果不轉換字串，直接使用 For XML Path 的話，那就會轉換成 XML，而 XML 的節點名稱是可以改變的<br><a href="http://sqlfiddle.com/#!6/bc7ef/8" target="_blank" rel="noopener">線上範例</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ELECT</span><br><span class="line">    CAST(ProductID AS VARCHAR)</span><br><span class="line">FROM OrderDetails</span><br><span class="line">FOR XML PATH ('pid')</span><br></pre></td></tr></table></figure>
+
 <p>資料呈現<br><code>&lt;pid&gt;11&lt;/pid&gt;&lt;pid&gt;42&lt;/pid&gt;&lt;pid&gt;72&lt;/pid&gt;</code></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/stuff-transact-sql" target="_blank" rel="noopener">Microsof Docs STUFF</a></li>

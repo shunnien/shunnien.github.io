@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -416,13 +416,17 @@
 
       
         <h1 id="grid-auto-flow"><a href="#grid-auto-flow" class="headerlink" title="grid-auto-flow"></a>grid-auto-flow</h1><p><img src="https://lh3.googleusercontent.com/iwsSPtRAQ5CoBhFu5uWENGaIjyJSRHWH4gP2JVuEWgbK_F95noA-rk-loJbEgzZtfSsHi25gYCxvxh1fugUpFkyDJ-LW_GQqNnBj39saVAwsaVwIfqw5BtA5Bb3v2g1a99jH7kPJABqb0zq1N1fDaC1C6mNPsZOUbuOspFgBcYJCvuyS_DOvfzCtNdHjyu-UnBkIaLl72o6aXLXY5v0Z1TW2hXz0nTBjqjiLPEqcFKe32DsJCeqBvoYJiXf1OByMt0amPTxa3r_hP27IXEYlVOnLd1ZxnefILFmh2GiQLa4RQDxl5Fnlvb-IfxhhEM0o3LpLQHDwcUW9Ht7N_2zzZph4KEnwB0y2aVKNlhuChm1VJtK2D1qNK8T_j--XvhF0mO9qIFQAD5EmUPggTyxjXScyhGRgDW56JRL_M0VwsDFses75wPTQH4mmvQSo1Y7smzpgXCyw7ND6PvG5q0pO9-npj_5QSgfJkwSzfHbxbIt_UvMui2iSnRyjOKpK1LwDOv4wUzwWf-0PmfbQ7uuEOqnnAwI96COsBM3IBNSF3-idy9grK2dkmEdcuuZB1TehICY9VswzPZ2TWxG-ekl-z7Yaa0_IDaSqVcIzj9gYUvdByoBeZTGOg9HzQiQCjLwDVlaZCZTtn8WNW1Ah7ztg6cI6AdQlSBcV=w1841-h854-no" alt="demo"></p>
-<p><a href="https://shunnien.github.io/2018/03/18/css-grid-05/">css grid 筆記 05</a>提到了 <code>grid-auto-columns</code> 但是在其範例中看不到 <strong>column</strong> 自動增長，其設定需要透過 <code>grid-auto-flow</code><br><a id="more"></a></p>
+<p><a href="https://shunnien.github.io/2018/03/18/css-grid-05/">css grid 筆記 05</a>提到了 <code>grid-auto-columns</code> 但是在其範例中看不到 <strong>column</strong> 自動增長，其設定需要透過 <code>grid-auto-flow</code></p>
+<a id="more"></a>
+
 <blockquote>
 <p><a href="https://shunnien.github.io/css-grid25day/day_06/index.html">Demo</a> | <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">Github</a></p>
 </blockquote>
 <p>當不使用 <code>grid-auto-flow</code> 的時候，會依照設定的 <code>grid-template-columns</code> 數量去設定 <strong>column</strong> ，但假如是 <strong>row</strong> 的話，還是會自動增加，此部分可以參考<a href="https://shunnien.github.io/2018/03/18/css-grid-05/">css grid 筆記 05</a>，<code>grid-auto-flow</code> 設定了 <strong>column</strong> 後，假如有超出 <strong>template</strong> 的設定，就會依照 <code>grid-auto-columns</code> 設定的大小去調整新增加的 <strong>column</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">400px</span> <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">grid-auto-flow</span>: column;</span><br><span class="line">    <span class="attribute">grid-auto-columns</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="grid-auto-flow-1"><a href="#grid-auto-flow-1" class="headerlink" title="grid-auto-flow"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow" target="_blank" rel="noopener">grid-auto-flow</a></h2><div class="note info"><p>grid-auto-flow 属性通过控制自动布局算法的运作原理，精确指定自动布局的元素在网格中排列的方向。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
 <li>作者 <a href="https://github.com/wesbos/css-grid" target="_blank" rel="noopener"><strong>Wes Bos</strong> CSS-Grid Github</a></li>

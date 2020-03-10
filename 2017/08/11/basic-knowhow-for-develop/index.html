@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -425,15 +425,19 @@
 <li>多型<br>有泛型 <t>、多載也是多型、強制同型也是多型(編譯器比較多使用)</t></li>
 </ul>
 <h2 id="原則"><a href="#原則" class="headerlink" title="原則"></a>原則</h2><ul>
-<li>單一職責原則(SRP)</li>
+<li><p>單一職責原則(SRP)</p>
+</li>
 <li><p>里氏替換原則(LSP)<br>繼承父類別後，不要遮蔽父類別的方法。<br>簡單說，使用父類別的地方，都可以使用子類別替換。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Class1 c = <span class="keyword">new</span> Class1();</span><br><span class="line">    <span class="keyword">int</span> val = c.Test();</span><br><span class="line"></span><br><span class="line">    Class2 c2 = <span class="keyword">new</span> Class2();</span><br><span class="line">    <span class="keyword">int</span> val2 = c2.Test();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Define other methods and classes here</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">Class1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Class2</span> : <span class="title">Class1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> new <span class="keyword">void</span> <span class="title">Test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">"Test"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>倚賴倒置原則(DIP)<br>倚賴抽象</p>
 </li>
-<li>介面隔離原則(ISP)</li>
-<li><strong>開閉原則(OCP)</strong><br>對擴展開放，對修改封閉。</li>
-<li>最少知識原則(迪米特法則LOD)</li>
+<li><p>介面隔離原則(ISP)</p>
+</li>
+<li><p><strong>開閉原則(OCP)</strong><br>對擴展開放，對修改封閉。</p>
+</li>
+<li><p>最少知識原則(迪米特法則LOD)</p>
+</li>
 </ul>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://skilltree.my/" target="_blank" rel="noopener">SKill Tree Bill 講師</a></li>

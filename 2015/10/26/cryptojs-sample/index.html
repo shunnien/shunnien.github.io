@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -450,7 +450,9 @@
 </li>
 </ul>
 <p>除了上述支持的算法之外，尚有許多功能，此篇著重在 <a href="https://code.google.com/p/crypto-js/" title="crypto-js" target="_blank" rel="noopener">CryptoJS</a> 中的 <a href="http://www.codedata.com.tw/social-coding/aes/" title="AES 對稱式加解密法 - CodeData" target="_blank" rel="noopener">AES</a> 加解密部分，順便弄了簡單的加解密 sample 看之後有時間來慢慢將他把功能完善；好了，閒話不多說，還是趕快把此次範例中的注意事項與 code 展示吧。</p>
-<p>以下為官方所展示的的 AES 範例<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> encrypted = CryptoJS.AES.encrypt(<span class="string">"Message"</span>, <span class="string">"Secret Passphrase"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> decrypted = CryptoJS.AES.decrypt(encrypted, <span class="string">"Secret Passphrase"</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>以下為官方所展示的的 AES 範例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> encrypted = CryptoJS.AES.encrypt(<span class="string">"Message"</span>, <span class="string">"Secret Passphrase"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> decrypted = CryptoJS.AES.decrypt(encrypted, <span class="string">"Secret Passphrase"</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>CryptoJS 在 The Advanced Encryption Standard (AES) 支援了</p>
 <ul>
 <li>AES-128</li>

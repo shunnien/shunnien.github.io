@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="123&amp;lt;httpCookies domain=&quot;String&quot;             httpOnlyCookies=&quot;true|false&quot;             requireSSL=&quot;true|false&quot; /&amp;gt;  httpOnlyCookies 屬性是 Cookie 只供瀏覽器與 WebServer 之間溝通使用，不允許 JavaScript 存取 Cookie (docu">
+<meta name="description" content="123&amp;lt;httpCookies domain=&quot;String&quot;             httpOnlyCookies=&quot;true|false&quot;             requireSSL=&quot;true|false&quot; /&amp;gt;   httpOnlyCookies 屬性是 Cookie 只供瀏覽器與 WebServer 之間溝通使用，不允許 JavaScript 存取 Cookie (doc">
 <meta name="keywords" content="Asp.net,IIS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web.config 的 httpCookies">
 <meta property="og:url" content="https://shunnien.github.io/2017/12/12/webconfig-httpCookies/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
-<meta property="og:description" content="123&amp;lt;httpCookies domain=&quot;String&quot;             httpOnlyCookies=&quot;true|false&quot;             requireSSL=&quot;true|false&quot; /&amp;gt;  httpOnlyCookies 屬性是 Cookie 只供瀏覽器與 WebServer 之間溝通使用，不允許 JavaScript 存取 Cookie (docu">
+<meta property="og:description" content="123&amp;lt;httpCookies domain=&quot;String&quot;             httpOnlyCookies=&quot;true|false&quot;             requireSSL=&quot;true|false&quot; /&amp;gt;   httpOnlyCookies 屬性是 Cookie 只供瀏覽器與 WebServer 之間溝通使用，不允許 JavaScript 存取 Cookie (doc">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:updated_time" content="2019-06-14T05:58:19.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web.config 的 httpCookies">
-<meta name="twitter:description" content="123&amp;lt;httpCookies domain=&quot;String&quot;             httpOnlyCookies=&quot;true|false&quot;             requireSSL=&quot;true|false&quot; /&amp;gt;  httpOnlyCookies 屬性是 Cookie 只供瀏覽器與 WebServer 之間溝通使用，不允許 JavaScript 存取 Cookie (docu">
+<meta name="twitter:description" content="123&amp;lt;httpCookies domain=&quot;String&quot;             httpOnlyCookies=&quot;true|false&quot;             requireSSL=&quot;true|false&quot; /&amp;gt;   httpOnlyCookies 屬性是 Cookie 只供瀏覽器與 WebServer 之間溝通使用，不允許 JavaScript 存取 Cookie (doc">
 
 
 
@@ -414,14 +414,16 @@
 
       
         <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">httpCookies</span> <span class="attr">domain</span>=<span class="string">"String"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">httpOnlyCookies</span>=<span class="string">"true|false"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">requireSSL</span>=<span class="string">"true|false"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>httpOnlyCookies 屬性<br>是 Cookie 只供瀏覽器與 WebServer 之間溝通使用，不允許 JavaScript 存取 Cookie (document.cookie)。</li>
 <li>requireSSL 屬性<br>需要使用 SSL 才能傳送 cookie 資料。<a id="more"></a>
+
 </li>
 </ul>
 <p>以上情境在測試時，因為不一定使用 SSL ，所以可能會發生頁面錯誤等情形，可以利用多重組態來切換；另外由於 <strong>Identity</strong> 也是利用 <strong>cookies</strong> 來操作，所以當測試機<strong>不使用 SSL</strong> 時，記得將 <strong>requireSSL</strong> 設定為 <strong>false</strong></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/ms228262%28v=vs.100%29.aspx?f=255&amp;MSPPError=-2147217396" target="_blank" rel="noopener">MSDN</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/ms228262%28v=vs.100%29.aspx?f=255&MSPPError=-2147217396" target="_blank" rel="noopener">MSDN</a></li>
 </ul>
 
       

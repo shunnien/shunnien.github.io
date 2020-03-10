@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -413,18 +413,24 @@
       
 
       
-        <h1 id="CSS-Grid-repeat-function"><a href="#CSS-Grid-repeat-function" class="headerlink" title="CSS Grid repeat function"></a>CSS Grid repeat function</h1><p>此篇介紹 <strong>repeat</strong> function 的使用，在 grid 中可以減少一些重複設定的瑣碎動作<br><a id="more"></a></p>
+        <h1 id="CSS-Grid-repeat-function"><a href="#CSS-Grid-repeat-function" class="headerlink" title="CSS Grid repeat function"></a>CSS Grid repeat function</h1><p>此篇介紹 <strong>repeat</strong> function 的使用，在 grid 中可以減少一些重複設定的瑣碎動作</p>
+<a id="more"></a>
+
 <blockquote>
 <p><a href="https://shunnien.github.io/css-grid25day/day_08/index.html">Demo</a> | <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">Github</a></p>
 </blockquote>
 <p><strong>repeat</strong> 這方法可以減少重複設定，如下的 <strong>grid-template-columns</strong> 設定了四欄</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>上述的方式使用 <strong>repeat</strong> 可以轉寫成 <code>repeat(4,1fr)</code> ，第一個參數表示重複次數，第二個參數為設定大小</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(4,1fr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>所以當參數設定多個大小時，表示此 column 或 row 按照設定大小的數量去重複，如以下設定了 <code>1fr auto</code> 表示設定 <strong>2</strong> columns ，然後此 2 columns 重複兩次</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-columns</span>: <span class="selector-tag">repeat</span>(2, 1<span class="selector-tag">fr</span> <span class="selector-tag">auto</span>);</span><br></pre></td></tr></table></figure>
+
 <h2 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat" target="_blank" rel="noopener">repeat()</a></h2><div class="note info"><p>The <strong>repeat()</strong> CSS function represents a repeated fragment of the track list, allowing a large number of columns or rows that exhibit a recurring pattern to be written in a more compact form.</p>
 <p>This function can be used in the CSS Grid properties <strong>grid-template-columns</strong> and <strong>grid-template-rows</strong>.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
 <li>作者 <a href="https://github.com/wesbos/css-grid" target="_blank" rel="noopener"><strong>Wes Bos</strong> CSS-Grid Github</a></li>

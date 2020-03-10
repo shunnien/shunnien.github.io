@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -416,25 +416,35 @@
       
 
       
-        <p>由於<a href="https://shunnien.github.io/2018/03/21/css-grid-08/">筆記 08</a>提到了 <strong>repeat</strong> ，此 function 的設定與其內元素的大小設定，以及元素內容文字的大小影響是如何，其自動計算又是以哪個為依據？此篇主要探討此方向。<br><a id="more"></a></p>
+        <p>由於<a href="https://shunnien.github.io/2018/03/21/css-grid-08/">筆記 08</a>提到了 <strong>repeat</strong> ，此 function 的設定與其內元素的大小設定，以及元素內容文字的大小影響是如何，其自動計算又是以哪個為依據？此篇主要探討此方向。</p>
+<a id="more"></a>
+
 <blockquote>
 <p><a href="https://shunnien.github.io/css-grid25day/day_09/index.html">Demo</a> | <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">Github</a></p>
 </blockquote>
 <h1 id="Sizing-Grid-Items"><a href="#Sizing-Grid-Items" class="headerlink" title="Sizing Grid Items"></a>Sizing Grid Items</h1><p>建立多筆項目，並使用 <strong>repeat</strong> 與 <strong>fr</strong> 來自動分配</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item1"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-columns</span>: <span class="selector-tag">repeat</span>(5, 1<span class="selector-tag">fr</span>);</span><br></pre></td></tr></table></figure>
+
 <p>此時各項 item 應該都是同一大小，產生 5 欄的表格</p>
 <p><img src="https://lh3.googleusercontent.com/_Al4gNGKVw5GGGJ_k7rfqvh7dlliwvjgQxf8L1zHpGOvtuC0csEBIHV6yih9_cBv_IS9x0C6KDPLt4Ri58LkzLEJPXcFZfIjOc0DWi9CXC723A6B_nBj6k78zv01ljGjAoyMG0kOLkpx7YH4euLMgwnABVjT3hIquw_4U8MbRQpPPCpk-QXtHNYy57aoAGJHn_M9i4TceZa48uG_IvAtSDb54I1FVhFnnSqoaU--JY2a_8ZorTy3V1ebxRy85_M3x1k3kp4STorXjbs-naSTmsViFCweD8gA_l_yuo2tAFkBxgrjRKmXW1mpyCn-1Vh2cKl7tP4bkVN-JAgm_zMxyVZ5r_zelAlfwX7F5ByiXcxbQQ0fDbVR-6uP87gjXUysF5WkJ33Q3t3i3txZqnPNv_Mgkk9MFylG7HRAjZAz3OsJBSmq6YG5Gf0DjXLgCWLwPKXjsRGMavNP4vsMycn-oYEP8c0PlycWUYLAYrI_LzmUDzQ0CAMl34d5gOtb4sb6BvWqUV8RtXsWwEZ5YKb6EDKWajTKSZn0BcRXGCF_rmt4wIpR4mPADXdPPxF8KApetrMpjekP4UvxwRREPD19VldqhM8NpiW127G2SD-wUMsJWE-ZRZocsh5KbiAoVPSLN1HQS1JYo0Wpwq-KYFWJdR76frE0Y9Xh=w1290-h489-no" alt="5fr grid"></p>
 <p>現在針對 item9 這一項目建立 class ，並給予寬度設定 500px ，會發現 <strong>repeat</strong> 中設定的 <strong>1fr</strong> 失去效果了；</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item9</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: mistyrose;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>或是直接針對 html 去變更 item9 的內容，將內容文字加長， <strong>1fr</strong> 的設定也會失效；這是因為 <strong>fr</strong> 是依據表格設定後，剩餘的空間進行分配，所以當設定了寬度，或是內容文字，都會先行在表格中進行分配</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item item9"</span>&gt;</span>9asadfbasdfzxcvmnmqweruiopytkjl;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>展示跨行/欄的屬性，當跨越的行/列在 <strong>repeat</strong> 的範圍內的時候，表格會依據行列的限制給予設定是否換行；反之要是超出了行/欄的設定，則會依照跨越的設定，自動增加行/欄</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item9</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: mistyrose;</span><br><span class="line">    <span class="attribute">grid-column</span>: span <span class="number">10</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: span <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://lh3.googleusercontent.com/eB9kfqqLcJk4FC1-3wyr8bzr3hNRa7-sTpdHRdP4dy0iQFDbrOG7QLPHzNEsru0RBpoBRa4QoOs0oiZXhmyB7kVz2EJ_q7bERIN8SbqyC95OLRIOqKzGjrFWYNMdu_1Of3RQ2gkT6mVX94g6dKLynq5mSRMg9pWJjDy7fqD-N52SCNdwS80mjO4CKvxIIXRnLVbpCgeGjLEmUeqpK2uj5BZqPold2QDUhYZRTdpEgZKCNJkboEDnpXbWNqRLGz5AefLciLDQ5Wkj9mFQV7H_0P4GXT8JGh8Dant6c27kYSeuFdiKpsyVFgdGMKSb60tFg31tH-Y4a_EDvEpyjtjy1IVUenFwMqPIq-WkoV-PceQKiEyuf1QKuM1Of3dQzp_wTvfPc7ebn9ncFjwCyEe7WKhos2Mpjbyf0HPl5TKAtL58wfNRAFlXssJhtjtXa9cTh-bmOIOVNzmbmoUKmmhFU4NuAjvaZT5SiZl3jY6pXtU0ffe7Bp33yehjqPJGKHuCcr2e9YkgHLrHy39p9yuz7Pzg9sFVLRK9fLZLK-5Ubm2y0N14BkXnL-49NO4j0vpvcPiV6v2Y_zUPf3hrtTSVV_ebVCw3CTkTl2StrN7e9qPzcjvHgr1eJzc856aBpCSa1FhIiQ4EdlbxTp6tM3Wycfa0HnUnwrv3=w1281-h509-no" alt="over im"></p>
 <iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/xxL8ajm3/embedded/html,css,result/dark" frameborder="0" allowfullscreen></iframe>
+
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="grid-column"><a href="#grid-column" class="headerlink" title="grid-column"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column" target="_blank" rel="noopener">grid-column</a></h2><div class="note info"><p>The grid-column CSS property is a shorthand property for grid-column-start and grid-column-end specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
 <h2 id="grid-row"><a href="#grid-row" class="headerlink" title="grid-row"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/grid-row" target="_blank" rel="noopener">grid-row</a></h2><div class="note info"><p>The grid-row CSS property is a shorthand property for grid-row-start and grid-row-end specifying a grid item’s size and location within the grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/grid-row" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
 <li>作者 <a href="https://github.com/wesbos/css-grid" target="_blank" rel="noopener"><strong>Wes Bos</strong> CSS-Grid Github</a></li>

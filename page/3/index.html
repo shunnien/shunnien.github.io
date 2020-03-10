@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -1035,7 +1035,7 @@
       
         
           <h1 id="安裝-php-sqlsrv-與-php-pdo-sqlsrv"><a href="#安裝-php-sqlsrv-與-php-pdo-sqlsrv" class="headerlink" title="安裝 php_sqlsrv 與 php_pdo_sqlsrv"></a>安裝 <strong>php_sqlsrv</strong> 與 <strong>php_pdo_sqlsrv</strong></h1><p>使用 <strong>PHP</strong> 連接 MSSQL 進行 database migrate 時，發現出現以下訊息</p>
-<p><img src="https://lh3.googleusercontent.com/rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0YZn1ZcHcsFR53f0DTsgl2X63xVtreav4FFH5coZfiuFYz2TSOUwiRWJZraAA8x4yxnIY4tKKTcrEK-QcOvTuN3OfCgsqgtIscCfd8bBTZl-y4rxQmTeH1qDzZwdIxoaExCloWkYU_oS7RWO58njlu74_2Cjw4R4aVxFiUsyyKtjZEjnNxJc9dTHDDmnYbMeGVSMO6X4_fcU_8-jZytlH9WZrNOof4pw95L1dBpgTJMKMe5GRnXjrkAEU7SGAFX0CEAfyG1a7smaIiAV6WE1CQedbRUfhj8ZYX9MA_SfRTzWFBR5VoFM5yhOWtjUGLxqJpQi0tTAMvj3poH2fJxRJIUVaFXyHQQrYR-ehST5mgjBkrKRfgGlcr2xTsmCO28y1ttUQeut3aFFSjQwqGHOhlNjNxoHVKXWDPvAP9kWJKJiAU6Zh_2jvnOlT_kpVlSJrxmK3wA_U4bUdzXjjNUgeFdk6gcy4jKj-W0TtLJJq7OaZ4EB010E8seYcASu2zpg4oNLjTGH_YeVcFd0UP8fL8jr57W10AOJvzY-e6uy1N-JyyHpXAuqcmunYjamdkxgiHQG6Ztv80vwM43iZMpaawX6BBx8dH0sPm_AhP1J=w494-h340-no" alt="command line error message]"><br>
+<p>![command line error message]](<a href="https://lh3.googleusercontent.com/rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0YZn1ZcHcsFR53f0DTsgl2X63xVtreav4FFH5coZfiuFYz2TSOUwiRWJZraAA8x4yxnIY4tKKTcrEK-QcOvTuN3OfCgsqgtIscCfd8bBTZl-y4rxQmTeH1qDzZwdIxoaExCloWkYU_oS7RWO58njlu74_2Cjw4R4aVxFiUsyyKtjZEjnNxJc9dTHDDmnYbMeGVSMO6X4_fcU_8-jZytlH9WZrNOof4pw95L1dBpgTJMKMe5GRnXjrkAEU7SGAFX0CEAfyG1a7smaIiAV6WE1CQedbRUfhj8ZYX9MA_SfRTzWFBR5VoFM5yhOWtjUGLxqJpQi0tTAMvj3poH2fJxRJIUVaFXyHQQrYR-ehST5mgjBkrKRfgGlcr2xTsmCO28y1ttUQeut3aFFSjQwqGHOhlNjNxoHVKXWDPvAP9kWJKJiAU6Zh_2jvnOlT_kpVlSJrxmK3wA_U4bUdzXjjNUgeFdk6gcy4jKj-W0TtLJJq7OaZ4EB010E8seYcASu2zpg4oNLjTGH_YeVcFd0UP8fL8jr57W10AOJvzY-e6uy1N-JyyHpXAuqcmunYjamdkxgiHQG6Ztv80vwM43iZMpaawX6BBx8dH0sPm_AhP1J=w494-h340-no" target="_blank" rel="noopener">https://lh3.googleusercontent.com/rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0YZn1ZcHcsFR53f0DTsgl2X63xVtreav4FFH5coZfiuFYz2TSOUwiRWJZraAA8x4yxnIY4tKKTcrEK-QcOvTuN3OfCgsqgtIscCfd8bBTZl-y4rxQmTeH1qDzZwdIxoaExCloWkYU_oS7RWO58njlu74_2Cjw4R4aVxFiUsyyKtjZEjnNxJc9dTHDDmnYbMeGVSMO6X4_fcU_8-jZytlH9WZrNOof4pw95L1dBpgTJMKMe5GRnXjrkAEU7SGAFX0CEAfyG1a7smaIiAV6WE1CQedbRUfhj8ZYX9MA_SfRTzWFBR5VoFM5yhOWtjUGLxqJpQi0tTAMvj3poH2fJxRJIUVaFXyHQQrYR-ehST5mgjBkrKRfgGlcr2xTsmCO28y1ttUQeut3aFFSjQwqGHOhlNjNxoHVKXWDPvAP9kWJKJiAU6Zh_2jvnOlT_kpVlSJrxmK3wA_U4bUdzXjjNUgeFdk6gcy4jKj-W0TtLJJq7OaZ4EB010E8seYcASu2zpg4oNLjTGH_YeVcFd0UP8fL8jr57W10AOJvzY-e6uy1N-JyyHpXAuqcmunYjamdkxgiHQG6Ztv80vwM43iZMpaawX6BBx8dH0sPm_AhP1J=w494-h340-no</a>)</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/10/php-install-sqlsrv-dll-on-windows/#more" rel="contents">
@@ -1045,7 +1045,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
     
     
     
@@ -1191,7 +1191,7 @@
 
       
         
-          <h1 id="使用-PowerShell-來產生-database-schema-script"><a href="#使用-PowerShell-來產生-database-schema-script" class="headerlink" title="使用 PowerShell 來產生 database schema script"></a>使用 PowerShell 來產生 database schema script</h1><p><a href="https://shunnien.github.io/2018/07/21/sqlserver-Data-tier-Applications/">前一篇文章</a>提到了 DAC ，但是遇到了 DAC 匯出失敗的問題，看訊息是部分資料表的因素，但是那些資料又是客戶自己的需求，所以利用 sqlserver 的產生 script 來進行結構備份紀錄，而自動化紀錄可以省時省力，此篇透過 <a href="https://zh.wikipedia.org/wiki/Windows_PowerShell" target="_blank" rel="noopener">PowerShell</a> 來自動產生與處理<br>
+          <h1 id="使用-PowerShell-來產生-database-schema-script"><a href="#使用-PowerShell-來產生-database-schema-script" class="headerlink" title="使用 PowerShell 來產生 database schema script"></a>使用 PowerShell 來產生 database schema script</h1><p><a href="https://shunnien.github.io/2018/07/21/sqlserver-Data-tier-Applications/">前一篇文章</a>提到了 DAC ，但是遇到了 DAC 匯出失敗的問題，看訊息是部分資料表的因素，但是那些資料又是客戶自己的需求，所以利用 sqlserver 的產生 script 來進行結構備份紀錄，而自動化紀錄可以省時省力，此篇透過 <a href="https://zh.wikipedia.org/wiki/Windows_PowerShell" target="_blank" rel="noopener">PowerShell</a> 來自動產生與處理</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/08/04/powershell-generate-database-schema-script/#more" rel="contents">
@@ -1201,7 +1201,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
     
     
     

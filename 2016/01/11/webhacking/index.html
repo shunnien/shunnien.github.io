@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -480,24 +480,34 @@
 </ul>
 <p>MAC(Mandatory Access Control)主動存取控制，例如:網路芳鄰<br>DAC(Discretionary Access Control)被動存取控制</p>
 <h2 id="Hack如何扒糞"><a href="#Hack如何扒糞" class="headerlink" title="Hack如何扒糞?"></a>Hack如何扒糞?</h2><ul>
-<li>DNS</li>
-<li>WHOIS</li>
+<li><p>DNS</p>
+</li>
+<li><p>WHOIS</p>
+</li>
 <li><p>Google Hack<br>使用 Google Search</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Robots.txt Disallow /admin filetype:txt</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Robots.txt</p>
 </li>
-<li>關鍵字</li>
-<li>Fingerprint</li>
+<li><p>關鍵字</p>
+</li>
+<li><p>Fingerprint</p>
+</li>
 </ul>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>DNS 區域轉送測試指令碼<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nsloolup</span><br><span class="line">server 8.8.8.8  </span><br><span class="line"><span class="built_in">set</span> <span class="built_in">type</span>=ns</span><br><span class="line">domain.com</span><br><span class="line">server dns.domain.com</span><br><span class="line">ls domain.com</span><br></pre></td></tr></table></figure></p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>DNS 區域轉送測試指令碼</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nsloolup</span><br><span class="line">server 8.8.8.8  </span><br><span class="line"><span class="built_in">set</span> <span class="built_in">type</span>=ns</span><br><span class="line">domain.com</span><br><span class="line">server dns.domain.com</span><br><span class="line">ls domain.com</span><br></pre></td></tr></table></figure>
+
 <h3 id="telnet-很好用-T-T"><a href="#telnet-很好用-T-T" class="headerlink" title="telnet 很好用 T_T"></a><strong>telnet</strong> 很好用 T_T</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">telnet yourTarget</span><br><span class="line"></span><br><span class="line">HEAD / HTTP/1.0</span><br></pre></td></tr></table></figure>
+
 <p>然後要按兩次 <strong>ENTER</strong></p>
-<h3 id="改-PORT-只是騙自己"><a href="#改-PORT-只是騙自己" class="headerlink" title="改 PORT 只是騙自己"></a>改 PORT 只是騙自己</h3><p>使用 <a href="https://nmap.org/download.html" title="NMAP" target="_blank" rel="noopener">NMAP</a> 工具，列舉你的 port<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Nmap –PN –sT –sV –p0-65535 x.x.x.x</span><br></pre></td></tr></table></figure></p>
+<h3 id="改-PORT-只是騙自己"><a href="#改-PORT-只是騙自己" class="headerlink" title="改 PORT 只是騙自己"></a>改 PORT 只是騙自己</h3><p>使用 <a href="https://nmap.org/download.html" title="NMAP" target="_blank" rel="noopener">NMAP</a> 工具，列舉你的 port </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Nmap –PN –sT –sV –p0-65535 x.x.x.x</span><br></pre></td></tr></table></figure>
+
 <p>改 port 不是就能一勞永逸，只要對方列舉 port ，就能知道開啟的 port 。</p>
 <h2 id="幾個流傳較廣的-hacking"><a href="#幾個流傳較廣的-hacking" class="headerlink" title="幾個流傳較廣的 hacking"></a>幾個流傳較廣的 hacking</h2><ul>
 <li>Facebook <div class="video-container"><iframe src="//www.youtube.com/embed/HfJAtZcGXnk" frameborder="0" allowfullscreen></iframe></div></li>
 <li>SQL Injection<div class="video-container"><iframe src="//www.youtube.com/embed/Fp47G4MQFvA" frameborder="0" allowfullscreen></iframe></div>
+
 </li>
 </ul>
 <h2 id="各種標準解析"><a href="#各種標準解析" class="headerlink" title="各種標準解析"></a>各種標準解析</h2><ul>

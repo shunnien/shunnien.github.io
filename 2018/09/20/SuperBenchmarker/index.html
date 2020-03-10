@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -418,51 +418,51 @@
         <h1 id="SuperBenchmarker"><a href="#SuperBenchmarker" class="headerlink" title="SuperBenchmarker"></a>SuperBenchmarker</h1><p>這工具使用也一段時間，這次順手紀錄下來<a id="more"></a>；這是一個 command-line 工具，可以很便利使用。</p>
 <h2 id="安裝方式"><a href="#安裝方式" class="headerlink" title="安裝方式"></a>安裝方式</h2><p>可以透過 <a href="https://chocolatey.org/" target="_blank" rel="noopener"><strong>chocolatey</strong></a> 來安裝，安裝指令如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">choco install superbenchmarker</span><br></pre></td></tr></table></figure>
+
 <h2 id="指令與參數說明"><a href="#指令與參數說明" class="headerlink" title="指令與參數說明"></a>指令與參數說明</h2><p>指令範例如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sb -u <span class="string">"https://reqres.in/api/users?page=&#123;&#123;&#123;Id&#125;&#125;&#125;"</span> -n 800 -c 5 -m GET -t D:\temp\template.txt -f D:\temp\values.csv -v -h</span><br></pre></td></tr></table></figure>
+
 <p>常用參數說明</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">參數</th>
-<th style="text-align:center">說明</th>
+<th align="center">參數</th>
+<th align="center">說明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">-u</td>
-<td style="text-align:center">設定要測試的 url</td>
+<tbody><tr>
+<td align="center">-u</td>
+<td align="center">設定要測試的 url</td>
 </tr>
 <tr>
-<td style="text-align:center">-n</td>
-<td style="text-align:center">要發出的 request 數量</td>
+<td align="center">-n</td>
+<td align="center">要發出的 request 數量</td>
 </tr>
 <tr>
-<td style="text-align:center">-c</td>
-<td style="text-align:center">同時的連線數</td>
+<td align="center">-c</td>
+<td align="center">同時的連線數</td>
 </tr>
 <tr>
-<td style="text-align:center">-m</td>
-<td style="text-align:center">http method</td>
+<td align="center">-m</td>
+<td align="center">http method</td>
 </tr>
 <tr>
-<td style="text-align:center">-t</td>
-<td style="text-align:center">template 範本，要設定 header 可以使用此參數</td>
+<td align="center">-t</td>
+<td align="center">template 範本，要設定 header 可以使用此參數</td>
 </tr>
 <tr>
-<td style="text-align:center">-f</td>
-<td style="text-align:center">使用 csv 檔案來取代參數的指令</td>
+<td align="center">-f</td>
+<td align="center">使用 csv 檔案來取代參數的指令</td>
 </tr>
 <tr>
-<td style="text-align:center">-v</td>
-<td style="text-align:center">顯示詳細訊息</td>
+<td align="center">-v</td>
+<td align="center">顯示詳細訊息</td>
 </tr>
 <tr>
-<td style="text-align:center">-h</td>
-<td style="text-align:center">顯示 header 訊息</td>
+<td align="center">-h</td>
+<td align="center">顯示 header 訊息</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>另外執行結束會產生報告圖表的 html 頁面，此 html 會儲存在指令執行的路徑下，所以需要注意登入帳號是否有權限寫入檔案</p>
 <p><img src="https://lh3.googleusercontent.com/GoYY_-i8_sF5Waez3c21XwvEo4rBbMH5HDd1w0rnBnLyb1hSJpVL3s6QjxsTW6kn7FrdOrZ86_3AK9BnBMO5NevBRah6sXkF5dVF49kJOqPRSlFYbOofBcMLOubEfIYWMugGRiMibtXGP7aQES3TutmzCy0HPqbXRowB2KqaDW1f15PNaVMWR8Nk_7GgDvfgseY0j0dLXpy0rAz-e2ivzcvcxn1RJu-6FX5w_Vrja5-Msq6ljdAKfNFysQ6gJfeqyLBwcbPVs-Tv3J33z01WU7VpP5R0vMSA3r69tp4uoHSsT-IWqIvMR72aJFgCZIdwS89qk-dJxoSnJkvWJAUNyJjPYAXbWkDzgF82v06lXpjQcOHYmGSYxvd1xESiMVHIPSnqN4dflI069Oc1-MRnaufJiUJtLJMhi_lOzSi6IyZoGvi9DdOp7ZOSzghQ-689sKddoAL-ft6-ZwywfcUcqHrm9R557iAOcqOcxnJ9pldSjsQTk7HqOv1G9XE95G-8DCnC-Cm84Nso8JRgA3MzFXE9hru6zazangmPviklviA1qPvKMYzCMz9i51OloSrWI7YFqU8iq8ybSmRjcsPaS5YVOsMeSuXukzkjAfOpNSsG4sPwE-zoaQ_9Os1PBch2V7ZmHt8Jc-OE10sn5dc1SUFeMkQv5bMljCLcGiPuwJl4l2ywQdKaVZ5j=w1267-h826-no" alt="output result"></p>
 <h3 id="名詞說明"><a href="#名詞說明" class="headerlink" title="名詞說明"></a>名詞說明</h3><blockquote>

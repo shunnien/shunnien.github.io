@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -444,6 +444,7 @@
 </ul>
 <p>以下為作法，另外這是故意使用 <strong>reduce</strong> 來處理，這例子使用 <strong>for…in</strong> 迴圈處理亦可</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> testobj = &#123;<span class="string">"id"</span>: <span class="number">2</span>, <span class="string">"name"</span>: <span class="string">"allen"</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下的 &#123;&#125; 為設定 previouse 的初始值</span></span><br><span class="line"><span class="keyword">const</span> reduceobj = <span class="built_in">Object</span>.keys(testobj).reduce(<span class="function"><span class="keyword">function</span>(<span class="params">previous, current</span>) </span>&#123;</span><br><span class="line">    previous[current] = (current!==<span class="string">"name"</span>)? testobj[current] : testobj[current].toUpperCase();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"previous: "</span> + previous +<span class="string">"     current: "</span> + current );</span><br><span class="line">    <span class="keyword">return</span> previous;</span><br><span class="line">&#125;,&#123;&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"reduceobj: "</span> + reduceobj);</span><br></pre></td></tr></table></figure>
+
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener">MDN reduce</a></li>
 <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">MDN map</a></li>

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -419,12 +419,13 @@
       
         <h2 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h2><p>開發完成的網站應用程式，在測試機運行都是正常，但在正式機時，發生了 HTTP 500 錯誤，錯誤訊息如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Exception information:</span><br><span class="line">    Exception type: InvalidOperationException</span><br><span class="line">    Exception message: DataReader.GetFieldType(5) returned null.</span><br></pre></td></tr></table></figure>
+
 <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>依據這個錯誤訊息，查找一下微軟論壇上的討論，確認應該是應用程式使用了 Sql Server 的部分元件，因此需要將此元件註冊；但是因為此專案主要是使用 Geomerty 型別產生的問題，所以比較符合 Huan-Lin 老師的<a href="http://huan-lin.blogspot.com/2012/08/datareadergetfieldtype5-returned-null.html" title="Huan-Lin DataReader.GetFieldType(5) returned null" target="_blank" rel="noopener">此篇文章</a>，需要在正式機的電腦上額外安裝 <strong>Sql Server Featrue Pack</strong>，版本按照各自使用的資料庫版本安裝</p>
-<h2 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h2><p>請到<a href="https://www.microsoft.com/zh-tw/" title="Microsoft" target="_blank" rel="noopener">微軟</a>網站搜尋 <strong>SQL Server Feature Pack</strong>，取得<a href="https://www.microsoft.com/en-us/search/result.aspx?q=SQL+Server+Feature+Pack&amp;form=dlc" title="Microsoft SQL Server Feature Pack" target="_blank" rel="noopener">搜尋結果</a>，然後找尋符合自己資料庫的版本選取下載，我的版本是 <em>SQL Server 2014</em>，所以在下載列表中選取 <strong>SQLSysClrTypes</strong> 這檔案，在不同<em>Sql Server</em> 版本中名稱會有稍微不同，主要就是找尋 <strong>CLR Types</strong> 的元件擴充就是了。</p>
+<h2 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h2><p>請到<a href="https://www.microsoft.com/zh-tw/" title="Microsoft" target="_blank" rel="noopener">微軟</a>網站搜尋 <strong>SQL Server Feature Pack</strong>，取得<a href="https://www.microsoft.com/en-us/search/result.aspx?q=SQL+Server+Feature+Pack&form=dlc" title="Microsoft SQL Server Feature Pack" target="_blank" rel="noopener">搜尋結果</a>，然後找尋符合自己資料庫的版本選取下載，我的版本是 <em>SQL Server 2014<em>，所以在下載列表中選取 *</em>SQLSysClrTypes** 這檔案，在不同*Sql Server</em> 版本中名稱會有稍微不同，主要就是找尋 <strong>CLR Types</strong> 的元件擴充就是了。</p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="http://huan-lin.blogspot.com/2012/08/datareadergetfieldtype5-returned-null.html" title="Huan-Lin DataReader.GetFieldType(5) returned null" target="_blank" rel="noopener">Huan-Lin DataReader.GetFieldType(5) returned null
 </a></li>
-<li><a href="https://www.microsoft.com/en-us/search/result.aspx?q=SQL+Server+Feature+Pack&amp;form=dlc" title="Microsoft SQL Server Feature Pack" target="_blank" rel="noopener">Microsoft SQL Server Feature Pack</a></li>
+<li><a href="https://www.microsoft.com/en-us/search/result.aspx?q=SQL+Server+Feature+Pack&form=dlc" title="Microsoft SQL Server Feature Pack" target="_blank" rel="noopener">Microsoft SQL Server Feature Pack</a></li>
 </ul>
 
       

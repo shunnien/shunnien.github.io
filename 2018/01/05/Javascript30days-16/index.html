@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -437,15 +437,19 @@
 <li>為了使陰影移動到文字的上邊與左邊，計算出來的值扣除 <strong>walk</strong> 的一半</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xWalk = <span class="built_in">Math</span>.round(mouseX / width * walk - walk / <span class="number">2</span>);</span><br><span class="line"><span class="keyword">const</span> yWalk = <span class="built_in">Math</span>.round(mouseY / height * walk - walk / <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>添加多組陰影</li>
 </ul>
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="HTML-部分"><a href="#HTML-部分" class="headerlink" title="HTML 部分"></a>HTML 部分</h2><h3 id="contenteditable"><a href="#contenteditable" class="headerlink" title="contenteditable"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Global_attributes/contenteditable" target="_blank" rel="noopener">contenteditable</a></h3><p>表示該元素是否可以被使用者編輯</p>
 <h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math/round" target="_blank" rel="noopener">Math.round()</a></h3><div class="note info"><p>Math.round() 函數回傳四捨五入後的近似值.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math/round" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
 <h3 id="MouseEvent-offsetX-與-MouseEvent-offsetY"><a href="#MouseEvent-offsetX-與-MouseEvent-offsetY" class="headerlink" title="MouseEvent.offsetX 與 MouseEvent.offsetY"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX" target="_blank" rel="noopener">MouseEvent.offsetX</a> 與 <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetY" target="_blank" rel="noopener">MouseEvent.offsetY</a></h3><p>滑鼠移動點與事件對象在 X 軸或是 Y 軸的偏移量值。</p>
 <h3 id="HTMLElement-offsetLeft-與-HTMLElement-offsetTop"><a href="#HTMLElement-offsetLeft-與-HTMLElement-offsetTop" class="headerlink" title="HTMLElement.offsetLeft 與 HTMLElement.offsetTop"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetLeft" target="_blank" rel="noopener">HTMLElement.offsetLeft</a> 與 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop" target="_blank" rel="noopener">HTMLElement.offsetTop</a></h3><div class="note info"><p><strong>offsetLeft</strong> 返回當前元素左上角相對於 <strong>HTMLElement.offsetParent</strong> 節點的左邊界偏移的像素值。</p>
 <p><strong>offsetTop</strong> 返回當前元素相對於 <strong>offsetParent</strong> 元素頂部的偏移值。</p></div>
+
 <h3 id="HTMLElement-offsetWidth-與-HTMLElement-offsetHeight"><a href="#HTMLElement-offsetWidth-與-HTMLElement-offsetHeight" class="headerlink" title="HTMLElement.offsetWidth 與 HTMLElement.offsetHeight"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/HTMLElement/offsetWidth" target="_blank" rel="noopener">HTMLElement.offsetWidth</a> 與 <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight" target="_blank" rel="noopener">HTMLElement.offsetHeight</a></h3><div class="note info"><p><img src="https://mdn.mozillademos.org/files/347/Dimensions-offset.png" alt="Dimensions-offset"><br><strong>資料來源</strong> - <a href="HTMLElement.offsetWidth"><em>MDN</em></a></p></div>
+
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
 <li>作者 Github <a href="https://github.com/wesbos" target="_blank" rel="noopener">Wes Bos</a></li>

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -420,7 +420,9 @@
         <p>在命列提示視窗的中文字亂碼，是因為編碼問題，在 windows 中文系統中，命令提示視窗預設編碼是 Big5，當檔案是 UTF-8 編碼時，檔案讀取中文字會因為編碼不同而變成亂碼。<a id="more"></a></p>
 <p>例如下圖：</p>
 <p><img src="https://lh3.googleusercontent.com/ExbGk4WddcLTFyJ6y0_3r7oFa0DC5yJ9l4d0767Tquu8_Njb5Nt4WMDefxFJMtHeQpneNXYfmACjuOCCJ-cG0RSpDYELUX52BxQ4LgHNSIEVOhg84gwINCB2zbpTpMWrmTHObBCyIgsqYzV3x2jJB_IUjAJvdQrZKqFIQo4u-v44SZZew5q2942g2N-lxgPzNNI3S41reswh0C4_WJDtVfH6fmqGkjzUG3EL5FT3Gl_dvN6a4_ZUnA64NV3yKIWmM1o3U2fpW4oYCwmz9ULHb8TqOTpUoR2CpMY7ajwoNZloqdSzXnhSS5iCAgPeOsARdurDY3aXjGGi67wrGEm2cCBa6oARXMkAb5Hgo6yJ3kqJi5vjnR1r_94WJwG0Ck4iyHnlBwJTMfM_B9G83BREBpaTNcOURdphTwGQiokNEcs0lMNB29ESK-irG6n1cDgesElMPYTC2VkPFKkMLME1wLRIWI3YuU7q-1rKUA-LxvrBBd3_LrMYOGClD5dQi4oOg4MIKkz-oOfrs-LWgdlRZItM2JPVfGtlJ9CSNNvJN6ME9Jg9MAhKRtT8zmYZUpstiCNU1fmeryBodlxnDd9YPZhlLT3cXBjGaYKGu4t48QAoIaF9EXuULXqhHJmv-CvDR0z876lNqiHt6L7gWuzV79D6L5pyElvHHwcbEv7nmQ=w391-h597-no" alt="utf-8 code read"></p>
-<p>這時候可以透過 <code>chcp</code> 指令來變更預設編碼，透過查詢 <a href="https://en.wikipedia.org/wiki/Code_page" target="_blank" rel="noopener">Code Page</a> 上的 UTF-8 編碼是 <strong>65001</strong>，直接進行指令設定<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chcp 65001</span><br></pre></td></tr></table></figure></p>
+<p>這時候可以透過 <code>chcp</code> 指令來變更預設編碼，透過查詢 <a href="https://en.wikipedia.org/wiki/Code_page" target="_blank" rel="noopener">Code Page</a> 上的 UTF-8 編碼是 <strong>65001</strong>，直接進行指令設定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chcp 65001</span><br></pre></td></tr></table></figure>
+
 <p>不過需要注意的是，命令提示字元切換成 <strong>UTF-8</strong> 後，中文輸入法不能使用，不過我是使用 <a href="http://cmder.net/" target="_blank" rel="noopener">cmder</a> 就沒有這個影響了，而在 <a href="http://cmder.net/" target="_blank" rel="noopener">cmder</a> 中，可以將 chcp 直接設定在 Setting ，這樣就不會影響命令提示字元<br>設定路徑是</p>
 <blockquote>
 <p>Settings–&gt;Startup–&gt;Environmnet<br>然後將 <code>chcp 65001</code> 輸入</p>

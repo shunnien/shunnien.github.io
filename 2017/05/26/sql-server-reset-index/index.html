@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -418,7 +418,9 @@
 
       
         <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>SQL Server 中有 <strong>Foreign Key</strong> 的資料表，無法使用 <strong>Truncate</strong> 清除資料，需要使用 <strong>DELETE</strong> 語句刪除資料之後，再將編號重置為0。</p>
-<h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>語法。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> [DbName]</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">DELETE</span> [<span class="keyword">Table</span>];</span><br><span class="line"><span class="comment">-- TableName 輸入要重新設定的資料表名稱</span></span><br><span class="line"><span class="comment">-- 0 這是要當做識別欄位之目前值使用的新值。</span></span><br><span class="line">DBCC CHECKIDENT('TableName', RESEED, 0);</span><br></pre></td></tr></table></figure></p>
+<h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>語法。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> [DbName]</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">DELETE</span> [<span class="keyword">Table</span>];</span><br><span class="line"><span class="comment">-- TableName 輸入要重新設定的資料表名稱</span></span><br><span class="line"><span class="comment">-- 0 這是要當做識別欄位之目前值使用的新值。</span></span><br><span class="line">DBCC CHECKIDENT('TableName', RESEED, 0);</span><br></pre></td></tr></table></figure>
+
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="https://msdn.microsoft.com/zh-tw/library/ms176057.aspx" target="_blank" rel="noopener">MSDN DBCC CHECKIDENT</a></li>
 </ul>

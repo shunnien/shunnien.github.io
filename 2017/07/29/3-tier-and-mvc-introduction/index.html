@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="三層式架構 ( Three-Tier ) 是很常見的架構，可以應用在實體機器架構上，也可以應用在邏輯架構上，可以按照實體與邏輯上去進行區分。實體三層架構與作用如下  客戶端應用程式 ( Client Application 顯示層 ) 負責處理客戶端的使用者介面及資料處理﹐比如說資料形態的確認等。 應用程式伺服器 ( Application Server 商業邏輯層 ) 介于資料庫和客戶端應用程式">
+<meta name="description" content="*三層式架構 ( Three-Tier ) *是很常見的架構，可以應用在實體機器架構上，也可以應用在邏輯架構上，可以按照實體與邏輯上去進行區分。實體三層架構與作用如下  *客戶端應用程式 ( Client Application 顯示層 ) *負責處理客戶端的使用者介面及資料處理﹐比如說資料形態的確認等。 *應用程式伺服器 ( Application Server 商業邏輯層 ) *介于資料庫和客">
 <meta name="keywords" content="other,notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三層結構與 Asp.Net MVC 的簡介">
 <meta property="og:url" content="https://shunnien.github.io/2017/07/29/3-tier-and-mvc-introduction/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
-<meta property="og:description" content="三層式架構 ( Three-Tier ) 是很常見的架構，可以應用在實體機器架構上，也可以應用在邏輯架構上，可以按照實體與邏輯上去進行區分。實體三層架構與作用如下  客戶端應用程式 ( Client Application 顯示層 ) 負責處理客戶端的使用者介面及資料處理﹐比如說資料形態的確認等。 應用程式伺服器 ( Application Server 商業邏輯層 ) 介于資料庫和客戶端應用程式">
+<meta property="og:description" content="*三層式架構 ( Three-Tier ) *是很常見的架構，可以應用在實體機器架構上，也可以應用在邏輯架構上，可以按照實體與邏輯上去進行區分。實體三層架構與作用如下  *客戶端應用程式 ( Client Application 顯示層 ) *負責處理客戶端的使用者介面及資料處理﹐比如說資料形態的確認等。 *應用程式伺服器 ( Application Server 商業邏輯層 ) *介于資料庫和客">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:updated_time" content="2019-06-14T05:58:19.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="三層結構與 Asp.Net MVC 的簡介">
-<meta name="twitter:description" content="三層式架構 ( Three-Tier ) 是很常見的架構，可以應用在實體機器架構上，也可以應用在邏輯架構上，可以按照實體與邏輯上去進行區分。實體三層架構與作用如下  客戶端應用程式 ( Client Application 顯示層 ) 負責處理客戶端的使用者介面及資料處理﹐比如說資料形態的確認等。 應用程式伺服器 ( Application Server 商業邏輯層 ) 介于資料庫和客戶端應用程式">
+<meta name="twitter:description" content="*三層式架構 ( Three-Tier ) *是很常見的架構，可以應用在實體機器架構上，也可以應用在邏輯架構上，可以按照實體與邏輯上去進行區分。實體三層架構與作用如下  *客戶端應用程式 ( Client Application 顯示層 ) *負責處理客戶端的使用者介面及資料處理﹐比如說資料形態的確認等。 *應用程式伺服器 ( Application Server 商業邏輯層 ) *介于資料庫和客">
 
 
 
@@ -413,11 +413,12 @@
       
 
       
-        <h2 id="三層式架構-Three-Tier"><a href="#三層式架構-Three-Tier" class="headerlink" title="三層式架構 ( Three-Tier ) "></a><strong>三層式架構 ( Three-Tier ) </strong></h2><p>是很常見的架構，可以應用在<strong>實體機器架構</strong>上，也可以應用在<strong>邏輯架構</strong>上，可以按照<strong>實體</strong>與<strong>邏輯</strong>上去進行區分。實體三層架構與作用如下</p>
+        <h2 id="三層式架構-Three-Tier"><a href="#三層式架構-Three-Tier" class="headerlink" title="*三層式架構 ( Three-Tier ) *"></a>*<em>三層式架構 ( Three-Tier ) *</em></h2><p>是很常見的架構，可以應用在<strong>實體機器架構</strong>上，也可以應用在<strong>邏輯架構</strong>上，可以按照<strong>實體</strong>與<strong>邏輯</strong>上去進行區分。實體三層架構與作用如下</p>
 <ul>
-<li><strong>客戶端應用程式 ( Client Application 顯示層 ) </strong><br>負責處理客戶端的使用者介面及資料處理﹐比如說資料形態的確認等。</li>
-<li><strong>應用程式伺服器 ( Application Server 商業邏輯層 ) </strong><br>介于資料庫和客戶端應用程式間，負責將客戶端應用程式的需求回應給資料庫伺器﹐再將資料庫的資料傳給客戶端應用程式</li>
-<li><strong>資料庫伺服器 ( RDBMS, Relational Database Management System 資料層 ) </strong><br>就是資料庫﹐比如 MS SQL SERVER 、 PostgreSQL 、 Oracle 等等。<a id="more"></a>
+<li>*<em>客戶端應用程式 ( Client Application 顯示層 ) *</em><br>負責處理客戶端的使用者介面及資料處理﹐比如說資料形態的確認等。</li>
+<li>*<em>應用程式伺服器 ( Application Server 商業邏輯層 ) *</em><br>介于資料庫和客戶端應用程式間，負責將客戶端應用程式的需求回應給資料庫伺器﹐再將資料庫的資料傳給客戶端應用程式</li>
+<li>*<em>資料庫伺服器 ( RDBMS, Relational Database Management System 資料層 ) *</em><br>就是資料庫﹐比如 MS SQL SERVER 、 PostgreSQL 、 Oracle 等等。<a id="more"></a>
+
 </li>
 </ul>
 <div class="mermaid">
@@ -425,6 +426,7 @@
 A(fa:fa-user 客戶端應用程式)-->B(fa:fa-server 應用程式伺服器)
 B-->C(fa:fa-database 資料庫伺服器)
 </div>
+
 
 <p>三層式架構可以簡易看為是在客戶端與資料庫之間加入了一個<strong>中間層</strong>，中間層通常包含：</p>
 <ul>
@@ -440,27 +442,32 @@ C-->D(fa:fa-object-group 物件模型)
 D-->E(fa:fa-database 資料庫伺服器)
 </div>
 
+
 <p>邏輯上的三層式架構 ( 或 <strong>N 層</strong>架構 ) ，是一種<strong>軟體抽象</strong>的層次結構，從整個應用程式架構的角度來區分為三層 ( 如果需要，還可以分 N 層 ) ，是為了<strong>解決整個應用程式中，各個操作過程中不同階段的程式碼封裝的問題</strong>，使程式設計師更加專注的處理某階段的商業邏輯。<br>比如將資料庫操作封裝到一層中，提供一些方法根據參數直接返回用戶需要的資料，這樣在處理具體的商業邏輯的時候，就不用關心資料的儲存問題了；簡單來說就是<strong>強化內聚，降低耦合</strong>，其簡易分層如下：</p>
 <ul>
 <li><p><strong>表現層 USL</strong> ( <strong>U</strong>ser <strong>S</strong>how <strong>L</strong>ayer 或 UI 或 Presentation layer)<br>用於顯示資訊和接收用戶輸入的資料，為用戶提供一種交互式操作的介面。通俗講就是展現給<strong>用戶的介面</strong>，即<strong>用戶在使用一個系統的時候的所見所得</strong>。</p>
 </li>
-<li><p><strong>商業邏輯層 BLL</strong> ( <strong>B</strong>usiness <strong>L</strong>ogic <strong>L</strong>ayer )<br><strong>商業邏輯層</strong>在體系架構中的位置很關鍵，它處於<strong>資料存取層</strong>與<strong>表現層</strong>中，起到了數據交換中承上啟下的作用。由於層是一種弱耦合結構，層與層之間的依賴是向下的，底層對於上層而言是「無知」的，改變上層的設計對於其調用的底層而言沒有任何影響。</p>
-</li>
-<li><p><strong>資料存取層 DAL</strong> ( <strong>D</strong>ata <strong>A</strong>ccess <strong>L</strong>ayer )<br>有時候也稱為<strong>持久層</strong>，其功能主要是<strong>負責資料庫的訪問</strong>，可以訪問資料庫系統、二進位文件、文本文檔或是 XML 文檔。簡單說法就是<strong>實現對資料表的查詢、新增、刪除與修改的操作</strong>。如果加入 ORM ，那麼就會包括物件和資料表之間的對應，以及物件實體的持久化。</p>
+<li><p><strong>商業邏輯層 BLL</strong> ( <strong>B</strong>usiness <strong>L</strong>ogic <strong>L</strong>ayer )</p>
 </li>
 </ul>
-<p>分層設計時，遵循了<strong>面向介面</strong>設計的思想，那麼這種向下的依賴也應該是一種<strong>弱依賴</strong>關係。因而在不改變介面定義的前提下，理想的分層式架構，應該是一個支持可抽取、可替換的「抽屜」式架構。<br><div class="note success"><h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
+<p><strong>商業邏輯層</strong>在體系架構中的位置很關鍵，它處於<strong>資料存取層</strong>與<strong>表現層</strong>中，起到了數據交換中承上啟下的作用。由於層是一種弱耦合結構，層與層之間的依賴是向下的，底層對於上層而言是「無知」的，改變上層的設計對於其調用的底層而言沒有任何影響。</p>
+<ul>
+<li><strong>資料存取層 DAL</strong> ( <strong>D</strong>ata <strong>A</strong>ccess <strong>L</strong>ayer )<br>有時候也稱為<strong>持久層</strong>，其功能主要是<strong>負責資料庫的訪問</strong>，可以訪問資料庫系統、二進位文件、文本文檔或是 XML 文檔。簡單說法就是<strong>實現對資料表的查詢、新增、刪除與修改的操作</strong>。如果加入 ORM ，那麼就會包括物件和資料表之間的對應，以及物件實體的持久化。</li>
+</ul>
+<p>分層設計時，遵循了<strong>面向介面</strong>設計的思想，那麼這種向下的依賴也應該是一種<strong>弱依賴</strong>關係。因而在不改變介面定義的前提下，理想的分層式架構，應該是一個支持可抽取、可替換的「抽屜」式架構。</p>
+<div class="note success"><h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
 <li>利於標準化</li>
 <li>降低層與層之間的依賴</li>
 <li>利於各層邏輯的復用，資源重用性好</li>
 <li>開發人員可以只關注整個結構中的其中某一層</li>
 <li>具有良好的開放性和可擴充性，維護和升級方便</li>
 <li>提高系統的安全性</li>
-</ul></div><br><div class="note danger"><h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
+</ul></div>
+<div class="note danger"><h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
 <li>有時會導致連動的修改。<br>如果在表現層中需要增加一個功能，為保證其設計符合分層式結構，可能需要在相應的商業邏輯層和資料存取層中都增加相應的程式碼。</li>
 <li>相對於不分層，降低了系統的性能。<br>如果不採用分層式結構，很多業務可以直接造訪資料庫，以此獲取相應的數據，如今卻必須通過中間層來完成。</li>
 <li>增加了開發成本。</li>
-</ul></div></p>
+</ul></div>
 <h2 id="Asp-Net-MVC-架構"><a href="#Asp-Net-MVC-架構" class="headerlink" title="Asp.Net MVC 架構"></a><a href="https://msdn.microsoft.com/en-us/library/dd394709.aspx" target="_blank" rel="noopener"><strong>Asp.Net MVC</strong></a> 架構</h2><p><strong><a href="https://msdn.microsoft.com/en-us/library/dd394709.aspx" target="_blank" rel="noopener">ASP.NET MVC</a></strong> 是微軟在 2009 年 4 月份發布的一種網站開發架構，它是把傳統意義上的 <strong>MVC</strong> 開發思想融合到了 <strong>ASP.NET</strong> 的開發當中，為了解決傳統開發中不能分離 <strong>Model</strong> , <strong>View</strong> 和 <strong>Controller</strong> 而設計的。</p>
 <p>MVC 是在<strong>應用程式 ( B/S 結構 )</strong> 的<strong>視圖層</strong>劃分出來的不同功能的幾個模塊。主要是為了解決應用程式用戶介面的樣式替換問題，把展示數據的 HTML 頁面儘可能的和業務代碼分離。 MVC 把純凈的介面展示邏輯 ( 用戶介面 ) 獨立到一些文件中 ( Views ) ，把一些和用戶交互的程序邏輯 ( Controller ) 單獨放在一些文件中，在 Views 和 Controller 中傳遞數據使用一些專門封裝數據的實體對象，這些對象，統稱為 Models。<br>按照 <a href="https://msdn.microsoft.com/zh-tw/library/dd381412(v=vs.108).aspx" target="_blank" rel="noopener">MSDN 上 <strong>ASP.NET MVC 4</strong></a> 上的說明，其架構包含：</p>
 <ul>
@@ -475,6 +482,7 @@ C((控制器))==>A
 C==>B
 </div>
 
+
 <h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
 <li>沒有在頁面中保存頁面狀態狀態(相對 WebForm ViewState)</li>
 <li>開發者可以完全掌控頁面的呈現過程</li>
@@ -482,7 +490,8 @@ C==>B
 <li>易於測試驅動開發 (Test-Driven Development)</li>
 <li>可擴展、可替換</li>
 </ul>
-<h2 id="三層架構與-ASP-NET-MVC-比較"><a href="#三層架構與-ASP-NET-MVC-比較" class="headerlink" title="三層架構與 ASP.NET MVC 比較"></a>三層架構與 ASP.NET MVC 比較</h2><p>以下是 MVC 與三層架構的對應關係<br><div class="mermaid">
+<h2 id="三層架構與-ASP-NET-MVC-比較"><a href="#三層架構與-ASP-NET-MVC-比較" class="headerlink" title="三層架構與 ASP.NET MVC 比較"></a>三層架構與 ASP.NET MVC 比較</h2><p>以下是 MVC 與三層架構的對應關係</p>
+<div class="mermaid">
   graph LR
 subgraph USL
 controller((控制器))==>view((檢　視))
@@ -493,12 +502,37 @@ end
 view==>model
 controller==>model
 </div>
-</p>
+
+
 <h3 id="相同點"><a href="#相同點" class="headerlink" title="相同點"></a>相同點</h3><ul>
 <li>都是把資料與呈現分離，以降低耦合</li>
 </ul>
 <h3 id="相異點"><a href="#相異點" class="headerlink" title="相異點"></a>相異點</h3><ul>
-<li>兩者的差異如下表<br>|項目|三層式架構|ASP.NET MVC|<br>|:—:|:—:|:—:|<br>|Model|實體類別構成|商業邏輯層與資料存取層組成|<br>|Controller|沒有定義 Controller 的概念|-|<br>|分類|體系結構模式/部署模式|設計模式/表示模式|</li>
+<li>兩者的差異如下表<table>
+<thead>
+<tr>
+<th align="center">項目</th>
+<th align="center">三層式架構</th>
+<th align="center">ASP.NET MVC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Model</td>
+<td align="center">實體類別構成</td>
+<td align="center">商業邏輯層與資料存取層組成</td>
+</tr>
+<tr>
+<td align="center">Controller</td>
+<td align="center">沒有定義 Controller 的概念</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">分類</td>
+<td align="center">體系結構模式/部署模式</td>
+<td align="center">設計模式/表示模式</td>
+</tr>
+</tbody></table>
+</li>
 </ul>
 <p>不過在程式開發實務上，則是會依照情境的需要進行細分，所以如何區分，還是得看各自的需求。</p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
@@ -800,7 +834,7 @@ controller==>model
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三層式架構-Three-Tier"><span class="nav-number">1.</span> <span class="nav-text">三層式架構 ( Three-Tier ) </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#優點"><span class="nav-number">1.1.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺點"><span class="nav-number">1.2.</span> <span class="nav-text">缺點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Asp-Net-MVC-架構"><span class="nav-number">2.</span> <span class="nav-text">Asp.Net MVC 架構</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#優點"><span class="nav-number">2.1.</span> <span class="nav-text">優點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三層架構與-ASP-NET-MVC-比較"><span class="nav-number">3.</span> <span class="nav-text">三層架構與 ASP.NET MVC 比較</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相同點"><span class="nav-number">3.1.</span> <span class="nav-text">相同點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相異點"><span class="nav-number">3.2.</span> <span class="nav-text">相異點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三層式架構-Three-Tier"><span class="nav-number">1.</span> <span class="nav-text">*三層式架構 ( Three-Tier ) *</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#優點"><span class="nav-number">1.1.</span> <span class="nav-text">優點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺點"><span class="nav-number">1.2.</span> <span class="nav-text">缺點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Asp-Net-MVC-架構"><span class="nav-number">2.</span> <span class="nav-text">Asp.Net MVC 架構</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#優點"><span class="nav-number">2.1.</span> <span class="nav-text">優點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三層架構與-ASP-NET-MVC-比較"><span class="nav-number">3.</span> <span class="nav-text">三層架構與 ASP.NET MVC 比較</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相同點"><span class="nav-number">3.1.</span> <span class="nav-text">相同點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相異點"><span class="nav-number">3.2.</span> <span class="nav-text">相異點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">4.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
             
 
           </div>

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -431,6 +431,7 @@
 <p>之後就可以看到 API 的檔案大小被壓縮過了<br><img src="https://lh3.googleusercontent.com/uw8pVt4lrTI8dLtbtvA4Lw448qP8IBd-m8IkzMpeaQt4SHi4utwCJDm6kxvAcK4WYIu7BmBfJVj4Wt2pdbhUiF6qpi9wqA_RzblPUQTIScUxUQ4ux1EAHXB1ASDPi4v7zrwsJvjvjNNvoth8RcxC8N2-f65UWBfRiedrr4Y1OiRb1KQeGEYuj7am6aezOiWh07aAcTX691TjUEflKuVfRYVqoQaDiWXBEybEM6BVKwjdRFsR51xQfUnIyFf0eD-BdLcBZ5SSdSqruCZffd2jys2rMgKBcp6qq_51YlfI5y9i7h7jAT4Ale16eFPZvb_g8W6S46EBQQzPkjzozxC2_V9HepDSctQ661io4YlY5Zih15wzRjOyylPUp2hh5csiZzkO0Go-Ikcf7AnNK3AqRFMZXUNPUtlle1tIAX4l2aExiIMWZsifcluKH8Ygt6ESNZUIgV4Hq1t8h4lM-kUZnD1A3K6JPSs4qcujB14oVNr5GgBNo4MMWi9EO8Syg5z8rhJ6ZPSxt5loMaK8wVyPo_dmdKDYnQv8dve_EHrJsuC957eFpF551Q6JWUYInyXlsqekYhU_GpGdavGxa8qt91m6mS591gzGbmtz3lTF5yAA1A-HLBPxGw29KyUeVaAmBXW5UstRhB3S1H4adaNxCq6rLDYa9i6ODSCjNjl9BD8eMw=w976-h370-no" alt="Compression file"></p>
 <h2 id="指令操作"><a href="#指令操作" class="headerlink" title="指令操作"></a>指令操作</h2><p>除了透過介面操作，還可以透過指令對 <strong>IIS</strong> 進行調整；記得使用管理者身分執行。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /d C:\Windows\System32\inetsrv</span><br><span class="line">appcmd.exe <span class="built_in">set</span> config -section:system.webServer/httpCompression /+<span class="string">"dynamicTypes.[mimeType='application/json;charset=utf-8',enabled='True']"</span> /commit:apphost</span><br><span class="line">appcmd.exe <span class="built_in">set</span> config -section:system.webServer/httpCompression /+<span class="string">"dynamicTypes.[mimeType='application/json',enabled='True']"</span> /commit:apphost</span><br><span class="line">iisreset</span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="http://www.hanselman.com/blog/EnablingDynamicCompressionGzipDeflateForWCFDataFeedsODataAndOtherCustomServicesInIIS7.aspx" target="_blank" rel="noopener">Scott</a></li>
 </ul>

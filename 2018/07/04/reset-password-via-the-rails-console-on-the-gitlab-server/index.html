@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -417,7 +417,9 @@
       
         <p>首先說明架設的環境， <a href="https://about.gitlab.com/" target="_blank" rel="noopener"><strong>Gitlab CE(Community Edition)</strong></a> 架設在 <strong>Linux</strong> 上，其資訊如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@proj-git ~]<span class="comment"># uname</span></span><br><span class="line">Linux</span><br><span class="line">[root@proj-git ~]<span class="comment"># uname -v</span></span><br><span class="line"><span class="comment">#1 SMP Thu Jan 25 20:13:58 UTC 2018</span></span><br><span class="line">[root@proj-git ~]<span class="comment"># uname -r</span></span><br><span class="line">3.10.0-693.17.1.el7.x86_64</span><br><span class="line">[root@proj-git ~]<span class="comment"># uname -m</span></span><br><span class="line">x86_64</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
+
 <h1 id="設定方式"><a href="#設定方式" class="headerlink" title="設定方式"></a>設定方式</h1><p>要變更帳號資料，做法是連線至安裝主機 (Linux) 上，透過 <strong>rails console</strong> 來進行變更，以下按照步驟來說明</p>
 <ul>
 <li>由於個人使用 <strong>windows</strong> 電腦，所以透過 <a href="https://www.putty.org/" target="_blank" rel="noopener"><strong>PuTTY</strong></a> 進行 <strong>Linux Server</strong> 的連接</li>
@@ -427,14 +429,17 @@
 <li>進入之後輸入 <a href="https://zh.wikipedia.org/wiki/Sudo" target="_blank" rel="noopener"><strong>sudo bash</strong></a></li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo bash</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>接著輸入 <strong>gitlab-rails console</strong> ，啟動由 <strong>gitlab</strong> 內安裝的 <strong>rails console</strong> ，其執行畫面如下</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@proj-git ~]<span class="comment"># gitlab-rails console</span></span><br><span class="line">Loading production environment (Rails 4.2.8)</span><br><span class="line">irb(main):001:0&gt;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>最後則是透過 <strong>rails</strong> 語法，進行變更，以下附上幾個 <strong>method</strong> ，修改完成輸入 <strong>exit</strong> 即可退出</li>
 </ul>
 <figure class="highlight rb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># find the user:</span></span><br><span class="line"><span class="comment"># user = User.find_by(email: "admin<span class="doctag">@example</span>.com")</span></span><br><span class="line"><span class="comment"># user = User.find_by(username: "root")</span></span><br><span class="line"><span class="comment"># user = User.find_by(name: "Administrator")</span></span><br><span class="line"><span class="comment"># user = User.find_by(admin: true)</span></span><br><span class="line">user = User.find_by(<span class="symbol">username:</span> <span class="string">"root"</span>)</span><br><span class="line">user.state = <span class="string">"active"</span></span><br><span class="line">user.save</span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://about.gitlab.com/" target="_blank" rel="noopener">Gitlab</a></li>
 <li><a href="https://forum.gitlab.com/t/how-to-reset-the-admin-password-via-the-rails-console/223" target="_blank" rel="noopener">Gitlab 論壇討論</a></li>

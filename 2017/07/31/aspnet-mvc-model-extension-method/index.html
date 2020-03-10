@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -413,13 +413,15 @@
       
 
       
-        <p>在 <strong>Asp.Net MVC</strong> 中 ( MVC 5 ) ，一般都會使用 <strong>ORM</strong> 工具，最常見的是 <strong>Entity Framework</strong> <a id="more"></a>，所以資料表的對應類別是自動產生，不會再這些對應類別中增加方法 ( method ) ，這些類別都會盡量不去變動它，需要使用方法的話，會使用 <strong> extension method</strong> 。<br>以下使用 Northwind 資料庫來操作範例：</p>
+        <p>在 <strong>Asp.Net MVC</strong> 中 ( MVC 5 ) ，一般都會使用 <strong>ORM</strong> 工具，最常見的是 <strong>Entity Framework</strong> <a id="more"></a>，所以資料表的對應類別是自動產生，不會再這些對應類別中增加方法 ( method ) ，這些類別都會盡量不去變動它，需要使用方法的話，會使用 ** extension method** 。<br>以下使用 Northwind 資料庫來操作範例：</p>
 <blockquote>
 <h3 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h3><p>針對 OrderDetail 將單價與數量計算，呈現總價格</p>
 </blockquote>
 <ul>
-<li>建立 Model 對應<br>主要使用 OrderDetail 資料表</li>
-<li>使用範本產生 Controller 和 View</li>
+<li><p>建立 Model 對應<br>主要使用 OrderDetail 資料表</p>
+</li>
+<li><p>使用範本產生 Controller 和 View</p>
+</li>
 <li><p>添加 ViewModel</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">OrderDetailViewModel</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> OrderID &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> ProductID &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">decimal</span> UnitPrice &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">short</span> Quantity &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">float</span> Discount &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">decimal</span> TotalPrice &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -428,6 +430,7 @@
 </li>
 <li><p>修改 controller<br>此處僅修改 index 來做示範；另外這邊需要注意的是 LINQ 的使用</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">Index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> order_Details = db.Order_Details.ToList().Select(o=&gt; <span class="keyword">new</span> OrderDetailViewModel()</span><br><span class="line">    &#123;</span><br><span class="line">        OrderID = o.OrderID,</span><br><span class="line">        ProductID = o.ProductID,</span><br><span class="line">        UnitPrice = o.UnitPrice,</span><br><span class="line">        Quantity = o.Quantity,</span><br><span class="line">        Discount = o.Discount,</span><br><span class="line">        TotalPrice = o.TotalPrice()</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> View(order_Details);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>

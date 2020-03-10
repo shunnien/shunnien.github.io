@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -413,7 +413,9 @@
       
 
       
-        <h1 id="Google-Map-呈現-KML"><a href="#Google-Map-呈現-KML" class="headerlink" title="Google Map 呈現 KML"></a>Google Map 呈現 <a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KML</a></h1><p>使用 google map js API 來串接 <a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KML/KMZ</a> 檔案，其中需要注意的事項<br><a id="more"></a></p>
+        <h1 id="Google-Map-呈現-KML"><a href="#Google-Map-呈現-KML" class="headerlink" title="Google Map 呈現 KML"></a>Google Map 呈現 <a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KML</a></h1><p>使用 google map js API 來串接 <a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KML/KMZ</a> 檔案，其中需要注意的事項</p>
+<a id="more"></a>
+
 <h2 id="KML-KMZ"><a href="#KML-KMZ" class="headerlink" title="KML/KMZ"></a><a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KML/KMZ</a></h2><ul>
 <li><a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KML (Keyhole Markup Language)</a>，是基於 <a href="https://zh.wikipedia.org/zh-tw/XML" target="_blank" rel="noopener">XML (eXtensible Markup Language,可擴展標記語言)</a>語法標準的一種標記語言 (markup language)</li>
 <li><a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KMZ</a> 為 <a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KML</a> 的壓縮格式，所以可以透過解壓縮得到 <a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KML</a></li>
@@ -430,48 +432,49 @@
 <p>另外串接的 <a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">KML/KMZ</a> 連結必須是公開的網址，不能使用相對路徑進行連接</p>
 <h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><p><a href="https://developers.google.com/maps/documentation/javascript/kmllayer" target="_blank" rel="noopener"><strong>kml Layer</strong></a> 參數的設定</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> layer = <span class="keyword">new</span> google.maps.KmlLayer([opts]);</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
-<th style="text-align:center">屬性</th>
-<th style="text-align:center">說明</th>
+<th align="center">屬性</th>
+<th align="center">說明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">clickable</td>
-<td style="text-align:center">圖層是否接收滑鼠事件，預設值為 true</td>
+<tbody><tr>
+<td align="center">clickable</td>
+<td align="center">圖層是否接收滑鼠事件，預設值為 true</td>
 </tr>
 <tr>
-<td style="text-align:center">map</td>
-<td style="text-align:center">顯示圖層的地圖物件</td>
+<td align="center">map</td>
+<td align="center">顯示圖層的地圖物件</td>
 </tr>
 <tr>
-<td style="text-align:center">preserveViewport</td>
-<td style="text-align:center">自動縮放到 KML 圖層的中心，但是 KML 必須設定圖層的範圍邊界，假如沒有設定，則不會移動</td>
+<td align="center">preserveViewport</td>
+<td align="center">自動縮放到 KML 圖層的中心，但是 KML 必須設定圖層的範圍邊界，假如沒有設定，則不會移動</td>
 </tr>
 <tr>
-<td style="text-align:center">screenOverlays</td>
-<td style="text-align:center">是否渲染至 overlays. 預設值為 true</td>
+<td align="center">screenOverlays</td>
+<td align="center">是否渲染至 overlays. 預設值為 true</td>
 </tr>
 <tr>
-<td style="text-align:center">uppressInfoWindows</td>
-<td style="text-align:center">點擊地圖時，禁止顯示跳出訊息視窗；預設值為 false</td>
+<td align="center">uppressInfoWindows</td>
+<td align="center">點擊地圖時，禁止顯示跳出訊息視窗；預設值為 false</td>
 </tr>
 <tr>
-<td style="text-align:center">url</td>
-<td style="text-align:center">KML 的 url</td>
+<td align="center">url</td>
+<td align="center">KML 的 url</td>
 </tr>
 <tr>
-<td style="text-align:center">zIndex</td>
-<td style="text-align:center">顯示圖層的 z-index</td>
+<td align="center">zIndex</td>
+<td align="center">顯示圖層的 z-index</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>所以在電腦的網頁上， <strong>clickable</strong> 設定為 <strong>false</strong> 時，因為事件冒泡被取消，所以 <strong>uppressInfoWindows</strong> 不管有無設定，都不會顯示 KML 圖層的訊息視窗。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> map = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> kmzLayer,kmlLayer;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">initMap</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  map = <span class="keyword">new</span> google.maps.Map(<span class="built_in">document</span>.getElementById(<span class="string">'map'</span>), &#123;</span><br><span class="line">    zoom: <span class="number">12</span>,</span><br><span class="line">    center: <span class="keyword">new</span> google.maps.LatLng(<span class="number">25.04</span>, <span class="number">121.505</span>)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> loadKmz = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  kmzLayer = <span class="keyword">new</span> google.maps.KmlLayer(&#123;</span><br><span class="line">    url: <span class="string">'https://shunnien.github.io/Victoria/sample.kmz'</span>,</span><br><span class="line">    map: map</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> loadKml = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  kmlLayer = <span class="keyword">new</span> google.maps.KmlLayer(&#123;</span><br><span class="line">    url: <span class="string">'https://shunnien.github.io/Victoria/ty_bike_lane.kml'</span>,</span><br><span class="line">    <span class="comment">//suppressInfoWindows: true,</span></span><br><span class="line">    map: map</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>線上範例</p>
 <iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/ytucdm74/embedded/html,js,result/dark" frameborder="0" allowfullscreen></iframe>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://zh.wikipedia.org/zh-tw/KML" target="_blank" rel="noopener">Wiki KML</a></li>
 <li><a href="https://developers.google.com/maps/documentation/javascript/examples/layer-kml" target="_blank" rel="noopener">google KML layer example</a></li>

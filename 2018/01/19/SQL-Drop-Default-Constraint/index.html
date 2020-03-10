@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -413,9 +413,12 @@
       
 
       
-        <p>已經設定好了的預設值，現在要變更，需要先把 <strong>Constraint</strong> 移除，再行新增<br><a id="more"></a></p>
+        <p>已經設定好了的預設值，現在要變更，需要先把 <strong>Constraint</strong> 移除，再行新增</p>
+<a id="more"></a>
+
 <p>要移除某個資料表某個欄位的預設值 <strong>constraint</strong> ，所以需要先取得此 <strong>constraint</strong> 的 <strong>OBJECT_NAME</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 取得 Object_Name</span></span><br><span class="line"><span class="comment">-- TableName:請填入要變更的資料表名稱</span></span><br><span class="line"><span class="comment">-- ColumnName:請填入要變更的欄位名稱</span></span><br><span class="line"><span class="keyword">DECLARE</span> @defcon SYSNAME;</span><br><span class="line"><span class="keyword">SELECT</span> @defcon = OBJECT_NAME(sc.default_object_id)</span><br><span class="line"><span class="keyword">FROM</span> SYS.COLUMNS <span class="keyword">AS</span> sc</span><br><span class="line"><span class="keyword">WHERE</span> sc.[object_id] = OBJECT_ID(<span class="string">'TableName'</span>)</span><br><span class="line">    <span class="keyword">AND</span> sc.[<span class="keyword">name</span>] = <span class="string">'ColumnName'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 取得了 Object_Name，就可以來移除它</span></span><br><span class="line">EXEC ('<span class="keyword">ALTER</span> <span class="keyword">TABLE</span> TableName <span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> <span class="string">' + @defcon)</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://docs.microsoft.com/zh-tw/sql/t-sql/functions/object-name-transact-sql" target="_blank" rel="noopener">OBJECT_NAME</a></li>
 <li><a href="https://docs.microsoft.com/zh-tw/sql/relational-databases/system-catalog-views/sys-columns-transact-sql" target="_blank" rel="noopener">sys.columns</a></li>

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -424,30 +424,39 @@
 </blockquote>
 </blockquote>
 <a id="more"></a>
+
 <h2 id="Microsoft-SqlServer-Types-安裝"><a href="#Microsoft-SqlServer-Types-安裝" class="headerlink" title="Microsoft.SqlServer.Types 安裝"></a><a href="https://www.nuget.org/packages/Microsoft.SqlServer.Types/" target="_blank" rel="noopener">Microsoft.SqlServer.Types</a> 安裝</h2><p>透過 <strong>Nuget</strong> 安裝 <a href="https://www.nuget.org/packages/Microsoft.SqlServer.Types/" target="_blank" rel="noopener"><strong>Microsoft.SqlServer.Types</strong></a> 套件，可以透過介面安裝或是透過指令安裝，安裝指令如下：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Install-Package</span> Microsoft.SqlServer.Types</span><br></pre></td></tr></table></figure>
+
 <p>安裝好之後，請仔細閱讀 <strong>readme.htm</strong> ，其中說明如何將套件註冊進程式中</p>
 <h3 id="ASP-NET-Web-Sites"><a href="#ASP-NET-Web-Sites" class="headerlink" title="ASP.NET Web Sites"></a>ASP.NET Web Sites</h3><p>在 <strong>Web Form</strong> 中，開啟 <strong>Default.aspx.cs</strong></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public partial class _Default : System.Web.UI.Page</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">bool</span> _isSqlTypesLoaded = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> _Default()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!_isSqlTypesLoaded)</span><br><span class="line">        &#123;</span><br><span class="line">            SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath(<span class="string">"~"</span>));</span><br><span class="line">            _isSqlTypesLoaded = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="ASP-NET-Web-Applications"><a href="#ASP-NET-Web-Applications" class="headerlink" title="ASP.NET Web Applications"></a>ASP.NET Web Applications</h3><p>開啟 <strong>Global.asax.cs</strong> 添加以下程式碼：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath(<span class="string">"~/bin"</span>));</span><br></pre></td></tr></table></figure>
+
 <h3 id="Desktop-Applications"><a href="#Desktop-Applications" class="headerlink" title="Desktop Applications"></a>Desktop Applications</h3><p>在執行空間操作前執行以下程式碼：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);</span><br></pre></td></tr></table></figure>
+
 <h2 id="解決引用錯誤"><a href="#解決引用錯誤" class="headerlink" title="解決引用錯誤"></a>解決引用錯誤</h2><p>就如同此文一開始所提到的 <strong>exception</strong>，按照<a href="https://www.nuget.org/packages/Microsoft.SqlServer.Types/" target="_blank" rel="noopener"><strong>Microsoft.SqlServer.Types</strong></a>套件的說明註冊引用，有時還是會出現問題，可能是 <strong>Entity Framework</strong> 版本因素或是伺服器沒有對應版本的<a href="https://www.nuget.org/packages/Microsoft.SqlServer.Types/" target="_blank" rel="noopener"><strong>Microsoft.SqlServer.Types</strong></a>或是沒有註冊引用到；<a href="https://stackoverflow.com/questions/13174197/microsoft-sqlserver-types-version-10-or-higher-could-not-be-found-on-azure/40166192#40166192" target="_blank" rel="noopener">stack overflow</a> 此篇的討論方法可以解決我此次遇到的問題</p>
 <ul>
 <li>方法一</li>
 </ul>
 <p>添加參照</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SqlProviderServices.SqlServerTypesAssemblyName = Assembly.GetAssembly(<span class="keyword">typeof</span>(Microsoft.SqlServer.Types.SqlGeography)).FullName;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>方法二</li>
 </ul>
 <p>直接在 <strong>config</strong> 檔案中進行參照，需要注意版本號</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">assemblyBinding</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependentAssembly</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">assemblyIdentity</span> <span class="attr">name</span>=<span class="string">"Microsoft.SqlServer.Types"</span> <span class="attr">publicKeyToken</span>=<span class="string">"89845dcd8080cc91"</span> <span class="attr">culture</span>=<span class="string">"neutral"</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">bindingRedirect</span> <span class="attr">oldVersion</span>=<span class="string">"10.0.0.0-11.0.0.0"</span> <span class="attr">newVersion</span>=<span class="string">"14.0.0.0"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependentAssembly</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">assemblyBinding</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="取得-PublicKeyToken"><a href="#取得-PublicKeyToken" class="headerlink" title="取得 PublicKeyToken"></a>取得 <strong>PublicKeyToken</strong></h2><p>[<strong>Microsoft.SqlServer.Types</strong>] 的 DLL 的路徑，可以從以下路徑查找</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\assembly\GAC_MSIL\Microsoft.SqlServer.Types</span><br></pre></td></tr></table></figure>
+
 <p>根據以上的 DLL 取得 <strong>PublicKeyToken</strong> 的方式，可以透過 <strong>powershell</strong></p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">([system.reflection.assembly]::loadfile(<span class="string">"c:\MyDLL.dll"</span>)).FullName</span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://stackoverflow.com/questions/54004109/how-use-microsoft-sqlserver-types-in-wcf-service-application" target="_blank" rel="noopener">stack overflow how use Microsoft.SqlServer.Types in WCF Service Application</a></li>
 <li><a href="https://github.com/aspnet/EntityFramework6/issues/244" target="_blank" rel="noopener">Github EntityFramework6 issue #244</a></li>

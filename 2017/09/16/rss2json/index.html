@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -416,60 +416,59 @@
 
       
         <p>最近剛好需要串接其他資料的 RSS 來顯示資訊，以前是使用 Google Feed 提供的轉換服務，不過 2015 年的時候 Google 已經停止該服務，所以現在可以使用 <a href="https://rss2json.com" target="_blank" rel="noopener">RSS2Json</a> 這個網站提供的服務。<a id="more"></a></p>
-<blockquote><h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><a href="https://api.rss2json.com/v1/api.json" target="_blank" rel="noopener">https://api.rss2json.com/v1/api.json</a></span><br></pre></td></tr></table></figure>
+<blockquote><h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://api.rss2json.com/v1/api.json</span><br></pre></td></tr></table></figure>
 
 <h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><p><strong>GET</strong></p>
 <h2 id="URL-params"><a href="#URL-params" class="headerlink" title="URL params"></a>URL params</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">Name</th>
-<th style="text-align:left">Required</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
+<th align="center">Name</th>
+<th align="left">Required</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">rss_url</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">String, Escaped URL</td>
-<td style="text-align:left">rss feed you want to convert to json, the url need to be escaped</td>
+<tbody><tr>
+<td align="center">rss_url</td>
+<td align="left">Yes</td>
+<td align="left">String, Escaped URL</td>
+<td align="left">rss feed you want to convert to json, the url need to be escaped</td>
 </tr>
 <tr>
-<td style="text-align:center">api_key</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">A valid api key.</td>
+<td align="center">api_key</td>
+<td align="left">No</td>
+<td align="left">String</td>
+<td align="left">A valid api key.</td>
 </tr>
 <tr>
-<td style="text-align:center">order_by</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">Order the results by chosen value, Possible values : pubDate, author or title.</td>
+<td align="center">order_by</td>
+<td align="left">No</td>
+<td align="left">String</td>
+<td align="left">Order the results by chosen value, Possible values : pubDate, author or title.</td>
 </tr>
 <tr>
-<td style="text-align:center">order_dir</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">Order direction of feed items to return, Possible values : asc or desc, Default value : desc.</td>
+<td align="center">order_dir</td>
+<td align="left">No</td>
+<td align="left">String</td>
+<td align="left">Order direction of feed items to return, Possible values : asc or desc, Default value : desc.</td>
 </tr>
 <tr>
-<td style="text-align:center">count</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Integer</td>
-<td style="text-align:left">Count of feed items to return, default is 20 .</td>
+<td align="center">count</td>
+<td align="left">No</td>
+<td align="left">Integer</td>
+<td align="left">Count of feed items to return, default is 20 .</td>
 </tr>
 <tr>
-<td style="text-align:center">callback</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Alphanumeric</td>
-<td style="text-align:left">callback name if you want to use JSONP .</td>
+<td align="center">callback</td>
+<td align="left">No</td>
+<td align="left">Alphanumeric</td>
+<td align="left">callback name if you want to use JSONP .</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="Sample-Call"><a href="#Sample-Call" class="headerlink" title="Sample Call"></a>Sample Call</h2><p>api call using jQuery.ajax()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">        url: <span class="string">‘<a href="https://api.rss2json.com/v1/api.json&#39;" target="_blank" rel="noopener">https://api.rss2json.com/v1/api.json&#39;</a></span>,</span><br><span class="line">        method: <span class="string">‘GET’</span>,</span><br><span class="line">        dataType: <span class="string">‘json’</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            rss_url: <span class="string">‘<a href="https://news.ycombinator.com/rss&#39;" target="_blank" rel="noopener">https://news.ycombinator.com/rss&#39;</a></span>,</span><br><span class="line">            api_key: <span class="string">‘0000000000000000000000000000000000000000’</span>, <span class="comment">// put your api key here</span></span><br><span class="line">            count: <span class="number">2</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(response.status != <span class="string">‘ok’</span>)&#123; <span class="keyword">throw</span> response.message; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">‘====== ‘</span> + response.feed.title + <span class="string">‘ ======’</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> response.items)&#123;</span><br><span class="line">        <span class="keyword">var</span> item = response.items[i];</span><br><span class="line">        <span class="built_in">console</span>.log(item.title);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">        url: <span class="string">'https://api.rss2json.com/v1/api.json'</span>,</span><br><span class="line">        method: <span class="string">'GET'</span>,</span><br><span class="line">        dataType: <span class="string">'json'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            rss_url: <span class="string">'https://news.ycombinator.com/rss'</span>,</span><br><span class="line">            api_key: <span class="string">'0000000000000000000000000000000000000000'</span>, <span class="comment">// put your api key here</span></span><br><span class="line">            count: <span class="number">2</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(response.status != <span class="string">'ok'</span>)&#123; <span class="keyword">throw</span> response.message; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'====== '</span> + response.feed.title + <span class="string">' ======'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> response.items)&#123;</span><br><span class="line">        <span class="keyword">var</span> item = response.items[i];</span><br><span class="line">        <span class="built_in">console</span>.log(item.title);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <footer><strong>資料來源</strong><cite><a href="https://rss2json.com/docsboxing-and-unboxing" target="_blank" rel="noopener">Microsoft RSS2json 文件</a></cite></footer></blockquote>
+
 <p>拿 Blog 的 RSS 來轉換，如下<br><img src="https://lh3.googleusercontent.com/dxsqC3XemtGt99rNCzSNrHGKexAX_DgiFL4WZ7xfiAO9TGcTLcOI1WoR9gIe9P8ChT6QXtbnVDyT33wn_9RdLQBBO5X5_tZXuHdrUzsnVk-YpMIPC7RDSGjbZP_L2ArkIzEbQeUUSs6ZvzZ52RTINbcJXvPnW82X6ndweZpPvLprzF9DDQXt1ETU_ZoC7-bMaKPO7n1yAnWdAwaudtLugRfRQUQiG7g080AOSi5Q0M8IAaqb15k4RjfZ1QcNDoZV3YEE7FNF47zevH-oTxuoP2ol9KDWWSWZxuIhZYBkviBvrpavfGpPBEMdw5KlOgkMG5maxkNzw2AKaaqjDPwaxAr6_G5iqUeKpOUMzURNovn3ippqn9dEj1pedwBrW4sV4kkvzJXZQaO_03regUbhN9JWeKPcIYgl4KzdIv_cB2oMFm_Y5FAWQ9qAiLaXK3aJHAM9-8ZY7zsGpFi4w1X5hotP7_4pIuyjadKDGtPjz9VsAzck3Gx_UlO_8ZhYpHT28QdgkGPRvye-5Idhmhr-r1HMBrPvfGxtyoa9a38B6X_iVP0F1uSwdCJLAuwWg4Ni8Z6K1c9V21CaXsd6SnWK5K6YzDahb8eo23BdpIGcG67rK0tnWVjGJnNVot3CJ4isRPschiCgrpg2Hjyb2pUri-3CtxGMU00zXOg=w1110-h579-no" alt="blog rss sample"></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://rss2json.com" target="_blank" rel="noopener">RSS to json</a></li>

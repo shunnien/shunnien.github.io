@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -415,12 +415,16 @@
       
 
       
-        <p>近來都是使用 <a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a> 來操作 XMLHttpRequests ，<a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a> 操作 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">Promise</a> 相當便利，只是最近有個需求說需要相容至 IE11，按照官方上的說明，相容性相當高<br><img src="https://camo.githubusercontent.com/626c46cfd86214001b4143cda5d0ef27a25bd69f/68747470733a2f2f73617563656c6162732e636f6d2f6f70656e5f73617563652f6275696c645f6d61747269782f6178696f732e737667" alt="Browser Support"><br><a id="more"></a> </p>
+        <p>近來都是使用 <a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a> 來操作 XMLHttpRequests ，<a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a> 操作 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="noopener">Promise</a> 相當便利，只是最近有個需求說需要相容至 IE11，按照官方上的說明，相容性相當高<br><img src="https://camo.githubusercontent.com/626c46cfd86214001b4143cda5d0ef27a25bd69f/68747470733a2f2f73617563656c6162732e636f6d2f6f70656e5f73617563652f6275696c645f6d61747269782f6178696f732e737667" alt="Browser Support"></p>
+<a id="more"></a> 
+
 <p>但是按照官方提供的 cdn 使用後，發現在 IE11 出現了以下錯誤</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Promise'</span> is <span class="literal">undefined</span>.</span><br></pre></td></tr></table></figure>
+
 <p>查看 Github Issue 中的資料，找到一則<a href="https://github.com/axios/axios/issues/135" target="_blank" rel="noopener">討論</a>，說明了要使用 promise 可以引用 <a href="https://github.com/stefanpenner/es6-promise" target="_blank" rel="noopener">es6-promise</a></p>
 <p>使用方式很簡易，只要在原本引用 <a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a> 的 CDN 之前，引用 <a href="https://github.com/stefanpenner/es6-promise" target="_blank" rel="noopener">es6-promise</a> 即可，如以下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/axios/dist/axios.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://github.com/axios/axios/blob/master/UPGRADE_GUIDE.md#es6-promise-polyfill" target="_blank" rel="noopener">Upgrade Guide</a></li>
 <li><a href="https://github.com/axios/axios/issues/135" target="_blank" rel="noopener">Github Issue 討論</a></li>

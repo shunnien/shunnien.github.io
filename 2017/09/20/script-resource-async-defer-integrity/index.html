@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -417,8 +417,10 @@
 
       
         <p>HTML 中，在載入 JavaScript 時候，都知道使用 <code>&lt;script&gt;</code> 來進行載入，但是當資料使用 <a href="https://zh.wikipedia.org/zh-tw/%E5%85%A7%E5%AE%B9%E5%82%B3%E9%81%9E%E7%B6%B2%E8%B7%AF" target="_blank" rel="noopener"><strong>CDN</strong></a> 或是其他外部載入的時候，常會看到一些額外屬性設定，此篇紀錄一下 <strong>async</strong> 、<strong>defer</strong>、<strong>integrity</strong> 這三個屬性。<a id="more"></a></p>
-<p>會說到資源載入，必須先了解到網頁頁面的生命週期，以下是瀏覽器取的網頁文件檔後的主流程<br><blockquote><p><img src="http://taligarsiel.com/Projects/webkitflow.png" alt="Webkit main flow"><br><img src="http://taligarsiel.com/Projects/image008.jpg" alt="Mozilla&#39;s Gecko rendering engine main flow"></p>
-<footer><strong>資料來源</strong><cite><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm#Rendering_engines" target="_blank" rel="noopener">howBrowserWork</a></cite></footer></blockquote></p>
+<p>會說到資源載入，必須先了解到網頁頁面的生命週期，以下是瀏覽器取的網頁文件檔後的主流程</p>
+<blockquote><p><img src="http://taligarsiel.com/Projects/webkitflow.png" alt="Webkit main flow"><br><img src="http://taligarsiel.com/Projects/image008.jpg" alt="Mozilla&#39;s Gecko rendering engine main flow"></p>
+<footer><strong>資料來源</strong><cite><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm#Rendering_engines" target="_blank" rel="noopener">howBrowserWork</a></cite></footer></blockquote>
+
 <p>上述的流程還可以解析更詳細的資料，不過此篇的主題不是這個，想了解更詳細的內容可以參考 <a href="https://javascript.info/onload-ondomcontentloaded" target="_blank" rel="noopener">JavaScript.Info Page lifecycle</a> 或是 <a href="http://taligarsiel.com/Projects/howbrowserswork1.htm#Render_tree_construction" target="_blank" rel="noopener">How browsers work</a></p>
 <ul>
 <li><p><strong>async</strong><br>使用非同步方式執行，使用布林值設定</p>

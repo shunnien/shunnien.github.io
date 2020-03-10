@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -420,46 +420,48 @@
         <p>這功能簡單說就是建立指向目錄或是檔案的連結，例如： <code>C:\temp</code> 資料夾設定指向 <code>D:\temp</code> ，這樣原本 <code>C:\temp</code> 都會儲存到 <code>D:\temp</code> 內，類似捷徑的概念<a id="more"></a>，以下就來詳細看看用法語介紹。</p>
 <h1 id="mklink"><a href="#mklink" class="headerlink" title="mklink"></a>mklink</h1><p>先看看 <strong>microsoft</strong> 文件上的說明</p>
 <div class="note info"><p>Creates a symbolic link.<br><strong>資料來源</strong> - <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink" target="_blank" rel="noopener"><strong>microsoft docs</strong></a></p></div>
+
 <h2 id="語法-Syntax"><a href="#語法-Syntax" class="headerlink" title="語法 (Syntax)"></a>語法 (Syntax)</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink [[/d] | [/h] | [/j]] &lt;Link&gt; &lt;Target&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="參數-Parameters"><a href="#參數-Parameters" class="headerlink" title="參數 (Parameters)"></a>參數 (Parameters)</h2><p>沒有參數設定的話，預設情形下，建立的會是檔案的 <a href="https://en.wikipedia.org/wiki/Symbolic_link" title="Symbolic link" target="_blank" rel="noopener"><strong>Symbolic link</strong></a></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Parameter</th>
-<th style="text-align:left">Description</th>
+<th align="left">Parameter</th>
+<th align="left">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">/d</td>
-<td style="text-align:left">建立資料夾的 <a href="https://en.wikipedia.org/wiki/Symbolic_link" title="Symbolic link" target="_blank" rel="noopener"><strong>Symbolic link</strong></a></td>
+<tbody><tr>
+<td align="left">/d</td>
+<td align="left">建立資料夾的 <a href="https://en.wikipedia.org/wiki/Symbolic_link" title="Symbolic link" target="_blank" rel="noopener"><strong>Symbolic link</strong></a></td>
 </tr>
 <tr>
-<td style="text-align:left">/h</td>
-<td style="text-align:left">建立 <a href="https://en.wikipedia.org/wiki/Hard_link" target="_blank" rel="noopener"><strong>hard link</strong></a> 取代 <a href="https://en.wikipedia.org/wiki/Symbolic_link" title="Symbolic link" target="_blank" rel="noopener"><strong>Symbolic link</strong></a></td>
+<td align="left">/h</td>
+<td align="left">建立 <a href="https://en.wikipedia.org/wiki/Hard_link" target="_blank" rel="noopener"><strong>hard link</strong></a> 取代 <a href="https://en.wikipedia.org/wiki/Symbolic_link" title="Symbolic link" target="_blank" rel="noopener"><strong>Symbolic link</strong></a></td>
 </tr>
 <tr>
-<td style="text-align:left">/j</td>
-<td style="text-align:left">建立資料夾的 <a href="https://en.wikipedia.org/wiki/NTFS_junction_point" target="_blank" rel="noopener"><strong>Junction</strong></a></td>
+<td align="left">/j</td>
+<td align="left">建立資料夾的 <a href="https://en.wikipedia.org/wiki/NTFS_junction_point" target="_blank" rel="noopener"><strong>Junction</strong></a></td>
 </tr>
 <tr>
-<td style="text-align:left">&lt;Link&gt;</td>
-<td style="text-align:left">指定建立的 <a href="https://en.wikipedia.org/wiki/Symbolic_link" title="Symbolic link" target="_blank" rel="noopener"><strong>Symbolic link</strong></a> 名稱</td>
+<td align="left">&lt;Link&gt;</td>
+<td align="left">指定建立的 <a href="https://en.wikipedia.org/wiki/Symbolic_link" title="Symbolic link" target="_blank" rel="noopener"><strong>Symbolic link</strong></a> 名稱</td>
 </tr>
 <tr>
-<td style="text-align:left">&lt;Target&gt;</td>
-<td style="text-align:left">指定新 <a href="https://en.wikipedia.org/wiki/Symbolic_link" title="Symbolic link" target="_blank" rel="noopener"><strong>Symbolic link</strong></a> 的相對 (relative) 或絕對 (absolute) 路徑</td>
+<td align="left">&lt;Target&gt;</td>
+<td align="left">指定新 <a href="https://en.wikipedia.org/wiki/Symbolic_link" title="Symbolic link" target="_blank" rel="noopener"><strong>Symbolic link</strong></a> 的相對 (relative) 或絕對 (absolute) 路徑</td>
 </tr>
 <tr>
-<td style="text-align:left">/?</td>
-<td style="text-align:left">顯示指令說明</td>
+<td align="left">/?</td>
+<td align="left">顯示指令說明</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><p>建立一個資料夾的 <strong>Symbolic link</strong> ，由來源為 <strong>mklink_source</strong> 指向 <strong>mklink_target</strong></p>
 <h3 id="操作環境"><a href="#操作環境" class="headerlink" title="操作環境"></a>操作環境</h3><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ systeminfo | <span class="built_in">findstr</span> /B /C:"OS Name" /C:"OS Version"</span><br><span class="line">OS Name:                   Microsoft Windows <span class="number">10</span> Pro</span><br><span class="line">OS Version:                <span class="number">10</span>.<span class="number">0</span>.<span class="number">16299</span> N/A Build <span class="number">16299</span></span><br></pre></td></tr></table></figure>
+
 <p>在 <strong>windows 10</strong> 下，指向目標資料夾不需要建立，指令會自動建立</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /d mklink_target mklink_source</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://lh3.googleusercontent.com/-chmKATkbxi3yrxskTOnQwpD6ZclKjnzUW1V9zlUPCvCtg-UZdwd0cJ6EJvXi3oYToEOV_LC49IkEdFkCwa6eDGZu5gYrTyteokDAcHWVUdJNmKE8uSWRp1d9er06vP0pCuzM2ZYxQWvnDAwHlsAFXWtGLV4lBOUkqb468GEFDtp94pgSLh-gpKID7VtUwDuk7KltG5Dlm-SGJwlvpTuJmowkNnZ093erJ2QBmr2PiIiWXmXG3UkkSSZTybd44T6w_zvgNgdFlwT5HVmQ-6VbPrUP24X0eR4y3cWI4e8E7fHZxB-TfSLrJc4BOs0ARn-RgPslHhunh_ynPwgkTWpCQE-iXTN_2Armsn9-DzPj-eXbQ3GVkpgK7FV-HC6qPbLwkIrjeaR_P_m6qON7jjl0-24j3M9ziMJ2XAxV-b7NPTGtNkJGI-dMVC2iARkKBWgXvkKBbLdNJrkahOh7UeolgYl7C1w9XnYE3yCuA1vjcrHUdbv4HmljiHrx4mm9jFpqZ7LL0hc7wtddChYqqKHSBIq7xCBjaAHPlns2ZTru17Ucq1p_faCPT-nq7GbgegQspklOjNtvNJYf6UtlFTB6q2FgVYd_C532yG1cVF5gcTvA67ujEYlMBM_wRQOajMO8wj_FfMZMzi5PBRtfTY9jcnfvzV9Yqwr=w772-h98-no" alt="make link"></p>
 <p>建立完成後，比較一下資料夾外觀，需要注意的是，資料夾類型都是 <strong>File folder</strong> ，而且圖示與捷徑相同，但是捷徑的類型是 <strong>Shortcut</strong></p>
 <p><img src="https://lh3.googleusercontent.com/p2qBzPTNpsD6XdjIkL-DIxnimkDD4nIIbKXSQxRPJheRXnA6konpltc1R9cisZiu-Ufd-XHCvU6mhJU0Ia_Us5o0SyNMFJjxrjGx8l2rEbWvaNvTxM_Dhsmet9ly2jF4ppT_qLdNDxWBoPIhwP6fMwBnyfUxYpkCma9xtlga3KNLasRjKJdZzbyf9vIX91snTroOem4rlT3eiPVfxbGKzvfRuwy0XZTyWzasiC2Asv2fnzCEC2FQ-J4Ayt42jBvtlqnRw1zV_DNqlShGxCD2GNexMUDBQnwfKEXW329xE5QWFVLfrzVctK7wGzxe2kEgHhk3WM9F7ldlTs1oa8XROJP7fI3XP6-ZAPEncYoljVsDQ83yknLYvn4SPgLY3o13VDA2qa4V3D3ERi8A7dV8tn1hwbOfKHHKFP7CIIOhG7IfnIf6T1bRlYQ4SbhCRdiEA7h0NMSCbOJhf3bjcISmM0K2UkllYnXxQzJGFMwx0bvwk9sVn1GJ7bS875xzklX7QSXLm2gth1qdlMkx-zstgAeZP4lYEWiaYIDWGW25yjP4wB0BQqnS75ajkiLJ69jOfiZQwvW8r9uj5ak-iVp1Cxn_-2ZUA8uMzdJ303-vq_8zGbRCuCtdckPv5xIq7inH-PbnUSAv2egbP5ucv4oxodP-4B0AlmwP=w626-h118-no" alt="shortcut vs symbolic link icon"><br><img src="https://lh3.googleusercontent.com/vSHAUSrxl6qKj5bEA8ecWa29juuEVeT2mVHbQEwjP_gYrj0hDEmzB1qcaT_rig2WryFzNJttlT7NDxocnmF3638tBCuyKcAcQs_AVzkfDVqIIKhbkj6qkH4Wegz0QD1WbJCW9whHmS_YGx9ZxhXOW5Ji0aMC74sDAdibxGZV1DXjIc1IJrHISJIUsJAsRxizeiiZuIlcNNadawR1QS4olMdwRiBv8ZsNVDZPJLGVBZvtl1pEs4aS-WiqzEaoWF81pvm8CA3O6HW2KlFWSr80Atnyu1cnbPc9WWydrL3sGmMFzERAAyIWl-YtQA5tJPuFqP1CHg9NMUJfWEmF3Laydbvu77AEJU7H7jthVE2yrt3-WPor9QJqnUVJ87dhXlr7AN_nyo7clD_dy_Yf-zI5gUgedj9Wip8_qxVltmblM9q_BNvey0ekzp_0WbBhUQn8h9-CcpESwttIrs0_fCubDCIvAQY8-47taagSZREK6rMTWM2V7wszIbd3m_SPma0LBfm7t04U7cj37aEy0aVGQfP4ucHFei8yrmpHPjWbbYQ8ARwArG6Nx1Avp_eHZRXoT9gzDENculii7V36nlr90Hwo0TxYnI9N4AswijOCH7p2no7mcZgTIF90Pd62SZD6NQKTNDV0sxyN6a9bFDcleYaZVLfoAGDV=w958-h514-no" alt="shortcut vs symbolic link type"></p>

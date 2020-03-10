@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -417,187 +417,185 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">LCount</th>
-<th style="text-align:center">NCount</th>
+<th align="center">LCount</th>
+<th align="center">NCount</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">11</td>
-<td style="text-align:center">1</td>
+<tbody><tr>
+<td align="center">11</td>
+<td align="center">1</td>
 </tr>
 <tr>
-<td style="text-align:center">12</td>
-<td style="text-align:center">2</td>
+<td align="center">12</td>
+<td align="center">2</td>
 </tr>
 <tr>
-<td style="text-align:center">13</td>
-<td style="text-align:center">3</td>
+<td align="center">13</td>
+<td align="center">3</td>
 </tr>
 <tr>
-<td style="text-align:center">14</td>
-<td style="text-align:center">4</td>
+<td align="center">14</td>
+<td align="center">4</td>
 </tr>
 <tr>
-<td style="text-align:center">15</td>
-<td style="text-align:center">5</td>
+<td align="center">15</td>
+<td align="center">5</td>
 </tr>
 <tr>
-<td style="text-align:center">16</td>
-<td style="text-align:center">6</td>
+<td align="center">16</td>
+<td align="center">6</td>
 </tr>
 <tr>
-<td style="text-align:center">17</td>
-<td style="text-align:center">7</td>
+<td align="center">17</td>
+<td align="center">7</td>
 </tr>
 <tr>
-<td style="text-align:center">18</td>
-<td style="text-align:center">8</td>
+<td align="center">18</td>
+<td align="center">8</td>
 </tr>
 <tr>
-<td style="text-align:center">19</td>
-<td style="text-align:center">9</td>
+<td align="center">19</td>
+<td align="center">9</td>
 </tr>
 <tr>
-<td style="text-align:center">20</td>
-<td style="text-align:center">10</td>
+<td align="center">20</td>
+<td align="center">10</td>
 </tr>
 <tr>
-<td style="text-align:center">26</td>
-<td style="text-align:center">11</td>
+<td align="center">26</td>
+<td align="center">11</td>
 </tr>
 <tr>
-<td style="text-align:center">36</td>
-<td style="text-align:center">12</td>
+<td align="center">36</td>
+<td align="center">12</td>
 </tr>
 <tr>
-<td style="text-align:center">40</td>
-<td style="text-align:center">13</td>
+<td align="center">40</td>
+<td align="center">13</td>
 </tr>
 <tr>
-<td style="text-align:center">44</td>
-<td style="text-align:center">14</td>
+<td align="center">44</td>
+<td align="center">14</td>
 </tr>
 <tr>
-<td style="text-align:center">45</td>
-<td style="text-align:center">15</td>
+<td align="center">45</td>
+<td align="center">15</td>
 </tr>
 <tr>
-<td style="text-align:center">128</td>
-<td style="text-align:center">16</td>
+<td align="center">128</td>
+<td align="center">16</td>
 </tr>
-</tbody>
-</table>
-<p>那這個其實就還是 group by 的問題，但是可以使用 <strong>SUM() OVER</strong> 加上 <strong>Partition by</strong> 來快速取得合計結果，作法如下。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    LCount</span><br><span class="line">   ,NCount</span><br><span class="line">   <span class="comment">-- rn 是分組的編號</span></span><br><span class="line">   ,<span class="keyword">RANK</span>() <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> ((LCount - <span class="number">1</span>) / <span class="number">5</span>)) <span class="keyword">AS</span> rn</span><br><span class="line">   ,<span class="keyword">SUM</span>(NCount) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> ((LCount - <span class="number">1</span>) / <span class="number">5</span>)) <span class="keyword">AS</span> <span class="string">'Total'</span></span><br><span class="line"><span class="keyword">FROM</span> tempdemo</span><br></pre></td></tr></table></figure></p>
+</tbody></table>
+<p>那這個其實就還是 group by 的問題，但是可以使用 <strong>SUM() OVER</strong> 加上 <strong>Partition by</strong> 來快速取得合計結果，作法如下。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    LCount</span><br><span class="line">   ,NCount</span><br><span class="line">   <span class="comment">-- rn 是分組的編號</span></span><br><span class="line">   ,<span class="keyword">RANK</span>() <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> ((LCount - <span class="number">1</span>) / <span class="number">5</span>)) <span class="keyword">AS</span> rn</span><br><span class="line">   ,<span class="keyword">SUM</span>(NCount) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> ((LCount - <span class="number">1</span>) / <span class="number">5</span>)) <span class="keyword">AS</span> <span class="string">'Total'</span></span><br><span class="line"><span class="keyword">FROM</span> tempdemo</span><br></pre></td></tr></table></figure>
+
 <p>呈現的結果如下，Total 就是合計的結果。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">LCount</th>
-<th style="text-align:center">NCount</th>
-<th style="text-align:center">rn</th>
-<th style="text-align:center">Total</th>
+<th align="center">LCount</th>
+<th align="center">NCount</th>
+<th align="center">rn</th>
+<th align="center">Total</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">11</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">15</td>
+<tbody><tr>
+<td align="center">11</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">15</td>
 </tr>
 <tr>
-<td style="text-align:center">12</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">15</td>
+<td align="center">12</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">15</td>
 </tr>
 <tr>
-<td style="text-align:center">13</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">15</td>
+<td align="center">13</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">15</td>
 </tr>
 <tr>
-<td style="text-align:center">14</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">15</td>
+<td align="center">14</td>
+<td align="center">4</td>
+<td align="center">1</td>
+<td align="center">15</td>
 </tr>
 <tr>
-<td style="text-align:center">15</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">15</td>
+<td align="center">15</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center">15</td>
 </tr>
 <tr>
-<td style="text-align:center">16</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">40</td>
+<td align="center">16</td>
+<td align="center">6</td>
+<td align="center">6</td>
+<td align="center">40</td>
 </tr>
 <tr>
-<td style="text-align:center">17</td>
-<td style="text-align:center">7</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">40</td>
+<td align="center">17</td>
+<td align="center">7</td>
+<td align="center">6</td>
+<td align="center">40</td>
 </tr>
 <tr>
-<td style="text-align:center">18</td>
-<td style="text-align:center">8</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">40</td>
+<td align="center">18</td>
+<td align="center">8</td>
+<td align="center">6</td>
+<td align="center">40</td>
 </tr>
 <tr>
-<td style="text-align:center">19</td>
-<td style="text-align:center">9</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">40</td>
+<td align="center">19</td>
+<td align="center">9</td>
+<td align="center">6</td>
+<td align="center">40</td>
 </tr>
 <tr>
-<td style="text-align:center">20</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">40</td>
+<td align="center">20</td>
+<td align="center">10</td>
+<td align="center">6</td>
+<td align="center">40</td>
 </tr>
 <tr>
-<td style="text-align:center">26</td>
-<td style="text-align:center">11</td>
-<td style="text-align:center">11</td>
-<td style="text-align:center">11</td>
+<td align="center">26</td>
+<td align="center">11</td>
+<td align="center">11</td>
+<td align="center">11</td>
 </tr>
 <tr>
-<td style="text-align:center">36</td>
-<td style="text-align:center">12</td>
-<td style="text-align:center">12</td>
-<td style="text-align:center">25</td>
+<td align="center">36</td>
+<td align="center">12</td>
+<td align="center">12</td>
+<td align="center">25</td>
 </tr>
 <tr>
-<td style="text-align:center">40</td>
-<td style="text-align:center">13</td>
-<td style="text-align:center">12</td>
-<td style="text-align:center">25</td>
+<td align="center">40</td>
+<td align="center">13</td>
+<td align="center">12</td>
+<td align="center">25</td>
 </tr>
 <tr>
-<td style="text-align:center">44</td>
-<td style="text-align:center">14</td>
-<td style="text-align:center">14</td>
-<td style="text-align:center">29</td>
+<td align="center">44</td>
+<td align="center">14</td>
+<td align="center">14</td>
+<td align="center">29</td>
 </tr>
 <tr>
-<td style="text-align:center">45</td>
-<td style="text-align:center">15</td>
-<td style="text-align:center">14</td>
-<td style="text-align:center">29</td>
+<td align="center">45</td>
+<td align="center">15</td>
+<td align="center">14</td>
+<td align="center">29</td>
 </tr>
 <tr>
-<td style="text-align:center">128</td>
-<td style="text-align:center">16</td>
-<td style="text-align:center">16</td>
-<td style="text-align:center">16</td>
+<td align="center">128</td>
+<td align="center">16</td>
+<td align="center">16</td>
+<td align="center">16</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="http://sqlfiddle.com/#!6/43834/23" target="_blank" rel="noopener">SQL fiddle 範例</a></p>
 <ul>
 <li><a href="https://social.msdn.microsoft.com/Forums/sqlserver/en-US/71e3149e-7d6c-4de6-be35-c50ac0a7540d/sum-every-20-rows-in-one-row?forum=sqlreportingservices" target="_blank" rel="noopener">msdn 論壇</a></li>

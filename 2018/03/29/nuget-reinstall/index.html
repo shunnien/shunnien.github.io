@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -419,6 +419,7 @@
         <p>使用 <strong>Visual Studio 2017</strong> 編輯器的時候，透過 <a href="https://www.nuget.org/" target="_blank" rel="noopener"><strong>nuget</strong></a> 安裝套件非常便利，而且當偵測到尚未安裝套件的時候，也會自動提示需要還原 (<strong>resotre</strong>)<a id="more"></a>；但是有時候版控取得的專案，裡面已經有套件了，需要手動清除 <strong>packages</strong> 資料夾，才能還原，以下介紹手動的方式與使用指令的方式</p>
 <h1 id="手動"><a href="#手動" class="headerlink" title="手動"></a>手動</h1><p>此方式就是手動清除 <strong>packages</strong> 資料夾，假設取得的專案裡面已經有 <strong>packages</strong> 這時候 <a href="https://www.nuget.org/" target="_blank" rel="noopener"><strong>nuget</strong></a> 就不會提示還原，所以可以在專案資料夾下找到 <strong>packages</strong> 資料夾，將之移除</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">D:.</span><br><span class="line">├─ConsoleApplication2</span><br><span class="line">│  ├─Properties</span><br><span class="line">│  │  └─DataSources</span><br><span class="line">│  └─Service References</span><br><span class="line">│      └─ServiceReference1</span><br><span class="line">└─packages</span><br><span class="line">    └─Newtonsoft.Json.8.0.2</span><br></pre></td></tr></table></figure>
+
 <p>移除後，有兩個地方都可以點下還原</p>
 <ol>
 <li>可以在 <a href="https://docs.microsoft.com/zh-tw/nuget/tools/package-manager-console" target="_blank" rel="noopener"><strong>Package Manager Console</strong></a> 中，看到還原按鈕</li>
@@ -430,8 +431,10 @@
 <p><img src="https://lh3.googleusercontent.com/NtlykXutaJzmZgaQjv1ESAxoDi2CbfLeYK5xizeYnn_m2cFjxWw1Wo6ms2d89SBTehtUg8tTFOC9YaADcDGwx85lL8bR-s2MhPtZ8CdvC6ESfW_B8kthma7aHNpExoEdUDxJnTImqY-vXLq7xuxDGWJ3ZoQFKMAG7e1jqZj20-kdXvmNd9R9N7Vy0ZGnDyV94Mma3CJCC0I9I5-0JdOiUvBZAnt2wSJvJ6al9ulbx0vsnaCrr1USJ83GDyn_JeNy4MZpJfKMKeKCYy1_d8d_HoiCImG7ErpBEn0z4VYS9AQq8m7yWVfhssr9N-sRZVGMXW-A3X4Yq3EbrWwLxvTt7Sg2Ykw2E30cno1KLYnfzYJRS-PDVhWzS7_gmiInMN_cAIRTYVEwtEN7851cyFh6llUsSFwgzH-yS7Ymy1OWSzdl_tJM0khZB-7QsUyayv03Nsr9Bv06QxWJfx9XpQXzUMoUkcW2X5LTqXrGYjQyN9Tfw_ciI8k0jGBaDM2LvRCkclyVQSP-QN051EowXfu80ZwPe9lnkfWZ08juvVM1KI-nqnweDIbQKzYz7tfdLg8mvsW5C6wbMThfkuNw8LW1tXI85mASURSScAmyD5_ka94AI9ZPb5y75O97cn256TeqUt2X7ds2LDdSRTBq_708sWjXBYyr9gTg=w724-h188-no" alt="mouse right click restore"></p>
 <h1 id="Package-Manager-Console-指令還原"><a href="#Package-Manager-Console-指令還原" class="headerlink" title="Package Manager Console 指令還原"></a><a href="https://docs.microsoft.com/zh-tw/nuget/tools/package-manager-console" target="_blank" rel="noopener"><strong>Package Manager Console</strong></a> 指令還原</h1><p>在 <a href="https://docs.microsoft.com/zh-tw/nuget/tools/package-manager-console" target="_blank" rel="noopener"><strong>Package Manager Console</strong></a> 中，直接輸入以下指令即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Update-Package -reinstall</span><br></pre></td></tr></table></figure>
+
 <p>除了全部套件還原的指令，尚有針對單一套件還原，其指令參考如下，更多指令可以參考 <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/reinstalling-and-updating-packages#using-update-package" target="_blank" rel="noopener">Microsoft Doc</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Update-Package -Id &lt;package_name&gt; –reinstall</span><br></pre></td></tr></table></figure>
+
 <h1 id="參考資料與連結"><a href="#參考資料與連結" class="headerlink" title="參考資料與連結"></a>參考資料與連結</h1><ul>
 <li><a href="https://docs.microsoft.com/en-us/nuget/consume-packages/reinstalling-and-updating-packages" target="_blank" rel="noopener">Microsoft Doc</a></li>
 <li><a href="https://www.nuget.org/" target="_blank" rel="noopener">Nuget</a></li>

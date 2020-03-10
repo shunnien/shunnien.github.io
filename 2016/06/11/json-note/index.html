@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -420,7 +420,10 @@
         <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>這篇其實就是一個筆記，紀錄一下讀書心得，<br>看完這本<strong><a href="http://www.books.com.tw/products/0010694652" title="JavaScript Object Notation精要" target="_blank" rel="noopener">JavaScript Object Notation精要：JSON核心主題導引</a></strong></p>
 <h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>想仔細了解 Json 的可以參考一下 <a href="http://json.org/" target="_blank" rel="noopener">json.org</a>。Json 都是名－值對（key value pair），需要注意 key 與 value 都要使用<code>&quot;</code>包起來，key 不使用的話就是 JavaScript 物件了，嚴格上來說是不同的，雖然在 JavaScript 中，都是一樣可以讀取。</p>
 <h3 id="正確格式"><a href="#正確格式" class="headerlink" title="正確格式"></a>正確格式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"allen"</span>,</span><br><span class="line">	<span class="string">"gender"</span>:<span class="string">"male"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>頂層 Json 陣列，這是有效的 json，建議不要如此使用，有安全性風險；這是假如在值的部分放入了方法，再使用 script 的方式引入，<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	&#123;<span class="string">"user"</span>:<span class="string">"allen"</span>&#125;,</span><br><span class="line">	&#123;<span class="string">"gender"</span>:<span class="string">"male"</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+
+<p>頂層 Json 陣列，這是有效的 json，建議不要如此使用，有安全性風險；這是假如在值的部分放入了方法，再使用 script 的方式引入，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	&#123;<span class="string">"user"</span>:<span class="string">"allen"</span>&#125;,</span><br><span class="line">	&#123;<span class="string">"gender"</span>:<span class="string">"male"</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
 <h3 id="Json-資料型別"><a href="#Json-資料型別" class="headerlink" title="Json 資料型別"></a>Json 資料型別</h3><ul>
 <li>Object</li>
 <li>String</li>
@@ -430,7 +433,7 @@
 <li>Array</li>
 </ul>
 <h3 id="Json-需要跳脫字元"><a href="#Json-需要跳脫字元" class="headerlink" title="Json 需要跳脫字元"></a>Json 需要跳脫字元</h3><ul>
-<li>\/（斜線）</li>
+<li>/（斜線）</li>
 <li>\b（後退）</li>
 <li>\f（送出）</li>
 <li>\t（tab）</li>

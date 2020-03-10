@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -422,11 +422,14 @@
         <h2 id="緣起"><a href="#緣起" class="headerlink" title="緣起"></a>緣起</h2><p>今日在操作系統的時候，發現系統不給進行下一個操作，想說怎麼回事？就趕快來查找一下紀錄。<br>發現原來是新接手負責的人員，資料沒有照要求輸入(這完全不限制的輸入還是照著需求調整的，<del>真是自作孽</del>)，所以下一環節的處理直接就濾掉了。<br>所以後來將此環節的處理放鬆並設定預設資料與例外處理，就把這問題處理掉。<br>但是可能一陣子沒開 <strong>Visual Studio 2015</strong>，我的 cshtml 頁面，都會出現小紅線，仔細去看，都是<br><strong>The ViewBag doesn’t exist in the current context</strong> 大概這樣的訊息，個人實在討厭這種紅色的訊息，所以還是想把它處理掉。</p>
 <h2 id="處理過程"><a href="#處理過程" class="headerlink" title="處理過程"></a>處理過程</h2><p>印象中，以前 VS2012(Visual Studio 2012) 好像有處理過相同的問題，這一看就是 <strong>ASP.NET MVC</strong> 的元件引用有問題，可是查看 output 居然沒訊息 orz…。<br>好吧，開個安全模式建立一個新 MVC 專案看看是不是那專案是不是有調整，使用指令碼開啟安全模式，記得要在 VS2015(Visual Studio 2015)執行檔的路徑下執行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devenv /safemode</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://lh3.googleusercontent.com/KYJvARJ9aOMWD2cqa7hiqSIsEamPWTRPQ2tIS7jv55G3BnSCQoQ8y4pOM0eCuhxhvSaBwSL4gEOtAENV9ArvNg08bx5v8br99N-H7II03lbF4A1D8zkJRmEU7KQb_myacJFN-OSF1C-tMhM69vh-t5K02aH1-QrsZjfrC9SvTiVmuu-1x7jk5fJn1uQeS9gHFHNyF3ieTr-d_WZD-CX-cWD-DXvDDrJZbiyPGvzVEfA44YrQ0KmS3Hx7nNatPPXvmezn1rxC6CwG9IRcPmz7a3-bk7tboL-oyk1oaAyO1JH564hEyGCOu5epVc8o0An5EadHa-lcericOiff9MVrzSQ6340ivRPQhcLPK2xQmHAvMtrOr1dHB457DfCJN0fdEv1d0Svrb9i5904pEvMqC-KX5A4yh6Z9cneYfSH3-ggTY7Utn80BxQG4vQNJD-XyK4wAHnLCi5Z4ObZyFSS70oK6QmBT8AQvTVGyE8noPHQawUQ9V7kRgxKjSavS4lI5Vm4SOSBjkoNCpZNCA91ghr3DhvXVdVXw7yxqsqd1Fd3q0GWzmaMLQYxOM5K6zn7dpKLjEPetKs0qY2e85bGgVw86zRUZZJoNn1c95VYGeg6bAnwrVTyAszNVeWymqU9GwJtfNf9PR8cqs4UgxzrcOEh8Z_ylcAje2MNhZH4NJA=w653-h268-no" alt="VS2015 safemode"></p>
 <p>開啟結果，還是有紅色訊息；只好去 StackOverflow 找一下，發現了<a href="http://stackoverflow.com/questions/31232394/why-does-vs2015rc-says-the-viewbag-doesnt-exist-in-the-current-context-where" title="StackOverflow:Why does VS2015RC says “The ViewBag doesn&#39;t exist in the current context”, where as VS2013 says no errors?" target="_blank" rel="noopener">Why does VS2015RC says…</a>(這名稱有點長，我就省略了)。<br>說明可以在每個<code>.cshtml</code>檔案引用</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@inherits System.Web.Mvc.WebViewPage<span class="tag">&lt;<span class="name">dynamic</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>引用後，的確紅線的提醒消失了，但是要每一頁去引用，簡直是無法想像呀，所以這方法果斷放棄。<br>仔細想一想，要是我重新把 <strong>ASP.NET MVC</strong> 元件重新安裝，應該會好吧，可是不太想進行這動作，查詢了一下，看到<a href="http://bjkeizer.blogspot.tw/2015/01/the-name-viewbag-does-not-exist-in.html" title="sign me out:The name &#39;ViewBag&#39; does not exist in the current context" target="_blank" rel="noopener">這篇</a>說出解決方式是更新 MVC 元件或是修改 config，把 System.Web.Mvc 手動變更。<br>原本我已經打算按照這方式進行了，但是後來看到<a href="http://stackoverflow.com/questions/31581666/visual-studio-2015-broken-razor-intellisense" title="StackOverflow:Visual Studio 2015 Broken Razor Intellisense" target="_blank" rel="noopener">這篇</a>，抱持著我只進行這重設 userdata 的動作就好，結果我的 VS2015就好了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devenv.exe /resetuserdata</span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="http://stackoverflow.com/questions/31232394/why-does-vs2015rc-says-the-viewbag-doesnt-exist-in-the-current-context-where" title="StackOverflow:Why does VS2015RC says “The ViewBag doesn&#39;t exist in the current context”, where as VS2013 says no errors?" target="_blank" rel="noopener">StackOverflow:Why does VS2015RC says…</a></li>
 <li><a href="http://bjkeizer.blogspot.tw/2015/01/the-name-viewbag-does-not-exist-in.html" title="sign me out:The name &#39;ViewBag&#39; does not exist in the current context" target="_blank" rel="noopener">sign me out:The name ‘ViewBag’ does not exist in the current context</a></li>

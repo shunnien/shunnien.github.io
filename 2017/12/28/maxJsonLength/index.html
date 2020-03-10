@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -416,8 +416,10 @@
         <p>主要是傳送某個表單資料時，發生以下錯誤</p>
 <div class="note danger"><p>Error during serialization or deserialization using the JSON JavaScriptSerializer. The length of the string exceeds the value set on the maxJsonLength property.\r\nParameter name: input”,”StackTrace”:” …</p></div>
 <a id="more"></a>
+
 <p>加上後端程式已經採用 <a href="https://www.newtonsoft.com/json" target="_blank" rel="noopener">json.net</a> 解析了，所以想起 config 還沒設定，所以需要設定一下 <strong>web.config</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span> </span><br><span class="line">   <span class="tag">&lt;<span class="name">system.web.extensions</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">scripting</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">webServices</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">jsonSerialization</span> <span class="attr">maxJsonLength</span>=<span class="string">"20000"</span>/&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">webServices</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">scripting</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">system.web.extensions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>不設定的話，預設值是 <strong>2097152</strong> 字元，換算就是 <strong>4 MB</strong></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://stackoverflow.com/questions/1151987/can-i-set-an-unlimited-length-for-maxjsonlength-in-web-config" target="_blank" rel="noopener">stackoverflow issue</a></li>

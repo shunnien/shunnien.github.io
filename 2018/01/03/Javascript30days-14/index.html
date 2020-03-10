@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -413,12 +413,14 @@
       
 
       
-        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>熟悉了解 References 位址與複製指向的差異，此篇需要對照 Console 才能觀看。<br><a id="more"></a></p>
+        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>熟悉了解 References 位址與複製指向的差異，此篇需要對照 Console 才能觀看。</p>
+<a id="more"></a>
 <blockquote>
 <p><a href="https://shunnien.github.io/JavaScript30day/day_14/">Demo</a> | <a href="https://github.com/shunnien/JavaScript30day" target="_blank" rel="noopener">Github</a></p>
 </blockquote>
 <h1 id="處理步驟"><a href="#處理步驟" class="headerlink" title="處理步驟"></a>處理步驟</h1><h2 id="步驟-1-比較普通變數"><a href="#步驟-1-比較普通變數" class="headerlink" title="步驟 1. 比較普通變數"></a>步驟 1. 比較普通變數</h2><p>字串、整數或布林變數的參照，只要宣告一變數複製，兩者即為不同；這幾個類型類似實值型別的參照</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">let</span> age2 = age;</span><br><span class="line"><span class="built_in">console</span>.log(age, age2); <span class="comment">// 100,100</span></span><br><span class="line">age = <span class="number">200</span>;</span><br><span class="line"><span class="built_in">console</span>.log(age, age2); <span class="comment">// 200,100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">"Wes"</span>;</span><br><span class="line"><span class="keyword">let</span> name2 = name;</span><br><span class="line"><span class="built_in">console</span>.log(name, name2); <span class="comment">// Wes,Wes</span></span><br><span class="line">name = <span class="string">"wesley"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(name, name2); <span class="comment">// wesley,Wes</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="步驟-2-比較陣列"><a href="#步驟-2-比較陣列" class="headerlink" title="步驟 2. 比較陣列"></a>步驟 2. 比較陣列</h2><p>陣列物件的複製就類似參照型別了，所以可以透過一些函式回傳新的陣列，有以下幾種方式</p>
 <ul>
 <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="noopener"><strong>slice()</strong></a></li>
@@ -433,10 +435,15 @@
 </ul>
 <p>但是物件裡面尚有巢狀物件的情形需要考慮，陣列其實也是有巢狀的情形，所以可以利用 JSON 來處理</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> wes = &#123;</span><br><span class="line">  name: <span class="string">"Wes"</span>,</span><br><span class="line">  age: <span class="number">100</span>,</span><br><span class="line">  social: &#123;</span><br><span class="line">    twitter: <span class="string">"@wesbos"</span>,</span><br><span class="line">    facebook: <span class="string">"wesbos.developer"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> dev2 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(wes));</span><br><span class="line">dev2.social.twitter = <span class="string">"@coolman"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(dev2.social, wes.social);</span><br></pre></td></tr></table></figure>
+
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="Spread-syntax"><a href="#Spread-syntax" class="headerlink" title="Spread syntax"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank" rel="noopener">Spread syntax</a></h3><p>ES 6 出現的快速語法，針對 function 、 array 、 object ，皆可以使用，用來結合物件或陣列等。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// For function calls:</span></span><br><span class="line">myFunction(...iterableObj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// For array literals or strings:</span></span><br><span class="line">[...iterableObj, <span class="string">'4'</span>, <span class="string">'five'</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// For object literals (new in ECMAScript; stage 3 draft):</span></span><br><span class="line"><span class="keyword">let</span> objClone = &#123; ...obj &#125;;</span><br></pre></td></tr></table></figure>
+
 <h3 id="Array-prototype-concat"><a href="#Array-prototype-concat" class="headerlink" title="Array.prototype.concat()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank" rel="noopener">Array.prototype.concat()</a></h3><div class="note info"><p><code>concat()</code> 方法回傳一個包含呼叫者陣列本身的值，以及被當作參數提供的陣列或是值的而成的新陣列。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
 <h3 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">Object.assign()</a></h3><div class="note info"><p><code>Object.assign()</code> 被用來複製一個或多個物件自身所有可數的屬性到另一個目標物件。回傳的值為該目標物件。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
+
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
 <li>作者 Github <a href="https://github.com/wesbos" target="_blank" rel="noopener">Wes Bos</a></li>

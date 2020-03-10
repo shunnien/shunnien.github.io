@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -418,12 +418,14 @@
         <p>這陣子再重新閱讀設計模式，想到了 <strong>String</strong> 與 <strong>StringBulder</strong> 的對比，裡面應用了 <strong>Builder</strong> 這個模式；後來想到這兩者的差異也沒紀錄，這次就順手紀錄一下<a id="more"></a></p>
 <p>兩者的主要差異是在動態處理資料時，資源使用程度。</p>
 <ul>
-<li><p><strong>String</strong><br><strong>string</strong> 是參考型別，所以每次在動態處理資料時，都會再配置一個新的記憶體給它，但是原本使用的資源雖然最終交由 <strong>GC(Garbage Collection)</strong> 回收，但是在回收之前資源卻已經浪費掉了。</p>
-</li>
-<li><p><strong>StringBuilder</strong><br>使用了 Builder 模式，會維護一個緩衝區，以容納新資料。</p>
-</li>
+<li><strong>String</strong></li>
+</ul>
+<p><strong>string</strong> 是參考型別，所以每次在動態處理資料時，都會再配置一個新的記憶體給它，但是原本使用的資源雖然最終交由 <strong>GC(Garbage Collection)</strong> 回收，但是在回收之前資源卻已經浪費掉了。</p>
+<ul>
+<li><strong>StringBuilder</strong><br>使用了 Builder 模式，會維護一個緩衝區，以容納新資料。</li>
 </ul>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Stopwatch sw = <span class="keyword">new</span> Stopwatch();</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    String str = <span class="string">""</span>;</span><br><span class="line">    sw.Start();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        str += i.ToString();</span><br><span class="line">    &#125;</span><br><span class="line">    sw.Stop();</span><br><span class="line">    Console.WriteLine(<span class="string">"String Class :"</span> + sw.ElapsedMilliseconds);</span><br><span class="line"></span><br><span class="line">    sw.Reset();</span><br><span class="line">    sw.Start();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sb.Append(i.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">    sw.Stop();</span><br><span class="line">    Console.WriteLine(<span class="string">"StringBuilder Class:"</span> + sw.ElapsedMilliseconds);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>動態處理 100000 筆資料的花費時間，輸出結果如下圖<br><img src="https://lh3.googleusercontent.com/Z0_uAcxoiG5o74KWsV9m0bHTk0cFunswJZerADEfT4oVtcBEvwrNvS9klwVeLu0DYzb5kqFYFFqtGe7KUoQjoeZWlltai4_NOU045snCIqDD0VR37JCuWk1V72bwcnWNNcvlW35bl3_WZFTfYjKHUTmrEZZFuK3FZafNBkkqY0gjdLRqF7P8fIy-MPpSz94b8zfq1013h1A2q1HOhaIoiaUXuXkqinhif07y-iU6ts8VnCjI0RtAmtA7XiUPSMbgao_p7KK6OZJJe3du0Zet6t_ZrVD6cYaMC5brEVJ7-tXmivLnL43QJPiRQwo5kZ0giFHO43O4_NqDXjNFaUGWfubQpOOQjxEnuCT85o-yNk_Q1ubljS85UW7PsbT6KFCxAcDRCQejuzVu_4jgaGatwQ9zAH7BN9mHA1EW9xtOJsIT1ZxYpgPiH-ADDfAgkDnT8EXFeWT1wabA3FKGWPfdHl6QzVdhFIjl5_DhgpqW631AIW7gZ-8PZYf404e-4rg7b1FAI6OeOdy6MamI9yiVk_jNSBvNHWEVFosrQ6H7eVXOjvMZkY_eCP8lWoH1M8mSVFfZgZ-IxZu9Ubf3GRunnpEMYeSUvrDEzdd1TuIN9WFp_WHGiJhDOmxXQdAy0cuEILAoApTi9l6xpM4oRSj9uW4e3cvX-Vc8f_bl0-z2vcg79g=w311-h105-no" alt="輸出結果"></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://msdn.microsoft.com/zh-tw/library/system.text.stringbuilder(v=vs.110).aspx" target="_blank" rel="noopener">MSDN StringBuilder</a></li>

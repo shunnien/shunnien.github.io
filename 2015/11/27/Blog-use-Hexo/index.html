@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -418,46 +418,55 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>其實使用了<a href="http://shunnien.github.io/tags/Octopress/" title="ShunNien:Octopress">Octopress</a>一陣子，就感覺在產生靜態檔案有點慢，也不曉得是不是在 windows 上的關係，加上之前就有在考慮是否使用<a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>了，就決定轉換使用[Heox]+Github。</p>
-<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><p>要安裝<a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>，首先必須要安裝<strong>Node.js</strong>與<strong>Git</strong>，不太清楚的部分可以觀看<a href="https://hexo.io/docs/index.html" title="Hexo:Documentation" target="_blank" rel="noopener">官方的文件</a>，這兩者都安裝完畢再執行以下命令<br><figure class="highlight bash"><figcaption><span>hexo</span><a href="https://hexo.io/" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安裝 hexo command line interface</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="comment">## hexo 初始化並建立資料夾 blog(這名稱請自由更換)</span></span><br><span class="line">hexo init blog</span><br><span class="line"><span class="comment"># 進入 blog 資料夾，並安裝 npm 套件</span></span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 啟動 hexo 伺服器，在本機端檢查網站(預設為:http://localhost:4000)</span></span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
+<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><p>要安裝<a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>，首先必須要安裝<strong>Node.js</strong>與<strong>Git</strong>，不太清楚的部分可以觀看<a href="https://hexo.io/docs/index.html" title="Hexo:Documentation" target="_blank" rel="noopener">官方的文件</a>，這兩者都安裝完畢再執行以下命令</p>
+<figure class="highlight bash"><figcaption><span>hexo</span><a href="https://hexo.io/" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安裝 hexo command line interface</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="comment">## hexo 初始化並建立資料夾 blog(這名稱請自由更換)</span></span><br><span class="line">hexo init blog</span><br><span class="line"><span class="comment"># 進入 blog 資料夾，並安裝 npm 套件</span></span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 啟動 hexo 伺服器，在本機端檢查網站(預設為:http://localhost:4000)</span></span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
 <p>這樣就算安裝完成了。</p>
 <h2 id="資料轉移"><a href="#資料轉移" class="headerlink" title="資料轉移"></a>資料轉移</h2><p>我原本是使用<a href="http://shunnien.github.io/tags/Octopress/" title="ShunNien:Octopress">Octopress</a>，現在要轉到<a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>上，需要將 Octopress 安裝資料夾的<code>source/_posts</code>這內中的檔案，全部複製一份到<a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>的安裝資料夾下<code>source/_posts</code>的位置，其他方式的移轉可以參考<a href="https://hexo.io/docs/migration.html" title="Hexo:Migration" target="_blank" rel="noopener">官方文件</a>。</p>
 <h2 id="佈署"><a href="#佈署" class="headerlink" title="佈署"></a>佈署</h2><p><a href="https://hexo.io/docs/deployment.html" title="Hexo:Deployment" target="_blank" rel="noopener">Hexo 的佈署</a>需要另外安裝 npm 的套件</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">佈署類型</th>
-<th style="text-align:left">套件安裝名稱</th>
+<th align="left">佈署類型</th>
+<th align="left">套件安裝名稱</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Git</td>
-<td style="text-align:left">hexo-deployer-git</td>
+<tbody><tr>
+<td align="left">Git</td>
+<td align="left">hexo-deployer-git</td>
 </tr>
 <tr>
-<td style="text-align:left">Heroku</td>
-<td style="text-align:left">hexo-deployer-heroku</td>
+<td align="left">Heroku</td>
+<td align="left">hexo-deployer-heroku</td>
 </tr>
 <tr>
-<td style="text-align:left">Rsync</td>
-<td style="text-align:left">hexo-deployer-rsync</td>
+<td align="left">Rsync</td>
+<td align="left">hexo-deployer-rsync</td>
 </tr>
 <tr>
-<td style="text-align:left">OpenShift</td>
-<td style="text-align:left">hexo-deployer-openshift</td>
+<td align="left">OpenShift</td>
+<td align="left">hexo-deployer-openshift</td>
 </tr>
 <tr>
-<td style="text-align:left">FTPSync</td>
-<td style="text-align:left">hexo-deployer-ftpsync</td>
+<td align="left">FTPSync</td>
+<td align="left">hexo-deployer-ftpsync</td>
 </tr>
-</tbody>
-</table>
-<p>我是使用 git，所以使用以下指令進行安裝<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 套件安裝名稱 --save</span><br></pre></td></tr></table></figure></p>
-<p>附上我的<code>package.json</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;3.1.1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo&quot;: &quot;^3.1.0&quot;,</span><br><span class="line">    &quot;hexo-deployer-git&quot;: &quot;0.0.4&quot;,</span><br><span class="line">    &quot;hexo-generator-archive&quot;: &quot;^0.1.2&quot;,</span><br><span class="line">    &quot;hexo-generator-category&quot;: &quot;^0.1.2&quot;,</span><br><span class="line">    &quot;hexo-generator-feed&quot;: &quot;1.0.3&quot;,</span><br><span class="line">    &quot;hexo-generator-index&quot;: &quot;^0.1.2&quot;,</span><br><span class="line">    &quot;hexo-generator-sitemap&quot;: &quot;1.0.1&quot;,</span><br><span class="line">    &quot;hexo-generator-tag&quot;: &quot;^0.1.1&quot;,</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^0.1.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-marked&quot;: &quot;^0.2.4&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^0.3.0&quot;,</span><br><span class="line">    &quot;hexo-server&quot;: &quot;^0.1.2&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>接著在 Hexo 目錄的<code>_config.yml</code>進行設定(不是 themes 裡面的<code>_config.yml</code>)，找到 deploy 這行，進行如下設定，repo 更改為自己的位址，message 可以自己自定一下。<br><figure class="highlight yaml"><figcaption><span>佈署</span><a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span> <span class="comment">##部署類型 其他類型自行google之</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">git@github.com:shunnien/shunnien.github.io.git</span> <span class="comment">##git位址  </span></span><br><span class="line"><span class="attr">  branch:</span> <span class="comment">##git 頁面分支</span></span><br><span class="line"><span class="attr">  message:</span> <span class="string">Site</span> <span class="string">updated</span> <span class="string">at</span> <span class="string">&#123;&#123;</span> <span class="string">now("YYYY-MM-DD</span> <span class="attr">HH:mm:ss")</span> <span class="string">&#125;&#125;</span> <span class="comment">##git message建議默認字段update 可以自定義</span></span><br></pre></td></tr></table></figure></p>
-<p>這樣設定就都完成了，直接使用指令佈署到 Github 上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+</tbody></table>
+<p>我是使用 git，所以使用以下指令進行安裝</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 套件安裝名稱 --save</span><br></pre></td></tr></table></figure>
+
+<p>附上我的<code>package.json</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;hexo-site&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;hexo&quot;: &#123;</span><br><span class="line">    &quot;version&quot;: &quot;3.1.1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;hexo&quot;: &quot;^3.1.0&quot;,</span><br><span class="line">    &quot;hexo-deployer-git&quot;: &quot;0.0.4&quot;,</span><br><span class="line">    &quot;hexo-generator-archive&quot;: &quot;^0.1.2&quot;,</span><br><span class="line">    &quot;hexo-generator-category&quot;: &quot;^0.1.2&quot;,</span><br><span class="line">    &quot;hexo-generator-feed&quot;: &quot;1.0.3&quot;,</span><br><span class="line">    &quot;hexo-generator-index&quot;: &quot;^0.1.2&quot;,</span><br><span class="line">    &quot;hexo-generator-sitemap&quot;: &quot;1.0.1&quot;,</span><br><span class="line">    &quot;hexo-generator-tag&quot;: &quot;^0.1.1&quot;,</span><br><span class="line">    &quot;hexo-renderer-ejs&quot;: &quot;^0.1.0&quot;,</span><br><span class="line">    &quot;hexo-renderer-marked&quot;: &quot;^0.2.4&quot;,</span><br><span class="line">    &quot;hexo-renderer-stylus&quot;: &quot;^0.3.0&quot;,</span><br><span class="line">    &quot;hexo-server&quot;: &quot;^0.1.2&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接著在 Hexo 目錄的<code>_config.yml</code>進行設定(不是 themes 裡面的<code>_config.yml</code>)，找到 deploy 這行，進行如下設定，repo 更改為自己的位址，message 可以自己自定一下。</p>
+<figure class="highlight yaml"><figcaption><span>佈署</span><a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span> <span class="comment">##部署類型 其他類型自行google之</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">git@github.com:shunnien/shunnien.github.io.git</span> <span class="comment">##git位址  </span></span><br><span class="line"><span class="attr">  branch:</span> <span class="comment">##git 頁面分支</span></span><br><span class="line"><span class="attr">  message:</span> <span class="string">Site</span> <span class="string">updated</span> <span class="string">at</span> <span class="string">&#123;&#123;</span> <span class="string">now("YYYY-MM-DD</span> <span class="attr">HH:mm:ss")</span> <span class="string">&#125;&#125;</span> <span class="comment">##git message建議默認字段update 可以自定義</span></span><br></pre></td></tr></table></figure>
+
+<p>這樣設定就都完成了，直接使用指令佈署到 Github 上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
 <p>最後把原始碼加入到版控上，先在 Hexo 資料夾下建立新分支(hexo 安裝的資料夾下)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 建立 git repo</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 加入 Github 位址</span></span><br><span class="line">git remote add origin 你的Github位址</span><br><span class="line"><span class="comment"># 建立沒有 parent 的分支</span></span><br><span class="line">git checkout --orphan 新分支名稱</span><br><span class="line"><span class="comment"># 加入檔案</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 寫入註解</span></span><br><span class="line">git commit -m <span class="string">"chang to hexo"</span></span><br><span class="line"><span class="comment"># 將檔案推送到 github 上</span></span><br><span class="line">git push orgin 新分支名稱</span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></li>
 </ul>

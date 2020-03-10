@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -413,17 +413,24 @@
       
 
       
-        <h1 id="sqlserver-停用與啟用條件約束"><a href="#sqlserver-停用與啟用條件約束" class="headerlink" title="sqlserver 停用與啟用條件約束"></a>sqlserver 停用與啟用條件約束</h1><p>紀錄停用與啟用條件約束的 sql ，還有檢查目前資料表條件約束的語法<br><a id="more"></a></p>
+        <h1 id="sqlserver-停用與啟用條件約束"><a href="#sqlserver-停用與啟用條件約束" class="headerlink" title="sqlserver 停用與啟用條件約束"></a>sqlserver 停用與啟用條件約束</h1><p>紀錄停用與啟用條件約束的 sql ，還有檢查目前資料表條件約束的語法</p>
+<a id="more"></a>
+
 <h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><p>全部條件約束停用</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 全部條件約束停用</span></span><br><span class="line">EXEC sp_MSforeachtable "<span class="keyword">ALTER</span> <span class="keyword">TABLE</span> ? <span class="keyword">NOCHECK</span> <span class="keyword">CONSTRAINT</span> <span class="keyword">ALL</span><span class="string">"</span></span><br><span class="line"><span class="string">GO</span></span><br></pre></td></tr></table></figure>
+
 <p>刪除全部資料表資料</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 刪除全部資料表資料</span></span><br><span class="line">EXEC sp_MSForEachTable "<span class="keyword">DELETE</span> <span class="keyword">FROM</span> ?<span class="string">"</span></span><br><span class="line"><span class="string">GO</span></span><br></pre></td></tr></table></figure>
+
 <p>全部資料表增值索引重設</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 全部資料表增值索引重設</span></span><br><span class="line">EXEC sp_MSforeachtable "DBCC CHECKIDENT('?', RESEED, 0)"</span><br><span class="line">Go</span><br></pre></td></tr></table></figure>
+
 <p>全部條件約束啟用</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 全部條件約束啟用</span></span><br><span class="line">EXEC sp_MSforeachtable "<span class="keyword">ALTER</span> <span class="keyword">TABLE</span> ? <span class="keyword">WITH</span> <span class="keyword">NOCHECK</span> <span class="keyword">CHECK</span> <span class="keyword">CONSTRAINT</span> <span class="keyword">ALL</span><span class="string">"</span></span><br><span class="line"><span class="string">GO</span></span><br></pre></td></tr></table></figure>
+
 <p>檢查目前資料表條件約束狀態的語法</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> f.NAME         N<span class="string">'物件名稱'</span>,</span><br><span class="line">       is_disabled    N<span class="string">'已停用(1)'</span>,</span><br><span class="line">       is_not_trusted N<span class="string">'不檢查現有資料(1)'</span>,</span><br><span class="line">       s.NAME         N<span class="string">'結構描述'</span>,</span><br><span class="line">       o.NAME         N<span class="string">'外部索引資料表'</span>,</span><br><span class="line">       sc.NAME        N<span class="string">'結構描述'</span>,</span><br><span class="line">       r.NAME         N<span class="string">'主索引資料表'</span>,</span><br><span class="line">       delete_referential_action_desc</span><br><span class="line">                      N<span class="string">'在進行刪除時，宣告的參考動作之描述'</span>,</span><br><span class="line">       update_referential_action_desc</span><br><span class="line">                      N<span class="string">'在進行更新時，宣告的參考動作之描述'</span>,</span><br><span class="line">       f.type_desc    N<span class="string">'物件描述'</span></span><br><span class="line"><span class="keyword">FROM</span>   sys.foreign_keys f</span><br><span class="line">       <span class="keyword">INNER</span> <span class="keyword">JOIN</span> sys.objects o</span><br><span class="line">               <span class="keyword">ON</span> f.parent_object_id = o.object_id</span><br><span class="line">       <span class="keyword">INNER</span> <span class="keyword">JOIN</span> sys.schemas s</span><br><span class="line">               <span class="keyword">ON</span> o.schema_id = s.schema_id</span><br><span class="line">       <span class="keyword">INNER</span> <span class="keyword">JOIN</span> sys.objects r</span><br><span class="line">               <span class="keyword">ON</span> f.referenced_object_id = r.object_id</span><br><span class="line">       <span class="keyword">INNER</span> <span class="keyword">JOIN</span> sys.schemas sc</span><br><span class="line">               <span class="keyword">ON</span> r.schema_id = sc.schema_id</span><br><span class="line"><span class="keyword">ORDER</span>  <span class="keyword">BY</span> o.NAME</span><br><span class="line"><span class="keyword">GO</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="http://sharedderrick.blogspot.com/2017/06/sql-server-disable-foreign-key.html" target="_blank" rel="noopener">德瑞克：SQL Server 學習筆記</a></li>
 <li><a href="https://docs.microsoft.com/zh-tw/sql/relational-databases/tables/disable-check-constraints-with-insert-and-update-statements?view=sql-server-2017" target="_blank" rel="noopener">microsoft docs</a></li>

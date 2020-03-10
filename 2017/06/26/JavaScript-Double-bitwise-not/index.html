@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -416,6 +416,7 @@
         <p>前陣子在一些討論區看到有人在討論 <strong>~</strong> 這符號的使用，想到自己也幾乎沒在 JavaScript 中使用，就查了一下，看到國外有些探討，使用 <strong>~~</strong> 比使用 <code>Math.floor</code> 的效能好<a id="more"></a>，因此紀錄一下。</p>
 <p><strong>~ (tilde)</strong> 位元運算符，延伸可以用來取整數，而且在<a href="https://jsperf.com/math-round-vs" target="_blank" rel="noopener">這連結</a>還有運算效能比較，運算速度比 Math.floor 好。以下列出一些基本比較結果</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">~~<span class="literal">null</span>;      <span class="comment">// output ==&gt; 0</span></span><br><span class="line">~~<span class="literal">undefined</span>; <span class="comment">// output ==&gt; 0</span></span><br><span class="line">~~<span class="number">0</span>;         <span class="comment">// output ==&gt; 0</span></span><br><span class="line">~~&#123;&#125;;        <span class="comment">// output ==&gt; 0</span></span><br><span class="line">~~[];        <span class="comment">// output ==&gt; 0</span></span><br><span class="line">~~(<span class="number">9</span>/<span class="number">0</span>);     <span class="comment">// output ==&gt; 0</span></span><br><span class="line">~~<span class="literal">false</span>;     <span class="comment">// output ==&gt; 0</span></span><br><span class="line">~~<span class="literal">true</span>;      <span class="comment">// output ==&gt; 1</span></span><br><span class="line">~~<span class="number">1.0213</span>;    <span class="comment">// output ==&gt; 1</span></span><br><span class="line">~~<span class="number">5.91561</span>;   <span class="comment">// output ==&gt; 5</span></span><br><span class="line">~~<span class="number">-3.6748</span>;   <span class="comment">// output ==&gt; -3</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank" rel="noopener">MDN Expressions and operators</a></li>
 <li><a href="http://www.kaiching.org/2010/12/javascript-bitwise.html" target="_blank" rel="noopener">程式語言教學誌 JS</a></li>

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -413,18 +413,25 @@
       
 
       
-        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>此篇熟悉<strong>grid</strong>的布置與設定，與下一篇搭配 Firefox 開發工具觀測<br><a id="more"></a></p>
+        <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><p>此篇熟悉<strong>grid</strong>的布置與設定，與下一篇搭配 Firefox 開發工具觀測</p>
+<a id="more"></a>
+
 <blockquote>
 <p><a href="https://shunnien.github.io/css-grid25day/day_03/index.html">Demo</a> | <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">Github</a></p>
 </blockquote>
 <h1 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="comment">/* grid-template-columns: 100px 500px 50px; */</span></span><br><span class="line">    <span class="comment">/* grid-template-columns: 100rem auto 200px 50px; */</span></span><br><span class="line">    <span class="comment">/*grid-template-columns: repeat(5, auto);*/</span></span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">200px</span> <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">200px</span> <span class="number">100px</span> <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="grid"><a href="#grid" class="headerlink" title="grid"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid" target="_blank" rel="noopener"><strong>grid</strong></a></h2><div class="note info"><p>The grid CSS property is a shorthand property that sets all of the explicit grid properties (grid-template-rows, grid-template-columns, and grid-template-areas), and all the implicit grid properties (grid-auto-rows, grid-auto-columns, and grid-auto-flow), in a single declaration.</p>
 <p><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
 <h2 id="grid-template-columns"><a href="#grid-template-columns" class="headerlink" title="grid-template-columns"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns" target="_blank" rel="noopener"><strong>grid-template-columns</strong></a></h2><div class="note info"><p>The grid-template-columns CSS property defines the line names and track sizing functions of the grid columns.<br><strong>資料來源</strong> - <a href><em>MDN</em></a></p></div>
+
 <p>設定<strong>列</strong>的數目與寬度</p>
 <h2 id="grid-template-rows"><a href="#grid-template-rows" class="headerlink" title="grid-template-rows"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows" target="_blank" rel="noopener"><strong>grid-template-rows</strong></a></h2><div class="note info"><p>The grid-template-rows CSS property defines the line names and track sizing functions of the grid rows.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
 <p>設定<strong>行</strong>的高度，依序設定第 N 行的高度</p>
 <h2 id="gird-gap"><a href="#gird-gap" class="headerlink" title="gird-gap"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap" target="_blank" rel="noopener"><strong>gird-gap</strong></a></h2><div class="note info"><p>The grid-gap CSS property is a shorthand property for grid-row-gap and grid-column-gap specifying the gutters between grid rows and columns.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+
 <p>設定行列之間的間距</p>
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>

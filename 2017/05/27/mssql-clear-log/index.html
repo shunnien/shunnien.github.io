@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -420,6 +420,7 @@
         <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>先說說使用清除 Log 比較常見的情境，大部分是公司內部測試資料庫的維護等等，使用一段時間後，需要搬移或清理的時候，我都會把 log 清除，畢竟測試資料沒有太大必要留存。</p>
 <h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>清除的方式是 Sql Server 2008 以上版本使用。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--- 清除SQL Server Log檔</span></span><br><span class="line"><span class="keyword">USE</span> [資料庫名稱]</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> [資料庫名稱] <span class="keyword">SET</span> <span class="keyword">RECOVERY</span> SIMPLE <span class="keyword">WITH</span> NO_WAIT</span><br><span class="line">DBCC SHRINKFILE(記錄檔邏輯名稱, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> [資料庫名稱] <span class="keyword">SET</span> <span class="keyword">RECOVERY</span> <span class="keyword">FULL</span> <span class="keyword">WITH</span> NO_WAIT</span><br><span class="line"><span class="keyword">GO</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>

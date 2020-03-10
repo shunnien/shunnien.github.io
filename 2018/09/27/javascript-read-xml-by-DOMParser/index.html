@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -416,7 +416,9 @@
         <h1 id="DOMParser"><a href="#DOMParser" class="headerlink" title="DOMParser"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/DOMParser" target="_blank" rel="noopener">DOMParser</a></h1><p>在前端讀取 XML 的 response 已經是字串了，再透過 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/DOMParser" target="_blank" rel="noopener">DOMParser</a> 來解析 XML ，使 XML 內容好取得。<a id="more"></a>如果 response 指定 XML 格式，就直接已經讀取 XML 檔案，可以直接操作</p>
 <h2 id="DOMParser-轉換-XML-字串"><a href="#DOMParser-轉換-XML-字串" class="headerlink" title="DOMParser 轉換 XML 字串"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/DOMParser" target="_blank" rel="noopener">DOMParser</a> 轉換 XML 字串</h2><p>主要關鍵在於使用 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/DOMParser" target="_blank" rel="noopener">DOMParser</a> 轉換字串</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text, parser, xmlDoc;</span><br><span class="line"></span><br><span class="line">text = <span class="string">"&lt;bookstore&gt;&lt;book&gt;"</span> +</span><br><span class="line"><span class="string">"&lt;title&gt;Everyday Italian&lt;/title&gt;"</span> +</span><br><span class="line"><span class="string">"&lt;author&gt;Giada De Laurentiis&lt;/author&gt;"</span> +</span><br><span class="line"><span class="string">"&lt;year&gt;2005&lt;/year&gt;"</span> +</span><br><span class="line"><span class="string">"&lt;/book&gt;&lt;/bookstore&gt;"</span>;</span><br><span class="line"></span><br><span class="line">parser = <span class="keyword">new</span> DOMParser();</span><br><span class="line">xmlDoc = parser.parseFromString(text,<span class="string">"text/xml"</span>);</span><br><span class="line"><span class="keyword">var</span> title = xmlDoc.getElementsByTagName(<span class="string">"title"</span>)[<span class="number">0</span>].textContent;</span><br></pre></td></tr></table></figure>
+
 <iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/1w86ofyz/embedded/html,js,result/dark" frameborder="0" allowfullscreen></iframe>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/DOMParser" target="_blank" rel="noopener">MDN DOMParser</a></li>
 <li><a href="https://maps.nlsc.gov.tw/" target="_blank" rel="noopener">國土測繪中心</a></li>

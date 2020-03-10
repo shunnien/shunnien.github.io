@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -418,8 +418,8 @@
 
       
         <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>SQL SERVER 中取得資料庫伺服器中指定資料庫中的所有資料表名稱</p>
-<h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>作法<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--List Table name 取得該DB中所有資料表名稱</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line"> <span class="string">'['</span>+SCHEMA_NAME(schema_id)+<span class="string">'].['</span>+<span class="keyword">name</span>+<span class="string">']'</span> <span class="keyword">AS</span> SchemaTable</span><br><span class="line"><span class="keyword">FROM</span> sys.tables</span><br></pre></td></tr></table></figure></p>
-
+<h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>作法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--List Table name 取得該DB中所有資料表名稱</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line"> <span class="string">'['</span>+SCHEMA_NAME(schema_id)+<span class="string">'].['</span>+<span class="keyword">name</span>+<span class="string">']'</span> <span class="keyword">AS</span> SchemaTable</span><br><span class="line"><span class="keyword">FROM</span> sys.tables</span><br></pre></td></tr></table></figure>
       
     </div>
     

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -417,8 +417,12 @@
       
         <p>承續<a href="https://shunnien.github.io/2017/07/07/open-a-new-cmder/#more">上篇</a>，開啟的 <strong><a href="http://cmder.net/" target="_blank" rel="noopener">cmder</a></strong> 是新視窗，但是 <strong><a href="http://cmder.net/" target="_blank" rel="noopener">cmder</a></strong> 的特色有分頁呀，所以希望直接開啟分頁，這樣視窗也比較好管理。<a id="more"></a></p>
 <p>想要開啟分頁，先了解一下 <strong><a href="http://cmder.net/" target="_blank" rel="noopener">cmder</a></strong> 是透過 <strong><a href="https://conemu.github.io/" target="_blank" rel="noopener">ConEmu</a></strong> 來組合命令列介面的，所以想要開啟分頁，主要啟動的程式，是 <strong><a href="https://conemu.github.io/" target="_blank" rel="noopener">ConEmu</a></strong> ，再透過參數去指定其設定。</p>
-<p>這指令的路徑請自行更換為各自的 <strong><a href="http://cmder.net/" target="_blank" rel="noopener">cmder</a></strong> 路徑<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\cmder\vendor\conemu-maximus5\ConEmu.exe /cmd cmd /k <span class="string">"D:\cmder\vendor\init.bat"</span> -new_console:%d</span><br></pre></td></tr></table></figure></p>
-<p>如果想要添加 Title 的話，可以照一下這個設定<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\cmder\vendor\conemu-maximus5\ConEmu.exe /icon <span class="string">"D:\cmder\Cmder.exe"</span> /title Cmder /cmd cmd /k <span class="string">"D:\cmder\vendor\init.bat"</span> -new_console:%d</span><br></pre></td></tr></table></figure></p>
+<p>這指令的路徑請自行更換為各自的 <strong><a href="http://cmder.net/" target="_blank" rel="noopener">cmder</a></strong> 路徑</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\cmder\vendor\conemu-maximus5\ConEmu.exe /cmd cmd /k <span class="string">"D:\cmder\vendor\init.bat"</span> -new_console:%d</span><br></pre></td></tr></table></figure>
+
+<p>如果想要添加 Title 的話，可以照一下這個設定</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\cmder\vendor\conemu-maximus5\ConEmu.exe /icon <span class="string">"D:\cmder\Cmder.exe"</span> /title Cmder /cmd cmd /k <span class="string">"D:\cmder\vendor\init.bat"</span> -new_console:%d</span><br></pre></td></tr></table></figure>
+
 <p>附上 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong> 中的設定，不過 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong> 要先安裝擴充套件 <strong><a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.OpenCommandLine" target="_blank" rel="noopener">OpenCommandLine</a></strong> 才會有這個設定喔。另外，在 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong> 時候，指定命令列啟動後的路徑，對應到現在檔案資料夾路徑的餐數不是 <code>%d</code> 而是 <code>%folder%</code>。</p>
 <p><img src="https://lh3.googleusercontent.com/Yssj-Wtp4TAHPWNsOmcBSjRV7UmbYy_7mVHxr2M28ErI4J06ZCGNX8FNpcelbNnRPXS7LTWUIjn5lyBJuNIjX-NitoahxreuZbKZiCZPbQQ1qdzOgBY2pPf3o52EPU_AU2mrzM0Ie33sGtjMKwLqNwRNV-5bhKMtOmkn40e7vu73M6qfLGiAqwokvVFDcdr8nq_XBNhbb1b5l5IP5zrlswDLJ5dsd-f31Z7geLjyZmeLc22v_1lJJVzrBvNIYajsC9ZeQYCWaYgDq1X0pdID9qjV-gPMZizQoKJdVXK7_YLAY8rFAAiRMAym4awQhJOoacp4jMu3EsDNZZBLaaiNCBGkDQKExhUzicu-pwHxIUJ1gkH5q7tesVSIi02sHx4WPgfnQ2IxGElrZXseqBzWxBRgPnggrAEpJUUU-wl0zkBPy-LYsJL-5dPCex3nlyMRx7b9bjIalFcAJUaqI7KxR4mUEEGwiblQ6ob9r3K3IOUEnVuF_VV4G8oBQHckJFF-G4OjCfq3zYrZh-bAlGKtLLYjsP56hEh6aaV7eC_sxqLBCo2tVm94GxpNu6SozLelCftQchfWrP9fGSQKEPzY9dZ0_JKjNawfY8K3SNUaxtlTiX0jBWj5PjLhzxpx4iF00YtNLwXC3383WdC2D9R-ZLWAYkbA6dVMirwYCOULhwG54w=w846-h585-no" alt="OpenCommandLine set"></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p>附上這些工具的連結</p>

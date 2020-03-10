@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -429,6 +429,7 @@
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">dateTimeReviver</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">        <span class="comment">/// &lt;summary&gt;</span></span><br><span class="line">        <span class="comment">/// Date the time reviver.</span></span><br><span class="line">        <span class="comment">/// &lt;/summary&gt;</span></span><br><span class="line">        <span class="comment">/// &lt;param name="value"&gt;The value.&lt;/param&gt;</span></span><br><span class="line">        <span class="keyword">var</span> a;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">typeof</span> value === <span class="string">"string"</span> &amp;&amp; (a = <span class="regexp">/\/Date\((\d*)\)\//</span>.exec(value),a)</span><br><span class="line">            ? <span class="keyword">new</span> <span class="built_in">Date</span>(+a[<span class="number">1</span>])</span><br><span class="line">            : value;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime" target="_blank" rel="noopener">MDN Date getTime</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators" target="_blank" rel="noopener">MDN Operators</a></li>

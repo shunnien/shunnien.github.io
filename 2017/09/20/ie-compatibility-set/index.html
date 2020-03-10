@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -420,15 +420,19 @@
 <li>Quirks Mode<br>力求相容較早版本瀏覽器的行為</li>
 <li>Almost-Standards Mode（準標準模式）<br>支援最新標準，但保有先前版本的圖形渲染行為</li>
 </ul>
-<p>三種模式的官方說明如下：<br><blockquote><p>All versions of Internet Explorer released after Internet Explorer 6 support up to three document modes:</p>
+<p>三種模式的官方說明如下：</p>
+<blockquote><p>All versions of Internet Explorer released after Internet Explorer 6 support up to three document modes:</p>
 <ul>
 <li>Standards mode provides the greatest support for the latest standards, such as HTML5, CSS3, SVG, and others. This is the preferred mode for new public websites.</li>
 <li>Quirks mode emphasizes compatibility over standards compliance by supporting behavior found in earlier versions of Internet Explorer.</li>
 <li>Almost-standards mode supports APIs defined by the latest standards while honoring graphic rendering behavior found in earlier browsers.</li>
 </ul>
-<footer><strong>資料來源</strong><cite><a href="https://msdn.microsoft.com/zh-tw/library/cc288325(v=vs.85).aspx" target="_blank" rel="noopener">Defining Document Compatibility</a></cite></footer></blockquote></p>
+<footer><strong>資料來源</strong><cite><a href="https://msdn.microsoft.com/zh-tw/library/cc288325(v=vs.85).aspx" target="_blank" rel="noopener">Defining Document Compatibility</a></cite></footer></blockquote>
+
 <p>了解文件模式後，就可以透過切換不同文件模式來相容</p>
-<h2 id="修改每個-HTML-頁面"><a href="#修改每個-HTML-頁面" class="headerlink" title="修改每個 HTML 頁面"></a>修改每個 HTML 頁面</h2><p>下列 HTML 中繼標籤放到各網頁的 <strong>HEAD</strong> 項目中 ( 在 TITLE 或 META 之外的標籤前面 )，這會告知 Windows Internet Explorer 以 Windows Internet Explorer 7 的方式呈現網頁<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=EmulateIE7"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="修改每個-HTML-頁面"><a href="#修改每個-HTML-頁面" class="headerlink" title="修改每個 HTML 頁面"></a>修改每個 HTML 頁面</h2><p>下列 HTML 中繼標籤放到各網頁的 <strong>HEAD</strong> 項目中 ( 在 TITLE 或 META 之外的標籤前面 )，這會告知 Windows Internet Explorer 以 Windows Internet Explorer 7 的方式呈現網頁</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=EmulateIE7"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>強制瀏覽器呈現為特定的版本的標準<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=11&quot;/&gt;</code></li>
 <li>逗號分隔多個版本，瀏覽器自動挑選其能夠使用的最高版本，如：使用 IE 10 瀏覽就會自動挑選 IE 10<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=9,IE=10,IE=11&quot;/&gt;</code></li>
@@ -436,7 +440,9 @@
 <li>強制瀏覽器呈現當前瀏覽器的最高版本<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;/&gt;</code></li>
 <li>用分號分開，它設定為不同版本的兼容級別，IE7、IE9。允許不同層次的向後兼容性：<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=7; IE-9&quot;/&gt;</code></li>
 </ul>
-<h2 id="修改-IIS-設定"><a href="#修改-IIS-設定" class="headerlink" title="修改 IIS 設定"></a>修改 IIS 設定</h2><p>在針對站台的 <strong>HTTP 回應標頭</strong>新增 HTTP 標頭名稱為 <strong>X-UA-Compatible</strong> ，並且設定值即可完成全站設定。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">httpProtocol</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">customHeaders</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">clear</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">add</span> <span class="attr">name</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">value</span>=<span class="string">"IE=EmulateIE7"</span> /&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">customHeaders</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">httpProtocol</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="修改-IIS-設定"><a href="#修改-IIS-設定" class="headerlink" title="修改 IIS 設定"></a>修改 IIS 設定</h2><p>在針對站台的 <strong>HTTP 回應標頭</strong>新增 HTTP 標頭名稱為 <strong>X-UA-Compatible</strong> ，並且設定值即可完成全站設定。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">httpProtocol</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">customHeaders</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">clear</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">add</span> <span class="attr">name</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">value</span>=<span class="string">"IE=EmulateIE7"</span> /&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">customHeaders</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">httpProtocol</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://msdn.microsoft.com/zh-tw/library/cc817570.aspx" target="_blank" rel="noopener">MSDN X-UA-Compatible</a></li>
 <li><a href="https://msdn.microsoft.com/zh-tw/library/cc288325(v=vs.85).aspx" target="_blank" rel="noopener">MSDN Defining document compatibility</a></li>

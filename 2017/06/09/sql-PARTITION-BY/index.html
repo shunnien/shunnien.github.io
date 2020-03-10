@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -425,6 +425,7 @@
 </blockquote>
 <p>撰寫統計分析資料時，時常需要大量的運用子查詢及<a href="https://msdn.microsoft.com/zh-tw/library/ms173454.aspx" title="彙總函式" target="_blank" rel="noopener">彙總函式(SUM、AYG、COUNT)</a>，結合<a href="https://msdn.microsoft.com/zh-tw/library/ms189798" title="次序函數" target="_blank" rel="noopener">次序函數</a>應用的話，程式碼少了許多，也較好維護。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    Project.PrjStartDay</span><br><span class="line">   ,Project.PrjEndDay</span><br><span class="line">   ,<span class="keyword">SUM</span>(Updateuid) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> PrjStatus) <span class="keyword">AS</span> <span class="string">'Total'</span></span><br><span class="line">   ,<span class="keyword">AVG</span>(Updateuid) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> PrjStatus) <span class="keyword">AS</span> <span class="string">'Avg'</span></span><br><span class="line">   ,<span class="keyword">COUNT</span>(Updateuid) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> PrjStatus) <span class="keyword">AS</span> <span class="string">'Count'</span></span><br><span class="line">   ,<span class="keyword">MIN</span>(Updateuid) <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> PrjStatus) <span class="keyword">AS</span> <span class="string">'Min'</span></span><br><span class="line"><span class="keyword">FROM</span> dbo.Project</span><br><span class="line"><span class="keyword">WHERE</span> Project.PrjStatus = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="http://sharedderrick.blogspot.tw/2012/10/sql-serverwindow-ranking-functions2.html" target="_blank" rel="noopener">德瑞克部落格</a></li>
 <li><a href="https://msdn.microsoft.com/zh-tw/library/ms189461.aspx" title="MSDN SELECT-OVER" target="_blank" rel="noopener">MSDN SELECT-OVER 子句</a></li>

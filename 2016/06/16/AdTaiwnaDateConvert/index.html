@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -426,11 +426,13 @@
 <h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>個人習慣的處理方式還是使用 <strong>Calendar</strong>，而且要轉農民曆也方便 XD</p>
 <ul>
 <li>西元年轉換民國年<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> sampleDate = <span class="string">"2012-2-29"</span>;</span><br><span class="line">DateTime dt = DateTime.Parse(sampleDate);</span><br><span class="line">CultureInfo culture = <span class="keyword">new</span> CultureInfo(<span class="string">"zh-TW"</span>);</span><br><span class="line">culture.DateTimeFormat.Calendar = <span class="keyword">new</span> TaiwanCalendar();</span><br><span class="line">dt.ToString(<span class="string">"yyy/MM/dd"</span>,culture);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <p><img src="https://lh3.googleusercontent.com/T3plt7Y-v9xbwsU052c5fOyCgHRFJuT5BOyOlZ-H-jEYEnAuiUvu5uNIzXHRocaxI-WSuetbnpsRnK1CWAZI0pjjDoCn28mb84bpjN2PXp7QdfgXQd07_JGegfi6yLHNR3i3JzXa7cJ8rYVY_4A3PuvbJ4VJfUufCUn38a8yDdmMMGwo8_mlaIagzzX1mqn9sDC8EJGHZ_7ny_4uoBQpuzGPoR2XWN6yBUvcAqFQNiCDgcHgitxI_wUoi7EClglvV5eyJ9fWCzIW11KZWcSs4WLVw8VNi4yJ0xlWxi3CsyRPGKxBcdQcu1nwq2rPfiPUCvgVfScbrEJqxTAjNk6WTTforyEUBrlpI_OR4WWYCHtKcpabKJ77hAaDdKVvGemmw4VA-dvt18l4-XznR2oCAAzSWdUV3zTILuU1ZXHarkWugTBqeO1xG3eEfrwFxpDnLHJ0yFHVPuDKSvYI3sf-YYDTkxmZBvV_OXvPJZsSHFqEYJhl5iX9AeTTBRlF1F2IcumZYHP65EQkl69zpHXHEuMlMVwzvvhzv7oOD65-i5m5PHhN5yhn4eTp_xe4synVrcPtptJW-PdLJm0COQgqFtH4A9HwKCSgOBp_q1HEfVByW_t-iz-yduf9fVu-ahPV2PhRGKocA-qPLJu64nz91608BqiBMzdNwSGOPVt2tA=w494-h249-no" alt="AdToTwCal"></p>
 <ul>
 <li>民國年轉換西元年<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> sampleDate = <span class="string">"101/02/29"</span>;</span><br><span class="line">CultureInfo culture = <span class="keyword">new</span> CultureInfo(<span class="string">"zh-TW"</span>);</span><br><span class="line">culture.DateTimeFormat.Calendar = <span class="keyword">new</span> TaiwanCalendar();</span><br><span class="line">DateTime.Parse(sampleDate,culture);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <p><img src="https://lh3.googleusercontent.com/ikKMh8PsGPADuY1pc6PSEaEK0gKBvnWsXSQEDZ5joqdc8pKVDFCBsbyQjObZtCwvciVB8DPyPCF-Xd_0JHHW7OL3hso8jMbjDoyhU4MO6xH023lgQzzKeAk7-C9zroaVjVrkLzaOr3d-D_EIpifz3QHObmHHBmt7U0nMKeOTY-bRcfPEfOp7jhnaTkzDai2FK3jxu5YSkD1YDv82WYsBFCb4-_sE74P72ZhCVWoibbu7bqZpvdSB4crasufCqDoLIWhDfQqWSLLb35A_Hb67DB4f43cF3FXfGW0-N58N_npNwjrgK-BU7vDJCe2SJ-0zQRW_Fn6wvY4KFvqdQvNCA2Ph8R_NWul2WBrryUn07rpSJ5CWBhCt85AqeDE5l4VQbjAbJ4nr0j1TufE_GduYYC7R6nO023IhOD3iK_zibe9YU57pXrE-HV7jFGqm6x0f7lq7dy-VG-RDqpQ6t9J3LAGTV_a3ErEnI_2nHGoglQzpfm5324U8BmvmrXFQE5Q-Qo0lWEnrhbFj9E6WKTHP7SFhLzkGmrpOcMnZ6LflifbyTZGgSIZquFUxDjbIR3k_Enxo8Y-UYLjz0qyxCDXjpNsvEznklK4wVcNKXgjtYMku6GvD9Or5Mk_1K5OfjfqNpty_iGMdAF32dNuzwUlMVL-HUUj3zCaXK2Q3OYpoZw=w454-h295-no" alt="TwCalToAd"></p>

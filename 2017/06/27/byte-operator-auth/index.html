@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -425,13 +425,15 @@ A-->B2(fa:fa-area-chart 分析圖表)
 A-->B3(fa:fa-user 會員資料)
 </div>
 
+
 <p>將系統功能擁有的功能權限列出</p>
 <ul>
 <li>購物車，擁有新增、檢視、變更、刪除功能權限</li>
 <li>分析圖表，擁有檢視功能權限</li>
 <li>會員資料，擁有新增、檢視、變更、刪除功能權限</li>
 </ul>
-<p>但是不是每個使用者皆能擁有這些功能權限，假設一個是管理者，一個是一般使用者(購買者)，就可以看出分析圖表僅有管理者擁有，而且會員資料兩者也不同。所以使用者通常對應著系統功能項目的權限，設計方式還是需要看使用情境決定。<br><div class="mermaid">
+<p>但是不是每個使用者皆能擁有這些功能權限，假設一個是管理者，一個是一般使用者(購買者)，就可以看出分析圖表僅有管理者擁有，而且會員資料兩者也不同。所以使用者通常對應著系統功能項目的權限，設計方式還是需要看使用情境決定。</p>
+<div class="mermaid">
   graph LR
 subgraph 使用者
 A1(fa:fa-user 管理者)
@@ -445,65 +447,64 @@ A2-->|檢視 新增 修改 刪除|B1(fa:fa-cart-arrow-down 購物車)
 A2-->|檢視 修改 刪除|B3(fa:fa-user 會員資料)
 end
 </div>
-</p>
+
+
 <h2 id="位元運算與權限"><a href="#位元運算與權限" class="headerlink" title="位元運算與權限"></a>位元運算與權限</h2><p>上述的部分好像都沒提到位元運算，其實在設定新增、修改、刪除、檢視這幾項功能的時候，就可以使用。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">功能</th>
-<th style="text-align:center">二進制</th>
-<th style="text-align:left">10進制</th>
+<th align="center">功能</th>
+<th align="center">二進制</th>
+<th align="left">10進制</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">新增</td>
-<td style="text-align:center">00000001</td>
-<td style="text-align:left">1</td>
+<tbody><tr>
+<td align="center">新增</td>
+<td align="center">00000001</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:center">修改</td>
-<td style="text-align:center">00000010</td>
-<td style="text-align:left">2</td>
+<td align="center">修改</td>
+<td align="center">00000010</td>
+<td align="left">2</td>
 </tr>
 <tr>
-<td style="text-align:center">刪除</td>
-<td style="text-align:center">00001000</td>
-<td style="text-align:left">8</td>
+<td align="center">刪除</td>
+<td align="center">00001000</td>
+<td align="left">8</td>
 </tr>
 <tr>
-<td style="text-align:center">檢視</td>
-<td style="text-align:center">00000100</td>
-<td style="text-align:left">4</td>
+<td align="center">檢視</td>
+<td align="center">00000100</td>
+<td align="left">4</td>
 </tr>
-</tbody>
-</table>
-<p>稍微列出使用使用者對應的功能權限，功能權限應該是包含使用，例如：一般使用者同時擁有檢視、修改與刪除功能權限。<br>這部分做法就是使用 <strong>|</strong> 運算符了，其作法如下<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> OperList : <span class="keyword">byte</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">0x08 : 00001000</span></span><br><span class="line"><span class="comment">0x04 : 00000100</span></span><br><span class="line"><span class="comment">0x02 : 00000010</span></span><br><span class="line"><span class="comment">0x01 : 00000001</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 新增</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">add</span> = <span class="number">0x1</span>,</span><br><span class="line">    </span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 修改</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    edit = <span class="number">0x2</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 刪除</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    del = <span class="number">0x8</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 檢視</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    view = <span class="number">0x4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> admin = OperList.<span class="keyword">add</span> |OperList.edit|OperList.del|OperList.view;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</tbody></table>
+<p>稍微列出使用使用者對應的功能權限，功能權限應該是包含使用，例如：一般使用者同時擁有檢視、修改與刪除功能權限。<br>這部分做法就是使用 <strong>|</strong> 運算符了，其作法如下</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> OperList : <span class="keyword">byte</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">0x08 : 00001000</span></span><br><span class="line"><span class="comment">0x04 : 00000100</span></span><br><span class="line"><span class="comment">0x02 : 00000010</span></span><br><span class="line"><span class="comment">0x01 : 00000001</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 新增</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">add</span> = <span class="number">0x1</span>,</span><br><span class="line">    </span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 修改</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    edit = <span class="number">0x2</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 刪除</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    del = <span class="number">0x8</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 檢視</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    view = <span class="number">0x4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> admin = OperList.<span class="keyword">add</span> |OperList.edit|OperList.del|OperList.view;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>這比較方式就是每一個 bit 去比較<br><img src="https://lh3.googleusercontent.com/6A6pa-1a7XbyZ0gZFO5F86NU_-BDAGtPY75TimLU53dzsicAeXBaVCfZGUSpf80aqbw2mhTA47P9M9Jd67xZjFAUBRE2uesQ1ONx34OYEaM4c47soR1YRD0WRh638UT62cJo6vYD_qtA4Mr-rnvbOU_AIVqR-bs6mXMAzIlGg88902se12GWgJGSwlSBZPlvAZSF4rQsNcJvRTgaGeE_wmYv7XQNCyu9zMMNVrECaVdtIwWJheuceAan-w47gLd2Sdw6J8lkKrDEm6nC3O_qGh5d9bIwy87Obyq0et03eqMkT9muDw4I55Rir3iYv1qG99x3WT_HqF86uwyKd-N6VSO_MmtuqDmvehqu8efP4L0iILHtFf8O7a--bC_ex0oQTK5ccChzbNE-euovLv0HyWnX6d1a8IZ6L7UaP7C9L37oY5kNV0KndrtqE55KIyL-sE3FSWxdY0pP2oml20-cOfnaaPu1QClQ33x6mWsihSCRSc57eVFeW_qrXNT4ewwNvSue-ZyACrO-YqtMbndQsLSRf_SgIUObtdxthnKPp1tqlw5IJa4znLXuToPqQ6TNRdLCSXbTFjqK_XTzSGW926LRiagYKFGvcmmn76OAAy1uNQrMCFlpWD-p4wk7xyxWwn-MBmQk0P4QB3KDhXvp3oAtX9_3gan6nWxGKbusuA=w486-h194-no" alt="bit operator compare"></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">使用者名稱</th>
-<th style="text-align:center">系統功能</th>
-<th style="text-align:right">功能權限二進制</th>
-<th style="text-align:left">功能權限10進制</th>
+<th align="center">使用者名稱</th>
+<th align="center">系統功能</th>
+<th align="right">功能權限二進制</th>
+<th align="left">功能權限10進制</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">管理者</td>
-<td style="text-align:center">會員資料</td>
-<td style="text-align:right">00001111</td>
-<td style="text-align:left">15</td>
+<tbody><tr>
+<td align="center">管理者</td>
+<td align="center">會員資料</td>
+<td align="right">00001111</td>
+<td align="left">15</td>
 </tr>
 <tr>
-<td style="text-align:center">一般使用者</td>
-<td style="text-align:center">會員資料</td>
-<td style="text-align:right">00001110</td>
-<td style="text-align:left">14</td>
+<td align="center">一般使用者</td>
+<td align="center">會員資料</td>
+<td align="right">00001110</td>
+<td align="left">14</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>所以當想要判斷使用者是否擁有其功能權限，就可以改使用 <strong>&amp;</strong> 運算符了。</p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://shunnien.github.io/2017/06/23/byte-introduction/">位元說明</a></li>

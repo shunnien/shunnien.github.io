@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -421,8 +421,9 @@
 <h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>此篇主要介紹把 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="noopener">JSON</a> 字串轉換成 JavaScript 物件的方法 <code>JSON.parse</code>，以下引用 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank" rel="noopener">MDN JSON.parse</a></p>
 <blockquote>
 <p>JSON.parse() 方法把會把一個JSON字串轉換成 JavaScript的數值或是物件。另外也可選擇使用reviver函數讓這些數值或是物件在被回傳之前做轉換。</p>
-<h4 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.parse(text[, reviver])</span><br></pre></td></tr></table></figure>
-</blockquote>
+<h4 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.parse(text[, reviver])</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <h4 id="參數"><a href="#參數" class="headerlink" title="參數"></a>參數</h4><ul>
 <li>text<br>要解析成 JSON 的字串。針對 JSON 語法的描述，請參見 JSON 物件。</li>
@@ -433,6 +434,7 @@
 </blockquote>
 <p>此處針對使用 <strong>reviver</strong> 選擇性參數來作範例，例如以下的 JSON 字串，birthday 的資料可以直接在 parse 轉換好在輸出</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> jstr = <span class="string">'&#123;"name":"allen","gender":"male","birthday":"1496905033982"&#125;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 直接轉換</span></span><br><span class="line"><span class="built_in">JSON</span>.parse(jstr);</span><br><span class="line"><span class="comment">// 會輸出</span></span><br><span class="line"><span class="comment">// Object &#123;name: "allen", gender: "male", birthday: "1496905033982"&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 reviver 參數</span></span><br><span class="line"><span class="comment">// key: JSON 字串中的 key (例如:name、gender...)</span></span><br><span class="line"><span class="comment">// value: JSON 字串中的 value (例如：allen、male...)</span></span><br><span class="line"><span class="built_in">JSON</span>.parse(jstr,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(key === <span class="string">"birthday"</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> options = &#123;</span><br><span class="line">            year: <span class="string">'numeric'</span>,</span><br><span class="line">            month: <span class="string">'2-digit'</span>,</span><br><span class="line">            day: <span class="string">'2-digit'</span>,</span><br><span class="line">            hour: <span class="string">'2-digit'</span>,</span><br><span class="line">            minute: <span class="string">'2-digit'</span></span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(+value).toLocaleString(<span class="literal">undefined</span>,options);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 將會輸出</span></span><br><span class="line"><span class="comment">// Object &#123;name: "allen", gender: "male", birthday: "2017-06-08 14:57"&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank" rel="noopener">MDN JSON parse</a></li>
 <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="noopener">MDN JSON</a></li>

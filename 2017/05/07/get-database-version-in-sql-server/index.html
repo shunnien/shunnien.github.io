@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -419,6 +419,7 @@
       
         <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>列出 SQL Server 的相關資訊</p>
 <h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查詢相關的版本資料</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="keyword">RIGHT</span>(<span class="keyword">LEFT</span>(@@<span class="keyword">VERSION</span>, <span class="number">25</span>), <span class="number">4</span>) N<span class="string">'產品版本編號'</span></span><br><span class="line">   ,SERVERPROPERTY(<span class="string">'ProductVersion'</span>) N<span class="string">'版本編號'</span></span><br><span class="line">   ,SERVERPROPERTY(<span class="string">'ProductLevel'</span>) N<span class="string">'版本層級'</span></span><br><span class="line">   ,SERVERPROPERTY(<span class="string">'Edition'</span>) N<span class="string">'執行個體產品版本'</span></span><br><span class="line">   ,DATABASEPROPERTYEX(<span class="string">'master'</span>, <span class="string">'Version'</span>) N<span class="string">'資料庫的內部版本號碼'</span></span><br><span class="line">   ,@@<span class="keyword">VERSION</span> N<span class="string">'相關的版本編號、處理器架構、建置日期和作業系統'</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/version-transact-sql-configuration-functions" target="_blank" rel="noopener">Micsoft Doc @@version</a></li>
 </ul>

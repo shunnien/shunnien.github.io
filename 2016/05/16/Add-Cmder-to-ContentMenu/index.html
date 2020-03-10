@@ -6,7 +6,7 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -423,6 +423,7 @@
 <p>之後執行該批次檔案。</p>
 <p><em>cmderPath</em> 路徑按照個人的設定變動路徑位址</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"> SET cmderPath=D:\OneDrive\DevTool\Win\cmder_mini\Cmder.exe</span><br><span class="line"></span><br><span class="line"> rem add it <span class="keyword">for</span> Directory</span><br><span class="line"> @reg add <span class="string">"HKEY_CLASSES_ROOT\Directory\Background\shell\Open with Cmder"</span>         /t REG_SZ /v <span class="string">""</span> /d <span class="string">"Open with Cmder"</span>   /f</span><br><span class="line"> @reg add <span class="string">"HKEY_CLASSES_ROOT\Directory\Background\shell\Open with Cmder"</span>         /t REG_EXPAND_SZ /v <span class="string">"Icon"</span> /d <span class="string">"%cmderPath%,0"</span> /f</span><br><span class="line"> @reg add <span class="string">"HKEY_CLASSES_ROOT\Directory\Background\shell\Open with Cmder\command"</span> /t REG_SZ /v <span class="string">""</span> /d <span class="string">"%cmderPath% \"%%V\""</span> /f</span><br><span class="line"> pause</span><br></pre></td></tr></table></figure>
+
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li>jojobyte:<a href="https://gist.github.com/jojobyte/66c8346ed8948b9b395f" target="_blank" rel="noopener">ContextCmder-Disable</a></li>
 </ul>
