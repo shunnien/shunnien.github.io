@@ -42,19 +42,19 @@ git config --global core.autocrlf false
 **不允許** 有 **LF** 與 **CRLF** 混合的檔案
 
 ``` bash
-git config --global core.autocrlf true
+git config --global core.safecrlf true
 ```
 
 **允許** 有 **LF** 與 **CRLF** 混合的檔案
 
 ``` bash
-git config --global core.autocrlf false
+git config --global core.safecrlf false
 ```
 
 **允許** 有 **LF** 與 **CRLF** 混合的檔案，但是會出現 **warning** 警告訊息
 
 ``` bash
-git config --global core.autocrlf warn
+git config --global core.safecrlf warn
 ```
 
 # 延伸閱讀
