@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="JavaScript,JavaScript30,">
+  <meta name="keywords" content="JavaScript,JavaScript30," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,21 +84,22 @@
 
 
 <meta name="description" content="使用 JS 和 CSS 建立時鐘">
-<meta name="keywords" content="JavaScript,JavaScript30">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS30紀錄 02-JS + CSS Clock">
 <meta property="og:url" content="https://shunnien.github.io/2017/12/09/Javascript30days-2/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="使用 JS 和 CSS 建立時鐘">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/wJKM6jsDyoZJwvIaCKGchRh4dEkc5nB7p_KBRwT7iO07PYQJ3hkusIK5uEG9PQdsXlMsI8IRlSpkIDZb3mtm1C1aZIowT95dyJiZc_-j-vXewycFeO6JyGrWmWZ96wuSTP7_CB_VLxikAVSfOHFMisP73Eue2FZptmG5ptEivbtVzCAKnTru-eO-5Zika5OW3p6REBQr1T97UaLUiu1M37SfRMmZvT8xsvgKsma4-2kQk1ZXFujJvySk1BBZONtJTEi_rkxDBehZvF8eWCqPzGYIIs1he2cl-HbbhBkCjSF24LK56P4Ce8R7u2q5szofuNCTnUoUH_MzuotshFtXmoizu9KT4d3B1ezUes9jxhywYhp15OqhUvAGBBEN2x1CPXjJ4OVzN1AKSCniF5Fjo4VEmyaDNV1UN7dANuLif845Cho2wLgri6uqXWRERam7yokrQgiLGOASvsoY3WN9ZbL7dszm12NQkN57VX01d_3XJwP6Ug5ldj0Irif93HmTCMq8X7_PnuvkSNkaj0Bxn-BM7PPFmEoJH8cqlit1zpB7Mf13rAFxc45aiT0NXm1wl__znFFx5a3WTbGIMxVAMqdJvmD4yV6w-4mR_xje6rOJE9qpu_JiqV9ygqyAEkHRB2RjXbQfR9BjdAJGw3o-0K_roHzQ0B3PFvI=w1040-h521-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/DCf6nT7DVs2Y3koYDEaZ15rAeGp1Z8Umgqs-ahdwKi47snSLQBLazPo96aQi0DRXEEzqlm5LWj0YiFLViJ0MoOgI2SHGP6KFeXcmzNEw9U7wikEUA4rjR6ZP0JDBFg2sYEfGLWGJuO22u-kHG635PIbMhI8jIKYPsGI5a5NGCbiqVtGHRNtTOaasuqqwFsFWNeMDiZW4OeHI3H-T1aFaumtyqfytBsyEYm2ztNHRV9CwgY08jIOtCXECwefW4cllS7rMEXTTO9nmuodok11t1amVlGW2nfXbMrGxJ33pWEmYuK24q9qD3M05WCxARQkcu_XmsgE0k6jJt900kkCpILrcSJwTAAt-eO6MXef0U4yDcpSlPmbBlMvCKwW6TBhtC0_9MTCIKUZTG7hTK0zkcE0DPAAfmC3_vZRWHLXWJ1uddNjvbrCgVJBDOpEry1VkgPAL3AhIQnbJV6Acf5yfcSkfoKSr8_6Ef9Bb-U-mIARrqYfGXPCjnxMYB-uXLx2L13bRARaQIOaPDNJDf6KiTsD5Kt4zjoKrSUtA8lCvOy0OOBdc8hlDon7oJHg2XrPUncV0fDR-75bXnzrbTwQj43Pdx-0PqDTYEDt8vhWhhV47u3U1jG1Dkfh2MQI_9CoLy-6y7gizTaLR8-cOSdeQ7fZ5yPC2tMUq8JI=w785-h707-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/3KAtmzw5c5R2bVt2YE5UJmCBmFeolBIir99vaJPuhgvjgzWysDDa7uasvqEbRlp0-laJ6q1MHQ6MT52VS_FLG7lowi5qvaRy2XDK6wm0oRjwWlOxFC9jzCKvcW7n84MY7UZarnu-TkA9zdoUK0kob-QcAmfG1D5s3wRBz_VkZ-dMwzBmWACbes7FZTPCiap7EvskQpAadLOdBHhYSGlqA5v2pCtIiEuYg8yK3UmzgFW63sxnVeA4hmr24ZurO2vW4Yy_1lmS8sDZRPrPDmaZFtY2eZJSi06e9bCIOg8b_y_aKJ0ILZKeAQ9MhfLNxinMUUFFMlDD84ZTZdKHSn8BM3ihBrlNRUfctfESzvucdE_kDarh8bM10U-d0eUbBdkVUBxjbQ2l_txdcWT7hmZ9EzXhZJ7WR6NOjLFTafeYEa8tN6pTtSLZY0qP6PIQNxaIGoxSJ79Lz24uKBc7fly4H6xJt6gDpt8hOU4l-vV9eIsx4RQsOX81HPV9syx6jJVSVqdK7EdNJUVA6CVSGZi4Yrwwm-AXsolrpAbeYR0TKAbZzZvVCWF1uQqQBiWnAG0oroMOG88gL9LdRy7YAL7fTYFn2_DA4pYijaV5pPM-qkK2nWA5oqfEvcgGbzJNU3xe-Qs3HxRckVCsHcXHMVk2x26_vx7z3vSDiBI=w534-h564-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/lQ0iqWgul8zpBfmdAREwakrFY6t8HFejXD4yHTjDOLK4SWByNUEZUTaHMG1fSBDuMELgppkRIETM-4xIMhRH5hmo_h4KLm6Tq2EhSK8vWn32zKQhsNdZ1vggqSfE8Z1SRcvr-DcRvYzAILGm-Zl0ipH76Mdan5kR_77mKG2gW875iJU6xkv2UMVjdl__0C2p4qdtu0bzckzYqyGzi_HaxVQz5Q7dlNjAi8zdgA0xbSNUuqzjxHzlg9zZ1hcUTKUWqvRHEhVbUdXkZIx0UUmGmyseQwyqELr64BxIYXUfGYvKOTGnfVONrlBmXUkxPtKH8r-Yz4ZqsnGHucUz1fc6gI5fu19CB8ZjkqGabX60uXJkhqA3IShiORevd1AD1-IVAWPHwL_ZJurb6VZDr-NyOFGNAW5NZAjddnIWiyb-HaFYHqqQreHeth9iKuBnl4kX6xDzEzOTL2HJ9dIMtA_jOU0ImePnrO3UQs3Qro9t5zEvijRNttKXeVTt-zdvdIgQOa3kdfjfuLTVxfRL5kLbY45213uUpFeVIUveokpoGJlIKLK0STHlpQoI_K76lPP-MOU_9XDX48XUC2fvPcSqnoyri9f7QncklTr94RptRwB2lVwCaQrxQ1m3_6cy8AXflPGb6MzZax-cmeSPxuG5jFDciqt95fEe6r0=w629-h510-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.658Z">
+<meta property="article:published_time" content="2017-12-09T00:02:19.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.658Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="JavaScript30">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS30紀錄 02-JS + CSS Clock">
-<meta name="twitter:description" content="使用 JS 和 CSS 建立時鐘">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/wJKM6jsDyoZJwvIaCKGchRh4dEkc5nB7p_KBRwT7iO07PYQJ3hkusIK5uEG9PQdsXlMsI8IRlSpkIDZb3mtm1C1aZIowT95dyJiZc_-j-vXewycFeO6JyGrWmWZ96wuSTP7_CB_VLxikAVSfOHFMisP73Eue2FZptmG5ptEivbtVzCAKnTru-eO-5Zika5OW3p6REBQr1T97UaLUiu1M37SfRMmZvT8xsvgKsma4-2kQk1ZXFujJvySk1BBZONtJTEi_rkxDBehZvF8eWCqPzGYIIs1he2cl-HbbhBkCjSF24LK56P4Ce8R7u2q5szofuNCTnUoUH_MzuotshFtXmoizu9KT4d3B1ezUes9jxhywYhp15OqhUvAGBBEN2x1CPXjJ4OVzN1AKSCniF5Fjo4VEmyaDNV1UN7dANuLif845Cho2wLgri6uqXWRERam7yokrQgiLGOASvsoY3WN9ZbL7dszm12NQkN57VX01d_3XJwP6Ug5ldj0Irif93HmTCMq8X7_PnuvkSNkaj0Bxn-BM7PPFmEoJH8cqlit1zpB7Mf13rAFxc45aiT0NXm1wl__znFFx5a3WTbGIMxVAMqdJvmD4yV6w-4mR_xje6rOJE9qpu_JiqV9ygqyAEkHRB2RjXbQfR9BjdAJGw3o-0K_roHzQ0B3PFvI=w1040-h521-no">
 
 
@@ -129,11 +130,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2017/12/09/Javascript30days-2/">
+  <link rel="canonical" href="https://shunnien.github.io/2017/12/09/Javascript30days-2/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>JS30紀錄 02-JS + CSS Clock | ShunNien's Blog</title>
   
@@ -155,7 +156,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -173,7 +174,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -201,9 +202,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -211,9 +212,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -221,9 +222,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -231,9 +232,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -241,9 +242,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -256,7 +257,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -277,7 +278,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -318,7 +321,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -354,7 +357,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -366,7 +369,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -385,7 +388,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/12/09/Javascript30days-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/09/Javascript30days-2/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/09/Javascript30days-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +401,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -444,7 +448,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">transform-origin</span>:<span class="number">20%</span> <span class="number">40%</span>;</span><br><span class="line"></span><br><span class="line"><span class="attribute">-ms-transform-origin</span>:<span class="number">20%</span> <span class="number">40%</span>; 		<span class="comment">/* IE 9 */</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">-webkit-transform-origin</span>:<span class="number">20%</span> <span class="number">40%</span>;	<span class="comment">/* Safari 和 Chrome */</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">-moz-transform-origin</span>:<span class="number">20%</span> <span class="number">40%</span>;		<span class="comment">/* Firefox */</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">-o-transform-origin</span>:<span class="number">20%</span> <span class="number">40%</span>;		<span class="comment">/* Opera */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="transform-rotate"><a href="#transform-rotate" class="headerlink" title="transform: rotate"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="_blank" rel="noopener">transform: rotate</a></h2><p>變形的旋轉屬性。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rotated</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(45deg); <span class="comment">/* Equal to rotateZ(45deg) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rotated</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>); <span class="comment">/* Equal to rotateZ(45deg) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="transition"><a href="#transition" class="headerlink" title="transition"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transition" target="_blank" rel="noopener">transition</a></h2><p><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions" target="_blank" rel="noopener"><strong>transition</strong></a> 屬性是一個簡寫屬性，用於設置四個過渡屬性</p>
 <ul>
@@ -546,7 +550,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -588,7 +592,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -599,7 +605,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -612,7 +618,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -623,7 +629,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

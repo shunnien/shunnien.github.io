@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="T-SQL,SQLServer,">
+  <meta name="keywords" content="SQLServer,T-SQL," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,13 +84,12 @@
 
 
 <meta name="description" content="SQLServer CTE,Cursor,Table Variable,Temporary Table,Stored Procedure 介紹">
-<meta name="keywords" content="T-SQL,SQLServer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CTE,Cursor,Table Variable,Temporary Table,Stored Procedure">
-<meta property="og:url" content="https://shunnien.github.io/2014/01/24/CTE、Cursor、Table-Variable-Temporary-Table、Stored-Procedure/index.html">
+<meta property="og:url" content="https://shunnien.github.io/2014/01/24/CTE%E3%80%81Cursor%E3%80%81Table-Variable-Temporary-Table%E3%80%81Stored-Procedure/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="SQLServer CTE,Cursor,Table Variable,Temporary Table,Stored Procedure 介紹">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/oOhY4U3Kbhes1a29lm5QU14T6Zh7GxcpRQk-K5d4UsQ1-lKquZcoh9JQieN6YAt7IbUndZOuQJz6ekm-me8pcAaP_WHnSa0whk7yyNwP95gGVJ-ckwOgdXmEtypUl4nNtX35mtyYSkAI6sf0bGLMj-pPpBmn3VPNCF9jp_hTM2YiEwmNbzD6GAZsmC0BSU8ANBDJeMqDKFcpVbmsA9gypl8EGqBMbR5kRt9UXCWdZ2a2QwvncVRr7pldr88KMZ33jx-6eXhjskpQGr3RbkIMn-FENEPYAUItSOvso7Jn0acPlWtyQgNFP-r7Q6P7CHNM2nSKlAsf_ad2SZXzOEN2xoJoLmJ1g8ULdxuDJyO9UMP_O3PP_BH54KJHBb8BmeNYEcvktQNga9hrAFwez-2JyJ1ARv1sXiecOyl3SO94Se5SkGcFvZjuL0pYUEAokKZeFf-miZimPupt6mP3hyhvCyLeFSvMNRXCrwMQ5x4mv5l3Cj1nK4VjnxZ18gWk44OSyWk-ryT3fbl6BF6UFI23rFGJW5ru6DS1NKo-qFWyOGx4klp4L6tXrrGVLI6AfgBVqerJIXiOj4yWVSm72LWHPDetHdXkOLPrjv5G2v6cqTp1knVXjJwEQpAJnBp61RfGxI1VrBn-0uakQJGcAD8ENNGwYFNuJqCKgQtZXMI9Pw=w448-h128-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/WrinTSihQHLuw-F1vumZihMBahKluC9sbbJbaSqqxiEFzUAvxINFHgTi2CuAfPCr0YNbkX1dNOQDqK7Ef5ofu-myE_kKXpzg9WzE_Wl_enAxPeKoSAHf3FOSSHdJfltTaj4Z5ZGPtGij4_6ILGFI6KjSDZfPraY1MGJ7pWur2TSNB8-lY5pktDKZgyzqMZv2DLJoIpdvjlG0DNkaln0kBI6AZ2bXeJBod6s-t8nw_Utqftdatnb7kp_uCkoQcPnFTTstj51Yy86Ims0Fhs8Dx9EWE7s_pq0brwUdJT-Vfb8xtdTXnTv4yKgfHGz5PFgul3TDmXS3h6-QlEWAlUweOf7jx0J6T63UlveQwldDqIsfFz4NE7_V2ypLOQEW29UXQ4pJ2GrnyYZ4BOCJ3eoOqzf6Ur_v5IEFaApio-F4no5v-Hw1QW6QF98dSvqxxd55REsMSrSqrJ5vISWFZN0Lnc2xwijrZvxx7SAZXqDudnnrh5C_xrD3fP9_CMX-duKijzlfjkpfUvtXqCjBYh1GMu8NvKIEOcg9_eedCZ3EqjpkJKGbXRQmrxD0vPRQ-p-9ocPNyLVOgfb2c2VSoVQipW9AqikZFsJdZFcF0Dtq2JD7q5xCjlnVFybWl1ZRiJf4PFnOblcBlINoFwLNA6c-36-hNjTylDcJkMQ2cCx3ag=w382-h413-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/eeZER-3kVf5c7qO5RZs_KWS3dAWPl59urEincyrOyMf-lMTrPHK3iKCcTYXhVvpNKai4BgxTjizyKRDjbHtHYV_3EctGHmDpJqebNsGkU4nvRXtK69BD3AkmZyx71p-2NCXYp5EEu8NY4lCunAbVrgDe1DHfOQIbShDbj-AyaBhIpcnmqd8a0GHxVhT8IzqY1sPgSO_FSLyV8K-sQZP1c5_VX5XyYz3pq-o_ZibIrE7RGNEGUgISyFFsFdVztSSMnsyQN8pSxnMfjEhJ_PcvZX67hP1HxFALFzD_LiNDwZluwvB9VxKtlPnrv_iVMEZ-F4ebOyBCACLKJ5l0oA5Vy37xPyjGrTX7cg_Dt0lyKUEj7NCs8KD6lljv6XqVPIKgztt9ZfsKzFWNUlM0yIy_9JzYEocG6NGnM-d7DGS9jXmIzVE4n1DU0AaSBVwsq3bVqFkuuRGYPeayFqmeo-WfSoV1ozE1ADyg9iEWdS7HQ8ULAcKazpjUHRzQLhfj7eNitEJndFUHoKUrMiw4MBp9tZqiLBABS85r2hDFyPRDqruI3jJma5E1FvqacOsG0Qzztcxd_Bc3LkaBFlNpI-8wn_hz49Y0xn2PwBYJdmHRhSc4vRsXusuTty552NZuggAY23tFa5akklFr2XqCg1x8HxCfsokgdN3MoPn6ZvkG8g=w254-h355-no">
@@ -101,10 +100,12 @@
 <meta property="og:image" content="https://lh3.googleusercontent.com/HSCOWXnY1k3OH7OiL_exhRFl3s373LDxUpoXjjJKx7tk1VPjXTDI4ZbMhzrfccbHEQrk9SVlQ5shB9qyrvoXkIwWsqjaf7MHgE_5kNi6znHqouDE-16J-oqPgze-nz1CHASRyKZoMW-OF9p3ToNuKUcShZzyXVMqAaiJPH_Ltw3pIlwdjUBjgzk0IU0aDMPzSrG7EgPY8wySq8EednO1PbTJWR41QQcObR7kI2tpATAegG2sz3jenm8devGywv-LioOnThtH26zLaTRp4HWjOSQSz5FzHfQbSkIByU0ZUbHfeo9teS1zfK7dWboMG9Yao4QhHnWVEjhaXYzB6Bl5caX3KyOoCEwren7sHAW2RiholkaMxYEC_E09c1hIJ9VJp9-aw-c2Jv8BWmTHKZN22l3I3O4tu3Rdpvtakc2g0Rg34P6KXUt0cOhfPa0z-LMW_lILqw4EtMf6z43oW-rPTJJppTGGiVoosmSbPkpJPxZsvXD73b9t297HtrKiDk9bvR49FclyA4BHqnrkDkQ2O9ZaGIPZ_N9xM1BZT41DH86h-9vERgB9PQ31glXXXIiUHN64vTLHPZFQiQvaSTcVPC70qmXJGj91FCiaoWkKxjq4nFmHi1H2fjeCD0SNGNbpAAvJIOpu1NXGtMNchrrmeaAAxvceoUYen1hI4nZAWg=w600-h370-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/C-AOQ0mf7hx1-7aWY5NanELvxXC9lGcvuxtIGiBVQzBaKqHCSg_b6kS7M_5I3m4cSwvDmPMYKfxNMjd1Ok8PgnBGElvbC-eeTpUUjWVhbZzFJeVjwz1JzbTtN6-N-z4yZMjkvBmwqH1DcXeYkYEhS_fwf3Ee6NVCZ5cZMQOUZQOz2mdIFFWglZYXu5gDcHZVlHyfe5R_czmRfrKL1FBQg9KBZOKeDFsBXV13GJuc_rSn1OIKaC5zVcP3H1eELyT1e4siPx07Y5AuP50iH5LnjoVwylG1tfQXBqIKWPSn8Owqo-DluMHCITAj0d-CB87P8r6HtnVxX4_dNI8y8AgvSBqQm_1-zYJjE-PZVp6DGtI32lfxXB5OD1wU529rQkJNfsxjI7Ka9p9d0EXIkkGEUZuGxKep6Q6PAkhdYD4VsgUrhlsv0E0KDGmVh2ABaE5SFdfY0YD0kuZd5Tpbh3olMH8n7rFRF0GJHxtHz_EcDpEsL70QKO66vCSHA3lVde3k9DTRzk58BDaeWZZm7ZBjc8GddTPsSUBnDfsL_m3A9dF6R2YbpZmAZKYnHGEbtPSMj_OhaR1k0UteJi57xUUJwCvumVciFbQ-7F2YSzcmF2VS-fHkq0R0Av3cKi4MxBNSMBBuRxPu2TRqd4Z9sS0kWV50cyC86Va6w6NVoV6JgQ=w587-h352-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/1X42ck7PyMxHmwIWZuAqJ4ieQ47qa4OFbqeX7f_UZrMduJ027oVE1OqJKL59JJ7coCZRmNnuFM1JMCO8c8Pwh2P9iHJ7TOZzds70fnF0GTUDI9Yh-DOguGWl8yy1npAgkaAF7u5nUpINXJL1VsO9cqxhSbjTu0Y58KksBTtdj7f8pVt5fb5UQr0biyyP5pBAaqsFSLsR-n06PFJqJHvbpUQX694fCgHX42EXaSL7swwxAoSrdKOM-SD2VG6enHxH9MIFR49sdO_mLF1_zkjptpHbykekUvDYaZEQEemU2qVKqSxY6PVhiDe70tfYATVgk43sut-TnXywU7YWdrnphIB2xStuG0xk0qG0AaLd6Ulc3O6o8GViWt3mSe5rWvV7TMv8X-GaIiCG7TH7Kwu5hfwVI_jev6DKB73CKrbczNeIWo55L15r_FdzghtjFrKD7idHM8Rh9Bg6SALLBDoC631rZX7sfNUeNkjvZUEujykN_G2cqVJRr7UxZL71IO81f9vvK3hc5_1sTZScjIlPVE-6ZBiEcTG03xbeY9E6gYQPF1eDYgNt0gjSeSv6BdHFSMsVgB3aJecDAwEwc6Iv94hcYIT5TRtl0bgJz_IH9K0BnR_NZKncccgW41_GP4Utf3ULmqkJ140P7KD5DK43ribmQZ4Te7qV4tidPXBYjA=w533-h237-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.597Z">
+<meta property="article:published_time" content="2014-01-24T03:17:12.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.597Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="SQLServer">
+<meta property="article:tag" content="T-SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CTE,Cursor,Table Variable,Temporary Table,Stored Procedure">
-<meta name="twitter:description" content="SQLServer CTE,Cursor,Table Variable,Temporary Table,Stored Procedure 介紹">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/oOhY4U3Kbhes1a29lm5QU14T6Zh7GxcpRQk-K5d4UsQ1-lKquZcoh9JQieN6YAt7IbUndZOuQJz6ekm-me8pcAaP_WHnSa0whk7yyNwP95gGVJ-ckwOgdXmEtypUl4nNtX35mtyYSkAI6sf0bGLMj-pPpBmn3VPNCF9jp_hTM2YiEwmNbzD6GAZsmC0BSU8ANBDJeMqDKFcpVbmsA9gypl8EGqBMbR5kRt9UXCWdZ2a2QwvncVRr7pldr88KMZ33jx-6eXhjskpQGr3RbkIMn-FENEPYAUItSOvso7Jn0acPlWtyQgNFP-r7Q6P7CHNM2nSKlAsf_ad2SZXzOEN2xoJoLmJ1g8ULdxuDJyO9UMP_O3PP_BH54KJHBb8BmeNYEcvktQNga9hrAFwez-2JyJ1ARv1sXiecOyl3SO94Se5SkGcFvZjuL0pYUEAokKZeFf-miZimPupt6mP3hyhvCyLeFSvMNRXCrwMQ5x4mv5l3Cj1nK4VjnxZ18gWk44OSyWk-ryT3fbl6BF6UFI23rFGJW5ru6DS1NKo-qFWyOGx4klp4L6tXrrGVLI6AfgBVqerJIXiOj4yWVSm72LWHPDetHdXkOLPrjv5G2v6cqTp1knVXjJwEQpAJnBp61RfGxI1VrBn-0uakQJGcAD8ENNGwYFNuJqCKgQtZXMI9Pw=w448-h128-no">
 
 
@@ -135,11 +136,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2014/01/24/CTE、Cursor、Table-Variable-Temporary-Table、Stored-Procedure/">
+  <link rel="canonical" href="https://shunnien.github.io/2014/01/24/CTE、Cursor、Table-Variable-Temporary-Table、Stored-Procedure/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>CTE,Cursor,Table Variable,Temporary Table,Stored Procedure | ShunNien's Blog</title>
   
@@ -161,7 +162,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -179,7 +180,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -207,9 +208,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -217,9 +218,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -227,9 +228,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -237,9 +238,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -247,9 +248,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -262,7 +263,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -283,7 +284,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -320,11 +323,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2014/01/24/CTE、Cursor、Table-Variable-Temporary-Table、Stored-Procedure/">
+    <link itemprop="mainEntityOfPage" href="https://shunnien.github.io/2014/01/24/CTE%E3%80%81Cursor%E3%80%81Table-Variable-Temporary-Table%E3%80%81Stored-Procedure/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -360,7 +363,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -372,7 +375,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -390,8 +393,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2014/01/24/CTE、Cursor、Table-Variable-Temporary-Table、Stored-Procedure/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/01/24/CTE、Cursor、Table-Variable-Temporary-Table、Stored-Procedure/" itemprop="commentCount"></span>
+                <a href="/2014/01/24/CTE%E3%80%81Cursor%E3%80%81Table-Variable-Temporary-Table%E3%80%81Stored-Procedure/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2014/01/24/CTE、Cursor、Table-Variable-Temporary-Table、Stored-Procedure/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -403,7 +407,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -431,8 +435,8 @@
         <h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>分別介紹 CTE,Cursor,Table Variable,Temporary Table,Stored Procedure 這幾項。</p>
 <h3 id="一般資料表運算式-Common-Table-Expressions"><a href="#一般資料表運算式-Common-Table-Expressions" class="headerlink" title="一般資料表運算式(Common Table Expressions)"></a>一般資料表運算式(<strong>C</strong>ommon <strong>T</strong>able <strong>E</strong>xpressions)</h3><p>或稱<strong>通用資料表運算式</strong>；簡單來說，就是建立一個<strong>暫存資料表</strong>給予查詢使用，此次查詢使用之後，將會自動釋放。另外 CTE 是 <strong>SQLServer 2005</strong> 才開始支援 </p>
 <h4 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> expression_name [ ( column_name [,...n] ) ]</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line">( </span><br><span class="line">     <span class="comment">--CTE_query_definition </span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
 <h4 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> tmpOrders</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line">(<span class="keyword">SELECT</span></span><br><span class="line">        EmployeeID</span><br><span class="line">       ,<span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> OrderCounts</span><br><span class="line">    <span class="keyword">FROM</span> Orders</span><br><span class="line">    <span class="keyword">GROUP</span> <span class="keyword">BY</span> EmployeeID)</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    *</span><br><span class="line"><span class="keyword">FROM</span> tmpOrders;</span><br></pre></td></tr></table></figure>
+
 
 <ul>
 <li>expression_name<blockquote>
@@ -458,7 +462,6 @@
 </ul>
 <h3 id="遞迴-CTE"><a href="#遞迴-CTE" class="headerlink" title="遞迴 CTE"></a>遞迴 CTE</h3><p>其實我是覺得支援遞迴查詢這部份真的便利許多，雖然還是有些限制錨點部分為遞迴查詢的初始資料，使用 UNION ALL 和遞迴部分結合遞迴部分為需要反覆執行的部分</p>
 <h4 id="語法-1"><a href="#語法-1" class="headerlink" title="語法"></a>語法</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span> expression_name <span class="keyword">AS</span> [(ColName[,...n])]</span><br><span class="line">(</span><br><span class="line">    <span class="comment">--CTE_query_definition</span></span><br><span class="line">    <span class="comment">-- 錨點部分</span></span><br><span class="line">    <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line">    <span class="comment">-- 遞迴部分</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
 <p>使用規定可以參考 MSDN  比較需要注意的是<strong>不允許使用</strong>的項目，遞迴成員的 <strong>CTE_query_definition</strong> <strong>不允許</strong>使用下列項目：</p>
 <blockquote>
 <ul>
@@ -474,7 +477,6 @@
 </blockquote>
 <p>若遞迴成員查詢定義，對父資料行與子資料行傳回相同的值，就會建立無限迴圈。若要防止無限迴圈，可以透過 <strong>OPTION</strong> 子句中，設定 <strong>MAXRECURSION</strong> 屬性( 0 和 32767 之間的值)，來限制遞迴層級數目。資料庫的遞迴預設值是 100。 指定 0 時，不限制遞迴層級。此外 <strong>WITH</strong> 這個關鍵字用在許多表達式中，所以若一個 CTE 表達式的第一行不是由 WITH 開始，就必須加上<strong>分號(semicolon)</strong>來斷行。</p>
 <h4 id="範例-1"><a href="#範例-1" class="headerlink" title="範例"></a>範例</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 遞迴 Recursive CTE's</span></span><br><span class="line">;</span><br><span class="line"><span class="keyword">WITH</span> EmpCTE (EmployeeID, EmployeeFirstName, EmployeeLastName, MgrID, SalesLevel)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line">(</span><br><span class="line">    <span class="comment">-- 錨點部分 Anchor Member (AM) </span></span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">        EmployeeID</span><br><span class="line">       ,FirstName</span><br><span class="line">       ,LastName</span><br><span class="line">       ,ReportsTo</span><br><span class="line">       ,<span class="number">0</span></span><br><span class="line">    <span class="keyword">FROM</span> Employees</span><br><span class="line">    <span class="keyword">WHERE</span> EmployeeID = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">-- 遞迴部分 Recursive Member (RM)</span></span><br><span class="line">    <span class="keyword">SELECT</span></span><br><span class="line">        e.EmployeeID</span><br><span class="line">       ,e.FirstName</span><br><span class="line">       ,e.LastName</span><br><span class="line">       ,e.ReportsTo</span><br><span class="line">       ,m.SalesLevel + <span class="number">1</span></span><br><span class="line">    <span class="keyword">FROM</span> Employees <span class="keyword">AS</span> e</span><br><span class="line">    <span class="keyword">INNER</span> <span class="keyword">JOIN</span> EmpCTE m</span><br><span class="line">        <span class="keyword">ON</span> e.ReportsTo = m.EmployeeID)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 設定 MAXRECURSION 遞迴層次為 5</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    *</span><br><span class="line"><span class="keyword">FROM</span> EmpCTE</span><br><span class="line"><span class="keyword">OPTION</span> (MAXRECURSION <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://lh3.googleusercontent.com/oOhY4U3Kbhes1a29lm5QU14T6Zh7GxcpRQk-K5d4UsQ1-lKquZcoh9JQieN6YAt7IbUndZOuQJz6ekm-me8pcAaP_WHnSa0whk7yyNwP95gGVJ-ckwOgdXmEtypUl4nNtX35mtyYSkAI6sf0bGLMj-pPpBmn3VPNCF9jp_hTM2YiEwmNbzD6GAZsmC0BSU8ANBDJeMqDKFcpVbmsA9gypl8EGqBMbR5kRt9UXCWdZ2a2QwvncVRr7pldr88KMZ33jx-6eXhjskpQGr3RbkIMn-FENEPYAUItSOvso7Jn0acPlWtyQgNFP-r7Q6P7CHNM2nSKlAsf_ad2SZXzOEN2xoJoLmJ1g8ULdxuDJyO9UMP_O3PP_BH54KJHBb8BmeNYEcvktQNga9hrAFwez-2JyJ1ARv1sXiecOyl3SO94Se5SkGcFvZjuL0pYUEAokKZeFf-miZimPupt6mP3hyhvCyLeFSvMNRXCrwMQ5x4mv5l3Cj1nK4VjnxZ18gWk44OSyWk-ryT3fbl6BF6UFI23rFGJW5ru6DS1NKo-qFWyOGx4klp4L6tXrrGVLI6AfgBVqerJIXiOj4yWVSm72LWHPDetHdXkOLPrjv5G2v6cqTp1knVXjJwEQpAJnBp61RfGxI1VrBn-0uakQJGcAD8ENNGwYFNuJqCKgQtZXMI9Pw=w448-h128-no" alt="CTE Demo"></p>
 <h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
 <li><a href="http://msdn.microsoft.com/zh-tw/library/ms175972(v=sql.105).aspx" target="_blank" rel="noopener">MSDN_WITH common_table_expression</a></li>
@@ -490,19 +492,18 @@
 <li><a href="http://technet.microsoft.com/zh-tw/library/ms190322.aspx" target="_blank" rel="noopener">Microsoft OPTION</a></li>
 </ul>
 <hr>
-<h3 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a><a href="http://technet.microsoft.com/zh-tw/library/ms180169(v=sql.105).aspx" title="TechNet_CURSOR" target="_blank" rel="noopener"><strong>Cursor</strong></a></h3><p>詳細說明參照<a href="http://sharedderrick.blogspot.tw/2013/02/cursors-rowsets.html" title="德瑞克_初探Cursors(資料指標) 與資料列集(Rowsets)" target="_blank" rel="noopener">德瑞克大</a>，這邊主要紀錄一下 DECLARE CURSOR 的使用。不過很多文章都說盡量避免使用 <a href="http://technet.microsoft.com/zh-tw/library/ms180169(v=sql.105).aspx" title="TechNet_CURSOR" target="_blank" rel="noopener">Cursor</a>，以免造成效能損耗，詳細原因的話可以參照<a href="https://dotblogs.com.tw/ricochen/archive/2010/11/09/19323.aspx" title="RiCo_盡量避免使用Cursor" target="_blank" rel="noopener">RiCo技術農場</a>與<a href="http://sharedderrick.blogspot.tw/2013/02/cursors-rowsets.html" title="德瑞克_初探Cursors(資料指標) 與資料列集(Rowsets)" target="_blank" rel="noopener">德瑞克大</a>。</p>
+<h3 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a><a href="http://technet.microsoft.com/zh-tw/library/ms180169(v=sql.105).aspx" target="_blank" rel="noopener" title="TechNet_CURSOR"><strong>Cursor</strong></a></h3><p>詳細說明參照<a href="http://sharedderrick.blogspot.tw/2013/02/cursors-rowsets.html" target="_blank" rel="noopener" title="德瑞克_初探Cursors(資料指標) 與資料列集(Rowsets)">德瑞克大</a>，這邊主要紀錄一下 DECLARE CURSOR 的使用。不過很多文章都說盡量避免使用 <a href="http://technet.microsoft.com/zh-tw/library/ms180169(v=sql.105).aspx" target="_blank" rel="noopener" title="TechNet_CURSOR">Cursor</a>，以免造成效能損耗，詳細原因的話可以參照<a href="https://dotblogs.com.tw/ricochen/archive/2010/11/09/19323.aspx" target="_blank" rel="noopener" title="RiCo_盡量避免使用Cursor">RiCo技術農場</a>與<a href="http://sharedderrick.blogspot.tw/2013/02/cursors-rowsets.html" target="_blank" rel="noopener" title="德瑞克_初探Cursors(資料指標) 與資料列集(Rowsets)">德瑞克大</a>。</p>
 <h4 id="範例-2"><a href="#範例-2" class="headerlink" title="範例"></a>範例</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">-- 建立一個暫存表  等下查看</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">Table</span> <span class="comment">#tmp</span></span><br><span class="line">(</span><br><span class="line">  <span class="keyword">id</span>  <span class="built_in">int</span> <span class="keyword">IDENTITY</span>(<span class="number">1</span>,<span class="number">1</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line"> EpTitle <span class="keyword">nvarchar</span>(<span class="number">30</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 建立Cursor 並啟用了效能最佳化的 FORWARD_ONLY、READ_ONLY 資料指標</span></span><br><span class="line"><span class="keyword">DECLARE</span> tmpCursor <span class="keyword">CURSOR</span>  FAST_FORWARD  <span class="keyword">FOR</span> </span><br><span class="line">        (<span class="keyword">select</span> EmployeeID,Title</span><br><span class="line">        <span class="keyword">from</span> Employees);</span><br><span class="line">        </span><br><span class="line"><span class="comment">-- 宣告 Cursor 等下使用的變數</span></span><br><span class="line"><span class="keyword">DECLARE</span> @eid <span class="built_in">int</span>,@title <span class="keyword">nvarchar</span>(<span class="number">30</span>);</span><br><span class="line"> </span><br><span class="line">OPEN tmpCursor<span class="comment">--開啟Cursor</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--將第一筆資料填入變數</span></span><br><span class="line">FETCH NEXT FROM tmpCursor INTO @eid,@title</span><br><span class="line"></span><br><span class="line"><span class="comment">--  @@FETCH_STATUS 傳回值</span></span><br><span class="line"><span class="comment">--   0  FETCH 陳述式成功。</span></span><br><span class="line"><span class="comment">--  -1 FETCH 陳述式失敗，或資料列已超出結果集。</span></span><br><span class="line"><span class="comment">--  -2 遺漏提取的資料列。</span></span><br><span class="line">WHILE @@FETCH_STATUS = 0</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">     <span class="comment">-- 進行想要處理的動作 </span></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="comment">#tmp (EpTitle) VALUES(@title);</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">-- 將下一筆資料填入變數 </span></span><br><span class="line">    <span class="keyword">FETCH</span> <span class="keyword">NEXT</span> <span class="keyword">FROM</span> tmpCursor <span class="keyword">INTO</span> @eid,@title</span><br><span class="line"><span class="keyword">END</span>      </span><br><span class="line"></span><br><span class="line"><span class="comment">--關閉Cursor</span></span><br><span class="line"><span class="keyword">CLOSE</span> tmpCursor</span><br><span class="line"><span class="comment">--釋放Cursor</span></span><br><span class="line"><span class="keyword">DEALLOCATE</span> tmpCursor</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 看一下剛剛處理後的結果</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="comment">#tmp</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--DROP TABLE #tmp</span></span><br></pre></td></tr></table></figure>
-
 <p><img src="https://lh3.googleusercontent.com/WrinTSihQHLuw-F1vumZihMBahKluC9sbbJbaSqqxiEFzUAvxINFHgTi2CuAfPCr0YNbkX1dNOQDqK7Ef5ofu-myE_kKXpzg9WzE_Wl_enAxPeKoSAHf3FOSSHdJfltTaj4Z5ZGPtGij4_6ILGFI6KjSDZfPraY1MGJ7pWur2TSNB8-lY5pktDKZgyzqMZv2DLJoIpdvjlG0DNkaln0kBI6AZ2bXeJBod6s-t8nw_Utqftdatnb7kp_uCkoQcPnFTTstj51Yy86Ims0Fhs8Dx9EWE7s_pq0brwUdJT-Vfb8xtdTXnTv4yKgfHGz5PFgul3TDmXS3h6-QlEWAlUweOf7jx0J6T63UlveQwldDqIsfFz4NE7_V2ypLOQEW29UXQ4pJ2GrnyYZ4BOCJ3eoOqzf6Ur_v5IEFaApio-F4no5v-Hw1QW6QF98dSvqxxd55REsMSrSqrJ5vISWFZN0Lnc2xwijrZvxx7SAZXqDudnnrh5C_xrD3fP9_CMX-duKijzlfjkpfUvtXqCjBYh1GMu8NvKIEOcg9_eedCZ3EqjpkJKGbXRQmrxD0vPRQ-p-9ocPNyLVOgfb2c2VSoVQipW9AqikZFsJdZFcF0Dtq2JD7q5xCjlnVFybWl1ZRiJf4PFnOblcBlINoFwLNA6c-36-hNjTylDcJkMQ2cCx3ag=w382-h413-no" alt="Cursor Demo"></p>
 <h3 id="參考資料-1"><a href="#參考資料-1" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
-<li><a href="http://technet.microsoft.com/zh-tw/library/ms180169(v=sql.105).aspx" title="TechNet_CURSOR" target="_blank" rel="noopener">TechNet_CURSOR</a></li>
+<li><a href="http://technet.microsoft.com/zh-tw/library/ms180169(v=sql.105).aspx" target="_blank" rel="noopener" title="TechNet_CURSOR">TechNet_CURSOR</a></li>
 <li><a href="http://technet.microsoft.com/zh-tw/library/ms187308(v=sql.105).aspx" target="_blank" rel="noopener">TechNet_FETCH_STATUS</a></li>
 <li><a href="http://technet.microsoft.com/zh-tw/library/ms188782(v=sql.105).aspx" target="_blank" rel="noopener">TechNet_DEALLOCATE</a></li>
 <li><a href="http://technet.microsoft.com/zh-tw/library/ms181441.aspx" target="_blank" rel="noopener">TechNet_資料指標</a></li>
 <li><a href="http://msdn.microsoft.com/zh-tw/library/ms180169(SQL.90).aspx" target="_blank" rel="noopener">MSDN_DECLARE CURSOR</a></li>
 <li><a href="http://msdn.microsoft.com/zh-tw/library/ms187308(v=sql.90).aspx" target="_blank" rel="noopener">MSDN_FETCH_STATUS</a></li>
-<li><a href="http://sharedderrick.blogspot.tw/2013/02/cursors-rowsets.html" title="德瑞克_初探Cursors(資料指標) 與資料列集(Rowsets)" target="_blank" rel="noopener">德瑞克_初探Cursors(資料指標) 與資料列集(Rowsets)</a></li>
-<li><a href="https://dotblogs.com.tw/ricochen/archive/2010/11/09/19323.aspx" title="RiCo_盡量避免使用Cursor" target="_blank" rel="noopener">RiCo_盡量避免使用Cursor</a></li>
+<li><a href="http://sharedderrick.blogspot.tw/2013/02/cursors-rowsets.html" target="_blank" rel="noopener" title="德瑞克_初探Cursors(資料指標) 與資料列集(Rowsets)">德瑞克_初探Cursors(資料指標) 與資料列集(Rowsets)</a></li>
+<li><a href="https://dotblogs.com.tw/ricochen/archive/2010/11/09/19323.aspx" target="_blank" rel="noopener" title="RiCo_盡量避免使用Cursor">RiCo_盡量避免使用Cursor</a></li>
 </ul>
 <hr>
 <h3 id="Table-Variable-與-Temporary-Table"><a href="#Table-Variable-與-Temporary-Table" class="headerlink" title="Table Variable 與 Temporary Table"></a><strong>Table Variable</strong> 與 <strong>Temporary Table</strong></h3><h4 id="暫存表-Temporary-Tables"><a href="#暫存表-Temporary-Tables" class="headerlink" title="暫存表(Temporary Tables)"></a>暫存表(Temporary Tables)</h4><p>暫存表名稱使用 <strong>#</strong> 開頭，後面接上自訂命名，當連線關閉或中斷後，此暫存表會刪除。暫存表建立後會存在於 <strong>tempdb</strong> 資料庫。建立方式如下:</p>
@@ -520,7 +521,7 @@
 <p>在同一連線下 SELECT 資料，暫存表皆可讀取<br><img src="https://lh3.googleusercontent.com/Veh-9_j8A7ufnJLZZGEx2zOB_vRCq9r7r0Vz9Nx5XnHAyVrtVw8mBMrsP6mUGrmFNe0nFUZPISLzi86npOglL6bLXMSs2PVoDGN0VoM1l5V8M0G4YP9ZYDuLLromXdZY89SQLbtaG7w6v1dIo7sis68p9LhTm6BugfIgr2A-ie21fwDh8Wj7p_lHi8tIqjTKUaUFg5J3rIqDbqRIxj6Pmm8zDxTdVhJ1wXh7UeqTv8ZrKy_pD8Gtpxu-Eo1etTvf2X7GT9wUY6_Yg2CP0rcwFPeKb9iKTM_MP9t36HCL87TIIv-sKIyvKzlM5sQkuN_zDsbH8sKSP79_33OsJTYfPPhAnO61Mn4KwKiTe-TkqSDaYGmTWsiZcFViOL0iDMimYC-cdssOHBs3VSuFJ0KFZVqdw9hZHCso6ZdFK1rIDBgDfvdPID-ZjXHAjN-TaIjOm0RSvQcz1hFetwa3EucODgRSBzchjA3TT3ya7BO0OvLAdv8Q2SUnSJCdLk6Jz4No-yWUGrMp10iyjnBDRz2QXtDIpiiNWjzfxwVE_6jX-kBVOPw5XBf9pAEnedIiIZ4kEKXIi8ndaYFxV6CYRDPtHinnCH3JKpB5sk_28NCXik3Ogh5T7VyrvFm5Bqp2X0oQ7_DlN4QYyF-cuYovdlJLR1RIN_E4QawvlbZQEgvnzA=w552-h626-no" alt="GTT the same connection Demo"></p>
 <p>開一個新連線，一般的暫存表僅供建立該表的連線使用<br><img src="https://lh3.googleusercontent.com/hMGqMSTYuiQWdxIzRDB_sryyEtC_uSFTMjnO3lDUOqJhbVcKyw6ibTaBHUw4uxkNtq_OsrM3J3Sw45zlzUInbWziy4FHGGqbbjEgCleKyKvHi4sYprVvr8vMtcYg3__i0p59Y9dK5Ia2yG7HYp0jqGbEoi5BWNOrF-yxyIgj2PUS5MS9GapaAPmb6DjWiwCrHAq6IrC3FZeFs8H197R3iiOLweo-8SuRLfQoinb5mYPqPfBRa-JWNq7s2HKcdngYhvFOUlTA6ys0mopc77JHBWDKEWt26Y1e_Ty3ng0wOzPYeASgyqmXG4qmUXykh4OUWsIIU6vyRCsVA-gyAwlkvWRW2stPAq1FnIksGEmAp-mv-FWvSihvkP5o-WnM9AqZuQSRA1wk3zQjLhvHumd7dgwzNTFhj7KlylkfQMCsUqzkTHSe8IQS-LQmhL9XY0nvCRVA2tMCGBz9Ffzc3rQEB0HjY1EUp-kw7Li5yU4F9g3kHSxuPC0sG_VbamopaSRQ2wqn0LwNoxXgFE_O1pQuHnkU9o6PrJfyIMkvxoc6UuISks7qFTzN1J1ThMCDUctqu0cT_5S65rh8mkccMbTsFfJR_MivnfAD3XlUV6WDgIIZP7pLjNYwch3ahoFwoJwFa9sDBrJOTaFGplCTRMSgidhfYtrrVtsOzQ0DcTYWaQ=w1024-h385-no" alt="GTT other connection Demo"></p>
 <p>在新連線中，GTT 可以使用<br><img src="https://lh3.googleusercontent.com/7OwfEZeUgYRD6W1kWP4sE4KJ_UY_xj78LQ1SQ_w60gFlYYWjflRRPoXEMv74oj9whUrvGaUBb9Uvckfn0zRB7E24WQFm7T-5Uu8mH34tzbxXecO7iSzFdgilkNqfJGDtIaHxicIgtjMVRH3P8ACacihnrRDjwFyPqEv76LRzzmeMt5XV12yq8SHPvLk3wjLe4-5f9-cByoSitKggSSJac6CQw71LWVQwx_qMax4z3QfbXI-m2IdzzJQuD4E4s3-Pq4hL_zAWborCy3zUMAvQ12xumrUupdhKs1c09TG4bFsqqBVqMLRTmE1tOML9J9nDKPF1svsJ9lgX2bAv61_ujdtFCYukosH-9FcFcJkeOhZk6W2dz7DfnA8_pdhyH-CkqfiQksCHRLyPsGLyEgaign1MSxX1YYSYXjH4Gskmd-ysopeJyTlvQUbJrS0_PkNV9IYBJQXY5zOqqkAH5rcy0WJSYjQnPw7PwFoh3Q0tkNreluhYxmfys5NTE3_2jJse09ggwrpcjoapw71B8jyOUmGEdk7BfeuWvW5Ltt5wAbzpAWeqQmS_ooBb8c6OnZQXLu3jWJSE38m0qWKgZsxmpErMv8wNQJAJu_nxgL3VwFTCmuB0UM2lFzddTnnhL0LiRlkRxIswGuY8IPFYafTLULHGe0jJhKQBU_wGNsVbRw=w571-h244-no" alt="GTT on new connection Demo"></p>
-<h4 id="表格變數-Table-Variables"><a href="#表格變數-Table-Variables" class="headerlink" title="表格變數(Table Variables)"></a>表格變數(Table Variables)</h4><p>引用<a href="http://blog.darkthread.net/post-2006-08-08-kb-sql-2000-table-variable.aspx" title="黑大的KB-SQL 2000的資料庫變數(Table Variable)" target="_blank" rel="noopener">黑暗執行緒大</a>分析的優缺點</p>
+<h4 id="表格變數-Table-Variables"><a href="#表格變數-Table-Variables" class="headerlink" title="表格變數(Table Variables)"></a>表格變數(Table Variables)</h4><p>引用<a href="http://blog.darkthread.net/post-2006-08-08-kb-sql-2000-table-variable.aspx" target="_blank" rel="noopener" title="黑大的KB-SQL 2000的資料庫變數(Table Variable)">黑暗執行緒大</a>分析的優缺點</p>
 <blockquote>
 <h5 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h5><ul>
 <li>用於 Stored Procedure 時，不需要每次Recompile，速度較快</li>
@@ -533,14 +534,14 @@
 </blockquote>
 <p>結論就是，當暫存的資料筆數較小時，可使用表格變數，如果資料筆數多可使用暫存表。</p>
 <h3 id="參考資料-2"><a href="#參考資料-2" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
-<li><a href="http://technet.microsoft.com/zh-tw/library/ms186986(v=sql.105).aspx" title="TechNet_特殊的資料表類型(Table Variable)" target="_blank" rel="noopener">TechNet_特殊的資料表類型</a></li>
-<li><a href="http://blog.darkthread.net/post-2006-08-08-kb-sql-2000-table-variable.aspx" title="黑大的KB-SQL 2000的資料庫變數(Table Variable)" target="_blank" rel="noopener">黑大的KB-SQL 2000的資料庫變數(Table Variable)</a></li>
-<li><a href="http://www.dotblogs.com.tw/rainmaker/archive/2012/05/02/71932.aspx" title="亂馬客_Table-Variable in Transaction" target="_blank" rel="noopener">亂馬客_Table-Variable in Transaction</a></li>
-<li><a href="http://blog.sqlauthority.com/2009/12/15/sql-server-difference-temptable-and-table-variable-temptable-in-memory-a-myth/" title="SQLSERVER_Difference TempTable and Table Variable" target="_blank" rel="noopener">SQL SERVER – Difference TempTable and Table Variable – TempTable in Memory a Myth</a></li>
-<li><a href="http://sqlserverplanet.com/tsql/yet-another-temp-tables-vs-table-variables-article" title="Yet Another Temp Tables Vs Table Variables Article" target="_blank" rel="noopener">Yet Another Temp Tables Vs Table Variables Article</a></li>
-<li><a href="http://cbw0731.pixnet.net/blog/post/24993864-%E6%9A%AB%E5%AD%98%E8%A1%A8(temporary-tables)%E7%9A%84%E4%BD%BF%E7%94%A8%E7%B0%A1%E4%BB%8B" title="暫存表(Temporary Tables)的使用簡介" target="_blank" rel="noopener">暫存表(Temporary Tables)的使用簡介</a></li>
-<li><a href="http://support.microsoft.com/?kbid=305977" title="Microsoft技術支援_常見問題集-資料表變數" target="_blank" rel="noopener">Microsoft技術支援_常見問題集-資料表變數</a></li>
-<li><a href="http://www.sql-server-performance.com/2007/temp-tables-vs-variables/" title="Temporary Tables vs. Table Variables" target="_blank" rel="noopener">Temporary Tables vs. Table Variables and Their Effect on SQL Server Performance</a></li>
+<li><a href="http://technet.microsoft.com/zh-tw/library/ms186986(v=sql.105).aspx" target="_blank" rel="noopener" title="TechNet_特殊的資料表類型(Table Variable)">TechNet_特殊的資料表類型</a></li>
+<li><a href="http://blog.darkthread.net/post-2006-08-08-kb-sql-2000-table-variable.aspx" target="_blank" rel="noopener" title="黑大的KB-SQL 2000的資料庫變數(Table Variable)">黑大的KB-SQL 2000的資料庫變數(Table Variable)</a></li>
+<li><a href="http://www.dotblogs.com.tw/rainmaker/archive/2012/05/02/71932.aspx" target="_blank" rel="noopener" title="亂馬客_Table-Variable in Transaction">亂馬客_Table-Variable in Transaction</a></li>
+<li><a href="http://blog.sqlauthority.com/2009/12/15/sql-server-difference-temptable-and-table-variable-temptable-in-memory-a-myth/" target="_blank" rel="noopener" title="SQLSERVER_Difference TempTable and Table Variable">SQL SERVER – Difference TempTable and Table Variable – TempTable in Memory a Myth</a></li>
+<li><a href="http://sqlserverplanet.com/tsql/yet-another-temp-tables-vs-table-variables-article" target="_blank" rel="noopener" title="Yet Another Temp Tables Vs Table Variables Article">Yet Another Temp Tables Vs Table Variables Article</a></li>
+<li><a href="http://cbw0731.pixnet.net/blog/post/24993864-%E6%9A%AB%E5%AD%98%E8%A1%A8(temporary-tables)%E7%9A%84%E4%BD%BF%E7%94%A8%E7%B0%A1%E4%BB%8B" target="_blank" rel="noopener" title="暫存表(Temporary Tables)的使用簡介">暫存表(Temporary Tables)的使用簡介</a></li>
+<li><a href="http://support.microsoft.com/?kbid=305977" target="_blank" rel="noopener" title="Microsoft技術支援_常見問題集-資料表變數">Microsoft技術支援_常見問題集-資料表變數</a></li>
+<li><a href="http://www.sql-server-performance.com/2007/temp-tables-vs-variables/" target="_blank" rel="noopener" title="Temporary Tables vs. Table Variables">Temporary Tables vs. Table Variables and Their Effect on SQL Server Performance</a></li>
 </ul>
 <hr>
 <h3 id="預存程序-Stored-Procedure"><a href="#預存程序-Stored-Procedure" class="headerlink" title="預存程序(Stored Procedure)"></a>預存程序(Stored Procedure)</h3><p>當遇到一些冗長的查詢語句，建議可以使用預存程序來處理，降低網路的傳輸量。預存程序資料傳回方式：</p>
@@ -554,7 +555,6 @@
 
 <p>接著是使用字串分割方式進行迴圈設計，不過這方式在字串變數長度小於要進迴圈的資料長度時，很容易會因為資料截斷產生誤差。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--CREATE PROCEDURE dbo.SPStrSplitSample</span></span><br><span class="line"><span class="comment">--AS</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 宣告字串變數，@strID 為資料來源的 OrderID 組合字串</span></span><br><span class="line"><span class="comment">-- @CurId 為迴圈進行的當下 OrderID</span></span><br><span class="line"><span class="keyword">DECLARE</span> @strOID <span class="keyword">NVARCHAR</span>(<span class="number">2000</span>), @CurOId <span class="keyword">NVARCHAR</span>(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SET</span> @strOID = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">SELECT</span> @strOID = @strOID + <span class="keyword">convert</span>(<span class="built_in">VARCHAR</span>, OrderID) + <span class="string">','</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  Orders</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">  OrderDate &gt; <span class="string">'1998/5/1'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- @OutTable 為輸出暫存表</span></span><br><span class="line"><span class="keyword">DECLARE</span> @OutTable <span class="keyword">Table</span></span><br><span class="line">(</span><br><span class="line">  OrderID       <span class="built_in">INT</span>,</span><br><span class="line">    Employee    <span class="keyword">NVARCHAR</span>(<span class="number">35</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 透過字串長度進行迴圈</span></span><br><span class="line">WHILE LEN(@strOID) &gt; 0</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 擷取 OrderID</span></span><br><span class="line"><span class="keyword">SET</span> @CurOId = <span class="keyword">substring</span>(@strOID, <span class="number">1</span>, <span class="keyword">charindex</span>(<span class="string">','</span>, @strOID, <span class="number">1</span>) - <span class="number">1</span>);</span><br><span class="line"><span class="comment">-- 想要處理的動作 Start --</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> @OutTable (OrderID</span><br><span class="line">                     , Employee)</span><br><span class="line"><span class="keyword">SELECT</span> OrderID</span><br><span class="line">     , e.FirstName + <span class="string">'-'</span> + e.LastName <span class="keyword">AS</span> <span class="string">'Employee'</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  Orders o</span><br><span class="line">  <span class="keyword">INNER</span> <span class="keyword">JOIN</span> Employees e</span><br><span class="line">    <span class="keyword">ON</span> o.EmployeeID = e.EmployeeID</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">  OrderID = @CurOId;</span><br><span class="line"><span class="comment">-- 想要處理的動作 End --</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 剃除完成的 OrederID，讓迴圈跑下一筆</span></span><br><span class="line"><span class="keyword">SET</span> @strOID = <span class="keyword">right</span>(@strOID, <span class="keyword">len</span>(@strOID) - <span class="keyword">charindex</span>(<span class="string">','</span>, @strOID, <span class="number">1</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 取出</span></span><br><span class="line"><span class="keyword">SELECT</span> OrderID</span><br><span class="line">     , Employee</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  @OutTable</span><br><span class="line"><span class="comment">--GO</span></span><br></pre></td></tr></table></figure>
-
 <p><img src="https://lh3.googleusercontent.com/HSCOWXnY1k3OH7OiL_exhRFl3s373LDxUpoXjjJKx7tk1VPjXTDI4ZbMhzrfccbHEQrk9SVlQ5shB9qyrvoXkIwWsqjaf7MHgE_5kNi6znHqouDE-16J-oqPgze-nz1CHASRyKZoMW-OF9p3ToNuKUcShZzyXVMqAaiJPH_Ltw3pIlwdjUBjgzk0IU0aDMPzSrG7EgPY8wySq8EednO1PbTJWR41QQcObR7kI2tpATAegG2sz3jenm8devGywv-LioOnThtH26zLaTRp4HWjOSQSz5FzHfQbSkIByU0ZUbHfeo9teS1zfK7dWboMG9Yao4QhHnWVEjhaXYzB6Bl5caX3KyOoCEwren7sHAW2RiholkaMxYEC_E09c1hIJ9VJp9-aw-c2Jv8BWmTHKZN22l3I3O4tu3Rdpvtakc2g0Rg34P6KXUt0cOhfPa0z-LMW_lILqw4EtMf6z43oW-rPTJJppTGGiVoosmSbPkpJPxZsvXD73b9t297HtrKiDk9bvR49FclyA4BHqnrkDkQ2O9ZaGIPZ_N9xM1BZT41DH86h-9vERgB9PQ31glXXXIiUHN64vTLHPZFQiQvaSTcVPC70qmXJGj91FCiaoWkKxjq4nFmHi1H2fjeCD0SNGNbpAAvJIOpu1NXGtMNchrrmeaAAxvceoUYen1hI4nZAWg=w600-h370-no" alt="string split loop Demo"><br><img src="https://lh3.googleusercontent.com/C-AOQ0mf7hx1-7aWY5NanELvxXC9lGcvuxtIGiBVQzBaKqHCSg_b6kS7M_5I3m4cSwvDmPMYKfxNMjd1Ok8PgnBGElvbC-eeTpUUjWVhbZzFJeVjwz1JzbTtN6-N-z4yZMjkvBmwqH1DcXeYkYEhS_fwf3Ee6NVCZ5cZMQOUZQOz2mdIFFWglZYXu5gDcHZVlHyfe5R_czmRfrKL1FBQg9KBZOKeDFsBXV13GJuc_rSn1OIKaC5zVcP3H1eELyT1e4siPx07Y5AuP50iH5LnjoVwylG1tfQXBqIKWPSn8Owqo-DluMHCITAj0d-CB87P8r6HtnVxX4_dNI8y8AgvSBqQm_1-zYJjE-PZVp6DGtI32lfxXB5OD1wU529rQkJNfsxjI7Ka9p9d0EXIkkGEUZuGxKep6Q6PAkhdYD4VsgUrhlsv0E0KDGmVh2ABaE5SFdfY0YD0kuZd5Tpbh3olMH8n7rFRF0GJHxtHz_EcDpEsL70QKO66vCSHA3lVde3k9DTRzk58BDaeWZZm7ZBjc8GddTPsSUBnDfsL_m3A9dF6R2YbpZmAZKYnHGEbtPSMj_OhaR1k0UteJi57xUUJwCvumVciFbQ-7F2YSzcmF2VS-fHkq0R0Av3cKi4MxBNSMBBuRxPu2TRqd4Z9sS0kWV50cyC86Va6w6NVoV6JgQ=w587-h352-no" alt="string split loop error Demo"><br>最後展示接收<strong>預存程序</strong>的<strong>回傳值</strong>與<strong>回傳參數</strong>，如果<strong>預存程序</strong>使用表格方式輸出結果，那就要用表格參數或是暫存表去接收。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">-- 接收預存程序回傳值</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> SPDemo</span><br><span class="line">(</span><br><span class="line">    @Param1    <span class="built_in">int</span></span><br><span class="line">   ,@Param2    <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">OUTPUT</span>  <span class="comment">-- 回傳參數設定 OUTPUT</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">IF</span> <span class="keyword">ISNULL</span>(@Param1,<span class="number">0</span>)&gt; <span class="number">5</span></span><br><span class="line">    <span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SET</span> @Param2 = <span class="string">'the value is greather then 5 '</span></span><br><span class="line">    <span class="keyword">END</span></span><br><span class="line"><span class="keyword">ELSE</span></span><br><span class="line">    <span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SET</span> @Param2 = <span class="string">'the value is less then or equal to 5 '</span></span><br><span class="line">    <span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 回傳值</span></span><br><span class="line"><span class="keyword">RETURN</span> @Param1</span><br><span class="line"><span class="keyword">GO</span></span><br><span class="line"><span class="comment">--==============================================</span></span><br><span class="line"><span class="comment">-- @OutputParameter 回傳參數</span></span><br><span class="line"><span class="comment">-- @ReturnValue 回傳值(僅能整數型別)</span></span><br><span class="line"><span class="keyword">DECLARE</span> @OutputParameter  <span class="built_in">varchar</span>(<span class="number">100</span>)</span><br><span class="line">       ,@ReturnValue      <span class="built_in">int</span></span><br><span class="line"></span><br><span class="line">EXEC @ReturnValue = SPDemo <span class="number">8</span>,@OutputParameter <span class="keyword">OUTPUT</span></span><br><span class="line">PRINT @ReturnValue</span><br><span class="line">PRINT @OutputParameter</span><br></pre></td></tr></table></figure>
 
@@ -587,9 +587,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/T-SQL/" rel="tag"># T-SQL</a>
-          
             <a href="/tags/SQLServer/" rel="tag"># SQLServer</a>
+          
+            <a href="/tags/T-SQL/" rel="tag"># T-SQL</a>
           
         </div>
       
@@ -648,7 +648,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -690,7 +690,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -701,7 +703,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -714,7 +716,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -725,7 +727,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>
@@ -1051,7 +1053,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://shunnien.github.io/2014/01/24/CTE、Cursor、Table-Variable-Temporary-Table、Stored-Procedure/';
+          this.page.url = 'https://shunnien.github.io/2014/01/24/CTE%E3%80%81Cursor%E3%80%81Table-Variable-Temporary-Table%E3%80%81Stored-Procedure/';
           this.page.identifier = '2014/01/24/CTE、Cursor、Table-Variable-Temporary-Table、Stored-Procedure/';
           this.page.title = 'CTE,Cursor,Table Variable,Temporary Table,Stored Procedure';
         };

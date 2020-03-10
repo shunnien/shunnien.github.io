@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="Asp.Net MVC,C#,Visual Studio,">
+  <meta name="keywords" content="Asp.Net MVC,C#,Visual Studio," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,13 +84,12 @@
 
 
 <meta name="description" content="一般開發時，有時候會使用預設專案範本，或是空專案自行建立；但是在多人開發時，希望團隊有幾個通用的專案範本；這時候，如果使用的是 Visual Studio，可以建立自訂的 MSDN Visual Studio Templates。">
-<meta name="keywords" content="Asp.Net MVC,C#,Visual Studio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自訂 vs 專案範本">
 <meta property="og:url" content="https://shunnien.github.io/2017/07/16/custom-project-template-for-visual-studio/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="一般開發時，有時候會使用預設專案範本，或是空專案自行建立；但是在多人開發時，希望團隊有幾個通用的專案範本；這時候，如果使用的是 Visual Studio，可以建立自訂的 MSDN Visual Studio Templates。">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/fTFEpNXp4TPzCowOe9A86LqrX4Bw374bz0XZaqJSaH3loiO3Of6m99FKzpAkSW6HbY7bd9hjr8OvZdVN8Ux1HRpTnGHY2oWlZBPoXMoxU0WyPNk2El3sruc7IyEVHotDwtoZF5blTXl-SesBPZ5HrcT7ytBwscQJi0bJV5AmDeqVQZlhB6RcBI5753h_oi5-xk9ZYe0WG-RGngZOg97g-JDolJgUZVyNdwZgfYGKSeUn8Ywh_QER2PV5owWBItTe2MzuE8m4QJsmJSX5gT_oTYPUPdOswrgs9qSm1UAQlP7X2lmJe7beEKmE1lAEMP49n4VB1D3JVQFmTiP0n9m-VJPA2cKrBvt3KAEz5RYXApRzKW4GGkrJLKCmqbypmyuj1HT9Q7Ryhwzc3LrtXIJhmSQ9YnoYwScGKbG-RmIw9bohFRGPLNF6YvHjEto-s7IcTcSzzVX2IcdpbvUs-lARBEtu_buToN6cHkFvtX0eAodD7rlAcdjV6OJ-qMCSJ40TDmP4eRuuEUQs1CxkD-4s37GEhbjjBa6YuEeJp9KB2XsR86wOPUjmKAHTZTTsomG6152-Hm2y4Tx6Uo8d5T-RqUPKDK5c0TSbRkyE3_8MWKeSlRRmi7hbP1c53BXoB450nBiQMiXMesaJFsJirh8cvE0hJ9YZA5RpnWPC1F3-wbSkJQ=w375-h855-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/8FXqEBRdWeEGjwPCh9Eadf-e0Il9R0GjCva2PdWs_H4YjFS_ycvtWwuUy_VoPVXqTk8ybJGgMDh1yG91TXR5jcSMuW1jBWonsqXLSd_ZF6vtFDKewMHnBOXb2RBDt2n3eMfRU5fDg7MPvAGlJKQo0mrT_bEoj1aRYzVEmimZISgLnMqyloywk0ZOi07Sfd5e07r7otkR4cdH65K-y3r2ASn5jtNcyO155BHYGMdbOI_mXDjNWIWWEzw-uMszzl52JuxEl12uaMQM5bjpgoMwjpGOpvuLFs7PDBwqiNtPUAybVwRaphYvUKgAJPyq_j-1xJNxGYQ-NaCDsD7hzH_aIwQeJdR0jEsKu3cXkaguj7RR_fPuJ-7Q684OK7345BRetieGlvXwcYUX3rJWpBbO3FYCPvb_Y0iK0bT1Aybw-6sggj6aPqar7rEDFHmFqRQtkcOLczroJiZVYmBlESRyoagrJhXerjUC_RnLWb_CQIugwlhtAGjGzBea06zEmPHCHLOs7Boe-RVJWcDTP7qgtPrWy3eFOTKOIOOT3AO-Ugq5NzP-ACJooWdq18qgmDc3SccCvguJlHLXkXVmX-vIOnOK4lDKNo-Wco6zFkZ2Z90YI5nR8eFyR3hx3Zsc7mTzfra7-eq8uUGVayc91TcxatbzGfrdGDjolz41yDN0hr2tKw=w562-h624-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/eGl8Nbb5Eodz35c8lRORhflVL3IX7VQwKH6a4v_wf1W-nbXqpfMUirLxYu1xgPyunPiZgfBqSAJj4ebYY_LrzuFZyoT9Cjfv2YJXhky_7Duy19U7FvONXsM6hagHLSwWy9fS2w4qPwXREu1fxy0-t9uSaLao4VPlouzUmUeiomNA-UDUNIgFSDsYimMNoFuv3bp2fa3IptJ_6z4J9My8-su-04NhAtzelbkrn9SPucz22kM4fpCacBI4K4z4gFeD3AEqfwwuXQ-gW1derc85mg3G6HszIrb7asXDoMWHMfPR0fzuKuh0EOO-DasK0x3-dCMMH0xKtsu6-HrnycPf_jhJNWq_RQZFIRJjxv5qfmBTmPLTvOTNFutrjJ5XJgjQTsbuogzKQstLpyuuggDKXOUV8J-EdUpcJAnm-2I3YnbudnbjhUpQyUOrPT0HVC_FFtpEabHEcJAxlzA0eJs7rezWvcMw0dumWKBUbQy_sgxm2ZN8Agz8W_G2OPC3ZhV0UKqSzyKEvSwE09MdqCBoAGzUGa3jgxlsIv73th-4fBk5X1NvjlLUCcxlNuM8rWXb1fY7pLFRzkEeSEzcJmy_WBuXc7a9EZnZi1M2iG8jFh3_XJycP2Hm8cSuvVCiaPeNgwreVN20FBpmt7-yjzuJWR8H4TD7DqXtqahkjFb0AkMTBw=w787-h714-no">
@@ -99,10 +98,13 @@
 <meta property="og:image" content="https://lh3.googleusercontent.com/dqvDXtP80klwjPy3G8WvUJPdEoNQyhdYKN6st7keleOH7poC0_IQg4A_L1hXauQ5v1g8UXk47QW82GDwEcVim_6Amz2RABv6KalUVegIC0gSYCVYF_5UXUrF2Zyok3LspC41pCgeGeXwdB1N1n-HQtJ5cCACT-esSItEXxlMhdjZPTnR57hE1JdwkOrFOtfrd4fxH9np9-5nzPlYynQUvjgipAM3Kd5_VEaVf_SYO0zWh_d3bnCuxXy5LGB7-yX19xEgg7W8JMJWQl-O1F9sSORgaz8nhmagt7lM5XYn4epkiBL_CMKmE8ZSMaG4E5XqbRRofBk1oKiq0-VZOH4QmnTCJ6zgLeGY9NGfRNbBR6_k37iy0w1F_XGiTB16m5A-EOWz7KE3heEV794D_LExP0nV9NdNBuLhHREvhvC0VgUmThk9xiuuKOEtAaDesmpXyq7EG1IdaCxsbD9mbBbBjtMRFs7MgCcyoREFaKHq8Vyiu4MwMazpZLuFJHgCO_xH97TyzuAjTaJWlrWFwd00KWUel_mKiARsNEdqOJqHhK18i-vCRA-h44hB__oN_3otE4OVlerTYbOs4e_eq7ROkqjsyRfXVNkaW4_ZZT81kwq1P7C8OntHzRaHhG5brErVtE5WkTGvyJ2TxBCdOv5HBqaH2WFv58rWJRPEh5eijnptcw=w452-h500-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/cHYA0Sn-vYGQDPzhkJTwdndhgnSFnG5ppio3wKCy08DK-yvVCzXmfgJAdwjdREi7NJ7Qk9ydRS7ci4k7aqt0M6c2Cx7QKHeaXuuLixpAsb9Swz0xLrf10-YHNXKL-_KrSqwCB8jyFB9P8K5UUElLLy7sFLdT8uM7RUuLKHZzUYyJ3UN1MEeW660S1aNrb337sw3ukKkLLdDVhoqJeZRowHVmiqpeQOXeLMVr4rWGugAJCi702wlZYri1oEtMon-kHpds3O65f2FX9wDmZ33XA8x2c1vh1PKrNLlL61s42fFG6SE1iDjCKg9tOBxKAmKaFJoML3qX4tVTeM0Z63Q36ofiqrbNot80TlnwjYkYoU8EhwtX3-w4yEFQBU3PNZkVE5oHQu8-g5Yq-n6Hpzox72TNbWCpdk2ahQB8XChrT4MUyll5PugrSigRZgTxtAoea5Xg7WS6mL7Jeyztgez05cKwqiHuGktjwwSrlMnVhHIsJruTwAiHErq7KmVVAmLG36A-vYkC1yCvk-jFUkQwAuQVW6zljhiScb9GAfsP1-OxlYG-BPIYNdVWE3TvGz_uPkIRAYjsqeuQM6Vc61oenj2IIQLD1nc-DYqhgYg-QRfNgW1UHKDp5mUJ7zOlGLTio_wRnvyYof1JkOkCfPCyJTUPAP7VFoXTOpnepgTIF-b2Bg=w874-h647-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/RKhMbVIvECuug9d1LsTWM2hKE-4QIinZVecrlo4nzUbQOgfkCLMBsIXhvfHb3fXbGugMi5nRBkKMhMS8P0jOgLTVMYuSa5z_YdObqsyr_5vsu8GpCcIgPnBGK8G5L0QKjmth17L892cLr2YiLOpJY1D49FGEmhxyC9SfS8C3ROP1HN5jHZF7atSCpyVb3hv0c25xigSPWiJI4-CHDGxr7YFK3Ghxf5LmRaWRurFUbFeWdiS-5iwHfn93uqlh5Tu-6bqwO2wzM3lv_n0eNuY_zyRs5B66vDX46FnEsbv54khT4tguQ7jbc16Oz2-Ttwq7IzzOczmbrlI1nlMVEVjUy341_mjtGdZiHMZzZU2LZqSLl2WaVZjOHsuiIwufO1zmL7abI_MAyoFEob41Xc2Yooy51ywJzrwRLajnhO5y-fadhUHqPBhYhCuNOE4KnaTKEXDZVtHTcq-uQC0jvt-ap9utgEn9ccqjUoivbfO0wf92GiT3Wh8lBh1VN8Ktt8y_TSwDJ_SY34-p2yEg9YNO-5esM1-GF0ASLrv8T3fLh0XjM_vJWjKtH61gzpbyGJ2SzcfuOqdubAQLbsmDWzTVjcqf4F5YVNun8CZiYvnn2J0Ra1KDalZPl0BC-XjeQeknLuUx4do93Hi_v_W9OYremPBzEKe7jGmrZ9olBqxzGN4g5g=w1853-h919-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.646Z">
+<meta property="article:published_time" content="2017-07-16T08:21:13.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.646Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="Asp.Net MVC">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="Visual Studio">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自訂 vs 專案範本">
-<meta name="twitter:description" content="一般開發時，有時候會使用預設專案範本，或是空專案自行建立；但是在多人開發時，希望團隊有幾個通用的專案範本；這時候，如果使用的是 Visual Studio，可以建立自訂的 MSDN Visual Studio Templates。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/fTFEpNXp4TPzCowOe9A86LqrX4Bw374bz0XZaqJSaH3loiO3Of6m99FKzpAkSW6HbY7bd9hjr8OvZdVN8Ux1HRpTnGHY2oWlZBPoXMoxU0WyPNk2El3sruc7IyEVHotDwtoZF5blTXl-SesBPZ5HrcT7ytBwscQJi0bJV5AmDeqVQZlhB6RcBI5753h_oi5-xk9ZYe0WG-RGngZOg97g-JDolJgUZVyNdwZgfYGKSeUn8Ywh_QER2PV5owWBItTe2MzuE8m4QJsmJSX5gT_oTYPUPdOswrgs9qSm1UAQlP7X2lmJe7beEKmE1lAEMP49n4VB1D3JVQFmTiP0n9m-VJPA2cKrBvt3KAEz5RYXApRzKW4GGkrJLKCmqbypmyuj1HT9Q7Ryhwzc3LrtXIJhmSQ9YnoYwScGKbG-RmIw9bohFRGPLNF6YvHjEto-s7IcTcSzzVX2IcdpbvUs-lARBEtu_buToN6cHkFvtX0eAodD7rlAcdjV6OJ-qMCSJ40TDmP4eRuuEUQs1CxkD-4s37GEhbjjBa6YuEeJp9KB2XsR86wOPUjmKAHTZTTsomG6152-Hm2y4Tx6Uo8d5T-RqUPKDK5c0TSbRkyE3_8MWKeSlRRmi7hbP1c53BXoB450nBiQMiXMesaJFsJirh8cvE0hJ9YZA5RpnWPC1F3-wbSkJQ=w375-h855-no">
 
 
@@ -133,11 +135,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2017/07/16/custom-project-template-for-visual-studio/">
+  <link rel="canonical" href="https://shunnien.github.io/2017/07/16/custom-project-template-for-visual-studio/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>自訂 vs 專案範本 | ShunNien's Blog</title>
   
@@ -159,7 +161,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -177,7 +179,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -205,9 +207,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -215,9 +217,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -225,9 +227,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -235,9 +237,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -245,9 +247,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -260,7 +262,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -281,7 +283,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -322,7 +326,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -358,7 +362,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -370,7 +374,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -389,7 +393,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/07/16/custom-project-template-for-visual-studio/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/16/custom-project-template-for-visual-studio/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/16/custom-project-template-for-visual-studio/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -401,7 +406,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -428,7 +433,6 @@
 <p>當使用預設選項，建立好之後 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong>  會自動將自訂的 Template 匯入，然後就可以在新增專案的地方看到自訂 template<br><img src="https://lh3.googleusercontent.com/UpNPu4_vNOM86ppNPnhMn-RNRK9w6oUM79d5V14DfpJgPzPa2Y0_0r5mguacVIUKibiqnglzTAwOugKYwtGKj8QWBgOwwmc6CUNd7la8nhFEDcybGqcipDRnvrPjJ5Ppvyg0HW10o152Z_wm29iu1fU5Ju-mvCZ_9O_g6wqJhpCuTNNmVnXYdbIQ83WYcl9N4fgQAPq7lQIBD_PNDJB8L-s8WizPzZgvjbQhRhcp1C7Rmepd_DxQaKXXBo1Va0KQ9e0DZEuK1FgKm4D7AC4NYlp8yQY-XFoMSZFuBn62faJCXfcQNXLnxJA9v8p1tosG_GpNrG5V5Cq_nu-iVUUZaEpL6SIU63lrJ6J5uU2gs_l1g_F24pMQt6BMCYLUUzSHAmj2a8pWNGBDvaw5WZnCnbGWNo0mwjuvr-EiYJxZ7iQR-aW-435Kf3XUkcxVcvnCIb5DFyFmx6stj0bs11VqNUk0RPZ3Rj8BnDEdflxeD3K_OxqRssQTDDsWg4QnRrm9zWofoiyKL90SDZOg-lNDp9-l_GmwbLhOTyVEFMZJ5v2Ax1tbFB-Idy3PQKFZKxwbvheHtwbJ68Wmm-EtR_K5yFc0blkV_QP2fZp8S5rR8Hs9hkwDEebPoul-PCMcKodrhESLR8AZPprqf14xPm3AxbSlqCoRm_z9tZSkDFsve6TJ6A=w870-h605-no" alt="new custom project"></p>
 <p>但是假如想要將自訂的 <strong>Templates</strong> 共享到團隊使用呢？首先要知道的是 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong> 讀取 <strong><a href="https://msdn.microsoft.com/en-us/library/xkh1wxd8.aspx" target="_blank" rel="noopener">Project Template</a></strong> 的路徑，路徑可以在 <a href="https://msdn.microsoft.com/en-us/library/y3kkate1.aspx" target="_blank" rel="noopener">MSDN Locate and Organize Project and Item Templates</a> 上得知</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\My Documents\Visual Studio &lt;Version&gt;\Templates\ProjectTemplates\&lt;Language&gt;\</span><br></pre></td></tr></table></figure>
-
 <p>因為要讓團隊使用，先確定有可以共用的空間，然後按照以下路徑變更 template 路徑<br><code>Tools -&gt; Options -&gt; Projects and Solutions -&gt; User project templates locations:</code><br><img src="https://lh3.googleusercontent.com/dqvDXtP80klwjPy3G8WvUJPdEoNQyhdYKN6st7keleOH7poC0_IQg4A_L1hXauQ5v1g8UXk47QW82GDwEcVim_6Amz2RABv6KalUVegIC0gSYCVYF_5UXUrF2Zyok3LspC41pCgeGeXwdB1N1n-HQtJ5cCACT-esSItEXxlMhdjZPTnR57hE1JdwkOrFOtfrd4fxH9np9-5nzPlYynQUvjgipAM3Kd5_VEaVf_SYO0zWh_d3bnCuxXy5LGB7-yX19xEgg7W8JMJWQl-O1F9sSORgaz8nhmagt7lM5XYn4epkiBL_CMKmE8ZSMaG4E5XqbRRofBk1oKiq0-VZOH4QmnTCJ6zgLeGY9NGfRNbBR6_k37iy0w1F_XGiTB16m5A-EOWz7KE3heEV794D_LExP0nV9NdNBuLhHREvhvC0VgUmThk9xiuuKOEtAaDesmpXyq7EG1IdaCxsbD9mbBbBjtMRFs7MgCcyoREFaKHq8Vyiu4MwMazpZLuFJHgCO_xH97TyzuAjTaJWlrWFwd00KWUel_mKiARsNEdqOJqHhK18i-vCRA-h44hB__oN_3otE4OVlerTYbOs4e_eq7ROkqjsyRfXVNkaW4_ZZT81kwq1P7C8OntHzRaHhG5brErVtE5WkTGvyJ2TxBCdOv5HBqaH2WFv58rWJRPEh5eijnptcw=w452-h500-no" alt="setting common template"><br><img src="https://lh3.googleusercontent.com/cHYA0Sn-vYGQDPzhkJTwdndhgnSFnG5ppio3wKCy08DK-yvVCzXmfgJAdwjdREi7NJ7Qk9ydRS7ci4k7aqt0M6c2Cx7QKHeaXuuLixpAsb9Swz0xLrf10-YHNXKL-_KrSqwCB8jyFB9P8K5UUElLLy7sFLdT8uM7RUuLKHZzUYyJ3UN1MEeW660S1aNrb337sw3ukKkLLdDVhoqJeZRowHVmiqpeQOXeLMVr4rWGugAJCi702wlZYri1oEtMon-kHpds3O65f2FX9wDmZ33XA8x2c1vh1PKrNLlL61s42fFG6SE1iDjCKg9tOBxKAmKaFJoML3qX4tVTeM0Z63Q36ofiqrbNot80TlnwjYkYoU8EhwtX3-w4yEFQBU3PNZkVE5oHQu8-g5Yq-n6Hpzox72TNbWCpdk2ahQB8XChrT4MUyll5PugrSigRZgTxtAoea5Xg7WS6mL7Jeyztgez05cKwqiHuGktjwwSrlMnVhHIsJruTwAiHErq7KmVVAmLG36A-vYkC1yCvk-jFUkQwAuQVW6zljhiScb9GAfsP1-OxlYG-BPIYNdVWE3TvGz_uPkIRAYjsqeuQM6Vc61oenj2IIQLD1nc-DYqhgYg-QRfNgW1UHKDp5mUJ7zOlGLTio_wRnvyYof1JkOkCfPCyJTUPAP7VFoXTOpnepgTIF-b2Bg=w874-h647-no" alt="setting custome template path"></p>
 <p><img src="https://lh3.googleusercontent.com/RKhMbVIvECuug9d1LsTWM2hKE-4QIinZVecrlo4nzUbQOgfkCLMBsIXhvfHb3fXbGugMi5nRBkKMhMS8P0jOgLTVMYuSa5z_YdObqsyr_5vsu8GpCcIgPnBGK8G5L0QKjmth17L892cLr2YiLOpJY1D49FGEmhxyC9SfS8C3ROP1HN5jHZF7atSCpyVb3hv0c25xigSPWiJI4-CHDGxr7YFK3Ghxf5LmRaWRurFUbFeWdiS-5iwHfn93uqlh5Tu-6bqwO2wzM3lv_n0eNuY_zyRs5B66vDX46FnEsbv54khT4tguQ7jbc16Oz2-Ttwq7IzzOczmbrlI1nlMVEVjUy341_mjtGdZiHMZzZU2LZqSLl2WaVZjOHsuiIwufO1zmL7abI_MAyoFEob41Xc2Yooy51ywJzrwRLajnhO5y-fadhUHqPBhYhCuNOE4KnaTKEXDZVtHTcq-uQC0jvt-ap9utgEn9ccqjUoivbfO0wf92GiT3Wh8lBh1VN8Ktt8y_TSwDJ_SY34-p2yEg9YNO-5esM1-GF0ASLrv8T3fLh0XjM_vJWjKtH61gzpbyGJ2SzcfuOqdubAQLbsmDWzTVjcqf4F5YVNun8CZiYvnn2J0Ra1KDalZPl0BC-XjeQeknLuUx4do93Hi_v_W9OYremPBzEKe7jGmrZ9olBqxzGN4g5g=w1853-h919-no" alt="create custom template"></p>
 <p>補充一下，上述都沒提到 <strong>Templates</strong> 在 <strong><a href="https://www.visualstudio.com/zh-hant/vs/" target="_blank" rel="noopener">Visual Studio</a></strong> 中的檔案類型，當自訂 <strong>Templates</strong> 產生後，會有一個 <strong>.zip</strong> 壓縮檔案，整個壓縮檔案內容包含了所匯出的專案內容，這個壓縮檔案就是 <strong>Templates</strong> ，將此 <strong>zip</strong> 檔案放到上述的路徑下即可。</p>
@@ -520,7 +524,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -562,7 +566,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -573,7 +579,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -586,7 +592,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -597,7 +603,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

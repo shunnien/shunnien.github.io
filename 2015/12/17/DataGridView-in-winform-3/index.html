@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="C#,WinForm,">
+  <meta name="keywords" content="C#,WinForm," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,20 @@
 
 
 <meta name="description" content="WinForm 下的 DataGridView 操作(3)">
-<meta name="keywords" content="C#,WinForm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DataGridView 在 Winform 的簡單操作(3)">
 <meta property="og:url" content="https://shunnien.github.io/2015/12/17/DataGridView-in-winform-3/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="WinForm 下的 DataGridView 操作(3)">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/Fx-oeBkbQVFYTIXfPVNKyMzqLL7dcHsIyDV5E_lcjTqdqmTnUPyjNuEfQZzIqIRFV3a-xZT6TSxtoDCsVckx1qe9sXYtJaCDREkzsNntVIV3mDgn5arYmwdyU7wC3LDlNQpBXj7IZZSKVL2RIwt-XXCeFM0APEX_vLQNo4ycNygS--GkZe8RgSgyC5EZqF_fMmEzuWjye4h_ojji1Y_ejGTcVPsMfhgw_mkW9_8ydA15VguBY0mtBJu2KHOrxC5R8CjNGK1fetpbmrtcsC7zQtURhMj8yolNzgLBuOBeBDJYPjCF9eM__TSLcuIIY9X2frCoxWf7CscIma7VB49UU7QlIQZaEENumQ1pqWI0i5yCM60gHJOfCIwaN74wWDvd2Qx9kbM4PNhPsX33ERsHd8fbtm2RDdGyiNzYQdbdb-vGnKsm2ZBKmg8vr98yMq-PmTvrUO28GenjwM7HSgO9ucYMwYDqbtO29tB82h4eloDHH2nJ3n1p5eEq6T7C3N8I9L_inpUehOzoYXxFIJ04Mi1NC9B-zC0J87EZDOh4szQ9zIaGJMGtO-eYeDirFC_3pfEPq0uo05Nr59wpswYK3h7ni7PIu3_eVfaHa4vZmXSePUabamX-tDpipi2y_jZ-a5XzXN_tuKWFXJhU-AfWeoYTh3u7Wdn7P3NaKzmTUg=w476-h631-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/Xn8u7YmKByJ3A9IxQQ3UIAwMcpVXrbJ7WNHisMpkY_y1K0p-f2UPFQ_bqdCRpPrvZ4AQJ8Q6rofmlqL4AHZ4joyl4CWl3T_igyWZiuOFZ47yl9tBVKYNxDe_-EMWvNknmRXXZHlDFcSgbXdrA0GvhXfzaYnVB3yoIAnnUEVUYiWXZsXx6l8udaQMJrp56sO0N8nbrkX5WpAHLcfTAkbNpFufDTd9KC_Qw3_qlP9gj5zCJbMxwB_wYgSTA0lf6imX2K-4QhBHMCoruTlsKQj2DY9ChKlkrbLxEgns7rkcvVRNokQXyddUyj3bK-dw-t0BRaWyQCSVv2p-bxE0hYvM-bjulZvVAbFxjldQuD7mz6O2CY1qB1JSsMoFRPcR5DWdvpjEJhC3yyGW3lgUytfdsSIiTyqCvnOeFiAElYMaVXbkGPTunUImupU3tlcDSktZgXIac6RkYXDsSxv4HqU2MKbkX7Coulbdp2p6_rJZa55wdHRTgw_TtquobnMSqzGXmX-tLiq7Dzrh4DgHzydKAs8__gQU0vi2ys6J7DOHB_YXmLnXy0Sl26cVTz9QKQWzKwIWBXhmiQ2tRFYozHfGXsknAzjySYk9UJ5_fpVO8vLkkGzF2hKumJY5AxIfwfNaiIW4abmAFmPVboTp7vPXTP-eTynFxhOZz1IfhBYDLw=w694-h483-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.610Z">
+<meta property="article:published_time" content="2015-12-17T08:20:42.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.610Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="WinForm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DataGridView 在 Winform 的簡單操作(3)">
-<meta name="twitter:description" content="WinForm 下的 DataGridView 操作(3)">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/Fx-oeBkbQVFYTIXfPVNKyMzqLL7dcHsIyDV5E_lcjTqdqmTnUPyjNuEfQZzIqIRFV3a-xZT6TSxtoDCsVckx1qe9sXYtJaCDREkzsNntVIV3mDgn5arYmwdyU7wC3LDlNQpBXj7IZZSKVL2RIwt-XXCeFM0APEX_vLQNo4ycNygS--GkZe8RgSgyC5EZqF_fMmEzuWjye4h_ojji1Y_ejGTcVPsMfhgw_mkW9_8ydA15VguBY0mtBJu2KHOrxC5R8CjNGK1fetpbmrtcsC7zQtURhMj8yolNzgLBuOBeBDJYPjCF9eM__TSLcuIIY9X2frCoxWf7CscIma7VB49UU7QlIQZaEENumQ1pqWI0i5yCM60gHJOfCIwaN74wWDvd2Qx9kbM4PNhPsX33ERsHd8fbtm2RDdGyiNzYQdbdb-vGnKsm2ZBKmg8vr98yMq-PmTvrUO28GenjwM7HSgO9ucYMwYDqbtO29tB82h4eloDHH2nJ3n1p5eEq6T7C3N8I9L_inpUehOzoYXxFIJ04Mi1NC9B-zC0J87EZDOh4szQ9zIaGJMGtO-eYeDirFC_3pfEPq0uo05Nr59wpswYK3h7ni7PIu3_eVfaHa4vZmXSePUabamX-tDpipi2y_jZ-a5XzXN_tuKWFXJhU-AfWeoYTh3u7Wdn7P3NaKzmTUg=w476-h631-no">
 
 
@@ -127,11 +128,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2015/12/17/DataGridView-in-winform-3/">
+  <link rel="canonical" href="https://shunnien.github.io/2015/12/17/DataGridView-in-winform-3/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>DataGridView 在 Winform 的簡單操作(3) | ShunNien's Blog</title>
   
@@ -153,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +172,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +200,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +210,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +220,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +230,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +240,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +255,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +276,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +319,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +355,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +367,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +386,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2015/12/17/DataGridView-in-winform-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/17/DataGridView-in-winform-3/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/12/17/DataGridView-in-winform-3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +399,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -422,17 +426,17 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>接續<a href="http://shunnien.github.io/2015/12/16/DataGridView-in-winform-2/" title="DataGridView 在 Winform 的簡單操作(2)">前篇</a></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p><a href="http://shunnien.github.io/2015/12/16/DataGridView-in-winform-2/" title="DataGridView 在 Winform 的簡單操作(2)">前篇</a>文章已經完成新增與刪除的動作了，但是怎麼沒有修改呢？，其實 <strong>DataGridView</strong> 預設是啟用的，而且是針對每個 <strong>Cell</strong>，可以簡單想成 <strong>Excel</strong> 的樣式，都是儲存格，然後只要雙擊滑鼠左鍵就可以編輯；所以這樣的話，簡單的 <strong>CRUD(Create Read Update Delete)</strong> 就完成了，今天這篇就來把 <strong>DataGridView</strong> 呈現的資料上，變換為下拉選單等等。</p>
-<h3 id="添加-DataGridViewComboBoxColumn"><a href="#添加-DataGridViewComboBoxColumn" class="headerlink" title="添加 DataGridViewComboBoxColumn"></a>添加 DataGridViewComboBoxColumn</h3><p>在<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" title="MSDN:DataGridView 控制項" target="_blank" rel="noopener">DataGridView</a>設定 <strong>Gender</strong> 欄位，把一列的 <strong>ColumnType</strong> 設定為<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcomboboxcolumn(v=vs.110).aspx" title="MSDN:DataGridViewComboBoxColumn 類別" target="_blank" rel="noopener">DataGridViewComboBoxColumn</a>，因為這是一個 <strong>ComboBox</strong> 所以需要設定 <strong>Items</strong> 在此輸入下拉選單要顯示的文字如下圖顯示。<br><img src="https://lh3.googleusercontent.com/Fx-oeBkbQVFYTIXfPVNKyMzqLL7dcHsIyDV5E_lcjTqdqmTnUPyjNuEfQZzIqIRFV3a-xZT6TSxtoDCsVckx1qe9sXYtJaCDREkzsNntVIV3mDgn5arYmwdyU7wC3LDlNQpBXj7IZZSKVL2RIwt-XXCeFM0APEX_vLQNo4ycNygS--GkZe8RgSgyC5EZqF_fMmEzuWjye4h_ojji1Y_ejGTcVPsMfhgw_mkW9_8ydA15VguBY0mtBJu2KHOrxC5R8CjNGK1fetpbmrtcsC7zQtURhMj8yolNzgLBuOBeBDJYPjCF9eM__TSLcuIIY9X2frCoxWf7CscIma7VB49UU7QlIQZaEENumQ1pqWI0i5yCM60gHJOfCIwaN74wWDvd2Qx9kbM4PNhPsX33ERsHd8fbtm2RDdGyiNzYQdbdb-vGnKsm2ZBKmg8vr98yMq-PmTvrUO28GenjwM7HSgO9ucYMwYDqbtO29tB82h4eloDHH2nJ3n1p5eEq6T7C3N8I9L_inpUehOzoYXxFIJ04Mi1NC9B-zC0J87EZDOh4szQ9zIaGJMGtO-eYeDirFC_3pfEPq0uo05Nr59wpswYK3h7ni7PIu3_eVfaHa4vZmXSePUabamX-tDpipi2y_jZ-a5XzXN_tuKWFXJhU-AfWeoYTh3u7Wdn7P3NaKzmTUg=w476-h631-no" alt="Bound Column Properties Set"></p>
-<h3 id="添加-DataGridViewCheckBoxColumn"><a href="#添加-DataGridViewCheckBoxColumn" class="headerlink" title="添加 DataGridViewCheckBoxColumn"></a>添加 DataGridViewCheckBoxColumn</h3><p>將 <strong>Married</strong> 欄位同 <strong>DataGridViewComboBoxColumn</strong> 設定一樣，將 <strong>ColumnType</strong> 設定為<a href="https://msdn.microsoft.com/zh-tw/library/System.Windows.Forms.DataGridViewCheckBoxColumn(v=vs.110).aspx" title="MSDN:DataGridViewCheckBoxColumn 類別" target="_blank" rel="noopener">DataGridViewCheckBoxColumn</a>，接著設定以下屬性：</p>
+<h3 id="添加-DataGridViewComboBoxColumn"><a href="#添加-DataGridViewComboBoxColumn" class="headerlink" title="添加 DataGridViewComboBoxColumn"></a>添加 DataGridViewComboBoxColumn</h3><p>在<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridView 控制項">DataGridView</a>設定 <strong>Gender</strong> 欄位，把一列的 <strong>ColumnType</strong> 設定為<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcomboboxcolumn(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridViewComboBoxColumn 類別">DataGridViewComboBoxColumn</a>，因為這是一個 <strong>ComboBox</strong> 所以需要設定 <strong>Items</strong> 在此輸入下拉選單要顯示的文字如下圖顯示。<br><img src="https://lh3.googleusercontent.com/Fx-oeBkbQVFYTIXfPVNKyMzqLL7dcHsIyDV5E_lcjTqdqmTnUPyjNuEfQZzIqIRFV3a-xZT6TSxtoDCsVckx1qe9sXYtJaCDREkzsNntVIV3mDgn5arYmwdyU7wC3LDlNQpBXj7IZZSKVL2RIwt-XXCeFM0APEX_vLQNo4ycNygS--GkZe8RgSgyC5EZqF_fMmEzuWjye4h_ojji1Y_ejGTcVPsMfhgw_mkW9_8ydA15VguBY0mtBJu2KHOrxC5R8CjNGK1fetpbmrtcsC7zQtURhMj8yolNzgLBuOBeBDJYPjCF9eM__TSLcuIIY9X2frCoxWf7CscIma7VB49UU7QlIQZaEENumQ1pqWI0i5yCM60gHJOfCIwaN74wWDvd2Qx9kbM4PNhPsX33ERsHd8fbtm2RDdGyiNzYQdbdb-vGnKsm2ZBKmg8vr98yMq-PmTvrUO28GenjwM7HSgO9ucYMwYDqbtO29tB82h4eloDHH2nJ3n1p5eEq6T7C3N8I9L_inpUehOzoYXxFIJ04Mi1NC9B-zC0J87EZDOh4szQ9zIaGJMGtO-eYeDirFC_3pfEPq0uo05Nr59wpswYK3h7ni7PIu3_eVfaHa4vZmXSePUabamX-tDpipi2y_jZ-a5XzXN_tuKWFXJhU-AfWeoYTh3u7Wdn7P3NaKzmTUg=w476-h631-no" alt="Bound Column Properties Set"></p>
+<h3 id="添加-DataGridViewCheckBoxColumn"><a href="#添加-DataGridViewCheckBoxColumn" class="headerlink" title="添加 DataGridViewCheckBoxColumn"></a>添加 DataGridViewCheckBoxColumn</h3><p>將 <strong>Married</strong> 欄位同 <strong>DataGridViewComboBoxColumn</strong> 設定一樣，將 <strong>ColumnType</strong> 設定為<a href="https://msdn.microsoft.com/zh-tw/library/System.Windows.Forms.DataGridViewCheckBoxColumn(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridViewCheckBoxColumn 類別">DataGridViewCheckBoxColumn</a>，接著設定以下屬性：</p>
 <ul>
-<li><a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcheckboxcolumn.truevalue(v=vs.110).aspx" title="MSDN:TrueValue 屬性" target="_blank" rel="noopener">TrueValue</a>:對應已核取的值</li>
-<li><a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcheckboxcolumn.falsevalue(v=vs.110).aspx" title="MSDN:FalseValue 屬性" target="_blank" rel="noopener">FalseValue</a>:對應未核取的值</li>
-<li><a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcheckboxcolumn.indeterminatevalue(v=vs.110).aspx" title="MSDN:IndeterminateValue 屬性" target="_blank" rel="noopener">IndeterminateValue</a>:該儲存格值對應不到或 null 時，要給予的值</li>
+<li><a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcheckboxcolumn.truevalue(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:TrueValue 屬性">TrueValue</a>:對應已核取的值</li>
+<li><a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcheckboxcolumn.falsevalue(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:FalseValue 屬性">FalseValue</a>:對應未核取的值</li>
+<li><a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcheckboxcolumn.indeterminatevalue(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:IndeterminateValue 屬性">IndeterminateValue</a>:該儲存格值對應不到或 null 時，要給予的值</li>
 </ul>
 <h3 id="畫面呈現"><a href="#畫面呈現" class="headerlink" title="畫面呈現"></a>畫面呈現</h3><p>添加好，直接執行就完成了<br><img src="https://lh3.googleusercontent.com/Xn8u7YmKByJ3A9IxQQ3UIAwMcpVXrbJ7WNHisMpkY_y1K0p-f2UPFQ_bqdCRpPrvZ4AQJ8Q6rofmlqL4AHZ4joyl4CWl3T_igyWZiuOFZ47yl9tBVKYNxDe_-EMWvNknmRXXZHlDFcSgbXdrA0GvhXfzaYnVB3yoIAnnUEVUYiWXZsXx6l8udaQMJrp56sO0N8nbrkX5WpAHLcfTAkbNpFufDTd9KC_Qw3_qlP9gj5zCJbMxwB_wYgSTA0lf6imX2K-4QhBHMCoruTlsKQj2DY9ChKlkrbLxEgns7rkcvVRNokQXyddUyj3bK-dw-t0BRaWyQCSVv2p-bxE0hYvM-bjulZvVAbFxjldQuD7mz6O2CY1qB1JSsMoFRPcR5DWdvpjEJhC3yyGW3lgUytfdsSIiTyqCvnOeFiAElYMaVXbkGPTunUImupU3tlcDSktZgXIac6RkYXDsSxv4HqU2MKbkX7Coulbdp2p6_rJZa55wdHRTgw_TtquobnMSqzGXmX-tLiq7Dzrh4DgHzydKAs8__gQU0vi2ys6J7DOHB_YXmLnXy0Sl26cVTz9QKQWzKwIWBXhmiQ2tRFYozHfGXsknAzjySYk9UJ5_fpVO8vLkkGzF2hKumJY5AxIfwfNaiIW4abmAFmPVboTp7vPXTP-eTynFxhOZz1IfhBYDLw=w694-h483-no" alt="Result"></p>
-<h2 id="範例程式"><a href="#範例程式" class="headerlink" title="範例程式"></a>範例程式</h2><p><a href="https://github.com/shunnien/DataGridView-winform" title="Github:DataGridView-winform" target="_blank" rel="noopener">Github 上的 Sample Code</a></p>
+<h2 id="範例程式"><a href="#範例程式" class="headerlink" title="範例程式"></a>範例程式</h2><p><a href="https://github.com/shunnien/DataGridView-winform" target="_blank" rel="noopener" title="Github:DataGridView-winform">Github 上的 Sample Code</a></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcheckboxcolumn.indeterminatevalue(v=vs.110).aspx" title="MSDN:IndeterminateValue 屬性" target="_blank" rel="noopener">IndeterminateValue</a></li>
+<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcheckboxcolumn.indeterminatevalue(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:IndeterminateValue 屬性">IndeterminateValue</a></li>
 </ul>
 
       
@@ -512,7 +516,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -554,7 +558,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -565,7 +571,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -578,7 +584,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -589,7 +595,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

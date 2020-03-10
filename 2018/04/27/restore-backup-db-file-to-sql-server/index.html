@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="SQLServer,">
+  <meta name="keywords" content="SQLServer," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,21 +84,21 @@
 
 
 <meta name="description" content="此篇單純使用 GUI 介面操作，不使用 Query Script ，快速上手就好。">
-<meta name="keywords" content="SQLServer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL Server 的 Bak 檔案還原">
 <meta property="og:url" content="https://shunnien.github.io/2018/04/27/restore-backup-db-file-to-sql-server/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="此篇單純使用 GUI 介面操作，不使用 Query Script ，快速上手就好。">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/EhyzPqbg68v07cBIk5tU1ywjjmYQ3av0lSK3gE9ZVsL3L13SwFu-kVAG7X2CxMXBKHmVp5eT3lqJ_uF3C9sPxdNE_IeFtPbsJqAH5lgFNS3hJQiJBtrEUwF45otnmLy6kWRyvmMny2QcgYY8t-OVXAMvs2x1o6piXPvwP5-p-U-Y_VUBJk2rO2iK1wIfFY-96ka-_lSNQiepDrwxO6GSR_HO5TyYVMphQQ5Tijc3H0v1MJluic1V5j0SAaZMsV2QDXWiN5rf4zt2LbzZY5VI3NrnHSnJcuWbNa5xDyUEKLBGupejJnM2KlX1AKI1CWN7UBSCDBW9lIerP37iXjqy7-l0YS7qGEs1Pm6PPiKjNIVVq58IsmmkzoeTL6RMIJ7WPrj-Ly7QOJ0cfRXlPE0srxiZ0lCZtvQU7IC2-BHUj3B6YTEC6_ZwTVYB4KKxwSKBjAnpRRhYtD2YSZnZxEu7HpXYBaokJZ2GU2dFDC3PPF8p2X3IZIpiXZzznU4yS_GWWH3rkdFHZHQMop25etw7XcFLRmKiFgDhS4K99CWu_Em8cerIJKS4-UprkqFoKBIA37RNHwSMFMa5xaD5fIgzm4djiAvTmUbv2S4jSTlMll6rbnVuRJKVtSDlbLOtTk5hYxWYGZ0eTqXcA-yrTWXRSVdeuYBrQ7dq=w326-h495-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/o4UA20plZMnS_Zo6s-esWQa428pLvZuQI9x1yBp7sWlRFYy7s10u6x8d2Dts66kz_Weo-YY111bFVgzOEPo-1aq76SjPGom_XUqoAvdLw8g4lxv1Gflfbq70GY6By38GSCMIwETt1q6VMd9GeqUjnriUWWYVdl9y4vAWErT0gW2z23dVwALJjTNuy6EX69SjHoh5SeL39iqkW_f0npxgjzqQvZVPa_3_xhxb3siL6xYiF3i0ekXV3AWX3ltZVogL5xeBwe2dpc62x0I_ix33nZDBE4hejTnVlbhLjD63WL54osmTDk278i8qXcDVj_mkJx0OVR1SPGEZafnZrT32dlto3YgRjIcwChLbJfz5-7XsiJ-WvdIGs7kS-6iREskRFqCiOaOhL8C4ZgJ1ImR0BS8RMKO7mDa9gaGenGmQiyN41tKtvRIuhSRZqUIGjm2JsWDCUkCBmZA9pKjnpT-pEdL21Q-HyDltiSWOKdIOM70tX4VHS8KymZ9gGHV2WhWKxiI4eu8HPnIdDaE5nZ8Rharv_cqA1vz_7A4-3-LMU1rGvBzUBMnt2E2gZHY_Xz1h1ZBM9fiu1qlMevpWh6huIicrHY9KWhL_8U3c_zHcqoQlA92gazLZD6zooG9pbKH8CFqsovc-nROCJRDN1mF70DLjUyWQSUIC=w614-h605-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/W65qVCv7dvRiUMuJkv298-YLOu8zRRIbKrqfx3RDeCE76S-yHDBDAG4Ba_Hyq6_zbLHj89psQ0oMbiEgDR0lwPIQRPwaONw6SEQIB9fXWy185nR1lmU5Ts6a8AtG8NKxyn8S77DCqJlWRgZGo3vtZw1hRgD0tFSxrlfW3SXgcVbozJMrCSk4IXeosdbAQtftWn2acPzjN1mf6CBGpwI98mlqqWOcYtyyaPxJlnMiugYM7t4wk3eTZbm_ugEUan3vlW49MqJy920GQ4JFeEURqnuI2Teh_YGNGvpme3cfwB1meHHzRXvwpxNLEJcGd5B_wlDNFiR1nXxf_P2IKhAZMvvolgn-OeTKXUoHbaEKZLAIJyoHm0hf0D4pThK9PVafUeF1IdQLdqmWBjV4l_CqGLVzUitCQwD9TbIVZM7wAraqdneJPTwiOCeTPD0NxVNIkXE1CdFttr0nKm7LRF-sYROZvU4pBVFS_LD5U7R2GFBRDOYGTPz3tKFjmmxhGUoArNQVP87O5xRPCAfLXZwiNu6sBKrEnZfCMsudbBA_HK3NDCgW0M4LLiTpkVeAU0ahDEcAVHsZYlmWp7whXYwsO7rMECCn2OD4Gc892YI2_T-N7DV5ILM_JJQh2t1Ac58o__mAOZtypnilVhgRnap1FfBF-nw0Pj9s=w499-h399-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/8GEJSQUfe3FBfw9tY7QW_iHxiHI96_VBIiZVGsd_6V5bkbccBV5aQLEaW_IU0fz9aAhwtl3biKKoqvuqcysP6QIR1wjJTE3bXY_R30AdHMMHWyB7Ly5bYE11WBIPKCINUkjFY46gY_L0yauzvguyioTfzovcWdGY-5xOq-ayLQwquuhz_whmSF3HJ61XzD3bbE5DWkv3g_JDNmyiNa3Fk1P1oQqhq07NGoskUFl_4cf6Kdo9wP-YrfJvfzk6J0Up366DO2sV62nBqujCeM7FycWRdDcP0PwgSYvXP7yeTdmCAS7g6Yi2BDjyO4ZmKujSI8PmzeFi30qqUH1cmM-tAhjwAx4Lr_yuBWDna7mOOdu2XRV2kX4mbiR1YgORBjiC_bPfH0n9bM_gpItsChA1imzz3rr_JTedwSZ3-f_TergyjIocIt53EJsQryZG2bnlzeGwAab2ujKhF3XkC_rz8s8aWxB9x5fTLuXAHFfscANiQHTn7kKqrhL4HmQcQ9z-p8P9KQilqr23bX72ZhkAPin3QvZEBlJRu0gkm2mRfTQjptK1nhMGRj6LTKfqdmTiVDNyG2gfsoSTG8gRv3JR4zmvukAezj5rC48Wu-kqOsfKGegOC1p3aejsmsegk3lzE-T1K_2qBgEp68ItQ3smPmEtqmwh1_5j=s605-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.687Z">
+<meta property="article:published_time" content="2018-04-27T02:14:27.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.687Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="SQLServer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQL Server 的 Bak 檔案還原">
-<meta name="twitter:description" content="此篇單純使用 GUI 介面操作，不使用 Query Script ，快速上手就好。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/EhyzPqbg68v07cBIk5tU1ywjjmYQ3av0lSK3gE9ZVsL3L13SwFu-kVAG7X2CxMXBKHmVp5eT3lqJ_uF3C9sPxdNE_IeFtPbsJqAH5lgFNS3hJQiJBtrEUwF45otnmLy6kWRyvmMny2QcgYY8t-OVXAMvs2x1o6piXPvwP5-p-U-Y_VUBJk2rO2iK1wIfFY-96ka-_lSNQiepDrwxO6GSR_HO5TyYVMphQQ5Tijc3H0v1MJluic1V5j0SAaZMsV2QDXWiN5rf4zt2LbzZY5VI3NrnHSnJcuWbNa5xDyUEKLBGupejJnM2KlX1AKI1CWN7UBSCDBW9lIerP37iXjqy7-l0YS7qGEs1Pm6PPiKjNIVVq58IsmmkzoeTL6RMIJ7WPrj-Ly7QOJ0cfRXlPE0srxiZ0lCZtvQU7IC2-BHUj3B6YTEC6_ZwTVYB4KKxwSKBjAnpRRhYtD2YSZnZxEu7HpXYBaokJZ2GU2dFDC3PPF8p2X3IZIpiXZzznU4yS_GWWH3rkdFHZHQMop25etw7XcFLRmKiFgDhS4K99CWu_Em8cerIJKS4-UprkqFoKBIA37RNHwSMFMa5xaD5fIgzm4djiAvTmUbv2S4jSTlMll6rbnVuRJKVtSDlbLOtTk5hYxWYGZ0eTqXcA-yrTWXRSVdeuYBrQ7dq=w326-h495-no">
 
 
@@ -129,11 +129,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/04/27/restore-backup-db-file-to-sql-server/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/04/27/restore-backup-db-file-to-sql-server/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>SQL Server 的 Bak 檔案還原 | ShunNien's Blog</title>
   
@@ -155,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -173,7 +173,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -201,9 +201,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -211,9 +211,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -221,9 +221,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -231,9 +231,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -241,9 +241,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -256,7 +256,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -277,7 +277,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -318,7 +320,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -354,7 +356,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -366,7 +368,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -385,7 +387,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/04/27/restore-backup-db-file-to-sql-server/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/27/restore-backup-db-file-to-sql-server/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/27/restore-backup-db-file-to-sql-server/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +400,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -507,7 +510,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -549,7 +552,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -560,7 +565,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -573,7 +578,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -584,7 +589,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

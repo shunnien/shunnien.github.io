@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="C#,WinForm,">
+  <meta name="keywords" content="C#,WinForm," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,21 +84,22 @@
 
 
 <meta name="description" content="WinForm 下的 DataGridView 操作(1)">
-<meta name="keywords" content="C#,WinForm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DataGridView 在 Winform 的簡單操作(1)">
 <meta property="og:url" content="https://shunnien.github.io/2015/12/15/DataGridView-in-winform-1/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="WinForm 下的 DataGridView 操作(1)">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/COImHwdCxJPobHK9TULGkVIpZ5nx8Wv7Z8saqnFt7ItL6d66z1Ntx8V-V0GeQarPzE3VFOHzpEj1jy4VjtJU644Kfbb2PRF59ekcWWOKJzTBJXH2o7azVV34dSqSz1XagrWPFUGHyTi8nzUrOqpDNDpl48BDiQWZc2GGTMkPfBQOpPouMiS8trgFP0HKDI8xrD2XRcL6nWedOGB4rNLS97NVHBOMybzYAVTPcgn-COVw9HA_vIoTmH_K8sUVDgvfagUYJtRIiF5bJnPUZ34ASshC8GASWiHqaGTWHGyxFOC5sM-jGyV4uuflfWSTYtnVclTdiHlMoDWxLgBUf_30riSBlXLd8WHy_gf6OXPEdMtGtK2zIvRudS52eq-NCoVYiTyHLWMQAPq3UJtw5djOBS1I3vsECcjCWoPU84-DcEoZtfTITZfDni78nOj_nx-yc9T5rEUopfCdyEZN5qf9tUsbvrK5X2F4bgYemt-No7h0c-T3XR8LxmEVPkUdJGd4DmRGZCd93qPqMizuIpWMmz5qEAWG9SkWPpa3lmCtUBJq3rsFaLZ3qL7jIFPodsfDh-ZNugr0M05RvJ1UBVNDh5YwCEqOQFwovOEtycIxHeD1L5DsCagtM9wWU54s225amV_6DpDkZXf97WRvai45XFbTo4OBSnlOzXzAI-vN3Q=w606-h502-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/V_3tStyrJWCGD4GyWho6JktkuEO3Q5lsZrfSjvVzWuZ8NdV5BszSFVvy7EywiPaDTUUkaRDphRkvCXopUfC4teeJ-GpuW7QRartPZdFVVkSnThbC5hERC2kHUCkqYKwuD2mV5P1CYHH6VwwKFhPMrSu1_sEk1tA-TaqnRSRGwbikBMvb77VXvTasENvEv0_Vfl7ezOxqvgigUmjV-2zH8CNqFUOMGA6IQIdONJKpGOscx1Sn_qyjG_BJhZss1R7vuC4uP4O4YM07XSru7d8I67my_Me3mSgGTOhej8_CAjMqn57qVRd7tjRAXvVGaHLLikEq77dAq1umwFVD3kQ1GfebjMxQnl32XKBOrS4EtvQHlEFO5Ueg8S73-JjPAm0JK91-9Dvz1LT3JQfTdtUkFp8qpaO29y-v4JSJAQELaH9Xxh61zwUWhcEuu3wOHxpYaVdswm6gRvHyTlUSjmnosAp2b5QzupgXKxv9p7DV9ltAskWlKjkG98tNDdCc2s0k9bVcCvtpLyFHih02XLrHAp5HCKJStrkU9hlNaCmQRjqiANgaDhDTDlTZEvZKp-uwuteW2CPVtyBAd9P8UkpvCvK-iA92xfm_qWyOGYK13k4Yf6x9f_lGVe1cT3yMKXcTk4NEeMNW_06YK6qnHqRo84lrj0ALnnX7roKS0RUs8w=w419-h232-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/1F7yFS0PUsvx2uJhLHgxkab8HpYkMBQuus3ZDzgjaQLUseYr-196ZxBhbsgq_x1WHvjZa8zvs-pLlrKDjsx7BHYciW0oM0W9jPyyIUHoUUx9uftkDV98C3wBgVjWnC3ZvElUTdgA71n6dJAjVNVn0MlM_LSjpV30CzMXMsJvnlykKxamzPl7hHzeojhc5FLPP5Y_OUDW7rq7CfYFaFL58XFDt9AlllYX51ueRd6rxacFp1FtXh1EzEAOoMywh79i1XL60-dfrZ7S4GdJfpAOlAdTOUS_uabjAO8E-sfuzohjwkjdUKa3m_LdhkhqcoZdViHX-VCwgE6aJZVobAe6AIloyhC0Sx9R_edMbdQaBkELI36Nc_3zMCFyMfoSsV0dqMdxbJe5qm0jVeMTeAHES11hJv6MtOj9CJX09YfsYaP45BZyZAPKtUZg7S_4lWlMz9kxIXeXTUlwndQ1D9Lgu_Ld7509NnPacypQBt7n-bHkxbWTsLxUkV4lexSqzpxaXQIxPnZjZnldlTm_MEcnOl3tEaF5WHgyBC-3pziV6X2VxtxEXSG-ME7BaDcItvNXmUGgSgrg-o3Z-5jfqXDNp1xvVZjatpBMwmr1PUmLFFUZjjEPHdFuIt4exq2P6vqND0o0P_AGweBUiYWM_MTeC5sf356hiDhdc4NE4b7D1w=w840-h505-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/jGvOMEpUFdPKWiuLAmSOW_yXox8e2oP9y66NNTtf_Irub_rU1-cw-eXr1MZaOBkCrM9JwP-FKu-tiApWEJzEWUrdc8-pgMiOrNPvyr6QUrH0xIlkQd_Cvib97nTuBTRiV7QIXsOh2uX5Bnfjmc4TXgjMbkF69QGvWOs6qZJEGN6ppu48QweJvic3b87gLrOmgt0MTMuJeIUgOOtTtLuA90Jwf-gsD7RbMBlGbUv-ggFwZVidA2Mg-brMVr5TRm1Gk-sbogw9CTGyKl4A5V06BABS6JeB_uabViJNxeAxyPXn1BuxLrAQsKUiSY5dpnYxQ18ze1IS-dLvcT-oWeBM8D_RVt-9rM2M-y1HhPllWVBgqi1tsb3GaOraHNjL9ASifU8ca5Ufxu6sD5azsGFoupcYmZIPdBT2ZX81QqkTNEP1hvjbqXP3OgbdPyql2gtAOOLGRgMib8SGKWknwNsrOFxVIEtt7o9BILCB5C3ZlfGyeBp5ZVMpaSJkZz5PszUgw983M3RA9V6gAbjIpdY6B6FnF7JyEQilISY-BPGGK0AhhKc9O4TgrCnxU0COoRFtoQt7UGOdMvqXKqueqce53tuNa9Dti14hQcVgKcFGzC0DsQWcilFIi1HKXTFvgvac4UmkvZZRUC4C4iRhw5O1l19-ir1jWE5PIqccQYgthQ=w694-h483-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.608Z">
+<meta property="article:published_time" content="2015-12-15T01:54:03.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.608Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="WinForm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DataGridView 在 Winform 的簡單操作(1)">
-<meta name="twitter:description" content="WinForm 下的 DataGridView 操作(1)">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/COImHwdCxJPobHK9TULGkVIpZ5nx8Wv7Z8saqnFt7ItL6d66z1Ntx8V-V0GeQarPzE3VFOHzpEj1jy4VjtJU644Kfbb2PRF59ekcWWOKJzTBJXH2o7azVV34dSqSz1XagrWPFUGHyTi8nzUrOqpDNDpl48BDiQWZc2GGTMkPfBQOpPouMiS8trgFP0HKDI8xrD2XRcL6nWedOGB4rNLS97NVHBOMybzYAVTPcgn-COVw9HA_vIoTmH_K8sUVDgvfagUYJtRIiF5bJnPUZ34ASshC8GASWiHqaGTWHGyxFOC5sM-jGyV4uuflfWSTYtnVclTdiHlMoDWxLgBUf_30riSBlXLd8WHy_gf6OXPEdMtGtK2zIvRudS52eq-NCoVYiTyHLWMQAPq3UJtw5djOBS1I3vsECcjCWoPU84-DcEoZtfTITZfDni78nOj_nx-yc9T5rEUopfCdyEZN5qf9tUsbvrK5X2F4bgYemt-No7h0c-T3XR8LxmEVPkUdJGd4DmRGZCd93qPqMizuIpWMmz5qEAWG9SkWPpa3lmCtUBJq3rsFaLZ3qL7jIFPodsfDh-ZNugr0M05RvJ1UBVNDh5YwCEqOQFwovOEtycIxHeD1L5DsCagtM9wWU54s225amV_6DpDkZXf97WRvai45XFbTo4OBSnlOzXzAI-vN3Q=w606-h502-no">
 
 
@@ -129,11 +130,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2015/12/15/DataGridView-in-winform-1/">
+  <link rel="canonical" href="https://shunnien.github.io/2015/12/15/DataGridView-in-winform-1/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>DataGridView 在 Winform 的簡單操作(1) | ShunNien's Blog</title>
   
@@ -155,7 +156,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -173,7 +174,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -201,9 +202,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -211,9 +212,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -221,9 +222,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -231,9 +232,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -241,9 +242,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -256,7 +257,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -277,7 +278,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -318,7 +321,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -354,7 +357,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -366,7 +369,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -385,7 +388,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2015/12/15/DataGridView-in-winform-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/15/DataGridView-in-winform-1/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/12/15/DataGridView-in-winform-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +401,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -423,25 +427,23 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有一位朋友最近接了一個 Case，這 Case 後來變成 WinForm 的系統，他對於 winform 不熟悉，跑來找我一起討論，我發覺我也很久沒碰了XD，覺得順便整理一下好了。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>我準備把<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" title="MSDN:DataGridView 控制項" target="_blank" rel="noopener">DataGridView</a>的操作當成一個系列來介紹；我會把範例程式丟到<a href="https://github.com/" title="Github" target="_blank" rel="noopener">Github</a>上，然後此系列應該都是同一個<a href="https://github.com/shunnien/DataGridView-winform" target="_blank" rel="noopener">Repo</a>，請大家觀看的時候配合 commit comment 。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>我準備把<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridView 控制項">DataGridView</a>的操作當成一個系列來介紹；我會把範例程式丟到<a href="https://github.com/" target="_blank" rel="noopener" title="Github">Github</a>上，然後此系列應該都是同一個<a href="https://github.com/shunnien/DataGridView-winform" target="_blank" rel="noopener">Repo</a>，請大家觀看的時候配合 commit comment 。</p>
 <ol>
-<li><h3 id="範例資料"><a href="#範例資料" class="headerlink" title="範例資料"></a>範例資料</h3><p>此處採用<a href="https://msdn.microsoft.com/zh-tw/library/system.data.datatable(v=vs.110).aspx" title="MSDN:DataTable" target="_blank" rel="noopener">DataTable</a>(因為朋友那邊是用<a href="https://msdn.microsoft.com/zh-tw/library/system.data.datatable(v=vs.110).aspx" title="MSDN:DataTable" target="_blank" rel="noopener">DataTable</a>，所以就不使用 Object 了)，關於資料處理的部分就不贅述了</p>
-<figure class="highlight csharp"><figcaption><span>要載入的資料</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> DataTable <span class="title">sampleData</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">           <span class="keyword">using</span> (DataTable table = <span class="keyword">new</span> DataTable()) &#123;</span><br><span class="line">               <span class="comment">// Add columns.</span></span><br><span class="line">               table.Columns.Add(<span class="string">"Name"</span>, <span class="keyword">typeof</span>(<span class="keyword">string</span>));</span><br><span class="line">               table.Columns.Add(<span class="string">"Gender"</span>, <span class="keyword">typeof</span>(<span class="keyword">string</span>));</span><br><span class="line">               table.Columns.Add(<span class="string">"Married "</span>, <span class="keyword">typeof</span>(<span class="keyword">int</span>));</span><br><span class="line">               table.Columns.Add(<span class="string">"Birthday"</span>, <span class="keyword">typeof</span>(DateTime));</span><br><span class="line"></span><br><span class="line">               <span class="comment">// Add rows.</span></span><br><span class="line">               table.Rows.Add(<span class="string">"Allen"</span>, <span class="string">"Male"</span>, <span class="number">0</span>, DateTime.Now);</span><br><span class="line">               table.Rows.Add(<span class="string">"Kevin"</span>, <span class="string">"Male"</span>, <span class="number">1</span>, DateTime.Now);</span><br><span class="line">               table.Rows.Add(<span class="string">"Dean"</span>, <span class="string">"Male"</span>, <span class="number">0</span>, DateTime.Today);</span><br><span class="line">               table.Rows.Add(<span class="string">"Jenny"</span>, <span class="string">"Female"</span>, <span class="number">1</span>, DateTime.Today);</span><br><span class="line">               <span class="keyword">return</span> table;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li><h3 id="範例資料"><a href="#範例資料" class="headerlink" title="範例資料"></a>範例資料</h3><p>此處採用<a href="https://msdn.microsoft.com/zh-tw/library/system.data.datatable(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataTable">DataTable</a>(因為朋友那邊是用<a href="https://msdn.microsoft.com/zh-tw/library/system.data.datatable(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataTable">DataTable</a>，所以就不使用 Object 了)，關於資料處理的部分就不贅述了</p>
+<figure class="highlight csharp"><figcaption><span>要載入的資料</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> DataTable <span class="title">sampleData</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">           <span class="keyword">using</span> (DataTable table = <span class="keyword">new</span> DataTable()) &#123;</span><br><span class="line">               <span class="comment">// Add columns.</span></span><br><span class="line">               table.Columns.Add(<span class="string">"Name"</span>, <span class="keyword">typeof</span>(<span class="keyword">string</span>));</span><br><span class="line">               table.Columns.Add(<span class="string">"Gender"</span>, <span class="keyword">typeof</span>(<span class="keyword">string</span>));</span><br><span class="line">               table.Columns.Add(<span class="string">"Married "</span>, <span class="keyword">typeof</span>(<span class="keyword">int</span>));</span><br><span class="line">               table.Columns.Add(<span class="string">"Birthday"</span>, <span class="keyword">typeof</span>(DateTime));</span><br><span class="line"></span><br><span class="line">               <span class="comment">// Add rows.</span></span><br><span class="line">               table.Rows.Add(<span class="string">"Allen"</span>, <span class="string">"Male"</span>, <span class="number">0</span>, DateTime.Now);</span><br><span class="line">               table.Rows.Add(<span class="string">"Kevin"</span>, <span class="string">"Male"</span>, <span class="number">1</span>, DateTime.Now);</span><br><span class="line">               table.Rows.Add(<span class="string">"Dean"</span>, <span class="string">"Male"</span>, <span class="number">0</span>, DateTime.Today);</span><br><span class="line">               table.Rows.Add(<span class="string">"Jenny"</span>, <span class="string">"Female"</span>, <span class="number">1</span>, DateTime.Today);</span><br><span class="line">               <span class="keyword">return</span> table;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></li>
 <li><h3 id="畫面設計"><a href="#畫面設計" class="headerlink" title="畫面設計"></a>畫面設計</h3><p>視窗畫面的部分，如下圖設計，有些功能這次還不會描述到，但是可以先設計。<br><img src="https://lh3.googleusercontent.com/COImHwdCxJPobHK9TULGkVIpZ5nx8Wv7Z8saqnFt7ItL6d66z1Ntx8V-V0GeQarPzE3VFOHzpEj1jy4VjtJU644Kfbb2PRF59ekcWWOKJzTBJXH2o7azVV34dSqSz1XagrWPFUGHyTi8nzUrOqpDNDpl48BDiQWZc2GGTMkPfBQOpPouMiS8trgFP0HKDI8xrD2XRcL6nWedOGB4rNLS97NVHBOMybzYAVTPcgn-COVw9HA_vIoTmH_K8sUVDgvfagUYJtRIiF5bJnPUZ34ASshC8GASWiHqaGTWHGyxFOC5sM-jGyV4uuflfWSTYtnVclTdiHlMoDWxLgBUf_30riSBlXLd8WHy_gf6OXPEdMtGtK2zIvRudS52eq-NCoVYiTyHLWMQAPq3UJtw5djOBS1I3vsECcjCWoPU84-DcEoZtfTITZfDni78nOj_nx-yc9T5rEUopfCdyEZN5qf9tUsbvrK5X2F4bgYemt-No7h0c-T3XR8LxmEVPkUdJGd4DmRGZCd93qPqMizuIpWMmz5qEAWG9SkWPpa3lmCtUBJq3rsFaLZ3qL7jIFPodsfDh-ZNugr0M05RvJ1UBVNDh5YwCEqOQFwovOEtycIxHeD1L5DsCagtM9wWU54s225amV_6DpDkZXf97WRvai45XFbTo4OBSnlOzXzAI-vN3Q=w606-h502-no" alt="WinForm dataGridView Usage"></p>
 </li>
-<li><h3 id="欄位屬性設定"><a href="#欄位屬性設定" class="headerlink" title="欄位屬性設定"></a>欄位屬性設定</h3><p>比較需要注意的是<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" title="MSDN:DataGridView 控制項" target="_blank" rel="noopener">DataGridView</a>的<strong>Columns</strong>設定(此處不自行撰寫程式碼，而依靠編輯器的 code generator)；需要在<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview(v=vs.110).aspx" title="MSDN:DataGridView 類別" target="_blank" rel="noopener">DataGridView</a>的屬性視窗，點擊<strong>Columns</strong>這個屬性設定，之後就可以設定<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" title="MSDN:DataGridView 控制項" target="_blank" rel="noopener">DataGridView</a>顯示的欄位，另外需要設定<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcolumn.datapropertyname(v=vs.110).aspx" title="MSDN:DataPropertyName 屬性" target="_blank" rel="noopener">DataPropertyName</a>這屬性，這屬性跟等下需要綁定的<a href="https://msdn.microsoft.com/zh-tw/library/system.data.datatable(v=vs.110).aspx" title="MSDN:DataTable" target="_blank" rel="noopener">DataTable</a>欄位名稱相同，這樣才可以對應綁定。<br><img src="https://lh3.googleusercontent.com/V_3tStyrJWCGD4GyWho6JktkuEO3Q5lsZrfSjvVzWuZ8NdV5BszSFVvy7EywiPaDTUUkaRDphRkvCXopUfC4teeJ-GpuW7QRartPZdFVVkSnThbC5hERC2kHUCkqYKwuD2mV5P1CYHH6VwwKFhPMrSu1_sEk1tA-TaqnRSRGwbikBMvb77VXvTasENvEv0_Vfl7ezOxqvgigUmjV-2zH8CNqFUOMGA6IQIdONJKpGOscx1Sn_qyjG_BJhZss1R7vuC4uP4O4YM07XSru7d8I67my_Me3mSgGTOhej8_CAjMqn57qVRd7tjRAXvVGaHLLikEq77dAq1umwFVD3kQ1GfebjMxQnl32XKBOrS4EtvQHlEFO5Ueg8S73-JjPAm0JK91-9Dvz1LT3JQfTdtUkFp8qpaO29y-v4JSJAQELaH9Xxh61zwUWhcEuu3wOHxpYaVdswm6gRvHyTlUSjmnosAp2b5QzupgXKxv9p7DV9ltAskWlKjkG98tNDdCc2s0k9bVcCvtpLyFHih02XLrHAp5HCKJStrkU9hlNaCmQRjqiANgaDhDTDlTZEvZKp-uwuteW2CPVtyBAd9P8UkpvCvK-iA92xfm_qWyOGYK13k4Yf6x9f_lGVe1cT3yMKXcTk4NEeMNW_06YK6qnHqRo84lrj0ALnnX7roKS0RUs8w=w419-h232-no" alt="Property Columns Set"><br><img src="https://lh3.googleusercontent.com/1F7yFS0PUsvx2uJhLHgxkab8HpYkMBQuus3ZDzgjaQLUseYr-196ZxBhbsgq_x1WHvjZa8zvs-pLlrKDjsx7BHYciW0oM0W9jPyyIUHoUUx9uftkDV98C3wBgVjWnC3ZvElUTdgA71n6dJAjVNVn0MlM_LSjpV30CzMXMsJvnlykKxamzPl7hHzeojhc5FLPP5Y_OUDW7rq7CfYFaFL58XFDt9AlllYX51ueRd6rxacFp1FtXh1EzEAOoMywh79i1XL60-dfrZ7S4GdJfpAOlAdTOUS_uabjAO8E-sfuzohjwkjdUKa3m_LdhkhqcoZdViHX-VCwgE6aJZVobAe6AIloyhC0Sx9R_edMbdQaBkELI36Nc_3zMCFyMfoSsV0dqMdxbJe5qm0jVeMTeAHES11hJv6MtOj9CJX09YfsYaP45BZyZAPKtUZg7S_4lWlMz9kxIXeXTUlwndQ1D9Lgu_Ld7509NnPacypQBt7n-bHkxbWTsLxUkV4lexSqzpxaXQIxPnZjZnldlTm_MEcnOl3tEaF5WHgyBC-3pziV6X2VxtxEXSG-ME7BaDcItvNXmUGgSgrg-o3Z-5jfqXDNp1xvVZjatpBMwmr1PUmLFFUZjjEPHdFuIt4exq2P6vqND0o0P_AGweBUiYWM_MTeC5sf356hiDhdc4NE4b7D1w=w840-h505-no" alt="DataPropertyName setting"></p>
+<li><h3 id="欄位屬性設定"><a href="#欄位屬性設定" class="headerlink" title="欄位屬性設定"></a>欄位屬性設定</h3><p>比較需要注意的是<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridView 控制項">DataGridView</a>的<strong>Columns</strong>設定(此處不自行撰寫程式碼，而依靠編輯器的 code generator)；需要在<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridView 類別">DataGridView</a>的屬性視窗，點擊<strong>Columns</strong>這個屬性設定，之後就可以設定<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridView 控制項">DataGridView</a>顯示的欄位，另外需要設定<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcolumn.datapropertyname(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataPropertyName 屬性">DataPropertyName</a>這屬性，這屬性跟等下需要綁定的<a href="https://msdn.microsoft.com/zh-tw/library/system.data.datatable(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataTable">DataTable</a>欄位名稱相同，這樣才可以對應綁定。<br><img src="https://lh3.googleusercontent.com/V_3tStyrJWCGD4GyWho6JktkuEO3Q5lsZrfSjvVzWuZ8NdV5BszSFVvy7EywiPaDTUUkaRDphRkvCXopUfC4teeJ-GpuW7QRartPZdFVVkSnThbC5hERC2kHUCkqYKwuD2mV5P1CYHH6VwwKFhPMrSu1_sEk1tA-TaqnRSRGwbikBMvb77VXvTasENvEv0_Vfl7ezOxqvgigUmjV-2zH8CNqFUOMGA6IQIdONJKpGOscx1Sn_qyjG_BJhZss1R7vuC4uP4O4YM07XSru7d8I67my_Me3mSgGTOhej8_CAjMqn57qVRd7tjRAXvVGaHLLikEq77dAq1umwFVD3kQ1GfebjMxQnl32XKBOrS4EtvQHlEFO5Ueg8S73-JjPAm0JK91-9Dvz1LT3JQfTdtUkFp8qpaO29y-v4JSJAQELaH9Xxh61zwUWhcEuu3wOHxpYaVdswm6gRvHyTlUSjmnosAp2b5QzupgXKxv9p7DV9ltAskWlKjkG98tNDdCc2s0k9bVcCvtpLyFHih02XLrHAp5HCKJStrkU9hlNaCmQRjqiANgaDhDTDlTZEvZKp-uwuteW2CPVtyBAd9P8UkpvCvK-iA92xfm_qWyOGYK13k4Yf6x9f_lGVe1cT3yMKXcTk4NEeMNW_06YK6qnHqRo84lrj0ALnnX7roKS0RUs8w=w419-h232-no" alt="Property Columns Set"><br><img src="https://lh3.googleusercontent.com/1F7yFS0PUsvx2uJhLHgxkab8HpYkMBQuus3ZDzgjaQLUseYr-196ZxBhbsgq_x1WHvjZa8zvs-pLlrKDjsx7BHYciW0oM0W9jPyyIUHoUUx9uftkDV98C3wBgVjWnC3ZvElUTdgA71n6dJAjVNVn0MlM_LSjpV30CzMXMsJvnlykKxamzPl7hHzeojhc5FLPP5Y_OUDW7rq7CfYFaFL58XFDt9AlllYX51ueRd6rxacFp1FtXh1EzEAOoMywh79i1XL60-dfrZ7S4GdJfpAOlAdTOUS_uabjAO8E-sfuzohjwkjdUKa3m_LdhkhqcoZdViHX-VCwgE6aJZVobAe6AIloyhC0Sx9R_edMbdQaBkELI36Nc_3zMCFyMfoSsV0dqMdxbJe5qm0jVeMTeAHES11hJv6MtOj9CJX09YfsYaP45BZyZAPKtUZg7S_4lWlMz9kxIXeXTUlwndQ1D9Lgu_Ld7509NnPacypQBt7n-bHkxbWTsLxUkV4lexSqzpxaXQIxPnZjZnldlTm_MEcnOl3tEaF5WHgyBC-3pziV6X2VxtxEXSG-ME7BaDcItvNXmUGgSgrg-o3Z-5jfqXDNp1xvVZjatpBMwmr1PUmLFFUZjjEPHdFuIt4exq2P6vqND0o0P_AGweBUiYWM_MTeC5sf356hiDhdc4NE4b7D1w=w840-h505-no" alt="DataPropertyName setting"></p>
 </li>
-<li><h3 id="資料綁定"><a href="#資料綁定" class="headerlink" title="資料綁定"></a>資料綁定</h3><p>這部分的程式碼很簡易，直接將<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" title="MSDN:DataGridView 控制項" target="_blank" rel="noopener">DataGridView</a>的<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview.datasource(v=vs.110).aspx" title="MSDN:DataSource 屬性" target="_blank" rel="noopener">DataSource</a>屬性指定為範例資料就好</p>
+<li><h3 id="資料綁定"><a href="#資料綁定" class="headerlink" title="資料綁定"></a>資料綁定</h3><p>這部分的程式碼很簡易，直接將<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridView 控制項">DataGridView</a>的<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview.datasource(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataSource 屬性">DataSource</a>屬性指定為範例資料就好</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            gvSample.DataSource = sampleData();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
 <p>呈現樣式會這樣<br><img src="https://lh3.googleusercontent.com/jGvOMEpUFdPKWiuLAmSOW_yXox8e2oP9y66NNTtf_Irub_rU1-cw-eXr1MZaOBkCrM9JwP-FKu-tiApWEJzEWUrdc8-pgMiOrNPvyr6QUrH0xIlkQd_Cvib97nTuBTRiV7QIXsOh2uX5Bnfjmc4TXgjMbkF69QGvWOs6qZJEGN6ppu48QweJvic3b87gLrOmgt0MTMuJeIUgOOtTtLuA90Jwf-gsD7RbMBlGbUv-ggFwZVidA2Mg-brMVr5TRm1Gk-sbogw9CTGyKl4A5V06BABS6JeB_uabViJNxeAxyPXn1BuxLrAQsKUiSY5dpnYxQ18ze1IS-dLvcT-oWeBM8D_RVt-9rM2M-y1HhPllWVBgqi1tsb3GaOraHNjL9ASifU8ca5Ufxu6sD5azsGFoupcYmZIPdBT2ZX81QqkTNEP1hvjbqXP3OgbdPyql2gtAOOLGRgMib8SGKWknwNsrOFxVIEtt7o9BILCB5C3ZlfGyeBp5ZVMpaSJkZz5PszUgw983M3RA9V6gAbjIpdY6B6FnF7JyEQilISY-BPGGK0AhhKc9O4TgrCnxU0COoRFtoQt7UGOdMvqXKqueqce53tuNa9Dti14hQcVgKcFGzC0DsQWcilFIi1HKXTFvgvac4UmkvZZRUC4C4iRhw5O1l19-ir1jWE5PIqccQYgthQ=w694-h483-no" alt="Sample Display"><br>附上 <a href="https://github.com/shunnien/DataGridView-winform" target="_blank" rel="noopener">sample 的 github</a></p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" title="MSDN:DataGridView 控制項" target="_blank" rel="noopener">DataGridView 控制項</a></li>
-<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview(v=vs.110).aspx" title="MSDN:DataGridView 類別" target="_blank" rel="noopener">DataGridView 類別</a></li>
-<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcolumn.datapropertyname(v=vs.110).aspx" title="MSDN:DataPropertyName 屬性" target="_blank" rel="noopener">DataPropertyName</a></li>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2></li>
+</ol>
+<ul>
+<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/e0ywh3cz(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridView 控制項">DataGridView 控制項</a></li>
+<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridView 類別">DataGridView 類別</a></li>
+<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridviewcolumn.datapropertyname(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataPropertyName 屬性">DataPropertyName</a></li>
 </ul>
 
       
@@ -521,7 +523,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -563,7 +565,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -574,7 +578,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -587,7 +591,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -598,7 +602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

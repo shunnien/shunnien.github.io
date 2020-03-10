@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,37 +70,39 @@
 
 
 
-  <meta name="keywords" content="IIS,notes,WindowsServer2012,">
+  <meta name="keywords" content="IIS,notes,WindowsServer2012," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
 
 
 
-<meta name="description" content="前陣子 8/3 幫同事弄憑證設定的時候，發現 GCA 發出解決 Firefox 與 *Android 7.0 * 以上的問題，其公告訊息如下：  106年07月31日  本憑證管理中心經由GRCA重新簽發2張自發憑證(GRCA1_to_GRCA1_5.cer及GRCA1_5_to_GRCA2.cer)，已可解決Firefox與Android 7.0以上遇到GCA SSL憑證不信任的問題，請參考GC">
-<meta name="keywords" content="IIS,notes,WindowsServer2012">
+<meta name="description" content="前陣子 8&#x2F;3 幫同事弄憑證設定的時候，發現 GCA 發出解決 Firefox 與 *Android 7.0 * 以上的問題，其公告訊息如下：  106年07月31日  本憑證管理中心經由GRCA重新簽發2張自發憑證(GRCA1_to_GRCA1_5.cer及GRCA1_5_to_GRCA2.cer)，已可解決Firefox與Android 7.0以上遇到GCA SSL憑證不信任的問題，請參考GC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GCA 政府憑證管理中心憑證串鍊說明">
 <meta property="og:url" content="https://shunnien.github.io/2017/08/11/GCA-SSL-Chain-step-by-step/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
-<meta property="og:description" content="前陣子 8/3 幫同事弄憑證設定的時候，發現 GCA 發出解決 Firefox 與 *Android 7.0 * 以上的問題，其公告訊息如下：  106年07月31日  本憑證管理中心經由GRCA重新簽發2張自發憑證(GRCA1_to_GRCA1_5.cer及GRCA1_5_to_GRCA2.cer)，已可解決Firefox與Android 7.0以上遇到GCA SSL憑證不信任的問題，請參考GC">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:description" content="前陣子 8&#x2F;3 幫同事弄憑證設定的時候，發現 GCA 發出解決 Firefox 與 *Android 7.0 * 以上的問題，其公告訊息如下：  106年07月31日  本憑證管理中心經由GRCA重新簽發2張自發憑證(GRCA1_to_GRCA1_5.cer及GRCA1_5_to_GRCA2.cer)，已可解決Firefox與Android 7.0以上遇到GCA SSL憑證不信任的問題，請參考GC">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/Zvrup1_vnO3faiPcJEcoR-IGWNyLlwS3B2YjSy9FeTArnbri7ztyY0V41F_xHzz6Mshr9lFg5kWa94LWc9IE-pvlpYaB2ybI32xjyNb32nDWrmPBqofrb_4z0utGKTiWafpvBMCEXWdTd925jYlPK2U1Ds5Vtt7UG45KdeVSxivuNCmItvfSm7WPThqke06JrcF9VO20BLO8P4cQG1I0A1FUHXtgC8WMVEMzo6FLuHyEwg8VGib0b2q8APrVZ6HsV6yTZEu1alpPXRtta_445L-2l3i0dQHE_xW1ZIeGixzkLMkOgJxSq49O23og33gtqYLu04QRs2dVZivIxDrXnfzJHf7vQzD0Q6PibTuag5aokiCYA93Zf9krp0EDLP1H3Q_HK3HlmNVvkIQF_eiN_GcirZU-471KapXe7xpKf8legAlfymPd76utCrLur6dhVrbcEerMLIem5Rbk1Z3zAJRV-7F0LI_Z_Y7dji8oEXvGfoYtfwAmJhNWeS28Uo4l1umujMZTzoDDE-HtIQ9KA10ktn3atOAUWxRN_664UU97iHqcNMpld5BrooSi8E6XBsEao315LDFpx7auZJJeNwF-UXOf-Dsp4EbCwrVM5Fm1DVlVWdt_0u2p5fwD7v1ixSS2QI2CEsWDAquOeMMB_GFR12ZpfkwaeNsvNNf3evvS-w=w456-h272-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/azP6yYS98dW4wY3vp-_F9hx7BB8blGh1Wme1wQG28mQqRR4F1NqcKKLPdwhKRLzrWH39MM1q2MwDExG0XoU4Ygo9ModpR8FQ66PG3l6C2oWPHaIttrQJ6OCUXQy9EuF2pdMnlP2-u2BMtFQXytRdpFnkG7KASRyif25I7q51XOua30pVIkzRObo1By_E5-8T6eAX6MMLLcFaidEZ3PPZIVIGO1YGd1GATCfYgTuMN6k6Gq6LwyJLGq07STcZXKVKIStlgM-Io2W98lQvA7RGhXh5VWO3ZO5eYDwFuwcCuJDRaNXfCb9OavEDbZfjZ53ioKqinat0yuu756jopatyI6JGgRydFy6PIBtIODumlwKrcXo0S_rbWxDGUbeWquwrkEJrHELAW6JQNyLqN0autF48DEBKfEhIH4dFQu0EnrDobJyCCYnx8bHOHI94rOcdbTK49ky2dCnN5Ix_cBBvkHhqVPKRyIo-7BWBwRNj3dGRGUyqE-c1B5RKz7RuuevhEaaaDAycsCzjIXGXMsqGGkr0KZM2nbLC1Frz93rw-acB2iizqDYXXgbraQ33x-U-pvTCW-1WkQo7SMJFPfdnDpT5u-zB_eT6UkqBDWN6zIAgDx9aSm4-gS_rKjJ40_Ja9n2rh1LrZz2Rr4d4MCB8XhUlxRvyFKKAeS63J2t_fXfBlQ=w1104-h607-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/rxMgWIyMLIlOEzGWIXStULvjAnQRviQfC-E9cVLcc9raaqh8swP1UVzddbmGo5Q_i7s1HLBLFPel3wH6Q342FYxhRgXBI3zkdYPxXXxd3WnUhWJrl98w7Ms0MkF-McrVc7EUfkCNtvO-lPntnPFvRfgshhPXNB-xfNaGyDkYsj6x484QLG0Qt2xQFDwPyb7Q7pMi0mreMIx4VTnwvzmVszboYitzRR--cDqY5xBGAd34pBDP5MRWO0pFTf3LqvbQoGOvvryDCpvK8iapnsIi3B5kkDNaBers5YlC7IYl-5nRrXh4j7DfukDz-X4iOR_vfAvmbdKrP9flY35KErggKAKjbmOnvfTLsqTGStpdI28DSSD9H00ELct1i_1xIi2E0Gu-8-ktg_Rf79BO_B8HPCpGVaUtEq2ZnLQj_j_3kfI1J2S5Ax-a6anrDcGZFcEga0OB4KWZ2KCEUuin0l7DcxsobHrwU7-NQ0W3QhbcQC9srd6t9cNmBh_jyjEOWkIx7KSfJYPsTyqr2QoqabLaP7l5Ot5OI9hqjF1ClBgstcJQtWhE2TAm5Hx50TIS9G0UsG_2CyAlnIJFJOhNV0OjL3Ul6EkgZ0fUbsct0Bj4OfbwLznc2MFbQVHwJP693W9_uOvg_E1v-GjhNcOzKbyl1A7jNkJrTkW4b71m1PjlJMjSgg=w369-h311-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/ZSeNkVFYnGpyIbbDx_XdORWHaN9y8lS2CYKuBMMs-au0Dj6jE50M_XAk02R1-F7XoSZpmOiHirco1wQ2qK-uqcjrFm2d-RtdoC7-D1i2WwABvmRxQVtX6-JcYHsho-SOcUN1aelRviMMUac-VZJNB7kAZBzRCD4g0o9SU1iNLI9QF8xEgkUUaCJTkXG_MlGT_MyWKSyRlgUX7Ci1Arpg9USkd-qM7VWLZKIPc8Dw89n1PK0TtybaZFOoQpGd7ojJyWkIhp9IoWoP4RW3uhn5bKZjirjJHcvucmGtXH99YJpCS0tFnHZ5txp6kWeA7E_-dEuICUdfDlZyVuICgEQ_yaxqmdpCxGvpilAMyh5L1TE0RyMKR_oZCE-yowBpZS4a3ibgVwlmbzcnZ2nWB6q9KkeOGBf4Z0sxkMXCQEpXoQVC-ZBJbNB6mTkquu_XByrkYim_BEucCut9BVGHIoSTWrWS44AciVjxY74BR_jnjXjUfPBlMNKJrSlqdMPcEWFOp5O2xw78nS_6rE2pvbp2HulUTiL758ietZs86QfG4K8TTNBuR75wPDUe6CHLSUMrajdU80YtCJSUpBdn9eFgV_i3vDWVVYDpO90MLB3HHFOF-GenAjpfAlqE0ipJZIfytyk4vsK0ATtFwchn2HTwOIX_wb9cBQ_xPsaWjXFDEQC_qg=w810-h389-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/Cx8DcNdkN00Gkmau_P8H64HiDPlk2wKTKhEz9vds_Sb8jisUZF1yJeHTm0a2K7oCfqJiQKeMUZSoiN8lckWMBHpNJBprH-PQF1IjEnoQaBF-xUm2ftljWhxBWxx_JQ1m6unxbxYrjEPoMnWDYUES87SWWoUfeUOZXfSY5zeLAeLdRfpD-6B_Zj8t849c_5PasJmF1_rCCcwfIMPEFaiCynX22wdJr0noU4zRDn8NZUSUridamyXrQykQjiq_7I4G8ipNAmUVHnypBy2ySExKN6n-LTEdpBw8_SKcFIItMgQPX-UmQWvy0p1CQWuI2lS8A-9gOOmzq8qLAxpZ_IaE4TQ89TPhd7GwYwBRi0mjWX1po7m7Jn1jglWOH0GcdJuG3iCjiu8-XIEQVFxkMhAC-CnFprML7txj0fWZz0i_i0cggi7wIgLvpCCjjzAAxVjOwagO_X5wuUKU2aCYnmB7S45UcRNk0cyCgeDC91iiNTYrVJpSGpgOmj4fua3X_QYaAdED4OLT1_OUQy4Gpp_oFqbIgwERqhyu_tf-zkvtixeGEwDsEjzHPNCCLQGIHD8x66Hi3WbJMyPeJM1-PhF0msQ3mmn3TWpLbVml7C9yuRNBsbbKm7K0JjlPaGUSU10HhoawcVFjtxjzachbJIXkpUh5fODFq06BZSCLhtcNNV24wA=w313-h240-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/81EpzD5R9_mmaNKbq2VgMdi9rjKqPW6UKGf7VftQEsLATcmAt5csSxrZf_A_GudNU2FUBCo4jH97aBf49kuBH4zCG7UXUm5lpSPTluxMzEruZMNjMD3GRbNkFRV3MBeyl3wUFyyBbJBGnoSDQHqI99UePb1ubJH3aFooEJw6K3HWmUwx2b2_ZO46JBTjEtNfKbz0-S_N2JBim5SOEzlVNVKqKIFYoRR9gtepkU1btPjiAHaIdw5d0p49MEEyUrRSfZmPqRH5T4152GjL5mJEVztUredGVYhgxy-Fupdgc93DL_QoWMtTfwoJzx1RRtTpKB1GPMMoCYeCFmE4YtjPD7NhWQ4mHKMb28FIwx62gO8xY0oummuenw2IoyAuSSJ5NpuzkhYqQMinOtCiKASAV0KHMKzgpOJBzOtIFU-vOFEWKtp-6Atv4zpKV2yzv1Vv6ZSM-eyhWgntZUftHhtnamS0quPd_dd0TDdIErqbFL0VB9mTUHhzXngBGJFZmdQWPmPFNFdd093qfYF5qOKt7Encn8gnI4m0mdM9iWSTTMlob6iimP916gDICeHGNYl6RxJZJe82jbeIfnXUAIegbu_S3wZRQfyRIxJlrzEzKgdehKX-NW968izTOUWMft5oNNT0nhzSyAKinfnXJWqidra5O7cx6hQ_Em6rRsCcYAS0-w=w387-h607-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.651Z">
+<meta property="article:published_time" content="2017-08-11T08:25:44.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.651Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="IIS">
+<meta property="article:tag" content="notes">
+<meta property="article:tag" content="WindowsServer2012">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GCA 政府憑證管理中心憑證串鍊說明">
-<meta name="twitter:description" content="前陣子 8/3 幫同事弄憑證設定的時候，發現 GCA 發出解決 Firefox 與 *Android 7.0 * 以上的問題，其公告訊息如下：  106年07月31日  本憑證管理中心經由GRCA重新簽發2張自發憑證(GRCA1_to_GRCA1_5.cer及GRCA1_5_to_GRCA2.cer)，已可解決Firefox與Android 7.0以上遇到GCA SSL憑證不信任的問題，請參考GC">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/Zvrup1_vnO3faiPcJEcoR-IGWNyLlwS3B2YjSy9FeTArnbri7ztyY0V41F_xHzz6Mshr9lFg5kWa94LWc9IE-pvlpYaB2ybI32xjyNb32nDWrmPBqofrb_4z0utGKTiWafpvBMCEXWdTd925jYlPK2U1Ds5Vtt7UG45KdeVSxivuNCmItvfSm7WPThqke06JrcF9VO20BLO8P4cQG1I0A1FUHXtgC8WMVEMzo6FLuHyEwg8VGib0b2q8APrVZ6HsV6yTZEu1alpPXRtta_445L-2l3i0dQHE_xW1ZIeGixzkLMkOgJxSq49O23og33gtqYLu04QRs2dVZivIxDrXnfzJHf7vQzD0Q6PibTuag5aokiCYA93Zf9krp0EDLP1H3Q_HK3HlmNVvkIQF_eiN_GcirZU-471KapXe7xpKf8legAlfymPd76utCrLur6dhVrbcEerMLIem5Rbk1Z3zAJRV-7F0LI_Z_Y7dji8oEXvGfoYtfwAmJhNWeS28Uo4l1umujMZTzoDDE-HtIQ9KA10ktn3atOAUWxRN_664UU97iHqcNMpld5BrooSi8E6XBsEao315LDFpx7auZJJeNwF-UXOf-Dsp4EbCwrVM5Fm1DVlVWdt_0u2p5fwD7v1ixSS2QI2CEsWDAquOeMMB_GFR12ZpfkwaeNsvNNf3evvS-w=w456-h272-no">
 
 
@@ -131,11 +133,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2017/08/11/GCA-SSL-Chain-step-by-step/">
+  <link rel="canonical" href="https://shunnien.github.io/2017/08/11/GCA-SSL-Chain-step-by-step/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>GCA 政府憑證管理中心憑證串鍊說明 | ShunNien's Blog</title>
   
@@ -157,7 +159,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -175,7 +177,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -203,9 +205,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -213,9 +215,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -223,9 +225,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -233,9 +235,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -243,9 +245,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -258,7 +260,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -279,7 +281,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -320,7 +324,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -356,7 +360,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -368,7 +372,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -387,7 +391,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/08/11/GCA-SSL-Chain-step-by-step/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/11/GCA-SSL-Chain-step-by-step/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/11/GCA-SSL-Chain-step-by-step/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,7 +404,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -530,7 +535,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -572,7 +577,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -583,7 +590,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -596,7 +603,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -607,7 +614,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

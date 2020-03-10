@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="JavaScript,JavaScript30,">
+  <meta name="keywords" content="JavaScript,JavaScript30," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,20 @@
 
 
 <meta name="description" content="目標類似 Gmail 信箱的 checkbox 多選功能，當選取一個 checkbox 後，按住 shift 不放，在選取另一 checkbox ，此兩個 checkbox 中間的 checkbox 皆會選取。">
-<meta name="keywords" content="JavaScript,JavaScript30">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS30紀錄 10-Hold Shift and Check Checkboxes">
 <meta property="og:url" content="https://shunnien.github.io/2017/12/27/Javascript30days-10/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="目標類似 Gmail 信箱的 checkbox 多選功能，當選取一個 checkbox 後，按住 shift 不放，在選取另一 checkbox ，此兩個 checkbox 中間的 checkbox 皆會選取。">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/Q879dUZxwkFMMvjTu_NaVhfyMjgdmpaTw9wQcr7rxp6whXCwV1KEiAvhdpgEZrWo0yB2hExVZPSBqvfS7jQhu8aVrGPKck59WpfJM3Gd6qhVSGcC37p3f8u9yv_CWRVdRPlRag8c_kfzn8KeQJZ9_SvxWfv0LxdYDDp7xKBzcCsYT7uyRa1SWS5lss18WlfxZlVvvxgMQyFEBNPdysHt3YubVG0u6u0zfDO7WfQZCeAOVLP6PbgAoinLA59NXUA5hEPT0ywPEf01bDF3tyAew8giphvnlEQaHN22ieGU4oW8HzB_N0BtT9vUbJmiH0awgOiCzoOZrSrCYeVOVjHi5dQz1p1kkCnkl5E0op1OwaZCeAC6D92YlaQpompZobz4dI8cNtyXezavTBOdseIDkPA7ZnIKHHsWUEU6Mel69TNJNegIryusu8IF_LiYtVJQ761Obz9gfU94iiL4hcCu5pPc9pf1T1lXabSWaOAkyHLMH6rCoBl4ou0giqJY24DyUcuNNkFYDDtSBlOC6HJOcjlZjLBw7Tiee3I1nMepe-6S86kIKqG8cDGmZ_4jkeAQ-AE8qlV4rWksxHfkwESigGPAMj2Yncj49f_CKWi0_cqDOpEF3r-h-zh5f7jTpdk7wDcJwF6bcygAPyBn_cA9kgEINk8Sv2cf=w646-h836-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/nrdLfNRlF_Fu0ZZ57ZYOuxrJjs8sqdecoWGAOZ098n_4A9foOg95ZvRr9vesjUZbvMAKbPOYvBk-KqRUA2_HZR8dfzhxplcgbdsESmw8gaRiAxYg1Z35uMveSkHpACFZIgfk4yCOlOvzH3elS6wGDuylRC8Vnlmd34iIMqsUfzI9YxA9e5LtdFCjuqjEKV3iOTHsl6dqMMi0Ss87KkraAVti-ZvVMXORiB8rM8Y7uK4HZTQUCOdNlqVg0Pl9pXAHWooGjPU8kuUaRjk-v6ihVKKfiSqygXpbk5opbEHzJGOCtVEZO85inVt9OpNKGrXvuiz2WZqV6UFyNqU9WQ1u03zzlb_Tbmi0C9rAw41gN-hLrvfSqZMSOD7KWlOsbAOOBwwsAaZusjyp5Kgul9UhAJe1_K9wMUFMdqiBOmFX-zyKShO3RvT9tqwDLe_nqoIHD_KYTnRaC4s21ZPXkLBnTSGnHybGMlL49YLQlqfcJozeSmCt3bjj9KAC1pnwl6p9ZedqFtsijngqBCbQS6EyL1FBgyOdKGaSwY3IPJ4AByv-HVvD6Bp93y8m6kWGF1ZZz5Ngn2DFClgKbyiAJriAamcwwXkvScQPWkq0Mi4TaIzrzKnxrsnFPmKai5dSc0AF9DH7H5LEPBqRsbGE2po-7ayor5aUbfK4=w646-h836-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.663Z">
+<meta property="article:published_time" content="2017-12-27T09:33:27.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.663Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="JavaScript30">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS30紀錄 10-Hold Shift and Check Checkboxes">
-<meta name="twitter:description" content="目標類似 Gmail 信箱的 checkbox 多選功能，當選取一個 checkbox 後，按住 shift 不放，在選取另一 checkbox ，此兩個 checkbox 中間的 checkbox 皆會選取。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/Q879dUZxwkFMMvjTu_NaVhfyMjgdmpaTw9wQcr7rxp6whXCwV1KEiAvhdpgEZrWo0yB2hExVZPSBqvfS7jQhu8aVrGPKck59WpfJM3Gd6qhVSGcC37p3f8u9yv_CWRVdRPlRag8c_kfzn8KeQJZ9_SvxWfv0LxdYDDp7xKBzcCsYT7uyRa1SWS5lss18WlfxZlVvvxgMQyFEBNPdysHt3YubVG0u6u0zfDO7WfQZCeAOVLP6PbgAoinLA59NXUA5hEPT0ywPEf01bDF3tyAew8giphvnlEQaHN22ieGU4oW8HzB_N0BtT9vUbJmiH0awgOiCzoOZrSrCYeVOVjHi5dQz1p1kkCnkl5E0op1OwaZCeAC6D92YlaQpompZobz4dI8cNtyXezavTBOdseIDkPA7ZnIKHHsWUEU6Mel69TNJNegIryusu8IF_LiYtVJQ761Obz9gfU94iiL4hcCu5pPc9pf1T1lXabSWaOAkyHLMH6rCoBl4ou0giqJY24DyUcuNNkFYDDtSBlOC6HJOcjlZjLBw7Tiee3I1nMepe-6S86kIKqG8cDGmZ_4jkeAQ-AE8qlV4rWksxHfkwESigGPAMj2Yncj49f_CKWi0_cqDOpEF3r-h-zh5f7jTpdk7wDcJwF6bcygAPyBn_cA9kgEINk8Sv2cf=w646-h836-no">
 
 
@@ -127,11 +128,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2017/12/27/Javascript30days-10/">
+  <link rel="canonical" href="https://shunnien.github.io/2017/12/27/Javascript30days-10/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>JS30紀錄 10-Hold Shift and Check Checkboxes | ShunNien's Blog</title>
   
@@ -153,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +172,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +200,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +210,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +220,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +230,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +240,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +255,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +276,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +319,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +355,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +367,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +386,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/12/27/Javascript30days-10/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/27/Javascript30days-10/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/27/Javascript30days-10/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +399,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -446,7 +450,7 @@
 <li>判斷前 2 操作都是有取得索引後，直接更新選取狀態</li>
 <li>抽取選取狀態 function</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 延伸部分</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; e</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extenCheck</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> self = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">if</span> (!e.target.checked) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 目前的選取元素</span></span><br><span class="line">  <span class="keyword">const</span> nowSelIndex = checkboxes.findIndex(<span class="function"><span class="params">ele</span> =&gt;</span> ele === self);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!e.shiftKey) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> nearMinCheckboxIndex = checkboxes.findIndex(</span><br><span class="line">    (ele, index) =&gt;</span><br><span class="line">      index !== nowSelIndex &amp;&amp; index &lt; nowSelIndex &amp;&amp; ele.checked === <span class="literal">true</span></span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">const</span> nearMaxCheckboxIndex = checkboxes.findIndex(</span><br><span class="line">    (ele, index) =&gt;</span><br><span class="line">      index !== nowSelIndex &amp;&amp; index &gt; nowSelIndex &amp;&amp; ele.checked === <span class="literal">true</span></span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nearMaxCheckboxIndex !== <span class="number">-1</span>) &#123;</span><br><span class="line">    setCheckbox(nowSelIndex, nearMaxCheckboxIndex);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nearMinCheckboxIndex !== <span class="number">-1</span>) &#123;</span><br><span class="line">    setCheckbox(nearMinCheckboxIndex, nowSelIndex);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 設定 checkboxes 為選取</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; initIndex 索引初始</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; aryLength 迴圈長度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCheckbox</span>(<span class="params">initIndex, aryLength</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> index = initIndex; index &lt; aryLength; index++) &#123;</span><br><span class="line">    checkboxes[index].checked = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 延伸部分</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;any&#125;</span> <span class="variable">e</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">extenCheck</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> self = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">if</span> (!e.target.checked) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 目前的選取元素</span></span><br><span class="line">  <span class="keyword">const</span> nowSelIndex = checkboxes.findIndex(<span class="function"><span class="params">ele</span> =&gt;</span> ele === self);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!e.shiftKey) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> nearMinCheckboxIndex = checkboxes.findIndex(</span><br><span class="line">    (ele, index) =&gt;</span><br><span class="line">      index !== nowSelIndex &amp;&amp; index &lt; nowSelIndex &amp;&amp; ele.checked === <span class="literal">true</span></span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">const</span> nearMaxCheckboxIndex = checkboxes.findIndex(</span><br><span class="line">    (ele, index) =&gt;</span><br><span class="line">      index !== nowSelIndex &amp;&amp; index &gt; nowSelIndex &amp;&amp; ele.checked === <span class="literal">true</span></span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nearMaxCheckboxIndex !== <span class="number">-1</span>) &#123;</span><br><span class="line">    setCheckbox(nowSelIndex, nearMaxCheckboxIndex);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nearMinCheckboxIndex !== <span class="number">-1</span>) &#123;</span><br><span class="line">    setCheckbox(nearMinCheckboxIndex, nowSelIndex);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 設定 checkboxes 為選取</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;any&#125;</span> </span>initIndex 索引初始</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;any&#125;</span> </span>aryLength 迴圈長度</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCheckbox</span>(<span class="params">initIndex, aryLength</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> index = initIndex; index &lt; aryLength; index++) &#123;</span><br><span class="line">    checkboxes[index].checked = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://lh3.googleusercontent.com/nrdLfNRlF_Fu0ZZ57ZYOuxrJjs8sqdecoWGAOZ098n_4A9foOg95ZvRr9vesjUZbvMAKbPOYvBk-KqRUA2_HZR8dfzhxplcgbdsESmw8gaRiAxYg1Z35uMveSkHpACFZIgfk4yCOlOvzH3elS6wGDuylRC8Vnlmd34iIMqsUfzI9YxA9e5LtdFCjuqjEKV3iOTHsl6dqMMi0Ss87KkraAVti-ZvVMXORiB8rM8Y7uK4HZTQUCOdNlqVg0Pl9pXAHWooGjPU8kuUaRjk-v6ihVKKfiSqygXpbk5opbEHzJGOCtVEZO85inVt9OpNKGrXvuiz2WZqV6UFyNqU9WQ1u03zzlb_Tbmi0C9rAw41gN-hLrvfSqZMSOD7KWlOsbAOOBwwsAaZusjyp5Kgul9UhAJe1_K9wMUFMdqiBOmFX-zyKShO3RvT9tqwDLe_nqoIHD_KYTnRaC4s21ZPXkLBnTSGnHybGMlL49YLQlqfcJozeSmCt3bjj9KAC1pnwl6p9ZedqFtsijngqBCbQS6EyL1FBgyOdKGaSwY3IPJ4AByv-HVvD6Bp93y8m6kWGF1ZZz5Ngn2DFClgKbyiAJriAamcwwXkvScQPWkq0Mi4TaIzrzKnxrsnFPmKai5dSc0AF9DH7H5LEPBqRsbGE2po-7ayor5aUbfK4=w646-h836-no" alt="exten sample"></p>
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
@@ -534,7 +538,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -576,7 +580,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -587,7 +593,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -600,7 +606,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -611,7 +617,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

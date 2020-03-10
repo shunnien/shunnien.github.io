@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="JavaScript,JavaScript30,">
+  <meta name="keywords" content="JavaScript,JavaScript30," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,20 @@
 
 
 <meta name="description" content="目標製作一個凸顯高亮度來跟隨文章中的超連結">
-<meta name="keywords" content="JavaScript,JavaScript30">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS30紀錄 22-Follow Along Link Highlighter">
 <meta property="og:url" content="https://shunnien.github.io/2018/01/17/Javascript30days-22/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="目標製作一個凸顯高亮度來跟隨文章中的超連結">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/m0wgc8PNlsd3MdLBYN1T_Y5E1oybMs8qWj7nYsq7jWDs2F9LcOUNr1CBwimBgzkIkzgYvq10bZ9zQCj7aWRaVotYz2-iXxxsQsHhWV-Kk2wjTRvrg1nIGDA67rFat5KRcyDop33MSdVOJSmGKfvGfz-tQ8lEbwIC8mnNAeF1uz6q-G3LbzooaU6oyZsWw1vNdnl77XjH_lZ7OGhBj0EPkY3mm-cpeFgPfYlrRN0TNk5k_NJgkO_TGCbOCXiOXhn4G11TML1n7CWbHovmlpfgh1znN8R0SdCMvvhGW-_K9R8O97KdSlBPP9Ty7mo88zhyojOjB8IhDJqkyBjJJqLKM_92MZICVygZqMvfdFErBOHP8QL-vqKZJ6Drcxl-yzsW7pctj4ZQe4JTQyahoDwOoBsboHBKOKC6IkRGBuiQC2h8jI_7EH0H8CqRc2_hr8eh5d4_KeZkUHQTwfLZfdOXBR_aNb_Tfd7CzChRQK2LHmKOy170TVtwQBhvGl3IUMGY4XGwyY_IY9UTpSHV7DIU5nwB2sYfLaMihd9VFJXbe6hkLg568ldljhOaRkte77rH0Y6o-VpOEJVVFdhj31grYbzeVWDHX5P__TUY-hu1XfVdpOUgiT_OcByFnaO5kph644_U-CMxkgW6DUqqzPCt39PXv-qqgvYs=w874-h652-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/pDy3UpcS2Z7VIv0d3qOfoMGHvac6-IxZdEp34v3ELPT9ibZsTLMK-usFGjcHd7Uh7qw9hgExR4LyRnQoZ0-iFlUTj5Wp4PfysA2ieKyksKFPiKo6LNeEVYkRTI-AB3xc7Mmb6m32hN8ESk89FjyX9KDHBNwl9K3ZeWdzovk_LyTQCdJc9fx89-cU_DY26fB0kkBSooX0j1UL10KXGEVen7m0-N3P7dZtefNgPpRX_y_ggeTX93ntu_sPceNrLTSyPJpw_nKdLXexIGQyyeKxOdXI62kRo5YS4_-SMhmAY24bcNMuFezeSGqMNNQ3hGm3rKRkJioLIQQNo8slmhBwwxmvYvffiUSGaVcspUIUjCqwqcSjrVBDaXzRVjb9d8JILq2-0yuug8k8nvbxWN9VVlmMxs02HvKK4WDaF-UvVj2EEQqgK1JEXjXfKmSdPmNQc_uhSvHPff5d4yZUFGLYBkV3waUihcaN3CJ5dCgy0uEH3eS9CRQvnImlFO1oQ9M7koowQVglbNotkPOk23wiNrWv-bCAZhGLCsp4ZPK6UcDrxVBhdFz32dcwLO7FRS6YkrCkULLdR9Aj4r0D6ZtB8IXx0xO_9Ddwaq2XaR-NkFBmELGiz0gSp_ATe4yr7Rh1Q9duOeOJm_zPURCRtBKIpawlSd64hwin=w327-h263-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.668Z">
+<meta property="article:published_time" content="2018-01-17T01:54:58.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.668Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="JavaScript30">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS30紀錄 22-Follow Along Link Highlighter">
-<meta name="twitter:description" content="目標製作一個凸顯高亮度來跟隨文章中的超連結">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/m0wgc8PNlsd3MdLBYN1T_Y5E1oybMs8qWj7nYsq7jWDs2F9LcOUNr1CBwimBgzkIkzgYvq10bZ9zQCj7aWRaVotYz2-iXxxsQsHhWV-Kk2wjTRvrg1nIGDA67rFat5KRcyDop33MSdVOJSmGKfvGfz-tQ8lEbwIC8mnNAeF1uz6q-G3LbzooaU6oyZsWw1vNdnl77XjH_lZ7OGhBj0EPkY3mm-cpeFgPfYlrRN0TNk5k_NJgkO_TGCbOCXiOXhn4G11TML1n7CWbHovmlpfgh1znN8R0SdCMvvhGW-_K9R8O97KdSlBPP9Ty7mo88zhyojOjB8IhDJqkyBjJJqLKM_92MZICVygZqMvfdFErBOHP8QL-vqKZJ6Drcxl-yzsW7pctj4ZQe4JTQyahoDwOoBsboHBKOKC6IkRGBuiQC2h8jI_7EH0H8CqRc2_hr8eh5d4_KeZkUHQTwfLZfdOXBR_aNb_Tfd7CzChRQK2LHmKOy170TVtwQBhvGl3IUMGY4XGwyY_IY9UTpSHV7DIU5nwB2sYfLaMihd9VFJXbe6hkLg568ldljhOaRkte77rH0Y6o-VpOEJVVFdhj31grYbzeVWDHX5P__TUY-hu1XfVdpOUgiT_OcByFnaO5kph644_U-CMxkgW6DUqqzPCt39PXv-qqgvYs=w874-h652-no">
 
 
@@ -127,11 +128,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/01/17/Javascript30days-22/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/01/17/Javascript30days-22/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>JS30紀錄 22-Follow Along Link Highlighter | ShunNien's Blog</title>
   
@@ -153,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +172,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +200,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +210,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +220,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +230,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +240,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +255,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +276,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +319,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +355,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +367,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +386,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/01/17/Javascript30days-22/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/17/Javascript30days-22/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/17/Javascript30days-22/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +399,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -521,7 +525,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -563,7 +567,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -574,7 +580,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -587,7 +593,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -598,7 +604,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

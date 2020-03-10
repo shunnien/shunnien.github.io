@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="JavaScript,JavaScript30,">
+  <meta name="keywords" content="JavaScript,JavaScript30," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,20 @@
 
 
 <meta name="description" content="目標練習操作 Webcam 攝像頭，將攝像頭影像投射到 Video 上，並利用 canvas 來擷取圖片，練習濾鏡的操作。">
-<meta name="keywords" content="JavaScript,JavaScript30">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS30紀錄 19-Webcam Fun">
 <meta property="og:url" content="https://shunnien.github.io/2018/01/09/Javascript30days-19/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="目標練習操作 Webcam 攝像頭，將攝像頭影像投射到 Video 上，並利用 canvas 來擷取圖片，練習濾鏡的操作。">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/Dn9HwhKBJ_YC5ANkWLNYdWaUWbP3-uWzLB3_K7sT44SimrflLUOmn4Trj6LwzNFExUuLW60-v_IwpoZcpj7BmL_QD7B2dJ22uOoZXWR2CqFNKPlxnAmUKchcEwpsyTfzNVX2_EgrSfAyo1IhEtX5Iyhzq7HtryAmFJ361DSb71xn7xf7GaIS70RmhykGa2IzLODyT3UdHcO3zKqTVMmrmzlRPOtv06H8SumgRiTrYybP-tOBSeD3zr0V9js1dTpuflgBIoWMRMLg-rrCKooWs4EMRud09k5hiAbd2HbCdeRo2Yjc_yEPKoRgZ5agYZWs9pWjOtbgjIzspTtZK26x7AUBbpHXRms4WP_pvcORdKuQols4Ri1thag26yWzdXlZ9KLtmYVRfmQENVODM2BJtKhUHiDclspLNjIp4tf_I7YtUr_Zq5JcGF2TfT3YMQOkeRheeKt0TPfSeiZoC39yWQ_eJcVDYS7J_lfM9Kh7L7WSoTi7j1Zp-ybouwykt_iZUBbYfFlv9IqPd6nGdqSe_AowuM0_WoP8GlnmIveJkeX4GT2oMx-AZGQtP6a-jZiff094P0fExstrPvNVdY4sB8AeoGgROpB25VqX-a3GbwEldENiyuNWLDoR0XR5IIPEYy0hKz9IVZXFjREEH1now2jolH9cRZOq=w764-h605-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/_XhwBxLYI-kjBx9-Uw8g-XXr7JRIYVkqzxUbVPWD-JeoNlxs38drNUo2eRfRL2KcOIKcYCAaLww68e-Au9o0ccgcxqRZ13LArSU7QClIdQf5VngqveaUa18Mg_nIWVUy6WVKOtnG0rzGqevZzkTx8DV5S8-T_8FhbDJXoZdhOlB0a2T0Ub4WyutQ4SU9wp81r2Afp8bM-V7sysqJhxzE8jDTJqwuI363zdMndYBrjwphQ8VT-C4kn7AO5QQKrTe3ga5-VPM1eYIVqDFUqVTWMTm2MzpG2_I3otOdt6YIJ-0Q0oeXHM1JFDZGKPrgPXrhG3Yi4GhHzOOQ_CmocB_uf1q1FiBvYeMztA38hQtFZ7H1Y_Ff88f9u_9EWvwhPh6JI3LjIvqj9h-HCcPXKb8V5HchooZicvlgy3J_7S2A7a-ejRkUdS9njXwrRzE-JN5H3-2nWff7IkOMSINADB1ED8yelLSkUYdYM-fQzJNGQLy3FI3HcGDyPfkUUGqiEt-18T70qkSvuLmF1UxE-lzn7NoVEu19nwCQJ7jhkZybdPjbQDPK-37Z8jI11_27Y5ZrWhczwoZ5Q6cMxK9aM3VfHWMQvl1ARk2nK3A7fNmbbQgPmeI2yFTyqjr6qywLKjobMsCRVLORn5yeSPSwYyHq9B5ddCgViywo=w872-h766-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.667Z">
+<meta property="article:published_time" content="2018-01-09T02:41:01.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.667Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="JavaScript30">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS30紀錄 19-Webcam Fun">
-<meta name="twitter:description" content="目標練習操作 Webcam 攝像頭，將攝像頭影像投射到 Video 上，並利用 canvas 來擷取圖片，練習濾鏡的操作。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/Dn9HwhKBJ_YC5ANkWLNYdWaUWbP3-uWzLB3_K7sT44SimrflLUOmn4Trj6LwzNFExUuLW60-v_IwpoZcpj7BmL_QD7B2dJ22uOoZXWR2CqFNKPlxnAmUKchcEwpsyTfzNVX2_EgrSfAyo1IhEtX5Iyhzq7HtryAmFJ361DSb71xn7xf7GaIS70RmhykGa2IzLODyT3UdHcO3zKqTVMmrmzlRPOtv06H8SumgRiTrYybP-tOBSeD3zr0V9js1dTpuflgBIoWMRMLg-rrCKooWs4EMRud09k5hiAbd2HbCdeRo2Yjc_yEPKoRgZ5agYZWs9pWjOtbgjIzspTtZK26x7AUBbpHXRms4WP_pvcORdKuQols4Ri1thag26yWzdXlZ9KLtmYVRfmQENVODM2BJtKhUHiDclspLNjIp4tf_I7YtUr_Zq5JcGF2TfT3YMQOkeRheeKt0TPfSeiZoC39yWQ_eJcVDYS7J_lfM9Kh7L7WSoTi7j1Zp-ybouwykt_iZUBbYfFlv9IqPd6nGdqSe_AowuM0_WoP8GlnmIveJkeX4GT2oMx-AZGQtP6a-jZiff094P0fExstrPvNVdY4sB8AeoGgROpB25VqX-a3GbwEldENiyuNWLDoR0XR5IIPEYy0hKz9IVZXFjREEH1now2jolH9cRZOq=w764-h605-no">
 
 
@@ -127,11 +128,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/01/09/Javascript30days-19/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/01/09/Javascript30days-19/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>JS30紀錄 19-Webcam Fun | ShunNien's Blog</title>
   
@@ -153,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +172,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +200,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +210,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +220,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +230,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +240,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +255,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +276,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +319,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +355,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +367,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +386,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/01/09/Javascript30days-19/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/09/Javascript30days-19/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/09/Javascript30days-19/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +399,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -445,13 +449,13 @@
 </blockquote>
 <h2 id="步驟-3"><a href="#步驟-3" class="headerlink" title="步驟 3."></a>步驟 3.</h2><p>添加畫面與色彩分離功能</p>
 <p><img src="https://lh3.googleusercontent.com/_XhwBxLYI-kjBx9-Uw8g-XXr7JRIYVkqzxUbVPWD-JeoNlxs38drNUo2eRfRL2KcOIKcYCAaLww68e-Au9o0ccgcxqRZ13LArSU7QClIdQf5VngqveaUa18Mg_nIWVUy6WVKOtnG0rzGqevZzkTx8DV5S8-T_8FhbDJXoZdhOlB0a2T0Ub4WyutQ4SU9wp81r2Afp8bM-V7sysqJhxzE8jDTJqwuI363zdMndYBrjwphQ8VT-C4kn7AO5QQKrTe3ga5-VPM1eYIVqDFUqVTWMTm2MzpG2_I3otOdt6YIJ-0Q0oeXHM1JFDZGKPrgPXrhG3Yi4GhHzOOQ_CmocB_uf1q1FiBvYeMztA38hQtFZ7H1Y_Ff88f9u_9EWvwhPh6JI3LjIvqj9h-HCcPXKb8V5HchooZicvlgy3J_7S2A7a-ejRkUdS9njXwrRzE-JN5H3-2nWff7IkOMSINADB1ED8yelLSkUYdYM-fQzJNGQLy3FI3HcGDyPfkUUGqiEt-18T70qkSvuLmF1UxE-lzn7NoVEu19nwCQJ7jhkZybdPjbQDPK-37Z8jI11_27Y5ZrWhczwoZ5Q6cMxK9aM3VfHWMQvl1ARk2nK3A7fNmbbQgPmeI2yFTyqjr6qywLKjobMsCRVLORn5yeSPSwYyHq9B5ddCgViywo=w872-h766-no" alt="split pixels"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 畫面色彩分割</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; pixels</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rgbSplit</span>(<span class="params">pixels</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; pixels.data.length; i += <span class="number">4</span>) &#123;</span><br><span class="line">    pixels.data[i - <span class="number">150</span>] = pixels.data[i + <span class="number">0</span>]; <span class="comment">// RED</span></span><br><span class="line">    pixels.data[i + <span class="number">500</span>] = pixels.data[i + <span class="number">1</span>]; <span class="comment">// GREEN</span></span><br><span class="line">    pixels.data[i - <span class="number">550</span>] = pixels.data[i + <span class="number">2</span>]; <span class="comment">// Blue</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pixels;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">paintToCanvas</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> width = video.videoWidth;</span><br><span class="line">  <span class="keyword">const</span> height = video.videoHeight;</span><br><span class="line">  canvas.width = width;</span><br><span class="line">  canvas.height = height;</span><br><span class="line">  <span class="keyword">return</span> setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ctx.drawImage(video, <span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// take the pixels out</span></span><br><span class="line">    <span class="keyword">let</span> pixels = ctx.getImageData(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">    <span class="comment">//console.log(pixels);</span></span><br><span class="line"></span><br><span class="line">    pixels = rgbSplit(pixels);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重置分割畫面</span></span><br><span class="line">    ctx.putImageData(pixels, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;, <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 畫面色彩分割</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> <span class="variable">pixels</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rgbSplit</span>(<span class="params">pixels</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; pixels.data.length; i += <span class="number">4</span>) &#123;</span><br><span class="line">    pixels.data[i - <span class="number">150</span>] = pixels.data[i + <span class="number">0</span>]; <span class="comment">// RED</span></span><br><span class="line">    pixels.data[i + <span class="number">500</span>] = pixels.data[i + <span class="number">1</span>]; <span class="comment">// GREEN</span></span><br><span class="line">    pixels.data[i - <span class="number">550</span>] = pixels.data[i + <span class="number">2</span>]; <span class="comment">// Blue</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pixels;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">paintToCanvas</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> width = video.videoWidth;</span><br><span class="line">  <span class="keyword">const</span> height = video.videoHeight;</span><br><span class="line">  canvas.width = width;</span><br><span class="line">  canvas.height = height;</span><br><span class="line">  <span class="keyword">return</span> setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ctx.drawImage(video, <span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// take the pixels out</span></span><br><span class="line">    <span class="keyword">let</span> pixels = ctx.getImageData(<span class="number">0</span>, <span class="number">0</span>, width, height);</span><br><span class="line">    <span class="comment">//console.log(pixels);</span></span><br><span class="line"></span><br><span class="line">    pixels = rgbSplit(pixels);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 重置分割畫面</span></span><br><span class="line">    ctx.putImageData(pixels, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  &#125;, <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>參考資料<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/getImageData" target="_blank" rel="noopener">getImageData()</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData" target="_blank" rel="noopener">putImageData()</a></p>
 </blockquote>
 <h2 id="步驟-4"><a href="#步驟-4" class="headerlink" title="步驟 4."></a>步驟 4.</h2><p>添加紅色濾鏡功能</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 紅色濾鏡效果</span></span><br><span class="line"><span class="comment"> * @param &#123;*&#125; pixels</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">redEffect</span>(<span class="params">pixels</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; pixels.data.length; i += <span class="number">4</span>) &#123;</span><br><span class="line">    pixels.data[i + <span class="number">0</span>] = pixels.data[i + <span class="number">0</span>] + <span class="number">200</span>; <span class="comment">// RED</span></span><br><span class="line">    pixels.data[i + <span class="number">1</span>] = pixels.data[i + <span class="number">1</span>] - <span class="number">50</span>; <span class="comment">// GREEN</span></span><br><span class="line">    pixels.data[i + <span class="number">2</span>] = pixels.data[i + <span class="number">2</span>] * <span class="number">0.5</span>; <span class="comment">// Blue</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pixels;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 紅色濾鏡效果</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> <span class="variable">pixels</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">redEffect</span>(<span class="params">pixels</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; pixels.data.length; i += <span class="number">4</span>) &#123;</span><br><span class="line">    pixels.data[i + <span class="number">0</span>] = pixels.data[i + <span class="number">0</span>] + <span class="number">200</span>; <span class="comment">// RED</span></span><br><span class="line">    pixels.data[i + <span class="number">1</span>] = pixels.data[i + <span class="number">1</span>] - <span class="number">50</span>; <span class="comment">// GREEN</span></span><br><span class="line">    pixels.data[i + <span class="number">2</span>] = pixels.data[i + <span class="number">2</span>] * <span class="number">0.5</span>; <span class="comment">// Blue</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pixels;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="步驟-5"><a href="#步驟-5" class="headerlink" title="步驟 5."></a>步驟 5.</h2><p>綠幕功能效果</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greenScreen</span>(<span class="params">pixels</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> levels = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.querySelectorAll(<span class="string">".rgb input"</span>).forEach(<span class="function"><span class="params">input</span> =&gt;</span> &#123;</span><br><span class="line">    levels[input.name] = input.value;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; pixels.data.length; i = i + <span class="number">4</span>) &#123;</span><br><span class="line">    red = pixels.data[i + <span class="number">0</span>];</span><br><span class="line">    green = pixels.data[i + <span class="number">1</span>];</span><br><span class="line">    blue = pixels.data[i + <span class="number">2</span>];</span><br><span class="line">    alpha = pixels.data[i + <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (</span><br><span class="line">      red &gt;= levels.rmin &amp;&amp;</span><br><span class="line">      green &gt;= levels.gmin &amp;&amp;</span><br><span class="line">      blue &gt;= levels.bmin &amp;&amp;</span><br><span class="line">      red &lt;= levels.rmax &amp;&amp;</span><br><span class="line">      green &lt;= levels.gmax &amp;&amp;</span><br><span class="line">      blue &lt;= levels.bmax</span><br><span class="line">    ) &#123;</span><br><span class="line">      <span class="comment">// take it out!</span></span><br><span class="line">      pixels.data[i + <span class="number">3</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> pixels;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -558,7 +562,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -600,7 +604,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -611,7 +617,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -624,7 +630,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -635,7 +641,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

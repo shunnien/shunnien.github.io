@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="JavaScript,JavaScript30,">
+  <meta name="keywords" content="JavaScript,JavaScript30," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,20 @@
 
 
 <meta name="description" content="JavaScript 30 day 課程第一天，主要目的是按下按鍵時，發出聲音並進行該按鍵文字的特效；透過 Js 來綁定事件，熟練基本 JS 操作。">
-<meta name="keywords" content="JavaScript,JavaScript30">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS30紀錄 01-JavaScript Drum Kit">
 <meta property="og:url" content="https://shunnien.github.io/2017/12/08/Javascript30days-1/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="JavaScript 30 day 課程第一天，主要目的是按下按鍵時，發出聲音並進行該按鍵文字的特效；透過 Js 來綁定事件，熟練基本 JS 操作。">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/GJZCt6aTi-4RHLVjtM6dL0t9TjtavPQtQEdS3_MBecVDV_lMZEdSYXmVydgOWM8vepSJLLJm47Og3xKSM42chH6hMzEWKOhZdAvUW-fsJ2DLcRZh_Z_mN9apX7VNKhBdxy09krYwNVLk2oI9uCQdG_kdCHj7gCueqi9FQbBi-Vhu1pHCgcHWkpezAhQ_pMLxKTXIRNXP27FasXr1859LRMkXdNivUwgWvKFmwtKE6ExIgYnO8jo0MTd1sJQY1HtxV1kp2nhfiLufUA-GOd1X291Tg3CKqP2QppnuVP2AQnzrlmCiOBX1QtAUgytWMgFqg8QomU5th5qYZTVbfW65ZbibOuM1XXOvquQjaf2RaYVbFEfs9mWxuGIXBDYmYklFTDFBxUUxQR0fgZXx_GXTlGm1KUIe_ZjNYUwuqlOgp9hhJLObfeSbohvL7t3Z1GoIE6aEbSRpaqKFnZ5cp9uTE_5r3g_0HVy5gcJ5SoDqFrFacx9C8p6rl8Ohj5KFzQiPj2BTw7hTQ8p8qbucG18_UHmh7zeqrhnGbAcB_4qEelZSKpTYHWgiz6bewTgBjf4AY2NoDIL5c_UCQfwKa5R2UhB1sBIHsZqGfBWipTmCOuQIajUOSG5d3VOMVqS0HFe-4w_jYLZCVH9FxNEV5NHXqB0qjuABuaFhMoM=w832-h417-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/wgrbTz2rivsv8QuGsc8JgJKvU9z8EtSIrCvz0-NGiBuhEDC5Ar02OLoz6RdGPVZ1W9t6W1SpDsnxyzbrZSeU4Gy3FcdJK7ZNATYHhhstCGbD0pECAl5dxWdCev8trX-7ukQSXg5NQrQP4vDzN_u5-tgSOInmX3riG9ob3Tdl6JVJakBFB-yJvOBeX2vlywxw4vgNDJnyIZYkGnIIVTtXqpQTHH2itXkbmFzUVgU7SGrU7S1cUS7P25xsCQ5vH9X8orNBjKB3Jy-j10n20Ps_7-ZT49Nwjc-dTPjPIlcMOJyn9DbN2wyBshDuJdQOqtYvg-VSC1DVxqvPZWn4KHh4YwzCjnMMO1Gv2ERfTgNIQcvBYwtmV-ljE17lHFPC50CmpPnmBIzRHSpuhdYR7MatKVYva49Kt_HCE5ppdmtdMQohsdXOY8c8A21Q9hoKVkBWHkYNiL6qZbKEd6ejGh-JL-WdrAxtt0WMezwWS2CcVmO2px7Q1C0AYrJk3T4tu6P6jLzGpxbT1ZaG9L3jaKFeuPQxRWYteUxNTjZFCGEwlFjvYeYIzzJxanuER2CVPglhcX8OHA9SF1iG4XjB0LlagA5tqAL2kV1tuf4MAChdmN9RM64HJKSl7AIa25-ic9unxdd2l70jcZUO5XQBJXJi7mkVW1sfb0d734A=w918-h516-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.658Z">
+<meta property="article:published_time" content="2017-12-08T07:49:18.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.658Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="JavaScript30">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS30紀錄 01-JavaScript Drum Kit">
-<meta name="twitter:description" content="JavaScript 30 day 課程第一天，主要目的是按下按鍵時，發出聲音並進行該按鍵文字的特效；透過 Js 來綁定事件，熟練基本 JS 操作。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/GJZCt6aTi-4RHLVjtM6dL0t9TjtavPQtQEdS3_MBecVDV_lMZEdSYXmVydgOWM8vepSJLLJm47Og3xKSM42chH6hMzEWKOhZdAvUW-fsJ2DLcRZh_Z_mN9apX7VNKhBdxy09krYwNVLk2oI9uCQdG_kdCHj7gCueqi9FQbBi-Vhu1pHCgcHWkpezAhQ_pMLxKTXIRNXP27FasXr1859LRMkXdNivUwgWvKFmwtKE6ExIgYnO8jo0MTd1sJQY1HtxV1kp2nhfiLufUA-GOd1X291Tg3CKqP2QppnuVP2AQnzrlmCiOBX1QtAUgytWMgFqg8QomU5th5qYZTVbfW65ZbibOuM1XXOvquQjaf2RaYVbFEfs9mWxuGIXBDYmYklFTDFBxUUxQR0fgZXx_GXTlGm1KUIe_ZjNYUwuqlOgp9hhJLObfeSbohvL7t3Z1GoIE6aEbSRpaqKFnZ5cp9uTE_5r3g_0HVy5gcJ5SoDqFrFacx9C8p6rl8Ohj5KFzQiPj2BTw7hTQ8p8qbucG18_UHmh7zeqrhnGbAcB_4qEelZSKpTYHWgiz6bewTgBjf4AY2NoDIL5c_UCQfwKa5R2UhB1sBIHsZqGfBWipTmCOuQIajUOSG5d3VOMVqS0HFe-4w_jYLZCVH9FxNEV5NHXqB0qjuABuaFhMoM=w832-h417-no">
 
 
@@ -127,11 +128,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2017/12/08/Javascript30days-1/">
+  <link rel="canonical" href="https://shunnien.github.io/2017/12/08/Javascript30days-1/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>JS30紀錄 01-JavaScript Drum Kit | ShunNien's Blog</title>
   
@@ -153,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +172,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +200,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +210,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +220,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +230,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +240,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +255,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +276,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +319,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +355,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +367,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +386,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/12/08/Javascript30days-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/08/Javascript30days-1/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/08/Javascript30days-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +399,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -468,12 +472,12 @@ E1-->F1(box-shadow)
 
 
 <p>另外值得一提的是， css 中的樣式順序變動，對於觸發順序毫無影響，也就是說就算把 <strong>playing</strong> 的 css 變動成如下的順序，觸發順序還是 <strong>transform</strong> 先開始。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.playing</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span> <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.1);</span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#ffc600</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.playing</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span> <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#ffc600</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="學習事項"><a href="#學習事項" class="headerlink" title="學習事項"></a>學習事項</h1><p>將比較不熟練，或是較少使用的事項重複記錄一次。</p>
 <h2 id="HTML-部分"><a href="#HTML-部分" class="headerlink" title="HTML 部分"></a>HTML 部分</h2><h3 id="HTML-audio-tag"><a href="#HTML-audio-tag" class="headerlink" title="HTML audio tag"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/audio" target="_blank" rel="noopener">HTML audio tag</a></h3><p>操作音效檔案的 HTML tag，此處透過 js 操作播放與設定音效檔案重頭播放，可以參考 <a href="https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext" target="_blank" rel="noopener">MDN</a> 的 <strong>currentTime</strong></p>
 <h3 id="HTML-kbd-tag"><a href="#HTML-kbd-tag" class="headerlink" title="HTML kbd tag"></a><a href="https://www.w3schools.com/tags/tag_kbd.asp" target="_blank" rel="noopener">HTML kbd tag</a></h3><p>就是輸入按鍵的顯示文字，詳細說明可以觀看以下的說明。</p>
-<blockquote><h1 id="Definition-and-Usage"><a href="#Definition-and-Usage" class="headerlink" title="Definition and Usage"></a>Definition and Usage</h1><p>The <kbd> tag is a phrase tag. It defines keyboard input.<br>Tip: This tag is not deprecated, but it is possible to achieve richer effect with CSS.</kbd></p>
+<blockquote><h1 id="Definition-and-Usage"><a href="#Definition-and-Usage" class="headerlink" title="Definition and Usage"></a>Definition and Usage</h1><p>The <kbd> tag is a phrase tag. It defines keyboard input.<br>Tip: This tag is not deprecated, but it is possible to achieve richer effect with CSS.</p>
 <footer><strong>資料來源</strong><cite><a href="https://www.w3schools.com/tags/tag_kbd.asp" target="_blank" rel="noopener">www.w3schools.com/tags/tag_kbd.asp</a></cite></footer></blockquote>
 
 <h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><p>JS 部分列出一些比較便利的東西來說明。</p>
@@ -594,7 +598,7 @@ E1-->F1(box-shadow)
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -636,7 +640,9 @@ E1-->F1(box-shadow)
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -647,7 +653,7 @@ E1-->F1(box-shadow)
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -660,7 +666,7 @@ E1-->F1(box-shadow)
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -671,7 +677,7 @@ E1-->F1(box-shadow)
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

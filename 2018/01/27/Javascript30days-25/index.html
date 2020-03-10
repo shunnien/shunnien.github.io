@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="JavaScript,JavaScript30,">
+  <meta name="keywords" content="JavaScript,JavaScript30," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,18 +84,19 @@
 
 
 <meta name="description" content="事件捕捉，冒泡事件的觀察與選擇參數的運用，先捕獲，再冒泡觀察，搭配 Console 觀看">
-<meta name="keywords" content="JavaScript,JavaScript30">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS30紀錄 25-Event Capture, Propagation, Bubbling and Once">
 <meta property="og:url" content="https://shunnien.github.io/2018/01/27/Javascript30days-25/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="事件捕捉，冒泡事件的觀察與選擇參數的運用，先捕獲，再冒泡觀察，搭配 Console 觀看">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/Cqwp78p9DY1tmgQ7Sxnt_nouPp_MIlUAeSn9UsGW6MlbRheJ8q6lXSV2ljUn9_ub7mZuhMxlXv8kxkD-oZ44uHoQ6gtmF8WzsLWSoOsiEPYZ4eFzFqQLn45IOTOzmPjMDNXRtmUguyugpfPe0WTvcdh1J9H8nD-SDOh4DHZSWU-d0xPZvbTwOPYGq37htugTSiEPNwhNTME6b8Cq4jxQTP2d9pkN08XYD2FeJbrD7SPj0cViL_f0WbM0v6CZ7B9bHjApLZOiXKLCVf0XT8fC7LjErGb1sb4dwjECshoJU3PSQPoaSSCkAzGQIbIrcok3RTzTYFTCRtJlYlRm_DuOC7Mp_dwNXbR-ifW9iMrBnOje9ZGHWdeZTy-TBJmEGdwCT8psV7MZR19Oct2PHPwjd_3xHAJxeN2MHkDExL9Uzt14gS_THukIKRIicYI58ZkDCJOVxdlHjWvaofIuM6irxc85tj9T2DnYe6z9Erfv0eeC98WM1INLAxSa9m000gGrKTQ9sYLMIB1OQNNSYiq4u4u70x8irOboaj2u4TMVcBLEzTz6Uvj7qFkjYQavp4lxRdtiQvG-Je_Aajoio-XR3BaZKUqI3AKtDZY_c3FrZD19moHa4vkSI-coO8WZr1Nlz3gskog5lxqfyXRwm4avQ1IETdUqsvZL=w878-h828-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.671Z">
+<meta property="article:published_time" content="2018-01-27T08:42:26.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.671Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="JavaScript30">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS30紀錄 25-Event Capture, Propagation, Bubbling and Once">
-<meta name="twitter:description" content="事件捕捉，冒泡事件的觀察與選擇參數的運用，先捕獲，再冒泡觀察，搭配 Console 觀看">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/Cqwp78p9DY1tmgQ7Sxnt_nouPp_MIlUAeSn9UsGW6MlbRheJ8q6lXSV2ljUn9_ub7mZuhMxlXv8kxkD-oZ44uHoQ6gtmF8WzsLWSoOsiEPYZ4eFzFqQLn45IOTOzmPjMDNXRtmUguyugpfPe0WTvcdh1J9H8nD-SDOh4DHZSWU-d0xPZvbTwOPYGq37htugTSiEPNwhNTME6b8Cq4jxQTP2d9pkN08XYD2FeJbrD7SPj0cViL_f0WbM0v6CZ7B9bHjApLZOiXKLCVf0XT8fC7LjErGb1sb4dwjECshoJU3PSQPoaSSCkAzGQIbIrcok3RTzTYFTCRtJlYlRm_DuOC7Mp_dwNXbR-ifW9iMrBnOje9ZGHWdeZTy-TBJmEGdwCT8psV7MZR19Oct2PHPwjd_3xHAJxeN2MHkDExL9Uzt14gS_THukIKRIicYI58ZkDCJOVxdlHjWvaofIuM6irxc85tj9T2DnYe6z9Erfv0eeC98WM1INLAxSa9m000gGrKTQ9sYLMIB1OQNNSYiq4u4u70x8irOboaj2u4TMVcBLEzTz6Uvj7qFkjYQavp4lxRdtiQvG-Je_Aajoio-XR3BaZKUqI3AKtDZY_c3FrZD19moHa4vkSI-coO8WZr1Nlz3gskog5lxqfyXRwm4avQ1IETdUqsvZL=w878-h828-no">
 
 
@@ -126,11 +127,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/01/27/Javascript30days-25/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/01/27/Javascript30days-25/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>JS30紀錄 25-Event Capture, Propagation, Bubbling and Once | ShunNien's Blog</title>
   
@@ -152,7 +153,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -170,7 +171,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -198,9 +199,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -208,9 +209,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -218,9 +219,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -228,9 +229,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -238,9 +239,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -253,7 +254,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -274,7 +275,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -315,7 +318,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -351,7 +354,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -363,7 +366,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -382,7 +385,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/01/27/Javascript30days-25/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/27/Javascript30days-25/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/27/Javascript30days-25/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -394,7 +398,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -422,11 +426,11 @@
 </blockquote>
 <h1 id="處理步驟"><a href="#處理步驟" class="headerlink" title="處理步驟"></a>處理步驟</h1><p>首先觀察冒泡事件的觸發順序，變更為捕獲，觀察傳遞順序，最後使用 <strong>once</strong> 來觀察</p>
 <h2 id="步驟-1"><a href="#步驟-1" class="headerlink" title="步驟 1."></a>步驟 1.</h2><p>建立三組 Div ，以及 click 觸發，觀察觸發順序</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> divs = <span class="built_in">document</span>.querySelectorAll(<span class="string">"div"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 顯示目前觸發的 DOM </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; e </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logText</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.classList.value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">divs.forEach(<span class="function"><span class="params">div</span> =&gt;</span> div.addEventListener(<span class="string">"click"</span>, logText));</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> divs = <span class="built_in">document</span>.querySelectorAll(<span class="string">"div"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 顯示目前觸發的 DOM </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;any&#125;</span> </span>e </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logText</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.classList.value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">divs.forEach(<span class="function"><span class="params">div</span> =&gt;</span> div.addEventListener(<span class="string">"click"</span>, logText));</span><br></pre></td></tr></table></figure>
 
 <p>其結果會是 <strong>three &gt; two &gt; one</strong></p>
 <h2 id="步驟-2"><a href="#步驟-2" class="headerlink" title="步驟 2."></a>步驟 2.</h2><p>變更為捕獲</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> divs = <span class="built_in">document</span>.querySelectorAll(<span class="string">"div"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 顯示目前觸發的 DOM </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; e </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logText</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.classList.value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 變更為捕獲</span></span><br><span class="line">divs.forEach(<span class="function"><span class="params">div</span> =&gt;</span> div.addEventListener(<span class="string">"click"</span>, logText,&#123;</span><br><span class="line">    capture: <span class="literal">true</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> divs = <span class="built_in">document</span>.querySelectorAll(<span class="string">"div"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 顯示目前觸發的 DOM </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;any&#125;</span> </span>e </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logText</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.classList.value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 變更為捕獲</span></span><br><span class="line">divs.forEach(<span class="function"><span class="params">div</span> =&gt;</span> div.addEventListener(<span class="string">"click"</span>, logText,&#123;</span><br><span class="line">    capture: <span class="literal">true</span></span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
 
 <p>觸發順序變成 <strong>one &gt; two &gt; three</strong></p>
 <h2 id="步驟-3"><a href="#步驟-3" class="headerlink" title="步驟 3."></a>步驟 3.</h2><p>其後增加使用 <strong>once</strong> 參數，此參數將使觸發進行一次</p>
@@ -518,7 +522,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -560,7 +564,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -571,7 +577,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -584,7 +590,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -595,7 +601,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

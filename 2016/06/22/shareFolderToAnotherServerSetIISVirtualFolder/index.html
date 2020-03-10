@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="IIS,WindowsServer2012,">
+  <meta name="keywords" content="IIS,WindowsServer2012," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,13 +84,12 @@
 
 
 <meta name="description" content="將共用資料夾設定為IIS虛擬資料夾(WinServer 2012)">
-<meta name="keywords" content="IIS,WindowsServer2012">
 <meta property="og:type" content="article">
 <meta property="og:title" content="將共用資料夾設為虛擬資料夾">
 <meta property="og:url" content="https://shunnien.github.io/2016/06/22/shareFolderToAnotherServerSetIISVirtualFolder/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="將共用資料夾設定為IIS虛擬資料夾(WinServer 2012)">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/jX-zI3AW6DpW27CIKqfv5GVgIzQJjs1Wa9lb3kcU97U8UiBGmYMLfTg1AsjwNMGflpqGGPI0tv-3ZHx5c0dQvlOfOrfYqDWBMGXExboxvg2-8Q2AZkBuSd6xU4k6XkT5k-34Mi5cQZ8RAI93q8jYAWzXOqisG6fS3n_Cb6xmlcWFEWbBwZpa43ySqYhkwnkOd-C3cv0ZhHt1c7zGnMj4uHH1dmckrAqMRR_G_VnQD5XwMdJ6roDCIOCiHcd_Y3UqtMON06nXI6cn-wXxpb5GH6cohpqZoUtOr-Z6fNWw8dCqxCyCawTcA2GVqxxl1dGlIMt9aQwn8b6vHAde21ZzILcAg_G03iUXLD9E3NewrJ2c440Q0g1vUgDVWPyEVO268InqXHDQfJiMm2sU57yLNzAcjX4iEx-LDrqkygOz3B8a25A2KhOkCqevLR6RIWJibBT9Qy2hjBoLRgyYXjzrepXGbtHwOubPbvVp1QRl-5s423sJx61JHug5FS0MDnywZrSolI3ECJ-VWkN0YxuULSbtSjCgkfk885qOhmxlf8FW_g7fw5mqfFgXWwuRNArHZrOIENZDvVrooZ2AufbnnJS1HZMIeYrD6DfSgQjQ_sACw6Zrw9w6w5KpOt35utabuid28KBEOw1pkScrggfYr6FsPx-9yQ_K6_pTk9GJEg=w711-h347-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/Mxyp2eNy5sY4RH1tIDGdUI-0aZoVOuZGWe-rkfmMlPTcjDeOg89QrFHHHzAQodYPvJsDGbU6a7tcKPKP0GZhVI8Cl9EfVbQSpJfEThqc4zbtLfHtA1iofL2fZxyNAUkyY4h_Se4sl2Cqn8kum3wDnCurXxcWm_EYrgcThQa6RS5Mtw3X7HjLy5E9fyETT7zC4uln7JoMpigwI61F1KXGyoIWTrZaXH4ryJoH5EaPmvgB0rXBGgC_w33D61jw1OrJqpzfnSBvKIKD03sILuT2-ATeqkulEV8FVT3bJs4abt5fCTZOQHiP2XPRzdOfCq44b5uAzPnYWQl2OeVax5o6YvVXBfi-JYkI_FX8gETN7hprrAirc8pR-XPsWZn8fkJyhfICLk7ep7-BMgUp3hE7w1x4T9u0QE2CTuqEd0ZGjh6tr9g_7pKV3lbpvzSyQTK17rPyTBqH9-nsnJqk_1uKiXPtwYG0B2k8f7HfXbKt-IZsM27OQeEZn4plzoUuTR1ZC844LK39VcLv_1RBwua4PIAF6zbxtxvtTAlBV8GWrUf3O8mtwOXNDoC0VJffu7xBjffUz0syOgM_aashaFKy0m9-uQwaK6Fsc0A67XP6QSAvkCS6p9Nsm65khZXk4YSFQXnQgigIP_a0aqTnWMtK6_Ygtb5bB7-W5GYNErnRzg=w720-h389-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/yTk0_LaPuhJtXwmeKt3vji5JqpB3iwW6fJ_W7SfI4D8IuFbaZW3D27iE81RgUxzi_vcNLRyXajM41JKCB4D7GF0gR9sjzX7Na4cWAAxb9UVgm8HiMeOXbyteC8rwsAOnG-JWqgael1Bkr7mDKSo4_fhVeQxtON-WHNvVACZ1eC_SbtBZoKDocQg4lV5JiM8D1QxBe8fwF3JZZYViPqhDoG0zdmKGjPWSADy1Ro2ZdMGmDOwQrKGTrJOSfUN-w0EiCWWju1qPG_ULvlAnxiDv0Byc5D9noCGFFEeooXLX7twoP_KaXSxeueoXUDz9FI356WOxgF4YuNjshmlrFYB3L5mig-UUYZ6ME0SpcZ5bnrgWSM7eTec0yTiKfDP_BxnfwiO5vEgTMTpf7zk_gCrlbMTHuGOq4VYbJaPxOjiLlGFLM3uZBUULt4x5SD_F13ulWucoE3ldKVGY0GarbZrODBCYtx2Qh2qO13g_Yr5Mb9wTUDv-r7tNJZASM9tgdfQdcGnxjzzdxh_nD26VPW8NLPxP_WVFOdS26088zgMT4NfYF53xJgPs_cJIoVN5yTmIcMen0gZBqgD9_LJxwEu18g2HqIRJqEzOgLsC6h0gOxnIGcaOzySceo4iuU-sicFCQGabis--TlN-BUPGg8pIw_wyWuuyai-Tr-GDj_drug=w762-h253-no">
@@ -100,10 +99,12 @@
 <meta property="og:image" content="https://lh3.googleusercontent.com/WVwUsMrnsUIXWC5qRqKuSs85fDZXsMETToIeGppg9xvksrUc7yYgcmxmGof5doUJfn9QiIWUTbCjNEaWkUBMv5ElACvLr_UBTo4csjoyUk2IdjUl3pznZWagN18ekc0hSaysixjVZU-WIdDT-tOQ-DSSHw838VlWq-AttXmNMpBamSwO3OpVhImlNLyWR6aBq75Ub8hd-uYMGIYaYLt3f8aAzKrJ6gwtaV6HJTnbZoQ0P1dJS9wXUGoQi8zJjCKxR-1PRwyplrIr0MSOLscL2UkoUoV0kFPhx5m96aNAJ1KSHB-yye1iU3oIH3o0Le91oV75hNXguzSf05Q3gnhxjc-1FOJXGF_Q3EeGLSGskJv3cTctaQTREIJ5xcysgxxNyrfD2Rcl2Zj0Sa3ObAS3ydDA6mL-jHP3YrZTipshw5Kd77QoJdDAoZzRETn0mRSuX3bS0LJFTomdUl2OUwxJ1O_6Rz6GdheX5-84vfGdX6zKMMNWxjhdWyowZ4E0pl43-pLCDn-goV1y5X_TGO1ir_-SYW_IoQQYT_Mp4-JRoyqxjGrCvdemYszW0yBeXRBpO86odVvfpcjOsLtjQfwEtjUW8f0JPJKEgAb0-2sD5cCKG3vLE5KNWhndkNeWnL4Rw7OwexzUmf6PwXz-yrBJI476pOjGyZkuEnNk4LvKhw=w412-h634-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/Q8_WAhRpOX-qpU9qfEDpGYRuEM7Np21ML5lJcKwPHSHeA9_AMFsrq_5PR0MfNZZCaSQm86Ylyr6q5pZBWVwaM1CwPlHl-ufExDCXlGg-RSm3pIKZbboZ8WXwvLhOvAkm6xvs60-aHDH8__T_M_IY1FPSRN8KgF_du-a_qooD_bNCkfSK3nKj_evUdGToSrKAtKCAfzFj-TbDx_uLsmRv15rWYPxJIS21-P64Fte9hb6mVte25PnaaDkEWo59npOsQ_mLC95gOlIKBsH2b7HsIqvrmA8TtHzg-Mb0pXpDV7Hy0jsOLKp2wPUZ6HoXK1iNqwcpWnO7k28dO5CVUnv3BYszzUG37HqoQIlqoI-kg8hQwZPOIA094Vmr9TgQjh6LBaLe76Jc9wNilAQ-nJcALj3QM8JgZDR9dHpFj3PdnBbtyy3MSPP-iVtjKEf7zCqIozD2YzsSOKPf-vh6XaplXLH0oMkyP7bll5XRA9vw6vfJ4psy0YhDZKt5HocGEUBGMUFbagzQ70-u7KSLOxaaaK02L5Ff3mhg0Iwhje_CJWAtmf-gkRwv5lJaUDJ7hlmfeRxHWdWcVIioDnp2NIQzqpZkswcwlsClq4jUkJjxbrBhm2vlVuLdPstFaMKnoChczgc-dyoaFIEaoUHwdE8M9wLkIq4rPeXerdjQ8d59uw=w538-h201-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/vAxdYHM3lBzPgXqMThLLqjW6tdOjTbnadWbwPk0fYgdupt0YFsF6k4jKgf45_HxDDyZnvqgmXxb28pQ_biD7cYyNFqR9UzJ5XO4OsFaLuCzjKPMm2LnyfV-sWxA6SFpkDr3ghq7jGXS638t8yDdCGv06zcYrwNIvogcFUYryzoguDAX924OXblewa_LhwJ0pGDPOA8YWdLhIWdHPNsOmUqAoi_fskyplrp69msGelqtoGm4QD8wVsZYO3ZqaKnTBrLzat15lwkM_dfDj4KkGhRsA35aW3_mSn88ZO19wUKJfqUIOHXYiAaslaEYo1FRTBBMTaN8uodjs55yr-ZZg27Hqby_iC78zddePZlFOPXehGx_7dhmyUzFiBCIFsnv5MmLXJ4HUlp29TFBYhYPrGHylfOinyGryFLMv02lnDhUJcGYSHf4TWcGF1HIUOu_CoWZvq8pcIhJR_N3jF8gOAQ5ZwqNJ7DYaERrBLbt_-2S9EANjkF0CtebLDgIGo-rqV-ReRbUdY_vFmK-Ah-fZGvp20Jnmzg4l9fVSl2k0ZFyKCm-nObAHn2uWxBSVEZ6pKfdea1qnBkRX8sMo1CMjDaeE9aQkJXx6B5IwlRhygvv9GzmYl2Bx98mSjbZx1vJgIogna8pIHB6kQuhv4dK6eDQuHBxAyf9eirhVQkakwQ=w635-h416-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.618Z">
+<meta property="article:published_time" content="2016-06-22T13:58:40.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.618Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="IIS">
+<meta property="article:tag" content="WindowsServer2012">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="將共用資料夾設為虛擬資料夾">
-<meta name="twitter:description" content="將共用資料夾設定為IIS虛擬資料夾(WinServer 2012)">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/jX-zI3AW6DpW27CIKqfv5GVgIzQJjs1Wa9lb3kcU97U8UiBGmYMLfTg1AsjwNMGflpqGGPI0tv-3ZHx5c0dQvlOfOrfYqDWBMGXExboxvg2-8Q2AZkBuSd6xU4k6XkT5k-34Mi5cQZ8RAI93q8jYAWzXOqisG6fS3n_Cb6xmlcWFEWbBwZpa43ySqYhkwnkOd-C3cv0ZhHt1c7zGnMj4uHH1dmckrAqMRR_G_VnQD5XwMdJ6roDCIOCiHcd_Y3UqtMON06nXI6cn-wXxpb5GH6cohpqZoUtOr-Z6fNWw8dCqxCyCawTcA2GVqxxl1dGlIMt9aQwn8b6vHAde21ZzILcAg_G03iUXLD9E3NewrJ2c440Q0g1vUgDVWPyEVO268InqXHDQfJiMm2sU57yLNzAcjX4iEx-LDrqkygOz3B8a25A2KhOkCqevLR6RIWJibBT9Qy2hjBoLRgyYXjzrepXGbtHwOubPbvVp1QRl-5s423sJx61JHug5FS0MDnywZrSolI3ECJ-VWkN0YxuULSbtSjCgkfk885qOhmxlf8FW_g7fw5mqfFgXWwuRNArHZrOIENZDvVrooZ2AufbnnJS1HZMIeYrD6DfSgQjQ_sACw6Zrw9w6w5KpOt35utabuid28KBEOw1pkScrggfYr6FsPx-9yQ_K6_pTk9GJEg=w711-h347-no">
 
 
@@ -134,11 +135,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2016/06/22/shareFolderToAnotherServerSetIISVirtualFolder/">
+  <link rel="canonical" href="https://shunnien.github.io/2016/06/22/shareFolderToAnotherServerSetIISVirtualFolder/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>將共用資料夾設為虛擬資料夾 | ShunNien's Blog</title>
   
@@ -160,7 +161,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -178,7 +179,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -206,9 +207,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -216,9 +217,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -226,9 +227,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -236,9 +237,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -246,9 +247,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -261,7 +262,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -282,7 +283,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -323,7 +326,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -359,7 +362,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -371,7 +374,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -390,7 +393,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2016/06/22/shareFolderToAnotherServerSetIISVirtualFolder/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/22/shareFolderToAnotherServerSetIISVirtualFolder/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2016/06/22/shareFolderToAnotherServerSetIISVirtualFolder/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,7 +406,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -431,10 +435,8 @@
 <p>轉換成這樣<br><img src="https://lh3.googleusercontent.com/Mxyp2eNy5sY4RH1tIDGdUI-0aZoVOuZGWe-rkfmMlPTcjDeOg89QrFHHHzAQodYPvJsDGbU6a7tcKPKP0GZhVI8Cl9EfVbQSpJfEThqc4zbtLfHtA1iofL2fZxyNAUkyY4h_Se4sl2Cqn8kum3wDnCurXxcWm_EYrgcThQa6RS5Mtw3X7HjLy5E9fyETT7zC4uln7JoMpigwI61F1KXGyoIWTrZaXH4ryJoH5EaPmvgB0rXBGgC_w33D61jw1OrJqpzfnSBvKIKD03sILuT2-ATeqkulEV8FVT3bJs4abt5fCTZOQHiP2XPRzdOfCq44b5uAzPnYWQl2OeVax5o6YvVXBfi-JYkI_FX8gETN7hprrAirc8pR-XPsWZn8fkJyhfICLk7ep7-BMgUp3hE7w1x4T9u0QE2CTuqEd0ZGjh6tr9g_7pKV3lbpvzSyQTK17rPyTBqH9-nsnJqk_1uKiXPtwYG0B2k8f7HfXbKt-IZsM27OQeEZn4plzoUuTR1ZC844LK39VcLv_1RBwua4PIAF6zbxtxvtTAlBV8GWrUf3O8mtwOXNDoC0VJffu7xBjffUz0syOgM_aashaFKy0m9-uQwaK6Fsc0A67XP6QSAvkCS6p9Nsm65khZXk4YSFQXnQgigIP_a0aqTnWMtK6_Ygtb5bB7-W5GYNErnRzg=w720-h389-no" alt="Fix"></p>
 <h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><h3 id="試作範例"><a href="#試作範例" class="headerlink" title="試作範例"></a>試作範例</h3><p>我設定了兩台 VM，將共用資料夾設定在某台 VM，另一台 VM 的 IIS 去讀取或寫入該共享資料夾。<br><img src="https://lh3.googleusercontent.com/yTk0_LaPuhJtXwmeKt3vji5JqpB3iwW6fJ_W7SfI4D8IuFbaZW3D27iE81RgUxzi_vcNLRyXajM41JKCB4D7GF0gR9sjzX7Na4cWAAxb9UVgm8HiMeOXbyteC8rwsAOnG-JWqgael1Bkr7mDKSo4_fhVeQxtON-WHNvVACZ1eC_SbtBZoKDocQg4lV5JiM8D1QxBe8fwF3JZZYViPqhDoG0zdmKGjPWSADy1Ro2ZdMGmDOwQrKGTrJOSfUN-w0EiCWWju1qPG_ULvlAnxiDv0Byc5D9noCGFFEeooXLX7twoP_KaXSxeueoXUDz9FI356WOxgF4YuNjshmlrFYB3L5mig-UUYZ6ME0SpcZ5bnrgWSM7eTec0yTiKfDP_BxnfwiO5vEgTMTpf7zk_gCrlbMTHuGOq4VYbJaPxOjiLlGFLM3uZBUULt4x5SD_F13ulWucoE3ldKVGY0GarbZrODBCYtx2Qh2qO13g_Yr5Mb9wTUDv-r7tNJZASM9tgdfQdcGnxjzzdxh_nD26VPW8NLPxP_WVFOdS26088zgMT4NfYF53xJgPs_cJIoVN5yTmIcMen0gZBqgD9_LJxwEu18g2HqIRJqEzOgLsC6h0gOxnIGcaOzySceo4iuU-sicFCQGabis--TlN-BUPGg8pIw_wyWuuyai-Tr-GDj_drug=w762-h253-no" alt="MySample"></p>
 <h3 id="作法"><a href="#作法" class="headerlink" title="作法"></a>作法</h3><p>建立一個 Sample 網站（此處使用 asp.net mvc）示範</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"jumbotron"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>ASP.NET<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"lead"</span>&gt;</span>ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://asp.net"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary btn-lg"</span>&gt;</span>Learn more &amp;raquo;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>@Html.ActionLink("DownLoad Demo", </span><br><span class="line">            "DownloadFile",</span><br><span class="line">            null,</span><br><span class="line">            new &#123;@class = "btn btn-primary btn-lg"&#125;)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"jumbotron"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>ASP.NET<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"lead"</span>&gt;</span>ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://asp.net"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary btn-lg"</span>&gt;</span>Learn more <span class="symbol">&amp;raquo;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>@Html.ActionLink("DownLoad Demo", </span><br><span class="line">            "DownloadFile",</span><br><span class="line">            null,</span><br><span class="line">            new &#123;@class = "btn btn-primary btn-lg"&#125;)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">DownloadFile</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">string</span> mimeType = <span class="string">"image/jpeg"</span>;</span><br><span class="line">    <span class="keyword">return</span> File(Server.MapPath(<span class="string">"~/DLfiles/20130604_181744.jpg"</span>),mimeType,<span class="string">"testDemo"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>然後架設該網站到 VM 上的 WebServer（以下稱這台機器為A好了） 上。<br>再把 DLfiles 放到 VM 的另一台機器B上，並開啟共用。接下來的設定才是重點。</p>
 <blockquote>
 <p>Server 說明</p>
@@ -457,7 +459,7 @@
 <p>這樣就可以了，附上範例結果<br><img src="https://lh3.googleusercontent.com/vAxdYHM3lBzPgXqMThLLqjW6tdOjTbnadWbwPk0fYgdupt0YFsF6k4jKgf45_HxDDyZnvqgmXxb28pQ_biD7cYyNFqR9UzJ5XO4OsFaLuCzjKPMm2LnyfV-sWxA6SFpkDr3ghq7jGXS638t8yDdCGv06zcYrwNIvogcFUYryzoguDAX924OXblewa_LhwJ0pGDPOA8YWdLhIWdHPNsOmUqAoi_fskyplrp69msGelqtoGm4QD8wVsZYO3ZqaKnTBrLzat15lwkM_dfDj4KkGhRsA35aW3_mSn88ZO19wUKJfqUIOHXYiAaslaEYo1FRTBBMTaN8uodjs55yr-ZZg27Hqby_iC78zddePZlFOPXehGx_7dhmyUzFiBCIFsnv5MmLXJ4HUlp29TFBYhYPrGHylfOinyGryFLMv02lnDhUJcGYSHf4TWcGF1HIUOu_CoWZvq8pcIhJR_N3jF8gOAQ5ZwqNJ7DYaERrBLbt_-2S9EANjkF0CtebLDgIGo-rqV-ReRbUdY_vFmK-Ah-fZGvp20Jnmzg4l9fVSl2k0ZFyKCm-nObAHn2uWxBSVEZ6pKfdea1qnBkRX8sMo1CMjDaeE9aQkJXx6B5IwlRhygvv9GzmYl2Bx98mSjbZx1vJgIogna8pIHB6kQuhv4dK6eDQuHBxAyf9eirhVQkakwQ=w635-h416-no" alt="Result"></p>
 <h2 id="附錄"><a href="#附錄" class="headerlink" title="附錄"></a>附錄</h2><p>IIS Version:8.5.99600.16384</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li>Will保哥<a href="http://blog.miniasp.com/post/2007/11/10/How-to-write-file-to-net-share-folder-using-ASPNET.aspx" title="Will" target="_blank" rel="noopener">ASP.NET 如何將檔案寫入到網路芳鄰的分享目錄</a></li>
+<li>Will保哥<a href="http://blog.miniasp.com/post/2007/11/10/How-to-write-file-to-net-share-folder-using-ASPNET.aspx" target="_blank" rel="noopener" title="Will">ASP.NET 如何將檔案寫入到網路芳鄰的分享目錄</a></li>
 <li>Will保哥<a href="http://blog.miniasp.com/post/2009/04/17/CryptographicException-The-handle-is-invalid.aspx" target="_blank" rel="noopener">CryptographicException: 控制碼無效</a></li>
 <li>Will保哥<a href="http://blog.miniasp.com/post/2010/02/28/Setup-aspnet-website-on-remote-UNC-Path.aspx" target="_blank" rel="noopener">ASP.NET 網站部署在 UNC 路徑上</a></li>
 <li>Will保哥<a href="http://blog.miniasp.com/post/2009/09/09/Introduce-IIS-75-Application-Pool-Identity-and-Virtual-Account.aspx" target="_blank" rel="noopener">IIS 7.5 的應用程式集區與新增的「虛擬帳戶」特性</a></li>
@@ -540,7 +542,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -582,7 +584,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -593,7 +597,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -606,7 +610,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -617,7 +621,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

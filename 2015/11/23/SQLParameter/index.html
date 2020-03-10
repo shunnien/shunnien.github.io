@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="C#,EntityFramework,ADO.NET,">
+  <meta name="keywords" content="C#,EntityFramework,ADO.NET," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,21 @@
 
 
 <meta name="description" content="SQLParameter 使用的小細節">
-<meta name="keywords" content="C#,EntityFramework,ADO.NET">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLParameter名稱為啥不會對應">
 <meta property="og:url" content="https://shunnien.github.io/2015/11/23/SQLParameter/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="SQLParameter 使用的小細節">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/v3jjenTq-EsxsTwIhvU7VfSQkuQlovyjuC-hF2Dynv2qoPTIkPyQWVIUF26UcJqzebppRd4EkH10V5oQ5sJTJIMK6yBo4QqRP4I-YsbWbwCQ6z8P-3Op2q_X3nx0l9axXw_hXyqgEmyhdkxNcKZdeUcpXiQPJ0i-DMrqoPK45o5IytMyPyYmUdDKWeLT6104BBvVQvhL9I3gArJGqXVY_p2SpC4lP_iD2cSIkrBDjnzRbr1SWKQbTaBIeeL1HyNVx_izVDq7v3u8yTlGXFaAB_BZjHhEuh1y1ecsojDcspneiPCvwMi5wdhokAIMG0ZgthGfiJkcGmjlJtukl2t_GbsdR7Jd-fgGc0v1G8rJzOOFzSEpPKSwMDfR4xtpdt3uTYWvPOEgzwGLv2e8nZV4wMqQFR8ZBFD_2fQiUi3pRTa4i1gEFohjsOy7ebz8xizP7mA0Uk-eKxQ1guCFZ8COIygGS4jT53qSMvyA5BXZI0qafnELoRPXaXNf0Yf9fcaYYNNfWWqujCUs-WGV3l3yyW85wLzLmPQWUbVXc4531qa-YdL8kya19snPkLHQR54tYKCryMBplgsj-OOEyTqtJmuJiprrEMGqiWcgPwQKKAmwe_xudOc9tCb6sD4NVmRYxw0TWg2pbNUL-9c9Zx7toALuMERaGzJobMEM3ylhqw=w557-h76-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/rFQ-vdsE5zxv09Q8bJOf6fzVq5bXfaQF76dBDx3kWbv6AAcl1L7--z0L--uc7WZs-kjBUIyNs30fmB_tTpWvnpEi1ziWYeOPUwtKhfPylSJ4K5FuomoQr51dz6UTWeCVyiw9bPLWBzDPnN7eEMdf3CPQ5Vv75wcZN-z325MTDgskjW2WrElBJQb5wNh4M-y3dP5AYVguXDEimvB7x1-DHxSxtyM3EG8wN1_DqljcyxHUacNFXYF8T6hOsYQO2UEPp3Lh3ZEhM4k7i83fYXAT1wVLLUNhFObnyocdBASug1ASoVrxi0OZ_0Txl6fQbXJnHE3s18-boVVLg73RzblHX3sW0oMuM0M1ODWPE70ikVDFQoBYgZ-MpUnjKBCUr7noQYDqpuXqsx5cdLGOPrRnHyDG6SnuKEUCWgqOl-pLrlTIn5dkaDiERshFFdNmSZtoC3cqXz8A4aEt6poB0Hf5X3L05-zJ7sysrVJ5r3TufUrE-JJyjee6Eq_ahIpmz0IkANcdS1NwUFvgD2Wjoaylm5-FPyhuA3VCf1StTj1wffCuB8lIAFh85P9QG1Ox-W08qyNH0HO5OYdFXCA0DLtJEpPMLIgc7JAtvbcWZ2lOPuMUZDUhLzaX6hsYx8qCjs5DVX9eVHE3Z4HOVXfw5BPdpkfKtcRvUMw5PReWyMo4nA=w588-h382-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.605Z">
+<meta property="article:published_time" content="2015-11-23T12:02:43.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.605Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="EntityFramework">
+<meta property="article:tag" content="ADO.NET">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQLParameter名稱為啥不會對應">
-<meta name="twitter:description" content="SQLParameter 使用的小細節">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/v3jjenTq-EsxsTwIhvU7VfSQkuQlovyjuC-hF2Dynv2qoPTIkPyQWVIUF26UcJqzebppRd4EkH10V5oQ5sJTJIMK6yBo4QqRP4I-YsbWbwCQ6z8P-3Op2q_X3nx0l9axXw_hXyqgEmyhdkxNcKZdeUcpXiQPJ0i-DMrqoPK45o5IytMyPyYmUdDKWeLT6104BBvVQvhL9I3gArJGqXVY_p2SpC4lP_iD2cSIkrBDjnzRbr1SWKQbTaBIeeL1HyNVx_izVDq7v3u8yTlGXFaAB_BZjHhEuh1y1ecsojDcspneiPCvwMi5wdhokAIMG0ZgthGfiJkcGmjlJtukl2t_GbsdR7Jd-fgGc0v1G8rJzOOFzSEpPKSwMDfR4xtpdt3uTYWvPOEgzwGLv2e8nZV4wMqQFR8ZBFD_2fQiUi3pRTa4i1gEFohjsOy7ebz8xizP7mA0Uk-eKxQ1guCFZ8COIygGS4jT53qSMvyA5BXZI0qafnELoRPXaXNf0Yf9fcaYYNNfWWqujCUs-WGV3l3yyW85wLzLmPQWUbVXc4531qa-YdL8kya19snPkLHQR54tYKCryMBplgsj-OOEyTqtJmuJiprrEMGqiWcgPwQKKAmwe_xudOc9tCb6sD4NVmRYxw0TWg2pbNUL-9c9Zx7toALuMERaGzJobMEM3ylhqw=w557-h76-no">
 
 
@@ -127,11 +129,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2015/11/23/SQLParameter/">
+  <link rel="canonical" href="https://shunnien.github.io/2015/11/23/SQLParameter/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>SQLParameter名稱為啥不會對應 | ShunNien's Blog</title>
   
@@ -153,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +173,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +201,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +211,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +221,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +231,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +241,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +256,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +277,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +320,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +356,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +368,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +387,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2015/11/23/SQLParameter/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/11/23/SQLParameter/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/11/23/SQLParameter/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +400,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -420,13 +425,12 @@
       
 
       
-        <h2 id="緣起"><a href="#緣起" class="headerlink" title="緣起"></a>緣起</h2><p>承接<a href="http://shunnien.github.io/2015/11/21/Sending-DataBase-Mail-in-Sql-Server/">上篇</a>，在撰寫呼叫 Database Mail 的<a href="https://en.wikipedia.org/wiki/Stored_procedure" title="Wikipedia:Stored procedure" target="_blank" rel="noopener">Stored Procedure</a>(預存程序)時，發現在使用<a href="https://msdn.microsoft.com/zh-tw/library/system.data.sqlclient.sqlparameter(v=vs.110).aspx" title="MSDN:SqlParameter 類別" target="_blank" rel="noopener">Parameter</a>上有些小地方需要注意；以前使用沒發現，因為呼叫<a href="https://en.wikipedia.org/wiki/Stored_procedure" title="Wikipedia:Stored procedure" target="_blank" rel="noopener">Stored Procedure</a>時使用的參數不多，所以都沒發現，這次記錄一下。</p>
+        <h2 id="緣起"><a href="#緣起" class="headerlink" title="緣起"></a>緣起</h2><p>承接<a href="http://shunnien.github.io/2015/11/21/Sending-DataBase-Mail-in-Sql-Server/">上篇</a>，在撰寫呼叫 Database Mail 的<a href="https://en.wikipedia.org/wiki/Stored_procedure" target="_blank" rel="noopener" title="Wikipedia:Stored procedure">Stored Procedure</a>(預存程序)時，發現在使用<a href="https://msdn.microsoft.com/zh-tw/library/system.data.sqlclient.sqlparameter(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:SqlParameter 類別">Parameter</a>上有些小地方需要注意；以前使用沒發現，因為呼叫<a href="https://en.wikipedia.org/wiki/Stored_procedure" target="_blank" rel="noopener" title="Wikipedia:Stored procedure">Stored Procedure</a>時使用的參數不多，所以都沒發現，這次記錄一下。</p>
 <h2 id="我的環境"><a href="#我的環境" class="headerlink" title="我的環境"></a>我的環境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ systeminfo</span><br><span class="line">作業系統名稱:         Microsoft Windows 10 專業版</span><br><span class="line">作業系統版本:         10.0.10240 N/A 組建 10240</span><br><span class="line">作業系統設定:         獨立工作站</span><br><span class="line">作業系統組建類型:     Multiprocessor Free</span><br><span class="line">系統類型:             x64-based PC</span><br><span class="line">處理器:               已安裝 1 處理器。</span><br><span class="line">BIOS 版本:            American Megatrends Inc. 219, 2015/5/4</span><br><span class="line">實體記憶體總計:       16,264 MB</span><br></pre></td></tr></table></figure>
-
 <h4 id="Visual-Studio-Version"><a href="#Visual-Studio-Version" class="headerlink" title="Visual Studio Version"></a>Visual Studio Version</h4><p>Visual Studio 2015</p>
 <h4 id="C-Version"><a href="#C-Version" class="headerlink" title="C# Version"></a>C# Version</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c:\Windows\Microsoft.NET\Framework\v4.0.30319</span><br><span class="line">$ csc</span><br><span class="line">Microsoft (R) Visual C<span class="comment"># Compiler version 4.6.0079.0</span></span><br><span class="line"><span class="keyword">for</span> C<span class="comment"># 5</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>先介紹 SqlParameter 的三種使用方式，這三種方式都大同小異，至於為什麼要使用，可以看一下<a href="https://www.dotblogs.com.tw/yc421206/archive/2009/06/14/8819.aspx" title="余小章:為何/如何 使用 SQLParameter 物件" target="_blank" rel="noopener">余小章大大的說明</a></p>
+<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>先介紹 SqlParameter 的三種使用方式，這三種方式都大同小異，至於為什麼要使用，可以看一下<a href="https://www.dotblogs.com.tw/yc421206/archive/2009/06/14/8819.aspx" target="_blank" rel="noopener" title="余小章:為何/如何 使用 SQLParameter 物件">余小章大大的說明</a></p>
 <ul>
 <li><p>第一種<br>指定參數名稱、格式與值</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> (SqlConnection conn = <span class="keyword">new</span> SqlConnection(connStr))</span><br><span class="line">&#123;</span><br><span class="line">    conn.Open();</span><br><span class="line">    <span class="keyword">using</span> (SqlCommand cmd = <span class="keyword">new</span> SqlCommand(str, conn))</span><br><span class="line">    &#123;</span><br><span class="line">        cmd.CommandType = CommandType.StoredProcedure;</span><br><span class="line">        cmd.Parameters.Add(<span class="string">"@profile_name"</span>, SqlDbType.VarChar).Value = <span class="string">"SendMail"</span>;</span><br><span class="line">        cmd.Parameters.Add(<span class="string">"@recipients"</span>, SqlDbType.VarChar).Value = <span class="string">"test@test.com"</span>;</span><br><span class="line">        cmd.Parameters.Add(<span class="string">"@subject"</span>, SqlDbType.VarChar).Value = <span class="string">"ADO method 1 test"</span>;</span><br><span class="line">        cmd.Parameters.Add(<span class="string">"@body"</span>, SqlDbType.VarChar).Value = <span class="string">"Hello World"</span>;</span><br><span class="line">        cmd.Parameters.Add(<span class="string">"@importance"</span>, SqlDbType.VarChar).Value = <span class="string">"NORMAL"</span>;</span><br><span class="line">        result = cmd.ExecuteNonQuery();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -436,20 +440,17 @@
 </li>
 <li><p>第三種<br>一樣指定參數名稱與值</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> (SqlConnection conn = <span class="keyword">new</span> SqlConnection(connStr))</span><br><span class="line">&#123;</span><br><span class="line">    conn.Open();</span><br><span class="line">    <span class="keyword">using</span> (SqlCommand cmd = <span class="keyword">new</span> SqlCommand(str, conn))</span><br><span class="line">    &#123;</span><br><span class="line">        cmd.CommandType = CommandType.StoredProcedure;</span><br><span class="line">        cmd.Parameters.AddWithValue(<span class="string">"@profile_name"</span>, <span class="string">"SendMail"</span>);</span><br><span class="line">        cmd.Parameters.AddWithValue(<span class="string">"@recipients"</span>, <span class="string">"test@test.com;test@test.com;test@test.com"</span>);</span><br><span class="line">        cmd.Parameters.AddWithValue(<span class="string">"@subject"</span>, <span class="string">"ADO method 3 test"</span>);</span><br><span class="line">        cmd.Parameters.AddWithValue(<span class="string">"@body"</span>, <span class="string">@"Hello World"</span>);</span><br><span class="line">        cmd.Parameters.AddWithValue(<span class="string">"@importance"</span>, <span class="string">"NORMAL"</span>);</span><br><span class="line">        result = cmd.ExecuteNonQuery();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
 <p>上述的方法看起來都是正常的，但是如果沒有設定</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmd.CommandType = CommandType.StoredProcedure;</span><br></pre></td></tr></table></figure>
-
-<p>就會失去按照參數名稱對應的功能，只能按照順序對應(這順序是 Procedure 的參數宣告順序)；這情形出現在<a href="https://en.wikipedia.org/wiki/Stored_procedure" title="Wikipedia:Stored procedure" target="_blank" rel="noopener">Stored Procedure</a>上，也是因為<a href="http://shunnien.github.io/2015/11/21/Sending-DataBase-Mail-in-Sql-Server/">Database Mail</a>送信的參數很多，才發覺有這情形。</p>
+<p>就會失去按照參數名稱對應的功能，只能按照順序對應(這順序是 Procedure 的參數宣告順序)；這情形出現在<a href="https://en.wikipedia.org/wiki/Stored_procedure" target="_blank" rel="noopener" title="Wikipedia:Stored procedure">Stored Procedure</a>上，也是因為<a href="http://shunnien.github.io/2015/11/21/Sending-DataBase-Mail-in-Sql-Server/">Database Mail</a>送信的參數很多，才發覺有這情形。</p>
+</li>
+</ul>
 <p>以下列出不使用<code>CommandType</code>的 Sql 字串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">	// 不使用 CommandType 的時候，呼叫 Procedure 必須指定參數名稱</span><br><span class="line">	// 跟直接使用 Sql 字串查詢一樣</span><br><span class="line">    string str = &quot;msdb.dbo.sp_send_dbmail @profile_name,@recipients,@subject,@body,@importance&quot;;</span><br><span class="line">	string connStr = ConfigurationManager.ConnectionStrings[&quot;DBConn&quot;].ConnectionString;</span><br><span class="line">    using (SqlConnection conn = new SqlConnection(connStr))</span><br><span class="line">    &#123;</span><br><span class="line">        conn.Open();</span><br><span class="line">        using (SqlCommand cmd = new SqlCommand(str, conn))</span><br><span class="line">        &#123;</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@profile_name&quot;, &quot;SendMail&quot;));</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@recipients&quot;, &quot;test@test.com;test@test.com&quot;));</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@subject&quot;, &quot;ADO method 2 test&quot;));</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@body&quot;, @&quot;Hello World&quot;));</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@importance&quot;, &quot;NORMAL&quot;));</span><br><span class="line">            cmd.ExecuteNonQuery();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F; 不使用 CommandType 的時候，呼叫 Procedure 必須指定參數名稱</span><br><span class="line">	&#x2F;&#x2F; 跟直接使用 Sql 字串查詢一樣</span><br><span class="line">    string str &#x3D; &quot;msdb.dbo.sp_send_dbmail @profile_name,@recipients,@subject,@body,@importance&quot;;</span><br><span class="line">	string connStr &#x3D; ConfigurationManager.ConnectionStrings[&quot;DBConn&quot;].ConnectionString;</span><br><span class="line">    using (SqlConnection conn &#x3D; new SqlConnection(connStr))</span><br><span class="line">    &#123;</span><br><span class="line">        conn.Open();</span><br><span class="line">        using (SqlCommand cmd &#x3D; new SqlCommand(str, conn))</span><br><span class="line">        &#123;</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@profile_name&quot;, &quot;SendMail&quot;));</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@recipients&quot;, &quot;test@test.com;test@test.com&quot;));</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@subject&quot;, &quot;ADO method 2 test&quot;));</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@body&quot;, @&quot;Hello World&quot;));</span><br><span class="line">            cmd.Parameters.Add(new SqlParameter(&quot;@importance&quot;, &quot;NORMAL&quot;));</span><br><span class="line">            cmd.ExecuteNonQuery();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其結果會是<br><img src="https://lh3.googleusercontent.com/v3jjenTq-EsxsTwIhvU7VfSQkuQlovyjuC-hF2Dynv2qoPTIkPyQWVIUF26UcJqzebppRd4EkH10V5oQ5sJTJIMK6yBo4QqRP4I-YsbWbwCQ6z8P-3Op2q_X3nx0l9axXw_hXyqgEmyhdkxNcKZdeUcpXiQPJ0i-DMrqoPK45o5IytMyPyYmUdDKWeLT6104BBvVQvhL9I3gArJGqXVY_p2SpC4lP_iD2cSIkrBDjnzRbr1SWKQbTaBIeeL1HyNVx_izVDq7v3u8yTlGXFaAB_BZjHhEuh1y1ecsojDcspneiPCvwMi5wdhokAIMG0ZgthGfiJkcGmjlJtukl2t_GbsdR7Jd-fgGc0v1G8rJzOOFzSEpPKSwMDfR4xtpdt3uTYWvPOEgzwGLv2e8nZV4wMqQFR8ZBFD_2fQiUi3pRTa4i1gEFohjsOy7ebz8xizP7mA0Uk-eKxQ1guCFZ8COIygGS4jT53qSMvyA5BXZI0qafnELoRPXaXNf0Yf9fcaYYNNfWWqujCUs-WGV3l3yyW85wLzLmPQWUbVXc4531qa-YdL8kya19snPkLHQR54tYKCryMBplgsj-OOEyTqtJmuJiprrEMGqiWcgPwQKKAmwe_xudOc9tCb6sD4NVmRYxw0TWg2pbNUL-9c9Zx7toALuMERaGzJobMEM3ylhqw=w557-h76-no" alt="no use commandType"><br>對照一下 Procedure 的參數順序<br><img src="https://lh3.googleusercontent.com/rFQ-vdsE5zxv09Q8bJOf6fzVq5bXfaQF76dBDx3kWbv6AAcl1L7--z0L--uc7WZs-kjBUIyNs30fmB_tTpWvnpEi1ziWYeOPUwtKhfPylSJ4K5FuomoQr51dz6UTWeCVyiw9bPLWBzDPnN7eEMdf3CPQ5Vv75wcZN-z325MTDgskjW2WrElBJQb5wNh4M-y3dP5AYVguXDEimvB7x1-DHxSxtyM3EG8wN1_DqljcyxHUacNFXYF8T6hOsYQO2UEPp3Lh3ZEhM4k7i83fYXAT1wVLLUNhFObnyocdBASug1ASoVrxi0OZ_0Txl6fQbXJnHE3s18-boVVLg73RzblHX3sW0oMuM0M1ODWPE70ikVDFQoBYgZ-MpUnjKBCUr7noQYDqpuXqsx5cdLGOPrRnHyDG6SnuKEUCWgqOl-pLrlTIn5dkaDiERshFFdNmSZtoC3cqXz8A4aEt6poB0Hf5X3L05-zJ7sysrVJ5r3TufUrE-JJyjee6Eq_ahIpmz0IkANcdS1NwUFvgD2Wjoaylm5-FPyhuA3VCf1StTj1wffCuB8lIAFh85P9QG1Ox-W08qyNH0HO5OYdFXCA0DLtJEpPMLIgc7JAtvbcWZ2lOPuMUZDUhLzaX6hsYx8qCjs5DVX9eVHE3Z4HOVXfw5BPdpkfKtcRvUMw5PReWyMo4nA=w588-h382-no" alt="sp_send_dbmail code"><br>所以如果不指定<code>CommandType</code>的話，Sql 字串的參數必須按照 Procedure 的參數順序輸入，這點一定要注意。</p>
 <h2 id="範例程式"><a href="#範例程式" class="headerlink" title="範例程式"></a>範例程式</h2><p><a href="https://github.com/shunnien/SqlParameterTest" target="_blank" rel="noopener">Github Repo</a></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li>MSDN:<a href="https://msdn.microsoft.com/en-us/library/37hwc7kt.aspx?f=255&MSPPError=-2147217396" title="MSDN:Execute a Stored Procedure that Returns a Single Value" target="_blank" rel="noopener">Execute a Stored Procedure that Returns a Single Value</a></li>
+<li>MSDN:<a href="https://msdn.microsoft.com/en-us/library/37hwc7kt.aspx?f=255&MSPPError=-2147217396" target="_blank" rel="noopener" title="MSDN:Execute a Stored Procedure that Returns a Single Value">Execute a Stored Procedure that Returns a Single Value</a></li>
 </ul>
 
       
@@ -531,7 +532,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -573,7 +574,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -584,7 +587,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -597,7 +600,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -608,7 +611,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>
@@ -744,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#緣起"><span class="nav-number">1.</span> <span class="nav-text">緣起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的環境"><span class="nav-number">2.</span> <span class="nav-text">我的環境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Visual-Studio-Version"><span class="nav-number">2.0.1.</span> <span class="nav-text">Visual Studio Version</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-Version"><span class="nav-number">2.0.2.</span> <span class="nav-text">C# Version</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方式"><span class="nav-number">3.</span> <span class="nav-text">使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#範例程式"><span class="nav-number">4.</span> <span class="nav-text">範例程式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">5.</span> <span class="nav-text">參考資料</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#緣起"><span class="nav-number">1.</span> <span class="nav-text">緣起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的環境"><span class="nav-number">2.</span> <span class="nav-text">我的環境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Visual-Studio-Version"><span class="nav-number">2.0.1.</span> <span class="nav-text">Visual Studio Version</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-Version"><span class="nav-number">2.0.2.</span> <span class="nav-text">C# Version</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方式"><span class="nav-number">3.</span> <span class="nav-text">使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#範例程式"><span class="nav-number">4.</span> <span class="nav-text">範例程式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">5.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
             
 
           </div>

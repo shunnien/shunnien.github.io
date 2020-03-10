@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="IIS,">
+  <meta name="keywords" content="IIS," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,23 +84,23 @@
 
 
 <meta name="description" content="此篇介紹 URL Rewrite 的運用，利用 URL Rewrite 來附加追蹤程式碼，例如：GA 等。或是某些頁面添加一些特定 javascript code">
-<meta name="keywords" content="IIS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用 URL Rewrite 加入 Tracking Code">
 <meta property="og:url" content="https://shunnien.github.io/2018/05/10/add-ga-by-iis-rewrite/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="此篇介紹 URL Rewrite 的運用，利用 URL Rewrite 來附加追蹤程式碼，例如：GA 等。或是某些頁面添加一些特定 javascript code">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/RHyuNMozaPNqwS2AybQPiUNqs0XK6ArmuGleX2PcHIt5ioaPD8eqiWJYuGsAo5qODuOFzItRT0fckexOrYW8FaYC5poITyMF6vNE_K2ZFdBEYpw7LtRhID27j_vIvDPoUj1m22u1w1ca9LI-IGncmJAnFHyKyahRY9vd_l_uMuzOhKsm-NXMQ8jB4HzpGhWox7JJHfuA5gqY9zpzeJZqIdcuQB7xxhC2H8Nt8iB2rwcHBYJA-eao6pCdvH-DhWMUYRqqrYec-_f0yLTOaXmO657vyJMeORmVibOFlsR43NU01LJg4TV36iekqhP_Iw1Gv1M7-M5DzvVNmac-HgZqrGdvm_1ADRj5HgXKV0_I4ppFNVv37PYP9Oh8T130QjFaCsUyJzTmCndw1l33vkWPdq_VnT5G6llPuqt2lWx82IaiYffRdlC0IS6HSp7QM4aZGYvnaST1NJdwNEStSHau_FfpeejnmWjBQqd_m1bU4-OAszGwqj7dI_mzyfzGG7dp8_K7mefDaGcxxBdHEXEHSKEHG0wtMyUP032LhLNtgcavSLi5jXTdX5twzeHfen13Tt9GemuxlebawWJsvAAZLPAeQge5ZCJYn0YqZ_yPwx1nQl8uvHdG3aDbYHAv4IjZAxlZg6K1lq0a8E7-6I0gv6GHje6mHAlC=w466-h256-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/aLotYdI0HjLLKw2uqZg4UyniTbSm-E-wfppnnjeGsezj8xw1BLUyBEVzbzy5hMATk0JbTWmitWLYXcWl1qq5xmvX6OgRJco8THfzewiCNO6TRsPvI55C5tdNWlainKSMuil-K650psIsa3V8XsEt7dsvI7kco2dP7g2rLTgWYv5TAUzIdrJ68AIDVuiLEA3eY_jGyEsUoQbhEnty52TsryQBdTFjk68Uw0Am3xKRoqdSlFHwInTj_6fSxicphl7Q0T-RkJ7k-Xu0mOaGFu_27qOpOlaFsnun7V8vq1f7AlYK5z3EbE7ECO6Abzfr7LBiOMgKXDnkNBo7MJdjvFv4RnsF3zka5qxNIAIvoxKtOO1SqUE1eMRghM19SaS74UC3rLC_mQveBt86mGw-Ug51qdrrii4RxYors2tQdDr_4ZxEfxcvQs5jJeBUWZ9Kem3MAgZ5qt0RvFWOLb3rK_xKkLFOG8RJ2SBIWzm19G6CRqIm_uodlrvBB2p155N9pMz2xEw1QVX19oBrJQJ_dhmezUdfF3TlYsq6jsUHemftltrer-Akp_BKxWLw60ObHD4VJXXEqhtBsW9KDwcYzvc9oEYXDge83WZL4-Rksmp56XdJQM9JikPaVh_t3SyeeDLp-brqi1R4M-70LZnusBuwzBpd2jjJDbSf=w448-h269-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/GIvKqYaC72vSyjTlNTo3vSPZOCZ0eKR-QSdW6qTu2oNNqcAGixce4PIAHjjGOeoRyy9KUeb8tUMRLwkC7Esxc6KFags7vxpQZNDS3gUbXTTjzd6kku8r6SDAKoEdJcqXn8dH-cG0jqyYKK5tdysWV67r3vPz-pgDdw3G0HSRVW2qA99TuURZOwsG1JcmgQX5pZKwE6hVsZnQ_CHPM85Xd1Ca8k8DhOw638KdPjSzfXB9xa4d4aJ-r7fAcSYc2eWvEd-zZUNADyiykB0mvntpCmZ8lTW5q78fytnfzIVo2LZPwbqHjmHQS8sIkfga0iDcQcF5LVqbDrO3KjmbPIHPuLRXq3OLKrTZ1gVuOmN7hhTy4JhJTns09voqySuCiweviaaJ72vseomGtDC2ABgy3PKwYbiewCKQlakfg4yIXITiE8_F3EJXA7I1LDiMLeDtj9bo9JuGXmsCjpi36MbO9BZiyFzxTbheTpOAoAyI_QdrkbWW5b84Xr6zoo3uP3WiyndKbaYjGBreaB8oIDAqFKK4Z04-fig2WzLH-56Dr6RCakZo4J3edzE7_2t6peCB-lrPYIm3WNPxqSdsWrTzlKswblTp8MRztKbetn9wNtX64BidW9jOlwLc-ZhgZSzqxMamSWq9gxIAOhYbb8g0yhVmhcrwJ2y6=w951-h647-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/jPpD08n439jcCA-MhHkCzuhZ8iixDZPhohTOWq6DUQmncVQcMsaQVJBViOFowWeelhGjf1RPdG2B7P5iv5jBzPypGIsIFgFe_lqgr7CQ2fFU1NbtzmhQQRWonPXorUcQP2xWR2IFTbxPaAR5Bq8DT8qLKHldSAs2IdqciM7s7kakm7RF-BZ0hV71vlhna2bfXkWacLzZwb0TK2KLvzpMfdRPzP7ImFVTSb6zGavofzV8jhdRQtMUCaOEGi_LohqWmfTE2y1RI63OT9W5Ki7qbfFhEQybOF3EsnYhSJiFcOmFa6tqarec4_vj6sGuFWZf9ObKQAx4-I6R25JGGe8RHDYi33najvnAShQ9g_2vdUtWEVHm03sqmLjOssw-JsrktVTKiNkNtUKGnVpMLbqpHsus6i_lJHgAP4ful0Kp8iJXF343dYbjz5sXg1J416dWFrKCGzb-znaXp3trm6FZoU9zD2deOjfh14icFipY9WQzRddtoYKCNw0kVtwFzngRUVcdr3l9Aqx7-Ai2sEXj4kdFld0qefZtP0Cf9KH6QbF23aiZij2yqbvbePoJdGhLczf9K4MWcboi-QyzK9LBk9ylQQZlyx0MNSkuCCRjyfJhlQKmyoD1TgdJGyHfwtsAmWGr6Ui095SUBNQk-ryysYgjt6M0dyu1=w952-h634-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/rmZ-vhTBs0SzYc2GyqnEle287f9cLfUEylICYHaJrrVa3GW7378yDkq3HrlVEQwBKPTymw88Y3bC50vX4jmlA3Zjsdud0rCJ8ptMGKk0nnLY9Ge0EZyhOEoqgnGeuxTD-0u-bhVoP3s5jaruK6G3wYkr05BK_HsoIA5I16TIgxYLsM4LL1rvCU6BLq_aNDd6dLrgCZguMvEdVpYWBSR7wZFXjOCjRpMyUW3M9GReyDScTQGsFeLW4UqIHyEcZlr2O8WBFC-6BAYBNEvsO7K0xVzQW8mpioFDDcLXl_nPsXYsSaxlkQHlvFopQcpSl7oSnS_xZ7fhNETav5iZCtC6njZYb4-vSREbjztXcBZj60dJMZyKh5ccYlA6Sfd4oRN3OFltw8W3kLsHLPa4FuTmrPtUaRt0CQVD2wi-Qy-WsRmJQfcea2TDIltvZjaDcFaZnSnisetPkxUqCVWnctcB8yMpHvBbfz2EdtFbAH8v4pv6eb1OdQiFaTJdLwP0r8ITb8pURG08IPB_IWZ9j3xsTGhp4ZgVa2uY6sFB6GHhxyhe_56LfNK9-X9oraLt3m2GmLlNTntGedAyDR9OZ1c9KwmN7cohlajUkKlyWNTc-r7cQ3Mto_KhwzQrlxX8AP9bm2VL_XZh_klPnuWpXIcmSbeYVNuiWVKI=w835-h455-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/VnFp6hEniNqpdlax19Andm385dj7pHX0TF5S5mzuLipJCS7x3lCS-lVVeKKl6MjwkIBEqp2LlAgWUwsCKIUJhJk2IDMa0ITc3YqZTjOBqOL6N6-ohfSKmmIqYH5L-3wMrq6pA8cwVCmxRqwjDVNOhgbgVXSneF9vjH2WWCiONPF2fAd2ZpvH21jY7jdn18Z8j3-_bPUCYKL4u_WTIwy6YGqCt5HDs13ebbMgzPS4neLBxpJeI8TvU7xfVKu5SIflJMTMBxzdhzQhag5UbeGH45u6fedMlFRmJRPJ5JJlgd0zmimPlgHSII9HaL5c2oLCj0v1tBQHoDFpIbvherP-gM29_Ai59cn67dav-u2N4icF29Uv46Mh4QM_3zfXIpCPDgSK0sM1sq8cwZrp7qjDnMeeLwHW5lGryqmiUvFQIG_qWnIC2Wx2e-Eh06MYsJWbT9EJ23u7CrbuTELJpkWEosQOs5UU6x7NX5VS1ARHbgcr50Oq4ug5v-gSHHjudw4VfdXQaEmQMZEx_X-hMfcWBWWtK4iC3nTrv4CPSX0_YlaOCPNiqRFjG2gPwC6RAx5FzULW4egAHDX9oznve62D7p8VhwA8pSmwFrhTEaM8UhlCWdFj6Zr7hiPI0Pzugl4QF4TliOaYFqoObNq6qMigG7A-QdlyOPWE=w837-h249-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.690Z">
+<meta property="article:published_time" content="2018-05-10T02:48:04.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.690Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="IIS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用 URL Rewrite 加入 Tracking Code">
-<meta name="twitter:description" content="此篇介紹 URL Rewrite 的運用，利用 URL Rewrite 來附加追蹤程式碼，例如：GA 等。或是某些頁面添加一些特定 javascript code">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/RHyuNMozaPNqwS2AybQPiUNqs0XK6ArmuGleX2PcHIt5ioaPD8eqiWJYuGsAo5qODuOFzItRT0fckexOrYW8FaYC5poITyMF6vNE_K2ZFdBEYpw7LtRhID27j_vIvDPoUj1m22u1w1ca9LI-IGncmJAnFHyKyahRY9vd_l_uMuzOhKsm-NXMQ8jB4HzpGhWox7JJHfuA5gqY9zpzeJZqIdcuQB7xxhC2H8Nt8iB2rwcHBYJA-eao6pCdvH-DhWMUYRqqrYec-_f0yLTOaXmO657vyJMeORmVibOFlsR43NU01LJg4TV36iekqhP_Iw1Gv1M7-M5DzvVNmac-HgZqrGdvm_1ADRj5HgXKV0_I4ppFNVv37PYP9Oh8T130QjFaCsUyJzTmCndw1l33vkWPdq_VnT5G6llPuqt2lWx82IaiYffRdlC0IS6HSp7QM4aZGYvnaST1NJdwNEStSHau_FfpeejnmWjBQqd_m1bU4-OAszGwqj7dI_mzyfzGG7dp8_K7mefDaGcxxBdHEXEHSKEHG0wtMyUP032LhLNtgcavSLi5jXTdX5twzeHfen13Tt9GemuxlebawWJsvAAZLPAeQge5ZCJYn0YqZ_yPwx1nQl8uvHdG3aDbYHAv4IjZAxlZg6K1lq0a8E7-6I0gv6GHje6mHAlC=w466-h256-no">
 
 
@@ -131,11 +131,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/05/10/add-ga-by-iis-rewrite/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/05/10/add-ga-by-iis-rewrite/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>利用 URL Rewrite 加入 Tracking Code | ShunNien's Blog</title>
   
@@ -157,7 +157,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -175,7 +175,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -203,9 +203,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -213,9 +213,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -223,9 +223,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -233,9 +233,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -243,9 +243,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -258,7 +258,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -279,7 +279,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -320,7 +322,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -356,7 +358,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -368,7 +370,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -387,7 +389,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/05/10/add-ga-by-iis-rewrite/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/10/add-ga-by-iis-rewrite/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/10/add-ga-by-iis-rewrite/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,7 +402,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -427,7 +430,7 @@
 <li><p>追蹤碼<br>追蹤碼使用 <a href="https://analytics.google.com/" target="_blank" rel="noopener">google analytics</a> ，以下先附上<a href="https://support.google.com/analytics/answer/1008080?hl=zh-Hant" target="_blank" rel="noopener">追蹤碼的範例程式</a></p>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span><br><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="built_in">window</span>.dataLayer = <span class="built_in">window</span>.dataLayer || [];</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">gtag</span>(<span class="params"></span>)</span>&#123;dataLayer.push(<span class="built_in">arguments</span>);&#125;</span><br><span class="line">  gtag(<span class="string">'js'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line"></span><br><span class="line">  gtag(<span class="string">'config'</span>, <span class="string">'GA_TRACKING_ID'</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span><br><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">  window.dataLayer = window.dataLayer || [];</span></span><br><span class="line"><span class="regexp">  function gtag()&#123;dataLayer.push(arguments);&#125;</span></span><br><span class="line"><span class="regexp">  gtag('js', new Date());</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  gtag('config', 'GA_TRACKING_ID');</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
 <h1 id="設定方式"><a href="#設定方式" class="headerlink" title="設定方式"></a>設定方式</h1><p>主題是使用 <a href="https://www.iis.net/downloads/microsoft/url-rewrite" target="_blank" rel="noopener"><strong>URL Rewrite</strong></a> 來附加，所以記得首要條件是安裝好 <a href="https://www.iis.net/downloads/microsoft/url-rewrite" target="_blank" rel="noopener"><strong>URL Rewrite</strong></a> 模組。<br>設定方式有兩種，一種是直接透過視窗操作介面設定，另一種是設定好 web.config 。<br>需要注意的是使用 <a href="https://www.iis.net/downloads/microsoft/url-rewrite" target="_blank" rel="noopener"><strong>URL Rewrite</strong></a> 來附加，需要關閉<strong>動態內容壓縮</strong>，因為壓縮後，就無法判斷內容去附加了。</p>
 <h2 id="介面設定"><a href="#介面設定" class="headerlink" title="介面設定"></a>介面設定</h2><p>設定步驟其實在 <a href="https://docs.microsoft.com/en-us/iis/extensions/url-rewrite-module/using-outbound-rules-to-add-web-analytics-tracking-code" target="_blank" rel="noopener">Microsoft Docs</a> 都有詳細介紹，這邊列出 IIS 的中文介面</p>
@@ -448,7 +451,7 @@
 </li>
 </ul>
 <h2 id="config-設定"><a href="#config-設定" class="headerlink" title="config 設定"></a>config 設定</h2><p>由於要設定在 <strong>web.config</strong> 所以注意一下標籤，透過 <a href="https://emn178.github.io/online-tools/html_encode.html" target="_blank" rel="noopener">HTML Encode</a> (HTML 編碼轉換)後，再把值設定進去</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rewrite</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">outboundRules</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">rule</span> <span class="attr">name</span>=<span class="string">"Add tracking script"</span> <span class="attr">patternSyntax</span>=<span class="string">"ExactMatch"</span> <span class="attr">preCondition</span>=<span class="string">"IsHTML"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">match</span> <span class="attr">filterByTags</span>=<span class="string">"None"</span> <span class="attr">pattern</span>=<span class="string">"&amp;lt;/head&gt;"</span> <span class="attr">ignoreCase</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">type</span>=<span class="string">"Rewrite"</span> <span class="attr">value</span>=<span class="string">"&amp;lt;script async src=&amp;quot;https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID&amp;quot;&gt;&amp;lt;/script&gt; &amp;lt;script&gt; window.dataLayer = window.dataLayer || []; function gtag() &#123; dataLayer.push(arguments); &#125; gtag('js', new Date()); gtag('config', 'GA_TRACKING_ID'); &amp;lt;/script&gt;&amp;lt;/head&gt;"</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">rule</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">preConditions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">preCondition</span> <span class="attr">name</span>=<span class="string">"IsHTML"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">add</span> <span class="attr">input</span>=<span class="string">"&#123;RESPONSE_CONTENT_TYPE&#125;"</span> <span class="attr">pattern</span>=<span class="string">"^text/html"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">preCondition</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">preConditions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">outboundRules</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">rewrite</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rewrite</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">outboundRules</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">rule</span> <span class="attr">name</span>=<span class="string">"Add tracking script"</span> <span class="attr">patternSyntax</span>=<span class="string">"ExactMatch"</span> <span class="attr">preCondition</span>=<span class="string">"IsHTML"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">match</span> <span class="attr">filterByTags</span>=<span class="string">"None"</span> <span class="attr">pattern</span>=<span class="string">"<span class="symbol">&amp;lt;</span>/head&gt;"</span> <span class="attr">ignoreCase</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">type</span>=<span class="string">"Rewrite"</span> <span class="attr">value</span>=<span class="string">"<span class="symbol">&amp;lt;</span>script async src=<span class="symbol">&amp;quot;</span>https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID<span class="symbol">&amp;quot;</span>&gt;<span class="symbol">&amp;lt;</span>/script&gt; <span class="symbol">&amp;lt;</span>script&gt; window.dataLayer = window.dataLayer || []; function gtag() &#123; dataLayer.push(arguments); &#125; gtag('js', new Date()); gtag('config', 'GA_TRACKING_ID'); <span class="symbol">&amp;lt;</span>/script&gt;<span class="symbol">&amp;lt;</span>/head&gt;"</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">rule</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">preConditions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">preCondition</span> <span class="attr">name</span>=<span class="string">"IsHTML"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">add</span> <span class="attr">input</span>=<span class="string">"&#123;RESPONSE_CONTENT_TYPE&#125;"</span> <span class="attr">pattern</span>=<span class="string">"^text/html"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">preCondition</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">preConditions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">outboundRules</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">rewrite</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>額外附上關閉<strong>動態內容壓縮</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">urlCompression</span> <span class="attr">doStaticCompression</span>=<span class="string">"true"</span> <span class="attr">doDynamicCompression</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -532,7 +535,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -574,7 +577,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -585,7 +590,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -598,7 +603,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -609,7 +614,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="SQLServer,">
+  <meta name="keywords" content="SQLServer," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,13 +84,12 @@
 
 
 <meta name="description" content="資料層應用程式 (Data-tier Applications)幾日前公司 MIS 維運 Server ，一些伺服器暫時關閉，所以測試資料庫也停了；幸好有針對資料結構進行版控，只好利用 docker 直接來建立資料庫，但是有些關聯資料表的建立，由於相依另外的資料表，變成建立順序需要調整；後來測試資料庫維運完成之後，才想到這些資料結構的建立可以利用 DAC 來建立。">
-<meta name="keywords" content="SQLServer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 Sqlserver Data-Tier Applications 來進行備份">
 <meta property="og:url" content="https://shunnien.github.io/2018/07/21/sqlserver-Data-tier-Applications/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="資料層應用程式 (Data-tier Applications)幾日前公司 MIS 維運 Server ，一些伺服器暫時關閉，所以測試資料庫也停了；幸好有針對資料結構進行版控，只好利用 docker 直接來建立資料庫，但是有些關聯資料表的建立，由於相依另外的資料表，變成建立順序需要調整；後來測試資料庫維運完成之後，才想到這些資料結構的建立可以利用 DAC 來建立。">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/hnffKad8XYVtjt9pGbnxY7X72u8MTGbLcH8Ki-W8din6aoAX3iY6lKDgVO2NYZMQOgiEL9WRKAOFXQ0hnq-2ImH1SmnXKtTH2jci9bUdEJSAtti-q2jURGbvMhWzb_e76PASher1xlg4XLsGos4t7wBLgxHZfKJN4i3NGSZVDUj7I-xiZLuqQFvFxs4v6jhzSpSxlzT2RqKCWFzH_1kpj2Hr5gcEcQPnTY-xS-09fg9UcjBjzNn_oPyFuItDCpn_rszq3Vx9YQrqoXkPkckLB8FEDY3kztj_xUZGKpljOUkLU5Eenrmibq0dRjxTkZfl8atOEL-SlPoy6FvWh1H-976Kr6SvLBcNuvBMeRlDIXeoJeb9zJby1TiQN-EOjMC7mLSmUEbySOPVILRedfQt4qSDx6GDSt0igIS3evvNES-jxCCSKocMgUo5q8wPLhFwJ6oOcRf2CnMIY-AK5Gmt00NcLxFXBUscUDekKRbEo0NKjTxXwfVo5b4RYB5ZE7esr8jidPMbOPFPHXoS5MVWDZOuKWel-en5DA07ktWHgD8aJChskWMQ9_CcBvV8caZ4iixXp41tCptjIsAQQ5BTurikY4n0fzK0rY1m70p5mLB2iKQ6DndkpaN6xEzz-igzvxdc9htmHjircQr8FzxXvP9iVCfrs0xU=w834-h915-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/RD8sMRssfFgr8zw_-u9pYG1jMr9Jd09O8iBatm7taLZal9--pZodHwhBwaLeg4D5rV6qzD-1kvc3LKoDXTVUDp4tlZgNO2fKTvHU01_4OcFpf9RlQaRNvyn9otr8rJTVkyDDgHqYS0_KWtE4WNO8sndED_pHFqXd5DQgiarUGwWSGxUJKKANL6s-YlxeVsv6r90TcnubxcLT7OFq0fKaLqKSY9ZmUm7jdLG6SI3-Aro0LZ-on06vJttrDVfOjLYOk74F6NkfTGmC_g-X8kiokEjfCooQc9Nq8aUH0FvNEBtubY-c98xRorovQdPT-BmgxhznQMjgQgFuowosYkkU4nmlKdZM0_POEWnJCE5o25gUtHmHND9CgpUL5MxSZ-XPFxUST20oI91CHFK6fRPch2_HZW3UctOsIdCgw5CylK6_t6pUfmzO_CFVNWVOVlxWWtBRGD_cvgXvnionVoWIfWHTpI65gSHjk_ZT3v33ubqSfuOd2Hv-QR8QkgZ8Z5izigX6nOPAzIltcoFdPGc3b-HNi6sk-vP5zvgkq2_bL4YIOucO4t7oeqp-8YApgi5xFSWuPxtWWDr6UAI097dVMu0Jp0_zSoY8BWBZWruxvFSHhjgMRq5aUBiQpRaR1rAxDLAXYUx49pQn2l2OOToxtBc1OhHsdXMH=w1007-h915-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/VD2rJmNjGrW4Ok4Kb6cElMB5bZ8vKrG-uOStV_PIFhKTZyD4jzt0owZFepDDF_9IWFXDknDNhU-u_g19xw4YGf3bs9D14TNiwbu3CyplJL3zB1xygrG3MxDS8h2PiEz_34d7eNSPgipS-ZrX4P5pV-dn6lvSax0yG9IXREyVzq4ovNkKigixW4S9YtQKEW43HpuJkFhuvCRsgPkiP2ajAQhoHMuHKrYd-ZpzpFdF9D8Ed1Hi6p7EOqFrRKXxB4BOQ02lXKdJaDaOWEK-JGu8LROH0QHnNKrNNww5MuEJ4JoK336KnLXvbfmuyr1Mo-h4hxY3Uno--Qg2wDWnxDC5SPSf4QiaHndW2AMralSAdegQ4NLgwaKXw2V3XhdasqeWd1TpdhK3XEGSsqWUdv-hoNXPdSdU8hIbE32-7SRWJapvxvEPLF7L6jJMdcXWNM-0TfI4GLdrzkgCr1hcnQArvU1BCPDvZXXWb-FWqzgpvJvdOoxZcAwXruK8w9Ilg3GfYCJlwiqzg-GByX3PR0sY77BMNmpDz8gGnqLzxaqiPl4Q0FkMMZV_FFgf31GHpxzXwS1kADL8Qbp7VKCHslwgE-qni784k0IJ_Wc3kimsMnxgRl_EVHOT8hEQ8rF03-7lj_i9orh1h1PoAj5_cp0RMOBSnXU2IsIC=w1007-h915-no">
@@ -105,10 +104,11 @@
 <meta property="og:image" content="https://lh3.googleusercontent.com/fQuyW8-2ZcbSq_nx04BQzPFyQjqU2YNAkYw5fGyDizQtGvyvqACvG3_TR3OrJvmba3PTGn11ELpEdC7H8u_ekmNQ9nC9DXmWpjKxQ3ppaO3CePovSCDUUgK3-oc5VkI8zJSJVb2t3i8K-Z79dcVYvXyL8Rc8sJQlaErLfNsvAeqWwWy2qDKlXQ_G5pzW4xYeo2j1r4vqcZ_BBJY6hrb64d5-ttxO4TsUq0jz3Fl-B-yfhoUXLnYhoQuMIyMT4IJ17ADiVekUcD5h8s48_m2G_aKBXKOPcY5NNUbmovidON-wvFNS92Y78YdBpF5Mv4xGirhZNxQBRa75E6WZ6xjOUUpI_StEb1bTu5u5x3DMG7A8L6TIzfY4mGD1246pT74LWgmQR4mTXlUtpnvJVsSAsfztXPZ3isTjSn9B5J4l1GwDAIOM1kEBzVz0PYCbivZLImhIAMgJI4Wv87YWhXnlsr3_KuFel4PMYrTEyPqdKP639FYMg5aUHawxU1_iHghBd3MANmiQ1PJ2B4zQgfOjrYOYFkqpyZf4_t3H0xszzb1uC45UsHbPpgbXRc9CgenAh_MUYQeoaWuAMJe3V6j85DvtHVBAnoL0SYVVvnaNU-YuDmbF5xTjMRg3-V8YKr5YAZZY4EeXrxysHngU7ImB6uEuLbzdNwYH=w1007-h915-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/nev9zcExZUboy3JSohWqdykli9SdHFYJhxUSEregMU5QYLTdu2ZLxupxfTufWKL3Wt91cT_XpawsPJBSmRNeylkISz6QJ18Yiksm-L5gL8WEn4s8ki9e0Oa1I2tqCcxs2Vj4eFUQz7zIQH82lsP3bCMtsSfx5Ho6f3DelEc5pjxL0hkXFByRz3M-qahWUjIhQyq91xyS8rXrdVe1pTBFcDUMgsqRw4f71Cl7kcE1LFkq8HfbYLX9nHHSvos7_Ta6izAAfAbz2_JfeWqy-qqCgokgcG4-I04LEXDjkcC3B34EP_J0_-DWJFLJT4SNOFtn7CTvgkjWPqea1kioQGZuJpcvmh9YIe_rGJT2gJcYPx7etnzWgB6nelJgIDhuSDtiNDRY0WsaLbYyxXbSo8TUgfBzwtnRN4Hymd7G0WT9b2KtGHDlQ3Oe8MHPVK4BiS3540LndnU2wx_905Y7ERnRQFVm2-NDIEyrCdzYI9jYKTXvrtooXk08TLEux9r0-Ef5tegiK9JSzv47JK5QnYjcEzWV6CifL5mL7APHVBIrNT04XocNOz_hDnmn8wYOgvjSiWvGTAPQ5Oq_XVRVd1ySOoyw_rqJxubnuiK_GBt_zDzJ1LRHbi2O9Sc9J6qbHyhfK4UiR4oyTcRAAvz7Y3uRfq-HflPXz0fu=w1007-h915-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/O4eQ4B7FPwJKjhRe5dIb2Y3J1dV1JYccDS25k6LLX2DSgRJOSAygRkGaT6w-NXsJnqHwX6OHw-iPUzviZuzYgQO-TiXUYTuEJim8n-RsVLTE_mQKHm1yaQ-62DG4mWPgbCJloGPgc7wWcdt7y8dU-A5stKylmzuH-TZ-ILTr7OfXr02ve5maXE8dfrZzuj5cuigm0NKZwxNT1rgbSo7wuENtE-o1nMYH33EBbOxz4X8N2LPoVrMzZv6bkC3ujo564qsP-8Qdj5Du9WJC1E4xKQby-HbMHqhkucnOCHInYIvx0oFCLY68SdZbujV9z_xnQJtrGKvbDlPdGtT7JIctqqBQZ3gGPdUOGZbKylnPrtgdfAE351rt3rr8NDdL5MUkvzZ6KsQvqlJ5cxj6FGagN2zvw-x3jAl_gFvkJZocp1NHsYnG5L7jtsEmRpm-kKDhsDk0lWsIZpaFmvOqLokh6grFF8_V1oOBqkdB85zBzH78IfM99VmNHeXjJIMxeIL3Jp9S2jAqzpyxK1aUjCOacjrgGLjvx2ReKmuouHtnW8T761X9rtKPQDRD2ObGMrp_9fOZPhIk7Gx3-LyGEc_B8iLiC8DUeKp0P8xzPBjSSY7_DtsUUCgq2UdiWyuwQKm5T8R-Pz9vtmI7Yd_-r9cNYDegN02E_Ayv=w1007-h915-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.694Z">
+<meta property="article:published_time" content="2018-07-21T06:10:48.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.694Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="SQLServer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 Sqlserver Data-Tier Applications 來進行備份">
-<meta name="twitter:description" content="資料層應用程式 (Data-tier Applications)幾日前公司 MIS 維運 Server ，一些伺服器暫時關閉，所以測試資料庫也停了；幸好有針對資料結構進行版控，只好利用 docker 直接來建立資料庫，但是有些關聯資料表的建立，由於相依另外的資料表，變成建立順序需要調整；後來測試資料庫維運完成之後，才想到這些資料結構的建立可以利用 DAC 來建立。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/hnffKad8XYVtjt9pGbnxY7X72u8MTGbLcH8Ki-W8din6aoAX3iY6lKDgVO2NYZMQOgiEL9WRKAOFXQ0hnq-2ImH1SmnXKtTH2jci9bUdEJSAtti-q2jURGbvMhWzb_e76PASher1xlg4XLsGos4t7wBLgxHZfKJN4i3NGSZVDUj7I-xiZLuqQFvFxs4v6jhzSpSxlzT2RqKCWFzH_1kpj2Hr5gcEcQPnTY-xS-09fg9UcjBjzNn_oPyFuItDCpn_rszq3Vx9YQrqoXkPkckLB8FEDY3kztj_xUZGKpljOUkLU5Eenrmibq0dRjxTkZfl8atOEL-SlPoy6FvWh1H-976Kr6SvLBcNuvBMeRlDIXeoJeb9zJby1TiQN-EOjMC7mLSmUEbySOPVILRedfQt4qSDx6GDSt0igIS3evvNES-jxCCSKocMgUo5q8wPLhFwJ6oOcRf2CnMIY-AK5Gmt00NcLxFXBUscUDekKRbEo0NKjTxXwfVo5b4RYB5ZE7esr8jidPMbOPFPHXoS5MVWDZOuKWel-en5DA07ktWHgD8aJChskWMQ9_CcBvV8caZ4iixXp41tCptjIsAQQ5BTurikY4n0fzK0rY1m70p5mLB2iKQ6DndkpaN6xEzz-igzvxdc9htmHjircQr8FzxXvP9iVCfrs0xU=w834-h915-no">
 
 
@@ -139,11 +139,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/07/21/sqlserver-Data-tier-Applications/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/07/21/sqlserver-Data-tier-Applications/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>使用 Sqlserver Data-Tier Applications 來進行備份 | ShunNien's Blog</title>
   
@@ -165,7 +165,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -183,7 +183,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -211,9 +211,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -221,9 +221,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -231,9 +231,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -241,9 +241,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -251,9 +251,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -266,7 +266,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -287,7 +287,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -328,7 +330,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -364,7 +366,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -376,7 +378,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -395,7 +397,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/07/21/sqlserver-Data-tier-Applications/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/21/sqlserver-Data-tier-Applications/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/07/21/sqlserver-Data-tier-Applications/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -407,7 +410,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -591,7 +594,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -633,7 +636,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -644,7 +649,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -657,7 +662,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -668,7 +673,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

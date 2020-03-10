@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="IIS,security,">
+  <meta name="keywords" content="IIS,security," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,21 +84,22 @@
 
 
 <meta name="description" content="前陣子公司專案由第三方弱掃，接下來的筆記就會紀錄多個專案都有的問題點 Cache Management: Insecure Policy ( 11306 )SummaryWebInspect has detected a potentially unsafe cache control policy for secure content. While content transmitted ove">
-<meta name="keywords" content="IIS,security">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cache-Control 在 IIS 上的設定">
 <meta property="og:url" content="https://shunnien.github.io/2018/05/08/cache-control/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="前陣子公司專案由第三方弱掃，接下來的筆記就會紀錄多個專案都有的問題點 Cache Management: Insecure Policy ( 11306 )SummaryWebInspect has detected a potentially unsafe cache control policy for secure content. While content transmitted ove">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/_xr4yWpJJUdg_w0bZZbstCQjQZOFWi7H54VZnZkSdFXkR-jKELJFaxniFxNIOdb7s1n33J0dJ5DUv_KtMYQ-rpc_B-yYWmqS80KdqKCZNVq24GWwjYqSZ1LLBzdICYzExs-6bGEoSvbS2Y87-B90lwnnkf7MzKpw1be83tS4r_dQssrpmmUozlLHhnrYPwIL1x8iPKDFM-fPlgnNmdUyb343irwa-7VGExhqCgrUR9Q1x3-cRrl4w5e8n3s-Cc9_43u7ep0EPFVvlQIzsPyLfvbd3QD1Ip3sYIFmpDqA71sDB03jHVC7l2-GYAMtOht5q1XkW2ZruRnLGadn42i0sEyeXr1kX0zhryMCFDleYySA4ZhM6Jc_WelQW7avtrDP1vr_eTh7RlcVcx7VbN4q4mXegNqExWKB10a96PzARWk7VU5EpjqiSnq03prU0j2B2M1FX5PshsPfjL-KQxmOJ6b9NCtlZUtVH8Ds8htFEZk2Fch06KY1a9wVEb_sEPpebW-CF6p3uMunf8AKpf4n3RJSFCLrIseZ9JXq6hTZ1JgfVb56NOYjgyMZy9VXWlsigNjMuSEDCH_DksRHVT2MLLG9tj3W2GUFROG-SLKJ-Hedp7oF-IO5bQBdH8Hd3abYnSAuk6uCO6OcCWkFc1H9KPcRnNkIGuEF=w344-h106-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/i4EUc8WWlXXAvq9oT-GgFKgVEVnQqolY7kUzcKBlIJJVcpsdn1UrdwfufNdIsI4foh7treGnCrbmKJQS4u5N4YGh3HDqyaNpV4G8mrWhi5THK_2DMqDiIyU10nYs_mHgpFriWPH6skHZ2nzzny-7USUvuy3BhnzVKh8aIMOxd3FNKKYRuJA3-iWF0dK3vSAiwIqQhfCJPIwyV4A57ffKCDCPnyQ8dss_uGiz3pRmp9EAp1l2VLOVaz32KVO9wIZjbGZOwg-V_fXyfB9lhSD_CotIDAiMTU1FBRdjEaCawC5F2XlsOyz2Ipo8ApjC0AO_hyjfzw3HwNDTaflMMvonzVqoP-Blspub8MNMMzuOvj-nrFiHzzsKwzvjirsVaireVeNYEp_0Pjc-aKG-wlNhEohivITYALr6b8COgNDABytayqocbn5HLn48mut79uSLrklplpGNuzaiYW-vVgYY-nL2-xCPzjWyiRm5NRIx-n2GOfhRdEWep_1W1Lv3nDODUEQv4FkRZMm22kYE01WtsJpNrifC9yuVmVU17xJwTMVQ8ViNhtnSzaIUYIhdodQf7Q2meDuY1nbn1moXacykT1dZLbd46E9PdJSqQGVCigM_GnQCONSupa5FrjBYlCLdyciaZuzSYy8IHlaWVvE58b8kgcwPkTUw=w686-h443-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/7t5DB_jySLObeuj2LDjBLDFtlJ5n4McRzxJd_vUUmwyD98q6LVgjCVzRMkqMaO2-6C3UigSocf_LUW2q7cb_-wAnUi65XsCCmNvygCNVPVqWDC9VaEjkvOG9RLE3ZsqgXxN3k7j0QPl531dzlU4uM-ybLxG64CphZNrXSUMdXmlxUsJINSVqSc67NLhJrjgvHQ0fQMCVEM8ZhZRFJlfgO7GTkz6NN9RwFpNEnbh3Gw_s5WioHcrU_O9Otaw_9kW3wEybyqA8yvXi_eYE0yvN1YmsmyZAlO0qJ2q2JqpDEZzGDH2tjHpX_2PfNwxNlhTjPwyVI5-M81InEDcrG2yRpHy4aX_MB4ukOsrnLxg0VyooNnj1mb7eaPC0MqapyAN2JNJDuudYcSXMyYdJqb5P4ovr-GYpZrpcnTxi33cMDNclzKQ2WAX_ILHO3TiEvcPjnaKOTqrTei2gmXuzeQ_8wxp_yoxERGN93ug38UoKKgREml6c4j3Ja8tKeh1yOMGqjq4T8TM5r4Zl2SC5IdsYT0SesxmsthildAFqCycYiFjEpWECWBr4e0nmLIpd1rbh52a0M9SIYo-99qd7Xs5PrdIAu96cT-kwoPxdmITEIQjEsgblIIRcRy2XsHe8Z4iZ36gKBjpapnTYmIXre_PhmGkqDwRzQPCm=w773-h414-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/_xr4yWpJJUdg_w0bZZbstCQjQZOFWi7H54VZnZkSdFXkR-jKELJFaxniFxNIOdb7s1n33J0dJ5DUv_KtMYQ-rpc_B-yYWmqS80KdqKCZNVq24GWwjYqSZ1LLBzdICYzExs-6bGEoSvbS2Y87-B90lwnnkf7MzKpw1be83tS4r_dQssrpmmUozlLHhnrYPwIL1x8iPKDFM-fPlgnNmdUyb343irwa-7VGExhqCgrUR9Q1x3-cRrl4w5e8n3s-Cc9_43u7ep0EPFVvlQIzsPyLfvbd3QD1Ip3sYIFmpDqA71sDB03jHVC7l2-GYAMtOht5q1XkW2ZruRnLGadn42i0sEyeXr1kX0zhryMCFDleYySA4ZhM6Jc_WelQW7avtrDP1vr_eTh7RlcVcx7VbN4q4mXegNqExWKB10a96PzARWk7VU5EpjqiSnq03prU0j2B2M1FX5PshsPfjL-KQxmOJ6b9NCtlZUtVH8Ds8htFEZk2Fch06KY1a9wVEb_sEPpebW-CF6p3uMunf8AKpf4n3RJSFCLrIseZ9JXq6hTZ1JgfVb56NOYjgyMZy9VXWlsigNjMuSEDCH_DksRHVT2MLLG9tj3W2GUFROG-SLKJ-Hedp7oF-IO5bQBdH8Hd3abYnSAuk6uCO6OcCWkFc1H9KPcRnNkIGuEF=w344-h106-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.689Z">
+<meta property="article:published_time" content="2018-05-08T01:27:42.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.689Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="IIS">
+<meta property="article:tag" content="security">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cache-Control 在 IIS 上的設定">
-<meta name="twitter:description" content="前陣子公司專案由第三方弱掃，接下來的筆記就會紀錄多個專案都有的問題點 Cache Management: Insecure Policy ( 11306 )SummaryWebInspect has detected a potentially unsafe cache control policy for secure content. While content transmitted ove">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/_xr4yWpJJUdg_w0bZZbstCQjQZOFWi7H54VZnZkSdFXkR-jKELJFaxniFxNIOdb7s1n33J0dJ5DUv_KtMYQ-rpc_B-yYWmqS80KdqKCZNVq24GWwjYqSZ1LLBzdICYzExs-6bGEoSvbS2Y87-B90lwnnkf7MzKpw1be83tS4r_dQssrpmmUozlLHhnrYPwIL1x8iPKDFM-fPlgnNmdUyb343irwa-7VGExhqCgrUR9Q1x3-cRrl4w5e8n3s-Cc9_43u7ep0EPFVvlQIzsPyLfvbd3QD1Ip3sYIFmpDqA71sDB03jHVC7l2-GYAMtOht5q1XkW2ZruRnLGadn42i0sEyeXr1kX0zhryMCFDleYySA4ZhM6Jc_WelQW7avtrDP1vr_eTh7RlcVcx7VbN4q4mXegNqExWKB10a96PzARWk7VU5EpjqiSnq03prU0j2B2M1FX5PshsPfjL-KQxmOJ6b9NCtlZUtVH8Ds8htFEZk2Fch06KY1a9wVEb_sEPpebW-CF6p3uMunf8AKpf4n3RJSFCLrIseZ9JXq6hTZ1JgfVb56NOYjgyMZy9VXWlsigNjMuSEDCH_DksRHVT2MLLG9tj3W2GUFROG-SLKJ-Hedp7oF-IO5bQBdH8Hd3abYnSAuk6uCO6OcCWkFc1H9KPcRnNkIGuEF=w344-h106-no">
 
 
@@ -129,11 +130,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/05/08/cache-control/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/05/08/cache-control/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>Cache-Control 在 IIS 上的設定 | ShunNien's Blog</title>
   
@@ -155,7 +156,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -173,7 +174,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -201,9 +202,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -211,9 +212,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -221,9 +222,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -231,9 +232,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -241,9 +242,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -256,7 +257,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -277,7 +278,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -318,7 +321,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -354,7 +357,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -366,7 +369,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -385,7 +388,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/05/08/cache-control/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/08/cache-control/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/05/08/cache-control/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +401,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -530,7 +534,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -572,7 +576,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -583,7 +589,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -596,7 +602,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -607,7 +613,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

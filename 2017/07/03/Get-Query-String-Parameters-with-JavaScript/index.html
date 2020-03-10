@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="JavaScript," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,19 @@
 
 
 <meta name="description" content="因為維護某個系統需要，需要使用 Query String 來進行頁面切換，取得 Query String 的方式有很多，例如：自行撰寫，或是透過 API 等…以下列出這些方式。">
-<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 取得 Url 的 Query String">
 <meta property="og:url" content="https://shunnien.github.io/2017/07/03/Get-Query-String-Parameters-with-JavaScript/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="因為維護某個系統需要，需要使用 Query String 來進行頁面切換，取得 Query String 的方式有很多，例如：自行撰寫，或是透過 API 等…以下列出這些方式。">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/JqECbHODGdFx7JXnmUrkcQuQBu__KASvI14ES-9ZOc3Pon6m-tpwClrKHnEmBVP8BwJE0hLft4tuvDI6kJxM5HB4ZIoLkxTlrh5fjAZKPfM9jn04n3A6wXoqnZkFLK9_M7o2oX8lGueGr-AEMEq4fT7AnsVWR7cxyFvaPxltsnQh55Dwz8itVOXtZ0vPGH_hD5YX9mLUeY6kRzQeXdSMEdnC1PZZ8fGKjR96KBNyGFNZRafQzEK-1CUlpPMgi4xbnle7o7mdLv2esrrPdvHKTcuJxhgdP4LsmGIlMcWeLnCSR9dU2hJLwxgGOVvUW0P-XoPo_Ewffu4v7RfNsnn5rfjRhWldKHYGF7Vn59sLp92qS9yaqTxu4GdvqVSZXMT_7jtvfCDEJIQf3nuoAb30_F2ZVUYVac5h4CBlux1LcTrTwwPIQj8om8o8VKvieOoa02JFAy_-AaNuZ40onMyeF78WMf-Ptr_jflxfLc85gRrWZwOwwkieR-zPIk6-iVQ-k95KhD4sAQIaQYUv1f2lw75-nZ-g9t-1mqUSNbXkbFKXvptImtmCr0WjjJEFKsRHH_n4uOJdFPQ13jEu40OSvfjDearyckhgRGAm0E5CWt7xOU8sQf-I9xOpdeychT-Ty5XPvpcP-aK7VyleBRNKCehwNtBAykX6uE0PXo0xAg=w861-h639-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/8uAKVIH573weKn5z1HeacJI3_Ouphx1flP7WBRvQ0O_SkKoxa3P9jejRiHyPVURA7x6kYXgtcASQjnYcYsMTqq6dF8ZpT1Kzx3m5mFM95FhgqswwLt6IurLAR9XRR3JrFD3DQ7JaaGT2tbR9Yvcjsw7TO2LpgrLq7vxeO8yObgqHUlvBVW6njiHvX73BE6lrRmgx_Hpa_IHZ37yeBmA2wJ_Bc36Zb3Pl5hAR79B3d_6Z1oxOR_sUn4bbhBxpBfT9e7QtAGL7AWLzL4w__WFRHFRru6HpvRugD7TJ7gckfkvWeRH8h5yJ_hta7onyYeGvFGH-YssjYRSmUY4Zy394uge1odX-9upK73gnU0or4BwAc2aBLjgrHNVYiFpX7WDbtr6GFDTm2yMK2GeOhsbFg5f_DznlPJQHOnwjD0amls9lJ5alV0OksCeNEsou_0SbIW1YgCRR1b7HXHZfWQ1Fr5a8PbpHE0EGbjtNoId7y3lBRSinpGEaaoC1xq0fHmUitdGTYreyccTVM8EnUEaZVbI3BXIEINERWBSsG4FJT17Akvkm26ezqEbSdYqDGfQO_i8LvhYQQm_Q84B_QlC2P4E34Wv7C9BXRvC6fCRhE1Yz8siGIN3OvWU8EpDk0mNBFcnb81ci8wqxrU25awt2cbg963VImBs7sIkWvIblrw=w850-h640-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.642Z">
+<meta property="article:published_time" content="2017-07-03T03:32:40.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.642Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 取得 Url 的 Query String">
-<meta name="twitter:description" content="因為維護某個系統需要，需要使用 Query String 來進行頁面切換，取得 Query String 的方式有很多，例如：自行撰寫，或是透過 API 等…以下列出這些方式。">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/JqECbHODGdFx7JXnmUrkcQuQBu__KASvI14ES-9ZOc3Pon6m-tpwClrKHnEmBVP8BwJE0hLft4tuvDI6kJxM5HB4ZIoLkxTlrh5fjAZKPfM9jn04n3A6wXoqnZkFLK9_M7o2oX8lGueGr-AEMEq4fT7AnsVWR7cxyFvaPxltsnQh55Dwz8itVOXtZ0vPGH_hD5YX9mLUeY6kRzQeXdSMEdnC1PZZ8fGKjR96KBNyGFNZRafQzEK-1CUlpPMgi4xbnle7o7mdLv2esrrPdvHKTcuJxhgdP4LsmGIlMcWeLnCSR9dU2hJLwxgGOVvUW0P-XoPo_Ewffu4v7RfNsnn5rfjRhWldKHYGF7Vn59sLp92qS9yaqTxu4GdvqVSZXMT_7jtvfCDEJIQf3nuoAb30_F2ZVUYVac5h4CBlux1LcTrTwwPIQj8om8o8VKvieOoa02JFAy_-AaNuZ40onMyeF78WMf-Ptr_jflxfLc85gRrWZwOwwkieR-zPIk6-iVQ-k95KhD4sAQIaQYUv1f2lw75-nZ-g9t-1mqUSNbXkbFKXvptImtmCr0WjjJEFKsRHH_n4uOJdFPQ13jEu40OSvfjDearyckhgRGAm0E5CWt7xOU8sQf-I9xOpdeychT-Ty5XPvpcP-aK7VyleBRNKCehwNtBAykX6uE0PXo0xAg=w861-h639-no">
 
 
@@ -127,11 +127,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2017/07/03/Get-Query-String-Parameters-with-JavaScript/">
+  <link rel="canonical" href="https://shunnien.github.io/2017/07/03/Get-Query-String-Parameters-with-JavaScript/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>JavaScript 取得 Url 的 Query String | ShunNien's Blog</title>
   
@@ -153,7 +153,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +171,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +199,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +209,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +219,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +229,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +239,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +254,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +275,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +318,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +354,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +366,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +385,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/07/03/Get-Query-String-Parameters-with-JavaScript/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/03/Get-Query-String-Parameters-with-JavaScript/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/03/Get-Query-String-Parameters-with-JavaScript/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +398,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -512,7 +515,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -554,7 +557,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -565,7 +570,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -578,7 +583,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -589,7 +594,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

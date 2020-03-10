@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="CSS,CSSGrid25,">
+  <meta name="keywords" content="CSS,CSSGrid25," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,20 +84,21 @@
 
 
 <meta name="description" content="此篇介紹行號的別名運用，目的是使用行號與別名都是一樣的結果">
-<meta name="keywords" content="CSS,CSSGrid25">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS Grid 筆記 15-Naming Lines in CSS Grid">
 <meta property="og:url" content="https://shunnien.github.io/2018/03/30/css-grid-15/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="此篇介紹行號的別名運用，目的是使用行號與別名都是一樣的結果">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/v081oZaR9ZYgr0NGKSkUIvia6pVVO8JbWgVkI48KOKCq3fVvAHSkb4lnJvhLnYUN4y9ejV55IOaZsFA00ZELk5qH0cmsTsU59xx_DcK9G3UQJ2PXfakbcECPaT4pTbfucEdBbwMpfQmJK6V42W4lgbLgJuMtQpyCeXOlg2fx0jYiRqn2eCXpmEAnOoe7BWo20qvo4hv0GNE1bwxTb4kuzlhX6n5tLxOuo8H1xNzm86rlXGf-3ua3k0WAVsn-oVZfAAvQ8fm741wkYNDmliDxQjM40quyPa6ODehmpsKBLEH7Ttty2aL3yKGOnYdxWMoKFFcVh4sJctioxaWvh042TuQX6K-jD8ecOl6l17dIez-J2TCqP_xZ7KQKBKGi4K3Z4frqvnAdNZ8Tva3zacwaPOB6C0LYGEBWb1_YtbZYRimzr9iedK1Bdq0M6La1C8MF6waLI0me70CrkEQuKb6zjEYmoyaU4xaOaouFlgFEOgEbWuwFGM6oEIaz3PP3c23r7LTZeLQWPfAnaB6c-4v2kc-Vw-DJSU5rUn5Z3fIJjz3Hy7s8kBospBmZpeZVMLtIuiHKXfJXU3my9XE9enkOgsVbfu1_y3xXcDo5a0l9TDC1Q9Y7Iss0PJWR8LdTiGyk2kuMwIrv0EyliFBT-tQKBkCSB8G8ucMv=w462-h436-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/UicArE3jcT40Qcb5h3mHpT2NpUv4rQt1USAA8jYidhAOmYa1onVG5bc5lf9rQVAc2LnvtSD1tMvjbImSMaJx-CfAK6FxP3Bqgp54iRjZgt3_E945K4CPCLzziic7WWGpS4vSGe9u_dmHptUtWmFmjdq6Fyx4qoV40c0wHliBBZq7l3C1XwKBV4Z_tZh4A_pcqBTzzzg1AsBbHFHHuswq0od58th3xcmsyq59kJ5Y5WHLARsYUN2kKUUjdO5BAfP6ynApRaxw3Wqz3dZcGgZSlNmolPgxjzZlb1QXu9mSQQprsyrDbMDhyAyZvxtlnzqBjmzwKS0pR0uI6vyKWvyvf2Ps9jx2odvo1f_nuYF4858UeAoyY3x66VFJFCt9ZHBPsgFchOe2QPqcZ9vp9RgI8yJO4DdbZaP8jJM6qvH8iB_ySqjHM0Qblg3LviBgpcWlQdu10QhlkoNaG0N3eJY0lVA1qyWx9JJR5cVJPd7-FCcbX-zK5nRYBJ9oObO2LHeqMv_7NwiC7UF2FAzwCBsy5sTYxCxgeetLHFbcA7DKxR3V2Y7b_ymq3wm1HcbVi7cjOElfk2e15xDhuQD0jo2DdNyThHKRWLfsVZ797itQYYI3r-QkadgpO-YIOJ-wxBoPALP7sDZbDuB-3ikDsqnTxm2bhOmo-99x=w902-h864-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/OHlVSfHM7bLVj9f-YiSpDvzqucCsoyquT3l2M3_OaYmQyNfTteGrilqCvtqVLcUZXvSSo1WQYme4b5FNkhr4ACsyYMJwWB62qdizVMmsPMd59pUQib-7Qfb8oB6mka5OulHeaOiinXlgXkDjSBQs8yPCrRhfUI1F24it4iz-YAMWdiNunc8RXIhcXlUkK17QcalIiC7JBfeaT7Xu1AFostYcuVQDnMANiJKRAINZj4TFUXpqgf1GIspJ6E-w0X-Uyy38g4R2DlJMblo1oRWyTFw-BraqHUFuja-PQmLRkZN8UXr9tsjK5hbXGKIVaN6lj1jmaZaMAZjFkRHaPz2ERfnwJd39gTPi01qrGk_NT_7U6ikxD-aX5lMF1KIQr7NLWK9gMQBkLlf0Sd7xiX-xwGspDKBDK08s94IA3KbwcR0E94kbdyGOjcJt0D0ne8LekJqlD3d7vDDiq33jGx48LMZccarxEZRK_DbIgUF9eiNBZiBydb-C7daolU0KM_KK8TnYrq2hQ5xofDm3VmBmxDEpLD7S_97r0hV6RcVD9k7ocxeCCI0DDc-foI68Bxhc1lvT6feB8W8UVLNBJMuGQPvpxu7R06O0dc-j7oBs-UGjSChj4yjFtCKkFUWEelYK1wjBBa2QU7PbIY_iRQUEt0oZjbK6bthW=w919-h779-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.682Z">
+<meta property="article:published_time" content="2018-03-30T11:34:06.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.682Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="CSSGrid25">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS Grid 筆記 15-Naming Lines in CSS Grid">
-<meta name="twitter:description" content="此篇介紹行號的別名運用，目的是使用行號與別名都是一樣的結果">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/v081oZaR9ZYgr0NGKSkUIvia6pVVO8JbWgVkI48KOKCq3fVvAHSkb4lnJvhLnYUN4y9ejV55IOaZsFA00ZELk5qH0cmsTsU59xx_DcK9G3UQJ2PXfakbcECPaT4pTbfucEdBbwMpfQmJK6V42W4lgbLgJuMtQpyCeXOlg2fx0jYiRqn2eCXpmEAnOoe7BWo20qvo4hv0GNE1bwxTb4kuzlhX6n5tLxOuo8H1xNzm86rlXGf-3ua3k0WAVsn-oVZfAAvQ8fm741wkYNDmliDxQjM40quyPa6ODehmpsKBLEH7Ttty2aL3yKGOnYdxWMoKFFcVh4sJctioxaWvh042TuQX6K-jD8ecOl6l17dIez-J2TCqP_xZ7KQKBKGi4K3Z4frqvnAdNZ8Tva3zacwaPOB6C0LYGEBWb1_YtbZYRimzr9iedK1Bdq0M6La1C8MF6waLI0me70CrkEQuKb6zjEYmoyaU4xaOaouFlgFEOgEbWuwFGM6oEIaz3PP3c23r7LTZeLQWPfAnaB6c-4v2kc-Vw-DJSU5rUn5Z3fIJjz3Hy7s8kBospBmZpeZVMLtIuiHKXfJXU3my9XE9enkOgsVbfu1_y3xXcDo5a0l9TDC1Q9Y7Iss0PJWR8LdTiGyk2kuMwIrv0EyliFBT-tQKBkCSB8G8ucMv=w462-h436-no">
 
 
@@ -128,11 +129,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/03/30/css-grid-15/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/03/30/css-grid-15/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>CSS Grid 筆記 15-Naming Lines in CSS Grid | ShunNien's Blog</title>
   
@@ -154,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -172,7 +173,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -200,9 +201,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -210,9 +211,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -220,9 +221,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -230,9 +231,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -240,9 +241,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -255,7 +256,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -276,7 +277,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -317,7 +320,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -353,7 +356,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -365,7 +368,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -384,7 +387,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/03/30/css-grid-15/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/30/css-grid-15/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/30/css-grid-15/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,7 +400,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -422,17 +426,17 @@
 <p><a href="https://shunnien.github.io/css-grid25day/day_15/index.html">Demo</a> | <a href="https://github.com/shunnien/css-grid25day" target="_blank" rel="noopener">Github</a></p>
 </blockquote>
 <h1 id="Naming-Lines-in-CSS-Grid"><a href="#Naming-Lines-in-CSS-Grid" class="headerlink" title="Naming Lines in CSS Grid"></a>Naming Lines in CSS Grid</h1><p>前面幾篇都提到，關於行號的部分，記住使用數字，但是此篇提到了別名，也就是說可以自定義行號的別名，再利用別名去設定，以下先示範不使用行號的 css 與畫面 (html 可以參考以下的線上範例)</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">500px</span> <span class="number">1</span>fr;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(10, auto);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item3</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: slateblue;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span>/ span <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">500px</span> <span class="number">1</span>fr;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">10</span>, auto);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item3</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: slateblue;</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span>/ span <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://lh3.googleusercontent.com/UicArE3jcT40Qcb5h3mHpT2NpUv4rQt1USAA8jYidhAOmYa1onVG5bc5lf9rQVAc2LnvtSD1tMvjbImSMaJx-CfAK6FxP3Bqgp54iRjZgt3_E945K4CPCLzziic7WWGpS4vSGe9u_dmHptUtWmFmjdq6Fyx4qoV40c0wHliBBZq7l3C1XwKBV4Z_tZh4A_pcqBTzzzg1AsBbHFHHuswq0od58th3xcmsyq59kJ5Y5WHLARsYUN2kKUUjdO5BAfP6ynApRaxw3Wqz3dZcGgZSlNmolPgxjzZlb1QXu9mSQQprsyrDbMDhyAyZvxtlnzqBjmzwKS0pR0uI6vyKWvyvf2Ps9jx2odvo1f_nuYF4858UeAoyY3x66VFJFCt9ZHBPsgFchOe2QPqcZ9vp9RgI8yJO4DdbZaP8jJM6qvH8iB_ySqjHM0Qblg3LviBgpcWlQdu10QhlkoNaG0N3eJY0lVA1qyWx9JJR5cVJPd7-FCcbX-zK5nRYBJ9oObO2LHeqMv_7NwiC7UF2FAzwCBsy5sTYxCxgeetLHFbcA7DKxR3V2Y7b_ymq3wm1HcbVi7cjOElfk2e15xDhuQD0jo2DdNyThHKRWLfsVZ797itQYYI3r-QkadgpO-YIOJ-wxBoPALP7sDZbDuB-3ikDsqnTxm2bhOmo-99x=w902-h864-no" alt="lines number"></p>
 <p>使用了行號別名，其定義方式為直接在 <strong>grid-template-[columns/rows]</strong> 設定。例如： <strong>grid-template-columns</strong> 中，設定了三個 column ，所以行號會有 4 個，第一個就是第一行， <strong>[ ]</strong> 內可以放置多個別名，但是都代表同一行號。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-columns</span>: <span class="selector-attr">[line1]</span> 1<span class="selector-tag">fr</span> <span class="selector-attr">[line2]</span> 1<span class="selector-tag">fr</span> <span class="selector-attr">[line3]</span> 1<span class="selector-tag">fr</span> <span class="selector-attr">[line4]</span>;</span><br></pre></td></tr></table></figure>
 
 <p>以下就是使用別名取代行號的練習範例</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: </span><br><span class="line">        [sidebar-start site-left] <span class="number">1</span>fr [sidebar-end content-start] <span class="number">500px</span> [content-end] <span class="number">1</span>fr [site-right];</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: [content-top] <span class="built_in">repeat</span>(10, auto) [content-bottom];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item3</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: slateblue;</span><br><span class="line">    <span class="attribute">grid-column</span>: content-start;</span><br><span class="line">    <span class="attribute">grid-row</span>: content-top / content-bottom;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: </span><br><span class="line">        [sidebar-start site-left] <span class="number">1</span>fr [sidebar-end content-start] <span class="number">500px</span> [content-end] <span class="number">1</span>fr [site-right];</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: [content-top] <span class="built_in">repeat</span>(<span class="number">10</span>, auto) [content-bottom];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item3</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: slateblue;</span><br><span class="line">    <span class="attribute">grid-column</span>: content-start;</span><br><span class="line">    <span class="attribute">grid-row</span>: content-top / content-bottom;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://lh3.googleusercontent.com/OHlVSfHM7bLVj9f-YiSpDvzqucCsoyquT3l2M3_OaYmQyNfTteGrilqCvtqVLcUZXvSSo1WQYme4b5FNkhr4ACsyYMJwWB62qdizVMmsPMd59pUQib-7Qfb8oB6mka5OulHeaOiinXlgXkDjSBQs8yPCrRhfUI1F24it4iz-YAMWdiNunc8RXIhcXlUkK17QcalIiC7JBfeaT7Xu1AFostYcuVQDnMANiJKRAINZj4TFUXpqgf1GIspJ6E-w0X-Uyy38g4R2DlJMblo1oRWyTFw-BraqHUFuja-PQmLRkZN8UXr9tsjK5hbXGKIVaN6lj1jmaZaMAZjFkRHaPz2ERfnwJd39gTPi01qrGk_NT_7U6ikxD-aX5lMF1KIQr7NLWK9gMQBkLlf0Sd7xiX-xwGspDKBDK08s94IA3KbwcR0E94kbdyGOjcJt0D0ne8LekJqlD3d7vDDiq33jGx48LMZccarxEZRK_DbIgUF9eiNBZiBydb-C7daolU0KM_KK8TnYrq2hQ5xofDm3VmBmxDEpLD7S_97r0hV6RcVD9k7ocxeCCI0DDc-foI68Bxhc1lvT6feB8W8UVLNBJMuGQPvpxu7R06O0dc-j7oBs-UGjSChj4yjFtCKkFUWEelYK1wjBBa2QU7PbIY_iRQUEt0oZjbK6bthW=w919-h779-no" alt="named grid lines"></p>
-<h2 id="線上範例"><a href="#線上範例" class="headerlink" title="線上範例"></a>線上範例</h2><iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/yLrr4nms/embedded/result,html,css/dark" frameborder="0" allowfullscreen></iframe>
+<h2 id="線上範例"><a href="#線上範例" class="headerlink" title="線上範例"></a>線上範例</h2><iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/yLrr4nms/embedded/result,html,css/dark" frameborder="0" loading="lazy" allowfullscreen></iframe>
 
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="Layout-using-named-grid-lines"><a href="#Layout-using-named-grid-lines" class="headerlink" title="Layout using named grid lines"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines" target="_blank" rel="noopener">Layout using named grid lines</a></h2><div class="note info"><p>In previous guides we’ve looked at placing items by the lines created by defining grid tracks and also how to place items using named template areas. In this guide we are going to look at how these two things work together when we use named lines. Line naming is incredibly useful, but some of the more baffling looking grid syntax comes from this combination of names and track sizes. Once you work through some examples it should become clearer and easier to work with.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Layout_using_Named_Grid_Lines" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
 
@@ -519,7 +523,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -561,7 +565,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -572,7 +578,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -585,7 +591,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -596,7 +602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

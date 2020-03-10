@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="CSS,CSSGrid25,">
+  <meta name="keywords" content="CSS,CSSGrid25," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,21 +84,22 @@
 
 
 <meta name="description" content="接著，此篇主要說明對齊的設定了，如何行的對齊？列的對齊？置中的設定等等…">
-<meta name="keywords" content="CSS,CSSGrid25">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS Grid 筆記 17-CSS Grid Alignment + Centering">
 <meta property="og:url" content="https://shunnien.github.io/2018/04/03/css-grid-17/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="接著，此篇主要說明對齊的設定了，如何行的對齊？列的對齊？置中的設定等等…">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/OUGOy3N1mN7w4u7kGzC0FIDFZ6f1ZM0-nhJTHSmpebjopAbMQXjhlHoz5zEiRs7CcSXGqfq3BQFRGnskjYe8SNLIZ-dplcoquBWnxiizcYmmHlcXH2ZbNlPrGnPOelvwRH2pZKH1x38gfvKoKKPlXN8VXKRenjFB1N7zY48Q3c6FQY7Gl84PfEfryRoYZyY3kMtdituVSIFHOSDnj5OvIBISj0atSbYM3u44NW1bv8jj6WTiE3sCWpO1mxKSlwhPifOV4PJcbbqHnXBuLYHbpEg0q68ydecDbiCg0yBG8m7srl6XhWiIhT4FthDP2KAsHlRKp3ENcK6TsfSTujNvM2qBaY4f5dyx_-y-KIs6o3uOzvX5AaYwEqJ2hY2GnoIxZi12nDq3uiq7k0SDCubBWsX72osRAA-R10D52Ii2nUrQ51hacDK6kV7ntBxXh4K_JDKfkEZt3ZwojnUqXpKseYcs5hAbTDDr1Qb64TUbY-l08HxFZwoipqjYg7JMpGJTgILdmshkS3CR77dlT1zucftb1JJiOL1K3iNpS4a19il_Bmbe4CtR5GBdTHciTklACQH2Sudw2w9T1tBuK9xp2Xl8qLOWFLQH0Cc15ozDASFOk0klONxsn839nrgq9o20eHUeshW7jNzXxwbvWWxWw46hknIid4HO=w1210-h605-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/a1mOiIPWazE23FUQkEQkC3qz9ad0njlcGvHbYxKntdgSuEtY8BiroLIgAwSfySlwS4sQbOXuNI_pN41YWt3gYjzqlZeE2Xr6jcWEigFH8Hj6aoeNPHqey6YWXp5N7kntqSY4-ohB6QVoqFc3aHTU5GOfhSwOERnznSk-qAo2rXoaI_vgE8Iuliu863CPyWPTiem1l-4Ccpj_cqDhvVQJKpe0vpKDBu-8U6PLKDBLy3x3x9eyc-CIEasfmfeYYTZLFIVS0K52Aplf1kr0hre9ErV4j1yvfhiWMUFc0l6hkHtALeJpIiKlvoFuqVwTxZnBK-SOywDbqHKVcjP68DmzvWZVHzeYzJVVp_hKSNuzi4opZx0GvQEDwEPGq3HEdn7oxEiN7mMDEfkrFo4AZY4pC1UtomXnnQCeNircn6G6VPS4xg_rzxtAiYcmD54-vKmMuv60A_eP-r2SURVTr_7fsgxF6toe9BpBrLfzoor0wEJEOL2cAtZyC2YBUeRkL2datq85s-TJFiGdNe6I9jqbGDepsVS2Augm04dtg0P3-1gQ-U7RfIv6Su-bYjQwTnGqK87V2ER3xXP6hLktsXVnQd82ExAjfvVu22IFpJ62mhsONLA0LueqkV1xLjTJXtobLdh67sRWxCGSBMNgjMaM41LMzXRfMxZb=w362-h71-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/34dGkuEqiNdDIBzF5k43Vc_goMbaPH1EiLWZkIHoWdCtrzsychxecAaWfc36XDprEyYbsZtN7eMRuPVkyQjAEmQdc32cIfy63VQL0itoMgtnnTtrDi39LiINPFIFn3JCVpn2nrX9vIWteOQ2vfpgrN-BAMaeB0NRed-zgW3aR_tAwwKunicToKbeGIcCW20R7FOVO7oGXqMunT84oKQxJP2rObDmWD18V_0gp__-2nglPgmNQkYfqyQDL5zSmrwRX0x5LmMMJbUd2GHj-h5TcSAWJuaYWjNsFRpLvQkFbEi1IItkvw1f1txHU9HzjvrBN7HlLtDrnh6RslUxd6JiIbId5WF3aCELmuDqfqNS6_4OQRzCTWpiTY7byPUdZx1zpRuavrm2vUIoN9FdxkNRJ2JoYSfuGpKJw7qayKkdTcYNVnXxBlH5H_LQINQz6H-cIGLbWVEwfys6se-VfDiawAKdLC2iL43cgKfDhee4gdwosE98ALPWGIK2A-sRMA3kacMtXa5c5AK2kyD0C5MrgfcPN16DI_4IJ3fb3PL1s0WzxFOMP1pr_nb-6lFsSMDlynfv3bnLYxWmCcWs3fcS8Rp2p-1bYPHqgyeVEkQ9o9CkliVbqU2HNosYykeCSgENvS7heXnxod_lld_5w2Hdai32sa0XMgDN=w985-h607-no">
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.683Z">
+<meta property="article:published_time" content="2018-04-03T03:02:49.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.683Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="CSSGrid25">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS Grid 筆記 17-CSS Grid Alignment + Centering">
-<meta name="twitter:description" content="接著，此篇主要說明對齊的設定了，如何行的對齊？列的對齊？置中的設定等等…">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/OUGOy3N1mN7w4u7kGzC0FIDFZ6f1ZM0-nhJTHSmpebjopAbMQXjhlHoz5zEiRs7CcSXGqfq3BQFRGnskjYe8SNLIZ-dplcoquBWnxiizcYmmHlcXH2ZbNlPrGnPOelvwRH2pZKH1x38gfvKoKKPlXN8VXKRenjFB1N7zY48Q3c6FQY7Gl84PfEfryRoYZyY3kMtdituVSIFHOSDnj5OvIBISj0atSbYM3u44NW1bv8jj6WTiE3sCWpO1mxKSlwhPifOV4PJcbbqHnXBuLYHbpEg0q68ydecDbiCg0yBG8m7srl6XhWiIhT4FthDP2KAsHlRKp3ENcK6TsfSTujNvM2qBaY4f5dyx_-y-KIs6o3uOzvX5AaYwEqJ2hY2GnoIxZi12nDq3uiq7k0SDCubBWsX72osRAA-R10D52Ii2nUrQ51hacDK6kV7ntBxXh4K_JDKfkEZt3ZwojnUqXpKseYcs5hAbTDDr1Qb64TUbY-l08HxFZwoipqjYg7JMpGJTgILdmshkS3CR77dlT1zucftb1JJiOL1K3iNpS4a19il_Bmbe4CtR5GBdTHciTklACQH2Sudw2w9T1tBuK9xp2Xl8qLOWFLQH0Cc15ozDASFOk0klONxsn839nrgq9o20eHUeshW7jNzXxwbvWWxWw46hknIid4HO=w1210-h605-no">
 
 
@@ -129,11 +130,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/04/03/css-grid-17/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/04/03/css-grid-17/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>CSS Grid 筆記 17-CSS Grid Alignment + Centering | ShunNien's Blog</title>
   
@@ -155,7 +156,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -173,7 +174,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -201,9 +202,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -211,9 +212,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -221,9 +222,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -231,9 +232,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -241,9 +242,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -256,7 +257,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -277,7 +278,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -318,7 +321,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -354,7 +357,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -366,7 +369,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -385,7 +388,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/04/03/css-grid-17/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/03/css-grid-17/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/03/css-grid-17/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +401,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -441,9 +445,9 @@
 <div class="note primary"><p><img src="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg" alt="axic"><br><strong>資料來源</strong> - <a href="https://www.w3.org/TR/css-flexbox-1/#box-model" target="_blank" rel="noopener"><em>W3C</em></a></p></div>
 
 <p>最後此篇練習的 css</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="built_in">var</span>(--yellow);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(5, 130px);</span><br><span class="line">    <span class="comment">/* justify-items: center;</span></span><br><span class="line"><span class="comment">    align-items: center; */</span></span><br><span class="line">    <span class="attribute">place-items</span>: stretch stretch;</span><br><span class="line">    <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">    <span class="attribute">align-content</span>: space-between;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.itm</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.itm5</span> &#123;</span><br><span class="line">    <span class="attribute">justify-self</span>: center;</span><br><span class="line">    <span class="attribute">align-self</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="built_in">var</span>(--yellow);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">5</span>, <span class="number">130px</span>);</span><br><span class="line">    <span class="comment">/* justify-items: center;</span></span><br><span class="line"><span class="comment">    align-items: center; */</span></span><br><span class="line">    <span class="attribute">place-items</span>: stretch stretch;</span><br><span class="line">    <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">    <span class="attribute">align-content</span>: space-between;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.itm</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.itm5</span> &#123;</span><br><span class="line">    <span class="attribute">justify-self</span>: center;</span><br><span class="line">    <span class="attribute">align-self</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="線上展示"><a href="#線上展示" class="headerlink" title="線上展示"></a>線上展示</h1><iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/t4jn3c0r/embedded/result,html,css/dark" frameborder="0" allowfullscreen></iframe>
+<h1 id="線上展示"><a href="#線上展示" class="headerlink" title="線上展示"></a>線上展示</h1><iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/t4jn3c0r/embedded/result,html,css/dark" frameborder="0" loading="lazy" allowfullscreen></iframe>
 
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="justify-items"><a href="#justify-items" class="headerlink" title="justify-items"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items" target="_blank" rel="noopener">justify-items</a></h2><div class="note info"><p>The CSS justify-items property defines the default justify-self for all items of the box, giving them all a default way of justifying each box along the appropriate axis.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
 
@@ -555,7 +559,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -597,7 +601,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -608,7 +614,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -621,7 +627,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -632,7 +638,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

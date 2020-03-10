@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="C#,WinForm,">
+  <meta name="keywords" content="C#,WinForm," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,20 @@
 
 
 <meta name="description" content="WinForm 下的 DataGridView 操作(5)">
-<meta name="keywords" content="C#,WinForm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DataGridView 在 Winform 的簡單操作(5)">
 <meta property="og:url" content="https://shunnien.github.io/2015/12/25/DataGridView-in-winform-5/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="WinForm 下的 DataGridView 操作(5)">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/InkH_aviwtmndN2GgPf8kYW69_L-9XtcSeeWNYg7cKc0TFiqgH68Fn4GJZqFExNpyEXez4Inx7gvhcI4_qJCXhHgVYkfxg8Gi3wMUqTtYMqvS8EAEaObP4R5liQ3uBwrL389Ujr5fV75w7sERTkX0Nqk_Au8IA9J1FPcDObVIdWmTihskhSfO_isgNo_niMucCSy4QE5VBH3821wZM8yCWV0Zy4gtVSkaa2HVSAHRjjChVKAy_Xa_tvC0Gbbd4cuYMut6tQv8333ymjEhAuXcdngFRWYOuS4uc87i2SgujPiyTVbA-J2-T1N3ghFZdm6rRuohW3LkHfqy5Co5z2MF-N7YEzbxwuQ4drcgGKDezEgyna3ggPMiexkheefRQbXbuyxyXHX_4js2ZASEXIf1ymHtvVkIaHPrc1CKrHVhU86nFct-HjKE38xSI5HeMZr9YElco8wQ62M6UY88mGRBF560YJYFBgDEHWvvvmad1PvsIab9tZQB0yL3GjdUFijHmb7RkLtMZoKc1oMTFD2yG44qGwytlurbYAoYV9ap1jFl5L9y_wD_O_YAt7uR3yqW9u4K-P6sF4E39iMO9pQIqrfvytAjP2mG03k0f5KuLrgArOcRuJADj0NiVWDU-MsyBDzGwpa0VMWcHYY9mIbX3dKFxJQYH3J8euaXkOMVw=w710-h377-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/9U8xAcGlIRNx20djuwxbDZF_086qKrRTl4yfKjev15HKqjaENTOlHMHyn7iP8pYaJ_DrnuPd1ge_wmsiv1LsKTeaW9lIg0lgQv3enVJ4ma44kXY6tmDHUgY7u2Y3VdMNUIhqKTUtuav8A_QjfrpPSDX96C-67mzLMlcLnGJQC5zxKdHq1XUnfjkITTVIIWIoIR86_PjobfhV59gJX_o6w0XIKG2xANrD36UvTojQHUimiXrcfK1ZOWLxAldABiuM2ZnsLu9sq5ZWmhujWJfzt1t32prscdXBerPmcfIcCGSPYZQjUADlXy5n6RViWHBYHqgRYQXOk8RBB-uS2Wcg5tUfjPI1QJZ5T4YTtD0HT5cFh8YFGHgYM16C8OdRbbF1ZP__QE4B_hYUdNHdf_SK35wXaTxdxW3DcDbsTLL-WXoNbtH7Je5nqnOWNfzixJd__rCkeJhvoXeMkAO1PLUIT2i5-rIsKhpcS66dkMrrUsuXAoBUXJC1GzPZvr3dT22uDJwfJ3v7Au84MjlpNnBzcskeqx8N9xGIvu22veiGpKNv0QwUf1aKQoCmXmEfJH0jRwtPp5E1672wtl-AehBhWyHVm9vA6PstQU7GwurxskzbXjqKRwNWST9VLR_YoCOr15Q2bFSFzh5VhECVf3Ahda91Cvuw9z1ne9SeIsiScA=w694-h483-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.610Z">
+<meta property="article:published_time" content="2015-12-25T07:18:17.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.610Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="WinForm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DataGridView 在 Winform 的簡單操作(5)">
-<meta name="twitter:description" content="WinForm 下的 DataGridView 操作(5)">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/InkH_aviwtmndN2GgPf8kYW69_L-9XtcSeeWNYg7cKc0TFiqgH68Fn4GJZqFExNpyEXez4Inx7gvhcI4_qJCXhHgVYkfxg8Gi3wMUqTtYMqvS8EAEaObP4R5liQ3uBwrL389Ujr5fV75w7sERTkX0Nqk_Au8IA9J1FPcDObVIdWmTihskhSfO_isgNo_niMucCSy4QE5VBH3821wZM8yCWV0Zy4gtVSkaa2HVSAHRjjChVKAy_Xa_tvC0Gbbd4cuYMut6tQv8333ymjEhAuXcdngFRWYOuS4uc87i2SgujPiyTVbA-J2-T1N3ghFZdm6rRuohW3LkHfqy5Co5z2MF-N7YEzbxwuQ4drcgGKDezEgyna3ggPMiexkheefRQbXbuyxyXHX_4js2ZASEXIf1ymHtvVkIaHPrc1CKrHVhU86nFct-HjKE38xSI5HeMZr9YElco8wQ62M6UY88mGRBF560YJYFBgDEHWvvvmad1PvsIab9tZQB0yL3GjdUFijHmb7RkLtMZoKc1oMTFD2yG44qGwytlurbYAoYV9ap1jFl5L9y_wD_O_YAt7uR3yqW9u4K-P6sF4E39iMO9pQIqrfvytAjP2mG03k0f5KuLrgArOcRuJADj0NiVWDU-MsyBDzGwpa0VMWcHYY9mIbX3dKFxJQYH3J8euaXkOMVw=w710-h377-no">
 
 
@@ -127,11 +128,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2015/12/25/DataGridView-in-winform-5/">
+  <link rel="canonical" href="https://shunnien.github.io/2015/12/25/DataGridView-in-winform-5/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>DataGridView 在 Winform 的簡單操作(5) | ShunNien's Blog</title>
   
@@ -153,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +172,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +200,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +210,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +220,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +230,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +240,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +255,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +276,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +319,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +355,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +367,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +386,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2015/12/25/DataGridView-in-winform-5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/25/DataGridView-in-winform-5/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/12/25/DataGridView-in-winform-5/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +399,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -424,54 +428,43 @@
 <h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><p>首先在介面增加個 <strong>comboBox</strong> 並將 <strong>Name</strong> 命名為 <em>cbDes</em>，介面設計如下圖<br><img src="https://lh3.googleusercontent.com/InkH_aviwtmndN2GgPf8kYW69_L-9XtcSeeWNYg7cKc0TFiqgH68Fn4GJZqFExNpyEXez4Inx7gvhcI4_qJCXhHgVYkfxg8Gi3wMUqTtYMqvS8EAEaObP4R5liQ3uBwrL389Ujr5fV75w7sERTkX0Nqk_Au8IA9J1FPcDObVIdWmTihskhSfO_isgNo_niMucCSy4QE5VBH3821wZM8yCWV0Zy4gtVSkaa2HVSAHRjjChVKAy_Xa_tvC0Gbbd4cuYMut6tQv8333ymjEhAuXcdngFRWYOuS4uc87i2SgujPiyTVbA-J2-T1N3ghFZdm6rRuohW3LkHfqy5Co5z2MF-N7YEzbxwuQ4drcgGKDezEgyna3ggPMiexkheefRQbXbuyxyXHX_4js2ZASEXIf1ymHtvVkIaHPrc1CKrHVhU86nFct-HjKE38xSI5HeMZr9YElco8wQ62M6UY88mGRBF560YJYFBgDEHWvvvmad1PvsIab9tZQB0yL3GjdUFijHmb7RkLtMZoKc1oMTFD2yG44qGwytlurbYAoYV9ap1jFl5L9y_wD_O_YAt7uR3yqW9u4K-P6sF4E39iMO9pQIqrfvytAjP2mG03k0f5KuLrgArOcRuJADj0NiVWDU-MsyBDzGwpa0VMWcHYY9mIbX3dKFxJQYH3J8euaXkOMVw=w710-h377-no" alt="Design Pic"></p>
 <p>接著把上次 <strong>ComboData</strong> 類別變換一下格式，把 <strong>Value</strong> 變成 <strong>int</strong>，記得修正因為格變換的錯誤</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ComboData</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ComboData</span>(<span class="params"><span class="keyword">string</span> text, <span class="keyword">int</span> <span class="keyword">value</span></span>)</span> &#123;</span><br><span class="line">        Display = text;</span><br><span class="line">        Value = <span class="keyword">value</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Display &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> Value &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="連動-ComboBox"><a href="#連動-ComboBox" class="headerlink" title="連動 ComboBox"></a>連動 <strong>ComboBox</strong></h3><p>接著先來把剛剛新增的 <strong>comboBox</strong> 增加下拉選單的選項，並讓 <strong>Gender</strong> 的選單動態變更 <strong>Description</strong>。先建立一個不同選項的資料對應表</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cbDesBind</span>(<span class="params"><span class="keyword">dynamic</span> sender, <span class="keyword">string</span> selVal</span>)</span> &#123;</span><br><span class="line">    List&lt;ComboData&gt; listDes = <span class="keyword">new</span> List&lt;ComboData&gt;();</span><br><span class="line">    <span class="keyword">switch</span> (selVal.Trim()) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"Male"</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Handsome"</span>, <span class="number">1</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Nuttiness"</span>, <span class="number">2</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Polite"</span>, <span class="number">3</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Burly"</span>, <span class="number">4</span>));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"Female"</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Beautiful"</span>, <span class="number">1</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Sexy"</span>, <span class="number">2</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Cute"</span>, <span class="number">3</span>));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Handsome"</span>, <span class="number">1</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Nuttiness"</span>, <span class="number">2</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Polite"</span>, <span class="number">3</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Burly"</span>, <span class="number">4</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Beautiful"</span>, <span class="number">5</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Sexy"</span>, <span class="number">6</span>));</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Cute"</span>, <span class="number">7</span>));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    sender.DataSource = listDes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>接著在頁面初始化的時候載入(…表示省略程式碼)</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Form1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    InitializeComponent();</span><br><span class="line">    ...</span><br><span class="line">    cbDes.DisplayMember = <span class="string">"Display"</span>;</span><br><span class="line">    cbDes.ValueMember = <span class="string">"Value"</span>;</span><br><span class="line">    cbDesBind(cbDes, <span class="string">"Male"</span>);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>然後就是要讓選單連動了，在 <strong>Gender</strong> 的下拉選單觸發 <strong>SelectedIndexChanged</strong> 事件，然後呼叫剛剛的 <strong>cbDesBind</strong></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cbGender_SelectedIndexChanged</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span> &#123;</span><br><span class="line">    cbDesBind(cbDes, (sender <span class="keyword">as</span> ComboBox).Text);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="連動-DataGridView-中的下拉選單"><a href="#連動-DataGridView-中的下拉選單" class="headerlink" title="連動 DataGridView 中的下拉選單"></a>連動 <strong>DataGridView</strong> 中的下拉選單</h3><p>先把預設的呈現資料增加 <strong>Description</strong> 這欄位的資料</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">private DataTable sampleData() &#123;</span><br><span class="line">    using (DataTable table = new DataTable()) &#123;</span><br><span class="line">        ...</span><br><span class="line">        table.Columns.Add(&quot;Des&quot;, typeof(int));</span><br><span class="line"></span><br><span class="line">        // Add rows.</span><br><span class="line">        table.Rows.Add(&quot;Allen&quot;, 1, 0, DateTime.Now, 1);</span><br><span class="line">        table.Rows.Add(&quot;Kevin&quot;, 1, 1, DateTime.Now, 2);</span><br><span class="line">        table.Rows.Add(&quot;Dean&quot;, 1, 0, DateTime.Today, 3);</span><br><span class="line">        table.Rows.Add(&quot;Jenny&quot;, 0, 1, DateTime.Today, 1);</span><br><span class="line">        return table;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private void gvInit() &#123;</span><br><span class="line">    ...</span><br><span class="line">    DataGridViewComboBoxColumn cb = new DataGridViewComboBoxColumn() &#123;</span><br><span class="line">        Name = &quot;gvDes&quot;,</span><br><span class="line">        DataPropertyName = &quot;Des&quot;,</span><br><span class="line">        HeaderText = &quot;Des&quot;,</span><br><span class="line">        DisplayMember = &quot;Display&quot;,</span><br><span class="line">        ValueMember = &quot;Value&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">    cbDesBind(cb, &quot;&quot;);</span><br><span class="line">    gvSample.Columns.Add(cb);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">private DataTable sampleData() &#123;</span><br><span class="line">    using (DataTable table &#x3D; new DataTable()) &#123;</span><br><span class="line">        ...</span><br><span class="line">        table.Columns.Add(&quot;Des&quot;, typeof(int));</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Add rows.</span><br><span class="line">        table.Rows.Add(&quot;Allen&quot;, 1, 0, DateTime.Now, 1);</span><br><span class="line">        table.Rows.Add(&quot;Kevin&quot;, 1, 1, DateTime.Now, 2);</span><br><span class="line">        table.Rows.Add(&quot;Dean&quot;, 1, 0, DateTime.Today, 3);</span><br><span class="line">        table.Rows.Add(&quot;Jenny&quot;, 0, 1, DateTime.Today, 1);</span><br><span class="line">        return table;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private void gvInit() &#123;</span><br><span class="line">    ...</span><br><span class="line">    DataGridViewComboBoxColumn cb &#x3D; new DataGridViewComboBoxColumn() &#123;</span><br><span class="line">        Name &#x3D; &quot;gvDes&quot;,</span><br><span class="line">        DataPropertyName &#x3D; &quot;Des&quot;,</span><br><span class="line">        HeaderText &#x3D; &quot;Des&quot;,</span><br><span class="line">        DisplayMember &#x3D; &quot;Display&quot;,</span><br><span class="line">        ValueMember &#x3D; &quot;Value&quot;</span><br><span class="line">    &#125;;</span><br><span class="line">    cbDesBind(cb, &quot;&quot;);</span><br><span class="line">    gvSample.Columns.Add(cb);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>這時候發現 <strong>DataGridView</strong> 的下拉選單會與新增功能的下拉選單連動，這是因為這兩個選單我偷懶使用相同資料來源，而 <strong>SelectedIndexChanged</strong> 會監看到同樣來源資料的變更，<br>所以這邊進行一下小調整，建一個新的資料來源</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">gvInit</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    gvGender.DataSource = cbData.Select(q=&gt; q).ToList();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>接著來進行 <strong>DataGridView</strong> 中的欄位連動，首先針對 <strong>DataGridView</strong> 增加一個<code>EditingControlShowing</code>事件，這表示當此事件是發生於顯示編輯儲存格的控制項時</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">gvSample_EditingControlShowing</span>(<span class="params"><span class="keyword">object</span> sender, DataGridViewEditingControlShowingEventArgs e</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 判斷觸發事件的欄位是 Gender 才進行以下動作</span></span><br><span class="line">    <span class="keyword">if</span> (((DataGridView)sender).Columns[((DataGridView)sender).CurrentCell.ColumnIndex].Name == <span class="string">"gvGender"</span>) &#123;</span><br><span class="line">        ComboBox cb = e.Control <span class="keyword">as</span> ComboBox;</span><br><span class="line">        <span class="keyword">if</span> (cb != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 增加事件</span></span><br><span class="line">            cb.SelectionChangeCommitted += <span class="keyword">new</span> EventHandler(cb_SelectedIndexChanged);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cb_SelectedIndexChanged</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 取得現在欄位索引</span></span><br><span class="line">    <span class="keyword">int</span> columnIndex = gvSample.CurrentCell.ColumnIndex;</span><br><span class="line">    <span class="comment">// 將控制項轉給 ComboBox</span></span><br><span class="line">    ComboBox cbx = sender <span class="keyword">as</span> ComboBox;</span><br><span class="line">    <span class="comment">// 判斷現在選取的 Column 是 Gender</span></span><br><span class="line">    <span class="keyword">if</span> (gvSample.Columns[columnIndex].Name == <span class="string">"gvGender"</span>) &#123;</span><br><span class="line">        <span class="keyword">string</span> selTxt = cbx.Text,</span><br><span class="line">        selVal = cbx.SelectedValue.ToString();</span><br><span class="line">        <span class="comment">// 當選取項目值和顯示文字任一為空，就不進行動作</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">string</span>.IsNullOrEmpty(selTxt) || <span class="keyword">string</span>.IsNullOrEmpty(selVal)) <span class="keyword">return</span>;</span><br><span class="line">        <span class="comment">// 將此列資料的 Des Cell　取出</span></span><br><span class="line">        <span class="comment">// 其 DataType 為 DataGridViewCell </span></span><br><span class="line">        <span class="comment">// 將其強制轉換為 DataGridViewComboBoxCell</span></span><br><span class="line">        <span class="keyword">var</span> targetCbx = gvSample.CurrentRow.Cells[<span class="string">"gvDes"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">        <span class="comment">// 綁定資料</span></span><br><span class="line">        cbDesBind(targetCbx, selTxt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>別忘記把新增的功能增加項目</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">button1_Click</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    dr[<span class="string">"Des"</span>] = cbDes.SelectedValue;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>現在剩下當範例資料載入的時候沒有去將 <strong>DataGridViewComboBox</strong> 連動，要完成這功能，只要寫個迴圈去跑 <strong>DataGridView</strong> 每 <em>row</em> 的資料，然後變動更新就好。把以下程式碼放到<code>gvInit()</code>這方法的最後</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">gvInit</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">// DataGridViewComboBoxCell gvDes dynamic databinding</span></span><br><span class="line">    <span class="keyword">foreach</span> (<span class="keyword">var</span> dgvr <span class="keyword">in</span> gvSample.Rows) &#123;</span><br><span class="line">        <span class="keyword">var</span> targetCell = ((DataGridViewRow)dgvr).Cells[<span class="string">"gvDes"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">        <span class="keyword">var</span> genderCell = ((DataGridViewRow)dgvr).Cells[<span class="string">"gvGender"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">        <span class="keyword">if</span> (targetCell == <span class="literal">null</span>) <span class="keyword">continue</span>;</span><br><span class="line">        cbDesBind(targetCell, genderCell.FormattedValue.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>現在會發現，畫面好像還是沒有變化，這是因為呼叫<code>gvInit()</code>是在 <em>Form1</em> 初始化的時候，在 <em>*LifeCycle</em> 上，有順序上的問題，所以將<code>gvInit()</code>移動到<code>Form1_Load</code>事件</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Form1_Load</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span> &#123;</span><br><span class="line">    gvInit();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>至於為什麼不移動到 <strong>DataBindingComplete</strong> 則可以參考這篇，主要是因為會多跑一次，所以才用這種架構。</p>
 <figure class="highlight csharp"><figcaption><span>StackOverflow:Alternative to DataGridView DataBindingComplete Event</span><a href="http://stackoverflow.com/questions/24329964/alternative-to-datagridview-databindingcomplete-event" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Initialize_DataGridView</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Add dummy data to generate the columns</span></span><br><span class="line">    <span class="keyword">this</span>.dataGridView_Items.DataContext = <span class="keyword">new</span> Item[]&#123; <span class="keyword">new</span> Item &#123;Id = <span class="number">5</span>, Value = <span class="number">6</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Make your formatting</span></span><br><span class="line">    <span class="keyword">foreach</span> (DataGridViewRow row <span class="keyword">in</span> grdComponents.Rows)</span><br><span class="line">    &#123;</span><br><span class="line">        row.HeaderCell.Value = row.Cells[<span class="number">0</span>].Value.ToString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    grdComponents.Columns[<span class="number">0</span>].Visible = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Reset the dummy data</span></span><br><span class="line">    <span class="keyword">this</span>.dataGridView_Items.DataContext = <span class="literal">null</span>; <span class="comment">// Or new Item[]&#123;&#125;;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">MyForm</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Initialize();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.Initialize_DataGridView();   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>最後順便調整一下<strong>DataGridView</strong>編輯模式，不然每次都要在 <strong>DataGridView</strong> 點擊兩次才會出現下拉選單；只要在<code>gvInit()</code>中增加</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gvSample.EditMode = DataGridViewEditMode.EditOnEnter;</span><br></pre></td></tr></table></figure>
-
 <p>下拉選單的防呆設計，增加以下程式碼在<code>cbDesBind</code>方法內，放在設定 <em>DataSource</em> 之前就可以</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">cbDesBind</span>(<span class="params"><span class="keyword">dynamic</span> sender, <span class="keyword">string</span> selVal</span>)</span> &#123;</span><br><span class="line">    List&lt;ComboData&gt; listDes = <span class="keyword">new</span> List&lt;ComboData&gt;();</span><br><span class="line">    <span class="keyword">switch</span> (selVal.Trim()) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"Male"</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Select..."</span>, <span class="number">0</span>));</span><br><span class="line">            ...</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"Female"</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Select..."</span>, <span class="number">0</span>));</span><br><span class="line">            ...</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            listDes.Add(<span class="keyword">new</span> ComboData(<span class="string">"Select..."</span>, <span class="number">0</span>));</span><br><span class="line">            ...</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sender.GetType().Name == <span class="string">"DataGridViewComboBoxCell"</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> cb = (DataGridViewComboBoxCell)sender;</span><br><span class="line">        <span class="keyword">if</span> (!listDes.Any(q =&gt; q.Value == (<span class="keyword">int</span>)cb.Value)) &#123;</span><br><span class="line">            cb.Value = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sender.DataSource = listDes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>差不多完成了，但是發現這樣連動綁定，在新增一筆資料，在 <strong>Des</strong> Column 會是預設的下拉選項；如下圖所示<br><img src="https://lh3.googleusercontent.com/9U8xAcGlIRNx20djuwxbDZF_086qKrRTl4yfKjev15HKqjaENTOlHMHyn7iP8pYaJ_DrnuPd1ge_wmsiv1LsKTeaW9lIg0lgQv3enVJ4ma44kXY6tmDHUgY7u2Y3VdMNUIhqKTUtuav8A_QjfrpPSDX96C-67mzLMlcLnGJQC5zxKdHq1XUnfjkITTVIIWIoIR86_PjobfhV59gJX_o6w0XIKG2xANrD36UvTojQHUimiXrcfK1ZOWLxAldABiuM2ZnsLu9sq5ZWmhujWJfzt1t32prscdXBerPmcfIcCGSPYZQjUADlXy5n6RViWHBYHqgRYQXOk8RBB-uS2Wcg5tUfjPI1QJZ5T4YTtD0HT5cFh8YFGHgYM16C8OdRbbF1ZP__QE4B_hYUdNHdf_SK35wXaTxdxW3DcDbsTLL-WXoNbtH7Je5nqnOWNfzixJd__rCkeJhvoXeMkAO1PLUIT2i5-rIsKhpcS66dkMrrUsuXAoBUXJC1GzPZvr3dT22uDJwfJ3v7Au84MjlpNnBzcskeqx8N9xGIvu22veiGpKNv0QwUf1aKQoCmXmEfJH0jRwtPp5E1672wtl-AehBhWyHVm9vA6PstQU7GwurxskzbXjqKRwNWST9VLR_YoCOr15Q2bFSFzh5VhECVf3Ahda91Cvuw9z1ne9SeIsiScA=w694-h483-no" alt="Error Sample"><br>好吧，看起來只能使用 <strong>DataBindingComplete</strong> 作法，把<code>gvInit()</code>放到<code>Form1()</code>初始化，把原本的綁定程式碼移動到 <strong>DataBindingComplete</strong> 事件</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">gvSample_DataBindingComplete</span>(<span class="params"><span class="keyword">object</span> sender, DataGridViewBindingCompleteEventArgs e</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// DataGridViewComboBoxCell gvDes dynamic databinding</span></span><br><span class="line">    <span class="keyword">var</span> dgv = sender <span class="keyword">as</span> DataGridView;</span><br><span class="line">    <span class="keyword">if</span> (dgv.Rows.Count &gt; <span class="number">0</span> &amp;&amp; dgv.Columns.Count &gt; <span class="number">5</span> ) &#123;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">var</span> dgvr <span class="keyword">in</span> dgv.Rows) &#123;</span><br><span class="line">            <span class="keyword">var</span> targetCell = ((DataGridViewRow)dgvr).Cells[<span class="string">"gvDes"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">            <span class="keyword">var</span> genderCell = ((DataGridViewRow)dgvr).Cells[<span class="string">"gvGender"</span>] <span class="keyword">as</span> DataGridViewComboBoxCell;</span><br><span class="line">            <span class="keyword">if</span> (targetCell == <span class="literal">null</span>) <span class="keyword">continue</span>;</span><br><span class="line">            cbDesBind(targetCell, genderCell.FormattedValue.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="畫面呈現"><a href="#畫面呈現" class="headerlink" title="畫面呈現"></a>畫面呈現</h3><p>這個系列就先到此結束，之後有其他想法再繼續延伸吧。</p>
-<div class="video-container"><iframe src="//www.youtube.com/embed/ES_sgj5XlIA" frameborder="0" allowfullscreen></iframe></div>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/ES_sgj5XlIA" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
 
-<h2 id="範例程式"><a href="#範例程式" class="headerlink" title="範例程式"></a>範例程式</h2><p><a href="https://github.com/shunnien/DataGridView-winform" title="Github:DataGridView-winform" target="_blank" rel="noopener">Github 上的 Sample Code</a></p>
+<h2 id="範例程式"><a href="#範例程式" class="headerlink" title="範例程式"></a>範例程式</h2><p><a href="https://github.com/shunnien/DataGridView-winform" target="_blank" rel="noopener" title="Github:DataGridView-winform">Github 上的 Sample Code</a></p>
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview.editingcontrolshowing(v=vs.100).aspx" title="MSDN:EditingControlShowing 事件" target="_blank" rel="noopener">EditingControlShowing</a></li>
-<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview_events(v=vs.110).aspx" title="MSDN:DataGridView 事件" target="_blank" rel="noopener">DataGridView 事件</a></li>
-<li>StackOverflow:<a href="http://stackoverflow.com/questions/24329964/alternative-to-datagridview-databindingcomplete-event" title="StackOverflow:DataBindingComplete Event" target="_blank" rel="noopener">DataBindingComplete Event</a></li>
+<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview.editingcontrolshowing(v=vs.100).aspx" target="_blank" rel="noopener" title="MSDN:EditingControlShowing 事件">EditingControlShowing</a></li>
+<li>MSDN:<a href="https://msdn.microsoft.com/zh-tw/library/system.windows.forms.datagridview_events(v=vs.110).aspx" target="_blank" rel="noopener" title="MSDN:DataGridView 事件">DataGridView 事件</a></li>
+<li>StackOverflow:<a href="http://stackoverflow.com/questions/24329964/alternative-to-datagridview-databindingcomplete-event" target="_blank" rel="noopener" title="StackOverflow:DataBindingComplete Event">DataBindingComplete Event</a></li>
 </ul>
 
       
@@ -551,7 +544,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -593,7 +586,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -604,7 +599,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -617,7 +612,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -628,7 +623,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

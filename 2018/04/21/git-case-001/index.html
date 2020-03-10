@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="git,">
+  <meta name="keywords" content="git," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,13 +84,12 @@
 
 
 <meta name="description" content="git 的分支操作非常便利，有些人知道便利性，但是在實務上有些不太清楚如何操作，其遇到的情形如下:開發者單獨一人，所以僅使用 master 分支，添加的功能完成後，客戶說此功能暫時不釋出，另外進行其他功能開發">
-<meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 案例演練-完成的功能暫時不釋出">
 <meta property="og:url" content="https://shunnien.github.io/2018/04/21/git-case-001/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="git 的分支操作非常便利，有些人知道便利性，但是在實務上有些不太清楚如何操作，其遇到的情形如下:開發者單獨一人，所以僅使用 master 分支，添加的功能完成後，客戶說此功能暫時不釋出，另外進行其他功能開發">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/yTFLJUs0KtBfXCQoasLPY2FYKjCKsx0lhDclleklRS5eZEzwFBZ63xaH7ZuzWIOXxX_s84KK1helBoZ4ONDtMd7tAhFXzAWiZkFKwE-aGGjHNQvp6gDM3s0RRBSruqGuj6d0-GAQBdvr2XzAufsSLDHQ6n1Eoumtz-diBQiTUIeyyxzXSOwauUJY5bSi2-BdCjes_MGwbdGDU_5_VUu53xOqXJDxXNgbzZl6Zy21pdXXzo__BchzaoSUIp-K2X1kK8DH22ecwE6Os-HtwYTQS0kldzgmhqMWAwsBzN6Qz-aZmft0CMu47wBrF6vmP2DEkTLbw_WT8sD1abTvW-uD367kua9q9RHR3Tk3niVhzY5r0BkY3WjUwvoPTBrGz7gfcyutCppt3dqvlnqD5I8rpzlns8anhZzkUAbPcY9GS-fmvBLd9NbJ5PK9b9MGFFiAXLzPCPCAnbHMP2uIRaBu7JH4aoYL4OBBgPyNFIgEw0UKcPSxms1U2y69cVWSXuqtT4KV7049YLR6jH_Y18Y4OfSMJbFJtDNdM6C8bp2FyADL9M1aA_MQYqQaEwnF8zZtCfoGaZd5noyCN4b8633U12phxHWIAqfvkaAfyJ3ih5u4dFvgCgM-JSHR2aSHPYdLOEAXK1EBKSJKDz6jqKDp2twIxzaYsPLP=w885-h484-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/ztUllGdSkPbGUWcCef27DKizssGPPuMxKf46AmvtD4bP0_IHTFbx6JPffamXAJxTQ67If7wBpnQIlAnKKHfBDCC6RtlvnOkDUvzbPU047mreMWp09b6LUokEBxqZsoglx27Quh8e1CgW6R9BfiAw_GVIaSGP4Y2gupYid2gbUN_li9zaCYpFPV4U21rwG81KWBAzpQ0U_QkoUHgrL0a5_MlwCI6hvDGxkYrYoOvBStCQD_kRAVTYe9KQf5X2eB1bxEv5xXaEo5drdaz76ySLBx5LbEg7yoPuT_Bdwb_PFpP7aRakdQtZBQfLhtVUVHqrziL6NveI-cPEe7HRo4-y2mgvEWUl887qPasy6rAoQQo2GJcpAx4dOHpYXO4B2uxVoEBUnjoudVyobTUG9Kxn6WANrRSs1U7ufu3g7sR7-fTwNX6acpoLVLN6G__ge4pwqA25Mn4Dx1py2-3sG-YuXwKVukb0KdSNvoXVMe86FMYpRttsLcFX-7foKQ0QF5DYYXzdASkW2MkCn4g-5VY5gdiCCZhi5Ggil-znM_b_PBFSaPSQiZsROwZTzzr5yqp3nq0UtmNdq9uWG2WT08iIPuHiSgNAK0ViIFFke27pMmILL0fv8nBGSOJWYxSv29ko1XhvxepdwLFsHI6W289YPzKAY7DDFZZI=w1374-h611-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/I7vwqF7my7iUgiWV_CEuzMymk1Ji4Tj-QlpvRBt8rKLrEp4KsdzTHGu2y-hp5yI60--1kv5gORBRUp7U67eDpWGe4tbVo6dLf4G-mnSNnAGoI0YJ8N5erMKYTem0jj8yeqvmuxEzA3z0w3isCDD06TduRYOU-8mDLZV0BtXXNN02xpRXeAKLknOUeeu0tw34-QbyVZSePaZGikpE55mYd-Dpc0hlI1IeY-SyB8xVg_iN78vcHzXedYkyPClXnUj1LwGiI1r1jc83R4rWm_0l_YUcnP_85XZ0HkcF8225Fj3TTHTPw8LaQlccp6Rao_TdF3zWlj8958nFn5No2TjLVRl9yPYtm85xuAtlKsG9-_hZ-1EVijK9xvWgtQQmZrQnUckXiKWqFDKSf8fWNP1rscfWSxxFnBpH3AVEO6290H3gNvk-mgdCzhKNSLif3rUNqL6M9JA7QwVEuDOGyaJNKrciTINTzMAEnpZhDXZCbUTFTVspMvDG4vPN_CifPQDPimxsmeLa98_CCTDvN-XTsjsdKCulHvADiEmwor7yXRn_HeBie6n018CCJbh4kWhWnVwYSak2GPfFjrVQfDfxPnMaMX4cA5hUG7wqo7gOXuTu6uHfaXDqVftiHry-TETJ12kxHGt5V8n8_FWVfjwl95pTRB-FzyN7=w731-h635-no">
@@ -98,10 +97,11 @@
 <meta property="og:image" content="https://lh3.googleusercontent.com/gyiD60FVE91oBLvQ-8y4lFZ882BtUyGNSghxHyVfhStuA6Odm_e2UVLAJOR9fmlwSZ5mg89ExSxk9z2WUB58SoQnfME_oxFCXHXwTAklbbEmq6a77VvQgeOe_2_BVev32LV1V6-PKKuxZlLRsnfuHsRo5NSSxlHtPWkpjVo_brlvtZnzAOUNgMt1XsR46RldD-JnUF8WIv3Wd_VIluf3K_YzQKKCh_YavQxx4LvbRQVWtZrOFmWEVPGueT00bFHnj6_ijQpH2Ie-9KgVdGnCiW__BzZwC87kvpQ5ILzqGfnkzfATDdc_aiSHlaZytXOK4mHQeuMcO_JO5Sk5FvZU4U_LEjMrTYxMNTR39XdecCII5mrJ4aMK1a4hNfaW9QTgfxgoZGZOd5BqCpt235JHP_11pzpaHbnChT9EXk-mTmq5jYgRX9wh1--9oG8D5ZM73tedgIhwsTBz2BCbfIl3jsmq16Scy6dyq6lVcJYrXVRmllgtR-ZT3hY8DGbpNk21opaEUyAKMan4PJ--dwuvMJffYLXn45a5uRon5zLgGEjdewSVKzMCrQcMOI_YEQePUpOVQQnQXMMjXZjT4fJGi4Jy3y4DhKRcazkmhJ0outgKkOwQy4GpYXuLIB57bdfc1k0uoUXH3eGIHx5Ouow07btCt1UAg9E1=w503-h232-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/TA4fww6rE9yz34u-3A3-YrxFCPwyE9jYLca4NPmcO9eXab67nc6rB53LdfjzrA0cWXFqLmFCGsFqikjmjkevoPJL9h53uD1f9aY8YJfvb3itPBwl5XWXNgLpjyOrHkL3omE0tgwhX0gr3gcyMoYwTodcO3kQctYb8gnTyuxZES0B7yA45SLKFFkf-_zNlAkSLcYmVDk3dabeAUD0Mu21w0NaVN1WAJKfhkmjio2ILL8MnH-Kt0IMZQeXGxEZcJwCYMX33jl2-SXTYMEXR9asSnpDT3rU-tQbM38olDwD4XxtQEHu96a7zqUckDNpf-TAIK-2w2ZbmP66aniklyf_Bc5_tBFxfRpzS_lGTrAVxbXPPD9JkgIwX40Nbf_pt-qqYfe8FOn8QYplJIwKMLtA8oKDuzsHTtOCTH4_aP7Hgp2zDf7gENklk4xGuDMomt-XJAFQZ4WM5YN7z98zkyvji25UjslVPWlnKw6-PgdPomMaqQjmDMxv7VMzHKLcPusP10mYZPZdK3yltLsfOG1iZU1dU_ViTzLPThqESXKaWJclGKujEeTh8otDxxfucH5XG4epDbKhi4l5PJEWNRoX60d0UWFwlkqym-_vne_VvVSaop_oq3GjEFGs9iLRfSKw8qM1JCTzbLmCRa-YjgGepmeyFVrTB-zY=w511-h295-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/hxfJHUBYMKjTM6fJ4ijgXPy8s4mQybksCoXU5BQiVw_n-pNemg0YDX0masaGwNwg06i8jIPpc92WbcftW6lH-f-ZFaAN1UycyzsR_d5PNLFfyhTA58NP8bZgJdydDXYGhl-NCnJ35JqyivIQFt3TZUfBEiv4Gs5AhzP8Y1Tv1C-OEIeryPy9Xc6ud25VNbMvK6CImp0H8SxZTzB_TWd5O3QbG0msNKQn_lze7IOjiLDA7veu16dcisZZYcPh73ZpNf5uGP0F4PQtwS7ZTqtHQfOMqLJRadUR9XwMjNM_oCCxK3wivC9jVY4JyEcmnGlQotZPZLgWCkZH1uKrtaNmZRJX0gpO3LsIMi0oRrCdWe7jwItnFd5LeFNGQxOM507s3gDhHvl9p_FA16E9zb1dDLnuhymxGHf4cFhyxRHkgfDmbl3wFiTkBT7ZkEaCGKoT3Itih2wrol-h9AExZMulVi3H0qniatiueWaIjdYq9LWIPzCiwaSkT_fwHLYSlG_IAN8bI1b8kZW2KONYH8y-z1CSGKN_TnvT7ezHDHQVRoU6AOfYcBFwKMBh4Y0HQ2HBEcJDAQ7z-hkzBKbu2mFTnZY-ekj29NNoagUzjcrbj8EqShnhaBUnfLOqJnOK35xb9tcEuYDsclMaoaTJfcg5jPco4YwvL_o3=w455-h289-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.686Z">
+<meta property="article:published_time" content="2018-04-21T13:42:30.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.686Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git 案例演練-完成的功能暫時不釋出">
-<meta name="twitter:description" content="git 的分支操作非常便利，有些人知道便利性，但是在實務上有些不太清楚如何操作，其遇到的情形如下:開發者單獨一人，所以僅使用 master 分支，添加的功能完成後，客戶說此功能暫時不釋出，另外進行其他功能開發">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/yTFLJUs0KtBfXCQoasLPY2FYKjCKsx0lhDclleklRS5eZEzwFBZ63xaH7ZuzWIOXxX_s84KK1helBoZ4ONDtMd7tAhFXzAWiZkFKwE-aGGjHNQvp6gDM3s0RRBSruqGuj6d0-GAQBdvr2XzAufsSLDHQ6n1Eoumtz-diBQiTUIeyyxzXSOwauUJY5bSi2-BdCjes_MGwbdGDU_5_VUu53xOqXJDxXNgbzZl6Zy21pdXXzo__BchzaoSUIp-K2X1kK8DH22ecwE6Os-HtwYTQS0kldzgmhqMWAwsBzN6Qz-aZmft0CMu47wBrF6vmP2DEkTLbw_WT8sD1abTvW-uD367kua9q9RHR3Tk3niVhzY5r0BkY3WjUwvoPTBrGz7gfcyutCppt3dqvlnqD5I8rpzlns8anhZzkUAbPcY9GS-fmvBLd9NbJ5PK9b9MGFFiAXLzPCPCAnbHMP2uIRaBu7JH4aoYL4OBBgPyNFIgEw0UKcPSxms1U2y69cVWSXuqtT4KV7049YLR6jH_Y18Y4OfSMJbFJtDNdM6C8bp2FyADL9M1aA_MQYqQaEwnF8zZtCfoGaZd5noyCN4b8633U12phxHWIAqfvkaAfyJ3ih5u4dFvgCgM-JSHR2aSHPYdLOEAXK1EBKSJKDz6jqKDp2twIxzaYsPLP=w885-h484-no">
 
 
@@ -132,11 +132,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/04/21/git-case-001/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/04/21/git-case-001/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>Git 案例演練-完成的功能暫時不釋出 | ShunNien's Blog</title>
   
@@ -158,7 +158,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -176,7 +176,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -204,9 +204,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -214,9 +214,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -224,9 +224,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -234,9 +234,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -244,9 +244,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -259,7 +259,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -280,7 +280,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -321,7 +323,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -357,7 +359,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -369,7 +371,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -388,7 +390,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/04/21/git-case-001/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/21/git-case-001/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/21/git-case-001/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -400,7 +403,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -524,7 +527,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -566,7 +569,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -577,7 +582,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -590,7 +595,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -601,7 +606,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

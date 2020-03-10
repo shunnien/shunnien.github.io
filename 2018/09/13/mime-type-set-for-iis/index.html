@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="IIS,">
+  <meta name="keywords" content="IIS," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,21 +84,21 @@
 
 
 <meta name="description" content="IIS 設定 MIME Type簡單記錄一下設定方式">
-<meta name="keywords" content="IIS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IIS 設定 MIME Type">
 <meta property="og:url" content="https://shunnien.github.io/2018/09/13/mime-type-set-for-iis/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="IIS 設定 MIME Type簡單記錄一下設定方式">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/nFGHoiNAh5Ex6Ys84aPauKybjHRm8_Xx--qbGzR_56mIFBOQ2PU9N93dInBKgV2HVf9hq4xXvHSUb5j5Kf08r5gchzK1SRe-u_YWX-Dvf6YGNbAXVSbTyxvSlHHAAcpVymYgch-Q5qSg83uQtlXeqtOlqoICiCltaG6dD7uZ5Bv1Bk7Klb19NLf2J-R70BZhBSIZ_VODZiVY7Yodk3Z9RKo78cxMmgIR_tNpcAdqK8unyQTU6AhIbV9ZWLHj9iGMv-njKqgXA_OWFxL1nr9B5khwhu3XkbiNP2RMYoAcNes_NxrQOXx77bwmP6a-eBuvYxkF_Cq4aXBcTaVB19iFIgpAukWSkl6KEkqAUE50Qcl-NQ0SVFrdOK6QHVKtI6mIDDsJgUyFsyPavdkE7CuOyMWg-zXhw36gdgWZ-rVdsCK9Qqx0T4GdRn1-g8HuGcEFcia7BeGzblhimrOmSmRTtDfgMyZxJi1BKrh0rjBekYDsIcexfYaz_Bvz2r8oP5bXDot8T32i38TzR9Gn-42GvD4Q7N00g0Q_cHswv4JFpwdS0crDc2kmUNs7CA4FfIX7oVIwSgyARbCX0kcw57G9jbKfwZ4TKN35F4sBbm3moZtj_l9qBNNDnCRFI06EV6U1q5RnVNly-LjY6OX3gKP55Rr5CTqvcr5hfWCy7yCJGXwX8z_SOLnIeqcN=w616-h252-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/3HVMwl2jqvB9N1qQp78E_tPvVO-A9Df4QsnOlUNB2HTajLEC42cjiMaFEfY4UWs6YyLOvN2E6C2tk_KrMX3V1OtjQRyTO1YkXbcpz9gS1ItZrsiftdo5KSh9yx5JghOMLe-6SeEuT-ASaUOGquFaY5qfZyu53R7IE0pjX5P1iL4ExLIbkEhrOccUsa7DlUW-0GQKxHYdCV0FUzR3gRhkECqvI2nQgUwoFeRN5JBn9Fd_h8_nfn5nbSXXl_u2LCARGP9_5CFLdKvC4v0gcQ3RC9k0HgNlbB-SDrXSB0Se51zpH1Iy8q11guLNa35cf_bYEyTIAM8p6YSpbOP3b_CvoodcNrqy9Ph3ah4LwIE0GnMh4woJ9SAkOgoIRNz9me172JghKCsLHOfQ7y6sHE2fgRpebYrmB4EqTb041_MzDZevUayyLTkGsfB4nhCCKitW2if-2OF_ApHdcV3eOXiUh1qRB5AeD2FQQJS2CclD11VQObbkkX_XGSsUOttIlJQJ44P9WQCGdP5uPdjqN4aCW44B3rcKRKm3Un4zdqDvhQ7WLWEwk0z-20oMBvxsmvGCQL8D9u9mFYsqk5YSiaxzkAXyMqNvUwxvkJHQQhyxj4Hf0-Ja5WGCFdUcK7jE2cJ8NeOniqUcf9fqVAyZJS7SgGvnk41KKM0PfkfealjcDZPtILG69Qr6CC-J=w619-h346-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/CnPAHXZaIyJvazQDr988X8TChyQPCZB1FWse3cLIm2OrHQjx3DEbapKfWgj2o5w5toTAk61F_zjEFsu-MWlrsNeRxxKGzbw_csXgbxhr2H5UmV-HJvJZ7AbjYZ0ZSWT91hx3VK-HD0Ss-XamGUHIgm2iAVO0FPk3vS7Kbdo47LzHweb10GxUSyZahKZEghW-oFbntC1ljBRQ2zyQ0IKyQ9Pd4welY2B-y72jptqWi0LY8AcSmPhdr7ilhnyjOvnpnP82wRmK_T32z-J4GiE4Lqh08YuWMPOOOmInJBbQhb7HoLHR4T-c9WGuCzys3bTFG4W6uAZsD-rAp0-wIG4q77QuRBIU5oLeRba-fED_bCAd5oc8PFtN_wLowvEFZ-MlKK18ofzOnUiGwG7ZjKiF-ZIlEPq5IV2_jVO3hR5AuY4eBdtnZkThdAkqYtfxxFTCAYqpQe_Y4wP0QnBqsGeolkTPp-o_UNDpTL_F9p3nSosFQvE5wV-zb91FBcDEDdQB905XvOogEkJhE6a_7wYANLXgByANSYL_la1Lk1ETgvT5bZfvNn_2uaJUYdp1qxvwUvwaq5PzJvxwpmTqVWjWH-Zmd4Z2zEGp2UWKW_MU57_jhvqJAZI6cjPAKF3cRe9_1fYqxX05VmcFMIXhu6SViI2DL42GgL7j-6Nh8X8nZTSW1wm80zWMLx1q=w828-h504-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/2SYx8vgzDtjvVy2vcu13OJnki5NGvX3ZyAoyphrc0dBM6soYscAjsEUopD3P321LnanDlsFJ0oFqR9NKwyTelXCpFcixHnt6vc3XaUohAUGJBw2rx0ax4CYoOLGH2DOtzzkjcDoCXbLRQ8RccIzauYBXNGCBNOXJVq56Ppt8x3aqu_wPGxOGr9G97xd9dHVs0k6m49V5gf6RW9g8GVDaXivlufbGi687Y81anuHgBvSOrhgQbmRCoBhElsrg1TefeDG2wSlfQCfxhZ4fGAL6XNx3Dzr6qPkusoVKs4QLls1iYAXK_wd27a8zVhYf2v4T4_toEjQnlF7lrkuVjdGEAzkAVhThimAcvDsd5ZyWxKPnD6MT3oUHcxj73gra8viL2IdiJhMKuTeV1j4RXinzzhJwrJ7kQ9cxL9bv7sfjPLDMASWDJDeZe8KCLElcu4RgZGIiRGczyvKQPptd3tJp8JjuRIobY67Tptx6vSDH35VCjo-gcbdqqyXvW9eV1g2TPzMhT4SwvpbkLK2p1JLhfQoso6a6mbCAwnyRaN8e4yVKhX_za1tNxe8Z9vSdzB9D6rnLFxVbfEUoWslvywHIm2wvoEjhyC07q30VX2byVJS8e_jlWte8a-dlBFRzKQR_9dkHXCZfwh9yy2S4mmCU1kydsSkvgZvdbbagHGFroMRvMx-3nfagFYBm=w660-h676-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.696Z">
+<meta property="article:published_time" content="2018-09-13T07:00:44.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.696Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="IIS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IIS 設定 MIME Type">
-<meta name="twitter:description" content="IIS 設定 MIME Type簡單記錄一下設定方式">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/nFGHoiNAh5Ex6Ys84aPauKybjHRm8_Xx--qbGzR_56mIFBOQ2PU9N93dInBKgV2HVf9hq4xXvHSUb5j5Kf08r5gchzK1SRe-u_YWX-Dvf6YGNbAXVSbTyxvSlHHAAcpVymYgch-Q5qSg83uQtlXeqtOlqoICiCltaG6dD7uZ5Bv1Bk7Klb19NLf2J-R70BZhBSIZ_VODZiVY7Yodk3Z9RKo78cxMmgIR_tNpcAdqK8unyQTU6AhIbV9ZWLHj9iGMv-njKqgXA_OWFxL1nr9B5khwhu3XkbiNP2RMYoAcNes_NxrQOXx77bwmP6a-eBuvYxkF_Cq4aXBcTaVB19iFIgpAukWSkl6KEkqAUE50Qcl-NQ0SVFrdOK6QHVKtI6mIDDsJgUyFsyPavdkE7CuOyMWg-zXhw36gdgWZ-rVdsCK9Qqx0T4GdRn1-g8HuGcEFcia7BeGzblhimrOmSmRTtDfgMyZxJi1BKrh0rjBekYDsIcexfYaz_Bvz2r8oP5bXDot8T32i38TzR9Gn-42GvD4Q7N00g0Q_cHswv4JFpwdS0crDc2kmUNs7CA4FfIX7oVIwSgyARbCX0kcw57G9jbKfwZ4TKN35F4sBbm3moZtj_l9qBNNDnCRFI06EV6U1q5RnVNly-LjY6OX3gKP55Rr5CTqvcr5hfWCy7yCJGXwX8z_SOLnIeqcN=w616-h252-no">
 
 
@@ -129,11 +129,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/09/13/mime-type-set-for-iis/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/09/13/mime-type-set-for-iis/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>IIS 設定 MIME Type | ShunNien's Blog</title>
   
@@ -155,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -173,7 +173,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -201,9 +201,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -211,9 +211,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -221,9 +221,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -231,9 +231,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -241,9 +241,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -256,7 +256,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -277,7 +277,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -318,7 +320,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -354,7 +356,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -366,7 +368,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -385,7 +387,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/09/13/mime-type-set-for-iis/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/13/mime-type-set-for-iis/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/13/mime-type-set-for-iis/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +400,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -516,7 +519,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -558,7 +561,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -569,7 +574,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -582,7 +587,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -593,7 +598,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

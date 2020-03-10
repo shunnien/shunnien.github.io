@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="notes,">
+  <meta name="keywords" content="notes," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,21 +84,21 @@
 
 
 <meta name="description" content="紀錄 Will 保哥 的給 C# 開發人員的第一堂 .NET Core 入門的內容筆記，內容介紹詳細，從 .NET 介紹開始說明，">
-<meta name="keywords" content="notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content=".NET Core 入門筆記">
 <meta property="og:url" content="https://shunnien.github.io/2018/01/26/NET-Core-first-touch/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="紀錄 Will 保哥 的給 C# 開發人員的第一堂 .NET Core 入門的內容筆記，內容介紹詳細，從 .NET 介紹開始說明，">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/3sFEa1vENTjm-7ElfomC92IUG6h2mMGR86tsiONMIATM90GN2DuiP4qYdbyJ7B-7m4jGk0eTHme_t2zfY4snZrBF0QJnvdSqVyzeb_x_vcez03zUN8-FTrYXbdmXR_sB3qtqqHMzwfJAzcM0wUuv2B3XprnxuGmSFRukk3E2Uh1XyfjBXK0YPGo9TI6dP0udSGlIBqWecj3pnDUPUStrQPXMMQa91N-IE6WPFkxP908hy7tw4uJrsgoBz9Bw4e7YQ1ADaSehXyORCqJSiVlOaV8M4YUaEUazsUtlXZUFBAYJfi_ZDPLtaoorLgWRa_cDic1T8iwckK__gJjrZbq6rf_jUx8JaunTO36dNoN5EmpO1HYb-Uf1_OqOyP4pzydZRkHCpYVo_ILMBpVwVHIzJEZuRXmcmKoVKkS8JuU3aewRGHkxDNkabDKb528cBXqo3Vfy_HsF-vbTuiEYxvc_AvCgTUga_iTVr84UHHJXt0ELGeF6m1a27Z9-v5Rg6Yp55R7SztZMqdEDhoQSP4vzXDfMW3TivkM2UYjNq-BEC7lHsyDqVkgyfNF56vW2uH45FaJcXN2xGMmNUClGLvqZhf2iW_-XK9QuLBo5JBRb13sDJwaMau0XvYo1FsXR3p5BHEALkGQJvq4W83nbduRDnlSPbcO_NE6v=w893-h605-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/1bfuhvDXrQX85bRB3z08ohsys60axwEL8sgWUL1UK-rodAqWy8A5IQltDIPxi_lX1JyRB0cDigR7ChZK08tweQDgEl6hHXWvsrYZ-Jm4KOwRVITWYWJvOSEGgG_pxiqmpAT5wb5Mliqrw4YkrN07NHJKkTbFR6oHHNbCk078J4fsvIcheSpjeDZj01709zkhSSl0ndQSqAItOLfioDhzKzG554hPNVJgX-axOa66i52IDif8xpxk7GcfGW4PuwC0cfzkA6GZYYUDRd2lFmhd3J2zlm6zArDjlgzYfc9Kw-Q_I-7ZmVJJploxp_vgPQx-Hgm32fwbmAuG-N5px52bOh7amLI6Wn3-W_9NcDcr7jvuH1k4e2puQ-Gg1w2tAw8Tg-MAyNmTx9hTQ0h5Nde9cffyd84az66dm-7zt1bL4VDXGSVr2Z10EXTTrRYzCTuX2uk5__zCdrSR181b53WJDEMmFzrIUl-viU6sHEUjzucLd9udZmuLY2_qbAOkXhYEFY4eqW5jy1aNRYwSt61zKPamM9c6KQtj-InWd_k1eVf41k5e_8KxcLbLizW_iL7Fh3U-14S86iSfbMk-TvZlzl5-uvuWNvTZaLSPiEXkntdEJ4RO-DyCM3ofEp3VSN2tu4cyDD-VfUxsZPJ_T4d_L_X_62YNnkgX=w874-h647-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/YEW20ENrvzuh6s4MhoqDTmERjOJchacSY5fkasMGROt2IeZ19heVPEBlp7b6vuLOcxoWFtY9cSHKEBloIATU1OgWBbP2AcUZ5XIZTxT-IEtEbdvyfLYaMs7a66AZIhbmEKllr1XC-QTj4l6ScDWbIhwZQ_q8tfHTkexu1FvLtDvyOBulpo6d0U3rs1m0dnnanP7zD4JvMtTO0WcE2dIttjir4FDs1kkEo9dNRYILdEO-3CR8mnc1zFkIPAxxciIayR07iFa0jlQrez8w2F0hKDxhiR1LQj9VcDQK226X5m7-m20JUgHmD_SYnONERvXpsEy9vSwm8Je6LWxXU04A__w_C4VYD9FPbAYoN2C75OID_bKpVguAIw5mPsyQcTn4Zpf1-Kvc2mwN2UXXMyjELjmil9AoR3c-uAWXZrfMLmf9fXRn-nTj1wH5Qx9xjO1BpC9SJsRU-IiUYb19WcrOncbKtJPdK-s5U1KZLvsXkNCG6gq2SZwC9NXijoJp4zhCGcJDQfrM3xV8J8Flp9nKFOhO3iPXNg_w-IsuSJ3iMVqbCXTPsR_zv2J_Vvj4BSbbCQjGP_5W7PbdKj4ryDj8sPnRciynj1W763YvWrybjN3prevDLUo_yJRgE6-N26pxdaEu_QSXVLA8bsn1qsaZ4p6A_2cgTgHC=w466-h307-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/g3kvMjRbRSdw0gpjBsHch63uNbiSqDUiEDlHYasA4caycYtSXijWblYSWje9HEgRNemS7bG1Js-FH98H2WCOuq6KZ0E6rql8toHuNKoSm6RLWNQIpi1XG4lmbr75Y5Bi76BCHDrSLE-K-iek66V4dl2VqCC7ldASmJvpEstvpIwzIQMa1xf1tbZagsVB1526sdnXndEwvky1DDYeO23dRO_w7s1HcaxGa6sHNZ-170uqWk_48lPxLor2ti0HSk7bdpi9vI2V1yRkazT-VLQ5CLNyEEkjURP0h9N8D66SdDbTfyAPm8kVeGevByOGgxYhopOD6ihe20YkEwZ2-wBfCxczUOoeJQunXiW3Mf9tA2SPrgCcS-hz6OrfOdTct5MmR4KbFGRY6IjtS6KYRqEKeSDqilMo0aHzMkcdHiCmdqe16Zrn4pS3A20IfYZXFNwwnP4BwuUFHCR5c5ukNZ5nTdwmh7RfRgscJOMEMyh6cpRx1XdGTwVE7ax-ZyVgOJzHaWdGNkGL0Bw-piizRayv5NIsqZ9STplgr0BchZpE104J-fAyZh5PNBEOG_9EMbmVsIv8DDLemvv4Yj7Or2MSyfB5VLyMdGPZVHsIDRrEaUsOADDf2xrDgzTE2cuq6F-AG6SXamR9v_Tn-hL-jaX5II-DGPHf9LP-=w767-h605-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.670Z">
+<meta property="article:published_time" content="2018-01-26T03:16:45.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.670Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=".NET Core 入門筆記">
-<meta name="twitter:description" content="紀錄 Will 保哥 的給 C# 開發人員的第一堂 .NET Core 入門的內容筆記，內容介紹詳細，從 .NET 介紹開始說明，">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/3sFEa1vENTjm-7ElfomC92IUG6h2mMGR86tsiONMIATM90GN2DuiP4qYdbyJ7B-7m4jGk0eTHme_t2zfY4snZrBF0QJnvdSqVyzeb_x_vcez03zUN8-FTrYXbdmXR_sB3qtqqHMzwfJAzcM0wUuv2B3XprnxuGmSFRukk3E2Uh1XyfjBXK0YPGo9TI6dP0udSGlIBqWecj3pnDUPUStrQPXMMQa91N-IE6WPFkxP908hy7tw4uJrsgoBz9Bw4e7YQ1ADaSehXyORCqJSiVlOaV8M4YUaEUazsUtlXZUFBAYJfi_ZDPLtaoorLgWRa_cDic1T8iwckK__gJjrZbq6rf_jUx8JaunTO36dNoN5EmpO1HYb-Uf1_OqOyP4pzydZRkHCpYVo_ILMBpVwVHIzJEZuRXmcmKoVKkS8JuU3aewRGHkxDNkabDKb528cBXqo3Vfy_HsF-vbTuiEYxvc_AvCgTUga_iTVr84UHHJXt0ELGeF6m1a27Z9-v5Rg6Yp55R7SztZMqdEDhoQSP4vzXDfMW3TivkM2UYjNq-BEC7lHsyDqVkgyfNF56vW2uH45FaJcXN2xGMmNUClGLvqZhf2iW_-XK9QuLBo5JBRb13sDJwaMau0XvYo1FsXR3p5BHEALkGQJvq4W83nbduRDnlSPbcO_NE6v=w893-h605-no">
 
 
@@ -129,11 +129,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2018/01/26/NET-Core-first-touch/">
+  <link rel="canonical" href="https://shunnien.github.io/2018/01/26/NET-Core-first-touch/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>.NET Core 入門筆記 | ShunNien's Blog</title>
   
@@ -155,7 +155,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -173,7 +173,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -201,9 +201,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -211,9 +211,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -221,9 +221,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -231,9 +231,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -241,9 +241,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -256,7 +256,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -277,7 +277,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -318,7 +320,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -354,7 +356,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -366,7 +368,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -385,7 +387,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2018/01/26/NET-Core-first-touch/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/26/NET-Core-first-touch/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/01/26/NET-Core-first-touch/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +400,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -544,7 +547,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -586,7 +589,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -597,7 +602,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -610,7 +615,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -621,7 +626,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

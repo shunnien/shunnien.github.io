@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="Asp.Net MVC,">
+  <meta name="keywords" content="Asp.Net MVC," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,19 @@
 
 
 <meta name="description" content="直接進入主題，此次要使用 DataBase First 來使用 Identity ，所以先使用範本建立 MVC 專案，另外不要使用 Authentication">
-<meta name="keywords" content="Asp.Net MVC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Asp.Net MVC 5 Identity 使用 DataBaseFirst">
 <meta property="og:url" content="https://shunnien.github.io/2017/08/10/Asp-Net-MVC-5-Identity-DataBaseFirst/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="直接進入主題，此次要使用 DataBase First 來使用 Identity ，所以先使用範本建立 MVC 專案，另外不要使用 Authentication">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/EsLYwWTVTW_La1If-yyxC7bsE_9sSFFREIDk1p-a7pnUx0OVSmThbyCPc14QFRgtQ2Fbz1osJrsPDKnVwQ9MhhNBpNWMKHLOL-QESSCjhIZXZdRlZ-7H1hU6xF6LM6f6gYpcbSehITOYcKKgaosf7xsfOPwxc0sJ21yh-xNksPvUh5ymVHtPDjGtNa9RFsoWTNUjRSbhoa_wA-8igN4wsoHfywUeld0mr39iTEQ-ZdzEekMuEV_DCxeSp-f7ynshawecOroNP0G9rA776arcQRmtb2auom_rLiyq1MHf5UzyLppsZmtRQj2tGr1ELzF05f9CZZ5s9VtkvlYChQiLOrQhgauVKXjUoK0s7H0eCKW5A4-asHdgeHY5KnxCbpf1I-0FkpW9TQRY4VzL8RNvKxOsxBUc3rynN-_KZv2bnTojpOakbQ0-r2bKMeDIEGgpV8gV5oQ5g-i1AVp4clGPobx0tDcGgDy7_F4ZwH6RSJyPdF5OqHqf96jxoakxu4DRicssEgrtkwAWw12z4nB0SIKECqWh-Mj47cIwTub91m-ZLGdQZjVrx-EitYqja3YFRYtDAtujslfp4zLd_jBGhMC_ckfnyT_nEllzwE5oqIaiflKAKVFBvjnXeoZWA1Q8smMYenJJYqyzP17IVTL22qjqqOMI8MuNW1ebftSCuxiDRQ=w977-h659-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/nXm1bwaXZARhopxY3GAAvCjG4G1Jpaeh7TeoiqgOPLxwAd08694cx0p2gsiK8YbY274o5tmFGLOZ_mKxeJOm8aOcmgt8K8v7ut1NDJN2D0rpYfFVVTompnVFWfXrMFm_nHPnei13cGXDK1XymcgOQ-tFjgUkpPrJY3_XwUeISvht-jOI6MKsCWaIh8ciATYxKkh3CgOGnKjIxSpQnfGIp9LHKBxX-zY303ne--JszherW1srGzrZVD3I7lFwn7sEYodaTIfVFvYG0OE0JdGgV7DYti51F9y-eMwA7SBysHfrQrfwdRjkYREouD1C0X_eB_U3XPMoT2m_hbjXXHhuLHQvumrvx9uL9cTpg0tJ0v3lK1-FMfXHRw47a1qLZfCWDrI8ZvH5tZ1ac4oIuf0-98CV1sVt5N-2F3ZWxUFCAUmPXpmMJ8-SVkqf6NCCMiDDHSNJWSevRWgu-vsmW-LESx5mls7qq9K692VT4D14IFAafyZpy0dKZUAuRIklQmu_bLT3a_MdCFIB6R5SX0I2deMk0ZYAM6m0OKqaaPwjD5ty2C8KxyOP5crD9DxcaXRnDudhWnKJdPdC-p4JBW6uwwBLSGTAaeRryGIhylt-zis8Nip7nLJzxIl7-eJyO_t_xmTnQeDyB--CRV5fpFDYdX-nBCRcoQ2bI7RPIB5m1EkvDA=w1194-h132-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.651Z">
+<meta property="article:published_time" content="2017-08-10T03:45:57.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.651Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="Asp.Net MVC">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Asp.Net MVC 5 Identity 使用 DataBaseFirst">
-<meta name="twitter:description" content="直接進入主題，此次要使用 DataBase First 來使用 Identity ，所以先使用範本建立 MVC 專案，另外不要使用 Authentication">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/EsLYwWTVTW_La1If-yyxC7bsE_9sSFFREIDk1p-a7pnUx0OVSmThbyCPc14QFRgtQ2Fbz1osJrsPDKnVwQ9MhhNBpNWMKHLOL-QESSCjhIZXZdRlZ-7H1hU6xF6LM6f6gYpcbSehITOYcKKgaosf7xsfOPwxc0sJ21yh-xNksPvUh5ymVHtPDjGtNa9RFsoWTNUjRSbhoa_wA-8igN4wsoHfywUeld0mr39iTEQ-ZdzEekMuEV_DCxeSp-f7ynshawecOroNP0G9rA776arcQRmtb2auom_rLiyq1MHf5UzyLppsZmtRQj2tGr1ELzF05f9CZZ5s9VtkvlYChQiLOrQhgauVKXjUoK0s7H0eCKW5A4-asHdgeHY5KnxCbpf1I-0FkpW9TQRY4VzL8RNvKxOsxBUc3rynN-_KZv2bnTojpOakbQ0-r2bKMeDIEGgpV8gV5oQ5g-i1AVp4clGPobx0tDcGgDy7_F4ZwH6RSJyPdF5OqHqf96jxoakxu4DRicssEgrtkwAWw12z4nB0SIKECqWh-Mj47cIwTub91m-ZLGdQZjVrx-EitYqja3YFRYtDAtujslfp4zLd_jBGhMC_ckfnyT_nEllzwE5oqIaiflKAKVFBvjnXeoZWA1Q8smMYenJJYqyzP17IVTL22qjqqOMI8MuNW1ebftSCuxiDRQ=w977-h659-no">
 
 
@@ -127,11 +127,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2017/08/10/Asp-Net-MVC-5-Identity-DataBaseFirst/">
+  <link rel="canonical" href="https://shunnien.github.io/2017/08/10/Asp-Net-MVC-5-Identity-DataBaseFirst/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>Asp.Net MVC 5 Identity 使用 DataBaseFirst | ShunNien's Blog</title>
   
@@ -153,7 +153,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +171,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +199,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +209,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +219,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +229,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +239,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +254,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +275,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +318,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +354,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +366,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +385,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/08/10/Asp-Net-MVC-5-Identity-DataBaseFirst/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/10/Asp-Net-MVC-5-Identity-DataBaseFirst/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/10/Asp-Net-MVC-5-Identity-DataBaseFirst/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +398,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -419,18 +422,11 @@
         <p>直接進入主題，此次要使用 <strong>DataBase First</strong> 來使用 <strong><a href="https://www.asp.net/identity" target="_blank" rel="noopener">Identity</a></strong> ，所以先使用範本建立 MVC 專案，另外不要使用 <strong>Authentication</strong> <a id="more"></a>。<br><img src="https://lh3.googleusercontent.com/EsLYwWTVTW_La1If-yyxC7bsE_9sSFFREIDk1p-a7pnUx0OVSmThbyCPc14QFRgtQ2Fbz1osJrsPDKnVwQ9MhhNBpNWMKHLOL-QESSCjhIZXZdRlZ-7H1hU6xF6LM6f6gYpcbSehITOYcKKgaosf7xsfOPwxc0sJ21yh-xNksPvUh5ymVHtPDjGtNa9RFsoWTNUjRSbhoa_wA-8igN4wsoHfywUeld0mr39iTEQ-ZdzEekMuEV_DCxeSp-f7ynshawecOroNP0G9rA776arcQRmtb2auom_rLiyq1MHf5UzyLppsZmtRQj2tGr1ELzF05f9CZZ5s9VtkvlYChQiLOrQhgauVKXjUoK0s7H0eCKW5A4-asHdgeHY5KnxCbpf1I-0FkpW9TQRY4VzL8RNvKxOsxBUc3rynN-_KZv2bnTojpOakbQ0-r2bKMeDIEGgpV8gV5oQ5g-i1AVp4clGPobx0tDcGgDy7_F4ZwH6RSJyPdF5OqHqf96jxoakxu4DRicssEgrtkwAWw12z4nB0SIKECqWh-Mj47cIwTub91m-ZLGdQZjVrx-EitYqja3YFRYtDAtujslfp4zLd_jBGhMC_ckfnyT_nEllzwE5oqIaiflKAKVFBvjnXeoZWA1Q8smMYenJJYqyzP17IVTL22qjqqOMI8MuNW1ebftSCuxiDRQ=w977-h659-no" alt="create project"></p>
 <h2 id="套件安裝"><a href="#套件安裝" class="headerlink" title="套件安裝"></a>套件安裝</h2><p>專案建立好之後，手動安裝 <strong><a href="https://www.asp.net/identity" target="_blank" rel="noopener">Identity</a></strong> 套件，可以透過 <strong><a href="https://www.nuget.org/" target="_blank" rel="noopener">Nuget</a></strong> 安裝以下這三個套件</p>
 <ul>
-<li><p>Microsoft.AspNet.Identity.Core</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Package Microsoft.AspNet.Identity.Core</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Microsoft.AspNet.Identity.EntityFramework</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Package Microsoft.AspNet.Identity.EntityFramework</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Microsoft.AspNet.Identity.Owin</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Package Microsoft.AspNet.Identity.Owin</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Microsoft.AspNet.Identity.Core<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Package Microsoft.AspNet.Identity.Core</span><br></pre></td></tr></table></figure></li>
+<li>Microsoft.AspNet.Identity.EntityFramework<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Package Microsoft.AspNet.Identity.EntityFramework</span><br></pre></td></tr></table></figure></li>
+<li>Microsoft.AspNet.Identity.Owin<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Package Microsoft.AspNet.Identity.Owin</span><br></pre></td></tr></table></figure>
+<img src="https://lh3.googleusercontent.com/nXm1bwaXZARhopxY3GAAvCjG4G1Jpaeh7TeoiqgOPLxwAd08694cx0p2gsiK8YbY274o5tmFGLOZ_mKxeJOm8aOcmgt8K8v7ut1NDJN2D0rpYfFVVTompnVFWfXrMFm_nHPnei13cGXDK1XymcgOQ-tFjgUkpPrJY3_XwUeISvht-jOI6MKsCWaIh8ciATYxKkh3CgOGnKjIxSpQnfGIp9LHKBxX-zY303ne--JszherW1srGzrZVD3I7lFwn7sEYodaTIfVFvYG0OE0JdGgV7DYti51F9y-eMwA7SBysHfrQrfwdRjkYREouD1C0X_eB_U3XPMoT2m_hbjXXHhuLHQvumrvx9uL9cTpg0tJ0v3lK1-FMfXHRw47a1qLZfCWDrI8ZvH5tZ1ac4oIuf0-98CV1sVt5N-2F3ZWxUFCAUmPXpmMJ8-SVkqf6NCCMiDDHSNJWSevRWgu-vsmW-LESx5mls7qq9K692VT4D14IFAafyZpy0dKZUAuRIklQmu_bLT3a_MdCFIB6R5SX0I2deMk0ZYAM6m0OKqaaPwjD5ty2C8KxyOP5crD9DxcaXRnDudhWnKJdPdC-p4JBW6uwwBLSGTAaeRryGIhylt-zis8Nip7nLJzxIl7-eJyO_t_xmTnQeDyB--CRV5fpFDYdX-nBCRcoQ2bI7RPIB5m1EkvDA=w1194-h132-no" alt="Identity Packages"></li>
 </ul>
-<p><img src="https://lh3.googleusercontent.com/nXm1bwaXZARhopxY3GAAvCjG4G1Jpaeh7TeoiqgOPLxwAd08694cx0p2gsiK8YbY274o5tmFGLOZ_mKxeJOm8aOcmgt8K8v7ut1NDJN2D0rpYfFVVTompnVFWfXrMFm_nHPnei13cGXDK1XymcgOQ-tFjgUkpPrJY3_XwUeISvht-jOI6MKsCWaIh8ciATYxKkh3CgOGnKjIxSpQnfGIp9LHKBxX-zY303ne--JszherW1srGzrZVD3I7lFwn7sEYodaTIfVFvYG0OE0JdGgV7DYti51F9y-eMwA7SBysHfrQrfwdRjkYREouD1C0X_eB_U3XPMoT2m_hbjXXHhuLHQvumrvx9uL9cTpg0tJ0v3lK1-FMfXHRw47a1qLZfCWDrI8ZvH5tZ1ac4oIuf0-98CV1sVt5N-2F3ZWxUFCAUmPXpmMJ8-SVkqf6NCCMiDDHSNJWSevRWgu-vsmW-LESx5mls7qq9K692VT4D14IFAafyZpy0dKZUAuRIklQmu_bLT3a_MdCFIB6R5SX0I2deMk0ZYAM6m0OKqaaPwjD5ty2C8KxyOP5crD9DxcaXRnDudhWnKJdPdC-p4JBW6uwwBLSGTAaeRryGIhylt-zis8Nip7nLJzxIl7-eJyO_t_xmTnQeDyB--CRV5fpFDYdX-nBCRcoQ2bI7RPIB5m1EkvDA=w1194-h132-no" alt="Identity Packages"></p>
 <p>另外此次範例使用 <strong>Owin</strong>，需要安裝 <strong>Microsoft.Owin</strong> 套件，這套件有許多相依套件，裝完後會有</p>
 <ul>
 <li>Microsoft.Owin</li>
@@ -557,7 +553,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -599,7 +595,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -610,7 +608,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -623,7 +621,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -634,7 +632,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-tw,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -20,12 +20,12 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc">
+  <meta name="google-site-verification" content="TKAshpgDV0PtRJSRSyRtph7ySoPZ38bzYzvj5Sh8-Sc" />
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -50,9 +50,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -70,13 +70,13 @@
 
 
 
-  <meta name="keywords" content="Docker,Windows,">
+  <meta name="keywords" content="Docker,Windows," />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="ShunNien's Blog" type="application/atom+xml" />
 
 
 
@@ -84,19 +84,20 @@
 
 
 <meta name="description" content="我使用的 windows 10 中，我自己的帳戶不會是最高權限，會額外設定一個最高權限的使用者來提升安全性；詳細操作設定步驟，可以參考 demo 小舖 Windows 10 新增本機帳號步驟。Docker 我在今年初裝了 Docker for windows ，本來開機啟動都還正常，後來發生了 access denied ，想說怎麼權限不足，上去 github docker issue 一看，原來">
-<meta name="keywords" content="Docker,Windows">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows 10 中 Docker Access Denied">
 <meta property="og:url" content="https://shunnien.github.io/2017/07/19/docker-for-windows-access-denied-in-windows-10/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="我使用的 windows 10 中，我自己的帳戶不會是最高權限，會額外設定一個最高權限的使用者來提升安全性；詳細操作設定步驟，可以參考 demo 小舖 Windows 10 新增本機帳號步驟。Docker 我在今年初裝了 Docker for windows ，本來開機啟動都還正常，後來發生了 access denied ，想說怎麼權限不足，上去 github docker issue 一看，原來">
-<meta property="og:locale" content="zh-tw">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://lh3.googleusercontent.com/89KcL81sOuWBAADdiw5IsGv_TtVEWUCskZ-T5ODcKzx_Oi31v-pUTAZ8kcSl3QTonDwzAScucegA1yj22J5FCLyygbI0yJpuP0w9jOKGfoC66dTNHd9e6N9kTYfBdlZnIsYO5b2vDXiBMqjbB_A2UJicv57uD-fmlvHd5onKku7YUvsFriTHYgmdOdWFNgNrkEf2OFXgP1Ayj-VGQ38rqSIW0WtJQddqFKKhVd0S_qHMFy53c9jgE6q_AqXtnwqi_g8Du1pjSg_BEcCyqm7hK7BiiVPChr_EQArpcFj9EzL6FFNbj93Qabxm_uMVfu2znSUaj47FY3GDFj5de46_P4IAS9dxA4zL9z2kSZ_Sy-bd5z6h-6N0OCpIJQSJ4Zk1QUBPID_qgFPAStJHcOHgg1Ls280cExa1BlGLlBMBflDub9DBiZvENHb8p4cm6GwQ2cjdW7CGJ8lGbzb1hRE63_C4NfU_e26PxRIE0yVS4KyjcRkTB1GbmjJ7D4pbrj53UG4ZMz2g5g4Rdc71qIG6SCDfwUt0WkcrOB0Y5USNrF5JElkriOF7IE-Nli98I_btTaprpZlvqJwPLnDc8i6FxtvhNL30bzerl_9BcfnKhWV1HSJm8b5wdEu6VKmXpycWJNM1mbwWPhvahmdnnAaZbBAoLfuVeOUQW4NcilPWr9LPAA=w446-h148-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/vQWiYpisFvx5scntHlYvLcb1-yLlxtqG89ykpX7GZd52XRITSSgcjdldjiObw_kfimHc0Hu3rrOk9QqZ2PwNrRqRT-Sj_iNN8ao37EFlKDbiFC2knox-KS-W6agxPcwo0pEV0jcGupphaSuDSsSGfRM61I1qoubDTA4UIJUiT7lnrMLxzpuA_acwlqGmhs6SzR-FaPm3GlzG4FqOSXRHbdNFxKnF6gdbYIEg3T5tZincG0VJFdNeX85jFi6UTPF91fAs8rAcPcWQ1AzcBs0lP_NUUejUgLo3pBfEEGcqYlG7tbhJAhcvchPXxa9g0H3TPTUbyYZNjn8LH697C5kQcaFkbwOK9uGN0rS9ehEJ0YIf3TFVQwH1GmIBZn0iu-Mke8-9LDlh--XiaSNG-0GzJCmGc7RKxSbqZe53_R3xDmeGR3KXmO7ULmg5cy_5U6Rz1AG_srB3WD09hXcS7XCFimbpwaPXPoKP0_ln25_TpzN25KvwYnjFPhNcqGhjfs7gNi0EXXKc0uN4Mzguo0Mj4bJKsxfeovAHxJY3OEZOofk7IK0WNsNA8izbl0eCcqpkm0YIn2Q7oUeylJzw70wAxm1uxK7eX31Q16qfA8cWT5sSwhz0NtFFgcwkimZj207Mr4MOl0kv1GKsNL6v5sZlqzQeVNaIzyPf9auo4UmciWPQ7A=w745-h613-no">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.647Z">
+<meta property="article:published_time" content="2017-07-19T05:43:01.000Z">
+<meta property="article:modified_time" content="2019-06-14T05:58:19.647Z">
+<meta property="article:author" content="ShunNien Yu">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows 10 中 Docker Access Denied">
-<meta name="twitter:description" content="我使用的 windows 10 中，我自己的帳戶不會是最高權限，會額外設定一個最高權限的使用者來提升安全性；詳細操作設定步驟，可以參考 demo 小舖 Windows 10 新增本機帳號步驟。Docker 我在今年初裝了 Docker for windows ，本來開機啟動都還正常，後來發生了 access denied ，想說怎麼權限不足，上去 github docker issue 一看，原來">
 <meta name="twitter:image" content="https://lh3.googleusercontent.com/89KcL81sOuWBAADdiw5IsGv_TtVEWUCskZ-T5ODcKzx_Oi31v-pUTAZ8kcSl3QTonDwzAScucegA1yj22J5FCLyygbI0yJpuP0w9jOKGfoC66dTNHd9e6N9kTYfBdlZnIsYO5b2vDXiBMqjbB_A2UJicv57uD-fmlvHd5onKku7YUvsFriTHYgmdOdWFNgNrkEf2OFXgP1Ayj-VGQ38rqSIW0WtJQddqFKKhVd0S_qHMFy53c9jgE6q_AqXtnwqi_g8Du1pjSg_BEcCyqm7hK7BiiVPChr_EQArpcFj9EzL6FFNbj93Qabxm_uMVfu2znSUaj47FY3GDFj5de46_P4IAS9dxA4zL9z2kSZ_Sy-bd5z6h-6N0OCpIJQSJ4Zk1QUBPID_qgFPAStJHcOHgg1Ls280cExa1BlGLlBMBflDub9DBiZvENHb8p4cm6GwQ2cjdW7CGJ8lGbzb1hRE63_C4NfU_e26PxRIE0yVS4KyjcRkTB1GbmjJ7D4pbrj53UG4ZMz2g5g4Rdc71qIG6SCDfwUt0WkcrOB0Y5USNrF5JElkriOF7IE-Nli98I_btTaprpZlvqJwPLnDc8i6FxtvhNL30bzerl_9BcfnKhWV1HSJm8b5wdEu6VKmXpycWJNM1mbwWPhvahmdnnAaZbBAoLfuVeOUQW4NcilPWr9LPAA=w446-h148-no">
 
 
@@ -127,11 +128,11 @@
 
 
 
-  <link rel="canonical" href="https://shunnien.github.io/2017/07/19/docker-for-windows-access-denied-in-windows-10/">
+  <link rel="canonical" href="https://shunnien.github.io/2017/07/19/docker-for-windows-access-denied-in-windows-10/"/>
 
 
 
-<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css">
+<link href="/lib/mermaid/mermaid.7.0.0.min.css?v=7.0.0" rel="stylesheet" type="text/css" />
 
   <title>Windows 10 中 Docker Access Denied | ShunNien's Blog</title>
   
@@ -153,7 +154,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
 
@@ -171,7 +172,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ShunNien's Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -199,9 +200,9 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首頁
           </a>
@@ -209,9 +210,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             關於
           </a>
@@ -219,9 +220,9 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             標籤
           </a>
@@ -229,9 +230,9 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="/categories/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分類
           </a>
@@ -239,9 +240,9 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             歸檔
           </a>
@@ -254,7 +255,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             檢索
           </a>
@@ -275,7 +276,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -316,7 +319,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ShunNien Yu">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80">
     </span>
 
@@ -352,7 +355,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -364,7 +367,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/程式技術筆記/" itemprop="url" rel="index">
+                  <a href="/categories/%E7%A8%8B%E5%BC%8F%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index">
                     <span itemprop="name">程式技術筆記</span>
                   </a>
                 </span>
@@ -383,7 +386,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/07/19/docker-for-windows-access-denied-in-windows-10/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/19/docker-for-windows-access-denied-in-windows-10/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/19/docker-for-windows-access-denied-in-windows-10/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,7 +399,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o">本文閱讀量</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
             </span>
           
 
@@ -504,7 +508,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -546,7 +550,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80" alt="ShunNien Yu">
+              <img class="site-author-image" itemprop="image"
+                src="https://s.gravatar.com/avatar/2607b907d9e4996ffc9dc79d5707ee21?s=80"
+                alt="ShunNien Yu" />
             
               <p class="site-author-name" itemprop="name">ShunNien Yu</p>
               <p class="site-description motion-element" itemprop="description">個人學習上的筆記或記事</p>
@@ -557,7 +563,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
                   <span class="site-state-item-count">227</span>
                   <span class="site-state-item-name">文章</span>
@@ -570,7 +576,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -581,7 +587,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>
