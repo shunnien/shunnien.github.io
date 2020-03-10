@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
 <meta property="og:description" content="關於 autocrlf 產生的一些警告訊息，在很早以前使用 git 的時候，就有了解了，但是一直沒有單獨進行筆記，加上 safecrlf 這設定一直沒有很仔細去了解，這次順便進行比較詳細的筆記。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-06-14T05:58:19.692Z">
+<meta property="og:updated_time" content="2020-03-10T01:54:23.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Autocrlf 與 Safecrlf">
 <meta name="twitter:description" content="關於 autocrlf 產生的一些警告訊息，在很早以前使用 git 的時候，就有了解了，但是一直沒有單獨進行筆記，加上 safecrlf 這設定一直沒有很仔細去了解，這次順便進行比較詳細的筆記。">
@@ -427,11 +427,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <h1 id="SafeCRLF"><a href="#SafeCRLF" class="headerlink" title="SafeCRLF"></a><strong>SafeCRLF</strong></h1><p>這設定是更加嚴格的過濾換行符，只要 <strong>git add</strong> 或是 <strong>commit</strong> 或是 <strong>push</strong> 都會過濾</p>
 <p><strong>不允許</strong> 有 <strong>LF</strong> 與 <strong>CRLF</strong> 混合的檔案</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p><strong>允許</strong> 有 <strong>LF</strong> 與 <strong>CRLF</strong> 混合的檔案</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <p><strong>允許</strong> 有 <strong>LF</strong> 與 <strong>CRLF</strong> 混合的檔案，但是會出現 <strong>warning</strong> 警告訊息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf warn</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf warn</span><br></pre></td></tr></table></figure>
 <h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
 <li>Will 保哥 <a href="https://blog.miniasp.com/post/2013/09/15/Git-for-Windows-Line-Ending-Conversion-Notes.aspx" title="Git 在 Windows 平台處理斷行字元 (CRLF) 的注意事項" target="_blank" rel="noopener">Git 在 Windows 平台處理斷行字元 (CRLF) 的注意事項</a></li>
 <li>Will 保哥 <a href="https://blog.miniasp.com/post/2014/02/20/Visual-Studio-Tools-for-Git-Line-Ending-Conversion-Notes.aspx" title="Visual Studio Tools for Git 處理斷行字元 (CRLF) 的注意事項" target="_blank" rel="noopener">Visual Studio Tools for Git 處理斷行字元 (CRLF) 的注意事項</a></li>
@@ -747,7 +747,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
