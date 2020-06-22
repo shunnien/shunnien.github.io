@@ -8,7 +8,7 @@ subtitle: 不積跬步，無以致千里；不積小流，無以成江海。
 description: 個人學習上的筆記或記事
 author: ShunNien Yu
 language: 
-- zh-tw
+- zh-TW
 #- zh-CN
 #- en
 timezone: ''
@@ -116,7 +116,7 @@ Plugins:
   - hexo-generator-sitemap
 
 ## Themes: http://hexo.io/themes/
-theme: NexT
+theme: next7
 
 stylus:
   compress: true
