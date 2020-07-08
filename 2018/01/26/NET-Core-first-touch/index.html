@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -424,7 +424,8 @@
 <a id="more"></a>
 
 <h2 id="NET-Framework-框架"><a href="#NET-Framework-框架" class="headerlink" title=".NET Framework 框架"></a>.NET Framework 框架</h2><div class="note info"><p>.NET Framework 大約在西元 2002 年推出 .NET 1.0 版，是一套由微軟主導的軟體開發平台，幫助開發人員可以更快的開發出各式各樣的應用程式，並且確保應用程式可以不受作業系統、CPU 架構等平台限制，在任意環境都可以正確執行。</p>
-<p>微軟與其合作夥伴，共同訂製了 <strong>Common Language Infrastructure (CLI) 共通語言基礎架構</strong>，這是一份開放式的技術規範，讓所有符合 CLI 規範的應用程式，都能夠正常的運作在不同的電腦系統之中，而不用重新撰寫或編譯應用程式。</p></div>
+<p>微軟與其合作夥伴，共同訂製了 <strong>Common Language Infrastructure (CLI) 共通語言基礎架構</strong>，這是一份開放式的技術規範，讓所有符合 CLI 規範的應用程式，都能夠正常的運作在不同的電腦系統之中，而不用重新撰寫或編譯應用程式。</p>
+</div>
 
 <h2 id="NET-可攜式類別庫-PCL"><a href="#NET-可攜式類別庫-PCL" class="headerlink" title=".NET 可攜式類別庫 (PCL)"></a>.NET 可攜式類別庫 (PCL)</h2><p>我們通常會將常用或是習慣使用的功能撰寫為 <strong>Class Library</strong> (類別庫)，使其產生組件 (Assembly) ，以利重複使用；但由於 <strong>.NET Framework</strong> 支援的平台時做太多，例如： .NET Framework  、.NET Core 、Mono 、Windows Phone …，所以才出現 <strong>PCL</strong> ，不過現在除非還有需要使用 <strong>Windows Phone</strong> 與 <strong>Silverlight</strong> 這兩個平台，不然 PCL 已經不需要使用了，直接使用 <strong>.NET Standard</strong></p>
 <h2 id="NET-Core-2-0"><a href="#NET-Core-2-0" class="headerlink" title=".NET Core 2.0"></a>.NET Core 2.0</h2><p><strong>.NET Core</strong> 就是微軟最新強調跨平台的的實作(雖然以前也推了一些，但是都不是真正跨平台)</p>
@@ -439,14 +440,16 @@
 <li><p>一個 <strong>dotnet</strong> 主程式 ( <strong>app host</strong> )<br>它主要用來啟動與執行 .NET Core 應用程式 ( 例如你可以用 <strong>dotnet ConsoleApp1.dll</strong> 命令來啟動 .NET Core 應用程式 )，過程中它會自動選取正確的 Runtime，並將 Runtime 裝載到記憶體內，提供 DLL 組件的載入原則，然後啟動應用程式執行。</p>
 </li>
 </ul>
-<p><strong>.NET Core 並不是一套全新的框架，它是一份 .NET Framework 的跨平台實作。</strong></p></div>
+<p><strong>.NET Core 並不是一套全新的框架，它是一份 .NET Framework 的跨平台實作。</strong></p>
+</div>
 
 <h2 id="NET-Standard-標準類別庫"><a href="#NET-Standard-標準類別庫" class="headerlink" title=".NET Standard 標準類別庫"></a>.NET Standard 標準類別庫</h2><p><strong>.NET Standard 標準類別庫</strong> (簡稱 .NET Standard)，說穿了就是一種類別庫的類型；其實就是希望支援所有 .NET 平台能擁有一致的 BCL 基礎類別庫</p>
 <div class="note info"><ul>
 <li>.NET Standard 版本越新，代表你可以使用的 API 就越多</li>
 <li>.NET Standard 版本越舊，代表你可以支援的平台就越多 ( 相對的可使用的 API 就會減少 )</li>
 </ul>
-<p>下表列出所有 .NET Standard 版本和支援的平台：<br><img src="https://lh3.googleusercontent.com/3sFEa1vENTjm-7ElfomC92IUG6h2mMGR86tsiONMIATM90GN2DuiP4qYdbyJ7B-7m4jGk0eTHme_t2zfY4snZrBF0QJnvdSqVyzeb_x_vcez03zUN8-FTrYXbdmXR_sB3qtqqHMzwfJAzcM0wUuv2B3XprnxuGmSFRukk3E2Uh1XyfjBXK0YPGo9TI6dP0udSGlIBqWecj3pnDUPUStrQPXMMQa91N-IE6WPFkxP908hy7tw4uJrsgoBz9Bw4e7YQ1ADaSehXyORCqJSiVlOaV8M4YUaEUazsUtlXZUFBAYJfi_ZDPLtaoorLgWRa_cDic1T8iwckK__gJjrZbq6rf_jUx8JaunTO36dNoN5EmpO1HYb-Uf1_OqOyP4pzydZRkHCpYVo_ILMBpVwVHIzJEZuRXmcmKoVKkS8JuU3aewRGHkxDNkabDKb528cBXqo3Vfy_HsF-vbTuiEYxvc_AvCgTUga_iTVr84UHHJXt0ELGeF6m1a27Z9-v5Rg6Yp55R7SztZMqdEDhoQSP4vzXDfMW3TivkM2UYjNq-BEC7lHsyDqVkgyfNF56vW2uH45FaJcXN2xGMmNUClGLvqZhf2iW_-XK9QuLBo5JBRb13sDJwaMau0XvYo1FsXR3p5BHEALkGQJvq4W83nbduRDnlSPbcO_NE6v=w893-h605-no" alt=".net standart version list"></p></div>
+<p>下表列出所有 .NET Standard 版本和支援的平台：<br><img src="https://lh3.googleusercontent.com/3sFEa1vENTjm-7ElfomC92IUG6h2mMGR86tsiONMIATM90GN2DuiP4qYdbyJ7B-7m4jGk0eTHme_t2zfY4snZrBF0QJnvdSqVyzeb_x_vcez03zUN8-FTrYXbdmXR_sB3qtqqHMzwfJAzcM0wUuv2B3XprnxuGmSFRukk3E2Uh1XyfjBXK0YPGo9TI6dP0udSGlIBqWecj3pnDUPUStrQPXMMQa91N-IE6WPFkxP908hy7tw4uJrsgoBz9Bw4e7YQ1ADaSehXyORCqJSiVlOaV8M4YUaEUazsUtlXZUFBAYJfi_ZDPLtaoorLgWRa_cDic1T8iwckK__gJjrZbq6rf_jUx8JaunTO36dNoN5EmpO1HYb-Uf1_OqOyP4pzydZRkHCpYVo_ILMBpVwVHIzJEZuRXmcmKoVKkS8JuU3aewRGHkxDNkabDKb528cBXqo3Vfy_HsF-vbTuiEYxvc_AvCgTUga_iTVr84UHHJXt0ELGeF6m1a27Z9-v5Rg6Yp55R7SztZMqdEDhoQSP4vzXDfMW3TivkM2UYjNq-BEC7lHsyDqVkgyfNF56vW2uH45FaJcXN2xGMmNUClGLvqZhf2iW_-XK9QuLBo5JBRb13sDJwaMau0XvYo1FsXR3p5BHEALkGQJvq4W83nbduRDnlSPbcO_NE6v=w893-h605-no" alt=".net standart version list"></p>
+</div>
 
 <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="NET-Portability-Analyzer"><a href="#NET-Portability-Analyzer" class="headerlink" title=".NET Portability Analyzer"></a><a href="https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer" target="_blank" rel="noopener">.NET Portability Analyzer</a></h3><p>Visual Studio 2017 的擴充套件，檢查目前專案是否適合轉換為 .NET Core ，就是檢查是否有使用到不支援的 API<br><img src="https://lh3.googleusercontent.com/1bfuhvDXrQX85bRB3z08ohsys60axwEL8sgWUL1UK-rodAqWy8A5IQltDIPxi_lX1JyRB0cDigR7ChZK08tweQDgEl6hHXWvsrYZ-Jm4KOwRVITWYWJvOSEGgG_pxiqmpAT5wb5Mliqrw4YkrN07NHJKkTbFR6oHHNbCk078J4fsvIcheSpjeDZj01709zkhSSl0ndQSqAItOLfioDhzKzG554hPNVJgX-axOa66i52IDif8xpxk7GcfGW4PuwC0cfzkA6GZYYUDRd2lFmhd3J2zlm6zArDjlgzYfc9Kw-Q_I-7ZmVJJploxp_vgPQx-Hgm32fwbmAuG-N5px52bOh7amLI6Wn3-W_9NcDcr7jvuH1k4e2puQ-Gg1w2tAw8Tg-MAyNmTx9hTQ0h5Nde9cffyd84az66dm-7zt1bL4VDXGSVr2Z10EXTTrRYzCTuX2uk5__zCdrSR181b53WJDEMmFzrIUl-viU6sHEUjzucLd9udZmuLY2_qbAOkXhYEFY4eqW5jy1aNRYwSt61zKPamM9c6KQtj-InWd_k1eVf41k5e_8KxcLbLizW_iL7Fh3U-14S86iSfbMk-TvZlzl5-uvuWNvTZaLSPiEXkntdEJ4RO-DyCM3ofEp3VSN2tu4cyDD-VfUxsZPJ_T4d_L_X_62YNnkgX=w874-h647-no" alt="setting"></p>
 <p>使用方式相當簡單，只要在 <strong>solution explore</strong> 中，選取要比較的專案，再使用滑鼠右鍵呼叫選單，選取 <strong>Analyzer Project Portability</strong><br><img src="https://lh3.googleusercontent.com/YEW20ENrvzuh6s4MhoqDTmERjOJchacSY5fkasMGROt2IeZ19heVPEBlp7b6vuLOcxoWFtY9cSHKEBloIATU1OgWBbP2AcUZ5XIZTxT-IEtEbdvyfLYaMs7a66AZIhbmEKllr1XC-QTj4l6ScDWbIhwZQ_q8tfHTkexu1FvLtDvyOBulpo6d0U3rs1m0dnnanP7zD4JvMtTO0WcE2dIttjir4FDs1kkEo9dNRYILdEO-3CR8mnc1zFkIPAxxciIayR07iFa0jlQrez8w2F0hKDxhiR1LQj9VcDQK226X5m7-m20JUgHmD_SYnONERvXpsEy9vSwm8Je6LWxXU04A__w_C4VYD9FPbAYoN2C75OID_bKpVguAIw5mPsyQcTn4Zpf1-Kvc2mwN2UXXMyjELjmil9AoR3c-uAWXZrfMLmf9fXRn-nTj1wH5Qx9xjO1BpC9SJsRU-IiUYb19WcrOncbKtJPdK-s5U1KZLvsXkNCG6gq2SZwC9NXijoJp4zhCGcJDQfrM3xV8J8Flp9nKFOhO3iPXNg_w-IsuSJ3iMVqbCXTPsR_zv2J_Vvj4BSbbCQjGP_5W7PbdKj4ryDj8sPnRciynj1W763YvWrybjN3prevDLUo_yJRgE6-N26pxdaEu_QSXVLA8bsn1qsaZ4p6A_2cgTgHC=w466-h307-no" alt="Analyzer Project Portability"></p>
@@ -641,6 +644,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

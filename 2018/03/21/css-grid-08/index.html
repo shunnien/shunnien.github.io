@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -432,7 +432,8 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">grid-template-columns</span>: <span class="selector-tag">repeat</span>(2, 1<span class="selector-tag">fr</span> <span class="selector-tag">auto</span>);</span><br></pre></td></tr></table></figure>
 
 <h2 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat" target="_blank" rel="noopener">repeat()</a></h2><div class="note info"><p>The <strong>repeat()</strong> CSS function represents a repeated fragment of the track list, allowing a large number of columns or rows that exhibit a recurring pattern to be written in a more compact form.</p>
-<p>This function can be used in the CSS Grid properties <strong>grid-template-columns</strong> and <strong>grid-template-rows</strong>.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<p>This function can be used in the CSS Grid properties <strong>grid-template-columns</strong> and <strong>grid-template-rows</strong>.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
@@ -611,6 +612,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

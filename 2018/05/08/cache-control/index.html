@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -423,7 +423,8 @@
       
         <p><img src="https://lh3.googleusercontent.com/_xr4yWpJJUdg_w0bZZbstCQjQZOFWi7H54VZnZkSdFXkR-jKELJFaxniFxNIOdb7s1n33J0dJ5DUv_KtMYQ-rpc_B-yYWmqS80KdqKCZNVq24GWwjYqSZ1LLBzdICYzExs-6bGEoSvbS2Y87-B90lwnnkf7MzKpw1be83tS4r_dQssrpmmUozlLHhnrYPwIL1x8iPKDFM-fPlgnNmdUyb343irwa-7VGExhqCgrUR9Q1x3-cRrl4w5e8n3s-Cc9_43u7ep0EPFVvlQIzsPyLfvbd3QD1Ip3sYIFmpDqA71sDB03jHVC7l2-GYAMtOht5q1XkW2ZruRnLGadn42i0sEyeXr1kX0zhryMCFDleYySA4ZhM6Jc_WelQW7avtrDP1vr_eTh7RlcVcx7VbN4q4mXegNqExWKB10a96PzARWk7VU5EpjqiSnq03prU0j2B2M1FX5PshsPfjL-KQxmOJ6b9NCtlZUtVH8Ds8htFEZk2Fch06KY1a9wVEb_sEPpebW-CF6p3uMunf8AKpf4n3RJSFCLrIseZ9JXq6hTZ1JgfVb56NOYjgyMZy9VXWlsigNjMuSEDCH_DksRHVT2MLLG9tj3W2GUFROG-SLKJ-Hedp7oF-IO5bQBdH8Hd3abYnSAuk6uCO6OcCWkFc1H9KPcRnNkIGuEF=w344-h106-no" alt="demo"><br>前陣子公司專案由第三方弱掃，接下來的筆記就會紀錄多個專案都有的問題點</p>
 <div class="note danger"><h1 id="Cache-Management-Insecure-Policy-11306"><a href="#Cache-Management-Insecure-Policy-11306" class="headerlink" title="Cache Management: Insecure Policy ( 11306 )"></a>Cache Management: Insecure Policy ( 11306 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>WebInspect has detected a potentially unsafe cache control policy for secure content. While content transmitted over an SSL/TLS channel is expected to guarantee confidentiality, administrators must nonetheless ensure that caching of sensitive content is disabled unless absolutely needed. The misconception that secure content caching is disabled by default by user-agents could cause the application to fail the organization’s cache policy by leaving the secure content cacheable by browsers. Unsafe specification such as Cache-Control: public would instruct the browser to persistently cache the content on the hard drive. Caching can be prevented by specifying one of the following three directives in the response headers</p>
-<p>· Cache-control: private<br>· Cache-Control: no-cache<br>· Cache-Control: no-store</p></div>
+<p>· Cache-control: private<br>· Cache-Control: no-cache<br>· Cache-Control: no-store</p>
+</div>
 <a id="more"></a>
 
 <p>第三方的掃描軟體為 <a href="https://software.microfocus.com/en-us/products/webinspect-dynamic-analysis-dast/overview" target="_blank" rel="noopener">Fortify WebInspect Enterprise</a> ，這是一套付費軟體，提供 15 天的試用，而且功能全部開放試用，但是鎖定只能掃描 <strong>zero.webappsecurity.com</strong></p>
@@ -627,6 +628,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -424,7 +424,8 @@
 
       
         <p>此篇提到了網站的目錄不受保護，或者說是敏感性資料夾名稱；簡單說就是整個網站系統有幾個資料夾被使用者得知。</p>
-<div class="note danger"><h1 id="Web-Server-Misconfiguration-Unprotected-Directory-10224"><a href="#Web-Server-Misconfiguration-Unprotected-Directory-10224" class="headerlink" title="Web Server Misconfiguration: Unprotected Directory ( 10224 )"></a>Web Server Misconfiguration: Unprotected Directory ( 10224 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>IIS/Microsoft product directories were discovered within your web application during a Directory Enumeration scan. Risks associated with an attacker discovering a directory on your application server depend upon what type of directory is discovered, and what types of files are contained within it. The primary threat, other than accessing files containing sensitive discovered, and what types of files are contained within it. The primary threat, other than accessing files containing sensitive information, is that an attacker can utilize the information discovered in that directory to perform other types of attacks. Recommendations include restricting access to important directories or files by adopting a “need to know” requirement for both the document and server root, and turning off features such as Automatic Directory Listings that provide information that could be utilized by an attacker when formulating or conducting an attack.</p></div><a id="more"></a>
+<div class="note danger"><h1 id="Web-Server-Misconfiguration-Unprotected-Directory-10224"><a href="#Web-Server-Misconfiguration-Unprotected-Directory-10224" class="headerlink" title="Web Server Misconfiguration: Unprotected Directory ( 10224 )"></a>Web Server Misconfiguration: Unprotected Directory ( 10224 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>IIS/Microsoft product directories were discovered within your web application during a Directory Enumeration scan. Risks associated with an attacker discovering a directory on your application server depend upon what type of directory is discovered, and what types of files are contained within it. The primary threat, other than accessing files containing sensitive discovered, and what types of files are contained within it. The primary threat, other than accessing files containing sensitive information, is that an attacker can utilize the information discovered in that directory to perform other types of attacks. Recommendations include restricting access to important directories or files by adopting a “need to know” requirement for both the document and server root, and turning off features such as Automatic Directory Listings that provide information that could be utilized by an attacker when formulating or conducting an attack.</p>
+</div><a id="more"></a>
 
 <h1 id="處理方式"><a href="#處理方式" class="headerlink" title="處理方式"></a>處理方式</h1><p>此篇主要使用 <strong>Hidden Segments</strong> 來封閉網站的資料夾，此種作法會讓此資料夾的 <strong>URL</strong> 連線的時候回應 <strong>404</strong> ，直接讓此資料夾不對外連線，所以此方式適用部分檔案不對外開放的資料夾，例如一些抽取的 appsetting 檔案等。</p>
 <p>另外一種情形則是網站要求有權限的使用者才可以下載的檔案，這些資料夾路徑假如也是此種弱點的話，有兩種方式處理：</p>
@@ -631,6 +632,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

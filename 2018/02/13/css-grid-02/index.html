@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -436,7 +436,8 @@
 <p>建立好 package.json 後，直接輸入以下指令，安裝套件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i</span><br></pre></td></tr></table></figure>
 
-<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="CSS-變數"><a href="#CSS-變數" class="headerlink" title="CSS 變數"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener">CSS 變數</a></h2><div class="note info"><p>CSS變量是由CSS作者定義的實體，其中包含要在整個文檔中重複使用的特定值。使用自定義屬性來設置變量名，並使用特定的var()來訪問。（比如color:  var(–main-color) ;）。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="CSS-變數"><a href="#CSS-變數" class="headerlink" title="CSS 變數"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener">CSS 變數</a></h2><div class="note info"><p>CSS變量是由CSS作者定義的實體，其中包含要在整個文檔中重複使用的特定值。使用自定義屬性來設置變量名，並使用特定的var()來訪問。（比如color:  var(–main-color) ;）。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
@@ -615,6 +616,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

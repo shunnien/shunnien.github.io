@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -424,25 +424,25 @@
       
         <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>雖然現在 .Net 的登入機制已經較少 Form Authentication，但是剛好看到這範例，分享一下。</p>
 <h2 id="Conetent"><a href="#Conetent" class="headerlink" title="Conetent"></a>Conetent</h2><p>透過使用相同的 Form Authentication 來使兩個網站的登入機制使用共同的資料。<br>沒有單一簽入(SSO)的流程</p>
-<div class="mermaid">
-  graph LR
+<pre class="mermaid" style="text-align: center;">
+
+graph LR
 A(fa:fa-user-md User)
 A-->B2[fa:fa-sign-in 登入A網站]
 A-->B3[fa:fa-sign-in 登入B網站]
 B2-->C1[fa:fa-sign-in 網站A]
 B3-->C2[fa:fa-sign-in 網站B]
-</div>
-
+</pre>
 
 <p>對比<br>使用單一簽入(SSO)的流程</p>
-<div class="mermaid">
-  graph LR
+<pre class="mermaid" style="text-align: center;">
+
+graph LR
 A(fa:fa-user-md User)
 A-->B[fa:fa-sign-in SSO登入]
 B-->C1[fa:fa-sign-in 網站A]
 B-->C2[fa:fa-sign-in 網站B]
-</div>
-
+</pre>
 
 <p>這可以明顯看出，登入方式變成一個 SSO 登入了，當然此處是指會員資料的取得，實際看頁面流程的話，就不是這樣的單純。<br>以下簡單列出 <a href="https://github.com/arunendapally/SSO" target="_blank" rel="noopener">arunendapally SSO</a> 範例的樹狀結構，可以看出範例列了三個網站</p>
 <ul>
@@ -641,6 +641,19 @@ B-->C2[fa:fa-sign-in 網站B]
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -419,10 +419,12 @@
 
       
         <p><img src="https://lh3.googleusercontent.com/a7cqWNh8UpwHK3S3EsBybpO6jgjGF_YA20WQFBDI_4Vk25zjBAPC_SKjng50JbZQG1veSUIlq_XYNgR_1BI3zKT1BzgX4H6HxwaIDoDeC_4gYY71vIz_kVIxELMj5xSOFqvqcFiVc_munkxOFLPjv5IhXGwdyznjrc2y4X5V7aNaGlRxlqv0JevGdtqeM2Ko-xtLR8HDCMs5YkxQLtzaT8VENi-6LC2BFaLl7jTnEmjJ0ChcULCSgpZQl_RYXn9rt_WkVEjWUq95tJ7T0JRkH3Q3VoN8HSA_kMxvk_4a5mJ458pnKluhl339FDQ9bogfvXhikEZRrZK5GZQvQMV1-kWm_mKCV8gfNNdSoe6-6bMOCY5w8dIxBbh_vOerqKUijCb7uWd22f75Z7XUkZAWwOFbRVT00sOOFWXiucX2W4avroKZmO88TlNlZqwpQ80dVEvjjGlkRnH5J6xMoOvGmWFtUZRy4tBxjZ_sAD9UIbP_TkkPDfLmK3VtsKebYjWaJlA2Zk7_jPsIQ-IGmUB4JyoDdeK3l98xqZrjMJYzk-29OQImslijIopuO2pKMpUtd9DDiAD9U6WsTvWzopDSq9xg3jffkL6Z5_cuMwR0R44wtc_NQRbCdZ1EtQlHbCuRavWjBfeM9ec_9KnNYLllZjNQK0iQnz52=w876-h183-no" alt="error message"><br>發生時機不太能確定，但是發生後只好按照提示的說明進行 <strong>git gc</strong> 清理了<a id="more"></a>，以下列出發生的環境</p>
-<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><div class="note info"><p>OS Name: Microsoft Windows 10 Pro<br>OS Version: 10.0.16299 N/A Build 16299<br>git version: 2.17.0.windows.1</p></div>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><div class="note info"><p>OS Name: Microsoft Windows 10 Pro<br>OS Version: 10.0.16299 N/A Build 16299<br>git version: 2.17.0.windows.1</p>
+</div>
 
 <p>錯訊訊息如下</p>
-<div class="note danger"><p>Auto packing the repository in background for optimum performance.<br>See “git help gc” for manual housekeeping.</p></div>
+<div class="note danger"><p>Auto packing the repository in background for optimum performance.<br>See “git help gc” for manual housekeeping.</p>
+</div>
 
 <h1 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h1><p>按照提供的訊息，需要進行 <strong>gc</strong> 處理，所以可以參照以下指令處理，首先使用 <a href="https://git-scm.com/book/zh-tw/v1/Git-%E5%85%A7%E9%83%A8%E5%8E%9F%E7%90%86-%E7%B6%AD%E8%AD%B7%E5%8F%8A%E8%B3%87%E6%96%99%E5%BE%A9%E5%8E%9F" target="_blank" rel="noopener">git fsck</a> 此工具會檢查 <strong>git repository</strong> 的資料完整性</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fsck</span><br></pre></td></tr></table></figure>
@@ -607,6 +609,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

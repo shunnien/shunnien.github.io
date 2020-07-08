@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -443,7 +443,8 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid <span class="built_in">var</span>(--yellow);</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: auto <span class="number">1</span>fr auto <span class="number">1</span>fr;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://lh3.googleusercontent.com/iqyFqDmsVuvLMdwtJrPQLJtxL8hTiBl5LcSw3G8HLXOxT6c148SqSUZWbHtRsG_njnCzn16ZbUe8SX7sxSH4upgmrpKoK8zmomq6loZ1dwKAcCN3Z8isPxy2OuDbUtFjV8EKVsq8SVdvwFCGsAbHEJNtQpGU4xj4cdKNHBTzDa4rqD3bhLzxGljbTtCVn1vzWLhMH7pbkvuE3WdL6EP8RNNiCjXuMeCxte9N_r5BMo3DieExvb7nGhWAoRxoOsp4nQUacLQfN5iQ8JgkiDeaW9Rv9O09qistaSP_8MY2jLCrwDDoFifF8jN1H0hdyW0H1ILR6vsiahh4lSCsB3j3ITj_BwL4KcS0Rg7xdvGYIiQpeImA4ZU8tIRVJxtFObutemqPeWniy5Iz8yF393mnccfcpClP8wF6Lc2Jkx4Wg4GoO4WjK1O1iSqqMqvtgLRVjXOrBaxc7yQQ5Z9O00kAm8_JPilM4YZhpMr7gl1yJIPClw7J42IF_sMS2eNf3B5MmiWYG48ZhXLn_S7ZPq6enp3xTSPKDSzfh1TuxnNEt4aNG6MHQZmvEuO_fJ4iXdulVRVE0Q_davKtqE6omiNlWrX7mUW8o9oboTcqPql6t8I0oIhZn1RtqhwBnOifNKUf0Igs1KIQRE6izDZJLR77zs_fx9C7DyXx=w851-h405-no" alt="auto content"></p>
-<h2 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h2><h3 id="fr-單位"><a href="#fr-單位" class="headerlink" title="fr 單位"></a><strong>fr</strong> 單位</h3><div class="note info"><p>Tracks can be defined using any length unit.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h2 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h2><h3 id="fr-單位"><a href="#fr-單位" class="headerlink" title="fr 單位"></a><strong>fr</strong> 單位</h3><div class="note info"><p>Tracks can be defined using any length unit.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
@@ -622,6 +623,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -424,7 +424,8 @@
 
 <iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/2c2aaj04/embedded/html,js,result/dark" frameborder="0" loading="lazy" allowfullscreen></iframe>
 
-<div class="note primary"><p>主要原因是 <code>createObjectURL</code> 在 IE 11 中沒有作用</p></div>
+<div class="note primary"><p>主要原因是 <code>createObjectURL</code> 在 IE 11 中沒有作用</p>
+</div>
 
 <p>雖然 <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/URL/createObjectURL" target="_blank" rel="noopener">createObjectURL</a> 在 MDN 中寫了支援 IE 11 ，但是不知道為什麼就是沒有效；參考了 <a href="https://stackoverflow.com/questions/36978795/download-a-blob-from-http-url-in-ie-11" target="_blank" rel="noopener">stackoverflow 此篇討論</a> 更改使用 <strong>navigator.msSaveOrOpenBlob</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> saveData = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</span><br><span class="line">  <span class="keyword">var</span> json = <span class="built_in">JSON</span>.stringify(data),</span><br><span class="line">    blob = <span class="keyword">new</span> Blob([json], &#123;</span><br><span class="line">      type: <span class="string">"octet/stream"</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">window</span>.navigator &amp;&amp; <span class="built_in">window</span>.navigator.msSaveOrOpenBlob) &#123; <span class="comment">// for IE</span></span><br><span class="line">    <span class="built_in">window</span>.navigator.msSaveOrOpenBlob(blob, fileName);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">    t: <span class="string">"hello, world"</span>,</span><br><span class="line">    d: <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  &#125;,</span><br><span class="line">  fileName = <span class="string">"my-download.json"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'button'</span>).addEventListener(<span class="string">'click'</span>, saveData);</span><br></pre></td></tr></table></figure>
@@ -607,6 +608,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

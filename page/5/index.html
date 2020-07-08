@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -503,7 +503,8 @@
 <p>因為 <strong>3DES</strong> 加密沒有關閉，導致了這個問題，以下是檢測報告的資料。</p>
 <div class="note danger"><h1 id="Insecure-Transport-Weak-SSL-Cipher-11285"><a href="#Insecure-Transport-Weak-SSL-Cipher-11285" class="headerlink" title="Insecure Transport: Weak SSL Cipher ( 11285 )"></a>Insecure Transport: Weak SSL Cipher ( 11285 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>WebInspect has detected support for weak TLS/SSL ciphers on server <code>https://xxx.xxx.xx:443/</code> .</p>
 <p>The Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols provide a mechanism to help protect authenticity, confidentiality and integrity of the data transmitted between a client and web server. The strength of this protection mechanism is determined by the authentication, encryption and hashing algorithms, collectively known as a cipher suite, chosen for the transmission of sensitive information over the TLS/SSL channel. Most Web servers support a range of such cipher suites of varying strengths. Using a weak cipher or an encryption key of insufficient length, for example, could allow an attacker to defeat the protection mechanism and steal or modify sensitive information.</p>
-<p>If misconfigured, a web server could be manipulated into choosing weak cipher suites. Recommendations include updating the web server configuration to always choose the strongest ciphers for encryption.</p></div>
+<p>If misconfigured, a web server could be manipulated into choosing weak cipher suites. Recommendations include updating the web server configuration to always choose the strongest ciphers for encryption.</p>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/05/09/SSL-Cipher/#more" rel="contents">
@@ -599,7 +600,8 @@
 
       
           <p>此篇提到了網站的目錄不受保護，或者說是敏感性資料夾名稱；簡單說就是整個網站系統有幾個資料夾被使用者得知。</p>
-<div class="note danger"><h1 id="Web-Server-Misconfiguration-Unprotected-Directory-10224"><a href="#Web-Server-Misconfiguration-Unprotected-Directory-10224" class="headerlink" title="Web Server Misconfiguration: Unprotected Directory ( 10224 )"></a>Web Server Misconfiguration: Unprotected Directory ( 10224 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>IIS/Microsoft product directories were discovered within your web application during a Directory Enumeration scan. Risks associated with an attacker discovering a directory on your application server depend upon what type of directory is discovered, and what types of files are contained within it. The primary threat, other than accessing files containing sensitive discovered, and what types of files are contained within it. The primary threat, other than accessing files containing sensitive information, is that an attacker can utilize the information discovered in that directory to perform other types of attacks. Recommendations include restricting access to important directories or files by adopting a “need to know” requirement for both the document and server root, and turning off features such as Automatic Directory Listings that provide information that could be utilized by an attacker when formulating or conducting an attack.</p></div>
+<div class="note danger"><h1 id="Web-Server-Misconfiguration-Unprotected-Directory-10224"><a href="#Web-Server-Misconfiguration-Unprotected-Directory-10224" class="headerlink" title="Web Server Misconfiguration: Unprotected Directory ( 10224 )"></a>Web Server Misconfiguration: Unprotected Directory ( 10224 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>IIS/Microsoft product directories were discovered within your web application during a Directory Enumeration scan. Risks associated with an attacker discovering a directory on your application server depend upon what type of directory is discovered, and what types of files are contained within it. The primary threat, other than accessing files containing sensitive discovered, and what types of files are contained within it. The primary threat, other than accessing files containing sensitive information, is that an attacker can utilize the information discovered in that directory to perform other types of attacks. Recommendations include restricting access to important directories or files by adopting a “need to know” requirement for both the document and server root, and turning off features such as Automatic Directory Listings that provide information that could be utilized by an attacker when formulating or conducting an attack.</p>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/05/08/Hidden-Segments/#more" rel="contents">
@@ -705,7 +707,8 @@
 <li><p>Man-in-the-Middle attacks that exploit user tendencies to override invalid certification warnings, e.g. SSLSniff.</p>
 </li>
 </ul>
-<p>For web sites configured with an accurate HSTS policy, browsers automatically upgrade any HTTP connections to HTTPS. Furthermore, browsers prevent users from overriding any host certificate warnings. HSTS offers an effective defense against above attack scenarios.</p></div>
+<p>For web sites configured with an accurate HSTS policy, browsers automatically upgrade any HTTP connections to HTTPS. Furthermore, browsers prevent users from overriding any host certificate warnings. HSTS offers an effective defense against above attack scenarios.</p>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/05/08/HSTS-Security/#more" rel="contents">
@@ -802,7 +805,8 @@
       
           <p><img src="https://lh3.googleusercontent.com/_xr4yWpJJUdg_w0bZZbstCQjQZOFWi7H54VZnZkSdFXkR-jKELJFaxniFxNIOdb7s1n33J0dJ5DUv_KtMYQ-rpc_B-yYWmqS80KdqKCZNVq24GWwjYqSZ1LLBzdICYzExs-6bGEoSvbS2Y87-B90lwnnkf7MzKpw1be83tS4r_dQssrpmmUozlLHhnrYPwIL1x8iPKDFM-fPlgnNmdUyb343irwa-7VGExhqCgrUR9Q1x3-cRrl4w5e8n3s-Cc9_43u7ep0EPFVvlQIzsPyLfvbd3QD1Ip3sYIFmpDqA71sDB03jHVC7l2-GYAMtOht5q1XkW2ZruRnLGadn42i0sEyeXr1kX0zhryMCFDleYySA4ZhM6Jc_WelQW7avtrDP1vr_eTh7RlcVcx7VbN4q4mXegNqExWKB10a96PzARWk7VU5EpjqiSnq03prU0j2B2M1FX5PshsPfjL-KQxmOJ6b9NCtlZUtVH8Ds8htFEZk2Fch06KY1a9wVEb_sEPpebW-CF6p3uMunf8AKpf4n3RJSFCLrIseZ9JXq6hTZ1JgfVb56NOYjgyMZy9VXWlsigNjMuSEDCH_DksRHVT2MLLG9tj3W2GUFROG-SLKJ-Hedp7oF-IO5bQBdH8Hd3abYnSAuk6uCO6OcCWkFc1H9KPcRnNkIGuEF=w344-h106-no" alt="demo"><br>前陣子公司專案由第三方弱掃，接下來的筆記就會紀錄多個專案都有的問題點</p>
 <div class="note danger"><h1 id="Cache-Management-Insecure-Policy-11306"><a href="#Cache-Management-Insecure-Policy-11306" class="headerlink" title="Cache Management: Insecure Policy ( 11306 )"></a>Cache Management: Insecure Policy ( 11306 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>WebInspect has detected a potentially unsafe cache control policy for secure content. While content transmitted over an SSL/TLS channel is expected to guarantee confidentiality, administrators must nonetheless ensure that caching of sensitive content is disabled unless absolutely needed. The misconception that secure content caching is disabled by default by user-agents could cause the application to fail the organization’s cache policy by leaving the secure content cacheable by browsers. Unsafe specification such as Cache-Control: public would instruct the browser to persistently cache the content on the hard drive. Caching can be prevented by specifying one of the following three directives in the response headers</p>
-<p>· Cache-control: private<br>· Cache-Control: no-cache<br>· Cache-Control: no-store</p></div>
+<p>· Cache-control: private<br>· Cache-Control: no-cache<br>· Cache-Control: no-store</p>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/05/08/cache-control/#more" rel="contents">
@@ -1039,6 +1043,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -439,12 +439,14 @@
 <h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="Array-prototype-splice"><a href="#Array-prototype-splice" class="headerlink" title="Array.prototype.splice()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">Array.prototype.splice()</a></h3><div class="note info"><p><code>splice()</code> 這方法可刪除或新增一個 Array 的內容。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myFish = [<span class="string">'angel'</span>, <span class="string">'clown'</span>, <span class="string">'mandarin'</span>, <span class="string">'sturgeon'</span>];</span><br><span class="line"></span><br><span class="line">myFish.splice(<span class="number">2</span>, <span class="number">0</span>, <span class="string">'drum'</span>); <span class="comment">// 新增字串'drum' 在第index=2的位置</span></span><br><span class="line"><span class="comment">// myFish is ["angel", "clown", "drum", "mandarin", "sturgeon"]</span></span><br><span class="line"></span><br><span class="line">myFish.splice(<span class="number">2</span>, <span class="number">1</span>); <span class="comment">// 移除第二個位置的物件 (也就是字串"drum")</span></span><br><span class="line"><span class="comment">// myFish is ["angel", "clown","mandarin", "sturgeon"]</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<p><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h3 id="Array-prototype-shift"><a href="#Array-prototype-shift" class="headerlink" title="Array.prototype.shift()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank" rel="noopener">Array.prototype.shift()</a></h3><div class="note info"><p><code>shift()</code> 方法 (method) 會從陣列移除第一個元素 (element)，並回傳該元素。此方法會改變陣列的長度。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.shift();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// [2, 3]</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<p><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/shift" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
@@ -625,6 +627,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

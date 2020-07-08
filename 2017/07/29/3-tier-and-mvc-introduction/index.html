@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -424,12 +424,12 @@
 
 </li>
 </ul>
-<div class="mermaid">
-  graph LR
+<pre class="mermaid" style="text-align: center;">
+
+graph LR
 A(fa:fa-user 客戶端應用程式)-->B(fa:fa-server 應用程式伺服器)
 B-->C(fa:fa-database 資料庫伺服器)
-</div>
-
+</pre>
 
 <p>三層式架構可以簡易看為是在客戶端與資料庫之間加入了一個<strong>中間層</strong>，中間層通常包含：</p>
 <ul>
@@ -437,14 +437,14 @@ B-->C(fa:fa-database 資料庫伺服器)
 <li><strong>商業邏輯層</strong> ( <strong>B</strong>usiness <strong>L</strong>ogic <strong>L</strong>ayer，簡稱 BLL )</li>
 <li><strong>資料物件模型層</strong> ( <strong>D</strong>atabase <strong>O</strong>bject <strong>M</strong>odel Layer，簡稱 DOM )</li>
 </ul>
-<div class="mermaid">
-  graph LR
+<pre class="mermaid" style="text-align: center;">
+
+graph LR
 A(fa:fa-laptop 使用者介面)-->B(fa:fa-briefcase 商業邏輯)
 B-->C(fa:fa-tasks 資料存取)
 C-->D(fa:fa-object-group 物件模型)
 D-->E(fa:fa-database 資料庫伺服器)
-</div>
-
+</pre>
 
 <p>邏輯上的三層式架構 ( 或 <strong>N 層</strong>架構 ) ，是一種<strong>軟體抽象</strong>的層次結構，從整個應用程式架構的角度來區分為三層 ( 如果需要，還可以分 N 層 ) ，是為了<strong>解決整個應用程式中，各個操作過程中不同階段的程式碼封裝的問題</strong>，使程式設計師更加專注的處理某階段的商業邏輯。<br>比如將資料庫操作封裝到一層中，提供一些方法根據參數直接返回用戶需要的資料，這樣在處理具體的商業邏輯的時候，就不用關心資料的儲存問題了；簡單來說就是<strong>強化內聚，降低耦合</strong>，其簡易分層如下：</p>
 <ul>
@@ -465,12 +465,14 @@ D-->E(fa:fa-database 資料庫伺服器)
 <li>開發人員可以只關注整個結構中的其中某一層</li>
 <li>具有良好的開放性和可擴充性，維護和升級方便</li>
 <li>提高系統的安全性</li>
-</ul></div>
+</ul>
+</div>
 <div class="note danger"><h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><ul>
 <li>有時會導致連動的修改。<br>如果在表現層中需要增加一個功能，為保證其設計符合分層式結構，可能需要在相應的商業邏輯層和資料存取層中都增加相應的程式碼。</li>
 <li>相對於不分層，降低了系統的性能。<br>如果不採用分層式結構，很多業務可以直接造訪資料庫，以此獲取相應的數據，如今卻必須通過中間層來完成。</li>
 <li>增加了開發成本。</li>
-</ul></div>
+</ul>
+</div>
 <h2 id="Asp-Net-MVC-架構"><a href="#Asp-Net-MVC-架構" class="headerlink" title="Asp.Net MVC 架構"></a><a href="https://msdn.microsoft.com/en-us/library/dd394709.aspx" target="_blank" rel="noopener"><strong>Asp.Net MVC</strong></a> 架構</h2><p><strong><a href="https://msdn.microsoft.com/en-us/library/dd394709.aspx" target="_blank" rel="noopener">ASP.NET MVC</a></strong> 是微軟在 2009 年 4 月份發布的一種網站開發架構，它是把傳統意義上的 <strong>MVC</strong> 開發思想融合到了 <strong>ASP.NET</strong> 的開發當中，為了解決傳統開發中不能分離 <strong>Model</strong> , <strong>View</strong> 和 <strong>Controller</strong> 而設計的。</p>
 <p>MVC 是在<strong>應用程式 ( B/S 結構 )</strong> 的<strong>視圖層</strong>劃分出來的不同功能的幾個模塊。主要是為了解決應用程式用戶介面的樣式替換問題，把展示數據的 HTML 頁面儘可能的和業務代碼分離。 MVC 把純凈的介面展示邏輯 ( 用戶介面 ) 獨立到一些文件中 ( Views ) ，把一些和用戶交互的程序邏輯 ( Controller ) 單獨放在一些文件中，在 Views 和 Controller 中傳遞數據使用一些專門封裝數據的實體對象，這些對象，統稱為 Models。<br>按照 <a href="https://msdn.microsoft.com/zh-tw/library/dd381412(v=vs.108).aspx" target="_blank" rel="noopener">MSDN 上 <strong>ASP.NET MVC 4</strong></a> 上的說明，其架構包含：</p>
 <ul>
@@ -478,13 +480,13 @@ D-->E(fa:fa-database 資料庫伺服器)
 <li>檢視 ( <strong>V</strong>iew )<br>檢視是顯示應用程式中使用者介面 (UI) 的元件。<br>即 View (視圖層)，主要用於顯示數據和提交數據</li>
 <li>控制器 ( <strong>C</strong>ontroller )<br>控制器就是元件，可以處理使用者互動、使用模型並且在最後選擇可以轉譯要顯示 UI 的檢視。<br>主要是用作捕獲請求並控制請求轉發</li>
 </ul>
-<div class="mermaid">
-  graph LR
+<pre class="mermaid" style="text-align: center;">
+
+graph LR
 A((檢　視))==>B((模　型))
 C((控制器))==>A
 C==>B
-</div>
-
+</pre>
 
 <h3 id="優點"><a href="#優點" class="headerlink" title="優點"></a>優點</h3><ul>
 <li>沒有在頁面中保存頁面狀態狀態(相對 WebForm ViewState)</li>
@@ -494,8 +496,9 @@ C==>B
 <li>可擴展、可替換</li>
 </ul>
 <h2 id="三層架構與-ASP-NET-MVC-比較"><a href="#三層架構與-ASP-NET-MVC-比較" class="headerlink" title="三層架構與 ASP.NET MVC 比較"></a>三層架構與 ASP.NET MVC 比較</h2><p>以下是 MVC 與三層架構的對應關係</p>
-<div class="mermaid">
-  graph LR
+<pre class="mermaid" style="text-align: center;">
+
+graph LR
 subgraph USL
 controller((控制器))==>view((檢　視))
 end
@@ -504,8 +507,7 @@ model((模　型))
 end
 view==>model
 controller==>model
-</div>
-
+</pre>
 
 <h3 id="相同點"><a href="#相同點" class="headerlink" title="相同點"></a>相同點</h3><ul>
 <li>都是把資料與呈現分離，以降低耦合</li>
@@ -718,6 +720,19 @@ controller==>model
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

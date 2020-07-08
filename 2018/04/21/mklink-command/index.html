@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -422,7 +422,8 @@
       
         <p>這功能簡單說就是建立指向目錄或是檔案的連結，例如： <code>C:\temp</code> 資料夾設定指向 <code>D:\temp</code> ，這樣原本 <code>C:\temp</code> 都會儲存到 <code>D:\temp</code> 內，類似捷徑的概念<a id="more"></a>，以下就來詳細看看用法語介紹。</p>
 <h1 id="mklink"><a href="#mklink" class="headerlink" title="mklink"></a>mklink</h1><p>先看看 <strong>microsoft</strong> 文件上的說明</p>
-<div class="note info"><p>Creates a symbolic link.<br><strong>資料來源</strong> - <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink" target="_blank" rel="noopener"><strong>microsoft docs</strong></a></p></div>
+<div class="note info"><p>Creates a symbolic link.<br><strong>資料來源</strong> - <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/mklink" target="_blank" rel="noopener"><strong>microsoft docs</strong></a></p>
+</div>
 
 <h2 id="語法-Syntax"><a href="#語法-Syntax" class="headerlink" title="語法 (Syntax)"></a>語法 (Syntax)</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink [[/d] | [/h] | [/j]] &lt;Link&gt; &lt;Target&gt;</span><br></pre></td></tr></table></figure>
 
@@ -645,6 +646,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

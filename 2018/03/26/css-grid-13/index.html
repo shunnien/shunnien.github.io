@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -435,9 +435,11 @@
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/minmax" target="_blank" rel="noopener">minmax()</a> 裡面參數設定縮放的尺寸下限與上限</li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content" target="_blank" rel="noopener">fit-content()</a> 設定縮放尺寸的上限，就是最大只可以到達設定的尺寸，不會按照內容去 <strong>auto</strong> 調整</li>
 </ul>
-<h2 id="minmax"><a href="#minmax" class="headerlink" title="minmax()"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/minmax" target="_blank" rel="noopener">minmax()</a></h2><div class="note info"><p>The minmax() CSS function defines a size range greater than or equal to min and less than or equal to max. It is used with CSS Grids.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/minmax" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h2 id="minmax"><a href="#minmax" class="headerlink" title="minmax()"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/minmax" target="_blank" rel="noopener">minmax()</a></h2><div class="note info"><p>The minmax() CSS function defines a size range greater than or equal to min and less than or equal to max. It is used with CSS Grids.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/minmax" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
-<h2 id="fit-content"><a href="#fit-content" class="headerlink" title="fit-content()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content" target="_blank" rel="noopener">fit-content()</a></h2><div class="note info"><p>The fit-content() CSS function clamps a given size to an available size according to the formula min(maximum size, max(minimum size, argument)).<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h2 id="fit-content"><a href="#fit-content" class="headerlink" title="fit-content()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content" target="_blank" rel="noopener">fit-content()</a></h2><div class="note info"><p>The fit-content() CSS function clamps a given size to an available size according to the formula min(maximum size, max(minimum size, argument)).<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/fit-content" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
@@ -616,6 +618,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

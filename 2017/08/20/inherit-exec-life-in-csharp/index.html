@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -421,15 +421,15 @@
 
 <p>其執行順序是繼承的最末端到基底的方向(<strong>子到父</strong>)，執行<strong>初始設定</strong>，再由基底到繼承末端(<strong>父到子</strong>)執行<strong>建構式</strong>，執行結果如下：<br><img src="https://lh3.googleusercontent.com/I5s0lacU7EI01KtTK0cF_yNBYkZ0yhvlq7NCdLB3uNF8TUiKlHZ_1YfPlaIKwqM_y_ApGTi_s4jA6qoUMAK6nwGziMrSKmAVuQy_30hQlC-bh82J6MDYOgwFkbbRAL0AyxDrwxRX5QFUVmWFnRo-NVT3JbzGjLn6Bl4Rw6WDCoEaPT33po1jngb-cYd02zBIfGqGHjWY3DrDAirEXQ45kmaQrhlRKxhdnSeXkH9Z5MVs4nyNKcdZaGrIvBRKpnb2bImJCCtZuoHzEorZoU_f1YRF0ruEqzq-7TTOGHGDK5CZp75r9PxDwvtzrHjAAsQ03csuRcEjuF7bzQcnJ7-fZYbLLCCgEDC7LxnIaD_TsH1krg4_1XTrhB2nUS1J5Q_iZ57_PV7d0NI5aqnctjDRdN0i9rBLplguMKlTS9Q0R5xLSDeT0kZ0545yu2UoKTfxJ4m-r9aWG8MCMTSk45H5ifhISKQbTfPTZLtI94wstYZVKsFhl0MPwieRY04Tv1oTzHs32kry-5pbLjVooYRrd1NvzgFGPAdTeS8eC33oAozBgeU7s8gUnRaqjcPN8R7kUE2mIgy4KF8walIeEdpKIiHcDdRMX_havEAI6lsCZPHX1Y9cvCmTBs8L346mNUnZi-l0uaYz13udFDHt2v_6Hc53MxWit1IFfjfE8EDVAvczTA=w421-h382-no" alt="result"></p>
 <p>可由此張流程圖看出：</p>
-<div class="mermaid">
-  graph TD
+<pre class="mermaid" style="text-align: center;">
+
+graph TD
 A(Second 初始設定)-->B(First 初始設定)
 B-->C(Base 初始設定)
 C-->D(Base 建構式)
 D-->E(First 建構式)
 E-->F(Second 建構式)
-</div>
-
+</pre>
 
     </div>
 
@@ -601,6 +601,19 @@ E-->F(Second 建構式)
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

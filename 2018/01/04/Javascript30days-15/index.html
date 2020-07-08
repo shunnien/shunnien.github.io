@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -445,10 +445,12 @@
 <li>勾選後更新 items 變數與更新 localStorage</li>
 </ul>
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="HTML-部分"><a href="#HTML-部分" class="headerlink" title="HTML 部分"></a>HTML 部分</h2><p>此次範例中的魚標誌，是使用 <a href="https://developer.mozilla.org/zh-TW/docs/Web/SVG" target="_blank" rel="noopener">SVG</a> 繪製</p>
-<h3 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Applying_SVG_effects_to_HTML_content" target="_blank" rel="noopener">SVG</a></h3><div class="note info"><p><strong>可縮放向量圖形 (Scalable Vector Graphics，SVG)</strong> 是用於描述二維向量圖形的 XML 標記語言。基本上，SVG 用於圖形，而 XHTML 用於文字。<br>SVG 類似 Adobe 專有的 Flash 技術，SVG 與 Flash 兩者最大的分別在於 SVG 為 W3C 所推薦 (即標準)，並以 XML 為基礎，而非封閉的二進制格式。SVG 設計為與其他 W3C 標準 (如 CSS、DOM 及 SMIL) 一同運作。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/SVG" target="_blank" rel="noopener"><strong>MDN</strong></a></p></div>
+<h3 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Applying_SVG_effects_to_HTML_content" target="_blank" rel="noopener">SVG</a></h3><div class="note info"><p><strong>可縮放向量圖形 (Scalable Vector Graphics，SVG)</strong> 是用於描述二維向量圖形的 XML 標記語言。基本上，SVG 用於圖形，而 XHTML 用於文字。<br>SVG 類似 Adobe 專有的 Flash 技術，SVG 與 Flash 兩者最大的分別在於 SVG 為 W3C 所推薦 (即標準)，並以 XML 為基礎，而非封閉的二進制格式。SVG 設計為與其他 W3C 標準 (如 CSS、DOM 及 SMIL) 一同運作。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/SVG" target="_blank" rel="noopener"><strong>MDN</strong></a></p>
+</div>
 
 <h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="Window-localStorage"><a href="#Window-localStorage" class="headerlink" title="Window.localStorage"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Window/localStorage" target="_blank" rel="noopener">Window.localStorage</a></h3><p>資料暫存在瀏覽器上，並且不會自動刪除，除非自行清除瀏覽資料；使用無痕瀏覽的話，關閉視窗等於清除掉。</p>
-<h3 id="Document-createElement"><a href="#Document-createElement" class="headerlink" title="Document.createElement()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/createElement" target="_blank" rel="noopener">Document.createElement()</a></h3><div class="note info"><p>於 HTML 文件中，Document.createElement() 方法可以依指定的標籤名稱（tagName）建立 HTML 元素，或是在未定義標籤名稱下建立一個 HTMLUnknownElement。在 XUL 文件中，Document.createElement() 將會建立指定的 XUL 元素。而在其它文件，則會建立一個 namespace URI 為 null 的元素。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/createElement" target="_blank" rel="noopener"><strong>MDN</strong></a></p></div>
+<h3 id="Document-createElement"><a href="#Document-createElement" class="headerlink" title="Document.createElement()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/createElement" target="_blank" rel="noopener">Document.createElement()</a></h3><div class="note info"><p>於 HTML 文件中，Document.createElement() 方法可以依指定的標籤名稱（tagName）建立 HTML 元素，或是在未定義標籤名稱下建立一個 HTMLUnknownElement。在 XUL 文件中，Document.createElement() 將會建立指定的 XUL 元素。而在其它文件，則會建立一個 namespace URI 為 null 的元素。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/createElement" target="_blank" rel="noopener"><strong>MDN</strong></a></p>
+</div>
 
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
@@ -629,6 +631,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

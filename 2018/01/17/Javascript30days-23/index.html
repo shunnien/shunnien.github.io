@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -443,10 +443,12 @@
 <h2 id="步驟-4"><a href="#步驟-4" class="headerlink" title="步驟 4."></a>步驟 4.</h2><p>設定播放與停止按鍵功能</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 播放與停止</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggle</span>(<span class="params">startOver = true</span>) </span>&#123;</span><br><span class="line">  speechSynthesis.cancel();</span><br><span class="line">  <span class="keyword">if</span> (startOver) &#123;</span><br><span class="line">    speechSynthesis.speak(msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 播放</span></span><br><span class="line">speakButton.addEventListener(<span class="string">"click"</span>, toggle);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 停止播放</span></span><br><span class="line">stopButton.addEventListener(<span class="string">"click"</span>, () =&gt; toggle(<span class="literal">false</span>));</span><br></pre></td></tr></table></figure>
 
-<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="SpeechSynthesisUtterance"><a href="#SpeechSynthesisUtterance" class="headerlink" title="SpeechSynthesisUtterance"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/SpeechSynthesisUtterance" target="_blank" rel="noopener">SpeechSynthesisUtterance</a></h3><div class="note info"><p>The SpeechSynthesisUtterance interface of the Web Speech API represents a speech request. It contains the content the speech service should read and information about how to read it (e.g. language, pitch and volume.)<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="SpeechSynthesisUtterance"><a href="#SpeechSynthesisUtterance" class="headerlink" title="SpeechSynthesisUtterance"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/SpeechSynthesisUtterance" target="_blank" rel="noopener">SpeechSynthesisUtterance</a></h3><div class="note info"><p>The SpeechSynthesisUtterance interface of the Web Speech API represents a speech request. It contains the content the speech service should read and information about how to read it (e.g. language, pitch and volume.)<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API" target="_blank" rel="noopener">Web Speech API</a> 中的 <strong>SpeechSynthesis</strong> 語音合成服務 </p>
-<h3 id="SpeechSynthesis"><a href="#SpeechSynthesis" class="headerlink" title="SpeechSynthesis"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/SpeechSynthesis" target="_blank" rel="noopener">SpeechSynthesis</a></h3><div class="note info"><p>The SpeechSynthesis interface of the Web Speech API is the controller interface for the speech service; this can be used to retrieve information about the synthesis voices available on the device, start and pause speech, and other commands besides.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h3 id="SpeechSynthesis"><a href="#SpeechSynthesis" class="headerlink" title="SpeechSynthesis"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/SpeechSynthesis" target="_blank" rel="noopener">SpeechSynthesis</a></h3><div class="note info"><p>The SpeechSynthesis interface of the Web Speech API is the controller interface for the speech service; this can be used to retrieve information about the synthesis voices available on the device, start and pause speech, and other commands besides.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <p>語音 API 的服務介面；以下是此次範例使用的屬性說明</p>
 <ul>
@@ -633,6 +635,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

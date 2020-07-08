@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -454,8 +454,9 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTransition</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e.propertyName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>當按下觸發按鍵後， <strong>removeTransition</strong> 的 log 記錄訊息與觸發順序如下流程所示。</p>
-<div class="mermaid">
-  graph TD
+<pre class="mermaid" style="text-align: center;">
+
+graph TD
 A(transform)-->B(border-right-color)
 B-->C(border-bottom-color)
 C-->D(border-top-color)
@@ -467,8 +468,7 @@ B1-->C1(border-bottom-color)
 C1-->D1(border-top-color)
 D1-->E1(border-left-color)
 E1-->F1(box-shadow)
-</div>
-
+</pre>
 
 <p>另外值得一提的是， css 中的樣式順序變動，對於觸發順序毫無影響，也就是說就算把 <strong>playing</strong> 的 css 變動成如下的順序，觸發順序還是 <strong>transform</strong> 先開始。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.playing</span> &#123;</span><br><span class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span> <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.1</span>);</span><br><span class="line">  <span class="attribute">border-color</span>: <span class="number">#ffc600</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -691,6 +691,19 @@ E1-->F1(box-shadow)
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

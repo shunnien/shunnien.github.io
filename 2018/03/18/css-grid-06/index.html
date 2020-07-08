@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -428,7 +428,8 @@
 <p>當不使用 <code>grid-auto-flow</code> 的時候，會依照設定的 <code>grid-template-columns</code> 數量去設定 <strong>column</strong> ，但假如是 <strong>row</strong> 的話，還是會自動增加，此部分可以參考<a href="https://shunnien.github.io/2018/03/18/css-grid-05/">css grid 筆記 05</a>，<code>grid-auto-flow</code> 設定了 <strong>column</strong> 後，假如有超出 <strong>template</strong> 的設定，就會依照 <code>grid-auto-columns</code> 設定的大小去調整新增加的 <strong>column</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: <span class="number">400px</span> <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">grid-auto-flow</span>: column;</span><br><span class="line">    <span class="attribute">grid-auto-columns</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="grid-auto-flow-1"><a href="#grid-auto-flow-1" class="headerlink" title="grid-auto-flow"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow" target="_blank" rel="noopener">grid-auto-flow</a></h2><div class="note info"><p>grid-auto-flow 属性通过控制自动布局算法的运作原理，精确指定自动布局的元素在网格中排列的方向。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h2 id="grid-auto-flow-1"><a href="#grid-auto-flow-1" class="headerlink" title="grid-auto-flow"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow" target="_blank" rel="noopener">grid-auto-flow</a></h2><div class="note info"><p>grid-auto-flow 属性通过控制自动布局算法的运作原理，精确指定自动布局的元素在网格中排列的方向。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
@@ -607,6 +608,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

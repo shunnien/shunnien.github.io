@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -435,10 +435,12 @@
 <h2 id="線上展示"><a href="#線上展示" class="headerlink" title="線上展示"></a>線上展示</h2><iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/zpck0nLu/embedded/result,css,js,html/dark" frameborder="0" loading="lazy" allowfullscreen></iframe>
 
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="object-fit"><a href="#object-fit" class="headerlink" title="object-fit"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit" target="_blank" rel="noopener">object-fit</a></h2><p>首先來看一下 <strong>MDN</strong> 上的定義</p>
-<div class="note info"><p>The object-fit CSS property specifies how the contents of a replaced element should be fitted to the box established by its used height and width.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<div class="note info"><p>The object-fit CSS property specifies how the contents of a replaced element should be fitted to the box established by its used height and width.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <p>此段說明了 <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit" target="_blank" rel="noopener"><strong>object-fit</strong></a> 主要是設定 <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/Replaced_element" target="_blank" rel="noopener"><strong>replaced element</strong> (置換元素)</a>，置換元素的定義，請參考以下</p>
-<div class="note info"><p>CSS 中所謂的「置換元素 (Replaced element)」，即是該元素所呈現的內容不在 CSS 的控制範圍之內。這類外部物件所呈現的內容均獨立於 CSS 之外。常見的置換元素包含 &lt;img&gt;、&lt;object&gt;、&lt;video&gt;，或如 &lt;textarea&gt; 與 &lt;input&gt; 的表單元素。某些元素 (像是 &lt;audio&gt; 或 &lt;canvas&gt;) 只有在特殊情況下才是置替換元素。若是透過 CSS content 屬性所插入的物件，則稱為「不具名置換元素 (Anonymous replaced elements)」。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/Replaced_element" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<div class="note info"><p>CSS 中所謂的「置換元素 (Replaced element)」，即是該元素所呈現的內容不在 CSS 的控制範圍之內。這類外部物件所呈現的內容均獨立於 CSS 之外。常見的置換元素包含 &lt;img&gt;、&lt;object&gt;、&lt;video&gt;，或如 &lt;textarea&gt; 與 &lt;input&gt; 的表單元素。某些元素 (像是 &lt;audio&gt; 或 &lt;canvas&gt;) 只有在特殊情況下才是置替換元素。若是透過 CSS content 屬性所插入的物件，則稱為「不具名置換元素 (Anonymous replaced elements)」。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/Replaced_element" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/object-fit" target="_blank" rel="noopener"><strong>object-fit</strong></a> 的設定屬性有以下，其定義說明如下：</p>
 <ul>
@@ -627,6 +629,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

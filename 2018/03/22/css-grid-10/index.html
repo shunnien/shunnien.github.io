@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -440,9 +440,11 @@
 <iframe height='394' scrolling='no' title='Placing Grid Items' src='//codepen.io/shunnien/embed/Qmvmej/?height=394&theme-id=0&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/shunnien/pen/Qmvmej/' target="_blank" rel="noopener">Placing Grid Items</a> by allen_yu (<a href='https://codepen.io/shunnien' target="_blank" rel="noopener">@shunnien</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
 </iframe>
 
-<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="grid-column-start"><a href="#grid-column-start" class="headerlink" title="grid-column-start"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start" target="_blank" rel="noopener">grid-column-start</a></h2><div class="note info"><p>The grid-column-start CSS property specifies a grid item’s start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="grid-column-start"><a href="#grid-column-start" class="headerlink" title="grid-column-start"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start" target="_blank" rel="noopener">grid-column-start</a></h2><div class="note info"><p>The grid-column-start CSS property specifies a grid item’s start position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement. This start position defines the block-start edge of the grid area.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
-<h2 id="grid-column-end"><a href="#grid-column-end" class="headerlink" title="grid-column-end"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end" target="_blank" rel="noopener">grid-column-end</a></h2><div class="note info"><p>The grid-column-end CSS property specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h2 id="grid-column-end"><a href="#grid-column-end" class="headerlink" title="grid-column-end"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end" target="_blank" rel="noopener">grid-column-end</a></h2><div class="note info"><p>The grid-column-end CSS property specifies a grid item’s end position within the grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the block-end edge of its grid area.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
@@ -621,6 +623,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

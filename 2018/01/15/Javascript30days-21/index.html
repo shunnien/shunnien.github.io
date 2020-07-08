@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -433,11 +433,14 @@
 <h2 id="步驟-2"><a href="#步驟-2" class="headerlink" title="步驟 2."></a>步驟 2.</h2><p>改變顯示資料，但是因為瀏覽器支援因素，目前手上的測試 <strong>speed</strong> 與 <strong>heading</strong> 皆是 <strong>null</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">navigator.geolocation.watchPosition(</span><br><span class="line">  data =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    speed.textContent = data.coords.speed;</span><br><span class="line">    arrow.style.transform = <span class="string">`rotate(<span class="subst">$&#123;data.coords.heading&#125;</span>deg)`</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  err =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(err);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="地理位置定位-Geolocation"><a href="#地理位置定位-Geolocation" class="headerlink" title="地理位置定位 (Geolocation)"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/Using_geolocation" target="_blank" rel="noopener">地理位置定位 (Geolocation)</a></h3><div class="note info"><p>Web Apps 若需要使用者的位置，可透過 Geolocation API 取得相關資訊。而基於隱私權的考量，這些 Web Apps 均必須取得使用者的許可之後，才能發佈位置資訊。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/Using_geolocation" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><h2 id="JavaScript-部分"><a href="#JavaScript-部分" class="headerlink" title="JavaScript 部分"></a>JavaScript 部分</h2><h3 id="地理位置定位-Geolocation"><a href="#地理位置定位-Geolocation" class="headerlink" title="地理位置定位 (Geolocation)"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/Using_geolocation" target="_blank" rel="noopener">地理位置定位 (Geolocation)</a></h3><div class="note info"><p>Web Apps 若需要使用者的位置，可透過 Geolocation API 取得相關資訊。而基於隱私權的考量，這些 Web Apps 均必須取得使用者的許可之後，才能發佈位置資訊。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/Using_geolocation" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
-<h3 id="Geolocation-watchPosition"><a href="#Geolocation-watchPosition" class="headerlink" title="Geolocation.watchPosition()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/watchPosition" target="_blank" rel="noopener">Geolocation.watchPosition()</a></h3><div class="note info"><p>Geolocation.watchPosition() 這個方法是用來註冊一個處理的函式，當使用者的裝置位置更新時，這個函式所傳入的回呼函式(callback function) 就會自動被呼叫。你也可以選擇性的定義錯誤時哪些錯誤回呼函式(error callback function) 需要被呼叫。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/watchPosition" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h3 id="Geolocation-watchPosition"><a href="#Geolocation-watchPosition" class="headerlink" title="Geolocation.watchPosition()"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/watchPosition" target="_blank" rel="noopener">Geolocation.watchPosition()</a></h3><div class="note info"><p>Geolocation.watchPosition() 這個方法是用來註冊一個處理的函式，當使用者的裝置位置更新時，這個函式所傳入的回呼函式(callback function) 就會自動被呼叫。你也可以選擇性的定義錯誤時哪些錯誤回呼函式(error callback function) 需要被呼叫。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/watchPosition" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
-<h3 id="Coordinates"><a href="#Coordinates" class="headerlink" title="Coordinates"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Coordinates" target="_blank" rel="noopener">Coordinates</a></h3><div class="note info"><p>Coordinates 這個介面用來存取裝置的經緯度，速度以及這些數值的準確度。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Coordinates" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h3 id="Coordinates"><a href="#Coordinates" class="headerlink" title="Coordinates"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Coordinates" target="_blank" rel="noopener">Coordinates</a></h3><div class="note info"><p>Coordinates 這個介面用來存取裝置的經緯度，速度以及這些數值的準確度。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Coordinates" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://javascript30.com/" target="_blank" rel="noopener">JavaScript 30 day</a></li>
@@ -618,6 +621,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

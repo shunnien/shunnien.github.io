@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -441,10 +441,12 @@
 <h1 id="線上展示"><a href="#線上展示" class="headerlink" title="線上展示"></a>線上展示</h1><iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/6vxve4t0/embedded/html,css,result/dark" frameborder="0" loading="lazy" allowfullscreen></iframe>
 
 <h1 id="筆記與備註事項"><a href="#筆記與備註事項" class="headerlink" title="筆記與備註事項"></a>筆記與備註事項</h1><p>需要注意的是 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas" target="_blank" rel="noopener">grid-template-areas</a> 裡面的區域名稱設定的區塊必須都是<strong>矩形</strong>，否則 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas" target="_blank" rel="noopener">grid-template-areas</a> 設定會無效</p>
-<h2 id="grid-template-areas"><a href="#grid-template-areas" class="headerlink" title="grid-template-areas"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas" target="_blank" rel="noopener">grid-template-areas</a></h2><div class="note info"><p>The grid-template-areas CSS property specifies named grid areas.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<h2 id="grid-template-areas"><a href="#grid-template-areas" class="headerlink" title="grid-template-areas"></a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas" target="_blank" rel="noopener">grid-template-areas</a></h2><div class="note info"><p>The grid-template-areas CSS property specifies named grid areas.<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h2 id="media"><a href="#media" class="headerlink" title="@media"></a><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/@media" target="_blank" rel="noopener">@media</a></h2><div class="note info"><p>@media CSS at-rule 與一組被大括弧隔開、並由 media query 條件定義的 CSS 巢狀區塊有關。@media at-rule 不只能用在最頂層的 CSS 區塊，也能在任何 CSS conditional-group at-rule 使用。</p>
-<p>@media at-rule 能透過 CSS object model 介面 CSSMediaRule 通行。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/@media" target="_blank" rel="noopener"><em>MDN</em></a></p></div>
+<p>@media at-rule 能透過 CSS object model 介面 CSSMediaRule 通行。<br><strong>資料來源</strong> - <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/@media" target="_blank" rel="noopener"><em>MDN</em></a></p>
+</div>
 
 <h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
 <li><a href="https://cssgrid.io/" target="_blank" rel="noopener">CSS-Grid 課程</a></li>
@@ -623,6 +625,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

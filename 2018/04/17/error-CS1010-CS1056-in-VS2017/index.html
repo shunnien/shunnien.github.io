@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -424,7 +424,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OS Name:                   Microsoft Windows 10 Pro</span><br><span class="line">OS Version:                10.0.16299 N&#x2F;A Build 16299</span><br><span class="line">Editor:                    Visual Studio Enterprise 2017 Version 15.6.6</span><br></pre></td></tr></table></figure>
 
 <p>先說明這是一個 webform 的 website project ，發生的錯誤訊息如下</p>
-<div class="note danger"><p>error CS1010: Newline in constant<br>error CS1056: Unexpected character ‘’<br>error CS1056: Unexpected character ‘’<br>error CS1056: Unexpected character ‘’<br>error CS1010: Newline in constant</p></div>
+<div class="note danger"><p>error CS1010: Newline in constant<br>error CS1056: Unexpected character ‘’<br>error CS1056: Unexpected character ‘’<br>error CS1056: Unexpected character ‘’<br>error CS1010: Newline in constant</p>
+</div>
 <a id="more"></a>
 
 <p><img src="https://lh3.googleusercontent.com/xCnbrKgffRYmjNmGcMkHz3dgKco0f6fMY4hSQwRuqKNLesqv7NRglSrGCCM8Y2iB8p6cLnuHd2N6I2uwwc8QfoN5y64dDCQ1iRQ3HziSsSBcvZTfx_jA4y7b0zes7K-6nSL7wIKNfTfX1f7KhLEbywkHPF4rj03huczBcBrkKG1b2zN0kJSpOfYKoLCSFaVhGM-IaijFhsyDss7yv0fkO_tIIndNCVTMfZ44-H1VXXJALKu7K0Bz1L8wv0OuLf3V5txFRABLlJi9gMbj8ufPCOM0PGFqr8SeeUL3ye-qRQVWrWZBZxClOQXl2ONH5JdHRtYsXEXnM3JEx8QfXzTJ5AvYPA3pHF1HVDUkH04-HkZ-yTdQBO1FaMS08XrbMOV2h_nMpnMNQjNn_pO3pRnSSF0fiFtiq3nisyHjTBG20d97CZW54br-vWML2I4qtHP1iYEFckJWwVD2EdmNqEjT74qrkzg3YYofB-JVDcV7UqHtaHC4_kle_PAdIZ0uZh2X8JOUOoNo4XzdQSRhIGa_Dwh5qoadvAsg2p1Qr8OvTvfpU2kdum-x_uI0C_ft1kwe_g6uVtGL2wD-pXl_vPfV_XqjxC3x6hT-O8rOBjVWi-Kbm0aeog_iLw3pDr3TBOzMZhY93NvvA5xF6Kjy1Uv2sc6kIwP-43B9=w806-h182-no" alt="error"></p>
@@ -613,6 +614,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

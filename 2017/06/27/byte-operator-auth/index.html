@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -419,14 +419,14 @@
       
         <p>這一篇其實就是 <a href="https://shunnien.github.io/2017/06/23/byte-introduction/">byte 換算</a>文章中提過的權限資料，這些權限是使用位元來區分目前使用者擁有那些權限，針對這部分，順便把一些資料整理一下，說明一下權限設計的考量方向，然後針對位元運算與權限的方式說明。<a id="more"></a></p>
 <p>大部分權限的要求，都是管理介面的部分，或是管理者與一般使用者混用的狀況；而常見的權限有建立(新增)、檢視、變更、刪除四種可能，這是操作功能的權限。另外一種就是帳號的權限，該帳號可以操作的系統功能等…。這兩種權限是息息相關的；舉例來說，以下是一個網站系統架構：購物車、分析圖表及會員資料皆可能有新增、檢視、變更、刪除四種功能權限</p>
-<div class="mermaid">
-  graph TB
+<pre class="mermaid" style="text-align: center;">
+
+graph TB
 A(fa:fa-sitemap 網站系統)
 A-->B1(fa:fa-cart-arrow-down 購物車)
 A-->B2(fa:fa-area-chart 分析圖表)
 A-->B3(fa:fa-user 會員資料)
-</div>
-
+</pre>
 
 <p>將系統功能擁有的功能權限列出</p>
 <ul>
@@ -435,8 +435,9 @@ A-->B3(fa:fa-user 會員資料)
 <li>會員資料，擁有新增、檢視、變更、刪除功能權限</li>
 </ul>
 <p>但是不是每個使用者皆能擁有這些功能權限，假設一個是管理者，一個是一般使用者(購買者)，就可以看出分析圖表僅有管理者擁有，而且會員資料兩者也不同。所以使用者通常對應著系統功能項目的權限，設計方式還是需要看使用情境決定。</p>
-<div class="mermaid">
-  graph LR
+<pre class="mermaid" style="text-align: center;">
+
+graph LR
 subgraph 使用者
 A1(fa:fa-user 管理者)
 A2(fa:fa-users 一般使用者)
@@ -448,8 +449,7 @@ A1-->|檢視 新增 修改 刪除|B3(fa:fa-user 會員資料)
 A2-->|檢視 新增 修改 刪除|B1(fa:fa-cart-arrow-down 購物車)
 A2-->|檢視 修改 刪除|B3(fa:fa-user 會員資料)
 end
-</div>
-
+</pre>
 
 <h2 id="位元運算與權限"><a href="#位元運算與權限" class="headerlink" title="位元運算與權限"></a>位元運算與權限</h2><p>上述的部分好像都沒提到位元運算，其實在設定新增、修改、刪除、檢視這幾項功能的時候，就可以使用。</p>
 <table>
@@ -683,6 +683,19 @@ end
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

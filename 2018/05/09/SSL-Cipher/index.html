@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -425,7 +425,8 @@
 <p>因為 <strong>3DES</strong> 加密沒有關閉，導致了這個問題，以下是檢測報告的資料。</p>
 <div class="note danger"><h1 id="Insecure-Transport-Weak-SSL-Cipher-11285"><a href="#Insecure-Transport-Weak-SSL-Cipher-11285" class="headerlink" title="Insecure Transport: Weak SSL Cipher ( 11285 )"></a>Insecure Transport: Weak SSL Cipher ( 11285 )</h1><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>WebInspect has detected support for weak TLS/SSL ciphers on server <code>https://xxx.xxx.xx:443/</code> .</p>
 <p>The Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols provide a mechanism to help protect authenticity, confidentiality and integrity of the data transmitted between a client and web server. The strength of this protection mechanism is determined by the authentication, encryption and hashing algorithms, collectively known as a cipher suite, chosen for the transmission of sensitive information over the TLS/SSL channel. Most Web servers support a range of such cipher suites of varying strengths. Using a weak cipher or an encryption key of insufficient length, for example, could allow an attacker to defeat the protection mechanism and steal or modify sensitive information.</p>
-<p>If misconfigured, a web server could be manipulated into choosing weak cipher suites. Recommendations include updating the web server configuration to always choose the strongest ciphers for encryption.</p></div><a id="more"></a>
+<p>If misconfigured, a web server could be manipulated into choosing weak cipher suites. Recommendations include updating the web server configuration to always choose the strongest ciphers for encryption.</p>
+</div><a id="more"></a>
 
 <h1 id="檢查工具"><a href="#檢查工具" class="headerlink" title="檢查工具"></a>檢查工具</h1><p>想要檢查 <strong>Cipher</strong> 的工具很多，也有許多線上網站提供線上檢測，以下列出幾種工具:</p>
 <h2 id="線上網站"><a href="#線上網站" class="headerlink" title="線上網站"></a>線上網站</h2><p>Qualys Labs 的 <a href="https://www.ssllabs.com/" target="_blank" rel="noopener">免費檢測工具</a>，選擇 <strong>Test your server</strong> ，然後輸入網域名稱，以下使用 google 當作範例</p>
@@ -623,6 +624,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

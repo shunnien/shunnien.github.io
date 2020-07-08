@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -417,7 +417,8 @@
 
       
         <p>開發 cordova 專案，在 <a href="https://www.visualstudio.com/zh-hant/downloads/" target="_blank" rel="noopener">Visual Studio 2017</a> 更新到 <strong>version 15.6.4</strong> 後，要建置的時候就發生錯誤了<a id="more"></a>，錯誤訊訊息如下：</p>
-<div class="note danger"><p>Invalid command line switch for “tsc.exe”. Value cannot be null. Parameter name: path1</p></div>
+<div class="note danger"><p>Invalid command line switch for “tsc.exe”. Value cannot be null. Parameter name: path1</p>
+</div>
 
 <p>這時候去 <a href="https://developercommunity.visualstudio.com/spaces/8/index.html" target="_blank" rel="noopener">microsoft developer community</a> 查詢，發現國外也有一些人遇到這個問題，處理方式都是打開專案檔案來調整，一種是指定 <a href="https://zh.wikipedia.org/zh-tw/TypeScript" target="_blank" rel="noopener"><strong>typescript</strong></a> 的編譯版本工具，另一種是乾脆取消使用 <a href="https://zh.wikipedia.org/zh-tw/TypeScript" target="_blank" rel="noopener"><strong>typescript</strong></a></p>
 <ul>
@@ -606,6 +607,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   
