@@ -18,26 +18,27 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"shunnien.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"shunnien.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="安裝 php_sqlsrv 與 php_pdo_sqlsrv使用 PHP 連接 MSSQL 進行 database migrate 時，發現出現以下訊息 ![command line error message]](https:&#x2F;&#x2F;lh3.googleusercontent.com&#x2F;rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0Y">
+  <meta name="description" content="安裝 php_sqlsrv 與 php_pdo_sqlsrv使用 PHP 連接 MSSQL 進行 database migrate 時，發現出現以下訊息">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP 安裝 MSSQL Driver">
 <meta property="og:url" content="https://shunnien.github.io/2018/08/10/php-install-sqlsrv-dll-on-windows/index.html">
 <meta property="og:site_name" content="ShunNien&#39;s Blog">
-<meta property="og:description" content="安裝 php_sqlsrv 與 php_pdo_sqlsrv使用 PHP 連接 MSSQL 進行 database migrate 時，發現出現以下訊息 ![command line error message]](https:&#x2F;&#x2F;lh3.googleusercontent.com&#x2F;rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0Y">
+<meta property="og:description" content="安裝 php_sqlsrv 與 php_pdo_sqlsrv使用 PHP 連接 MSSQL 進行 database migrate 時，發現出現以下訊息">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://lh3.googleusercontent.com/rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0YZn1ZcHcsFR53f0DTsgl2X63xVtreav4FFH5coZfiuFYz2TSOUwiRWJZraAA8x4yxnIY4tKKTcrEK-QcOvTuN3OfCgsqgtIscCfd8bBTZl-y4rxQmTeH1qDzZwdIxoaExCloWkYU_oS7RWO58njlu74_2Cjw4R4aVxFiUsyyKtjZEjnNxJc9dTHDDmnYbMeGVSMO6X4_fcU_8-jZytlH9WZrNOof4pw95L1dBpgTJMKMe5GRnXjrkAEU7SGAFX0CEAfyG1a7smaIiAV6WE1CQedbRUfhj8ZYX9MA_SfRTzWFBR5VoFM5yhOWtjUGLxqJpQi0tTAMvj3poH2fJxRJIUVaFXyHQQrYR-ehST5mgjBkrKRfgGlcr2xTsmCO28y1ttUQeut3aFFSjQwqGHOhlNjNxoHVKXWDPvAP9kWJKJiAU6Zh_2jvnOlT_kpVlSJrxmK3wA_U4bUdzXjjNUgeFdk6gcy4jKj-W0TtLJJq7OaZ4EB010E8seYcASu2zpg4oNLjTGH_YeVcFd0UP8fL8jr57W10AOJvzY-e6uy1N-JyyHpXAuqcmunYjamdkxgiHQG6Ztv80vwM43iZMpaawX6BBx8dH0sPm_AhP1J=w494-h340-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/_wQX8-85GNXb53XFySs3IJX6Y324GZiR8JjNLFC0Bf_GknTa6emaIpbyS-YkKc5pK7Pf7JRrEdFivRagRD5AUnROiyiJIctAEUorOP7d0Cx5XEb5LG7zE9Vm2lz42G2kUmAEAquFwXsW8FOtvUf0AiFwK9PlpQoX88xk0YOTRcL1vaTcZbtAVf9rEPARz3KP1dvCFGFkhY-Q_D0ihYDHcEppYWqk-qZ8Avfx9EeW74Y9lssnoz6CxIaiBSPjN9yjxf5538uwAsRMvut3Sefizhu7LQJ17JMf4uixQ-igNL_7pGu14zxBuSUI9_fzrZ9x8mKa59-noH4KvAx3W1jv08c3AfRGwTQCKaUSv_a5hwCCUZYRRjE4rSLfNiypmP2caaQhyWvor5KAOdtQP_cTeBM6gMwN69eyHIwkczWxbfTL1frBoUy6-iV9xun8WVMw4kPZEZheo661MeD3-wuBPdqgHl6mE1WKSDHU79ix6lD9WC3p-SSeMs2CKnjQM0oiOUjlYmqk-dx0WlFUZ5uBV4LyLSNIB_9Zh51hU2xIB3nuRlEH6dklyK7medbK1CyDaaD05dHIAD1Ysi1QVzdYwRcKwG2mddr5YPeY9NLqsVXG4RVumfnByDTin1kAoEwJKiVMREiCdCODwifyYq_f8y8rZPgYB76_=w1109-h188-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/T66cbUAR_dZA0gBKUA3EynI2BG7gHo7cKt5K6ZDvQW8L69Chqgm7rvV-igXK3QxvnhxatSAd6rXSlJUsy_yMkJQo29jEqbqSM3mI0Ugef98EFqPnv91NA4Aj7iPDgoADWSdrZFhwPnePMuB1q9mTQ1AvBhCGlfvnWxwMBYUwAtgnqyV3dieYOEzyKnkpOs13x48rCYVDRPVDs_oFcbECG8FFgxyYoNHAc3IdpH0lRNdeKtUnE3fF57dlGZcg3QGsXCZ9CjWNMUAdDOQfASPUl8uzlNww_8-8lPCYWaGYZEg5pInp_RlHd7ydMCYimL8Jb8BGqUcxKUlSRmxSuhxUhzswVEU1pzOC3neoq4tcP0-8YclLmC4jN_koYLCvuLyfZVwzg3SgdtKqoHFC7BYEg7xw667KGfT6RBAhD9KQ8J3dhPvqGbkkkZWeAUhgabY5hrHJ2bV0Qil-m1bT3M_S9ge616e1xVBJ8scCoboW1ZkxwlogXH64PW1W_Q85ji1MLxSucMDqGS1B31RL2UTuloIIaq8J1reCBJkn1boEd8jfw1Bf53fajOr-FJRHDcRTrYS9DicV213pUIP7Rt2M7pQC7Q2sDlo_7sNoWH5p44AFHvnvg0nGlKWPpuluwYMGVUxscdkaPRGdgSFCMu5Be5tVpKIoBdqR=w1031-h601-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/CCNnZIJg31VRAAr6rMSkEgSP52noMUe3Mq_0ZhaYHeXFs8MUlMtLdNY7VUW74-ROJyV1ySHUO6ObvbMhOq7TPsQgOAHlJFPXDqeuGqa6ZUBWBYbhQ87vmDSDyWfllubyF5lh5C_RWrSBh9vYxwifOsx54otsPrYjaI6sAA2sT5MuAQnW0cA5X3b47L4ge4lHHmi46lySq5OAC7izeGFsOn3PYHYPN-XQtLs290CK9J5b3NW65tysP0kBsMIygB-np9qU482YDhLKD1j5C4JIfeOVq121vx6S-S45Vtg9C0VHvoW0rnvdCw8x-mAB1ZZj7s_oIZgXFOh20R_2eAmZ516QeFJShi7P-hTTDuwXUPtvz7EyJWtSKvqdY8NrQPW693JE-1BUhX6YfKbvqy0KzKVQc6ARNhCT2ARghPN10IkcnvUG3fdo-vB8fXndE4f_m-mi571se1vym4EqW4xcvaBrxDP2kGp_T_Pmr3ixGKaj1muFd8VUYbwpcoeDsWiKUafr1WmsP37McdaxXFaa3uo2hOYtH7NSiLmgZ6Lz-e-76u-dC5XV2wgQ9vpezoSeGDMIjG3qK5mjChk9xzSNCe5uMm9iiC-Hy7j41FFZJtGr2Vl8BEVB0VtkU9s3M_dICgylIViAnBtZbEYGq5DXBe0QiXn0YBpv=w715-h412-no">
 <meta property="og:image" content="https://lh3.googleusercontent.com/RLSYNkf_9JOZcmk7lJet-igoRl0E-Sfs4qFGxkCZFgdzaMMkKcLrRd8gl_8vEF_VJi9g0AyFx3MZsSzVJkkQz1jSobkpsMdw5CQowDy8PLa-HW0dLK_8ut79chYVTzDRkV-FoeYwBcR77b0M_1eDJwwGC61kGhr2gs4UG5-dKtCba1u70dWSI-ISc-WeyrW1fWuRSHLtwwBHiAsMPxzco9QLSm4tYlCFYN2jqk_4XxBlcJYsVpN4-apYU25yVbL6Hac2X_Lb6RlNt1-X_IsjsKCYZryuuipTsHjHD6T1TwsGz1v2-PRxX1UmlTzU1Mgu213uBySYJoX5AQOHDAAmXbHSGMnNLhb2RW3Zr2tr0QXmf3KeS5iZutDVKBVysi46-3ik7YLdFSnBfmy9jmb2woTGjJds7s6BPrqVfZxXojwCewJBCpX61Y2StUCm4WQO9mcbYjTA73NeQAZ9TfojZlj2HeTFPUvsSwZ7wSjgS_XIwd4P0GYsBsqdTBTU-Cgl3lhHgzDMdF4i4tZm5QqEE7RFv5v5YFc8Nf2NJwuU7YXP5Uio8m254gmjMCoYdmnU6A9bmQ6gpbBQ9xH0mUUYB-DxsdtLmzwelsmuG4haJyfsiRTHeq_dSmU2iIigpgcs6sTeTUkMgZ_fBrGvJHpfUXp8ILym_JQr=w354-h385-no">
 <meta property="article:published_time" content="2018-08-09T17:49:07.000Z">
-<meta property="article:modified_time" content="2019-06-14T05:58:19.695Z">
+<meta property="article:modified_time" content="2020-07-08T08:10:13.881Z">
 <meta property="article:author" content="ShunNien Yu">
 <meta property="article:tag" content="PHP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lh3.googleusercontent.com/_wQX8-85GNXb53XFySs3IJX6Y324GZiR8JjNLFC0Bf_GknTa6emaIpbyS-YkKc5pK7Pf7JRrEdFivRagRD5AUnROiyiJIctAEUorOP7d0Cx5XEb5LG7zE9Vm2lz42G2kUmAEAquFwXsW8FOtvUf0AiFwK9PlpQoX88xk0YOTRcL1vaTcZbtAVf9rEPARz3KP1dvCFGFkhY-Q_D0ihYDHcEppYWqk-qZ8Avfx9EeW74Y9lssnoz6CxIaiBSPjN9yjxf5538uwAsRMvut3Sefizhu7LQJ17JMf4uixQ-igNL_7pGu14zxBuSUI9_fzrZ9x8mKa59-noH4KvAx3W1jv08c3AfRGwTQCKaUSv_a5hwCCUZYRRjE4rSLfNiypmP2caaQhyWvor5KAOdtQP_cTeBM6gMwN69eyHIwkczWxbfTL1frBoUy6-iV9xun8WVMw4kPZEZheo661MeD3-wuBPdqgHl6mE1WKSDHU79ix6lD9WC3p-SSeMs2CKnjQM0oiOUjlYmqk-dx0WlFUZ5uBV4LyLSNIB_9Zh51hU2xIB3nuRlEH6dklyK7medbK1CyDaaD05dHIAD1Ysi1QVzdYwRcKwG2mddr5YPeY9NLqsVXG4RVumfnByDTin1kAoEwJKiVMREiCdCODwifyYq_f8y8rZPgYB76_=w1109-h188-no">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0YZn1ZcHcsFR53f0DTsgl2X63xVtreav4FFH5coZfiuFYz2TSOUwiRWJZraAA8x4yxnIY4tKKTcrEK-QcOvTuN3OfCgsqgtIscCfd8bBTZl-y4rxQmTeH1qDzZwdIxoaExCloWkYU_oS7RWO58njlu74_2Cjw4R4aVxFiUsyyKtjZEjnNxJc9dTHDDmnYbMeGVSMO6X4_fcU_8-jZytlH9WZrNOof4pw95L1dBpgTJMKMe5GRnXjrkAEU7SGAFX0CEAfyG1a7smaIiAV6WE1CQedbRUfhj8ZYX9MA_SfRTzWFBR5VoFM5yhOWtjUGLxqJpQi0tTAMvj3poH2fJxRJIUVaFXyHQQrYR-ehST5mgjBkrKRfgGlcr2xTsmCO28y1ttUQeut3aFFSjQwqGHOhlNjNxoHVKXWDPvAP9kWJKJiAU6Zh_2jvnOlT_kpVlSJrxmK3wA_U4bUdzXjjNUgeFdk6gcy4jKj-W0TtLJJq7OaZ4EB010E8seYcASu2zpg4oNLjTGH_YeVcFd0UP8fL8jr57W10AOJvzY-e6uy1N-JyyHpXAuqcmunYjamdkxgiHQG6Ztv80vwM43iZMpaawX6BBx8dH0sPm_AhP1J=w494-h340-no">
 
 <link rel="canonical" href="https://shunnien.github.io/2018/08/10/php-install-sqlsrv-dll-on-windows/">
 
@@ -128,6 +129,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -161,11 +163,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
           
@@ -348,7 +377,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2019-06-14 13:58:19" itemprop="dateModified" datetime="2019-06-14T13:58:19+08:00">2019-06-14</time>
+                <time title="修改時間：2020-07-08 16:10:13" itemprop="dateModified" datetime="2020-07-08T16:10:13+08:00">2020-07-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -393,7 +422,7 @@
 
       
         <h1 id="安裝-php-sqlsrv-與-php-pdo-sqlsrv"><a href="#安裝-php-sqlsrv-與-php-pdo-sqlsrv" class="headerlink" title="安裝 php_sqlsrv 與 php_pdo_sqlsrv"></a>安裝 <strong>php_sqlsrv</strong> 與 <strong>php_pdo_sqlsrv</strong></h1><p>使用 <strong>PHP</strong> 連接 MSSQL 進行 database migrate 時，發現出現以下訊息</p>
-<p>![command line error message]](<a href="https://lh3.googleusercontent.com/rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0YZn1ZcHcsFR53f0DTsgl2X63xVtreav4FFH5coZfiuFYz2TSOUwiRWJZraAA8x4yxnIY4tKKTcrEK-QcOvTuN3OfCgsqgtIscCfd8bBTZl-y4rxQmTeH1qDzZwdIxoaExCloWkYU_oS7RWO58njlu74_2Cjw4R4aVxFiUsyyKtjZEjnNxJc9dTHDDmnYbMeGVSMO6X4_fcU_8-jZytlH9WZrNOof4pw95L1dBpgTJMKMe5GRnXjrkAEU7SGAFX0CEAfyG1a7smaIiAV6WE1CQedbRUfhj8ZYX9MA_SfRTzWFBR5VoFM5yhOWtjUGLxqJpQi0tTAMvj3poH2fJxRJIUVaFXyHQQrYR-ehST5mgjBkrKRfgGlcr2xTsmCO28y1ttUQeut3aFFSjQwqGHOhlNjNxoHVKXWDPvAP9kWJKJiAU6Zh_2jvnOlT_kpVlSJrxmK3wA_U4bUdzXjjNUgeFdk6gcy4jKj-W0TtLJJq7OaZ4EB010E8seYcASu2zpg4oNLjTGH_YeVcFd0UP8fL8jr57W10AOJvzY-e6uy1N-JyyHpXAuqcmunYjamdkxgiHQG6Ztv80vwM43iZMpaawX6BBx8dH0sPm_AhP1J=w494-h340-no" target="_blank" rel="noopener">https://lh3.googleusercontent.com/rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0YZn1ZcHcsFR53f0DTsgl2X63xVtreav4FFH5coZfiuFYz2TSOUwiRWJZraAA8x4yxnIY4tKKTcrEK-QcOvTuN3OfCgsqgtIscCfd8bBTZl-y4rxQmTeH1qDzZwdIxoaExCloWkYU_oS7RWO58njlu74_2Cjw4R4aVxFiUsyyKtjZEjnNxJc9dTHDDmnYbMeGVSMO6X4_fcU_8-jZytlH9WZrNOof4pw95L1dBpgTJMKMe5GRnXjrkAEU7SGAFX0CEAfyG1a7smaIiAV6WE1CQedbRUfhj8ZYX9MA_SfRTzWFBR5VoFM5yhOWtjUGLxqJpQi0tTAMvj3poH2fJxRJIUVaFXyHQQrYR-ehST5mgjBkrKRfgGlcr2xTsmCO28y1ttUQeut3aFFSjQwqGHOhlNjNxoHVKXWDPvAP9kWJKJiAU6Zh_2jvnOlT_kpVlSJrxmK3wA_U4bUdzXjjNUgeFdk6gcy4jKj-W0TtLJJq7OaZ4EB010E8seYcASu2zpg4oNLjTGH_YeVcFd0UP8fL8jr57W10AOJvzY-e6uy1N-JyyHpXAuqcmunYjamdkxgiHQG6Ztv80vwM43iZMpaawX6BBx8dH0sPm_AhP1J=w494-h340-no</a>)</p>
+<p><img src="https://lh3.googleusercontent.com/rUs6dN2BgmXZxn1Fkdf9y9wPlrEkUPai6UC50O_UktnCjzB_6es_Yq_s0YZn1ZcHcsFR53f0DTsgl2X63xVtreav4FFH5coZfiuFYz2TSOUwiRWJZraAA8x4yxnIY4tKKTcrEK-QcOvTuN3OfCgsqgtIscCfd8bBTZl-y4rxQmTeH1qDzZwdIxoaExCloWkYU_oS7RWO58njlu74_2Cjw4R4aVxFiUsyyKtjZEjnNxJc9dTHDDmnYbMeGVSMO6X4_fcU_8-jZytlH9WZrNOof4pw95L1dBpgTJMKMe5GRnXjrkAEU7SGAFX0CEAfyG1a7smaIiAV6WE1CQedbRUfhj8ZYX9MA_SfRTzWFBR5VoFM5yhOWtjUGLxqJpQi0tTAMvj3poH2fJxRJIUVaFXyHQQrYR-ehST5mgjBkrKRfgGlcr2xTsmCO28y1ttUQeut3aFFSjQwqGHOhlNjNxoHVKXWDPvAP9kWJKJiAU6Zh_2jvnOlT_kpVlSJrxmK3wA_U4bUdzXjjNUgeFdk6gcy4jKj-W0TtLJJq7OaZ4EB010E8seYcASu2zpg4oNLjTGH_YeVcFd0UP8fL8jr57W10AOJvzY-e6uy1N-JyyHpXAuqcmunYjamdkxgiHQG6Ztv80vwM43iZMpaawX6BBx8dH0sPm_AhP1J=w494-h340-no" alt="command line error message"></p>
 <a id="more"></a>
 
 <p>瀏覽頁面也出現以下錯誤</p>
@@ -576,6 +605,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
